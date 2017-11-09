@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by sblToSBML version 1.0 -->
+<sbml level="2" version="1" xmlns="http://www.sbml.org/sbml/level2" xmlns:jd2="http://www.sys-bio.org/sbml" xmlns:celldesigner="http://www.sbml.org/2001/ns/celldesigner">
+  <model id="test10" name="test10">
+    <listOfCompartments>
+      <compartment id="compartment" size="1" />
+    </listOfCompartments>
+    <listOfSpecies>
+      <species boundaryCondition="true" compartment="compartment" id="X0" initialConcentration="0" />
+      <species boundaryCondition="true" compartment="compartment" id="X1" initialConcentration="0" />
+      <species boundaryCondition="true" compartment="compartment" id="X2" initialConcentration="0" />
+      <species boundaryCondition="false" compartment="compartment" id="A" initialConcentration="0" />
+      <species boundaryCondition="false" compartment="compartment" id="S1" initialConcentration="0" />
+      <species boundaryCondition="false" compartment="compartment" id="B" initialConcentration="0" />
+    </listOfSpecies>
+    <listOfReactions>
+      <reaction id="J1" reversible="false">
+        <listOfReactants>
+          <speciesReference species="X0" stoichiometry="1" />
+          <speciesReference species="A" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="S1" stoichiometry="1" />
+          <speciesReference species="B" stoichiometry="1" />
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 1 </cn>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="J2" reversible="false">
+        <listOfReactants>
+          <speciesReference species="S1" stoichiometry="1" />
+          <speciesReference species="B" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="X1" stoichiometry="1" />
+          <speciesReference species="A" stoichiometry="1" />
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 1 </cn>
+          </math>
+        </kineticLaw>
+      </reaction>
+      <reaction id="J3" reversible="false">
+        <listOfReactants>
+          <speciesReference species="S1" stoichiometry="1" />
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="X2" stoichiometry="1" />
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <cn type="integer"> 1 </cn>
+          </math>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>

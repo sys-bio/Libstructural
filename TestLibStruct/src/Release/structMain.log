@@ -1,0 +1,34 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(937,5): warning MSB8027: Two or more files with the name of libstructural.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are ..\..\..\libstruct\LibStructural\libstructural.cpp, ..\libStruct\LibStructural\libstructural.cpp.
+  constraint.cpp
+..\..\..\libstruct\LibStructural\constraint.cpp(1): fatal error C1083: Cannot open include file: 'constraint.h': No such file or directory
+  libstructural.cpp
+..\..\..\libstruct\LibStructural\libstructural.cpp(13): fatal error C1083: Cannot open include file: 'libstructural.h': No such file or directory
+  lpresult.cpp
+..\..\..\libstruct\LibStructural\lpresult.cpp(1): fatal error C1083: Cannot open include file: 'lpresult.h': No such file or directory
+  objective.cpp
+..\..\..\libstruct\LibStructural\objective.cpp(1): fatal error C1083: Cannot open include file: 'objective.h': No such file or directory
+  sbmlmodel.cpp
+..\..\..\libstruct\LibStructural\sbmlmodel.cpp(1): fatal error C1083: Cannot open include file: 'sbmlmodel.h': No such file or directory
+  complex.cpp
+..\libStruct\LibLA\complex.cpp(6): error C2871: 'LIB_LA': a namespace with this name does not exist
+..\libStruct\LibLA\complex.cpp(8): error C2653: 'Complex': is not a class or namespace name
+..\libStruct\LibLA\complex.cpp(10): error C2065: 'Real': undeclared identifier
+..\libStruct\LibLA\complex.cpp(10): error C2065: 'Imag': undeclared identifier
+..\libStruct\LibLA\complex.cpp(13): error C2653: 'LIB_LA': is not a class or namespace name
+..\libStruct\LibLA\complex.cpp(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+..\libStruct\LibLA\complex.cpp(13): error C2143: syntax error: missing ',' before '&'
+..\libStruct\LibLA\complex.cpp(15): error C2065: 'complex': undeclared identifier
+..\libStruct\LibLA\complex.cpp(15): error C2228: left of '.Real' must have class/struct/union
+  ..\libStruct\LibLA\complex.cpp(15): note: type is 'unknown-type'
+..\libStruct\LibLA\complex.cpp(15): error C2228: left of '.Imag' must have class/struct/union
+  ..\libStruct\LibLA\complex.cpp(15): note: type is 'unknown-type'
+  libla.cpp
+..\libStruct\LibLA\libla.cpp(11): fatal error C1083: Cannot open include file: 'libla.h': No such file or directory
+  matrix.cpp
+..\libStruct\LibLA\matrix.cpp(1): fatal error C1083: Cannot open include file: 'matrix.h': No such file or directory
+  util.cpp
+..\libStruct\LibLA\util.cpp(11): fatal error C1083: Cannot open include file: 'util.h': No such file or directory
+  libstructural.cpp
+..\libStruct\LibStructural\libstructural.cpp(13): fatal error C1083: Cannot open include file: 'libstructural.h': No such file or directory
+  Main.cpp
+Main.cpp(4): fatal error C1083: Cannot open include file: 'libstructural.h': No such file or directory

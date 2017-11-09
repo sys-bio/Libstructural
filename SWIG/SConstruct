@@ -1,0 +1,113 @@
+import glob
+import sys
+
+THREAD_LIB		= 'pthread'
+FRAMEWORKS		= ['veclib']
+buildArchs		= ''
+compileFlags	= ''
+bzipLib			= ''
+
+JAVA_HOME		= ''
+PYTHON_HOME		= ''
+RUBY_HOME		= ''
+R_HOME			= ''
+if sys.platform in ['win32']:
+	sbw_target	= ' -DWIN32'
+elif sys.platform in ['darwin']:
+	sbw_target	= ' -DDARWIN -DLINUX '
+	JAVA_HOME	= '/System/Library/Frameworks/JavaVM.framework/Versions/1.5.0/Headers/'
+	PYTHON_HOME = '/System/Library/Frameworks/Python.framework/Vesions/Current/'
+	if ARGUMENTS.get('UNIVERSAL') == 'no':
+		# make sure we compile little or big endiannes correctly
+		if sys.byteorder in ['little']:
+			sbw_target  = sbw_target + " -D__LITTLE_ENDIAN__"
+		else:
+			sbw_target  = sbw_target + " -D__BIG_ENDIAN__"
+	else:
+		buildArchs = '  -arch i386 -arch ppc '
+
+else:
+	sbw_target = ' -DLINUX'
+
+#if sys.byteorder in ['little']:
+#	sbw_target  = sbw_target + " -D__LITTLE_ENDIAN__"
+#else:
+#	sbw_target  = sbw_target + " -D__BIG_ENDIAN__"
+
+if ARGUMENTS == {}:
+	print 'building SBW RELEASE'
+	compileFlags 	= compileFlags + '-D_GNU_SOURCE -g -Wall -O2 ' + sbw_target
+else:
+	print 'building SBW DEBUG'
+	compileFlags 	= compileFlags + '-D_GNU_SOURCE -g -Wall ' + sbw_target + ' -D_DEBUG'
+
+if ARGUMENTS.has_key('JAVA'):
+	JAVA_HOME = ARGUMENTS.get('JAVA')
+
+if ARGUMENTS.has_key('PYTHON'):
+	PYTHON_HOME = ARGUMENTS.get('PYTHON')
+
+if ARGUMENTS.has_key('RUBY'):
+	RUBY_HOME = ARGUMENTS.get('RUBY')
+	
+if ARGUMENTS.has_key('R_DIR'):
+	R_HOME	= ARGUMENTS.get('R_DIR')
+
+srcSwigJava		= [ './libstructural_wrap_j.cpp' ]
+incSwigJava 	= [ '/usr/local/include', JAVA_HOME, '../LibLA/include/', '../LibStructural/include/' ]
+libSwigJava 	= [ THREAD_LIB, 'LibLA-static', 'LibStructural-static', 'sbml-static', 'bz2', 'z', 'xml2' ]
+
+srcSwigCS		= [ './libstructural_wrap_cs.cpp' ]
+incSwigCS		= [ '/usr/local/include', '../LibLA/include/', '../LibStructural/include/' ]
+libSwigCS		= [ THREAD_LIB, 'LibLA-static', 'LibStructural-static', 'sbml-static', 'bz2', 'z', 'xml2' ]
+
+srcSwigRuby		= [ './libstructural_wrap_ruby.cpp' ]
+incSwigRuby		= [ '/usr/local/include', '../LibLA/include/', '../LibStructural/include/', RUBY_HOME ]
+libSwigRuby		= [ THREAD_LIB, 'LibLA-static', 'LibStructural-static', 'sbml-static', 'bz2', 'z', 'xml2', 'ruby' ]
+
+srcSwigPython	= [ './libstructural_wrap_python.cpp' ]
+incSwigPython 	= [ '/usr/local/include', PYTHON_HOME + '/include/python2.5/', '../LibLA/include/', '../LibStructural/include/' ]
+libSwigPython 	= [ THREAD_LIB, 'LibLA-static', 'LibStructural-static', 'sbml-static', 'bz2', 'z', 'xml2', 'python2.5' ]
+
+srcSwigR		= [ './libstructural_wrap_rlang.cpp' ]
+incSwigR		= [ '/usr/local/include', '../LibLA/include/', '../LibStructural/include/', R_HOME ]
+libSwigR		= [ THREAD_LIB, 'LibLA-static', 'LibStructural-static', 'sbml-static', 'bz2', 'z', 'xml2', 'R']
+
+
+libPath			= [ '../lib', '../../lib', PYTHON_HOME + '/lib/python2.5/config/', R_HOME + '/../Resources/lib']
+
+# make sure we have everything
+
+includes = incSwigPython + incSwigJava + incSwigRuby + incSwigR
+headers = [ 'jni.h', 'Python.h', 'ruby.h', 'Rdefines.h', 'Rversion.h'] 
+for hdr in headers: 
+	file = FindFile(hdr, includes)
+	print '%-12s' % ('%s:' % hdr), file 
+	if file == None:
+		exit
+
+
+env 		= Environment( 
+	CXX			= "g++", 
+	CCFLAGS		= compileFlags, 
+	FRAMEWORKS	= FRAMEWORKS, 
+	LIBPATH		= libPath,
+	LINKFLAGS	= buildArchs
+)
+
+env.Append( CCFLAGS = buildArchs )
+
+
+env.SharedLibrary(  target = './bin/libstructuralj',    source = srcSwigJava, 
+					CPPPATH=incSwigJava, LIBS = libSwigJava )
+env.SharedLibrary(  target = './bin/libstructuralp',    source = srcSwigPython, 
+					CPPPATH=incSwigPython, LIBS = libSwigPython )
+env.SharedLibrary(  target = './bin/libstructuralcs',   source = srcSwigCS, 
+					CPPPATH=incSwigCS, LIBS = libSwigCS )
+env.LoadableModule( target = './bin/libstructuralr',    source = srcSwigR, 
+					CPPPATH=incSwigR, LIBS = libSwigR )
+env.LoadableModule( target = './bin/structural.bundle', source = srcSwigRuby, 
+					CPPPATH=incSwigRuby, LIBS = libSwigRuby, CCFLAGS='', LINKFLAGS='-bundle -flat_namespace -undefined suppress',LIBPATH = libPath + ['/sw/lib'] )
+
+classes = Java(target = 'java/classes', source = 'java')
+Jar('./bin/libstructuralj.jar', source = classes)

@@ -1,0 +1,43 @@
+﻿  complex.cpp
+  libla.cpp
+  matrix.cpp
+  util.cpp
+..\..\libstruct\LibLA\util.cpp(712): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibLA\util.cpp(722): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibLA\util.cpp(735): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibLA\util.cpp(745): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  constraint.cpp
+  libstructural.cpp
+..\..\libstruct\LibStructural\libstructural.cpp(308): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibStructural\libstructural.cpp(309): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibStructural\libstructural.cpp(2200): warning C4018: '<': signed/unsigned mismatch
+..\..\libstruct\LibStructural\libstructural.cpp(2201): warning C4018: '<': signed/unsigned mismatch
+..\..\libstruct\LibStructural\libstructural.cpp(2314): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibStructural\libstructural.cpp(2328): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibStructural\libstructural.cpp(2346): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibStructural\libstructural.cpp(2361): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibStructural\libstructural.cpp(2369): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibStructural\libstructural.cpp(2377): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibStructural\libstructural.cpp(2385): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibStructural\libstructural.cpp(2393): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibStructural\libstructural.cpp(2582): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibStructural\libstructural.cpp(2595): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibStructural\libstructural.cpp(2604): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibStructural\libstructural.cpp(2751): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  lpresult.cpp
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\libstruct\include\lpresult.h(41): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  objective.cpp
+  sbmlmodel.cpp
+  Main.cpp
+.\src\Main.cpp(49): warning C4101: 'outMatrix': unreferenced local variable
+.\src\Main.cpp(48): warning C4101: 'outCols': unreferenced local variable
+.\src\Main.cpp(47): warning C4101: 'outRows': unreferenced local variable
+.\src\Main.cpp(41): warning C4101: 'i': unreferenced local variable
+.\src\Main.cpp(45): warning C4101: 'sMessage': unreferenced local variable
+.\src\Main.cpp(46): warning C4101: 'nLength': unreferenced local variable
+     Creating library C:\Users\hsauro\Documents\Visual Studio 2017\Projects\libstruct\TestLibStruct\x64\Release\structMain.lib and object C:\Users\hsauro\Documents\Visual Studio 2017\Projects\libstruct\TestLibStruct\x64\Release\structMain.exp
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Generating code
+  All 745 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  structMain.vcxproj -> C:\Users\hsauro\Documents\Visual Studio 2017\Projects\libstruct\TestLibStruct\x64\Release\structMain.exe
