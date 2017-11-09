@@ -21,11 +21,16 @@
 #define PRINT_PRECISION		10
 #define LINE			    "-----------------------------------------------------------------------------"
  
-
+#define LibStruct_VERSION "1.0.0"
 
 using namespace LIB_STRUCTURAL;
 using namespace LIB_LA;
 using namespace std;
+
+char* getVersion () {
+	return LibStruct_VERSION;
+}
+
 
 #ifndef NO_SBML
 // ----------------------------------------------------------------------------------------	
