@@ -1,0 +1,1008 @@
+\hypertarget{class_s_b_m_l_error}{}\section{S\+B\+M\+L\+Error Class Reference}
+\label{class_s_b_m_l_error}\index{S\+B\+M\+L\+Error@{S\+B\+M\+L\+Error}}
+
+
+{\ttfamily \#include $<$S\+B\+M\+L\+Error.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} An error, warning or other diagnostic.
+
+
+
+When a lib\+S\+B\+ML operation on S\+B\+ML content results in an error, or when there is something wrong with the S\+B\+ML content, the problems are reported as \hyperlink{class_s_b_m_l_error}{S\+B\+M\+L\+Error} objects. These are generally stored in an \hyperlink{class_s_b_m_l_error_log}{S\+B\+M\+L\+Error\+Log} object; this log object, in turn, is kept in the \hyperlink{class_s_b_m_l_document}{S\+B\+M\+L\+Document} object containing the S\+B\+ML content. Applications can obtain the list of logged errors using S\+B\+M\+L\+Document\+::get\+Error\+Log() and then use the methods provided by \hyperlink{class_s_b_m_l_error_log}{S\+B\+M\+L\+Error\+Log} to access individual \hyperlink{class_s_b_m_l_error}{S\+B\+M\+L\+Error} objects. (Note that despite the word \char`\"{}error\char`\"{} in the name, \hyperlink{class_s_b_m_l_error}{S\+B\+M\+L\+Error} objects are used to represent not only \char`\"{}true\char`\"{} errors, but also warnings and some informational diagnostics. The name is a historical hold-\/over from early versions of lib\+S\+B\+ML, in which the object really was only used to report errors.)
+
+Error codes are useful mainly for software. For human readers, \hyperlink{class_s_b_m_l_error}{S\+B\+M\+L\+Error} also includes text messages that describe the nature of a given problem. The messages can be accessed using S\+B\+M\+L\+Error\+::get\+Short\+Message() and S\+B\+M\+L\+Error\+::get\+Message(). The former provides a brief one-\/line description of the issue, while S\+B\+M\+L\+Error\+::get\+Message() provides a more detailed text, including (if appropriate) references to sections of the S\+B\+ML specifications where relevant topics are discussed. These text strings are suitable for displaying to human users.
+
+In addition, \hyperlink{class_s_b_m_l_error}{S\+B\+M\+L\+Error} also has a severity code. Its value may be retrieved using the method S\+B\+M\+L\+Error\+::get\+Severity(). The possible severity values are the same as those reported by Severity levels currently range from informational (\{L\+I\+B\+S\+B\+M\+L\+\_\+\+S\+E\+V\+\_\+\+I\+N\+FO, X\+M\+L\+Error\+Severity\+\_\+t\}) to fatal errors (\{L\+I\+B\+S\+B\+M\+L\+\_\+\+S\+E\+V\+\_\+\+F\+A\+T\+AL, X\+M\+L\+Error\+Severity\+\_\+t\}). They can be used by an application to evaluate how serious a given problem is.
+
+\hyperlink{class_s_b_m_l_error}{S\+B\+M\+L\+Error} also tracks the Level~3 package extension, if any, was responsible for a given warning or error. Each diagnostic code logged by an lib\+S\+B\+ML extension for S\+B\+ML Level~3 packages includes a record of the package that logged it. It can be retrieved using S\+B\+M\+L\+Error\+::get\+Package(). The information is a simple text string; the string will be the nickname of the package, such as {\ttfamily \char`\"{}comp\char`\"{}} for the Hierarchical Model Composition package, {\ttfamily \char`\"{}fbc\char`\"{}} for the Flux Balance Constraints package, and so on. If the value returned by S\+B\+M\+L\+Error\+::get\+Package() is an empty string or has the value {\ttfamily \char`\"{}core\char`\"{}}, then the error came from lib\+S\+B\+ML core.
+
+Finally, \hyperlink{class_s_b_m_l_error}{S\+B\+M\+L\+Error} records the line and column near where the problem occurred in the S\+B\+ML content. The values may be retrieved using the methods S\+B\+M\+L\+Error\+::get\+Line() and S\+B\+M\+L\+Error\+::get\+Column(). We say \char`\"{}near\char`\"{}, because a lot of factors affect how accurate the line/column information ultimately is. For example, different X\+ML parsers have different conventions for which line and column number they report for a particular problem (which makes a difference when a problem involves an opening X\+ML tag on one line and a closing tag on another line). In some situations, some parsers report invalid line and/or column numbers altogether. If this occurs, lib\+S\+B\+ML sets the line and/or column number in the \hyperlink{class_s_b_m_l_error}{S\+B\+M\+L\+Error} object to the the value of the maximum unsigned long integer representable on the platform where lib\+S\+B\+ML is running. (This is equal to the constant named {\ttfamily U\+L\+O\+N\+G\+\_\+\+M\+AX} in C and C++.) The probability that a true line or column number in an S\+B\+ML model would equal this value is vanishingly small; thus, if an application encounters these values in an \hyperlink{class_x_m_l_error}{X\+M\+L\+Error} object, it can assume no valid line/column number could be provided by lib\+S\+B\+ML in that situation.
+
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+&= Not applicable \\\cline{1-2}
+&= Warning \\\cline{1-2}
+&= Error \\\cline{1-2}
+&= Fatal \\\cline{1-2}
+\end{longtabu}
+
+
+The text shown in the \char`\"{}\+Meaning\char`\"{} is the text returned by the S\+B\+M\+L\+Error\+::get\+Short\+Message() method on a given \hyperlink{class_s_b_m_l_error}{S\+B\+M\+L\+Error} object. A longer and (hopefully) clearer explanation of the issue is returned by S\+B\+M\+L\+Error\+::get\+Message().
+
+The error codes come from different lists depending on whether they\textquotesingle{}re from lib\+S\+B\+ML core or from an S\+B\+ML Level~3 package extension. However, in the language interfaces other than C++, all lib\+S\+B\+ML error codes are ultimately represented as integer constants rather than separate enumerations lists, and they are all stored in a single interface class. Codes from different lib\+S\+B\+ML extensions have names that begin with the package\textquotesingle{}s nickname, such as {\ttfamily Qual} for the Qualitative Models package, {\ttfamily Layout} for the Layout package, and so on. If the name of a code does not begin with one of the package nicknames ({\ttfamily Layout}, {\ttfamily Fbc}, {\ttfamily Comp}, {\ttfamily Qual}, etc.), then it is a code from lib\+S\+B\+ML core. \begin{DoxyParagraph}{}
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{10}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ {\bfseries Enumerator} }&\textbf{ {\bfseries Meaning} }&\PBS\centering \textbf{ L1 V1 }&\PBS\centering \textbf{ L1 V2 }&\PBS\centering \textbf{ L2 V1 }&\PBS\centering \textbf{ L2 V2 }&\PBS\centering \textbf{ L2 V3 }&\PBS\centering \textbf{ L2 V4 }&\PBS\centering \textbf{ L3 V1 }&\PBS\centering \textbf{ L3 V2  }\\\cline{1-10}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ {\bfseries Enumerator} }&\textbf{ {\bfseries Meaning} }&\PBS\centering \textbf{ L1 V1 }&\PBS\centering \textbf{ L1 V2 }&\PBS\centering \textbf{ L2 V1 }&\PBS\centering \textbf{ L2 V2 }&\PBS\centering \textbf{ L2 V3 }&\PBS\centering \textbf{ L2 V4 }&\PBS\centering \textbf{ L3 V1 }&\PBS\centering \textbf{ L3 V2  }\\\cline{1-10}
+\endhead
+\{X\+M\+L\+Unknown\+Error, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Unknown error &&&&&&&&\\\cline{1-10}
+\{X\+M\+L\+Out\+Of\+Memory, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Out of memory &&&&&&&&\\\cline{1-10}
+\{X\+M\+L\+File\+Unreadable, S\+B\+M\+L\+Error\+Code\+\_\+t\} &File unreadable &&&&&&&&\\\cline{1-10}
+\{X\+M\+L\+File\+Unwritable, S\+B\+M\+L\+Error\+Code\+\_\+t\} &File unwritable &&&&&&&&\\\cline{1-10}
+\{X\+M\+L\+File\+Operation\+Error, S\+B\+M\+L\+Error\+Code\+\_\+t\} &File operation error &&&&&&&&\\\cline{1-10}
+\{X\+M\+L\+Network\+Access\+Error, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Network access error &&&&&&&&\\\cline{1-10}
+\{Internal\+X\+M\+L\+Parser\+Error, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Internal X\+ML parser error &&&&&&&&\\\cline{1-10}
+\{Unrecognized\+X\+M\+L\+Parser\+Code, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Unrecognized X\+ML parser code &&&&&&&&\\\cline{1-10}
+\{X\+M\+L\+Transcoder\+Error, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Transcoder error &&&&&&&&\\\cline{1-10}
+\{Missing\+X\+M\+L\+Decl, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Missing X\+ML declaration &&&&&&&&\\\cline{1-10}
+\{Missing\+X\+M\+L\+Encoding, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Missing X\+ML encoding attribute &&&&&&&&\\\cline{1-10}
+\{Bad\+X\+M\+L\+Decl, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Bad X\+ML declaration &&&&&&&&\\\cline{1-10}
+\{Bad\+X\+M\+L\+D\+O\+C\+T\+Y\+PE, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Bad X\+ML D\+O\+C\+T\+Y\+PE &&&&&&&&\\\cline{1-10}
+\{Invalid\+Char\+In\+X\+ML, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid character &&&&&&&&\\\cline{1-10}
+\{Badly\+Formed\+X\+ML, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Badly formed X\+ML &&&&&&&&\\\cline{1-10}
+\{Unclosed\+X\+M\+L\+Token, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Unclosed token &&&&&&&&\\\cline{1-10}
+\{Invalid\+X\+M\+L\+Construct, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid X\+ML construct &&&&&&&&\\\cline{1-10}
+\{X\+M\+L\+Tag\+Mismatch, S\+B\+M\+L\+Error\+Code\+\_\+t\} &X\+ML tag mismatch &&&&&&&&\\\cline{1-10}
+\{Duplicate\+X\+M\+L\+Attribute, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Duplicate attribute &&&&&&&&\\\cline{1-10}
+\{Undefined\+X\+M\+L\+Entity, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Undefined X\+ML entity &&&&&&&&\\\cline{1-10}
+\{Bad\+Processing\+Instruction, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Bad X\+ML processing instruction &&&&&&&&\\\cline{1-10}
+\{Bad\+X\+M\+L\+Prefix, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Bad X\+ML prefix &&&&&&&&\\\cline{1-10}
+\{Bad\+X\+M\+L\+Prefix\+Value, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Bad X\+ML prefix value &&&&&&&&\\\cline{1-10}
+\{Missing\+X\+M\+L\+Required\+Attribute, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Missing required attribute &&&&&&&&\\\cline{1-10}
+\{X\+M\+L\+Attribute\+Type\+Mismatch, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute type mismatch &&&&&&&&\\\cline{1-10}
+\{X\+M\+L\+Bad\+U\+T\+F8\+Content, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Bad U\+T\+F8 content &&&&&&&&\\\cline{1-10}
+\{Missing\+X\+M\+L\+Attribute\+Value, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Missing attribute value &&&&&&&&\\\cline{1-10}
+\{Bad\+X\+M\+L\+Attribute\+Value, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Bad attribute value &&&&&&&&\\\cline{1-10}
+\{Bad\+X\+M\+L\+Attribute, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Bad X\+ML attribute &&&&&&&&\\\cline{1-10}
+\{Unrecognized\+X\+M\+L\+Element, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Unrecognized X\+ML element &&&&&&&&\\\cline{1-10}
+\{Bad\+X\+M\+L\+Comment, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Bad X\+ML comment &&&&&&&&\\\cline{1-10}
+\{Bad\+X\+M\+L\+Decl\+Location, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Bad X\+ML declaration location &&&&&&&&\\\cline{1-10}
+\{X\+M\+L\+Unexpected\+E\+OF, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Unexpected E\+OF &&&&&&&&\\\cline{1-10}
+\{Bad\+X\+M\+L\+I\+D\+Value, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Bad X\+ML ID value &&&&&&&&\\\cline{1-10}
+\{Bad\+X\+M\+L\+I\+D\+Ref, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Bad X\+ML I\+D\+R\+EF &&&&&&&&\\\cline{1-10}
+\{Uninterpretable\+X\+M\+L\+Content, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Uninterpretable X\+ML content &&&&&&&&\\\cline{1-10}
+\{Bad\+X\+M\+L\+Document\+Structure, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Bad X\+ML document structure &&&&&&&&\\\cline{1-10}
+\{Invalid\+After\+X\+M\+L\+Content, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid content after X\+ML content &&&&&&&&\\\cline{1-10}
+\{X\+M\+L\+Expected\+Quoted\+String, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Expected quoted string &&&&&&&&\\\cline{1-10}
+\{X\+M\+L\+Empty\+Value\+Not\+Permitted, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Empty value not permitted &&&&&&&&\\\cline{1-10}
+\{X\+M\+L\+Bad\+Number, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Bad number &&&&&&&&\\\cline{1-10}
+\{X\+M\+L\+Bad\+Colon, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Colon character not permitted &&&&&&&&\\\cline{1-10}
+\{Missing\+X\+M\+L\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Missing X\+ML elements &&&&&&&&\\\cline{1-10}
+\{X\+M\+L\+Content\+Empty, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Empty X\+ML content &&&&&&&&\\\cline{1-10}
+\{Unknown\+Error, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Encountered unknown internal lib\+S\+B\+ML error &&&&&&&&\\\cline{1-10}
+\{Not\+U\+T\+F8, S\+B\+M\+L\+Error\+Code\+\_\+t\} &File does not use U\+T\+F-\/8 encoding &&&&&&&&\\\cline{1-10}
+\{Unrecognized\+Element, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Encountered unrecognized element &&&&&&&&\\\cline{1-10}
+\{Not\+Schema\+Conformant, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Document does not conform to the S\+B\+ML X\+ML schema &&&&&&&&\\\cline{1-10}
+\{L3\+Not\+Schema\+Conformant, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Document is not well-\/formed X\+ML &&&&&&&&\\\cline{1-10}
+\{Invalid\+Math\+Element, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid Math\+ML &&&&&&&&\\\cline{1-10}
+\{Disallowed\+Math\+M\+L\+Symbol, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Disallowed Math\+ML symbol found &&&&&&&&\\\cline{1-10}
+\{Disallowed\+Math\+M\+L\+Encoding\+Use, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Use of the Math\+ML \textquotesingle{}encoding\textquotesingle{} attribute is not allowed on this element &&&&&&&&\\\cline{1-10}
+\{Disallowed\+Definition\+U\+R\+L\+Use, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Use of the Math\+ML \textquotesingle{}definition\+U\+RL\textquotesingle{} attribute is not allowed on this element &&&&&&&&\\\cline{1-10}
+\{Bad\+Csymbol\+Definition\+U\+R\+L\+Value, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid {\ttfamily $<$csymbol$>$} \textquotesingle{}definition\+U\+RL\textquotesingle{} attribute value &&&&&&&&\\\cline{1-10}
+\{Disallowed\+Math\+Type\+Attribute\+Use, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Use of the Math\+ML \textquotesingle{}type\textquotesingle{} attribute is not allowed on this element &&&&&&&&\\\cline{1-10}
+\{Disallowed\+Math\+Type\+Attribute\+Value, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Disallowed Math\+ML \textquotesingle{}type\textquotesingle{} attribute value &&&&&&&&\\\cline{1-10}
+\{Lambda\+Only\+Allowed\+In\+Function\+Def, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Use of {\ttfamily $<$lambda$>$} not permitted outside of \hyperlink{class_function_definition}{Function\+Definition} objects &&&&&&&&\\\cline{1-10}
+\{Boolean\+Ops\+Need\+Boolean\+Args, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Non-\/\+Boolean argument given to Boolean operator &&&&&&&&\\\cline{1-10}
+\{Numeric\+Ops\+Need\+Numeric\+Args, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Non-\/numerical argument given to numerical operator &&&&&&&&\\\cline{1-10}
+\{Args\+To\+Eq\+Need\+Same\+Type, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Arguments to {\ttfamily $<$eq$>$} and {\ttfamily $<$neq$>$} must have the same data types &&&&&&&&\\\cline{1-10}
+\{Piecewise\+Needs\+Consistent\+Types, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Terms in a {\ttfamily $<$piecewise$>$} expression must have consistent data types &&&&&&&&\\\cline{1-10}
+\{Piece\+Needs\+Boolean, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The second argument of a {\ttfamily $<$piece$>$} expression must yield a Boolean value &&&&&&&&\\\cline{1-10}
+\{Apply\+Ci\+Must\+Be\+User\+Function, S\+B\+M\+L\+Error\+Code\+\_\+t\} &A {\ttfamily $<$ci$>$} element in this context must refer to a function definition &&&&&&&&\\\cline{1-10}
+\{Apply\+Ci\+Must\+Be\+Model\+Component, S\+B\+M\+L\+Error\+Code\+\_\+t\} &A {\ttfamily $<$ci$>$} element in this context must refer to a model component &&&&&&&&\\\cline{1-10}
+\{Kinetic\+Law\+Parameters\+Are\+Local\+Only, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Cannot use a \hyperlink{class_kinetic_law}{Kinetic\+Law} local parameter outside of its local scope &&&&&&&&\\\cline{1-10}
+\{Math\+Result\+Must\+Be\+Numeric, S\+B\+M\+L\+Error\+Code\+\_\+t\} &A formula\textquotesingle{}s result in this context must be a numerical value &&&&&&&&\\\cline{1-10}
+\{Ops\+Need\+Correct\+Number\+Of\+Args, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Incorrect number of arguments given to Math\+ML operator &&&&&&&&\\\cline{1-10}
+\{Invalid\+No\+Args\+Passed\+To\+Function\+Def, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Incorrect number of arguments given to function invocation &&&&&&&&\\\cline{1-10}
+\{Disallowed\+Math\+Units\+Use, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}units\textquotesingle{} is only permitted on {\ttfamily $<$cn$>$} elements &&&&&&&&\\\cline{1-10}
+\{Invalid\+Units\+Value, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid value given for the \textquotesingle{}units\textquotesingle{} attribute &&&&&&&&\\\cline{1-10}
+\{Ci\+Cannot\+Reference0\+D\+Compartment, S\+B\+M\+L\+Error\+Code\+\_\+t\} &A {\ttfamily $<$ci$>$} element cannot reference a 0D compartment &&&&&&&&\\\cline{1-10}
+\{Rate\+Of\+Target\+Must\+Be\+Ci, S\+B\+M\+L\+Error\+Code\+\_\+t\} &A \textquotesingle{}rate\+Of\textquotesingle{} {\ttfamily $<$csymbol$>$} must target only a single {\ttfamily $<$ci$>$} element &&&&&&&&\\\cline{1-10}
+\{Rate\+Of\+Target\+Cannot\+Be\+Assigned, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The target of a \textquotesingle{}rate\+Of\textquotesingle{} {\ttfamily $<$csymbol$>$} cannot be assigned &&&&&&&&\\\cline{1-10}
+\{Rate\+Of\+Species\+Target\+Compartment\+Not, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Compartments of non-\/substance {\ttfamily $<$species$>$} referenced by \textquotesingle{}rate\+Of\textquotesingle{} must not vary &&&&&&&&\\\cline{1-10}
+\{Duplicate\+Component\+Id, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Duplicate \textquotesingle{}id\textquotesingle{} attribute value &&&&&&&&\\\cline{1-10}
+\{Duplicate\+Unit\+Definition\+Id, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Duplicate unit definition \textquotesingle{}id\textquotesingle{} attribute value &&&&&&&&\\\cline{1-10}
+\{Duplicate\+Local\+Parameter\+Id, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Duplicate local parameter \textquotesingle{}id\textquotesingle{} attribute value &&&&&&&&\\\cline{1-10}
+\{Multiple\+Assignment\+Or\+Rate\+Rules, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Multiple rules for the same variable are not allowed &&&&&&&&\\\cline{1-10}
+\{Multiple\+Event\+Assignments\+For\+Id, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Multiple event assignments for the same variable are not allowed &&&&&&&&\\\cline{1-10}
+\{Event\+And\+Assignment\+Rule\+For\+Id, S\+B\+M\+L\+Error\+Code\+\_\+t\} &An event assignment and an assignment rule must not have the same value for \textquotesingle{}variable\textquotesingle{} &&&&&&&&\\\cline{1-10}
+\{Duplicate\+Meta\+Id, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Duplicate \textquotesingle{}metaid\textquotesingle{} attribute value &&&&&&&&\\\cline{1-10}
+\{Invalid\+S\+B\+O\+Term\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid syntax for an \textquotesingle{}sbo\+Term\textquotesingle{} attribute value &&&&&&&&\\\cline{1-10}
+\{Invalid\+Metaid\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid syntax for a \textquotesingle{}metaid\textquotesingle{} attribute value &&&&&&&&\\\cline{1-10}
+\{Invalid\+Id\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid syntax for an \textquotesingle{}id\textquotesingle{} attribute value &&&&&&&&\\\cline{1-10}
+\{Invalid\+Unit\+Id\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid syntax for the identifier of a unit &&&&&&&&\\\cline{1-10}
+\{Invalid\+Name\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid syntax for a \textquotesingle{}name\textquotesingle{} attribute value &&&&&&&&\\\cline{1-10}
+\{Dangling\+Unit\+Reference, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Dangling reference to a unit. &&&&&&&&\\\cline{1-10}
+\{Missing\+Annotation\+Namespace, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Missing declaration of the X\+ML namespace for the annotation &&&&&&&&\\\cline{1-10}
+\{Duplicate\+Annotation\+Namespaces, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Multiple annotations using the same X\+ML namespace &&&&&&&&\\\cline{1-10}
+\{S\+B\+M\+L\+Namespace\+In\+Annotation, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The S\+B\+ML X\+ML namespace cannot be used in an Annotation object &&&&&&&&\\\cline{1-10}
+\{Multiple\+Annotations, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only one Annotation object is permitted under a given S\+B\+ML object &&&&&&&&\\\cline{1-10}
+\{Inconsistent\+Arg\+Units, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The units of the function call\textquotesingle{}s arguments are not consistent with its definition &&&&&&&&\\\cline{1-10}
+\{Inconsistent\+Kinetic\+Law\+Units\+L3, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The kinetic law\textquotesingle{}s units are inconsistent with those of other kinetic laws in the model &&&&&&&&\\\cline{1-10}
+\{Assign\+Rule\+Compartment\+Mismatch, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Mismatched units in assignment rule for compartment &&&&&&&&\\\cline{1-10}
+\{Assign\+Rule\+Species\+Mismatch, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Mismatched units in assignment rule for species &&&&&&&&\\\cline{1-10}
+\{Assign\+Rule\+Parameter\+Mismatch, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Mismatched units in assignment rule for parameter &&&&&&&&\\\cline{1-10}
+\{Assign\+Rule\+Stoichiometry\+Mismatch, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Mismatched units in assignment rule for stoichiometry &&&&&&&&\\\cline{1-10}
+\{Init\+Assign\+Compartmen\+Mismatch, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Mismatched units in initial assignment to compartment &&&&&&&&\\\cline{1-10}
+\{Init\+Assign\+Species\+Mismatch, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Mismatched units in initial assignment to species &&&&&&&&\\\cline{1-10}
+\{Init\+Assign\+Parameter\+Mismatch, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Mismatched units in initial assignment to parameter &&&&&&&&\\\cline{1-10}
+\{Init\+Assign\+Stoichiometry\+Mismatch, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Mismatched units in initial assignment to stoichiometry &&&&&&&&\\\cline{1-10}
+\{Rate\+Rule\+Compartment\+Mismatch, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Mismatched units in rate rule for compartment &&&&&&&&\\\cline{1-10}
+\{Rate\+Rule\+Species\+Mismatch, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Mismatched units in rate rule for species &&&&&&&&\\\cline{1-10}
+\{Rate\+Rule\+Parameter\+Mismatch, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Mismatched units in rate rule for parameter &&&&&&&&\\\cline{1-10}
+\{Rate\+Rule\+Stoichiometry\+Mismatch, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Mismatched units in rate rule for stoichiometry &&&&&&&&\\\cline{1-10}
+\{Kinetic\+Law\+Not\+Substance\+Per\+Time, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The units of the kinetic law are not \textquotesingle{}substance\textquotesingle{}/\textquotesingle{}time\textquotesingle{} &&&&&&&&\\\cline{1-10}
+\{Species\+Invalid\+Extent\+Units, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The species\textquotesingle{} units are not consistent with units of extent &&&&&&&&\\\cline{1-10}
+\{Delay\+Units\+Not\+Time, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The units of the delay expression are not units of time &&&&&&&&\\\cline{1-10}
+\{Event\+Assign\+Compartment\+Mismatch, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Mismatched units in event assignment for compartment &&&&&&&&\\\cline{1-10}
+\{Event\+Assign\+Species\+Mismatch, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Mismatched units in event assignment for species &&&&&&&&\\\cline{1-10}
+\{Event\+Assign\+Parameter\+Mismatch, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Mismatched units in event assignment for parameter &&&&&&&&\\\cline{1-10}
+\{Event\+Assign\+Stoichiometry\+Mismatch, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Mismatched units in event assignment for stoichiometry &&&&&&&&\\\cline{1-10}
+\{Priority\+Units\+Not\+Dimensionless, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The units of a priority expression must be \textquotesingle{}dimensionless\textquotesingle{} &&&&&&&&\\\cline{1-10}
+\{Overdetermined\+System, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The model is overdetermined &&&&&&&&\\\cline{1-10}
+\{Invalid\+Model\+S\+B\+O\+Term, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}sbo\+Term\textquotesingle{} attribute value for a \hyperlink{class_model}{Model} object &&&&&&&&\\\cline{1-10}
+\{Invalid\+Function\+Def\+S\+B\+O\+Term, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}sbo\+Term\textquotesingle{} attribute value for a \hyperlink{class_function_definition}{Function\+Definition} object &&&&&&&&\\\cline{1-10}
+\{Invalid\+Parameter\+S\+B\+O\+Term, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}sbo\+Term\textquotesingle{} attribute value for a \hyperlink{class_parameter}{Parameter} object &&&&&&&&\\\cline{1-10}
+\{Invalid\+Init\+Assign\+S\+B\+O\+Term, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}sbo\+Term\textquotesingle{} attribute value for an \hyperlink{class_initial_assignment}{Initial\+Assignment} object &&&&&&&&\\\cline{1-10}
+\{Invalid\+Rule\+S\+B\+O\+Term, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}sbo\+Term\textquotesingle{} attribute value for a \hyperlink{class_rule}{Rule} object &&&&&&&&\\\cline{1-10}
+\{Invalid\+Constraint\+S\+B\+O\+Term, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}sbo\+Term\textquotesingle{} attribute value for a \hyperlink{class_constraint}{Constraint} object &&&&&&&&\\\cline{1-10}
+\{Invalid\+Reaction\+S\+B\+O\+Term, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}sbo\+Term\textquotesingle{} attribute value for a \hyperlink{class_reaction}{Reaction} object &&&&&&&&\\\cline{1-10}
+\{Invalid\+Species\+Reference\+S\+B\+O\+Term, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}sbo\+Term\textquotesingle{} attribute value for a \hyperlink{class_species_reference}{Species\+Reference} object &&&&&&&&\\\cline{1-10}
+\{Invalid\+Kinetic\+Law\+S\+B\+O\+Term, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}sbo\+Term\textquotesingle{} attribute value for a \hyperlink{class_kinetic_law}{Kinetic\+Law} object &&&&&&&&\\\cline{1-10}
+\{Invalid\+Event\+S\+B\+O\+Term, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}sbo\+Term\textquotesingle{} attribute value for an \hyperlink{class_event}{Event} object &&&&&&&&\\\cline{1-10}
+\{Invalid\+Event\+Assignment\+S\+B\+O\+Term, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}sbo\+Term\textquotesingle{} attribute value for an \hyperlink{class_event_assignment}{Event\+Assignment} object &&&&&&&&\\\cline{1-10}
+\{Invalid\+Compartment\+S\+B\+O\+Term, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}sbo\+Term\textquotesingle{} attribute value for a \hyperlink{class_compartment}{Compartment} object &&&&&&&&\\\cline{1-10}
+\{Invalid\+Species\+S\+B\+O\+Term, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}sbo\+Term\textquotesingle{} attribute value for a \hyperlink{class_species}{Species} object &&&&&&&&\\\cline{1-10}
+\{Invalid\+Compartment\+Type\+S\+B\+O\+Term, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}sbo\+Term\textquotesingle{} attribute value for a \hyperlink{class_compartment_type}{Compartment\+Type} object &&&&&&&&\\\cline{1-10}
+\{Invalid\+Species\+Type\+S\+B\+O\+Term, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}sbo\+Term\textquotesingle{} attribute value for a \hyperlink{class_species_type}{Species\+Type} object &&&&&&&&\\\cline{1-10}
+\{Invalid\+Trigger\+S\+B\+O\+Term, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}sbo\+Term\textquotesingle{} attribute value for an \hyperlink{class_event}{Event} \hyperlink{class_trigger}{Trigger} object &&&&&&&&\\\cline{1-10}
+\{Invalid\+Delay\+S\+B\+O\+Term, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}sbo\+Term\textquotesingle{} attribute value for an \hyperlink{class_event}{Event} \hyperlink{class_delay}{Delay} object &&&&&&&&\\\cline{1-10}
+\{Invalid\+Local\+Parameter\+S\+B\+O\+Term, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}sbo\+Term\textquotesingle{} attribute value for a \hyperlink{class_local_parameter}{Local\+Parameter} object &&&&&&&&\\\cline{1-10}
+\{Invalid\+S\+B\+M\+L\+Element\+S\+B\+O\+Term, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}sbo\+Term\textquotesingle{} attribute value for the {\ttfamily $<$sbml$>$} element &&&&&&&&\\\cline{1-10}
+\{Notes\+Not\+In\+X\+H\+T\+M\+L\+Namespace, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Notes must be placed in the X\+H\+T\+ML X\+ML namespace &&&&&&&&\\\cline{1-10}
+\{Notes\+Contains\+X\+M\+L\+Decl, S\+B\+M\+L\+Error\+Code\+\_\+t\} &X\+ML declarations are not permitted in Notes objects &&&&&&&&\\\cline{1-10}
+\{Notes\+Contains\+D\+O\+C\+T\+Y\+PE, S\+B\+M\+L\+Error\+Code\+\_\+t\} &X\+ML D\+O\+C\+T\+Y\+PE elements are not permitted in Notes objects &&&&&&&&\\\cline{1-10}
+\{Invalid\+Notes\+Content, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid notes content found &&&&&&&&\\\cline{1-10}
+\{Only\+One\+Notes\+Element\+Allowed, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only one Notes subobject is permitted on a given S\+B\+ML object &&&&&&&&\\\cline{1-10}
+\{Invalid\+Namespace\+On\+S\+B\+ML, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid X\+ML namespace for the S\+B\+ML container element &&&&&&&&\\\cline{1-10}
+\{Missing\+Or\+Inconsistent\+Level, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Missing or inconsistent value for the \textquotesingle{}level\textquotesingle{} attribute &&&&&&&&\\\cline{1-10}
+\{Missing\+Or\+Inconsistent\+Version, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Missing or inconsistent value for the \textquotesingle{}version\textquotesingle{} attribute &&&&&&&&\\\cline{1-10}
+\{Package\+N\+S\+Must\+Match, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Inconsistent or invalid S\+B\+ML Level/\+Version for the package namespace declaration &&&&&&&&\\\cline{1-10}
+\{Level\+Positive\+Integer, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \textquotesingle{}level\textquotesingle{} attribute must have a positive integer value &&&&&&&&\\\cline{1-10}
+\{Version\+Positive\+Integer, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \textquotesingle{}version\textquotesingle{} attribute must have a positive integer value &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+S\+B\+ML, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the S\+B\+ML container element &&&&&&&&\\\cline{1-10}
+\{L3\+Package\+On\+Lower\+S\+B\+ML, S\+B\+M\+L\+Error\+Code\+\_\+t\} &An L3 package ns found on the S\+B\+ML container element &&&&&&&&\\\cline{1-10}
+\{Missing\+Model, S\+B\+M\+L\+Error\+Code\+\_\+t\} &No model definition found &&&&&&&&\\\cline{1-10}
+\{Incorrect\+Order\+In\+Model, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Incorrect ordering of components within the \hyperlink{class_model}{Model} object &&&&&&&&\\\cline{1-10}
+\{Empty\+List\+Element, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Empty List\+Of\+\_\+\+\_\+\+\_\+ object found &&&&&&&&\\\cline{1-10}
+\{Need\+Compartment\+If\+Have\+Species, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The presence of a species requires a compartment &&&&&&&&\\\cline{1-10}
+\{One\+Of\+Each\+List\+Of, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only one of each kind of List\+Of\+\_\+\+\_\+\+\_\+ object is allowed inside a \hyperlink{class_model}{Model} object &&&&&&&&\\\cline{1-10}
+\{Only\+Func\+Defs\+In\+List\+Of\+Func\+Defs, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only \hyperlink{class_function_definition}{Function\+Definition}, Notes and Annotation objects are allowed in \hyperlink{class_list_of_function_definitions}{List\+Of\+Function\+Definitions} &&&&&&&&\\\cline{1-10}
+\{Only\+Unit\+Defs\+In\+List\+Of\+Unit\+Defs, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only \hyperlink{class_unit_definition}{Unit\+Definition}, Notes and Annotation objects are allowed in \hyperlink{class_list_of_unit_definitions}{List\+Of\+Unit\+Definitions} objects &&&&&&&&\\\cline{1-10}
+\{Only\+Compartments\+In\+List\+Of\+Compartments, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only \hyperlink{class_compartment}{Compartment}, Notes and Annotation objects are allowed in \hyperlink{class_list_of_compartments}{List\+Of\+Compartments} objects &&&&&&&&\\\cline{1-10}
+\{Only\+Species\+In\+List\+Of\+Species, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only \hyperlink{class_species}{Species}, Notes and Annotation objects are allowed in \hyperlink{class_list_of_species}{List\+Of\+Species} objects &&&&&&&&\\\cline{1-10}
+\{Only\+Parameters\+In\+List\+Of\+Parameters, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only \hyperlink{class_parameter}{Parameter}, Notes and Annotation objects are allowed in \hyperlink{class_list_of_parameters}{List\+Of\+Parameters} objects &&&&&&&&\\\cline{1-10}
+\{Only\+Init\+Assigns\+In\+List\+Of\+Init\+Assigns, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only \hyperlink{class_initial_assignment}{Initial\+Assignment}, Notes and Annotation objects are allowed in \hyperlink{class_list_of_initial_assignments}{List\+Of\+Initial\+Assignments} objects &&&&&&&&\\\cline{1-10}
+\{Only\+Rules\+In\+List\+Of\+Rules, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only \hyperlink{class_rule}{Rule}, Notes and Annotation objects are allowed in \hyperlink{class_list_of_rules}{List\+Of\+Rules} objects &&&&&&&&\\\cline{1-10}
+\{Only\+Constraints\+In\+List\+Of\+Constraints, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only \hyperlink{class_constraint}{Constraint}, Notes and Annotation objects are allowed in \hyperlink{class_list_of_constraints}{List\+Of\+Constraints} objects &&&&&&&&\\\cline{1-10}
+\{Only\+Reactions\+In\+List\+Of\+Reactions, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only \hyperlink{class_reaction}{Reaction}, Notes and Annotation objects are allowed in \hyperlink{class_list_of_reactions}{List\+Of\+Reactions} objects &&&&&&&&\\\cline{1-10}
+\{Only\+Events\+In\+List\+Of\+Events, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only \hyperlink{class_event}{Event}, Notes and Annotation objects are allowed in \hyperlink{class_list_of_events}{List\+Of\+Events} objects &&&&&&&&\\\cline{1-10}
+\{L3\+Conversion\+Factor\+On\+Model, S\+B\+M\+L\+Error\+Code\+\_\+t\} &A \textquotesingle{}conversion\+Factor\textquotesingle{} attribute value must reference a \hyperlink{class_parameter}{Parameter} object &&&&&&&&\\\cline{1-10}
+\{L3\+Time\+Units\+On\+Model, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}time\+Units\textquotesingle{} attribute value &&&&&&&&\\\cline{1-10}
+\{L3\+Volume\+Units\+On\+Model, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}volume\+Units\textquotesingle{} attribute value &&&&&&&&\\\cline{1-10}
+\{L3\+Area\+Units\+On\+Model, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}area\+Units\textquotesingle{} attribute value &&&&&&&&\\\cline{1-10}
+\{L3\+Length\+Units\+On\+Model, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}length\+Units\textquotesingle{} attribute value &&&&&&&&\\\cline{1-10}
+\{L3\+Extent\+Units\+On\+Model, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}extent\+Units\textquotesingle{} attribute value &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+Model, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the \hyperlink{class_model}{Model} object &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+List\+Of\+Funcs, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the \hyperlink{class_list_of_function_definitions}{List\+Of\+Function\+Definitions} object &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+List\+Of\+Unit\+Defs, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the \hyperlink{class_list_of_unit_definitions}{List\+Of\+Unit\+Definitions} object &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+List\+Of\+Comps, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the \hyperlink{class_list_of_compartments}{List\+Of\+Compartments} object &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+List\+Of\+Species, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the \hyperlink{class_list_of_species}{List\+Of\+Species} object &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+List\+Of\+Params, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the \hyperlink{class_list_of_parameters}{List\+Of\+Parameters} object &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+List\+Of\+Init\+Assign, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the \hyperlink{class_list_of_initial_assignments}{List\+Of\+Initial\+Assignments} object &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+List\+Of\+Rules, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the \hyperlink{class_list_of_rules}{List\+Of\+Rules} object &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+List\+Of\+Constraints, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the \hyperlink{class_list_of_constraints}{List\+Of\+Constraints} object &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+List\+Of\+Reactions, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the \hyperlink{class_list_of_reactions}{List\+Of\+Reactions} object &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+List\+Of\+Events, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the \hyperlink{class_list_of_events}{List\+Of\+Events} object &&&&&&&&\\\cline{1-10}
+\{L3\+V2\+Substance\+Units\+On\+Model, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}substance\+Units\textquotesingle{} attribute value &&&&&&&&\\\cline{1-10}
+\{Function\+Def\+Math\+Not\+Lambda, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid expression found in the function definition &&&&&&&&\\\cline{1-10}
+\{Invalid\+Apply\+Ci\+In\+Lambda, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid forward reference in the Math\+ML {\ttfamily $<$apply$>$}{\ttfamily $<$ci$>$}...{\ttfamily $<$/ci$>$}{\ttfamily $<$/apply$>$} expression &&&&&&&&\\\cline{1-10}
+\{Recursive\+Function\+Definition, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Recursive function definitions are not permitted &&&&&&&&\\\cline{1-10}
+\{Invalid\+Ci\+In\+Lambda, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid {\ttfamily $<$ci$>$} reference found inside the {\ttfamily $<$lambda$>$} mathematical formula &&&&&&&&\\\cline{1-10}
+\{Invalid\+Function\+Def\+Return\+Type, S\+B\+M\+L\+Error\+Code\+\_\+t\} &A function\textquotesingle{}s return type must be either a number or a Boolean &&&&&&&&\\\cline{1-10}
+\{One\+Math\+Element\+Per\+Func, S\+B\+M\+L\+Error\+Code\+\_\+t\} &A \hyperlink{class_function_definition}{Function\+Definition} object may contain one {\ttfamily $<$math$>$} element &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+Func, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the \hyperlink{class_function_definition}{Function\+Definition} object &&&&&&&&\\\cline{1-10}
+\{Invalid\+Unit\+Def\+Id, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}id\textquotesingle{} attribute value for a \hyperlink{class_unit_definition}{Unit\+Definition} object &&&&&&&&\\\cline{1-10}
+\{Invalid\+Substance\+Redefinition, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid redefinition of built-\/in type \textquotesingle{}substance\textquotesingle{} &&&&&&&&\\\cline{1-10}
+\{Invalid\+Length\+Redefinition, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid redefinition of built-\/in type \textquotesingle{}length\textquotesingle{} &&&&&&&&\\\cline{1-10}
+\{Invalid\+Area\+Redefinition, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid redefinition of built-\/in type name \textquotesingle{}area\textquotesingle{} &&&&&&&&\\\cline{1-10}
+\{Invalid\+Time\+Redefinition, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid redefinition of built-\/in type name \textquotesingle{}time\textquotesingle{} &&&&&&&&\\\cline{1-10}
+\{Invalid\+Volume\+Redefinition, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid redefinition of built-\/in type name \textquotesingle{}volume\textquotesingle{} &&&&&&&&\\\cline{1-10}
+\{Volume\+Litre\+Def\+Exponent\+Not\+One, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Must use \textquotesingle{}exponent\textquotesingle{}=1 when defining \textquotesingle{}volume\textquotesingle{} in terms of litres &&&&&&&&\\\cline{1-10}
+\{Volume\+Metre\+Def\+Exponent\+Not3, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Must use \textquotesingle{}exponent\textquotesingle{}=3 when defining \textquotesingle{}volume\textquotesingle{} in terms of metres &&&&&&&&\\\cline{1-10}
+\{Empty\+List\+Of\+Units, S\+B\+M\+L\+Error\+Code\+\_\+t\} &An empty list of \hyperlink{class_unit}{Unit} objects is not permitted in a \hyperlink{class_unit_definition}{Unit\+Definition} object &&&&&&&&\\\cline{1-10}
+\{Invalid\+Unit\+Kind, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid value for the \textquotesingle{}kind\textquotesingle{} attribute of a \hyperlink{class_unit_definition}{Unit\+Definition} object &&&&&&&&\\\cline{1-10}
+\{Offset\+No\+Longer\+Valid, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\hyperlink{class_unit}{Unit} attribute \textquotesingle{}offset\textquotesingle{} is not supported in this Level+\+Version of S\+B\+ML &&&&&&&&\\\cline{1-10}
+\{Celsius\+No\+Longer\+Valid, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\hyperlink{class_unit}{Unit} name \textquotesingle{}Celsius\textquotesingle{} is not defined in this Level+\+Version of S\+B\+ML &&&&&&&&\\\cline{1-10}
+\{Empty\+Unit\+List\+Element, S\+B\+M\+L\+Error\+Code\+\_\+t\} &A \hyperlink{class_list_of_units}{List\+Of\+Units} object must not be empty &&&&&&&&\\\cline{1-10}
+\{One\+List\+Of\+Units\+Per\+Unit\+Def, S\+B\+M\+L\+Error\+Code\+\_\+t\} &At most one \hyperlink{class_list_of_units}{List\+Of\+Units} object is allowed inside a \hyperlink{class_unit_definition}{Unit\+Definition} object &&&&&&&&\\\cline{1-10}
+\{Only\+Units\+In\+List\+Of\+Units, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only \hyperlink{class_unit}{Unit}, Notes and Annotation objects are allowed in \hyperlink{class_list_of_units}{List\+Of\+Units} objects &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+Unit\+Definition, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the \hyperlink{class_unit_definition}{Unit\+Definition} object &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+List\+Of\+Units, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the \hyperlink{class_list_of_units}{List\+Of\+Units} object &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+Unit, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the \hyperlink{class_unit}{Unit} object &&&&&&&&\\\cline{1-10}
+\{Zero\+Dimensional\+Compartment\+Size, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid use of the \textquotesingle{}size\textquotesingle{} attribute for a zero-\/dimensional compartment &&&&&&&&\\\cline{1-10}
+\{Zero\+Dimensional\+Compartment\+Units, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid use of the \textquotesingle{}units\textquotesingle{} attribute for a zero-\/dimensional compartment &&&&&&&&\\\cline{1-10}
+\{Zero\+Dimensional\+Compartment\+Const, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Zero-\/dimensional compartments must be defined to be constant &&&&&&&&\\\cline{1-10}
+\{Undefined\+Outside\+Compartment, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid value for the \textquotesingle{}outside\textquotesingle{} attribute of a \hyperlink{class_compartment}{Compartment} object &&&&&&&&\\\cline{1-10}
+\{Recursive\+Compartment\+Containment, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Recursive nesting of compartments via the \textquotesingle{}outside\textquotesingle{} attribute is not permitted &&&&&&&&\\\cline{1-10}
+\{Zero\+D\+Compartment\+Containment, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid nesting of zero-\/dimensional compartments &&&&&&&&\\\cline{1-10}
+\{Invalid1\+D\+Compartment\+Units, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid value for the \textquotesingle{}units\textquotesingle{} attribute of a one-\/dimensional compartment &&&&&&&&\\\cline{1-10}
+\{Invalid2\+D\+Compartment\+Units, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid value for the \textquotesingle{}units\textquotesingle{} attribute of a two-\/dimensional compartment &&&&&&&&\\\cline{1-10}
+\{Invalid3\+D\+Compartment\+Units, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid value for the \textquotesingle{}units\textquotesingle{} attribute of a three-\/dimensional compartment &&&&&&&&\\\cline{1-10}
+\{Invalid\+Compartment\+Type\+Ref, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid value for the \textquotesingle{}compartment\+Type\textquotesingle{} attribute of a compartment &&&&&&&&\\\cline{1-10}
+\{One\+Dimensional\+Compartment\+Units, S\+B\+M\+L\+Error\+Code\+\_\+t\} &No units defined for 1-\/D compartment &&&&&&&&\\\cline{1-10}
+\{Two\+Dimensional\+Compartment\+Units, S\+B\+M\+L\+Error\+Code\+\_\+t\} &No units defined for 2-\/D compartment &&&&&&&&\\\cline{1-10}
+\{Three\+Dimensional\+Compartment\+Units, S\+B\+M\+L\+Error\+Code\+\_\+t\} &No units defined for 3-\/D \hyperlink{class_compartment}{Compartment} object &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+Compartment, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on \hyperlink{class_compartment}{Compartment} object &&&&&&&&\\\cline{1-10}
+\{No\+Units\+On\+Compartment, S\+B\+M\+L\+Error\+Code\+\_\+t\} &No units defined for \hyperlink{class_compartment}{Compartment} object &&&&&&&&\\\cline{1-10}
+\{Invalid\+Species\+Compartment\+Ref, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid value found for \hyperlink{class_species}{Species} \textquotesingle{}compartment\textquotesingle{} attribute &&&&&&&&\\\cline{1-10}
+\{Has\+Only\+Subs\+No\+Spatial\+Units, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}spatial\+Size\+Units\textquotesingle{} must not be set if \textquotesingle{}has\+Only\+Substance\+Units\textquotesingle{}=\textquotesingle{}true\textquotesingle{} &&&&&&&&\\\cline{1-10}
+\{No\+Spatial\+Units\+In\+ZeroD, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}spatial\+Size\+Units\textquotesingle{} must not be set if the compartment is zero-\/dimensional &&&&&&&&\\\cline{1-10}
+\{No\+Concentration\+In\+ZeroD, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}initial\+Concentration\textquotesingle{} must not be set if the compartment is zero-\/dimensional &&&&&&&&\\\cline{1-10}
+\{Spatial\+Units\+In\+OneD, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid value for \textquotesingle{}spatial\+Size\+Units\textquotesingle{} attribute of a one-\/dimensional compartment &&&&&&&&\\\cline{1-10}
+\{Spatial\+Units\+In\+TwoD, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid value for the \textquotesingle{}spatial\+Size\+Units\textquotesingle{} attribute of a two-\/dimensional compartment &&&&&&&&\\\cline{1-10}
+\{Spatial\+Units\+In\+ThreeD, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid value for the \textquotesingle{}spatial\+Size\+Units\textquotesingle{} attribute of a three-\/dimensional compartment &&&&&&&&\\\cline{1-10}
+\{Invalid\+Species\+Susbstance\+Units, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid value for a \hyperlink{class_species}{Species} \textquotesingle{}units\textquotesingle{} attribute &&&&&&&&\\\cline{1-10}
+\{Both\+Amount\+And\+Concentration\+Set, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Cannot set both \textquotesingle{}initial\+Concentration\textquotesingle{} and \textquotesingle{}initial\+Amount\textquotesingle{} attributes simultaneously &&&&&&&&\\\cline{1-10}
+\{Non\+Boundary\+Species\+Assigned\+And\+Used, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Cannot use a non-\/boundary species in both reactions and rules simultaneously &&&&&&&&\\\cline{1-10}
+\{Non\+Constant\+Species\+Used, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Cannot use a constant, non-\/boundary species as a reactant or product &&&&&&&&\\\cline{1-10}
+\{Invalid\+Species\+Type\+Ref, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid value for the \textquotesingle{}species\+Type\textquotesingle{} attribute of a species &&&&&&&&\\\cline{1-10}
+\{Mult\+Species\+Same\+Type\+In\+Compartment, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Cannot have multiple species of the same species type in the same compartment &&&&&&&&\\\cline{1-10}
+\{Missing\+Species\+Compartment, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Missing value for the \textquotesingle{}compartment\textquotesingle{} attribute &&&&&&&&\\\cline{1-10}
+\{Spatial\+Size\+Units\+Removed, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}spatial\+Size\+Units\textquotesingle{} is not supported in this Level+\+Version of S\+B\+ML &&&&&&&&\\\cline{1-10}
+\{Substance\+Units\+On\+Species, S\+B\+M\+L\+Error\+Code\+\_\+t\} &No substance units defined for the species &&&&&&&&\\\cline{1-10}
+\{Conversion\+Factor\+On\+Species, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid value for the \textquotesingle{}conversion\+Factor\textquotesingle{} attribute &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+Species, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on \hyperlink{class_species}{Species} object &&&&&&&&\\\cline{1-10}
+\{Invalid\+Parameter\+Units, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid value for the \textquotesingle{}units\textquotesingle{} attribute of a \hyperlink{class_parameter}{Parameter} object &&&&&&&&\\\cline{1-10}
+\{Parameter\+Units, S\+B\+M\+L\+Error\+Code\+\_\+t\} &No units defined for the parameter &&&&&&&&\\\cline{1-10}
+\{Conversion\+Factor\+Must\+Constant, S\+B\+M\+L\+Error\+Code\+\_\+t\} &A conversion factor must reference a \hyperlink{class_parameter}{Parameter} object declared to be a constant &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+Parameter, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on \hyperlink{class_parameter}{Parameter} object &&&&&&&&\\\cline{1-10}
+\{Invalid\+Init\+Assign\+Symbol, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid value for the \textquotesingle{}symbol\textquotesingle{} attribute of an \hyperlink{class_initial_assignment}{Initial\+Assignment} object &&&&&&&&\\\cline{1-10}
+\{Multiple\+Init\+Assignments, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Multiple initial assignments for the same \textquotesingle{}symbol\textquotesingle{} value are not allowed &&&&&&&&\\\cline{1-10}
+\{Init\+Assignment\+And\+Rule\+For\+Same\+Id, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Cannot set a value using both an initial assignment and an assignment rule simultaneously &&&&&&&&\\\cline{1-10}
+\{One\+Math\+Element\+Per\+Initial\+Assign, S\+B\+M\+L\+Error\+Code\+\_\+t\} &An \hyperlink{class_initial_assignment}{Initial\+Assignment} object may contain one {\ttfamily $<$math$>$} element &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+Initial\+Assign, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on an \hyperlink{class_initial_assignment}{Initial\+Assignment} object &&&&&&&&\\\cline{1-10}
+\{Init\+Assignment\+Cannot\+Ref0\+D\+Comp, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\hyperlink{class_initial_assignment}{Initial\+Assignment} cannot reference 0D compartment &&&&&&&&\\\cline{1-10}
+\{Invalid\+Assign\+Rule\+Variable, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid value for the \textquotesingle{}variable\textquotesingle{} attribute of an \hyperlink{class_assignment_rule}{Assignment\+Rule} object &&&&&&&&\\\cline{1-10}
+\{Invalid\+Rate\+Rule\+Variable, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid value for the \textquotesingle{}variable\textquotesingle{} attribute of a \hyperlink{class_rate_rule}{Rate\+Rule} object &&&&&&&&\\\cline{1-10}
+\{Assignment\+To\+Constant\+Entity, S\+B\+M\+L\+Error\+Code\+\_\+t\} &An assignment rule cannot assign an entity declared to be constant &&&&&&&&\\\cline{1-10}
+\{Rate\+Rule\+For\+Constant\+Entity, S\+B\+M\+L\+Error\+Code\+\_\+t\} &A rate rule cannot assign an entity declared to be constant &&&&&&&&\\\cline{1-10}
+\{Circular\+Rule\+Dependency, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Circular dependencies involving rules and reactions are not permitted &&&&&&&&\\\cline{1-10}
+\{One\+Math\+Element\+Per\+Rule, S\+B\+M\+L\+Error\+Code\+\_\+t\} &A rule object may contain one {\ttfamily $<$math$>$} element &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+Assign\+Rule, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on an \hyperlink{class_assignment_rule}{Assignment\+Rule} object &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+Rate\+Rule, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on a \hyperlink{class_rate_rule}{Rate\+Rule} object &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+Alg\+Rule, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on an \hyperlink{class_algebraic_rule}{Algebraic\+Rule} object &&&&&&&&\\\cline{1-10}
+\{Rule\+Cannot\+Ref0\+D\+Comp, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\hyperlink{class_rule}{Rule} cannot reference 0D compartment &&&&&&&&\\\cline{1-10}
+\{Circular\+Dependency\+Rate\+Of, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Circular dependencies are not permitted in \hyperlink{class_rate_rule}{Rate\+Rule} and \hyperlink{class_kinetic_law}{Kinetic\+Law} objects &&&&&&&&\\\cline{1-10}
+\{Constraint\+Math\+Not\+Boolean, S\+B\+M\+L\+Error\+Code\+\_\+t\} &A \hyperlink{class_constraint}{Constraint} object\textquotesingle{}s {\ttfamily $<$math$>$} must evaluate to a Boolean value &&&&&&&&\\\cline{1-10}
+\{Incorrect\+Order\+In\+Constraint, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Subobjects inside the \hyperlink{class_constraint}{Constraint} object are not in the prescribed order &&&&&&&&\\\cline{1-10}
+\{Constraint\+Not\+In\+X\+H\+T\+M\+L\+Namespace, S\+B\+M\+L\+Error\+Code\+\_\+t\} &A \hyperlink{class_constraint}{Constraint}\textquotesingle{}s Message subobject must be in the X\+H\+T\+ML X\+ML namespace &&&&&&&&\\\cline{1-10}
+\{Constraint\+Contains\+X\+M\+L\+Decl, S\+B\+M\+L\+Error\+Code\+\_\+t\} &X\+ML declarations are not permitted within \hyperlink{class_constraint}{Constraint}\textquotesingle{}s Message objects &&&&&&&&\\\cline{1-10}
+\{Constraint\+Contains\+D\+O\+C\+T\+Y\+PE, S\+B\+M\+L\+Error\+Code\+\_\+t\} &X\+ML D\+O\+C\+T\+Y\+PE elements are not permitted within \hyperlink{class_constraint}{Constraint}\textquotesingle{}s Message objects &&&&&&&&\\\cline{1-10}
+\{Invalid\+Constraint\+Content, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid content for a \hyperlink{class_constraint}{Constraint} object\textquotesingle{}s Message object &&&&&&&&\\\cline{1-10}
+\{One\+Math\+Element\+Per\+Constraint, S\+B\+M\+L\+Error\+Code\+\_\+t\} &A \hyperlink{class_constraint}{Constraint} object may contain one {\ttfamily $<$math$>$} element &&&&&&&&\\\cline{1-10}
+\{One\+Message\+Element\+Per\+Constraint, S\+B\+M\+L\+Error\+Code\+\_\+t\} &A \hyperlink{class_constraint}{Constraint} object can only have one Message subobject &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+Constraint, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on \hyperlink{class_constraint}{Constraint} object &&&&&&&&\\\cline{1-10}
+\{No\+Reactants\+Or\+Products, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Cannot have a reaction with neither reactants nor products &&&&&&&&\\\cline{1-10}
+\{Incorrect\+Order\+In\+Reaction, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Subobjects inside the \hyperlink{class_reaction}{Reaction} object are not in the prescribed order &&&&&&&&\\\cline{1-10}
+\{Empty\+List\+In\+Reaction, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\hyperlink{class_reaction}{Reaction} components, if present, cannot be empty &&&&&&&&\\\cline{1-10}
+\{Invalid\+Reactants\+Products\+List, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid object found in the list of reactants or products &&&&&&&&\\\cline{1-10}
+\{Invalid\+Modifiers\+List, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid object found in the list of modifiers &&&&&&&&\\\cline{1-10}
+\{One\+Sub\+Element\+Per\+Reaction, S\+B\+M\+L\+Error\+Code\+\_\+t\} &A \hyperlink{class_reaction}{Reaction} object can only contain one of each allowed type of object &&&&&&&&\\\cline{1-10}
+\{Compartment\+On\+Reaction, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid value for the \hyperlink{class_reaction}{Reaction} \textquotesingle{}compartment\textquotesingle{} attribute &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+Reaction, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute for a \hyperlink{class_reaction}{Reaction} object &&&&&&&&\\\cline{1-10}
+\{Invalid\+Species\+Reference, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}species\textquotesingle{} attribute value in \hyperlink{class_species_reference}{Species\+Reference} object &&&&&&&&\\\cline{1-10}
+\{Both\+Stoichiometry\+And\+Math, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \textquotesingle{}stoichiometry\textquotesingle{} attribute and \hyperlink{class_stoichiometry_math}{Stoichiometry\+Math} subobject are mutually exclusive &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+Species\+Reference, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the \hyperlink{class_species_reference}{Species\+Reference} object &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+Modifier, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the \hyperlink{class_modifier_species_reference}{Modifier\+Species\+Reference} object &&&&&&&&\\\cline{1-10}
+\{Undeclared\+Species\+Ref, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Unknown species referenced in the kinetic law {\ttfamily $<$math$>$} formula &&&&&&&&\\\cline{1-10}
+\{Incorrect\+Order\+In\+Kinetic\+Law, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Incorrect ordering of components in the \hyperlink{class_kinetic_law}{Kinetic\+Law} object &&&&&&&&\\\cline{1-10}
+\{Empty\+List\+In\+Kinetic\+Law, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The list of parameters, if present, cannot be empty &&&&&&&&\\\cline{1-10}
+\{Non\+Constant\+Local\+Parameter, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Parameters local to a \hyperlink{class_kinetic_law}{Kinetic\+Law} object must have a \textquotesingle{}constant\textquotesingle{} attribute value of \textquotesingle{}true\textquotesingle{} &&&&&&&&\\\cline{1-10}
+\{Subs\+Units\+No\+Longer\+Valid, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}substance\+Units\textquotesingle{} is not supported in this Level+\+Version of S\+B\+ML &&&&&&&&\\\cline{1-10}
+\{Time\+Units\+No\+Longer\+Valid, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}time\+Units\textquotesingle{} is not supported in this Level+\+Version of S\+B\+ML &&&&&&&&\\\cline{1-10}
+\{One\+List\+Of\+Per\+Kinetic\+Law, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only one \hyperlink{class_list_of_local_parameters}{List\+Of\+Local\+Parameters} object is permitted within a \hyperlink{class_kinetic_law}{Kinetic\+Law} object &&&&&&&&\\\cline{1-10}
+\{Only\+Local\+Params\+In\+List\+Of\+Local\+Params, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only \hyperlink{class_local_parameter}{Local\+Parameter}, Notes and Annotation objects are allowed in List\+Of\+Local\+Parameter objects &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+List\+Of\+Local\+Param, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the \hyperlink{class_list_of_local_parameters}{List\+Of\+Local\+Parameters} object &&&&&&&&\\\cline{1-10}
+\{One\+Math\+Per\+Kinetic\+Law, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only one {\ttfamily $<$math$>$} element is allowed in a \hyperlink{class_kinetic_law}{Kinetic\+Law} object &&&&&&&&\\\cline{1-10}
+\{Undeclared\+Species\+In\+Stoich\+Math, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Unknown species referenced in the \hyperlink{class_stoichiometry_math}{Stoichiometry\+Math} object\textquotesingle{}s {\ttfamily $<$math$>$} formula &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+Kinetic\+Law, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the \hyperlink{class_kinetic_law}{Kinetic\+Law} object &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+List\+Of\+Species\+Ref, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the \hyperlink{class_list_of_species_references}{List\+Of\+Species\+References} object &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+List\+Of\+Mods, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the List\+Of\+Modifiers object &&&&&&&&\\\cline{1-10}
+\{L3\+V2\+Fast\+Deprecated, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Fast attribute deprecated &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+Local\+Parameter, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the \hyperlink{class_local_parameter}{Local\+Parameter} object &&&&&&&&\\\cline{1-10}
+\{Local\+Parameter\+Shadows\+Species, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the \hyperlink{class_local_parameter}{Local\+Parameter} object &&&&&&&&\\\cline{1-10}
+\{Missing\+Trigger\+In\+Event, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \hyperlink{class_event}{Event} object is missing a \hyperlink{class_trigger}{Trigger} subobject &&&&&&&&\\\cline{1-10}
+\{Trigger\+Math\+Not\+Boolean, S\+B\+M\+L\+Error\+Code\+\_\+t\} &A \hyperlink{class_trigger}{Trigger} object\textquotesingle{}s {\ttfamily $<$math$>$} expression must evaluate to a Boolean value &&&&&&&&\\\cline{1-10}
+\{Missing\+Event\+Assignment, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \hyperlink{class_event}{Event} object is missing an \hyperlink{class_event_assignment}{Event\+Assignment} subobject &&&&&&&&\\\cline{1-10}
+\{Time\+Units\+Event, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Units referenced by \textquotesingle{}time\+Units\textquotesingle{} attribute are not compatible with units of time &&&&&&&&\\\cline{1-10}
+\{Incorrect\+Order\+In\+Event, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Incorrect ordering of components in \hyperlink{class_event}{Event} object &&&&&&&&\\\cline{1-10}
+\{Values\+From\+Trigger\+Time\+Need\+Delay, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}use\+Values\+From\+Trigger\+Time\textquotesingle{}=\textquotesingle{}false\textquotesingle{}, but the \hyperlink{class_event}{Event} object does not define a delay &&&&&&&&\\\cline{1-10}
+\{Delay\+Needs\+Values\+From\+Trigger\+Time, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The use of a \hyperlink{class_delay}{Delay} object requires the \hyperlink{class_event}{Event} attribute \textquotesingle{}use\+Values\+From\+Trigger\+Time\textquotesingle{} &&&&&&&&\\\cline{1-10}
+\{One\+Math\+Per\+Trigger, S\+B\+M\+L\+Error\+Code\+\_\+t\} &A \hyperlink{class_trigger}{Trigger} object may have one {\ttfamily $<$math$>$} element &&&&&&&&\\\cline{1-10}
+\{One\+Math\+Per\+Delay, S\+B\+M\+L\+Error\+Code\+\_\+t\} &A \hyperlink{class_delay}{Delay} object may have one {\ttfamily $<$math$>$} element &&&&&&&&\\\cline{1-10}
+\{Invalid\+Event\+Assignment\+Variable, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}variable\textquotesingle{} attribute value in \hyperlink{class_event}{Event} object &&&&&&&&\\\cline{1-10}
+\{Event\+Assignment\+For\+Constant\+Entity, S\+B\+M\+L\+Error\+Code\+\_\+t\} &An \hyperlink{class_event_assignment}{Event\+Assignment} object cannot assign to a component having attribute \textquotesingle{}constant\textquotesingle{}=\textquotesingle{}true\textquotesingle{} &&&&&&&&\\\cline{1-10}
+\{One\+Math\+Per\+Event\+Assignment, S\+B\+M\+L\+Error\+Code\+\_\+t\} &An \hyperlink{class_event_assignment}{Event\+Assignment} object may have one {\ttfamily $<$math$>$} element &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+Event\+Assignment, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the \hyperlink{class_event_assignment}{Event\+Assignment} object &&&&&&&&\\\cline{1-10}
+\{Only\+One\+Delay\+Per\+Event, S\+B\+M\+L\+Error\+Code\+\_\+t\} &An \hyperlink{class_event}{Event} object can only have one \hyperlink{class_delay}{Delay} subobject &&&&&&&&\\\cline{1-10}
+\{One\+List\+Of\+Event\+Assignments\+Per\+Event, S\+B\+M\+L\+Error\+Code\+\_\+t\} &An \hyperlink{class_event}{Event} object can only have one \hyperlink{class_list_of_event_assignments}{List\+Of\+Event\+Assignments} subobject &&&&&&&&\\\cline{1-10}
+\{Only\+Event\+Assign\+In\+List\+Of\+Event\+Assign, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only \hyperlink{class_event_assignment}{Event\+Assignment}, Notes and Annotation objects are allowed in \hyperlink{class_list_of_event_assignments}{List\+Of\+Event\+Assignments} &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+List\+Of\+Event\+Assign, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the \hyperlink{class_list_of_event_assignments}{List\+Of\+Event\+Assignments} object &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+Event, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the \hyperlink{class_event}{Event} object &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+Trigger, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the \hyperlink{class_trigger}{Trigger} object &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+Delay, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the \hyperlink{class_delay}{Delay} object &&&&&&&&\\\cline{1-10}
+\{Persistent\+Not\+Boolean, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \hyperlink{class_trigger}{Trigger} attribute \textquotesingle{}persistent\textquotesingle{} must evaluate to a Boolean value &&&&&&&&\\\cline{1-10}
+\{Initial\+Value\+Not\+Boolean, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \hyperlink{class_trigger}{Trigger} attribute \textquotesingle{}initial\+Value\textquotesingle{} must evaluate to a Boolean value &&&&&&&&\\\cline{1-10}
+\{Only\+One\+Priority\+Per\+Event, S\+B\+M\+L\+Error\+Code\+\_\+t\} &An \hyperlink{class_event}{Event} object can only have one \hyperlink{class_priority}{Priority} subobject &&&&&&&&\\\cline{1-10}
+\{One\+Math\+Per\+Priority, S\+B\+M\+L\+Error\+Code\+\_\+t\} &A \hyperlink{class_priority}{Priority} object may have one {\ttfamily $<$math$>$} element &&&&&&&&\\\cline{1-10}
+\{Allowed\+Attributes\+On\+Priority, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on the \hyperlink{class_priority}{Priority} object &&&&&&&&\\\cline{1-10}
+\{Compartment\+Should\+Have\+Size, S\+B\+M\+L\+Error\+Code\+\_\+t\} &It\textquotesingle{}s best to define a size for every compartment in a model &&&&&&&&\\\cline{1-10}
+\{Species\+Should\+Have\+Value, S\+B\+M\+L\+Error\+Code\+\_\+t\} &It\textquotesingle{}s best to define an initial amount or initial concentration for every species in a model &&&&&&&&\\\cline{1-10}
+\{Parameter\+Should\+Have\+Units, S\+B\+M\+L\+Error\+Code\+\_\+t\} &It\textquotesingle{}s best to declare units for every parameter in a model &&&&&&&&\\\cline{1-10}
+\{Parameter\+Should\+Have\+Value, S\+B\+M\+L\+Error\+Code\+\_\+t\} &It\textquotesingle{}s best to declare values for every parameter in a model &&&&&&&&\\\cline{1-10}
+\{Local\+Parameter\+Shadows\+Id, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Local parameters defined within a kinetic law shadow global object symbols &&&&&&&&\\\cline{1-10}
+\{Cannot\+Convert\+To\+L1\+V1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Cannot convert to S\+B\+ML Level 1 Version 1 &&&&&&&&\\\cline{1-10}
+\{No\+Events\+In\+L1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 1 does not support events &&&&&&&&\\\cline{1-10}
+\{No\+Function\+Definitions\+In\+L1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 1 does not support function definitions &&&&&&&&\\\cline{1-10}
+\{No\+Constraints\+In\+L1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 1 does not support constraints &&&&&&&&\\\cline{1-10}
+\{No\+Initial\+Assignments\+In\+L1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 1 does not support initial assignments &&&&&&&&\\\cline{1-10}
+\{No\+Species\+Types\+In\+L1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 1 does not support species types &&&&&&&&\\\cline{1-10}
+\{No\+Compartment\+Type\+In\+L1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 1 does not support compartment types &&&&&&&&\\\cline{1-10}
+\{No\+Non3\+D\+Compartments\+In\+L1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 1 only supports three-\/dimensional compartments &&&&&&&&\\\cline{1-10}
+\{No\+Fancy\+Stoichiometry\+Math\+In\+L1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 1 does not support non-\/integer nor non-\/rational stoichiometry formulas &&&&&&&&\\\cline{1-10}
+\{No\+Non\+Integer\+Stoichiometry\+In\+L1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 1 does not support non-\/integer \textquotesingle{}stoichiometry\textquotesingle{} attribute values &&&&&&&&\\\cline{1-10}
+\{No\+Unit\+Multipliers\+Or\+Offsets\+In\+L1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 1 does not support multipliers or offsets in unit definitions &&&&&&&&\\\cline{1-10}
+\{Species\+Compartment\+Required\+In\+L1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &In S\+B\+ML Level 1, a value for \textquotesingle{}compartment\textquotesingle{} is mandatory in species definitions &&&&&&&&\\\cline{1-10}
+\{No\+Species\+Spatial\+Size\+Units\+In\+L1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 1 does not support species \textquotesingle{}spatial\+Size\+Units\textquotesingle{} settings &&&&&&&&\\\cline{1-10}
+\{No\+S\+B\+O\+Terms\+In\+L1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 1 does not support the \textquotesingle{}sbo\+Term\textquotesingle{} attribute &&&&&&&&\\\cline{1-10}
+\{Strict\+Units\+Required\+In\+L1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 1 requires strict unit consistency &&&&&&&&\\\cline{1-10}
+\{Conversion\+Factor\+Not\+In\+L1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 1 does not support the \textquotesingle{}conversion\+Factor\textquotesingle{} attribute &&&&&&&&\\\cline{1-10}
+\{Compartment\+Not\+On\+L1\+Reaction, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 1 does not support the \textquotesingle{}compartment\textquotesingle{} attribute on \hyperlink{class_reaction}{Reaction} objects &&&&&&&&\\\cline{1-10}
+\{Extent\+Units\+Not\+Substance, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Units of extent must be compatible with units of substance &&&&&&&&\\\cline{1-10}
+\{Global\+Units\+Not\+Declared, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Global units must be refer to unit kind or unit\+Definition &&&&&&&&\\\cline{1-10}
+\{Has\+Only\+Substance\+Units\+Notin\+L1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The concept of has\+Only\+Substance\+Units was not available in S\+B\+ML Level 1 &&&&&&&&\\\cline{1-10}
+\{Avogadro\+Not\+Supported, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Avogadro not supported in Levels 2 and 1 &&&&&&&&\\\cline{1-10}
+\{No\+Constraints\+In\+L2v1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 2 Version 1 does not support \hyperlink{class_constraint}{Constraint} objects &&&&&&&&\\\cline{1-10}
+\{No\+Initial\+Assignments\+In\+L2v1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 2 Version 1 does not support \hyperlink{class_initial_assignment}{Initial\+Assignment} objects &&&&&&&&\\\cline{1-10}
+\{No\+Species\+Type\+In\+L2v1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 2 Version 1 does not support \hyperlink{class_species_type}{Species\+Type} objects &&&&&&&&\\\cline{1-10}
+\{No\+Compartment\+Type\+In\+L2v1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 2 Version 1 does not support \hyperlink{class_compartment_type}{Compartment\+Type} objects &&&&&&&&\\\cline{1-10}
+\{No\+S\+B\+O\+Terms\+In\+L2v1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 2 Version 1 does not support the \textquotesingle{}sbo\+Term\textquotesingle{} attribute &&&&&&&&\\\cline{1-10}
+\{No\+Id\+On\+Species\+Reference\+In\+L2v1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 2 Version 1 does not support the \textquotesingle{}id\textquotesingle{} attribute on \hyperlink{class_species_reference}{Species\+Reference} objects &&&&&&&&\\\cline{1-10}
+\{No\+Delayed\+Event\+Assignment\+In\+L2v1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 2 Version 1 does not support the \textquotesingle{}use\+Values\+From\+Trigger\+Time\textquotesingle{} attribute &&&&&&&&\\\cline{1-10}
+\{Strict\+Units\+Required\+In\+L2v1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 2 Version 1 requires strict unit consistency &&&&&&&&\\\cline{1-10}
+\{Integer\+Spatial\+Dimensions, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 2 Version 1 requires that compartments have spatial dimensions of 0-\/3 &&&&&&&&\\\cline{1-10}
+\{Stoichiometry\+Math\+Not\+Yet\+Supported, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Conversion to \hyperlink{class_stoichiometry_math}{Stoichiometry\+Math} objects not yet supported &&&&&&&&\\\cline{1-10}
+\{Priority\+Lost\+From\+L3, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 2 Version 1 does not support priorities on \hyperlink{class_event}{Event} objects &&&&&&&&\\\cline{1-10}
+\{Non\+Persistent\+Not\+Supported, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 2 Version 1 does not support the \textquotesingle{}persistent\textquotesingle{} attribute on \hyperlink{class_trigger}{Trigger} objects &&&&&&&&\\\cline{1-10}
+\{Initial\+Value\+False\+Event\+Not\+Supported, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 2 Version 1 does not support the \textquotesingle{}initial\+Value\textquotesingle{} attribute on \hyperlink{class_trigger}{Trigger} objects &&&&&&&&\\\cline{1-10}
+\{S\+B\+O\+Term\+Not\+Universal\+In\+L2v2, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \textquotesingle{}sbo\+Term\textquotesingle{} attribute is invalid for this component in S\+B\+ML Level 2 Version 2 &&&&&&&&\\\cline{1-10}
+\{No\+Unit\+Offset\+In\+L2v2, S\+B\+M\+L\+Error\+Code\+\_\+t\} &This Level+\+Version of S\+B\+ML does not support the \textquotesingle{}offset\textquotesingle{} attribute on \hyperlink{class_unit}{Unit} objects &&&&&&&&\\\cline{1-10}
+\{No\+Kinetic\+Law\+Time\+Units\+In\+L2v2, S\+B\+M\+L\+Error\+Code\+\_\+t\} &This Level+\+Version of S\+B\+ML does not support the \textquotesingle{}time\+Units\textquotesingle{} attribute on \hyperlink{class_kinetic_law}{Kinetic\+Law} objects &&&&&&&&\\\cline{1-10}
+\{No\+Kinetic\+Law\+Substance\+Units\+In\+L2v2, S\+B\+M\+L\+Error\+Code\+\_\+t\} &This Level+\+Version of S\+B\+ML does not support the \textquotesingle{}substance\+Units\textquotesingle{} attribute on \hyperlink{class_kinetic_law}{Kinetic\+Law} objects &&&&&&&&\\\cline{1-10}
+\{No\+Delayed\+Event\+Assignment\+In\+L2v2, S\+B\+M\+L\+Error\+Code\+\_\+t\} &This Level+\+Version of S\+B\+ML does not support the \textquotesingle{}use\+Values\+From\+Trigger\+Time\textquotesingle{} attribute &&&&&&&&\\\cline{1-10}
+\{Model\+S\+B\+O\+Branch\+Changed\+Beyond\+L2v2, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The allowable \textquotesingle{}sbo\+Term\textquotesingle{} attribute values for \hyperlink{class_model}{Model} objects differ for this S\+B\+ML Level+\+Version &&&&&&&&\\\cline{1-10}
+\{Strict\+Units\+Required\+In\+L2v2, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 2 Version 2 requires strict unit consistency &&&&&&&&\\\cline{1-10}
+\{Strict\+S\+B\+O\+Required\+In\+L2v2, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 2 Version 2 requires strict \hyperlink{class_s_b_o}{S\+BO} term consistency &&&&&&&&\\\cline{1-10}
+\{Duplicate\+Annotation\+Invalid\+In\+L2v2, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Duplicate top-\/level annotations are invalid in S\+B\+ML Level 2 Version 2 &&&&&&&&\\\cline{1-10}
+\{No\+Unit\+Offset\+In\+L2v3, S\+B\+M\+L\+Error\+Code\+\_\+t\} &This Level+\+Version of S\+B\+ML does not support the \textquotesingle{}offset\textquotesingle{} attribute on \hyperlink{class_unit}{Unit} objects &&&&&&&&\\\cline{1-10}
+\{No\+Kinetic\+Law\+Time\+Units\+In\+L2v3, S\+B\+M\+L\+Error\+Code\+\_\+t\} &This Level+\+Version of S\+B\+ML does not support the \textquotesingle{}time\+Units\textquotesingle{} attribute on \hyperlink{class_kinetic_law}{Kinetic\+Law} objects &&&&&&&&\\\cline{1-10}
+\{No\+Kinetic\+Law\+Substance\+Units\+In\+L2v3, S\+B\+M\+L\+Error\+Code\+\_\+t\} &This Level+\+Version of S\+B\+ML does not support the \textquotesingle{}substance\+Units\textquotesingle{} attribute on \hyperlink{class_kinetic_law}{Kinetic\+Law} objects &&&&&&&&\\\cline{1-10}
+\{No\+Species\+Spatial\+Size\+Units\+In\+L2v3, S\+B\+M\+L\+Error\+Code\+\_\+t\} &This Level+\+Version of S\+B\+ML does not support the \textquotesingle{}spatial\+Size\+Unit\textquotesingle{} attribute on \hyperlink{class_species}{Species} objects &&&&&&&&\\\cline{1-10}
+\{No\+Event\+Time\+Units\+In\+L2v3, S\+B\+M\+L\+Error\+Code\+\_\+t\} &This Level+\+Version of S\+B\+ML does not support the \textquotesingle{}time\+Units\textquotesingle{} attribute on \hyperlink{class_event}{Event} objects &&&&&&&&\\\cline{1-10}
+\{No\+Delayed\+Event\+Assignment\+In\+L2v3, S\+B\+M\+L\+Error\+Code\+\_\+t\} &This Level+\+Version of S\+B\+ML does not support the \textquotesingle{}use\+Values\+From\+Trigger\+Time\textquotesingle{} attribute &&&&&&&&\\\cline{1-10}
+\{Model\+S\+B\+O\+Branch\+Changed\+Beyond\+L2v3, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The allowable \textquotesingle{}sbo\+Term\textquotesingle{} attribute values for \hyperlink{class_model}{Model} objects differ for this S\+B\+ML Level+\+Version &&&&&&&&\\\cline{1-10}
+\{Strict\+Units\+Required\+In\+L2v3, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 2 Version 3 requires strict unit consistency &&&&&&&&\\\cline{1-10}
+\{Strict\+S\+B\+O\+Required\+In\+L2v3, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 2 Version 3 requires strict \hyperlink{class_s_b_o}{S\+BO} term consistency &&&&&&&&\\\cline{1-10}
+\{Duplicate\+Annotation\+Invalid\+In\+L2v3, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Duplicate top-\/level annotations are invalid in S\+B\+ML Level 2 Version 3 &&&&&&&&\\\cline{1-10}
+\{No\+Unit\+Offset\+In\+L2v4, S\+B\+M\+L\+Error\+Code\+\_\+t\} &This Level+\+Version of S\+B\+ML does not support the \textquotesingle{}offset\textquotesingle{} attribute on \hyperlink{class_unit}{Unit} objects &&&&&&&&\\\cline{1-10}
+\{No\+Kinetic\+Law\+Time\+Units\+In\+L2v4, S\+B\+M\+L\+Error\+Code\+\_\+t\} &This Level+\+Version of S\+B\+ML does not support the \textquotesingle{}time\+Units\textquotesingle{} attribute on \hyperlink{class_kinetic_law}{Kinetic\+Law} objects &&&&&&&&\\\cline{1-10}
+\{No\+Kinetic\+Law\+Substance\+Units\+In\+L2v4, S\+B\+M\+L\+Error\+Code\+\_\+t\} &This Level+\+Version of S\+B\+ML does not support the \textquotesingle{}substance\+Units\textquotesingle{} attribute on \hyperlink{class_kinetic_law}{Kinetic\+Law} objects &&&&&&&&\\\cline{1-10}
+\{No\+Species\+Spatial\+Size\+Units\+In\+L2v4, S\+B\+M\+L\+Error\+Code\+\_\+t\} &This Level+\+Version of S\+B\+ML does not support the \textquotesingle{}spatial\+Size\+Unit\textquotesingle{} attribute on \hyperlink{class_species}{Species} objects &&&&&&&&\\\cline{1-10}
+\{No\+Event\+Time\+Units\+In\+L2v4, S\+B\+M\+L\+Error\+Code\+\_\+t\} &This Level+\+Version of S\+B\+ML does not support the \textquotesingle{}time\+Units\textquotesingle{} attribute on \hyperlink{class_event}{Event} objects &&&&&&&&\\\cline{1-10}
+\{Model\+S\+B\+O\+Branch\+Changed\+In\+L2v4, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The allowable \textquotesingle{}sbo\+Term\textquotesingle{} attribute values for \hyperlink{class_model}{Model} objects differ for this S\+B\+ML Level+\+Version &&&&&&&&\\\cline{1-10}
+\{Duplicate\+Annotation\+Invalid\+In\+L2v4, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Duplicate top-\/level annotations are invalid in S\+B\+ML Level 2 Version 4 &&&&&&&&\\\cline{1-10}
+\{No\+Species\+Type\+In\+L3v1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 3 Version 1 does not support \hyperlink{class_species_type}{Species\+Type} objects &&&&&&&&\\\cline{1-10}
+\{No\+Compartment\+Type\+In\+L3v1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 3 Version 1 does not support \hyperlink{class_compartment_type}{Compartment\+Type} objects &&&&&&&&\\\cline{1-10}
+\{No\+Unit\+Offset\+In\+L3v1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &This Level+\+Version of S\+B\+ML does not support the \textquotesingle{}offset\textquotesingle{} attribute on \hyperlink{class_unit}{Unit} objects &&&&&&&&\\\cline{1-10}
+\{No\+Kinetic\+Law\+Time\+Units\+In\+L3v1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &This Level+\+Version of S\+B\+ML does not support the \textquotesingle{}time\+Units\textquotesingle{} attribute on \hyperlink{class_kinetic_law}{Kinetic\+Law} objects &&&&&&&&\\\cline{1-10}
+\{No\+Kinetic\+Law\+Substance\+Units\+In\+L3v1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &This Level+\+Version of S\+B\+ML does not support the \textquotesingle{}substance\+Units\textquotesingle{} attribute on \hyperlink{class_kinetic_law}{Kinetic\+Law} objects &&&&&&&&\\\cline{1-10}
+\{No\+Species\+Spatial\+Size\+Units\+In\+L3v1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &This Level+\+Version of S\+B\+ML does not support the \textquotesingle{}spatial\+Size\+Unit\textquotesingle{} attribute on \hyperlink{class_species}{Species} objects &&&&&&&&\\\cline{1-10}
+\{No\+Event\+Time\+Units\+In\+L3v1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &This Level+\+Version of S\+B\+ML does not support the \textquotesingle{}time\+Units\textquotesingle{} attribute on \hyperlink{class_event}{Event} objects &&&&&&&&\\\cline{1-10}
+\{Model\+S\+B\+O\+Branch\+Changed\+In\+L3v1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The allowable \textquotesingle{}sbo\+Term\textquotesingle{} attribute values for \hyperlink{class_model}{Model} objects differ for this S\+B\+ML Level+\+Version &&&&&&&&\\\cline{1-10}
+\{Duplicate\+Annotation\+Invalid\+In\+L3v1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Duplicate top-\/level annotations are invalid in S\+B\+ML Level 3 Version 1 &&&&&&&&\\\cline{1-10}
+\{No\+Compartment\+Outside\+In\+L3v1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &This Level+\+Version of S\+B\+ML does not support the \textquotesingle{}outside\textquotesingle{} attribute on \hyperlink{class_compartment}{Compartment} objects &&&&&&&&\\\cline{1-10}
+\{No\+Stoichiometry\+Math\+In\+L3v1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &This Level+\+Version of S\+B\+ML does not support the \hyperlink{class_stoichiometry_math}{Stoichiometry\+Math} object &&&&&&&&\\\cline{1-10}
+\{Double\+Exponent\+Not\+Supported, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Exponent of type double not supported in Levels 2 and 1. &&&&&&&&\\\cline{1-10}
+\{Math\+M\+L\+Element\+Not\+Supported, S\+B\+M\+L\+Error\+Code\+\_\+t\} &This Math\+ML element is only permitted in L3\+V2 &&&&&&&&\\\cline{1-10}
+\{Empty\+List\+Of\+Element\+Not\+Supported, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Empty \textquotesingle{}\hyperlink{class_list_of}{List\+Of}\textquotesingle{} element is only permitted in L3\+V2 &&&&&&&&\\\cline{1-10}
+\{Missing\+Math\+Element\+Not\+Supported, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Missing {\ttfamily $<$math$>$} element is only permitted in L3\+V2 &&&&&&&&\\\cline{1-10}
+\{Missing\+Trigger\+Element\+Not\+Supported, S\+B\+M\+L\+Error\+Code\+\_\+t\} &missing {\ttfamily $<$trigger$>$} element is only permitted in L3\+V2 &&&&&&&&\\\cline{1-10}
+\{Boolean\+Numeric\+Discrepancy, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Interchange of Boolean and numeric values only permitted in L3\+V2 &&&&&&&&\\\cline{1-10}
+\{Id\+Name\+S\+Base\+In\+L3\+V2, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Conversion will lose attributes only available in L3\+V2 and higher &&&&&&&&\\\cline{1-10}
+\{Missing\+Participants\+Not\+Supported, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Omission of both {\ttfamily $<$list\+Of\+Reactants$>$} and {\ttfamily $<$list\+Of\+Products$>$} is only valid in L3\+V2 &&&&&&&&\\\cline{1-10}
+\{Convertible\+Math\+Initial\+Assignment, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Some L3\+V2-\/specific Math\+ML elements are not permitted in \hyperlink{class_initial_assignment}{Initial\+Assignment} objects &&&&&&&&\\\cline{1-10}
+\{Fast\+Reactions\+Not\+Supported, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Conversion of reactions employing the \textquotesingle{}fast\textquotesingle{} attribute is not supported &&&&&&&&\\\cline{1-10}
+\{Invalid\+S\+B\+M\+L\+Level\+Version, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Unknown Level+\+Version combination of S\+B\+ML &&&&&&&&\\\cline{1-10}
+\{Annotation\+Notes\+Not\+Allowed\+Level1, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Annotation objects on the S\+B\+ML container element are not permitted in S\+B\+ML Level 1 &&&&&&&&\\\cline{1-10}
+\{Invalid\+Rule\+Ordering, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid ordering of rules &&&&&&&&\\\cline{1-10}
+\{Required\+Package\+Present, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The S\+B\+ML document requires an S\+B\+ML Level 3 package unavailable in this software &&&&&&&&\\\cline{1-10}
+\{Unrequired\+Package\+Present, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The S\+B\+ML document uses an S\+B\+ML Level 3 package unavailable in this software &&&&&&&&\\\cline{1-10}
+\{Package\+Required\+Should\+Be\+False, S\+B\+M\+L\+Error\+Code\+\_\+t\} &This package expects required to be false &&&&&&&&\\\cline{1-10}
+\{Subs\+Units\+Allowed\+In\+KL, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Disallowed value for attribute \textquotesingle{}substance\+Units\textquotesingle{} on \hyperlink{class_kinetic_law}{Kinetic\+Law} object &&&&&&&&\\\cline{1-10}
+\{Time\+Units\+Allowed\+In\+KL, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Disallowed value for attribute \textquotesingle{}time\+Units\textquotesingle{} on \hyperlink{class_kinetic_law}{Kinetic\+Law} object &&&&&&&&\\\cline{1-10}
+\{Formula\+In\+Level1\+KL, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only predefined functions are allowed in S\+B\+ML Level 1 formulas &&&&&&&&\\\cline{1-10}
+\{L3\+Substance\+Units\+On\+Model, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}substance\+Units\textquotesingle{} attribute value &&&&&&&&\\\cline{1-10}
+\{Stoichiometry\+Math\+Missing\+Math, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The {\ttfamily $<$stoichiometry\+Math$>$} element must contain a {\ttfamily $<$math$>$} element &&&&&&&&\\\cline{1-10}
+\{Time\+Units\+Removed, S\+B\+M\+L\+Error\+Code\+\_\+t\} &This Level+\+Version of S\+B\+ML does not support the \textquotesingle{}time\+Units\textquotesingle{} attribute on \hyperlink{class_event}{Event} objects &&&&&&&&\\\cline{1-10}
+\{Bad\+Math\+ML, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid Math\+ML expression &&&&&&&&\\\cline{1-10}
+\{Failed\+Math\+M\+L\+Read\+Of\+Double, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Missing or invalid floating-\/point number in Math\+ML expression &&&&&&&&\\\cline{1-10}
+\{Failed\+Math\+M\+L\+Read\+Of\+Integer, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Missing or invalid integer in Math\+ML expression &&&&&&&&\\\cline{1-10}
+\{Failed\+Math\+M\+L\+Read\+Of\+Exponential, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Missing or invalid exponential expression in Math\+ML &&&&&&&&\\\cline{1-10}
+\{Failed\+Math\+M\+L\+Read\+Of\+Rational, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Missing or invalid rational expression in Math\+ML &&&&&&&&\\\cline{1-10}
+\{Bad\+Math\+M\+L\+Node\+Type, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid Math\+ML element &&&&&&&&\\\cline{1-10}
+\{Invalid\+Math\+M\+L\+Attribute, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid Math\+ML attribute &&&&&&&&\\\cline{1-10}
+\{No\+Time\+Symbol\+In\+Function\+Def, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Use of {\ttfamily $<$csymbol$>$} for \textquotesingle{}time\textquotesingle{} not allowed within \hyperlink{class_function_definition}{Function\+Definition} objects &&&&&&&&\\\cline{1-10}
+\{No\+Body\+In\+Function\+Def, S\+B\+M\+L\+Error\+Code\+\_\+t\} &There must be a {\ttfamily $<$lambda$>$} body within the {\ttfamily $<$math$>$} element of a \hyperlink{class_function_definition}{Function\+Definition} object &&&&&&&&\\\cline{1-10}
+\{Dangling\+Unit\+S\+Id\+Ref, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Units must refer to valid unit or unit\+Definition &&&&&&&&\\\cline{1-10}
+\{R\+D\+F\+Missing\+About\+Tag, S\+B\+M\+L\+Error\+Code\+\_\+t\} &R\+DF missing the {\ttfamily $<$about$>$} tag &&&&&&&&\\\cline{1-10}
+\{R\+D\+F\+Empty\+About\+Tag, S\+B\+M\+L\+Error\+Code\+\_\+t\} &R\+DF empty {\ttfamily $<$about$>$} tag &&&&&&&&\\\cline{1-10}
+\{R\+D\+F\+About\+Tag\+Not\+Metaid, S\+B\+M\+L\+Error\+Code\+\_\+t\} &R\+DF {\ttfamily $<$about$>$} tag is not metaid &&&&&&&&\\\cline{1-10}
+\{R\+D\+F\+Not\+Complete\+Model\+History, S\+B\+M\+L\+Error\+Code\+\_\+t\} &R\+DF does not contain valid \hyperlink{class_model_history}{Model\+History} &&&&&&&&\\\cline{1-10}
+\{R\+D\+F\+Not\+Model\+History, S\+B\+M\+L\+Error\+Code\+\_\+t\} &R\+DF does not result in a \hyperlink{class_model_history}{Model\+History} &&&&&&&&\\\cline{1-10}
+\{Annotation\+Not\+Element, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Annotation must contain element &&&&&&&&\\\cline{1-10}
+\{Nested\+Annotation\+Not\+Allowed, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Nested annotations not allowed &&&&&&&&\\\cline{1-10}
+\{Undeclared\+Units, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Missing unit declarations on parameters or literal numbers in expression &&&&&&&&\\\cline{1-10}
+\{Undeclared\+Time\+Units\+L3, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Unable to verify consistency of units\+: the unit of time has not been declared &&&&&&&&\\\cline{1-10}
+\{Undeclared\+Extent\+Units\+L3, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Unable to verify consistency of units\+: the units of reaction extent have not been declared &&&&&&&&\\\cline{1-10}
+\{Undeclared\+Object\+Units\+L3, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Unable to verify consistency of units\+: encountered a model entity with no declared units &&&&&&&&\\\cline{1-10}
+\{Cannot\+Verify\+Units\+Object\+No\+Math, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Unable to verify consistency of units\+: encountered an object with no {\ttfamily $<$math$>$} element &&&&&&&&\\\cline{1-10}
+\{Unrecognised\+S\+B\+O\+Term, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Unrecognized \textquotesingle{}sbo\+Term\textquotesingle{} attribute value &&&&&&&&\\\cline{1-10}
+\{Obselete\+S\+B\+O\+Term, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Obsolete \textquotesingle{}sbo\+Term\textquotesingle{} attribute value &&&&&&&&\\\cline{1-10}
+\{Incorrect\+Compartment\+Spatial\+Dimensions, S\+B\+M\+L\+Error\+Code\+\_\+t\} &In S\+B\+ML Level 1, only three-\/dimensional compartments are allowed &&&&&&&&\\\cline{1-10}
+\{Compartment\+Type\+Not\+Valid\+Attribute, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\hyperlink{class_compartment_type}{Compartment\+Type} objects are not available in this Level+\+Version of S\+B\+ML &&&&&&&&\\\cline{1-10}
+\{Constant\+Not\+Valid\+Attribute, S\+B\+M\+L\+Error\+Code\+\_\+t\} &This Level+\+Version of S\+B\+ML does not support the \textquotesingle{}constant\textquotesingle{} attribute on this component &&&&&&&&\\\cline{1-10}
+\{Meta\+Id\+Not\+Valid\+Attribute, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}metaid\textquotesingle{} is not available in S\+B\+ML Level 1 &&&&&&&&\\\cline{1-10}
+\{S\+B\+O\+Term\+Not\+Valid\+Attribute\+Before\+L2\+V3, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \textquotesingle{}sbo\+Term\textquotesingle{} attribute is not available on this component before S\+B\+ML Level 2 Version 3 &&&&&&&&\\\cline{1-10}
+\{Invalid\+L1\+Compartment\+Units, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid units for a compartment in S\+B\+ML Level 1 &&&&&&&&\\\cline{1-10}
+\{L1\+V1\+Compartment\+Volume\+Reqd, S\+B\+M\+L\+Error\+Code\+\_\+t\} &In S\+B\+ML Level 1, a compartment\textquotesingle{}s volume must be specified &&&&&&&&\\\cline{1-10}
+\{Compartment\+Type\+Not\+Valid\+Component, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\hyperlink{class_compartment_type}{Compartment\+Type} objects are not available in this Level+\+Version of S\+B\+ML &&&&&&&&\\\cline{1-10}
+\{Constraint\+Not\+Valid\+Component, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\hyperlink{class_constraint}{Constraint} objects are not available in this Level+\+Version of S\+B\+ML &&&&&&&&\\\cline{1-10}
+\{Event\+Not\+Valid\+Component, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\hyperlink{class_event}{Event} objects are not available in this Level+\+Version of S\+B\+ML &&&&&&&&\\\cline{1-10}
+\{S\+B\+O\+Term\+Not\+Valid\+Attribute\+Before\+L2\+V2, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \textquotesingle{}sbo\+Term\textquotesingle{} attribute is invalid for this component before Level 2 Version 2 &&&&&&&&\\\cline{1-10}
+\{Func\+Def\+Not\+Valid\+Component, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\hyperlink{class_function_definition}{Function\+Definition} objects are not available in this Level+\+Version of S\+B\+ML &&&&&&&&\\\cline{1-10}
+\{Initial\+Assign\+Not\+Valid\+Component, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\hyperlink{class_initial_assignment}{Initial\+Assignment} objects are not available in this Level+\+Version of S\+B\+ML &&&&&&&&\\\cline{1-10}
+\{Variable\+Not\+Valid\+Attribute, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}variable\textquotesingle{} is not available on this component in this Level+\+Version of S\+B\+ML &&&&&&&&\\\cline{1-10}
+\{Units\+Not\+Valid\+Attribute, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}units\textquotesingle{} is not available on this component in this Level+\+Version of S\+B\+ML &&&&&&&&\\\cline{1-10}
+\{Constant\+Species\+Not\+Valid\+Attribute, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}constant\textquotesingle{} is not available on \hyperlink{class_species}{Species} objects in S\+B\+ML Level 1 &&&&&&&&\\\cline{1-10}
+\{Spatial\+Size\+Units\+Not\+Valid\+Attribute, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}spatial\+Size\+Units\textquotesingle{} is not available on \hyperlink{class_species}{Species} objects in S\+B\+ML Level 1 &&&&&&&&\\\cline{1-10}
+\{Species\+Type\+Not\+Valid\+Attribute, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}species\+Type\textquotesingle{} is not available on \hyperlink{class_species}{Species} objects in S\+B\+ML Level 1 &&&&&&&&\\\cline{1-10}
+\{Has\+Only\+Subs\+Units\+Not\+Valid\+Attribute, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}has\+Only\+Substance\+Units\textquotesingle{} is not available on \hyperlink{class_species}{Species} objects in S\+B\+ML Level 1 &&&&&&&&\\\cline{1-10}
+\{Id\+Not\+Valid\+Attribute, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}id\textquotesingle{} is not available on \hyperlink{class_species_reference}{Species\+Reference} objects in S\+B\+ML Level 1 &&&&&&&&\\\cline{1-10}
+\{Name\+Not\+Valid\+Attribute, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}name\textquotesingle{} is not available on \hyperlink{class_species_reference}{Species\+Reference} objects in S\+B\+ML Level 1 &&&&&&&&\\\cline{1-10}
+\{Species\+Type\+Not\+Valid\+Component, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \hyperlink{class_species_type}{Species\+Type} object is not supported in S\+B\+ML Level 1 &&&&&&&&\\\cline{1-10}
+\{Stoichiometry\+Math\+Not\+Valid\+Component, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \hyperlink{class_stoichiometry_math}{Stoichiometry\+Math} object is not supported in S\+B\+ML Level 1 &&&&&&&&\\\cline{1-10}
+\{Multiplier\+Not\+Valid\+Attribute, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}multiplier\textquotesingle{} on \hyperlink{class_unit}{Unit} objects is not supported in S\+B\+ML Level 1 &&&&&&&&\\\cline{1-10}
+\{Offset\+Not\+Valid\+Attribute, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}offset\textquotesingle{} on \hyperlink{class_unit}{Unit} objects is only available in S\+B\+ML Level 2 Version 1 &&&&&&&&\\\cline{1-10}
+\{L3\+Spatial\+Dimensions\+Unset, S\+B\+M\+L\+Error\+Code\+\_\+t\} &No value given for \textquotesingle{}spatial\+Dimensions\textquotesingle{} attribute; assuming a value of 3 &&&&&&&&\\\cline{1-10}
+\{Package\+Conversion\+Not\+Supported, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Conversion of S\+B\+ML Level 3 package constructs is not yet supported &&&&&&&&\\\cline{1-10}
+\{Invalid\+Target\+Level\+Version, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The requested S\+B\+ML Level/\+Version combination is not known to exist &&&&&&&&\\\cline{1-10}
+\{L3\+Not\+Supported, S\+B\+M\+L\+Error\+Code\+\_\+t\} &S\+B\+ML Level 3 is not yet supported &&&&&&&&\\\cline{1-10}
+\{Comp\+Unknown, S\+B\+M\+L\+Error\+Code\+\_\+t\} &&&&&&&&&\\\cline{1-10}
+\{Comp\+N\+S\+Undeclared, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The comp ns is not correctly declared &&&&&&&&\\\cline{1-10}
+\{Comp\+Element\+Not\+In\+Ns, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Element not in comp namespace &&&&&&&&\\\cline{1-10}
+\{Comp\+Duplicate\+Component\+Id, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Duplicate \textquotesingle{}id\textquotesingle{} attribute value &&&&&&&&\\\cline{1-10}
+\{Comp\+Unique\+Model\+Ids, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\hyperlink{class_model}{Model} and External\+Model\+Definitions must have unique ids &&&&&&&&\\\cline{1-10}
+\{Comp\+Unique\+Port\+Ids, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Ports must have unique ids &&&&&&&&\\\cline{1-10}
+\{Comp\+Invalid\+S\+Id\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid S\+Id syntax &&&&&&&&\\\cline{1-10}
+\{Comp\+Invalid\+Submodel\+Ref\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid submodel\+Ref syntax &&&&&&&&\\\cline{1-10}
+\{Comp\+Invalid\+Deletion\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid deletion syntax &&&&&&&&\\\cline{1-10}
+\{Comp\+Invalid\+Conversion\+Factor\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid conversion\+Factor syntax &&&&&&&&\\\cline{1-10}
+\{Comp\+Invalid\+Name\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid name syntax &&&&&&&&\\\cline{1-10}
+\{Comp\+Replaced\+Units\+Should\+Match, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Units of replaced elements should match replacement units. &&&&&&&&\\\cline{1-10}
+\{Comp\+One\+List\+Of\+Replaced\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only one {\ttfamily $<$list\+Of\+Replaced\+Elements$>$} allowed. &&&&&&&&\\\cline{1-10}
+\{Comp\+L\+O\+Replace\+Elements\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed children of {\ttfamily $<$list\+Of\+Replaced\+Elements$>$} &&&&&&&&\\\cline{1-10}
+\{Comp\+L\+O\+Replaced\+Elements\+Allowed\+Attribs, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed {\ttfamily $<$list\+Of\+Replaced\+Elements$>$} attributes &&&&&&&&\\\cline{1-10}
+\{Comp\+Empty\+L\+O\+Replaced\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &{\ttfamily $<$list\+Of\+Replaced\+Elements$>$} must not be empty &&&&&&&&\\\cline{1-10}
+\{Comp\+One\+Replaced\+By\+Element, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only one {\ttfamily $<$replaced\+By$>$} object allowed. &&&&&&&&\\\cline{1-10}
+\{Comp\+Attribute\+Required\+Missing, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Required comp\+:required attribute on {\ttfamily $<$sbml$>$} &&&&&&&&\\\cline{1-10}
+\{Comp\+Attribute\+Required\+Must\+Be\+Boolean, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The comp\+:required attribute must be Boolean &&&&&&&&\\\cline{1-10}
+\{Comp\+Required\+True\+If\+Elements\+Remain, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The comp\+:required attribute must be \textquotesingle{}true\textquotesingle{} if math changes &&&&&&&&\\\cline{1-10}
+\{Comp\+Required\+False\+If\+All\+Elements\+Replaced, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The comp\+:required attribute must be \textquotesingle{}false\textquotesingle{} if math does not change &&&&&&&&\\\cline{1-10}
+\{Comp\+One\+List\+Of\+Model\+Definitions, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only one {\ttfamily $<$list\+Of\+Model\+Definitions$>$} allowed. &&&&&&&&\\\cline{1-10}
+\{Comp\+Empty\+L\+O\+Model\+Defs, S\+B\+M\+L\+Error\+Code\+\_\+t\} &{\ttfamily $<$list\+Of\+Model\+Definitions$>$} and {\ttfamily $<$list\+Of\+External\+Model\+Definitions$>$} must not be empty &&&&&&&&\\\cline{1-10}
+\{Comp\+L\+O\+Model\+Defs\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only {\ttfamily $<$model\+Definitions$>$} in {\ttfamily $<$list\+Of\+Model\+Definitions$>$} &&&&&&&&\\\cline{1-10}
+\{Comp\+L\+O\+Ext\+Model\+Defs\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only {\ttfamily $<$external\+Model\+Definitions$>$} in {\ttfamily $<$list\+Of\+External\+Model\+Definitions$>$} &&&&&&&&\\\cline{1-10}
+\{Comp\+L\+O\+Model\+Defs\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed {\ttfamily $<$list\+Of\+Model\+Definitions$>$} attributes &&&&&&&&\\\cline{1-10}
+\{Comp\+L\+O\+Ext\+Mod\+Defs\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed {\ttfamily $<$list\+Of\+External\+Model\+Definitions$>$} attributes &&&&&&&&\\\cline{1-10}
+\{Comp\+One\+List\+Of\+Ext\+Model\+Definitions, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only one {\ttfamily $<$list\+Of\+External\+Model\+Definitions$>$} allowed. &&&&&&&&\\\cline{1-10}
+\{Comp\+Attribute\+Required\+Must\+Be\+True, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The comp\+:required attribute must be \textquotesingle{}true\textquotesingle{} &&&&&&&&\\\cline{1-10}
+\{Comp\+Ext\+Mod\+Def\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed {\ttfamily $<$external\+Model\+Definitions$>$} core attributes &&&&&&&&\\\cline{1-10}
+\{Comp\+Ext\+Mod\+Def\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed {\ttfamily $<$external\+Model\+Definitions$>$} elements &&&&&&&&\\\cline{1-10}
+\{Comp\+Ext\+Mod\+Def\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed {\ttfamily $<$external\+Model\+Definitions$>$} attributes &&&&&&&&\\\cline{1-10}
+\{Comp\+Reference\+Must\+Be\+L3, S\+B\+M\+L\+Error\+Code\+\_\+t\} &External models must be L3 &&&&&&&&\\\cline{1-10}
+\{Comp\+Mod\+Reference\+Must\+Id\+Of\+Model, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\textquotesingle{}model\+Ref\textquotesingle{} must be the \textquotesingle{}id\textquotesingle{} of a model in the \textquotesingle{}source\textquotesingle{} document &&&&&&&&\\\cline{1-10}
+\{Comp\+Ext\+Mod\+Md5\+Does\+Not\+Match, S\+B\+M\+L\+Error\+Code\+\_\+t\} &M\+D5 checksum does not match the \textquotesingle{}source\textquotesingle{} document &&&&&&&&\\\cline{1-10}
+\{Comp\+Invalid\+Source\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \textquotesingle{}comp\+:source\textquotesingle{} attribute must be of type \textquotesingle{}any\+U\+RI\textquotesingle{} &&&&&&&&\\\cline{1-10}
+\{Comp\+Invalid\+Model\+Ref\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \textquotesingle{}comp\+:model\+Ref\textquotesingle{} attribute must have the syntax of \textquotesingle{}S\+Id\textquotesingle{} &&&&&&&&\\\cline{1-10}
+\{Comp\+Invalid\+M\+D5\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \textquotesingle{}comp\+:md5\textquotesingle{} attribute must have the syntax of \textquotesingle{}string\textquotesingle{} &&&&&&&&\\\cline{1-10}
+\{Comp\+Circular\+External\+Model\+Reference, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Circular reference in {\ttfamily $<$external\+Model\+Definition$>$} &&&&&&&&\\\cline{1-10}
+\{Comp\+One\+List\+Of\+On\+Model, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only one {\ttfamily $<$list\+Of\+Submodels$>$} and one {\ttfamily $<$list\+Of\+Ports$>$} allowed &&&&&&&&\\\cline{1-10}
+\{Comp\+No\+Empty\+List\+Of\+On\+Model, S\+B\+M\+L\+Error\+Code\+\_\+t\} &No empty list\+Of elements allowed &&&&&&&&\\\cline{1-10}
+\{Comp\+L\+O\+Submodels\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed elements on {\ttfamily $<$list\+Of\+Submodels$>$} &&&&&&&&\\\cline{1-10}
+\{Comp\+L\+O\+Ports\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed elements on {\ttfamily $<$list\+Of\+Ports$>$} &&&&&&&&\\\cline{1-10}
+\{Comp\+L\+O\+Submodels\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed attributes on {\ttfamily $<$list\+Of\+Submodels$>$} &&&&&&&&\\\cline{1-10}
+\{Comp\+L\+O\+Ports\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed attributes on {\ttfamily $<$list\+Of\+Ports$>$} &&&&&&&&\\\cline{1-10}
+\{Comp\+Submodel\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed core attributes on {\ttfamily $<$submodel$>$} &&&&&&&&\\\cline{1-10}
+\{Comp\+Submodel\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed elements on {\ttfamily $<$submodel$>$} &&&&&&&&\\\cline{1-10}
+\{Comp\+One\+List\+Of\+Deletion\+On\+Submodel, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only one {\ttfamily $<$list\+Of\+Deletions$>$} on a {\ttfamily $<$submodel$>$} allowed &&&&&&&&\\\cline{1-10}
+\{Comp\+Submodel\+No\+Empty\+L\+O\+Deletions, S\+B\+M\+L\+Error\+Code\+\_\+t\} &No empty list\+Of\+Deletions elements allowed &&&&&&&&\\\cline{1-10}
+\{Comp\+L\+O\+Deletions\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed elements on {\ttfamily $<$list\+Of\+Deletions$>$} &&&&&&&&\\\cline{1-10}
+\{Comp\+L\+O\+Deletion\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed {\ttfamily $<$list\+Of\+Deletions$>$} attributes &&&&&&&&\\\cline{1-10}
+\{Comp\+Submodel\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed {\ttfamily $<$submodel$>$} attributes &&&&&&&&\\\cline{1-10}
+\{Comp\+Mod\+Reference\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\textquotesingle{}comp\+:model\+Ref\textquotesingle{} must conform to S\+Id syntax &&&&&&&&\\\cline{1-10}
+\{Comp\+Invalid\+Time\+Conv\+Factor\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\textquotesingle{}comp\+:time\+Conversion\+Factor\textquotesingle{} must conform to S\+Id syntax &&&&&&&&\\\cline{1-10}
+\{Comp\+Invalid\+Extent\+Conv\+Factor\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\textquotesingle{}comp\+:extent\+Conversion\+Factor\textquotesingle{} must conform to S\+Id syntax &&&&&&&&\\\cline{1-10}
+\{Comp\+Submodel\+Must\+Reference\+Model, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \textquotesingle{}comp\+:model\+Ref\textquotesingle{} attribute must reference a model &&&&&&&&\\\cline{1-10}
+\{Comp\+Submodel\+Cannot\+Reference\+Self, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \textquotesingle{}comp\+:model\+Ref\textquotesingle{} attribute cannot reference own model &&&&&&&&\\\cline{1-10}
+\{Comp\+Mod\+Cannot\+Circularly\+Reference\+Self, S\+B\+M\+L\+Error\+Code\+\_\+t\} &{\ttfamily $<$model$>$} may not reference {\ttfamily $<$submodel$>$} that references itself. &&&&&&&&\\\cline{1-10}
+\{Comp\+Time\+Conversion\+Must\+Be\+Parameter, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \textquotesingle{}comp\+:time\+Conversion\+Factor\textquotesingle{} must reference a parameter &&&&&&&&\\\cline{1-10}
+\{Comp\+Extent\+Conversion\+Must\+Be\+Parameter, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \textquotesingle{}comp\+:extent\+Conversion\+Factor\textquotesingle{} must reference a parameter &&&&&&&&\\\cline{1-10}
+\{Comp\+Port\+Ref\+Must\+Reference\+Port, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \textquotesingle{}comp\+:port\+Ref\textquotesingle{} attribute must be the \textquotesingle{}id\textquotesingle{} of a {\ttfamily $<$port$>$} &&&&&&&&\\\cline{1-10}
+\{Comp\+Id\+Ref\+Must\+Reference\+Object, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \textquotesingle{}comp\+:id\+Ref\textquotesingle{} attribute must be the \textquotesingle{}id\textquotesingle{} of a model element &&&&&&&&\\\cline{1-10}
+\{Comp\+Unit\+Ref\+Must\+Reference\+Unit\+Def, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \textquotesingle{}comp\+:unit\+Ref\textquotesingle{} attribute must be the \textquotesingle{}id\textquotesingle{} of a \hyperlink{class_unit_definition}{Unit\+Definition} &&&&&&&&\\\cline{1-10}
+\{Comp\+Meta\+Id\+Ref\+Must\+Reference\+Object, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \textquotesingle{}comp\+:meta\+Id\+Ref\textquotesingle{} attribute must be the \textquotesingle{}metaid\textquotesingle{} of an object &&&&&&&&\\\cline{1-10}
+\{Comp\+Parent\+Of\+S\+B\+Ref\+Child\+Must\+Be\+Submodel, S\+B\+M\+L\+Error\+Code\+\_\+t\} &If {\ttfamily $<$s\+Base\+Ref$>$} has a child {\ttfamily $<$s\+Base\+Ref$>$} its parent must be a {\ttfamily $<$submodel$>$} &&&&&&&&\\\cline{1-10}
+\{Comp\+Invalid\+Port\+Ref\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \textquotesingle{}comp\+:port\+Ref\textquotesingle{} attribute must have the syntax of an S\+B\+ML S\+Id &&&&&&&&\\\cline{1-10}
+\{Comp\+Invalid\+Id\+Ref\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \textquotesingle{}comp\+:id\+Ref\textquotesingle{} attribute must have the syntax of an S\+B\+ML S\+Id &&&&&&&&\\\cline{1-10}
+\{Comp\+Invalid\+Unit\+Ref\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \textquotesingle{}comp\+:unit\+Ref\textquotesingle{} attribute must have the syntax of an S\+B\+ML S\+Id &&&&&&&&\\\cline{1-10}
+\{Comp\+Invalid\+Meta\+Id\+Ref\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \textquotesingle{}comp\+:meta\+Id\+Ref\textquotesingle{} attribute must have the syntax of an X\+ML ID &&&&&&&&\\\cline{1-10}
+\{Comp\+One\+S\+Base\+Ref\+Only, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only one {\ttfamily $<$sbase\+Ref$>$} &&&&&&&&\\\cline{1-10}
+\{Comp\+Deprecated\+S\+Base\+Ref\+Spelling, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The spelling \textquotesingle{}sbase\+Ref\textquotesingle{} is deprecated &&&&&&&&\\\cline{1-10}
+\{Comp\+S\+Base\+Ref\+Must\+Reference\+Object, S\+B\+M\+L\+Error\+Code\+\_\+t\} &An S\+Base\+Ref must reference an object. &&&&&&&&\\\cline{1-10}
+\{Comp\+S\+Base\+Ref\+Must\+Reference\+Only\+One\+Object, S\+B\+M\+L\+Error\+Code\+\_\+t\} &An S\+Base\+Ref must reference only one other object. &&&&&&&&\\\cline{1-10}
+\{Comp\+No\+Multiple\+References, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Objects may not be referenced by mutiple S\+Base\+Ref constructs. &&&&&&&&\\\cline{1-10}
+\{Comp\+Port\+Must\+Reference\+Object, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Port must reference an object &&&&&&&&\\\cline{1-10}
+\{Comp\+Port\+Must\+Reference\+Only\+One\+Object, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Port must reference only one other object. &&&&&&&&\\\cline{1-10}
+\{Comp\+Port\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed attributes on a Port &&&&&&&&\\\cline{1-10}
+\{Comp\+Port\+References\+Unique, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Port definitions must be unique. &&&&&&&&\\\cline{1-10}
+\{Comp\+Deletion\+Must\+Reference\+Object, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Deletion must reference an object &&&&&&&&\\\cline{1-10}
+\{Comp\+Deletion\+Must\+Refer\+Only\+One\+Object, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Deletion must reference only one other object. &&&&&&&&\\\cline{1-10}
+\{Comp\+Deletion\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed attributes on a Deletion &&&&&&&&\\\cline{1-10}
+\{Comp\+Replaced\+Element\+Must\+Ref\+Object, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Replaced\+Element must reference an object &&&&&&&&\\\cline{1-10}
+\{Comp\+Replaced\+Element\+Must\+Ref\+Only\+One, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Replaced\+Element must reference only one other object. &&&&&&&&\\\cline{1-10}
+\{Comp\+Replaced\+Element\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed attributes on {\ttfamily $<$replaced\+Element$>$} &&&&&&&&\\\cline{1-10}
+\{Comp\+Replaced\+Element\+Sub\+Model\+Ref, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \textquotesingle{}comp\+:submodel\+Ref\textquotesingle{} attribute must point to a {\ttfamily $<$submodel$>$} &&&&&&&&\\\cline{1-10}
+\{Comp\+Replaced\+Element\+Deletion\+Ref, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \textquotesingle{}comp\+:deletion\textquotesingle{} attribute must point to a {\ttfamily $<$deletion$>$} &&&&&&&&\\\cline{1-10}
+\{Comp\+Replaced\+Element\+Conv\+Factor\+Ref, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \textquotesingle{}comp\+:conversion\+Factor attribute must point to a {\ttfamily $<$parameter$>$} &&&&&&&&\\\cline{1-10}
+\{Comp\+Replaced\+Element\+Same\+Reference, S\+B\+M\+L\+Error\+Code\+\_\+t\} &No {\ttfamily $<$replaced\+Element$>$} refer to same object &&&&&&&&\\\cline{1-10}
+\{Comp\+Replaced\+Element\+No\+Del\+And\+Conv\+Fact, S\+B\+M\+L\+Error\+Code\+\_\+t\} &No {\ttfamily $<$replaced\+Element$>$} with deletion and conversionfactor &&&&&&&&\\\cline{1-10}
+\{Comp\+Replaced\+By\+Must\+Ref\+Object, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Replaced\+By must reference an object &&&&&&&&\\\cline{1-10}
+\{Comp\+Replaced\+By\+Must\+Ref\+Only\+One, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Replaced\+By must reference only one other object. &&&&&&&&\\\cline{1-10}
+\{Comp\+Replaced\+By\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed attributes on {\ttfamily $<$replaced\+By$>$} &&&&&&&&\\\cline{1-10}
+\{Comp\+Replaced\+By\+Sub\+Model\+Ref, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \textquotesingle{}comp\+:submodel\+Ref\textquotesingle{} attribute must point to a {\ttfamily $<$submodel$>$} &&&&&&&&\\\cline{1-10}
+\{Comp\+Must\+Replace\+Same\+Class, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Replaced classes must match. &&&&&&&&\\\cline{1-10}
+\{Comp\+Must\+Replace\+I\+Ds, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Replaced I\+Ds must be replaced with I\+Ds. &&&&&&&&\\\cline{1-10}
+\{Comp\+Must\+Replace\+Meta\+I\+Ds, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Replaced metaids must be replaced with metaids. &&&&&&&&\\\cline{1-10}
+\{Comp\+Must\+Replace\+Package\+I\+Ds, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Replaced package I\+Ds must be replaced with package I\+Ds. &&&&&&&&\\\cline{1-10}
+\{Comp\+Unresolved\+Reference, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Unresolved reference. &&&&&&&&\\\cline{1-10}
+\{Comp\+No\+Model\+In\+Reference, S\+B\+M\+L\+Error\+Code\+\_\+t\} &No model in referenced document. &&&&&&&&\\\cline{1-10}
+\{Comp\+Ext\+Mod\+Def\+Bad, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Referenced {\ttfamily $<$external\+Model\+Definition$>$} unresolvable. &&&&&&&&\\\cline{1-10}
+\{Comp\+Model\+Flattening\+Failed, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\hyperlink{class_model}{Model} failed to flatten. &&&&&&&&\\\cline{1-10}
+\{Comp\+Flat\+Model\+Not\+Valid, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Flat model not valid. &&&&&&&&\\\cline{1-10}
+\{Comp\+Line\+Numbers\+Unreliable, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Line numbers unreliable. &&&&&&&&\\\cline{1-10}
+\{Comp\+Flattening\+Not\+Recognised\+Reqd, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Flattening not implemented for required package. &&&&&&&&\\\cline{1-10}
+\{Comp\+Flattening\+Not\+Recognised\+Not\+Reqd, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Flattening not implemented for unrequired package. &&&&&&&&\\\cline{1-10}
+\{Comp\+Flattening\+Not\+Implemented\+Not\+Reqd, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Flattening not implemented for unrequired package. &&&&&&&&\\\cline{1-10}
+\{Comp\+Flattening\+Not\+Implemented\+Reqd, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Flattening not implemented for required package. &&&&&&&&\\\cline{1-10}
+\{Comp\+Flattening\+Warning, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Flattening reference may come from package. &&&&&&&&\\\cline{1-10}
+\{Comp\+Deprecated\+Delete\+Function, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The perform\+Deletions functions is deprecated. &&&&&&&&\\\cline{1-10}
+\{Comp\+Deprecated\+Replace\+Function, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The perform\+Replacements\+And\+Conversions fuctions is deprecated. &&&&&&&&\\\cline{1-10}
+\{Comp\+Deleted\+Replacement, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Element deleted before a subelement could be replaced. &&&&&&&&\\\cline{1-10}
+\{Comp\+Id\+Ref\+May\+Reference\+Unknown\+Package, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \textquotesingle{}comp\+:id\+Ref\textquotesingle{} attribute must be the \textquotesingle{}id\textquotesingle{} of a model element &&&&&&&&\\\cline{1-10}
+\{Comp\+Meta\+Id\+Ref\+May\+Reference\+Unknown\+Pkg, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \textquotesingle{}comp\+:meta\+Id\+Ref\textquotesingle{} attribute must be the \textquotesingle{}metaid\textquotesingle{} of a model element &&&&&&&&\\\cline{1-10}
+\{Fbc\+Unknown, S\+B\+M\+L\+Error\+Code\+\_\+t\} &&&&&&&&&\\\cline{1-10}
+\{Fbc\+N\+S\+Undeclared, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The fbc ns is not correctly declared &&&&&&&&\\\cline{1-10}
+\{Fbc\+Element\+Not\+In\+Ns, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Element not in fbc namespace &&&&&&&&\\\cline{1-10}
+\{Fbc\+Duplicate\+Component\+Id, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Duplicate \textquotesingle{}id\textquotesingle{} attribute value &&&&&&&&\\\cline{1-10}
+\{Fbc\+S\+B\+M\+L\+S\+Id\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid \textquotesingle{}id\textquotesingle{} attribute &&&&&&&&\\\cline{1-10}
+\{Fbc\+Attribute\+Required\+Missing, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Required fbc\+:required attribute on {\ttfamily $<$sbml$>$} &&&&&&&&\\\cline{1-10}
+\{Fbc\+Attribute\+Required\+Must\+Be\+Boolean, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The fbc\+:required attribute must be Boolean &&&&&&&&\\\cline{1-10}
+\{Fbc\+Required\+False, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The fbc\+:required attribute must be \textquotesingle{}false\textquotesingle{} &&&&&&&&\\\cline{1-10}
+\{Fbc\+Only\+One\+Each\+List\+Of, S\+B\+M\+L\+Error\+Code\+\_\+t\} &One of each list of allowed &&&&&&&&\\\cline{1-10}
+\{Fbc\+No\+Empty\+List\+Ofs, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\hyperlink{class_list_of}{List\+Of} elements cannot be empty &&&&&&&&\\\cline{1-10}
+\{Fbc\+L\+O\+Flux\+Bounds\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed elements on List\+Of\+Flux\+Bounds &&&&&&&&\\\cline{1-10}
+\{Fbc\+L\+O\+Objectives\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed elements on List\+Of\+Objectives &&&&&&&&\\\cline{1-10}
+\{Fbc\+L\+O\+Flux\+Bounds\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed attributes on List\+Of\+Flux\+Bounds &&&&&&&&\\\cline{1-10}
+\{Fbc\+L\+O\+Objectives\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed attributes on List\+Of\+Objectives &&&&&&&&\\\cline{1-10}
+\{Fbc\+Active\+Objective\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Type of active\+Objective attribute &&&&&&&&\\\cline{1-10}
+\{Fbc\+Active\+Objective\+Refers\+Objective, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Active\+Objective must reference Objective &&&&&&&&\\\cline{1-10}
+\{Fbc\+Model\+Must\+Have\+Strict, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\textquotesingle{}Strict\textquotesingle{} attribute required on {\ttfamily $<$model$>$} &&&&&&&&\\\cline{1-10}
+\{Fbc\+Model\+Strict\+Must\+Be\+Boolean, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\textquotesingle{}Strict\textquotesingle{} attribute must be Boolean &&&&&&&&\\\cline{1-10}
+\{Fbc\+L\+O\+Gene\+Products\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed elements on List\+Of\+Gene\+Products &&&&&&&&\\\cline{1-10}
+\{Fbc\+L\+O\+Gene\+Products\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed attributes on List\+Of\+Gene\+Products &&&&&&&&\\\cline{1-10}
+\{Fbc\+Species\+Allowed\+L3\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\hyperlink{class_species}{Species} allowed attributes &&&&&&&&\\\cline{1-10}
+\{Fbc\+Species\+Charge\+Must\+Be\+Integer, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Charge must be integer &&&&&&&&\\\cline{1-10}
+\{Fbc\+Species\+Formula\+Must\+Be\+String, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Chemical formula must be string &&&&&&&&\\\cline{1-10}
+\{Fbc\+Flux\+Bound\+Allowed\+L3\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &{\ttfamily $<$flux\+Bound$>$} may only have \textquotesingle{}meta\+Id\textquotesingle{} and \textquotesingle{}sbo\+Term\textquotesingle{} from L3 namespace &&&&&&&&\\\cline{1-10}
+\{Fbc\+Flux\+Bound\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &{\ttfamily $<$flux\+Bound$>$} may only have {\ttfamily $<$notes$>$} and {\ttfamily $<$annotations$>$} from L3 Core &&&&&&&&\\\cline{1-10}
+\{Fbc\+Flux\+Bound\+Required\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on {\ttfamily $<$flux\+Bound$>$} object &&&&&&&&\\\cline{1-10}
+\{Fbc\+Flux\+Bound\+Rection\+Must\+Be\+S\+Id\+Ref, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Datatype for \textquotesingle{}fbc\+:reaction\textquotesingle{} must be S\+Id\+Ref &&&&&&&&\\\cline{1-10}
+\{Fbc\+Flux\+Bound\+Name\+Must\+Be\+String, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The attribute \textquotesingle{}fbc\+:name\textquotesingle{} must be of the data type string &&&&&&&&\\\cline{1-10}
+\{Fbc\+Flux\+Bound\+Operation\+Must\+Be\+Enum, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The attribute \textquotesingle{}fbc\+:operation\textquotesingle{} must be of data type Fbc\+Operation &&&&&&&&\\\cline{1-10}
+\{Fbc\+Flux\+Bound\+Value\+Must\+Be\+Double, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The attribute \textquotesingle{}fbc\+:value\textquotesingle{} must be of the data type double &&&&&&&&\\\cline{1-10}
+\{Fbc\+Flux\+Bound\+Reaction\+Must\+Exist, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\textquotesingle{}fbc\+:reaction\textquotesingle{} must refer to valid reaction &&&&&&&&\\\cline{1-10}
+\{Fbc\+Flux\+Bounds\+For\+Reaction\+Conflict, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Conflicting set of Flux\+Bounds for a reaction &&&&&&&&\\\cline{1-10}
+\{Fbc\+Objective\+Allowed\+L3\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &{\ttfamily $<$objective$>$} may only have \textquotesingle{}meta\+Id\textquotesingle{} and \textquotesingle{}sbo\+Term\textquotesingle{} from L3 namespace &&&&&&&&\\\cline{1-10}
+\{Fbc\+Objective\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &{\ttfamily $<$objective$>$} may only have {\ttfamily $<$notes$>$} and {\ttfamily $<$annotations$>$} from L3 Core &&&&&&&&\\\cline{1-10}
+\{Fbc\+Objective\+Required\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on {\ttfamily $<$objective$>$} object &&&&&&&&\\\cline{1-10}
+\{Fbc\+Objective\+Name\+Must\+Be\+String, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The attribute \textquotesingle{}fbc\+:name\textquotesingle{} must be of the data type string &&&&&&&&\\\cline{1-10}
+\{Fbc\+Objective\+Type\+Must\+Be\+Enum, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The attribute \textquotesingle{}fbc\+:type\textquotesingle{} must be of data type Fbc\+Type. &&&&&&&&\\\cline{1-10}
+\{Fbc\+Objective\+One\+List\+Of\+Objectives, S\+B\+M\+L\+Error\+Code\+\_\+t\} &An {\ttfamily $<$objective$>$} must have one {\ttfamily $<$list\+Of\+Flux\+Objectives$>$}. &&&&&&&&\\\cline{1-10}
+\{Fbc\+Objective\+L\+O\+Flux\+Obj\+Must\+Not\+Be\+Empty, S\+B\+M\+L\+Error\+Code\+\_\+t\} &{\ttfamily $<$list\+Of\+Flux\+Objectives$>$} subobject must not be empty &&&&&&&&\\\cline{1-10}
+\{Fbc\+Objective\+L\+O\+Flux\+Obj\+Only\+Flux\+Obj, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid element found in {\ttfamily $<$list\+Of\+Flux\+Objectives$>$} &&&&&&&&\\\cline{1-10}
+\{Fbc\+Objective\+L\+O\+Flux\+Obj\+Allowed\+Attribs, S\+B\+M\+L\+Error\+Code\+\_\+t\} &{\ttfamily $<$list\+Of\+Flux\+Objectives$>$} may only have \textquotesingle{}meta\+Id\textquotesingle{} and \textquotesingle{}sbo\+Term\textquotesingle{} from L3 core &&&&&&&&\\\cline{1-10}
+\{Fbc\+Flux\+Object\+Allowed\+L3\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &{\ttfamily $<$flux\+Objective$>$} may only have \textquotesingle{}meta\+Id\textquotesingle{} and \textquotesingle{}sbo\+Term\textquotesingle{} from L3 namespace &&&&&&&&\\\cline{1-10}
+\{Fbc\+Flux\+Object\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &{\ttfamily $<$flux\+Objective$>$} may only have {\ttfamily $<$notes$>$} and {\ttfamily $<$annotations$>$} from L3 Core &&&&&&&&\\\cline{1-10}
+\{Fbc\+Flux\+Object\+Required\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid attribute found on {\ttfamily $<$flux\+Objective$>$} object &&&&&&&&\\\cline{1-10}
+\{Fbc\+Flux\+Object\+Name\+Must\+Be\+String, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The attribute \textquotesingle{}fbc\+:name\textquotesingle{} must be of the data type string &&&&&&&&\\\cline{1-10}
+\{Fbc\+Flux\+Object\+Reaction\+Must\+Be\+S\+Id\+Ref, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Datatype for \textquotesingle{}fbc\+:reaction\textquotesingle{} must be S\+Id\+Ref &&&&&&&&\\\cline{1-10}
+\{Fbc\+Flux\+Object\+Reaction\+Must\+Exist, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\textquotesingle{}fbc\+:reaction\textquotesingle{} must refer to valid reaction &&&&&&&&\\\cline{1-10}
+\{Fbc\+Flux\+Object\+Coefficient\+Must\+Be\+Double, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The attribute \textquotesingle{}fbc\+:coefficient\textquotesingle{} must be of the data type double &&&&&&&&\\\cline{1-10}
+\{Fbc\+Flux\+Object\+Coefficient\+When\+Strict, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The \textquotesingle{}fbc\+:coefficient\textquotesingle{} must be declared when strict &&&&&&&&\\\cline{1-10}
+\{Fbc\+Reaction\+Only\+One\+Gene\+Prod\+Ass, S\+B\+M\+L\+Error\+Code\+\_\+t\} &One Gene\+Product\+Association in a \hyperlink{class_reaction}{Reaction} &&&&&&&&\\\cline{1-10}
+\{Fbc\+Reaction\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Fbc attributes on a \hyperlink{class_reaction}{Reaction} &&&&&&&&\\\cline{1-10}
+\{Fbc\+Reaction\+Lwr\+Bound\+S\+Id\+Ref, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Lower\+Bound must be S\+Id\+Ref &&&&&&&&\\\cline{1-10}
+\{Fbc\+Reaction\+Up\+Bound\+S\+Id\+Ref, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Upper\+Bound must be S\+Id\+Ref &&&&&&&&\\\cline{1-10}
+\{Fbc\+Reaction\+Lwr\+Bound\+Ref\+Exists, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Lower\+Bound must point to \hyperlink{class_parameter}{Parameter} &&&&&&&&\\\cline{1-10}
+\{Fbc\+Reaction\+Up\+Bound\+Ref\+Exists, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Upper\+Bound must point to \hyperlink{class_parameter}{Parameter} &&&&&&&&\\\cline{1-10}
+\{Fbc\+Reaction\+Must\+Have\+Bounds\+Strict, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\hyperlink{class_reaction}{Reaction} must have bounds when strict &&&&&&&&\\\cline{1-10}
+\{Fbc\+Reaction\+Constant\+Bounds\+Strict, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\hyperlink{class_reaction}{Reaction} bounds constant when strict &&&&&&&&\\\cline{1-10}
+\{Fbc\+Reaction\+Bounds\+Must\+Have\+Values\+Strict, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\hyperlink{class_reaction}{Reaction} bounds must have values when strict &&&&&&&&\\\cline{1-10}
+\{Fbc\+Reaction\+Bounds\+Not\+Assigned\+Strict, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\hyperlink{class_reaction}{Reaction} bounds not assigned when strict &&&&&&&&\\\cline{1-10}
+\{Fbc\+Reaction\+Lwr\+Bound\+Not\+Inf\+Strict, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Lower\+Bound cannot be I\+NF when strict &&&&&&&&\\\cline{1-10}
+\{Fbc\+Reaction\+Up\+Bound\+Not\+Neg\+Inf\+Strict, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Upper\+Bound cannot be -\/\+I\+NF when strict &&&&&&&&\\\cline{1-10}
+\{Fbc\+Reaction\+Lwr\+Less\+Than\+Up\+Strict, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Lower\+Bound less than upper\+Bound when strict &&&&&&&&\\\cline{1-10}
+\{Fbc\+Species\+Reference\+Constant\+Strict, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Species\+References must be constant when strict &&&&&&&&\\\cline{1-10}
+\{Fbc\+Species\+Refs\+Stoich\+Must\+Be\+Real\+Strict, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Stoichiometry of Species\+References must be real valued when strict &&&&&&&&\\\cline{1-10}
+\{Fbc\+Species\+Ref\+Not\+Assigned\+Strict, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\hyperlink{class_species_reference}{Species\+Reference} not target of \hyperlink{class_initial_assignment}{Initial\+Assignment} when strict &&&&&&&&\\\cline{1-10}
+\{Fbc\+Gene\+Prod\+Assoc\+Allowed\+Core\+Attribs, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed core attributes on {\ttfamily $<$Gene\+Product\+Association$>$} &&&&&&&&\\\cline{1-10}
+\{Fbc\+Gene\+Prod\+Assoc\+Allowed\+Core\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed core elements on {\ttfamily $<$Gene\+Product\+Association$>$} &&&&&&&&\\\cline{1-10}
+\{Fbc\+Gene\+Prod\+Assoc\+Allowed\+Attribs, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed fbc attributes on {\ttfamily $<$Gene\+Product\+Association$>$} &&&&&&&&\\\cline{1-10}
+\{Fbc\+Gene\+Prod\+Assoc\+Id\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\textquotesingle{}fbc\+:id\textquotesingle{} must have S\+Id syntax &&&&&&&&\\\cline{1-10}
+\{Fbc\+Gene\+Prod\+Assoc\+Contains\+One\+Element, S\+B\+M\+L\+Error\+Code\+\_\+t\} &{\ttfamily $<$Gene\+Product\+Association$>$} must contain one concrete object &&&&&&&&\\\cline{1-10}
+\{Fbc\+Gene\+Prod\+Assoc\+Name\+Must\+Be\+String, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\textquotesingle{}fbc\+:name\textquotesingle{} must be string &&&&&&&&\\\cline{1-10}
+\{Fbc\+Gene\+Prod\+Ref\+Allowed\+Core\+Attribs, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed core attributes on {\ttfamily $<$Gene\+Product\+Ref$>$} &&&&&&&&\\\cline{1-10}
+\{Fbc\+Gene\+Prod\+Ref\+Allowed\+Core\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed core elements on {\ttfamily $<$Gene\+Product\+Ref$>$} &&&&&&&&\\\cline{1-10}
+\{Fbc\+Gene\+Prod\+Ref\+Allowed\+Attribs, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed fbc attributes on {\ttfamily $<$Gene\+Product\+Ref$>$} &&&&&&&&\\\cline{1-10}
+\{Fbc\+Gene\+Prod\+Ref\+Gene\+Product\+S\+Id\+Ref, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\textquotesingle{}fbc\+:gene\+Product\textquotesingle{} must be S\+Id\+Ref &&&&&&&&\\\cline{1-10}
+\{Fbc\+Gene\+Prod\+Ref\+Gene\+Product\+Exists, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\textquotesingle{}fbc\+:gene\+Product\textquotesingle{} must point to existing {\ttfamily $<$Gene\+Product$>$} &&&&&&&&\\\cline{1-10}
+\{Fbc\+And\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed core attributes on {\ttfamily $<$And$>$} &&&&&&&&\\\cline{1-10}
+\{Fbc\+And\+Allowed\+Core\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed core attributes on {\ttfamily $<$And$>$} &&&&&&&&\\\cline{1-10}
+\{Fbc\+And\+Two\+Children, S\+B\+M\+L\+Error\+Code\+\_\+t\} &{\ttfamily $<$And$>$} must have at least two child elements &&&&&&&&\\\cline{1-10}
+\{Fbc\+Or\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed core attributes on {\ttfamily $<$Or$>$} &&&&&&&&\\\cline{1-10}
+\{Fbc\+Or\+Allowed\+Core\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed core elements on {\ttfamily $<$Or$>$} &&&&&&&&\\\cline{1-10}
+\{Fbc\+Or\+Two\+Children, S\+B\+M\+L\+Error\+Code\+\_\+t\} &{\ttfamily $<$Or$>$} must have at least two child elements &&&&&&&&\\\cline{1-10}
+\{Fbc\+Gene\+Product\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed core attributes on {\ttfamily $<$Gene\+Product$>$} &&&&&&&&\\\cline{1-10}
+\{Fbc\+Gene\+Product\+Allowed\+Core\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed core elements on {\ttfamily $<$Gene\+Product$>$} &&&&&&&&\\\cline{1-10}
+\{Fbc\+Gene\+Product\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed fbc attributes on {\ttfamily $<$Gene\+Product$>$} &&&&&&&&\\\cline{1-10}
+\{Fbc\+Gene\+Product\+Label\+Must\+Be\+String, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\textquotesingle{}fbc\+:label\textquotesingle{} must be string &&&&&&&&\\\cline{1-10}
+\{Fbc\+Gene\+Product\+Label\+Must\+Be\+Unique, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\textquotesingle{}fbc\+:label\textquotesingle{} must be unique &&&&&&&&\\\cline{1-10}
+\{Fbc\+Gene\+Product\+Name\+Must\+Be\+String, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\textquotesingle{}fbc\+:name\textquotesingle{} must be string &&&&&&&&\\\cline{1-10}
+\{Fbc\+Gene\+Product\+Assoc\+Species\+Must\+Exist, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\textquotesingle{}fbc\+:associated\+Species\textquotesingle{} must point to existing {\ttfamily $<$species$>$} &&&&&&&&\\\cline{1-10}
+\{Qual\+Unknown, S\+B\+M\+L\+Error\+Code\+\_\+t\} &&&&&&&&&\\\cline{1-10}
+\{Qual\+N\+S\+Undeclared, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The qual ns is not correctly declared &&&&&&&&\\\cline{1-10}
+\{Qual\+Element\+Not\+In\+Ns, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Element not in qual namespace &&&&&&&&\\\cline{1-10}
+\{Qual\+Function\+Term\+Bool, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Function\+Term should return Boolean &&&&&&&&\\\cline{1-10}
+\{Qual\+Math\+C\+Symbol\+Disallowed, S\+B\+M\+L\+Error\+Code\+\_\+t\} &C\+Symbol time or delay not allowed &&&&&&&&\\\cline{1-10}
+\{Qual\+Duplicate\+Component\+Id, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Duplicate \textquotesingle{}id\textquotesingle{} attribute value &&&&&&&&\\\cline{1-10}
+\{Qual\+Attribute\+Required\+Missing, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Required qual\+:required attribute on {\ttfamily $<$sbml$>$} &&&&&&&&\\\cline{1-10}
+\{Qual\+Attribute\+Required\+Must\+Be\+Boolean, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The qual\+:required attribute must be Boolean &&&&&&&&\\\cline{1-10}
+\{Qual\+Required\+True\+If\+Transitions, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The qual\+:required attribute must be \textquotesingle{}true\textquotesingle{} if math changes &&&&&&&&\\\cline{1-10}
+\{Qual\+One\+List\+Of\+Trans\+Or\+QS, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only one {\ttfamily $<$list\+Of\+Transitions$>$} or {\ttfamily $<$list\+Of\+Qualitative\+Species$>$} allowed. &&&&&&&&\\\cline{1-10}
+\{Qual\+Empty\+L\+O\+Not\+Allowed, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Empty {\ttfamily $<$list\+Of\+Transitions$>$} or {\ttfamily $<$list\+Of\+Qualitative\+Species$>$} not allowed. &&&&&&&&\\\cline{1-10}
+\{Qual\+L\+O\+Transitiond\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Elements allowed on {\ttfamily $<$list\+Of\+Transitions$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+L\+O\+Qual\+Species\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Elements allowed on {\ttfamily $<$list\+Of\+Transitions$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+L\+O\+Qual\+Species\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attributes allowed on {\ttfamily $<$list\+Of\+Qualitative\+Species$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+L\+O\+Transitions\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attributes allowed on {\ttfamily $<$list\+Of\+Transitions$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+Qual\+Species\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core attributes allowed on {\ttfamily $<$qualitative\+Species$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+Qual\+Species\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Elements allowed on {\ttfamily $<$qualitative\+Species$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+Qual\+Species\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attributes allowed on {\ttfamily $<$qualitative\+Species$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+Constant\+Must\+Be\+Bool, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}constant\textquotesingle{} on {\ttfamily $<$qualitative\+Species$>$} must be Boolean. &&&&&&&&\\\cline{1-10}
+\{Qual\+Name\+Must\+Be\+String, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}name\textquotesingle{} on {\ttfamily $<$qualitative\+Species$>$} must be string. &&&&&&&&\\\cline{1-10}
+\{Qual\+Initial\+Level\+Must\+Be\+Int, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}initial\+Level\textquotesingle{} on {\ttfamily $<$qualitative\+Species$>$} must be integer. &&&&&&&&\\\cline{1-10}
+\{Qual\+Max\+Level\+Must\+Be\+Int, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}max\+Level\textquotesingle{} on {\ttfamily $<$qualitative\+Species$>$} must be integer. &&&&&&&&\\\cline{1-10}
+\{Qual\+Compartment\+Must\+Refer\+Existing, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}compartment\textquotesingle{} on {\ttfamily $<$qualitative\+Species$>$} must reference compartment. &&&&&&&&\\\cline{1-10}
+\{Qual\+Initial\+Level\+Cannot\+Exceed\+Max, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}initial\+Level\textquotesingle{} on {\ttfamily $<$qualitative\+Species$>$} cannot exceed max\+Level. &&&&&&&&\\\cline{1-10}
+\{Qual\+Constant\+Q\+S\+Cannot\+Be\+Output, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Constant {\ttfamily $<$qualitative\+Species$>$} cannot be an Output. &&&&&&&&\\\cline{1-10}
+\{Qual\+Q\+S\+Assigned\+Only\+Once, S\+B\+M\+L\+Error\+Code\+\_\+t\} &A {\ttfamily $<$qualitative\+Species$>$} can only be assigned once. &&&&&&&&\\\cline{1-10}
+\{Qual\+Inital\+Level\+Not\+Negative, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}initial\+Level\textquotesingle{} on {\ttfamily $<$qualitative\+Species$>$} cannot be negative. &&&&&&&&\\\cline{1-10}
+\{Qual\+Max\+Level\+Not\+Negative, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}max\+Level\textquotesingle{} on {\ttfamily $<$qualitative\+Species$>$} cannot be negative. &&&&&&&&\\\cline{1-10}
+\{Qual\+Transition\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core attributes allowed on {\ttfamily $<$transition$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+Transition\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Elements allowed on {\ttfamily $<$transition$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+Transition\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attributes allowed on {\ttfamily $<$transition$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+Transition\+Name\+Must\+Be\+String, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}name\textquotesingle{} on {\ttfamily $<$transition$>$} must be string. &&&&&&&&\\\cline{1-10}
+\{Qual\+Transition\+L\+O\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\hyperlink{class_list_of}{List\+Of} elements on {\ttfamily $<$transition$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+Transition\+Empty\+L\+O\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\hyperlink{class_list_of}{List\+Of} elements on {\ttfamily $<$transition$>$} not empty. &&&&&&&&\\\cline{1-10}
+\{Qual\+Transition\+L\+O\+Input\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Elements on {\ttfamily $<$list\+Of\+Inputs$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+Transition\+L\+O\+Output\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Elements on {\ttfamily $<$list\+Of\+Outputs$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+Transition\+L\+O\+Func\+Term\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Elements on {\ttfamily $<$list\+Of\+Function\+Terms$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+Transition\+L\+O\+Input\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attributes allowed on {\ttfamily $<$list\+Of\+Inputs$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+Transition\+L\+O\+Output\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attributes allowed on {\ttfamily $<$list\+Of\+Outputs$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+Transition\+L\+O\+Func\+Term\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attributes allowed on {\ttfamily $<$list\+Of\+Function\+Terms$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+Transition\+L\+O\+Func\+Term\+Exceed\+Max, S\+B\+M\+L\+Error\+Code\+\_\+t\} &{\ttfamily $<$list\+Of\+Function\+Terms$>$} cannot make qualitative\+Species exceed max\+Level. &&&&&&&&\\\cline{1-10}
+\{Qual\+Transition\+L\+O\+Func\+Term\+Negative, S\+B\+M\+L\+Error\+Code\+\_\+t\} &{\ttfamily $<$list\+Of\+Function\+Terms$>$} cannot make qualitative\+Species negative. &&&&&&&&\\\cline{1-10}
+\{Qual\+Input\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core attributes allowed on {\ttfamily $<$input$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+Input\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Elements allowed on {\ttfamily $<$input$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+Input\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attributes allowed on {\ttfamily $<$input$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+Input\+Name\+Must\+Be\+String, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}name\textquotesingle{} on {\ttfamily $<$input$>$} must be string. &&&&&&&&\\\cline{1-10}
+\{Qual\+Input\+Sign\+Must\+Be\+Sign\+Enum, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}sign\textquotesingle{} on {\ttfamily $<$input$>$} must be enum. &&&&&&&&\\\cline{1-10}
+\{Qual\+Input\+Trans\+Effect\+Must\+Be\+Input\+Effect, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}transition\+Effect\textquotesingle{} on {\ttfamily $<$input$>$} must be enum. &&&&&&&&\\\cline{1-10}
+\{Qual\+Input\+Thresh\+Must\+Be\+Integer, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}threshold\+Level\textquotesingle{} on {\ttfamily $<$input$>$} must be non negative integer. &&&&&&&&\\\cline{1-10}
+\{Qual\+Input\+Q\+S\+Must\+Be\+Existing\+QS, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}qualitative\+Species\textquotesingle{} on {\ttfamily $<$input$>$} must refer to existing &&&&&&&&\\\cline{1-10}
+\{Qual\+Input\+Constant\+Cannot\+Be\+Consumed, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Constant {\ttfamily $<$input$>$} cannot be consumed. &&&&&&&&\\\cline{1-10}
+\{Qual\+Input\+Thresh\+Must\+Be\+Non\+Negative, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}threshold\+Level\textquotesingle{} on {\ttfamily $<$input$>$} must be non negative integer. &&&&&&&&\\\cline{1-10}
+\{Qual\+Output\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core attributes allowed on {\ttfamily $<$output$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+Output\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Elements allowed on {\ttfamily $<$output$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+Output\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attributes allowed on {\ttfamily $<$output$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+Output\+Name\+Must\+Be\+String, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}name\textquotesingle{} on {\ttfamily $<$output$>$} must be string. &&&&&&&&\\\cline{1-10}
+\{Qual\+Output\+Trans\+Effect\+Must\+Be\+Output, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}transition\+Effect\textquotesingle{} on {\ttfamily $<$output$>$} must be enum. &&&&&&&&\\\cline{1-10}
+\{Qual\+Output\+Level\+Must\+Be\+Integer, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}output\+Level\textquotesingle{} on {\ttfamily $<$output$>$} must be non negative integer. &&&&&&&&\\\cline{1-10}
+\{Qual\+Output\+Q\+S\+Must\+Be\+Existing\+QS, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}qualitative\+Species\textquotesingle{} on {\ttfamily $<$output$>$} must refer to existing &&&&&&&&\\\cline{1-10}
+\{Qual\+Output\+Constant\+Must\+Be\+False, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Constant \textquotesingle{}qualitative\+Species\textquotesingle{} cannot be {\ttfamily $<$output$>$} &&&&&&&&\\\cline{1-10}
+\{Qual\+Output\+Production\+Must\+Have\+Level, S\+B\+M\+L\+Error\+Code\+\_\+t\} &{\ttfamily $<$output$>$} being produced must have level &&&&&&&&\\\cline{1-10}
+\{Qual\+Output\+Level\+Must\+Be\+Non\+Negative, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}output\+Level\textquotesingle{} on {\ttfamily $<$output$>$} must be non negative integer. &&&&&&&&\\\cline{1-10}
+\{Qual\+Default\+Term\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core attributes allowed on {\ttfamily $<$default\+Term$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+Default\+Term\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Elements allowed on {\ttfamily $<$default\+Term$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+Default\+Term\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attributes allowed on {\ttfamily $<$default\+Term$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+Default\+Term\+Result\+Must\+Be\+Integer, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}result\+Level\textquotesingle{} on {\ttfamily $<$default\+Term$>$} must be non negative integer. &&&&&&&&\\\cline{1-10}
+\{Qual\+Default\+Term\+Result\+Must\+Be\+Non\+Neg, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}result\+Level\textquotesingle{} on {\ttfamily $<$default\+Term$>$} must be non negative integer. &&&&&&&&\\\cline{1-10}
+\{Qual\+Func\+Term\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core attributes allowed on {\ttfamily $<$function\+Term$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+Func\+Term\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Elements allowed on {\ttfamily $<$function\+Term$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+Func\+Term\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attributes allowed on {\ttfamily $<$function\+Term$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+Func\+Term\+Only\+One\+Math, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only one {\ttfamily $<$math$>$} on {\ttfamily $<$function\+Term$>$}. &&&&&&&&\\\cline{1-10}
+\{Qual\+Func\+Term\+Result\+Must\+Be\+Integer, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}result\+Level\textquotesingle{} on {\ttfamily $<$function\+Term$>$} must be non negative integer. &&&&&&&&\\\cline{1-10}
+\{Qual\+Func\+Term\+Result\+Must\+Be\+Non\+Neg, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}result\+Level\textquotesingle{} on {\ttfamily $<$function\+Term$>$} must be non negative integer. &&&&&&&&\\\cline{1-10}
+\{Groups\+Unknown, S\+B\+M\+L\+Error\+Code\+\_\+t\} &&&&&&&&&\\\cline{1-10}
+\{Groups\+N\+S\+Undeclared, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The Groups namespace is not correctly declared. &&&&&&&&\\\cline{1-10}
+\{Groups\+Element\+Not\+In\+Ns, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Element not in Groups namespace &&&&&&&&\\\cline{1-10}
+\{Groups\+Duplicate\+Component\+Id, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Duplicate \textquotesingle{}id\textquotesingle{} attribute value &&&&&&&&\\\cline{1-10}
+\{Groups\+Id\+Syntax\+Rule, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Invalid S\+Id syntax &&&&&&&&\\\cline{1-10}
+\{Groups\+Attribute\+Required\+Missing, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Required groups\+:required attribute on {\ttfamily $<$sbml$>$} &&&&&&&&\\\cline{1-10}
+\{Groups\+Attribute\+Required\+Must\+Be\+Boolean, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The groups\+:required attribute must be Boolean &&&&&&&&\\\cline{1-10}
+\{Groups\+Attribute\+Required\+Must\+Have\+Value, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The groups\+:required attribute must be \textquotesingle{}false\textquotesingle{} &&&&&&&&\\\cline{1-10}
+\{Groups\+Model\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Elements allowed on {\ttfamily $<$model$>$}. &&&&&&&&\\\cline{1-10}
+\{Groups\+Model\+Empty\+L\+O\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &No Empty \hyperlink{class_list_of}{List\+Of} elements allowed on {\ttfamily $<$\hyperlink{class_model}{Model}$>$}. &&&&&&&&\\\cline{1-10}
+\{Groups\+Model\+L\+O\+Groups\+Allowed\+Core\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core elements allowed on {\ttfamily $<$model$>$}. &&&&&&&&\\\cline{1-10}
+\{Groups\+Model\+L\+O\+Groups\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core attributes allowed on {\ttfamily $<$model$>$}. &&&&&&&&\\\cline{1-10}
+\{Groups\+Group\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core attributes allowed on {\ttfamily $<$group$>$}. &&&&&&&&\\\cline{1-10}
+\{Groups\+Group\+Allowed\+Core\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core elements allowed on {\ttfamily $<$group$>$}. &&&&&&&&\\\cline{1-10}
+\{Groups\+Group\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attributes allowed on {\ttfamily $<$group$>$}. &&&&&&&&\\\cline{1-10}
+\{Groups\+Group\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Elements allowed on {\ttfamily $<$group$>$}. &&&&&&&&\\\cline{1-10}
+\{Groups\+Group\+Kind\+Must\+Be\+Group\+Kind\+Enum, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Kind attribute must be Group\+Kind\+Enum. &&&&&&&&\\\cline{1-10}
+\{Groups\+Group\+Name\+Must\+Be\+String, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Name attribute must be String. &&&&&&&&\\\cline{1-10}
+\{Groups\+Group\+Empty\+L\+O\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &No Empty \hyperlink{class_list_of}{List\+Of} elements allowed on {\ttfamily $<$group$>$}. &&&&&&&&\\\cline{1-10}
+\{Groups\+Group\+L\+O\+Members\+Allowed\+Core\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core elements allowed on {\ttfamily $<$list\+Of\+Members$>$}. &&&&&&&&\\\cline{1-10}
+\{Groups\+Group\+L\+O\+Members\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core attributes allowed on {\ttfamily $<$list\+Of\+Members$>$}. &&&&&&&&\\\cline{1-10}
+\{Groups\+Group\+L\+O\+Members\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attributes allowed on {\ttfamily $<$list\+Of\+Members$>$}. &&&&&&&&\\\cline{1-10}
+\{Groups\+L\+O\+Members\+Name\+Must\+Be\+String, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Name attribute must be String. &&&&&&&&\\\cline{1-10}
+\{Groups\+L\+O\+Members\+Consistent\+References, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Consistent references by multiple {\ttfamily $<$member$>$} objects. &&&&&&&&\\\cline{1-10}
+\{Groups\+Not\+Circular\+References, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Circular references by multiple {\ttfamily $<$member$>$} objects. &&&&&&&&\\\cline{1-10}
+\{Groups\+Member\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core attributes allowed on {\ttfamily $<$member$>$}. &&&&&&&&\\\cline{1-10}
+\{Groups\+Member\+Allowed\+Core\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core elements allowed on {\ttfamily $<$member$>$}. &&&&&&&&\\\cline{1-10}
+\{Groups\+Member\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attributes allowed on {\ttfamily $<$member$>$}. &&&&&&&&\\\cline{1-10}
+\{Groups\+Member\+Name\+Must\+Be\+String, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Name attribute must be String. &&&&&&&&\\\cline{1-10}
+\{Groups\+Member\+Id\+Ref\+Must\+Be\+S\+Base, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}id\+Ref\textquotesingle{} must point to \hyperlink{class_s_base}{S\+Base} object. &&&&&&&&\\\cline{1-10}
+\{Groups\+Member\+Meta\+Id\+Ref\+Must\+Be\+S\+Base, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}meta\+Id\+Ref\textquotesingle{} must point to \hyperlink{class_s_base}{S\+Base} object. &&&&&&&&\\\cline{1-10}
+\{Groups\+Member\+Id\+Ref\+Must\+Be\+S\+Id, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}id\+Ref\textquotesingle{} must be type \textquotesingle{}S\+Id\textquotesingle{}. &&&&&&&&\\\cline{1-10}
+\{Groups\+Member\+Meta\+Id\+Ref\+Must\+Be\+ID, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attribute \textquotesingle{}meta\+Id\+Ref\textquotesingle{} must be type \textquotesingle{}ID\textquotesingle{}. &&&&&&&&\\\cline{1-10}
+\{Layout\+Unknown\+Error, S\+B\+M\+L\+Error\+Code\+\_\+t\} &&&&&&&&&\\\cline{1-10}
+\{Layout\+N\+S\+Undeclared, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The layout ns is not correctly declared &&&&&&&&\\\cline{1-10}
+\{Layout\+Element\+Not\+In\+Ns, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Element not in layout namespace &&&&&&&&\\\cline{1-10}
+\{Layout\+Duplicate\+Component\+Id, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Duplicate \textquotesingle{}id\textquotesingle{} attribute value &&&&&&&&\\\cline{1-10}
+\{Layout\+S\+Id\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\textquotesingle{}id\textquotesingle{} attribute incorrect syntax &&&&&&&&\\\cline{1-10}
+\{Layout\+Xsi\+Type\+Allowed\+Locations, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\textquotesingle{}xsi\+:type\textquotesingle{} allowed locations &&&&&&&&\\\cline{1-10}
+\{Layout\+Xsi\+Type\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\textquotesingle{}xsi\+:type\textquotesingle{} attribute incorrect syntax &&&&&&&&\\\cline{1-10}
+\{Layout\+Attribute\+Required\+Missing, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Required layout\+:required attribute on {\ttfamily $<$sbml$>$} &&&&&&&&\\\cline{1-10}
+\{Layout\+Attribute\+Required\+Must\+Be\+Boolean, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The layout\+:required attribute must be Boolean &&&&&&&&\\\cline{1-10}
+\{Layout\+Required\+False, S\+B\+M\+L\+Error\+Code\+\_\+t\} &The layout\+:required attribute must be \textquotesingle{}false\textquotesingle{} &&&&&&&&\\\cline{1-10}
+\{Layout\+Only\+One\+L\+O\+Layouts, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only one list\+Of\+Layouts on {\ttfamily $<$model$>$} &&&&&&&&\\\cline{1-10}
+\{Layout\+L\+O\+Layouts\+Not\+Empty, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\hyperlink{class_list_of}{List\+Of} elements cannot be empty &&&&&&&&\\\cline{1-10}
+\{Layout\+L\+O\+Layouts\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed elements on List\+Of\+Layouts &&&&&&&&\\\cline{1-10}
+\{Layout\+L\+O\+Layouts\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed attributes on List\+Of\+Layouts &&&&&&&&\\\cline{1-10}
+\{Layout\+Layout\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed elements on Layout &&&&&&&&\\\cline{1-10}
+\{Layout\+Layout\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed core attributes on Layout &&&&&&&&\\\cline{1-10}
+\{Layout\+Only\+One\+Each\+List\+Of, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Only one each list\+Of on {\ttfamily $<$layout$>$} &&&&&&&&\\\cline{1-10}
+\{Layout\+No\+Empty\+List\+Ofs, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\hyperlink{class_list_of}{List\+Of} elements cannot be empty &&&&&&&&\\\cline{1-10}
+\{Layout\+Layout\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &{\ttfamily $<$layout$>$} must have \textquotesingle{}id\textquotesingle{} and may have \textquotesingle{}name\textquotesingle{} &&&&&&&&\\\cline{1-10}
+\{Layout\+Layout\+Name\+Must\+Be\+String, S\+B\+M\+L\+Error\+Code\+\_\+t\} &\textquotesingle{}name\textquotesingle{} must be string &&&&&&&&\\\cline{1-10}
+\{Layout\+L\+O\+Comp\+Glyph\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attributes allowed on {\ttfamily $<$list\+Of\+Compartment\+Glyphs$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+L\+O\+Comp\+Glyph\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Elements allowed on {\ttfamily $<$list\+Of\+Compartment\+Glyphs$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+L\+O\+Species\+Glyph\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attributes allowed on {\ttfamily $<$list\+Of\+Species\+Glyphs$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+L\+O\+Species\+Glyph\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Elements allowed on {\ttfamily $<$list\+Of\+Species\+Glyphs$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+L\+O\+Rn\+Glyph\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attributes allowed on {\ttfamily $<$list\+Of\+Reaction\+Glyphs$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+L\+O\+Rn\+Glyph\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Elements allowed on {\ttfamily $<$list\+Of\+Reaction\+Glyphs$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+L\+O\+Add\+G\+O\+Allowed\+Attribut, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attributes allowed on {\ttfamily $<$list\+Of\+Additional\+Graphical\+Object\+Glyphs$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+L\+O\+Add\+G\+O\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Elements allowed on {\ttfamily $<$list\+Of\+Additional\+Graphical\+Object\+Glyphs$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+Layout\+Must\+Have\+Dimensions, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout must have {\ttfamily $<$dimensions$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+L\+O\+Text\+Glyph\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Attributes allowed on {\ttfamily $<$list\+Of\+Text\+Glyphs$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+L\+O\+Text\+Glyph\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Elements allowed on {\ttfamily $<$list\+Of\+Text\+Glyphs$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+G\+O\+Allowed\+Core\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core elements allowed on {\ttfamily $<$graphical\+Object$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+G\+O\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core attributes allowed on {\ttfamily $<$graphical\+Object$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+G\+O\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout elements allowed on {\ttfamily $<$graphical\+Object$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+G\+O\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout attributes allowed on {\ttfamily $<$graphical\+Object$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+G\+O\+Meta\+Id\+Ref\+Must\+Be\+I\+D\+R\+EF, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout \textquotesingle{}metaid\+Ref\textquotesingle{} must be I\+D\+R\+EF. &&&&&&&&\\\cline{1-10}
+\{Layout\+G\+O\+Meta\+Id\+Ref\+Must\+Reference\+Object, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout \textquotesingle{}metaid\+Ref\textquotesingle{} must reference existing object. &&&&&&&&\\\cline{1-10}
+\{Layout\+G\+O\+Must\+Contain\+Bounding\+Box, S\+B\+M\+L\+Error\+Code\+\_\+t\} &A {\ttfamily $<$graphical\+Object$>$} must contain a {\ttfamily $<$bounding\+Box$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+C\+G\+Allowed\+Core\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core elements allowed on {\ttfamily $<$compartment\+Glyph$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+C\+G\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core attributes allowed on {\ttfamily $<$compartment\+Glyph$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+C\+G\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout elements allowed on {\ttfamily $<$compartment\+Glyph$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+C\+G\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout attributes allowed on {\ttfamily $<$compartment\+Glyph$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+C\+G\+Meta\+Id\+Ref\+Must\+Be\+I\+D\+R\+EF, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout \textquotesingle{}metaid\+Ref\textquotesingle{} must be I\+D\+R\+EF. &&&&&&&&\\\cline{1-10}
+\{Layout\+C\+G\+Meta\+Id\+Ref\+Must\+Reference\+Object, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout \textquotesingle{}metaid\+Ref\textquotesingle{} must reference existing object. &&&&&&&&\\\cline{1-10}
+\{Layout\+C\+G\+Compartment\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Compartment\+Glyph \textquotesingle{}compartment\textquotesingle{} must have S\+Id\+Ref syntax. &&&&&&&&\\\cline{1-10}
+\{Layout\+C\+G\+Compartment\+Must\+Ref\+Comp, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Compartment\+Glyph compartment must reference existing compartment. &&&&&&&&\\\cline{1-10}
+\{Layout\+C\+G\+No\+Duplicate\+References, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Compartment\+Glyph cannot reference two objects. &&&&&&&&\\\cline{1-10}
+\{Layout\+C\+G\+Order\+Must\+Be\+Double, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Compartment\+Glyph order must be double. &&&&&&&&\\\cline{1-10}
+\{Layout\+S\+G\+Allowed\+Core\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core elements allowed on {\ttfamily $<$species\+Glyph$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+S\+G\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core attributes allowed on {\ttfamily $<$species\+Glyph$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+S\+G\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout elements allowed on {\ttfamily $<$species\+Glyph$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+S\+G\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout attributes allowed on {\ttfamily $<$species\+Glyph$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+S\+G\+Meta\+Id\+Ref\+Must\+Be\+I\+D\+R\+EF, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout \textquotesingle{}metaid\+Ref\textquotesingle{} must be I\+D\+R\+EF. &&&&&&&&\\\cline{1-10}
+\{Layout\+S\+G\+Meta\+Id\+Ref\+Must\+Reference\+Object, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout \textquotesingle{}metaid\+Ref\textquotesingle{} must reference existing object. &&&&&&&&\\\cline{1-10}
+\{Layout\+S\+G\+Species\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Species\+Glyph \textquotesingle{}species\textquotesingle{} must have S\+Id\+Ref syntax. &&&&&&&&\\\cline{1-10}
+\{Layout\+S\+G\+Species\+Must\+Ref\+Species, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Species\+Glyph species must reference existing species. &&&&&&&&\\\cline{1-10}
+\{Layout\+S\+G\+No\+Duplicate\+References, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Species\+Glyph cannot reference two objects. &&&&&&&&\\\cline{1-10}
+\{Layout\+R\+G\+Allowed\+Core\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core elements allowed on {\ttfamily $<$reaction\+Glyph$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+R\+G\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core attributes allowed on {\ttfamily $<$reaction\+Glyph$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+R\+G\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout elements allowed on {\ttfamily $<$reaction\+Glyph$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+R\+G\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout attributes allowed on {\ttfamily $<$reaction\+Glyph$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+R\+G\+Meta\+Id\+Ref\+Must\+Be\+I\+D\+R\+EF, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout \textquotesingle{}metaid\+Ref\textquotesingle{} must be I\+D\+R\+EF. &&&&&&&&\\\cline{1-10}
+\{Layout\+R\+G\+Meta\+Id\+Ref\+Must\+Reference\+Object, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout \textquotesingle{}metaid\+Ref\textquotesingle{} must reference existing object. &&&&&&&&\\\cline{1-10}
+\{Layout\+R\+G\+Reaction\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Reaction\+Glyph \textquotesingle{}reaction\textquotesingle{} must have S\+Id\+Ref syntax. &&&&&&&&\\\cline{1-10}
+\{Layout\+R\+G\+Reaction\+Must\+Ref\+Reaction, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Reaction\+Glyph reaction must reference existing reaction. &&&&&&&&\\\cline{1-10}
+\{Layout\+R\+G\+No\+Duplicate\+References, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Reaction\+Glyph cannot reference two objects. &&&&&&&&\\\cline{1-10}
+\{Layout\+L\+O\+Species\+Ref\+Glyph\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed elements on List\+Of\+Species\+Reference\+Glyphs &&&&&&&&\\\cline{1-10}
+\{Layout\+L\+O\+Species\+Ref\+Glyph\+Allowed\+Attribs, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed attributes on List\+Of\+Species\+Reference\+Glyphs &&&&&&&&\\\cline{1-10}
+\{Layout\+L\+O\+Species\+Ref\+Glyph\+Not\+Empty, S\+B\+M\+L\+Error\+Code\+\_\+t\} &List\+Of\+Species\+Reference\+Glyphs not empty &&&&&&&&\\\cline{1-10}
+\{Layout\+G\+G\+Allowed\+Core\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core elements allowed on {\ttfamily $<$general\+Glyph$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+G\+G\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core attributes allowed on {\ttfamily $<$general\+Glyph$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+G\+G\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout elements allowed on {\ttfamily $<$general\+Glyph$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+G\+G\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout attributes allowed on {\ttfamily $<$general\+Glyph$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+G\+G\+Meta\+Id\+Ref\+Must\+Be\+I\+D\+R\+EF, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout \textquotesingle{}metaid\+Ref\textquotesingle{} must be I\+D\+R\+EF. &&&&&&&&\\\cline{1-10}
+\{Layout\+G\+G\+Meta\+Id\+Ref\+Must\+Reference\+Object, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout \textquotesingle{}metaid\+Ref\textquotesingle{} must reference existing object. &&&&&&&&\\\cline{1-10}
+\{Layout\+G\+G\+Reference\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &General\+Glyph \textquotesingle{}reference\textquotesingle{} must have S\+Id\+Ref syntax. &&&&&&&&\\\cline{1-10}
+\{Layout\+G\+G\+Reference\+Must\+Ref\+Object, S\+B\+M\+L\+Error\+Code\+\_\+t\} &General\+Glyph \textquotesingle{}reference\textquotesingle{} must reference existing element. &&&&&&&&\\\cline{1-10}
+\{Layout\+G\+G\+No\+Duplicate\+References, S\+B\+M\+L\+Error\+Code\+\_\+t\} &General\+Glyph cannot reference two objects. &&&&&&&&\\\cline{1-10}
+\{Layout\+L\+O\+Reference\+Glyph\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed elements on List\+Of\+Reference\+Glyphs &&&&&&&&\\\cline{1-10}
+\{Layout\+L\+O\+Reference\+Glyph\+Allowed\+Attribs, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed attributes on List\+Of\+Reference\+Glyphs &&&&&&&&\\\cline{1-10}
+\{Layout\+L\+O\+Sub\+Glyph\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &&&&&&&&&\\\cline{1-10}
+\{Layout\+L\+O\+Sub\+Glyph\+Allowed\+Attribs, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed attributes on List\+Of\+Sub\+Glyphs &&&&&&&&\\\cline{1-10}
+\{Layout\+T\+G\+Allowed\+Core\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core elements allowed on {\ttfamily $<$text\+Glyph$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+T\+G\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core attributes allowed on {\ttfamily $<$text\+Glyph$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+T\+G\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout elements allowed on {\ttfamily $<$text\+Glyph$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+T\+G\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout attributes allowed on {\ttfamily $<$text\+Glyph$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+T\+G\+Meta\+Id\+Ref\+Must\+Be\+I\+D\+R\+EF, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout \textquotesingle{}metaid\+Ref\textquotesingle{} must be I\+D\+R\+EF. &&&&&&&&\\\cline{1-10}
+\{Layout\+T\+G\+Meta\+Id\+Ref\+Must\+Reference\+Object, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout \textquotesingle{}metaid\+Ref\textquotesingle{} must reference existing object. &&&&&&&&\\\cline{1-10}
+\{Layout\+T\+G\+Origin\+Of\+Text\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Text\+Glyph \textquotesingle{}origin\+Of\+Text\textquotesingle{} must have S\+Id\+Ref syntax. &&&&&&&&\\\cline{1-10}
+\{Layout\+T\+G\+Origin\+Of\+Text\+Must\+Ref\+Object, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Text\+Glyph \textquotesingle{}origin\+Of\+Text\textquotesingle{} must reference existing element. &&&&&&&&\\\cline{1-10}
+\{Layout\+T\+G\+No\+Duplicate\+References, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Text\+Glyph cannot reference two objects. &&&&&&&&\\\cline{1-10}
+\{Layout\+T\+G\+Graphical\+Object\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Text\+Glyph \textquotesingle{}graphical\+Object\textquotesingle{} must have S\+Id\+Ref syntax. &&&&&&&&\\\cline{1-10}
+\{Layout\+T\+G\+Graphical\+Object\+Must\+Ref\+Object, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Text\+Glyph \textquotesingle{}graphical\+Object\textquotesingle{} must reference existing element. &&&&&&&&\\\cline{1-10}
+\{Layout\+T\+G\+Text\+Must\+Be\+String, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Text\+Glyph \textquotesingle{}text\textquotesingle{} must be string. &&&&&&&&\\\cline{1-10}
+\{Layout\+S\+R\+G\+Allowed\+Core\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core elements allowed on {\ttfamily $<$species\+Reference\+Glyph$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+S\+R\+G\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core attributes allowed on {\ttfamily $<$species\+Reference\+Glyph$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+S\+R\+G\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout elements allowed on {\ttfamily $<$species\+Reference\+Glyph$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+S\+R\+G\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout attributes allowed on {\ttfamily $<$species\+Reference\+Glyph$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+S\+R\+G\+Meta\+Id\+Ref\+Must\+Be\+I\+D\+R\+EF, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout \textquotesingle{}metaid\+Ref\textquotesingle{} must be I\+D\+R\+EF. &&&&&&&&\\\cline{1-10}
+\{Layout\+S\+R\+G\+Meta\+Id\+Ref\+Must\+Reference\+Object, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout \textquotesingle{}metaid\+Ref\textquotesingle{} must reference existing object. &&&&&&&&\\\cline{1-10}
+\{Layout\+S\+R\+G\+Species\+Reference\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Species\+Reference\+Glyph \textquotesingle{}species\+Reference\textquotesingle{} must have S\+Id\+Ref syntax. &&&&&&&&\\\cline{1-10}
+\{Layout\+S\+R\+G\+Species\+Ref\+Must\+Ref\+Object, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Species\+Reference\+Glyph \textquotesingle{}species\+Reference\textquotesingle{} must reference existing element. &&&&&&&&\\\cline{1-10}
+\{Layout\+S\+R\+G\+No\+Duplicate\+References, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Species\+Reference\+Glyph cannot reference two objects. &&&&&&&&\\\cline{1-10}
+\{Layout\+S\+R\+G\+Species\+Glyph\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Species\+Reference\+Glyph \textquotesingle{}species\+Glyph\textquotesingle{} must have S\+Id\+Ref syntax. &&&&&&&&\\\cline{1-10}
+\{Layout\+S\+R\+G\+Species\+Glyph\+Must\+Ref\+Object, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Species\+Reference\+Glyph \textquotesingle{}species\+Glyph\textquotesingle{} must reference existing element. &&&&&&&&\\\cline{1-10}
+\{Layout\+S\+R\+G\+Role\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Species\+Reference\+Glyph \textquotesingle{}role\textquotesingle{} must be string from enumeration. &&&&&&&&\\\cline{1-10}
+\{Layout\+R\+E\+F\+G\+Allowed\+Core\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core elements allowed on {\ttfamily $<$reference\+Glyph$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+R\+E\+F\+G\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core attributes allowed on {\ttfamily $<$reference\+Glyph$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+R\+E\+F\+G\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout elements allowed on {\ttfamily $<$reference\+Glyph$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+R\+E\+F\+G\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout attributes allowed on {\ttfamily $<$reference\+Glyph$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+R\+E\+F\+G\+Meta\+Id\+Ref\+Must\+Be\+I\+D\+R\+EF, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout \textquotesingle{}metaid\+Ref\textquotesingle{} must be I\+D\+R\+EF. &&&&&&&&\\\cline{1-10}
+\{Layout\+R\+E\+F\+G\+Meta\+Id\+Ref\+Must\+Reference\+Object, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout \textquotesingle{}metaid\+Ref\textquotesingle{} must reference existing object. &&&&&&&&\\\cline{1-10}
+\{Layout\+R\+E\+F\+G\+Reference\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Reference\+Glyph \textquotesingle{}reference\textquotesingle{} must have S\+Id\+Ref syntax. &&&&&&&&\\\cline{1-10}
+\{Layout\+R\+E\+F\+G\+Reference\+Must\+Ref\+Object, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Reference\+Glyph \textquotesingle{}reference\textquotesingle{} must reference existing element. &&&&&&&&\\\cline{1-10}
+\{Layout\+R\+E\+F\+G\+No\+Duplicate\+References, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Reference\+Glyph cannot reference two objects. &&&&&&&&\\\cline{1-10}
+\{Layout\+R\+E\+F\+G\+Glyph\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Reference\+Glyph \textquotesingle{}glyph\textquotesingle{} must have S\+Id\+Ref syntax. &&&&&&&&\\\cline{1-10}
+\{Layout\+R\+E\+F\+G\+Glyph\+Must\+Ref\+Object, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Reference\+Glyph \textquotesingle{}glyph\textquotesingle{} must reference existing element. &&&&&&&&\\\cline{1-10}
+\{Layout\+R\+E\+F\+G\+Role\+Syntax, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Reference\+Glyph \textquotesingle{}role\textquotesingle{} must be string. &&&&&&&&\\\cline{1-10}
+\{Layout\+Point\+Allowed\+Core\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core elements allowed on {\ttfamily $<$point$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+Point\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core attributes allowed on {\ttfamily $<$point$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+Point\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout attributes allowed on {\ttfamily $<$point$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+Point\+Attributes\+Must\+Be\+Double, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout \textquotesingle{}x\textquotesingle{}, \textquotesingle{}y\textquotesingle{} and \textquotesingle{}z\textquotesingle{} must be double. &&&&&&&&\\\cline{1-10}
+\{Layout\+B\+Box\+Allowed\+Core\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core elements allowed on {\ttfamily $<$bounding\+Box$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+B\+Box\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core attributes allowed on {\ttfamily $<$bounding\+Box$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+B\+Box\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout elements allowed on {\ttfamily $<$bounding\+Box$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+B\+Box\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout attributes allowed on {\ttfamily $<$bounding\+Box$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+B\+Box\+Consistent3\+D\+Definition, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout consistent dimensions on a {\ttfamily $<$bounding\+Box$>$} &&&&&&&&\\\cline{1-10}
+\{Layout\+Curve\+Allowed\+Core\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core elements allowed on {\ttfamily $<$curve$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+Curve\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core attributes allowed on {\ttfamily $<$curve$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+Curve\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout elements allowed on {\ttfamily $<$curve$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+Curve\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout attributes allowed on {\ttfamily $<$curve$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+L\+O\+Curve\+Segs\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed attributes on List\+Of\+Curve\+Segments &&&&&&&&\\\cline{1-10}
+\{Layout\+L\+O\+Curve\+Segs\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Allowed elements on List\+Of\+Curve\+Segments &&&&&&&&\\\cline{1-10}
+\{Layout\+L\+O\+Curve\+Segs\+Not\+Empty, S\+B\+M\+L\+Error\+Code\+\_\+t\} &No empty List\+Of\+Curve\+Segments &&&&&&&&\\\cline{1-10}
+\{Layout\+L\+Seg\+Allowed\+Core\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core elements allowed on {\ttfamily $<$line\+Segment$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+L\+Seg\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core attributes allowed on {\ttfamily $<$line\+Segment$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+L\+Seg\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout elements allowed on {\ttfamily $<$line\+Segment$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+L\+Seg\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout attributes allowed on {\ttfamily $<$line\+Segment$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+C\+Bez\+Allowed\+Core\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core elements allowed on {\ttfamily $<$cubic\+Bezier$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+C\+Bez\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core attributes allowed on {\ttfamily $<$cubic\+Bezier$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+C\+Bez\+Allowed\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout elements allowed on {\ttfamily $<$cubic\+Bezier$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+C\+Bez\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout attributes allowed on {\ttfamily $<$cubic\+Bezier$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+Dims\+Allowed\+Core\+Elements, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core elements allowed on {\ttfamily $<$dimensions$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+Dims\+Allowed\+Core\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Core attributes allowed on {\ttfamily $<$dimensions$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+Dims\+Allowed\+Attributes, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout attributes allowed on {\ttfamily $<$dimensions$>$}. &&&&&&&&\\\cline{1-10}
+\{Layout\+Dims\+Attributes\+Must\+Be\+Double, S\+B\+M\+L\+Error\+Code\+\_\+t\} &Layout \textquotesingle{}width\textquotesingle{}, \textquotesingle{}height\textquotesingle{} and \textquotesingle{}depth\textquotesingle{} must be double. &&&&&&&&\\\cline{1-10}
+\end{longtabu}
+
+\end{DoxyParagraph}
+\begin{center} \tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Enumerator }&\textbf{ Meaning  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Enumerator }&\textbf{ Meaning  }\\\cline{1-2}
+\endhead
+\{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+A\+T\+\_\+\+S\+B\+ML, X\+M\+L\+Error\+Category\+\_\+t\}&General error not falling into another category below. \\\cline{1-2}
+\{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+A\+T\+\_\+\+S\+B\+M\+L\+\_\+\+L1\+\_\+\+C\+O\+M\+P\+AT, X\+M\+L\+Error\+Category\+\_\+t\}&Category of errors that can only occur during attempted translation from one Level/\+Version of S\+B\+ML to another. This particular category applies to errors encountered while trying to convert a model from S\+B\+ML Level~2 to S\+B\+ML Level~1. \\\cline{1-2}
+\{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+A\+T\+\_\+\+S\+B\+M\+L\+\_\+\+L2\+V1\+\_\+\+C\+O\+M\+P\+AT, X\+M\+L\+Error\+Category\+\_\+t\}&Category of errors that can only occur during attempted translation from one Level/\+Version of S\+B\+ML to another. This particular category applies to errors encountered while trying to convert a model to S\+B\+ML Level~2 Version~1. \\\cline{1-2}
+\{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+A\+T\+\_\+\+S\+B\+M\+L\+\_\+\+L2\+V2\+\_\+\+C\+O\+M\+P\+AT, X\+M\+L\+Error\+Category\+\_\+t\}&Category of errors that can only occur during attempted translation from one Level/\+Version of S\+B\+ML to another. This particular category applies to errors encountered while trying to convert a model to S\+B\+ML Level~2 Version~2. \\\cline{1-2}
+\{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+A\+T\+\_\+\+G\+E\+N\+E\+R\+A\+L\+\_\+\+C\+O\+N\+S\+I\+S\+T\+E\+N\+CY, X\+M\+L\+Error\+Category\+\_\+t\}&Category of errors that can occur while validating general S\+B\+ML constructs. With respect to the S\+B\+ML specification, these concern failures in applying the validation rules numbered 2xxxx in the Level~2 Versions~2--4 and Level~3 Versions~1--2 specifications. \\\cline{1-2}
+\{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+A\+T\+\_\+\+I\+D\+E\+N\+T\+I\+F\+I\+E\+R\+\_\+\+C\+O\+N\+S\+I\+S\+T\+E\+N\+CY, X\+M\+L\+Error\+Category\+\_\+t\}&Category of errors that can occur while validating symbol identifiers in a model. With respect to the S\+B\+ML specification, these concern failures in applying the validation rules numbered 103xx in the Level~2 Versions~2--4 and Level~3 Versions~1--2 specifications. \\\cline{1-2}
+\{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+A\+T\+\_\+\+U\+N\+I\+T\+S\+\_\+\+C\+O\+N\+S\+I\+S\+T\+E\+N\+CY, X\+M\+L\+Error\+Category\+\_\+t\}&Category of errors that can occur while validating the units of measurement on quantities in a model. With respect to the S\+B\+ML specification, these concern failures in applying the validation rules numbered 105xx in the Level~2 Versions~2--4 and Level~3 Versions~1--2 specifications. \\\cline{1-2}
+\{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+A\+T\+\_\+\+M\+A\+T\+H\+M\+L\+\_\+\+C\+O\+N\+S\+I\+S\+T\+E\+N\+CY, X\+M\+L\+Error\+Category\+\_\+t\}&Category of errors that can occur while validating Math\+ML formulas in a model. With respect to the S\+B\+ML specification, these concern failures in applying the validation rules numbered 102xx in the Level~2 Versions~2--4 and Level~3 Versions~1--2 specifications. \\\cline{1-2}
+\{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+A\+T\+\_\+\+S\+B\+O\+\_\+\+C\+O\+N\+S\+I\+S\+T\+E\+N\+CY, X\+M\+L\+Error\+Category\+\_\+t\}&Category of errors that can occur while validating \hyperlink{class_s_b_o}{S\+BO} identifiers in a model. With respect to the S\+B\+ML specification, these concern failures in applying the validation rules numbered 107xx in the Level~2 Versions~2--4 and Level~3 Versions~1--2 specifications. \\\cline{1-2}
+\{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+A\+T\+\_\+\+O\+V\+E\+R\+D\+E\+T\+E\+R\+M\+I\+N\+E\+D\+\_\+\+M\+O\+D\+EL, X\+M\+L\+Error\+Category\+\_\+t\}&Error in the system of equations in the model\+: the system is overdetermined, therefore violating a tenet of proper S\+B\+ML. With respect to the S\+B\+ML specification, this is validation rule \#10601 in the S\+B\+ML Level~2 Versions~2--4 and Level~3 Versions~1--2 specifications. \\\cline{1-2}
+\{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+A\+T\+\_\+\+S\+B\+M\+L\+\_\+\+L2\+V3\+\_\+\+C\+O\+M\+P\+AT, X\+M\+L\+Error\+Category\+\_\+t\}&Category of errors that can only occur during attempted translation from one Level/\+Version of S\+B\+ML to another. This particular category applies to errors encountered while trying to convert a model to S\+B\+ML Level~2 Version~3. \\\cline{1-2}
+\{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+A\+T\+\_\+\+M\+O\+D\+E\+L\+I\+N\+G\+\_\+\+P\+R\+A\+C\+T\+I\+CE, X\+M\+L\+Error\+Category\+\_\+t\}&Category of warnings about recommended good practices involving S\+B\+ML and computational modeling. (These are tests performed by lib\+S\+B\+ML and do not have equivalent S\+B\+ML validation rules.) \\\cline{1-2}
+\{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+A\+T\+\_\+\+I\+N\+T\+E\+R\+N\+A\+L\+\_\+\+C\+O\+N\+S\+I\+S\+T\+E\+N\+CY, X\+M\+L\+Error\+Category\+\_\+t\}&Category of errors that can occur while validating lib\+S\+B\+ML\textquotesingle{}s internal representation of S\+B\+ML constructs. (These are tests performed by lib\+S\+B\+ML and do not have equivalent S\+B\+ML validation rules.) \\\cline{1-2}
+\{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+A\+T\+\_\+\+S\+B\+M\+L\+\_\+\+L2\+V4\+\_\+\+C\+O\+M\+P\+AT, X\+M\+L\+Error\+Category\+\_\+t\}&Category of errors that can only occur during attempted translation from one Level/\+Version of S\+B\+ML to another. This particular category applies to errors encountered while trying to convert a model to S\+B\+ML Level~2 Version~4. \\\cline{1-2}
+\{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+A\+T\+\_\+\+S\+B\+M\+L\+\_\+\+L3\+V1\+\_\+\+C\+O\+M\+P\+AT, X\+M\+L\+Error\+Category\+\_\+t\}&Category of errors that can only occur during attempted translation from one Level/\+Version of S\+B\+ML to another. This particular category applies to errors encountered while trying to convert a model to S\+B\+ML Level~3 Version~1.
+
+\\\cline{1-2}
+\end{longtabu}
+\end{center}  
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_s_b_m_l_error_8h}{S\+B\+M\+L\+Error.\+h}\end{DoxyCompactItemize}

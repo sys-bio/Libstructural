@@ -1,0 +1,131 @@
+\hypertarget{fluxbalance_8cpp}{}\section{fluxbalance.\+cpp File Reference}
+\label{fluxbalance_8cpp}\index{fluxbalance.\+cpp@{fluxbalance.\+cpp}}
+{\ttfamily \#include \char`\"{}fluxbalance.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$lp\+\_\+lib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}libstructural.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}matrix.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}util.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}constraint.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}objective.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lpresult.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{fluxbalance_8cpp_a611f7c25047efae785732e0b8a6bd979}{Flux\+Balance\+\_\+add\+Constraint} (const char $\ast$id, const int operation, const double value)
+\item 
+int \hyperlink{fluxbalance_8cpp_ac0edd301ff17ddf0a3138f2cc9f7ad0b}{Flux\+Balance\+\_\+add\+Objective} (const char $\ast$id, const double value)
+\item 
+int \hyperlink{fluxbalance_8cpp_aab005ebefb258b57dce20358bd58d01c}{Flux\+Balance\+\_\+clear\+Constraints} ()
+\item 
+int \hyperlink{fluxbalance_8cpp_a0b33f8f149c1ecc8cc8380a59e2c8684}{Flux\+Balance\+\_\+clear\+Objectives} ()
+\item 
+int \hyperlink{fluxbalance_8cpp_aaac299d453de65f35f999f00ea06a9ea}{Flux\+Balance\+\_\+load\+S\+B\+ML} (const char $\ast$sbml\+Content)
+\item 
+int \hyperlink{fluxbalance_8cpp_a5c56ca3f82339d8633c3d8b8fbfde3a5}{Flux\+Balance\+\_\+load\+Stoichiometry} (const double $\ast$$\ast$matrix, const int num\+Rows, const int num\+Cols, const char $\ast$$\ast$flux\+Names)
+\item 
+int \hyperlink{fluxbalance_8cpp_a76228dbfb1ffdc526bd5050db7f7271d}{Flux\+Balance\+\_\+maximize} (char $\ast$$\ast$$\ast$out\+Names, double $\ast$$\ast$out\+Values, int $\ast$out\+Length)
+\item 
+int \hyperlink{fluxbalance_8cpp_a8a6cdbcc71734664f23c0a09b0abc1ff}{Flux\+Balance\+\_\+minimize} (char $\ast$$\ast$$\ast$out\+Names, double $\ast$$\ast$out\+Values, int $\ast$out\+Length)
+\item 
+int \hyperlink{fluxbalance_8cpp_a9d5636acfac372d872a73ba29e0ade84}{Flux\+Balance\+\_\+set\+Constraints} (const char $\ast$$\ast$ids, const int $\ast$operations, const double $\ast$values, const int length)
+\item 
+int \hyperlink{fluxbalance_8cpp_a2b88fb8e0a96ea37a0a1eda0552a5930}{Flux\+Balance\+\_\+set\+Objectives} (const char $\ast$$\ast$ids, const double $\ast$values, const int length)
+\item 
+int \hyperlink{fluxbalance_8cpp_a5bad84f27e0c66bf7cc5376ccbb77afd}{Flux\+Balance\+\_\+solve} (char $\ast$$\ast$$\ast$out\+Names, double $\ast$$\ast$out\+Values, int $\ast$out\+Length)
+\item 
+void \hyperlink{fluxbalance_8cpp_a8707232c02769c6fcf5a29c2f66a8085}{Flux\+Balance\+\_\+write\+To\+Free\+M\+P\+S\+File} (const char $\ast$file\+Name)
+\item 
+void \hyperlink{fluxbalance_8cpp_a4cf55ac75e9abeb18d9acf5dbe708077}{Flux\+Balance\+\_\+write\+To\+L\+P\+File} (const char $\ast$file\+Name)
+\item 
+void \hyperlink{fluxbalance_8cpp_ac0f6ef1646cd3b372f7975a2839daa88}{Flux\+Balance\+\_\+write\+To\+M\+P\+S\+File} (const char $\ast$file\+Name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{fluxbalance_8cpp_a611f7c25047efae785732e0b8a6bd979}\label{fluxbalance_8cpp_a611f7c25047efae785732e0b8a6bd979}} 
+\index{fluxbalance.\+cpp@{fluxbalance.\+cpp}!Flux\+Balance\+\_\+add\+Constraint@{Flux\+Balance\+\_\+add\+Constraint}}
+\index{Flux\+Balance\+\_\+add\+Constraint@{Flux\+Balance\+\_\+add\+Constraint}!fluxbalance.\+cpp@{fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Flux\+Balance\+\_\+add\+Constraint()}{FluxBalance\_addConstraint()}}
+{\footnotesize\ttfamily int Flux\+Balance\+\_\+add\+Constraint (\begin{DoxyParamCaption}\item[{const char $\ast$}]{id,  }\item[{const int}]{operation,  }\item[{const double}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fluxbalance_8cpp_ac0edd301ff17ddf0a3138f2cc9f7ad0b}\label{fluxbalance_8cpp_ac0edd301ff17ddf0a3138f2cc9f7ad0b}} 
+\index{fluxbalance.\+cpp@{fluxbalance.\+cpp}!Flux\+Balance\+\_\+add\+Objective@{Flux\+Balance\+\_\+add\+Objective}}
+\index{Flux\+Balance\+\_\+add\+Objective@{Flux\+Balance\+\_\+add\+Objective}!fluxbalance.\+cpp@{fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Flux\+Balance\+\_\+add\+Objective()}{FluxBalance\_addObjective()}}
+{\footnotesize\ttfamily int Flux\+Balance\+\_\+add\+Objective (\begin{DoxyParamCaption}\item[{const char $\ast$}]{id,  }\item[{const double}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fluxbalance_8cpp_aab005ebefb258b57dce20358bd58d01c}\label{fluxbalance_8cpp_aab005ebefb258b57dce20358bd58d01c}} 
+\index{fluxbalance.\+cpp@{fluxbalance.\+cpp}!Flux\+Balance\+\_\+clear\+Constraints@{Flux\+Balance\+\_\+clear\+Constraints}}
+\index{Flux\+Balance\+\_\+clear\+Constraints@{Flux\+Balance\+\_\+clear\+Constraints}!fluxbalance.\+cpp@{fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Flux\+Balance\+\_\+clear\+Constraints()}{FluxBalance\_clearConstraints()}}
+{\footnotesize\ttfamily int Flux\+Balance\+\_\+clear\+Constraints (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fluxbalance_8cpp_a0b33f8f149c1ecc8cc8380a59e2c8684}\label{fluxbalance_8cpp_a0b33f8f149c1ecc8cc8380a59e2c8684}} 
+\index{fluxbalance.\+cpp@{fluxbalance.\+cpp}!Flux\+Balance\+\_\+clear\+Objectives@{Flux\+Balance\+\_\+clear\+Objectives}}
+\index{Flux\+Balance\+\_\+clear\+Objectives@{Flux\+Balance\+\_\+clear\+Objectives}!fluxbalance.\+cpp@{fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Flux\+Balance\+\_\+clear\+Objectives()}{FluxBalance\_clearObjectives()}}
+{\footnotesize\ttfamily int Flux\+Balance\+\_\+clear\+Objectives (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fluxbalance_8cpp_aaac299d453de65f35f999f00ea06a9ea}\label{fluxbalance_8cpp_aaac299d453de65f35f999f00ea06a9ea}} 
+\index{fluxbalance.\+cpp@{fluxbalance.\+cpp}!Flux\+Balance\+\_\+load\+S\+B\+ML@{Flux\+Balance\+\_\+load\+S\+B\+ML}}
+\index{Flux\+Balance\+\_\+load\+S\+B\+ML@{Flux\+Balance\+\_\+load\+S\+B\+ML}!fluxbalance.\+cpp@{fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Flux\+Balance\+\_\+load\+S\+B\+M\+L()}{FluxBalance\_loadSBML()}}
+{\footnotesize\ttfamily int Flux\+Balance\+\_\+load\+S\+B\+ML (\begin{DoxyParamCaption}\item[{const char $\ast$}]{sbml\+Content }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fluxbalance_8cpp_a5c56ca3f82339d8633c3d8b8fbfde3a5}\label{fluxbalance_8cpp_a5c56ca3f82339d8633c3d8b8fbfde3a5}} 
+\index{fluxbalance.\+cpp@{fluxbalance.\+cpp}!Flux\+Balance\+\_\+load\+Stoichiometry@{Flux\+Balance\+\_\+load\+Stoichiometry}}
+\index{Flux\+Balance\+\_\+load\+Stoichiometry@{Flux\+Balance\+\_\+load\+Stoichiometry}!fluxbalance.\+cpp@{fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Flux\+Balance\+\_\+load\+Stoichiometry()}{FluxBalance\_loadStoichiometry()}}
+{\footnotesize\ttfamily int Flux\+Balance\+\_\+load\+Stoichiometry (\begin{DoxyParamCaption}\item[{const double $\ast$$\ast$}]{matrix,  }\item[{const int}]{num\+Rows,  }\item[{const int}]{num\+Cols,  }\item[{const char $\ast$$\ast$}]{flux\+Names }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fluxbalance_8cpp_a76228dbfb1ffdc526bd5050db7f7271d}\label{fluxbalance_8cpp_a76228dbfb1ffdc526bd5050db7f7271d}} 
+\index{fluxbalance.\+cpp@{fluxbalance.\+cpp}!Flux\+Balance\+\_\+maximize@{Flux\+Balance\+\_\+maximize}}
+\index{Flux\+Balance\+\_\+maximize@{Flux\+Balance\+\_\+maximize}!fluxbalance.\+cpp@{fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Flux\+Balance\+\_\+maximize()}{FluxBalance\_maximize()}}
+{\footnotesize\ttfamily int Flux\+Balance\+\_\+maximize (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$$\ast$}]{out\+Names,  }\item[{double $\ast$$\ast$}]{out\+Values,  }\item[{int $\ast$}]{out\+Length }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fluxbalance_8cpp_a8a6cdbcc71734664f23c0a09b0abc1ff}\label{fluxbalance_8cpp_a8a6cdbcc71734664f23c0a09b0abc1ff}} 
+\index{fluxbalance.\+cpp@{fluxbalance.\+cpp}!Flux\+Balance\+\_\+minimize@{Flux\+Balance\+\_\+minimize}}
+\index{Flux\+Balance\+\_\+minimize@{Flux\+Balance\+\_\+minimize}!fluxbalance.\+cpp@{fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Flux\+Balance\+\_\+minimize()}{FluxBalance\_minimize()}}
+{\footnotesize\ttfamily int Flux\+Balance\+\_\+minimize (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$$\ast$}]{out\+Names,  }\item[{double $\ast$$\ast$}]{out\+Values,  }\item[{int $\ast$}]{out\+Length }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fluxbalance_8cpp_a9d5636acfac372d872a73ba29e0ade84}\label{fluxbalance_8cpp_a9d5636acfac372d872a73ba29e0ade84}} 
+\index{fluxbalance.\+cpp@{fluxbalance.\+cpp}!Flux\+Balance\+\_\+set\+Constraints@{Flux\+Balance\+\_\+set\+Constraints}}
+\index{Flux\+Balance\+\_\+set\+Constraints@{Flux\+Balance\+\_\+set\+Constraints}!fluxbalance.\+cpp@{fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Flux\+Balance\+\_\+set\+Constraints()}{FluxBalance\_setConstraints()}}
+{\footnotesize\ttfamily int Flux\+Balance\+\_\+set\+Constraints (\begin{DoxyParamCaption}\item[{const char $\ast$$\ast$}]{ids,  }\item[{const int $\ast$}]{operations,  }\item[{const double $\ast$}]{values,  }\item[{const int}]{length }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fluxbalance_8cpp_a2b88fb8e0a96ea37a0a1eda0552a5930}\label{fluxbalance_8cpp_a2b88fb8e0a96ea37a0a1eda0552a5930}} 
+\index{fluxbalance.\+cpp@{fluxbalance.\+cpp}!Flux\+Balance\+\_\+set\+Objectives@{Flux\+Balance\+\_\+set\+Objectives}}
+\index{Flux\+Balance\+\_\+set\+Objectives@{Flux\+Balance\+\_\+set\+Objectives}!fluxbalance.\+cpp@{fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Flux\+Balance\+\_\+set\+Objectives()}{FluxBalance\_setObjectives()}}
+{\footnotesize\ttfamily int Flux\+Balance\+\_\+set\+Objectives (\begin{DoxyParamCaption}\item[{const char $\ast$$\ast$}]{ids,  }\item[{const double $\ast$}]{values,  }\item[{const int}]{length }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fluxbalance_8cpp_a5bad84f27e0c66bf7cc5376ccbb77afd}\label{fluxbalance_8cpp_a5bad84f27e0c66bf7cc5376ccbb77afd}} 
+\index{fluxbalance.\+cpp@{fluxbalance.\+cpp}!Flux\+Balance\+\_\+solve@{Flux\+Balance\+\_\+solve}}
+\index{Flux\+Balance\+\_\+solve@{Flux\+Balance\+\_\+solve}!fluxbalance.\+cpp@{fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Flux\+Balance\+\_\+solve()}{FluxBalance\_solve()}}
+{\footnotesize\ttfamily int Flux\+Balance\+\_\+solve (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$$\ast$}]{out\+Names,  }\item[{double $\ast$$\ast$}]{out\+Values,  }\item[{int $\ast$}]{out\+Length }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fluxbalance_8cpp_a8707232c02769c6fcf5a29c2f66a8085}\label{fluxbalance_8cpp_a8707232c02769c6fcf5a29c2f66a8085}} 
+\index{fluxbalance.\+cpp@{fluxbalance.\+cpp}!Flux\+Balance\+\_\+write\+To\+Free\+M\+P\+S\+File@{Flux\+Balance\+\_\+write\+To\+Free\+M\+P\+S\+File}}
+\index{Flux\+Balance\+\_\+write\+To\+Free\+M\+P\+S\+File@{Flux\+Balance\+\_\+write\+To\+Free\+M\+P\+S\+File}!fluxbalance.\+cpp@{fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Flux\+Balance\+\_\+write\+To\+Free\+M\+P\+S\+File()}{FluxBalance\_writeToFreeMPSFile()}}
+{\footnotesize\ttfamily void Flux\+Balance\+\_\+write\+To\+Free\+M\+P\+S\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fluxbalance_8cpp_a4cf55ac75e9abeb18d9acf5dbe708077}\label{fluxbalance_8cpp_a4cf55ac75e9abeb18d9acf5dbe708077}} 
+\index{fluxbalance.\+cpp@{fluxbalance.\+cpp}!Flux\+Balance\+\_\+write\+To\+L\+P\+File@{Flux\+Balance\+\_\+write\+To\+L\+P\+File}}
+\index{Flux\+Balance\+\_\+write\+To\+L\+P\+File@{Flux\+Balance\+\_\+write\+To\+L\+P\+File}!fluxbalance.\+cpp@{fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Flux\+Balance\+\_\+write\+To\+L\+P\+File()}{FluxBalance\_writeToLPFile()}}
+{\footnotesize\ttfamily void Flux\+Balance\+\_\+write\+To\+L\+P\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fluxbalance_8cpp_ac0f6ef1646cd3b372f7975a2839daa88}\label{fluxbalance_8cpp_ac0f6ef1646cd3b372f7975a2839daa88}} 
+\index{fluxbalance.\+cpp@{fluxbalance.\+cpp}!Flux\+Balance\+\_\+write\+To\+M\+P\+S\+File@{Flux\+Balance\+\_\+write\+To\+M\+P\+S\+File}}
+\index{Flux\+Balance\+\_\+write\+To\+M\+P\+S\+File@{Flux\+Balance\+\_\+write\+To\+M\+P\+S\+File}!fluxbalance.\+cpp@{fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Flux\+Balance\+\_\+write\+To\+M\+P\+S\+File()}{FluxBalance\_writeToMPSFile()}}
+{\footnotesize\ttfamily void Flux\+Balance\+\_\+write\+To\+M\+P\+S\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name }\end{DoxyParamCaption})}
+

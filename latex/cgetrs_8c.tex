@@ -1,0 +1,48 @@
+\hypertarget{cgetrs_8c}{}\section{cgetrs.\+c File Reference}
+\label{cgetrs_8c}\index{cgetrs.\+c@{cgetrs.\+c}}
+{\ttfamily \#include \char`\"{}f2c.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}blaswrap.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{cgetrs_8c_af1051903cdc60a854c9e985348e57237}{cgetrs\+\_\+} (char $\ast$trans, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$n, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$nrhs, \hyperlink{structcomplex}{complex} $\ast$a, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$lda, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$ipiv, \hyperlink{structcomplex}{complex} $\ast$b, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$ldb, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$\hyperlink{lp__lib_8h_a5c24524aad8cde9b56633a9d8290f857}{info})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} \hyperlink{cgetrs_8c_aac061f9822f71d2164eeeaae0e2a342c}{c\+\_\+\+\_\+1} = 1
+\item 
+static \hyperlink{structcomplex}{complex} \hyperlink{cgetrs_8c_acfa9ff04d907cc6b7c673819a66660f7}{c\+\_\+b1} = \{1.f,0.f\}
+\item 
+static \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} \hyperlink{cgetrs_8c_a9e9287f317ef3436252a395791a899f6}{c\+\_\+n1} = -\/1
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{cgetrs_8c_af1051903cdc60a854c9e985348e57237}\label{cgetrs_8c_af1051903cdc60a854c9e985348e57237}} 
+\index{cgetrs.\+c@{cgetrs.\+c}!cgetrs\+\_\+@{cgetrs\+\_\+}}
+\index{cgetrs\+\_\+@{cgetrs\+\_\+}!cgetrs.\+c@{cgetrs.\+c}}
+\subsubsection{\texorpdfstring{cgetrs\+\_\+()}{cgetrs\_()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} cgetrs\+\_\+ (\begin{DoxyParamCaption}\item[{char $\ast$}]{trans,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{n,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{nrhs,  }\item[{\hyperlink{structcomplex}{complex} $\ast$}]{a,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{lda,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{ipiv,  }\item[{\hyperlink{structcomplex}{complex} $\ast$}]{b,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{ldb,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{info }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{cgetrs_8c_aac061f9822f71d2164eeeaae0e2a342c}\label{cgetrs_8c_aac061f9822f71d2164eeeaae0e2a342c}} 
+\index{cgetrs.\+c@{cgetrs.\+c}!c\+\_\+\+\_\+1@{c\+\_\+\+\_\+1}}
+\index{c\+\_\+\+\_\+1@{c\+\_\+\+\_\+1}!cgetrs.\+c@{cgetrs.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+\+\_\+1}{c\_\_1}}
+{\footnotesize\ttfamily \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} c\+\_\+\+\_\+1 = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{cgetrs_8c_acfa9ff04d907cc6b7c673819a66660f7}\label{cgetrs_8c_acfa9ff04d907cc6b7c673819a66660f7}} 
+\index{cgetrs.\+c@{cgetrs.\+c}!c\+\_\+b1@{c\+\_\+b1}}
+\index{c\+\_\+b1@{c\+\_\+b1}!cgetrs.\+c@{cgetrs.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+b1}{c\_b1}}
+{\footnotesize\ttfamily \hyperlink{structcomplex}{complex} c\+\_\+b1 = \{1.f,0.f\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{cgetrs_8c_a9e9287f317ef3436252a395791a899f6}\label{cgetrs_8c_a9e9287f317ef3436252a395791a899f6}} 
+\index{cgetrs.\+c@{cgetrs.\+c}!c\+\_\+n1@{c\+\_\+n1}}
+\index{c\+\_\+n1@{c\+\_\+n1}!cgetrs.\+c@{cgetrs.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+n1}{c\_n1}}
+{\footnotesize\ttfamily \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} c\+\_\+n1 = -\/1\hspace{0.3cm}{\ttfamily [static]}}
+

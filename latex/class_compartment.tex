@@ -1,0 +1,123 @@
+\hypertarget{class_compartment}{}\section{Compartment Class Reference}
+\label{class_compartment}\index{Compartment@{Compartment}}
+
+
+{\ttfamily \#include $<$Compartment.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} An S\+B\+ML compartment, where species are located.
+
+A compartment in S\+B\+ML represents a bounded space in which species are located. Compartments do not necessarily have to correspond to actual structures inside or outside of a biological cell.
+
+It is important to note that although compartments are optional in the overall definition of \hyperlink{class_model}{Model}, every species in an S\+B\+ML model must be located in a compartment. This in turn means that if a model defines any species, the model must also define at least one compartment. The reason is simply that species represent physical things, and therefore must exist {\itshape somewhere}. Compartments represent the {\itshape somewhere}.
+
+\hyperlink{class_compartment}{Compartment} has one required attribute, \char`\"{}id\char`\"{}, to give the compartment a unique identifier by which other parts of an S\+B\+ML model definition can refer to it. A compartment can also have an optional \char`\"{}name\char`\"{} attribute of type {\ttfamily string}. Identifiers and names must be used according to the guidelines described in the S\+B\+ML specifications.
+
+\hyperlink{class_compartment}{Compartment} also has an optional attribute \char`\"{}spatial\+Dimensions\char`\"{} that is used to indicate the number of spatial dimensions possessed by the compartment. Most modeling scenarios involve compartments with integer values of \char`\"{}spatial\+Dimensions\char`\"{} of {\ttfamily 3} (i.\+e., a three-\/dimensional compartment, which is to say, a volume), or 2 (a two-\/dimensional compartment, a surface), or {\ttfamily 1} (a one-\/dimensional compartment, a line). In S\+B\+ML Level~3, the type of this attribute is {\ttfamily double}, there are no restrictions on the permitted values of the \char`\"{}spatial\+Dimensions\char`\"{} attribute, and there are no default values. In S\+B\+ML Level~2, the value must be a positive {\ttfamily integer}, and the default value is {\ttfamily 3}; the permissible values in S\+B\+ML Level~2 are {\ttfamily 3}, {\ttfamily 2}, {\ttfamily 1}, and {\ttfamily 0} (for a point).
+
+Another optional attribute on \hyperlink{class_compartment}{Compartment} is \char`\"{}size\char`\"{}, representing the {\itshape initial} total size of that compartment in the model. The \char`\"{}size\char`\"{} attribute must be a floating-\/point value and may represent a volume (if the compartment is a three-\/dimensional one), or an area (if the compartment is two-\/dimensional), or a length (if the compartment is one-\/dimensional). There is no default value of compartment size in S\+B\+ML Level~2 or Level~3. In particular, a missing \char`\"{}size\char`\"{} value {\itshape does not imply that the compartment size is 1}. (This is unlike the definition of compartment \char`\"{}volume\char`\"{} in S\+B\+ML Level~1.) When the compartment\textquotesingle{}s \char`\"{}spatial\+Dimensions\char`\"{} attribute does not have a value of {\ttfamily 0}, a missing value of \char`\"{}size\char`\"{} for a given compartment signifies that the value either is unknown, or to be obtained from an external source, or determined by an \hyperlink{class_initial_assignment}{Initial\+Assignment}, \hyperlink{class_assignment_rule}{Assignment\+Rule}, \hyperlink{class_algebraic_rule}{Algebraic\+Rule} or \hyperlink{class_rate_rule}{Rate\+Rule} object elsewhere in the model. In S\+B\+ML Level~2, there are additional special requirements on the values of \char`\"{}size\char`\"{}; we discuss them in a \href{#comp-l2}{\tt separate section below}.
+
+The units associated with a compartment\textquotesingle{}s \char`\"{}size\char`\"{} attribute value may be set using the optional attribute \char`\"{}units\char`\"{}. The rules for setting and using compartment size units differ between S\+B\+ML Level~2 and Level~3, and are discussed separately below.
+
+Finally, the \hyperlink{class_compartment}{Compartment} attribute named \char`\"{}constant\char`\"{} is used to indicate whether the compartment\textquotesingle{}s size stays constant after simulation begins. A value of {\ttfamily true} indicates the compartment\textquotesingle{}s \char`\"{}size\char`\"{} cannot be changed by any other construct except \hyperlink{class_initial_assignment}{Initial\+Assignment}; a value of {\ttfamily false} indicates the compartment\textquotesingle{}s \char`\"{}size\char`\"{} can be changed by other constructs in S\+B\+ML. In S\+B\+ML Level~2, there is an additional explicit restriction that if \char`\"{}spatial\+Dimensions\char`\"{}={\ttfamily \char`\"{}0\char`\"{}}, the value cannot be changed by \hyperlink{class_initial_assignment}{Initial\+Assignment} either. Further, in Level~2, \char`\"{}constant\char`\"{} is optional, and has a default value of {\ttfamily true}. In S\+B\+ML Level~3, there is no default value for the \char`\"{}constant\char`\"{} attribute, and it is required.\hypertarget{class_compartment_comp-l2}{}\subsection{Additional considerations in S\+B\+M\+L Level 2}\label{class_compartment_comp-l2}
+In S\+B\+ML Level~2, the default units of compartment size, and the kinds of units allowed as values of the attribute \char`\"{}units\char`\"{}, interact with the number of spatial dimensions of the compartment. The value of the \char`\"{}units\char`\"{} attribute of a \hyperlink{class_compartment}{Compartment} object must be one of the base units (see \hyperlink{class_unit}{Unit}), or the predefined unit identifiers {\ttfamily volume}, {\ttfamily area}, {\ttfamily length} or {\ttfamily dimensionless}, or a new unit defined by a \hyperlink{class_unit_definition}{Unit\+Definition} object in the enclosing \hyperlink{class_model}{Model}, subject to the restrictions detailed in the following table\+:
+
+
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{5}{|X[-1]}|}
+\caption{Restrictions on values permitted for compartment {\ttfamily size} and {\ttfamily units} attributes.}\label{_}\\
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Value of~\newline
+{\ttfamily spatial\+Dimensions}  }&\textbf{ {\ttfamily size}~\newline
+allowed?  }&\textbf{ {\ttfamily units}~\newline
+allowed?  }&\textbf{ Allowable kinds of units  }&\textbf{ Default value of attribute {\ttfamily units}   }\\\cline{1-5}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Value of~\newline
+{\ttfamily spatial\+Dimensions}  }&\textbf{ {\ttfamily size}~\newline
+allowed?  }&\textbf{ {\ttfamily units}~\newline
+allowed?  }&\textbf{ Allowable kinds of units  }&\textbf{ Default value of attribute {\ttfamily units}   }\\\cline{1-5}
+\endhead
+{\ttfamily 3} &yes &yes &units of volume, or {\ttfamily dimensionless} &{\ttfamily volume}  \\\cline{1-5}
+{\ttfamily 2} &yes &yes &units of area, or {\ttfamily dimensionless} &{\ttfamily area}  \\\cline{1-5}
+{\ttfamily 1} &yes &yes &units of length, or {\ttfamily dimensionless} &{\ttfamily length}  \\\cline{1-5}
+{\ttfamily 0} &no &no &(no units allowed) &\\\cline{1-5}
+\end{longtabu}
+
+
+In S\+B\+ML Level~2, the units of the compartment size, as defined by the \char`\"{}units\char`\"{} attribute or (if \char`\"{}units\char`\"{} is not set) the default value listed in the table above, are used in the following ways when the compartment has a \char`\"{}spatial\+Dimensions\char`\"{} value greater than {\ttfamily 0}\+: 
+\begin{DoxyItemize}
+\item The value of the \char`\"{}units\char`\"{} attribute is used as the units of the compartment identifier when the identifier appears as a numerical quantity in a mathematical formula expressed in Math\+ML.
+
+
+\item The {\ttfamily math} element of an \hyperlink{class_assignment_rule}{Assignment\+Rule} or \hyperlink{class_initial_assignment}{Initial\+Assignment} referring to this compartment {\itshape must} (in Level~2 Versions~1-\/3) or {\itshape should} (in Level~2 Version 4) have identical units.
+
+
+\item In \hyperlink{class_rate_rule}{Rate\+Rule} objects that set the rate of change of the compartment\textquotesingle{}s size, the units of the rule\textquotesingle{}s {\ttfamily math} element {\itshape must} (in Level~2 Versions~1--3) or {\itshape should} (in Level~2 Version 4) be identical to the compartment\textquotesingle{}s units (whether defined by the \char`\"{}units\char`\"{} attribute or by taking the default value from the \hyperlink{class_model}{Model}) divided by the default {\itshape time} units. (In other words, the units for the rate of change of compartment size are {\itshape compartment size}/{\itshape time} units.
+
+
+\item When a \hyperlink{class_species}{Species} is to be treated in terms of concentrations or density, the units of the spatial size portion of the concentration value (i.\+e., the denominator in the units formula {\itshape substance/{\itshape size})} are those indicated by the value of the \char`\"{}units\char`\"{} attribute on the compartment in which the species is located. 
+\end{DoxyItemize}
+
+Compartments with \char`\"{}spatial\+Dimensions\char`\"{}={\ttfamily 0} require special treatment in this framework. As implied above, the \char`\"{}size\char`\"{} attribute must not have a value on an S\+B\+ML Level~2 \hyperlink{class_compartment}{Compartment} object if the \char`\"{}spatial\+Dimensions\char`\"{} attribute has a value of {\ttfamily 0}. An additional related restriction is that the \char`\"{}constant\char`\"{} attribute must default to or be set to {\ttfamily true} if the value of the \char`\"{}spatial\+Dimensions\char`\"{} attribute is {\ttfamily 0}, because a zero-\/dimensional compartment cannot ever have a size.
+
+If a compartment has no size or dimensional units, how should such a compartment\textquotesingle{}s identifier be interpreted when it appears in mathematical formulas? The answer is that such a compartment\textquotesingle{}s identifier should not appear in mathematical formulas in the first place---it has no value, and its value cannot change. Note also that a zero-\/dimensional compartment is a point, and species located at points can only be described in terms of amounts, not spatially-\/dependent measures such as concentration. Since S\+B\+ML \hyperlink{class_kinetic_law}{Kinetic\+Law} formulas are already in terms of {\itshape substance/{\itshape time} and} not (say) {\itshape concentration/{\itshape time},} volume or other factors in principle are not needed for species located in zero-\/dimensional compartments.
+
+Finally, in S\+B\+ML Level~2 Versions 2--4, each compartment in a model may optionally be designated as belonging to a particular compartment {\itshape type}. The optional attribute \char`\"{}compartment\+Type\char`\"{} is used identify the compartment type represented by the \hyperlink{class_compartment}{Compartment} structure. The \char`\"{}compartment\+Type\char`\"{} attribute\textquotesingle{}s value must be the identifier of a \hyperlink{class_compartment_type}{Compartment\+Type} instance defined in the model. If the \char`\"{}compartment\+Type\char`\"{} attribute is not present on a particular compartment definition, a unique virtual compartment type is assumed for that compartment, and no other compartment can belong to that compartment type. The values of \char`\"{}compartment\+Type\char`\"{} attributes on compartments have no effect on the numerical interpretation of a model. Simulators and other numerical analysis software may ignore \char`\"{}compartment\+Type\char`\"{} attributes. The \char`\"{}compartment\+Type\char`\"{} attribute and the \hyperlink{class_compartment_type}{Compartment\+Type} class of objects are not present in S\+B\+ML Level~3 Core nor in S\+B\+ML Level~1.\hypertarget{class_compartment_comp-l3}{}\subsection{Additional considerations in S\+B\+M\+L Level 3}\label{class_compartment_comp-l3}
+One difference between S\+B\+ML Level~3 and lower Levels of S\+B\+ML is that there are no restrictions on the permissible values of the \char`\"{}spatial\+Dimensions\char`\"{} attribute, and there is no default value defined for the attribute. The value of \char`\"{}spatial\+Dimensions\char`\"{} does not have to be an integer, either; this is to allow for the possibility of representing structures with fractal dimensions.
+
+The number of spatial dimensions possessed by a compartment cannot enter into mathematical formulas, and therefore cannot directly alter the numerical interpretation of a model. However, the value of \char`\"{}spatial\+Dimensions\char`\"{} {\itshape does} affect the interpretation of the units associated with a compartment\textquotesingle{}s size. Specifically, the value of \char`\"{}spatial\+Dimensions\char`\"{} is used to select among the \hyperlink{class_model}{Model} attributes \char`\"{}volume\+Units\char`\"{}, \char`\"{}area\+Units\char`\"{} and \char`\"{}length\+Units\char`\"{} when a \hyperlink{class_compartment}{Compartment} structure does not define a value for its \char`\"{}units\char`\"{} attribute.
+
+The \char`\"{}units\char`\"{} attribute may be left unspecified for a given compartment in a model; in that case, the compartment inherits the unit of measurement specified by one of the attributes on the enclosing \hyperlink{class_model}{Model} object instance. The applicable attribute on \hyperlink{class_model}{Model} depends on the value of the compartment\textquotesingle{}s \char`\"{}spatial\+Dimensions\char`\"{} attribute; the relationship is shown in the table below. If the \hyperlink{class_model}{Model} object does not define the relevant attribute (\char`\"{}volume\+Units\char`\"{}, \char`\"{}area\+Units\char`\"{} or \char`\"{}length\+Units\char`\"{}) for a given \char`\"{}spatial\+Dimensions\char`\"{} value, the unit associated with that \hyperlink{class_compartment}{Compartment} object\textquotesingle{}s size is undefined. If a given \hyperlink{class_compartment}{Compartment}\textquotesingle{}s \char`\"{}units\char`\"{} are left unset and the \char`\"{}spatial\+Dimensions\char`\"{} either has a value other than {\ttfamily 1}, {\ttfamily 2}, or {\ttfamily 3} or is left unset itself (as it has no default value), then no unit can be chosen from among the \hyperlink{class_model}{Model}\textquotesingle{}s \char`\"{}volume\+Units\char`\"{}, \char`\"{}area\+Units\char`\"{} or \char`\"{}length\+Units\char`\"{} attributes (even if the \hyperlink{class_model}{Model} instance provides values for those attributes), because there is no basis to select between them. Leaving the units of compartments\textquotesingle{} sizes undefined in an S\+B\+ML model does not render the model invalid; however, as a matter of best practice, we strongly recommend that all models specify the units of measurement for all compartment sizes.
+
+
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{3}{|X[-1]}|}
+\caption{Interpretation of the \hyperlink{class_compartment}{Compartment} \char`\"{}units\char`\"{} attribute.}\label{_}\\
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Value of attribute~\newline
+\char`\"{}spatial\+Dimensions\char`\"{}  }&\textbf{ Attribute of \hyperlink{class_model}{Model} used~\newline
+for inheriting the unit  }&\textbf{ Recommended candidate units   }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Value of attribute~\newline
+\char`\"{}spatial\+Dimensions\char`\"{}  }&\textbf{ Attribute of \hyperlink{class_model}{Model} used~\newline
+for inheriting the unit  }&\textbf{ Recommended candidate units   }\\\cline{1-3}
+\endhead
+{\ttfamily 3} &"volume\+Units" &units of volume, or {\ttfamily dimensionless}  \\\cline{1-3}
+{\ttfamily 2} &"area\+Units" &units of area, or {\ttfamily dimensionless}  \\\cline{1-3}
+{\ttfamily 1} &"length\+Units" &units of length, or {\ttfamily dimensionless}  \\\cline{1-3}
+{\itshape other} &{\itshape no units inherited} &{\itshape no specific recommendations}   \\\cline{1-3}
+\end{longtabu}
+
+
+The unit of measurement associated with a compartment\textquotesingle{}s size, as defined by the \char`\"{}units\char`\"{} attribute or (if \char`\"{}units\char`\"{} is not set) the inherited value from \hyperlink{class_model}{Model} according to the table above, is used in the following ways\+:
+
+
+\begin{DoxyItemize}
+\item When the identifier of the compartment appears as a numerical quantity in a mathematical formula expressed in Math\+ML, it represents the size of the compartment, and the unit associated with the size is the value of the \char`\"{}units\char`\"{} attribute.
+
+
+\item When a \hyperlink{class_species}{Species} is to be treated in terms of concentrations or density, the unit associated with the spatial size portion of the concentration value (i.\+e., the denominator in the formula {\itshape amount}/{\itshape size}) is specified by the value of the \char`\"{}units\char`\"{} attribute on the compartment in which the species is located.
+
+
+\item The \char`\"{}math\char`\"{} elements of \hyperlink{class_assignment_rule}{Assignment\+Rule}, \hyperlink{class_initial_assignment}{Initial\+Assignment} and \hyperlink{class_event_assignment}{Event\+Assignment} objects setting the value of the compartment size should all have the same units as the unit associated with the compartment\textquotesingle{}s size.
+
+
+\item In a \hyperlink{class_rate_rule}{Rate\+Rule} object that defines a rate of change for a compartment\textquotesingle{}s size, the unit of the rule\textquotesingle{}s \char`\"{}math\char`\"{} element should be identical to the compartment\textquotesingle{}s \char`\"{}units\char`\"{} attribute divided by the model-\/wide unit of {\itshape time}. (In other words, \{{\itshape unit of compartment size}\}/\{{\itshape unit of time}\}.)
+
+
+\end{DoxyItemize}\hypertarget{class_compartment_comp-other}{}\subsection{Other aspects of Compartment}\label{class_compartment_comp-other}
+In S\+B\+ML Level~1 and Level~2, \hyperlink{class_compartment}{Compartment} has an optional attribute named \char`\"{}outside\char`\"{}, whose value can be the identifier of another \hyperlink{class_compartment}{Compartment} object defined in the enclosing \hyperlink{class_model}{Model} object. Doing so means that the other compartment contains it or is outside of it. This enables the representation of simple topological relationships between compartments, for those simulation systems that can make use of the information (e.\+g., for drawing simple diagrams of compartments). It is worth noting that in S\+B\+ML, there is no relationship between compartment sizes when compartment positioning is expressed using the \char`\"{}outside\char`\"{} attribute. The size of a given compartment does not in any sense include the sizes of other compartments having it as the value of their \char`\"{}outside\char`\"{} attributes. In other words, if a compartment {\itshape B} has the identifier of compartment {\itshape A} as its \char`\"{}outside\char`\"{} attribute value, the size of {\itshape A} does not include the size of {\itshape B}. The compartment sizes are separate.
+
+In Level~2, there are two restrictions on the \char`\"{}outside\char`\"{} attribute. First, because a compartment with \char`\"{}spatial\+Dimensions\char`\"{} of {\ttfamily 0} has no size, such a compartment cannot act as the container of any other compartment {\itshape except} compartments that {\itshape also} have \char`\"{}spatial\+Dimensions\char`\"{} values of {\ttfamily 0}. Second, the directed graph formed by representing \hyperlink{class_compartment}{Compartment} structures as vertexes and the \char`\"{}outside\char`\"{} attribute values as edges must be acyclic. The latter condition is imposed to prevent a compartment from being contained inside itself. In the absence of a value for \char`\"{}outside\char`\"{}, compartment definitions in S\+B\+ML Level~2 do not have any implied spatial relationships between each other. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_compartment_8h}{Compartment.\+h}\end{DoxyCompactItemize}

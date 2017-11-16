@@ -1,0 +1,23 @@
+\hypertarget{classdoc__group__semantics}{}\section{doc\+\_\+group\+\_\+semantics Class Reference}
+\label{classdoc__group__semantics}\index{doc\+\_\+group\+\_\+semantics@{doc\+\_\+group\+\_\+semantics}}
+
+
+{\ttfamily \#include $<$common-\/documentation.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\begin{DoxyParagraph}{}
+If a Member object within a Group object\textquotesingle{}s List\+Of\+Members references another Group object, it is the {\itshape referenced Group itself} that is considered to be a member of the parent Group, {\itshape not} the corresponding referenced model component(s). This is true regardless of whether those components themselves happen to point to other components using some mechanism defined by another S\+B\+ML Level~3 package (as happens, for example, in the S\+B\+ML Level~3 Hierarchical Model Composition package and its use of S\+Base\+Ref). However, if instead a Member object references a List\+Of\+Members object (using the \char`\"{}id\char`\"{} attribute permitted on List\+Of\+Members objects), it is the components of that List\+Of\+Members that are considered to be part of the parent Group. In other words\+: if in some Group {\itshape G}, a Member {\itshape M} references another Group, that Group is the member of {\itshape G}; if {\itshape M} references a List\+Of\+Members, it is the entities referenced by the Member objects within the List\+Of\+Members that are the members of {\itshape G} and not the List\+Of\+Members object itself.
+\end{DoxyParagraph}
+The implication of this is that any rule that applies to members of a group (such the meaning of the \char`\"{}kind\char`\"{} attribute, or the restrictions on the application of \char`\"{}sbo\+Term\char`\"{} attributes on a List\+Of\+Members) applies to the child group when referenced by the Group \char`\"{}id\char`\"{}, and to the members of the child group when referenced by the List\+Of\+Members \char`\"{}id\char`\"{}. In an example situation where a parent group includes two \hyperlink{class_species}{Species} plus a Group which itself contains three other \hyperlink{class_species}{Species}, if the parent group\textquotesingle{}s List\+Of\+Members is given an \char`\"{}sbo\+Term\char`\"{} attribute value, that \hyperlink{class_s_b_o}{S\+BO} term applies to the two species and the group, not to the three child species members of the second group. (Note also that in such a case, the parent group\textquotesingle{}s \char`\"{}kind\char`\"{} attribute value would almost certainly be {\ttfamily \char`\"{}collection\char`\"{}} or {\ttfamily \char`\"{}partonomy\char`\"{}}, and not {\ttfamily \char`\"{}classification\char`\"{}}, as two species and a group are very unlikely to be classified as the same thing.) In contrast, in the situation where a parent group includes two \hyperlink{class_species}{Species} plus a List\+Of\+Members which contains three other \hyperlink{class_species}{Species}, the parent group\textquotesingle{}s List\+Of\+Members \char`\"{}sbo\+Term\char`\"{} would apply to the five \hyperlink{class_species}{Species}, and could be more reasonably marked as a {\ttfamily \char`\"{}classification\char`\"{}}.
+
+In a future version of this S\+B\+ML Level~3 Groups specification, it may be possible to perform set operations on groups, but for now, this type of union is the only set operation that is possible.
+
+Groups are not permitted to be circular\+: no Member may reference itself, its parent List\+Of\+Members, nor its parent Group. If a Member references a Group, the same restrictions apply to that subgroup\textquotesingle{}s children\+: they may not reference the Member, its parent List\+Of\+Members, nor its parent Group, and if any of those children reference a Group, the same restrictions apply to them, etc.
+
+If a Member has a \char`\"{}id\+Ref\char`\"{} or \char`\"{}meta\+Id\+Ref\char`\"{} attribute which references an object from a namespace that is not understood by the interpreter of the S\+B\+ML model, that Member must be ignored. The referenced object will not be understood by the interpreter, and therefore has no need to become a member of the group. If an interpreter cannot tell whether a referenced object does not exist or if exists in an unparsed namespace, it may choose to produce a warning. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{common-documentation_8h}{common-\/documentation.\+h}\end{DoxyCompactItemize}

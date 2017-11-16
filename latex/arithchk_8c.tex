@@ -1,0 +1,167 @@
+\hypertarget{arithchk_8c}{}\section{arithchk.\+c File Reference}
+\label{arithchk_8c}\index{arithchk.\+c@{arithchk.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_akind}{Akind}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct_akind}{Akind} \hyperlink{arithchk_8c_a63515726a0d7416f28c4faf97f9f64e9}{Akind}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{struct_akind}{Akind} $\ast$ \hyperlink{arithchk_8c_a421ca2902f58841e870ae6f472593cf5}{ccheck} (\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void})
+\item 
+\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} \hyperlink{arithchk_8c_a5863c7994dbf3c29dc0e5c13c6f175ae}{fpinit\+\_\+\+A\+SL} (\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void})
+\item 
+static \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{arithchk_8c_a73359a55234c71f4da9c89107af7ad0d}{fzcheck} (\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void})
+\item 
+\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} \hyperlink{arithchk_8c_ae74141eca59ddfb632b8273e8790c845}{get\+\_\+nanbits} (unsigned \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} $\ast$b, \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} k)
+\item 
+static \hyperlink{struct_akind}{Akind} $\ast$ \hyperlink{arithchk_8c_a6bac384ec6e980b9c9521c1770ab47aa}{icheck} (\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void})
+\item 
+static \hyperlink{struct_akind}{Akind} $\ast$ \hyperlink{arithchk_8c_af5d3c24df3ba7db91c7f54e9f5258dcf}{Lcheck} (\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void})
+\item 
+\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{arithchk_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void})
+\item 
+static \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{arithchk_8c_ab2b0d6b6e899998f94b05bedf8824e63}{need\+\_\+nancheck} (\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{struct_akind}{Akind} \hyperlink{arithchk_8c_a3fbfb530cab29a040f9b96aa9c428be3}{C\+R\+AY} = \{ \char`\"{}C\+R\+AY\char`\"{}, 5\}
+\item 
+static \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{arithchk_8c_a6e70b5d8f6168d566cbbb26ab375f82f}{dalign}
+\item 
+char $\ast$ \hyperlink{arithchk_8c_a20b78a73ed4adc126882701f68d504b0}{emptyfmt} = \char`\"{}\char`\"{}
+\item 
+static \hyperlink{struct_akind}{Akind} \hyperlink{arithchk_8c_a4e704687676c3c969a98a639e053738d}{I\+BM} = \{ \char`\"{}I\+BM\char`\"{}, 3 \}
+\item 
+static \hyperlink{struct_akind}{Akind} \hyperlink{arithchk_8c_ac349db3ac1a6f76aa6a8709bf9d2fe7f}{I\+E\+E\+E\+\_\+8087} = \{ \char`\"{}I\+E\+E\+E\+\_\+8087\char`\"{}, 1 \}
+\item 
+static \hyperlink{struct_akind}{Akind} \hyperlink{arithchk_8c_a16fc08d2adc524c2954be52a81ea92ca}{I\+E\+E\+E\+\_\+\+M\+C68k} = \{ \char`\"{}I\+E\+E\+E\+\_\+\+M\+C68k\char`\"{}, 2 \}
+\item 
+static double \hyperlink{arithchk_8c_ad78b8ce80d58a04f326210af4b4cd934}{t\+\_\+nan}
+\item 
+static \hyperlink{struct_akind}{Akind} \hyperlink{arithchk_8c_a72fa4fdd0adb8702efe94e74e05e3850}{V\+AX} = \{ \char`\"{}V\+AX\char`\"{}, 4 \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{arithchk_8c_a63515726a0d7416f28c4faf97f9f64e9}\label{arithchk_8c_a63515726a0d7416f28c4faf97f9f64e9}} 
+\index{arithchk.\+c@{arithchk.\+c}!Akind@{Akind}}
+\index{Akind@{Akind}!arithchk.\+c@{arithchk.\+c}}
+\subsubsection{\texorpdfstring{Akind}{Akind}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct_akind}{Akind}  \hyperlink{struct_akind}{Akind}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{arithchk_8c_a421ca2902f58841e870ae6f472593cf5}\label{arithchk_8c_a421ca2902f58841e870ae6f472593cf5}} 
+\index{arithchk.\+c@{arithchk.\+c}!ccheck@{ccheck}}
+\index{ccheck@{ccheck}!arithchk.\+c@{arithchk.\+c}}
+\subsubsection{\texorpdfstring{ccheck()}{ccheck()}}
+{\footnotesize\ttfamily static \hyperlink{struct_akind}{Akind}$\ast$ ccheck (\begin{DoxyParamCaption}\item[{\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{arithchk_8c_a5863c7994dbf3c29dc0e5c13c6f175ae}\label{arithchk_8c_a5863c7994dbf3c29dc0e5c13c6f175ae}} 
+\index{arithchk.\+c@{arithchk.\+c}!fpinit\+\_\+\+A\+SL@{fpinit\+\_\+\+A\+SL}}
+\index{fpinit\+\_\+\+A\+SL@{fpinit\+\_\+\+A\+SL}!arithchk.\+c@{arithchk.\+c}}
+\subsubsection{\texorpdfstring{fpinit\+\_\+\+A\+S\+L()}{fpinit\_ASL()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} fpinit\+\_\+\+A\+SL (\begin{DoxyParamCaption}\item[{\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{arithchk_8c_a73359a55234c71f4da9c89107af7ad0d}\label{arithchk_8c_a73359a55234c71f4da9c89107af7ad0d}} 
+\index{arithchk.\+c@{arithchk.\+c}!fzcheck@{fzcheck}}
+\index{fzcheck@{fzcheck}!arithchk.\+c@{arithchk.\+c}}
+\subsubsection{\texorpdfstring{fzcheck()}{fzcheck()}}
+{\footnotesize\ttfamily static \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} fzcheck (\begin{DoxyParamCaption}\item[{\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{arithchk_8c_ae74141eca59ddfb632b8273e8790c845}\label{arithchk_8c_ae74141eca59ddfb632b8273e8790c845}} 
+\index{arithchk.\+c@{arithchk.\+c}!get\+\_\+nanbits@{get\+\_\+nanbits}}
+\index{get\+\_\+nanbits@{get\+\_\+nanbits}!arithchk.\+c@{arithchk.\+c}}
+\subsubsection{\texorpdfstring{get\+\_\+nanbits()}{get\_nanbits()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} get\+\_\+nanbits (\begin{DoxyParamCaption}\item[{unsigned \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} $\ast$}]{b,  }\item[{\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}}]{k }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{arithchk_8c_a6bac384ec6e980b9c9521c1770ab47aa}\label{arithchk_8c_a6bac384ec6e980b9c9521c1770ab47aa}} 
+\index{arithchk.\+c@{arithchk.\+c}!icheck@{icheck}}
+\index{icheck@{icheck}!arithchk.\+c@{arithchk.\+c}}
+\subsubsection{\texorpdfstring{icheck()}{icheck()}}
+{\footnotesize\ttfamily static \hyperlink{struct_akind}{Akind}$\ast$ icheck (\begin{DoxyParamCaption}\item[{\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{arithchk_8c_af5d3c24df3ba7db91c7f54e9f5258dcf}\label{arithchk_8c_af5d3c24df3ba7db91c7f54e9f5258dcf}} 
+\index{arithchk.\+c@{arithchk.\+c}!Lcheck@{Lcheck}}
+\index{Lcheck@{Lcheck}!arithchk.\+c@{arithchk.\+c}}
+\subsubsection{\texorpdfstring{Lcheck()}{Lcheck()}}
+{\footnotesize\ttfamily static \hyperlink{struct_akind}{Akind}$\ast$ Lcheck (\begin{DoxyParamCaption}\item[{\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{arithchk_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{arithchk_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{arithchk.\+c@{arithchk.\+c}!main@{main}}
+\index{main@{main}!arithchk.\+c@{arithchk.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} main (\begin{DoxyParamCaption}\item[{\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void}}]{ }\end{DoxyParamCaption})}
+
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{examples_2c_2loadlabelledstoichiometry_8c-example}{examples/c/loadlabelledstoichiometry.\+c}, \hyperlink{examples_2c_2loadsbmlfromfile_8c-example}{examples/c/loadsbmlfromfile.\+c}, and \hyperlink{examples_2c_2loadstoichiometry_8c-example}{examples/c/loadstoichiometry.\+c}.\end{Desc}
+\mbox{\Hypertarget{arithchk_8c_ab2b0d6b6e899998f94b05bedf8824e63}\label{arithchk_8c_ab2b0d6b6e899998f94b05bedf8824e63}} 
+\index{arithchk.\+c@{arithchk.\+c}!need\+\_\+nancheck@{need\+\_\+nancheck}}
+\index{need\+\_\+nancheck@{need\+\_\+nancheck}!arithchk.\+c@{arithchk.\+c}}
+\subsubsection{\texorpdfstring{need\+\_\+nancheck()}{need\_nancheck()}}
+{\footnotesize\ttfamily static \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} need\+\_\+nancheck (\begin{DoxyParamCaption}\item[{\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{arithchk_8c_a3fbfb530cab29a040f9b96aa9c428be3}\label{arithchk_8c_a3fbfb530cab29a040f9b96aa9c428be3}} 
+\index{arithchk.\+c@{arithchk.\+c}!C\+R\+AY@{C\+R\+AY}}
+\index{C\+R\+AY@{C\+R\+AY}!arithchk.\+c@{arithchk.\+c}}
+\subsubsection{\texorpdfstring{C\+R\+AY}{CRAY}}
+{\footnotesize\ttfamily \hyperlink{struct_akind}{Akind} C\+R\+AY = \{ \char`\"{}C\+R\+AY\char`\"{}, 5\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{arithchk_8c_a6e70b5d8f6168d566cbbb26ab375f82f}\label{arithchk_8c_a6e70b5d8f6168d566cbbb26ab375f82f}} 
+\index{arithchk.\+c@{arithchk.\+c}!dalign@{dalign}}
+\index{dalign@{dalign}!arithchk.\+c@{arithchk.\+c}}
+\subsubsection{\texorpdfstring{dalign}{dalign}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} dalign\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{arithchk_8c_a20b78a73ed4adc126882701f68d504b0}\label{arithchk_8c_a20b78a73ed4adc126882701f68d504b0}} 
+\index{arithchk.\+c@{arithchk.\+c}!emptyfmt@{emptyfmt}}
+\index{emptyfmt@{emptyfmt}!arithchk.\+c@{arithchk.\+c}}
+\subsubsection{\texorpdfstring{emptyfmt}{emptyfmt}}
+{\footnotesize\ttfamily char$\ast$ emptyfmt = \char`\"{}\char`\"{}}
+
+\mbox{\Hypertarget{arithchk_8c_a4e704687676c3c969a98a639e053738d}\label{arithchk_8c_a4e704687676c3c969a98a639e053738d}} 
+\index{arithchk.\+c@{arithchk.\+c}!I\+BM@{I\+BM}}
+\index{I\+BM@{I\+BM}!arithchk.\+c@{arithchk.\+c}}
+\subsubsection{\texorpdfstring{I\+BM}{IBM}}
+{\footnotesize\ttfamily \hyperlink{struct_akind}{Akind} I\+BM = \{ \char`\"{}I\+BM\char`\"{}, 3 \}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{arithchk_8c_ac349db3ac1a6f76aa6a8709bf9d2fe7f}\label{arithchk_8c_ac349db3ac1a6f76aa6a8709bf9d2fe7f}} 
+\index{arithchk.\+c@{arithchk.\+c}!I\+E\+E\+E\+\_\+8087@{I\+E\+E\+E\+\_\+8087}}
+\index{I\+E\+E\+E\+\_\+8087@{I\+E\+E\+E\+\_\+8087}!arithchk.\+c@{arithchk.\+c}}
+\subsubsection{\texorpdfstring{I\+E\+E\+E\+\_\+8087}{IEEE\_8087}}
+{\footnotesize\ttfamily \hyperlink{struct_akind}{Akind} I\+E\+E\+E\+\_\+8087 = \{ \char`\"{}I\+E\+E\+E\+\_\+8087\char`\"{}, 1 \}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{arithchk_8c_a16fc08d2adc524c2954be52a81ea92ca}\label{arithchk_8c_a16fc08d2adc524c2954be52a81ea92ca}} 
+\index{arithchk.\+c@{arithchk.\+c}!I\+E\+E\+E\+\_\+\+M\+C68k@{I\+E\+E\+E\+\_\+\+M\+C68k}}
+\index{I\+E\+E\+E\+\_\+\+M\+C68k@{I\+E\+E\+E\+\_\+\+M\+C68k}!arithchk.\+c@{arithchk.\+c}}
+\subsubsection{\texorpdfstring{I\+E\+E\+E\+\_\+\+M\+C68k}{IEEE\_MC68k}}
+{\footnotesize\ttfamily \hyperlink{struct_akind}{Akind} I\+E\+E\+E\+\_\+\+M\+C68k = \{ \char`\"{}I\+E\+E\+E\+\_\+\+M\+C68k\char`\"{}, 2 \}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{arithchk_8c_ad78b8ce80d58a04f326210af4b4cd934}\label{arithchk_8c_ad78b8ce80d58a04f326210af4b4cd934}} 
+\index{arithchk.\+c@{arithchk.\+c}!t\+\_\+nan@{t\+\_\+nan}}
+\index{t\+\_\+nan@{t\+\_\+nan}!arithchk.\+c@{arithchk.\+c}}
+\subsubsection{\texorpdfstring{t\+\_\+nan}{t\_nan}}
+{\footnotesize\ttfamily double t\+\_\+nan\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{arithchk_8c_a72fa4fdd0adb8702efe94e74e05e3850}\label{arithchk_8c_a72fa4fdd0adb8702efe94e74e05e3850}} 
+\index{arithchk.\+c@{arithchk.\+c}!V\+AX@{V\+AX}}
+\index{V\+AX@{V\+AX}!arithchk.\+c@{arithchk.\+c}}
+\subsubsection{\texorpdfstring{V\+AX}{VAX}}
+{\footnotesize\ttfamily \hyperlink{struct_akind}{Akind} V\+AX = \{ \char`\"{}V\+AX\char`\"{}, 4 \}\hspace{0.3cm}{\ttfamily [static]}}
+

@@ -1,0 +1,20 @@
+\hypertarget{class_s_b_m_l_visitor}{}\section{S\+B\+M\+L\+Visitor Class Reference}
+\label{class_s_b_m_l_visitor}\index{S\+B\+M\+L\+Visitor@{S\+B\+M\+L\+Visitor}}
+
+
+{\ttfamily \#include $<$S\+B\+M\+L\+Visitor.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} Support class for operations on S\+B\+ML objects.
+
+{\itshape This class of objects is defined by lib\+S\+B\+ML only and has no direct equivalent in terms of S\+B\+ML components.}
+
+This is a class that supports the use of the \href{http://en.wikipedia.org/wiki/Design_pattern_(computer_science)}{\tt {\itshape Visitor Pattern}} to perform operations on S\+B\+ML objects. The Lib\+S\+B\+ML implementation of the Visitor Pattern couples the notion of visitation with the traversal of an S\+B\+ML model oject hierarchy.
+
+This class (\hyperlink{class_s_b_m_l_visitor}{S\+B\+M\+L\+Visitor}) does not provide stand-\/alone functionality; rather, it defines the interface that user visitor classes must implement. All of the individual S\+B\+ML object classes have methods named {\ttfamily accept} that are used for invoking an object of class \hyperlink{class_s_b_m_l_visitor}{S\+B\+M\+L\+Visitor}. An example of its use is in the S\+B\+ML validation system, which is internally implemented using this Visitor Pattern facility. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_s_b_m_l_visitor_8h}{S\+B\+M\+L\+Visitor.\+h}\end{DoxyCompactItemize}

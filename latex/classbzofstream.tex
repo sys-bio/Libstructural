@@ -1,0 +1,153 @@
+\hypertarget{classbzofstream}{}\section{bzofstream Class Reference}
+\label{classbzofstream}\index{bzofstream@{bzofstream}}
+
+
+Gzipped file output stream class.  
+
+
+
+
+{\ttfamily \#include $<$bzfstream.\+h$>$}
+
+
+
+Inherits std\+::ostream.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} \hyperlink{classbzofstream_a3f1f39a5be6fc416c5382d3c5bad05f2}{attach} (\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} fd, std\+::ios\+\_\+base\+::openmode \hyperlink{ioapi_8h_ab77191763734fbb3e515371393ccb606}{mode}=std\+::ios\+\_\+base\+::out)
+\begin{DoxyCompactList}\small\item\em Attach to already open bzip2 file. \end{DoxyCompactList}\item 
+\hyperlink{classbzofstream_aca9a7c301511e8fd4e3f999ce0cea80e}{bzofstream} ()
+\item 
+\hyperlink{classbzofstream_a039338b800e61a5f834a0bdb971eba77}{bzofstream} (const char $\ast$\hyperlink{lp__lib_8h_a2946c588fc7fa2fa5b43ac54b7872725}{name}, std\+::ios\+\_\+base\+::openmode \hyperlink{ioapi_8h_ab77191763734fbb3e515371393ccb606}{mode}=std\+::ios\+\_\+base\+::out)
+\begin{DoxyCompactList}\small\item\em Construct stream on bzip2 file to be opened. \end{DoxyCompactList}\item 
+\hyperlink{classbzofstream_a5999079b494827ad2c653c2d045f0e9b}{bzofstream} (\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} fd, std\+::ios\+\_\+base\+::openmode \hyperlink{ioapi_8h_ab77191763734fbb3e515371393ccb606}{mode}=std\+::ios\+\_\+base\+::out)
+\begin{DoxyCompactList}\small\item\em Construct stream on already open bzip2 file. \end{DoxyCompactList}\item 
+\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} \hyperlink{classbzofstream_a7d26c80f20f44614d2635e948757fb1a}{close} ()
+\begin{DoxyCompactList}\small\item\em Close bzip2 file. \end{DoxyCompactList}\item 
+bool \hyperlink{classbzofstream_a9b827af5462beb0ffa2598b8b0bfbd98}{is\+\_\+open} ()
+\begin{DoxyCompactList}\small\item\em Check if file is open. \end{DoxyCompactList}\item 
+\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} \hyperlink{classbzofstream_ad8b9cdf55e3dc4c1777a12ddc1528744}{open} (const char $\ast$\hyperlink{lp__lib_8h_a2946c588fc7fa2fa5b43ac54b7872725}{name}, std\+::ios\+\_\+base\+::openmode \hyperlink{ioapi_8h_ab77191763734fbb3e515371393ccb606}{mode}=std\+::ios\+\_\+base\+::out)
+\begin{DoxyCompactList}\small\item\em Open bzip2 file. \end{DoxyCompactList}\item 
+\hyperlink{classbzfilebuf}{bzfilebuf} $\ast$ \hyperlink{classbzofstream_a63d4075162fb823e204b0df0f25c06f0}{rdbuf} () const
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Gzipped file output stream class. 
+
+This class implements ofstream for bzip2 files. Seeking and putback is not supported yet. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classbzofstream_aca9a7c301511e8fd4e3f999ce0cea80e}\label{classbzofstream_aca9a7c301511e8fd4e3f999ce0cea80e}} 
+\index{bzofstream@{bzofstream}!bzofstream@{bzofstream}}
+\index{bzofstream@{bzofstream}!bzofstream@{bzofstream}}
+\subsubsection{\texorpdfstring{bzofstream()}{bzofstream()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bzofstream\+::bzofstream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classbzofstream_a039338b800e61a5f834a0bdb971eba77}\label{classbzofstream_a039338b800e61a5f834a0bdb971eba77}} 
+\index{bzofstream@{bzofstream}!bzofstream@{bzofstream}}
+\index{bzofstream@{bzofstream}!bzofstream@{bzofstream}}
+\subsubsection{\texorpdfstring{bzofstream()}{bzofstream()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bzofstream\+::bzofstream (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{std\+::ios\+\_\+base\+::openmode}]{mode = {\ttfamily std\+:\+:ios\+\_\+base\+:\+:out} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct stream on bzip2 file to be opened. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & File name. \\
+\hline
+{\em mode} & Open mode flags (forced to contain ios\+::out). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classbzofstream_a5999079b494827ad2c653c2d045f0e9b}\label{classbzofstream_a5999079b494827ad2c653c2d045f0e9b}} 
+\index{bzofstream@{bzofstream}!bzofstream@{bzofstream}}
+\index{bzofstream@{bzofstream}!bzofstream@{bzofstream}}
+\subsubsection{\texorpdfstring{bzofstream()}{bzofstream()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bzofstream\+::bzofstream (\begin{DoxyParamCaption}\item[{\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}}]{fd,  }\item[{std\+::ios\+\_\+base\+::openmode}]{mode = {\ttfamily std\+:\+:ios\+\_\+base\+:\+:out} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct stream on already open bzip2 file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & File descriptor. \\
+\hline
+{\em mode} & Open mode flags (forced to contain ios\+::out). \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classbzofstream_a3f1f39a5be6fc416c5382d3c5bad05f2}\label{classbzofstream_a3f1f39a5be6fc416c5382d3c5bad05f2}} 
+\index{bzofstream@{bzofstream}!attach@{attach}}
+\index{attach@{attach}!bzofstream@{bzofstream}}
+\subsubsection{\texorpdfstring{attach()}{attach()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} bzofstream\+::attach (\begin{DoxyParamCaption}\item[{\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}}]{fd,  }\item[{std\+::ios\+\_\+base\+::openmode}]{mode = {\ttfamily std\+:\+:ios\+\_\+base\+:\+:out} }\end{DoxyParamCaption})}
+
+
+
+Attach to already open bzip2 file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & File descriptor. \\
+\hline
+{\em mode} & Open mode flags (forced to contain ios\+::out).\\
+\hline
+\end{DoxyParams}
+Stream will be in state good() if attach succeeded; otherwise in state \hyperlink{_constraint_macros_8h_a73a3b169ac8c3419cbe15327e75ffcfd}{fail()}. \mbox{\Hypertarget{classbzofstream_a7d26c80f20f44614d2635e948757fb1a}\label{classbzofstream_a7d26c80f20f44614d2635e948757fb1a}} 
+\index{bzofstream@{bzofstream}!close@{close}}
+\index{close@{close}!bzofstream@{bzofstream}}
+\subsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} bzofstream\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Close bzip2 file. 
+
+Stream will be in state \hyperlink{_constraint_macros_8h_a73a3b169ac8c3419cbe15327e75ffcfd}{fail()} if close failed. \mbox{\Hypertarget{classbzofstream_a9b827af5462beb0ffa2598b8b0bfbd98}\label{classbzofstream_a9b827af5462beb0ffa2598b8b0bfbd98}} 
+\index{bzofstream@{bzofstream}!is\+\_\+open@{is\+\_\+open}}
+\index{is\+\_\+open@{is\+\_\+open}!bzofstream@{bzofstream}}
+\subsubsection{\texorpdfstring{is\+\_\+open()}{is\_open()}}
+{\footnotesize\ttfamily bool bzofstream\+::is\+\_\+open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if file is open. 
+
+\begin{DoxyReturn}{Returns}
+True if file is open. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classbzofstream_ad8b9cdf55e3dc4c1777a12ddc1528744}\label{classbzofstream_ad8b9cdf55e3dc4c1777a12ddc1528744}} 
+\index{bzofstream@{bzofstream}!open@{open}}
+\index{open@{open}!bzofstream@{bzofstream}}
+\subsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} bzofstream\+::open (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{std\+::ios\+\_\+base\+::openmode}]{mode = {\ttfamily std\+:\+:ios\+\_\+base\+:\+:out} }\end{DoxyParamCaption})}
+
+
+
+Open bzip2 file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & File name. \\
+\hline
+{\em mode} & Open mode flags (forced to contain ios\+::out).\\
+\hline
+\end{DoxyParams}
+Stream will be in state good() if file opens successfully; otherwise in state \hyperlink{_constraint_macros_8h_a73a3b169ac8c3419cbe15327e75ffcfd}{fail()}. This differs from the behavior of ofstream, which never sets the state to good() and therefore won\textquotesingle{}t allow you to reuse the stream for a second file unless you manually clear() the state. The choice is a matter of convenience. \mbox{\Hypertarget{classbzofstream_a63d4075162fb823e204b0df0f25c06f0}\label{classbzofstream_a63d4075162fb823e204b0df0f25c06f0}} 
+\index{bzofstream@{bzofstream}!rdbuf@{rdbuf}}
+\index{rdbuf@{rdbuf}!bzofstream@{bzofstream}}
+\subsubsection{\texorpdfstring{rdbuf()}{rdbuf()}}
+{\footnotesize\ttfamily \hyperlink{classbzfilebuf}{bzfilebuf}$\ast$ bzofstream\+::rdbuf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Obtain underlying stream buffer. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{bzfstream_8h}{bzfstream.\+h}\end{DoxyCompactItemize}

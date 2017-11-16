@@ -1,0 +1,33 @@
+\hypertarget{class_s_b_m_l_error_log}{}\section{S\+B\+M\+L\+Error\+Log Class Reference}
+\label{class_s_b_m_l_error_log}\index{S\+B\+M\+L\+Error\+Log@{S\+B\+M\+L\+Error\+Log}}
+
+
+{\ttfamily \#include $<$S\+B\+M\+L\+Error\+Log.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} Log of diagnostics reported during processing.
+
+
+
+The error log is a list. Each \hyperlink{class_s_b_m_l_document}{S\+B\+M\+L\+Document} maintains its own \hyperlink{class_s_b_m_l_error_log}{S\+B\+M\+L\+Error\+Log}. When a lib\+S\+B\+ML operation on S\+B\+ML content results in an error, or when there is something worth noting about the S\+B\+ML content, the issue is reported as an \hyperlink{class_s_b_m_l_error}{S\+B\+M\+L\+Error} object stored in the \hyperlink{class_s_b_m_l_error_log}{S\+B\+M\+L\+Error\+Log} list.
+
+\hyperlink{class_s_b_m_l_error_log}{S\+B\+M\+L\+Error\+Log} is derived from \hyperlink{class_x_m_l_error_log}{X\+M\+L\+Error\+Log}, an object class that serves exactly the same purpose but for the X\+ML parsing layer. \hyperlink{class_x_m_l_error_log}{X\+M\+L\+Error\+Log} provides crucial methods such as get\+Num\+Errors() for determining how many \hyperlink{class_s_b_m_l_error}{S\+B\+M\+L\+Error} or \hyperlink{class_x_m_l_error}{X\+M\+L\+Error} objects are in the log. \hyperlink{class_s_b_m_l_error_log}{S\+B\+M\+L\+Error\+Log} inherits these methods.
+
+The general approach to working with \hyperlink{class_s_b_m_l_error_log}{S\+B\+M\+L\+Error\+Log} in user programs involves first obtaining a pointer to a log from a lib\+S\+B\+ML object such as \hyperlink{class_s_b_m_l_document}{S\+B\+M\+L\+Document}. Callers should then use get\+Num\+Errors() to inquire how many objects there are in the list. (The answer may be 0.) If there is at least one \hyperlink{class_s_b_m_l_error}{S\+B\+M\+L\+Error} object in the \hyperlink{class_s_b_m_l_error_log}{S\+B\+M\+L\+Error\+Log} instance, callers can then iterate over the list using S\+B\+M\+L\+Error\+Log\+::get\+Error(), using methods provided by the \hyperlink{class_s_b_m_l_error}{S\+B\+M\+L\+Error} class to find out the error code and associated information such as the error severity, the message, and the line number in the input.
+
+If you wish to simply print the error strings for a human to read, an easier and more direct way might be to use S\+B\+M\+L\+Document\+::print\+Errors().
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_s_b_m_l_error}{S\+B\+M\+L\+Error} 
+
+\hyperlink{class_x_m_l_error_log}{X\+M\+L\+Error\+Log} 
+
+\hyperlink{class_x_m_l_error}{X\+M\+L\+Error} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_s_b_m_l_error_log_8h}{S\+B\+M\+L\+Error\+Log.\+h}\end{DoxyCompactItemize}

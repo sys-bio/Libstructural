@@ -1,0 +1,126 @@
+\hypertarget{classzipifstream}{}\section{zipifstream Class Reference}
+\label{classzipifstream}\index{zipifstream@{zipifstream}}
+
+
+zip file input stream class.  
+
+
+
+
+{\ttfamily \#include $<$zipfstream.\+h$>$}
+
+
+
+Inherits std\+::istream.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} \hyperlink{classzipifstream_a15318cb53e9e01e6d3503d019b683113}{close} ()
+\begin{DoxyCompactList}\small\item\em Close zip file. \end{DoxyCompactList}\item 
+bool \hyperlink{classzipifstream_a79ad0d677fdffee47f9b1905e538a13f}{is\+\_\+open} ()
+\begin{DoxyCompactList}\small\item\em Check if file is open. \end{DoxyCompactList}\item 
+\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} \hyperlink{classzipifstream_acc6d1ce5b46679742cbaaa517a2ff1f5}{open} (const char $\ast$\hyperlink{lp__lib_8h_a2946c588fc7fa2fa5b43ac54b7872725}{name}, std\+::ios\+\_\+base\+::openmode \hyperlink{ioapi_8h_ab77191763734fbb3e515371393ccb606}{mode}=std\+::ios\+\_\+base\+::in)
+\begin{DoxyCompactList}\small\item\em Open zip file. \end{DoxyCompactList}\item 
+\hyperlink{classzipfilebuf}{zipfilebuf} $\ast$ \hyperlink{classzipifstream_a76e1d4362bfd964b7149c5d1b5f74726}{rdbuf} () const
+\begin{DoxyCompactList}\small\item\em Construct stream on already open zip file. \end{DoxyCompactList}\item 
+\hyperlink{classzipifstream_a6c70a47a8d5c13f3f5c61299a1136fa8}{zipifstream} ()
+\item 
+\hyperlink{classzipifstream_ab034c1ab8a0187f37f5e92a25273f497}{zipifstream} (const char $\ast$\hyperlink{lp__lib_8h_a2946c588fc7fa2fa5b43ac54b7872725}{name}, std\+::ios\+\_\+base\+::openmode \hyperlink{ioapi_8h_ab77191763734fbb3e515371393ccb606}{mode}=std\+::ios\+\_\+base\+::in)
+\begin{DoxyCompactList}\small\item\em Construct stream on zip file to be opened. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+zip file input stream class. 
+
+This class implements ifstream for zip files. Seeking and putback is not supported yet. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classzipifstream_a6c70a47a8d5c13f3f5c61299a1136fa8}\label{classzipifstream_a6c70a47a8d5c13f3f5c61299a1136fa8}} 
+\index{zipifstream@{zipifstream}!zipifstream@{zipifstream}}
+\index{zipifstream@{zipifstream}!zipifstream@{zipifstream}}
+\subsubsection{\texorpdfstring{zipifstream()}{zipifstream()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily zipifstream\+::zipifstream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classzipifstream_ab034c1ab8a0187f37f5e92a25273f497}\label{classzipifstream_ab034c1ab8a0187f37f5e92a25273f497}} 
+\index{zipifstream@{zipifstream}!zipifstream@{zipifstream}}
+\index{zipifstream@{zipifstream}!zipifstream@{zipifstream}}
+\subsubsection{\texorpdfstring{zipifstream()}{zipifstream()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily zipifstream\+::zipifstream (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{std\+::ios\+\_\+base\+::openmode}]{mode = {\ttfamily std\+:\+:ios\+\_\+base\+:\+:in} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct stream on zip file to be opened. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & File name. \\
+\hline
+{\em mode} & Open mode flags (forced to contain ios\+::in). \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classzipifstream_a15318cb53e9e01e6d3503d019b683113}\label{classzipifstream_a15318cb53e9e01e6d3503d019b683113}} 
+\index{zipifstream@{zipifstream}!close@{close}}
+\index{close@{close}!zipifstream@{zipifstream}}
+\subsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} zipifstream\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Close zip file. 
+
+Stream will be in state \hyperlink{_constraint_macros_8h_a73a3b169ac8c3419cbe15327e75ffcfd}{fail()} if close failed. \mbox{\Hypertarget{classzipifstream_a79ad0d677fdffee47f9b1905e538a13f}\label{classzipifstream_a79ad0d677fdffee47f9b1905e538a13f}} 
+\index{zipifstream@{zipifstream}!is\+\_\+open@{is\+\_\+open}}
+\index{is\+\_\+open@{is\+\_\+open}!zipifstream@{zipifstream}}
+\subsubsection{\texorpdfstring{is\+\_\+open()}{is\_open()}}
+{\footnotesize\ttfamily bool zipifstream\+::is\+\_\+open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if file is open. 
+
+\begin{DoxyReturn}{Returns}
+True if file is open. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classzipifstream_acc6d1ce5b46679742cbaaa517a2ff1f5}\label{classzipifstream_acc6d1ce5b46679742cbaaa517a2ff1f5}} 
+\index{zipifstream@{zipifstream}!open@{open}}
+\index{open@{open}!zipifstream@{zipifstream}}
+\subsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} zipifstream\+::open (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{std\+::ios\+\_\+base\+::openmode}]{mode = {\ttfamily std\+:\+:ios\+\_\+base\+:\+:in} }\end{DoxyParamCaption})}
+
+
+
+Open zip file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & File name. \\
+\hline
+{\em mode} & Open mode flags (forced to contain ios\+::in).\\
+\hline
+\end{DoxyParams}
+Stream will be in state good() if file opens successfully; otherwise in state \hyperlink{_constraint_macros_8h_a73a3b169ac8c3419cbe15327e75ffcfd}{fail()}. This differs from the behavior of ifstream, which never sets the state to good() and therefore won\textquotesingle{}t allow you to reuse the stream for a second file unless you manually clear() the state. The choice is a matter of convenience. \mbox{\Hypertarget{classzipifstream_a76e1d4362bfd964b7149c5d1b5f74726}\label{classzipifstream_a76e1d4362bfd964b7149c5d1b5f74726}} 
+\index{zipifstream@{zipifstream}!rdbuf@{rdbuf}}
+\index{rdbuf@{rdbuf}!zipifstream@{zipifstream}}
+\subsubsection{\texorpdfstring{rdbuf()}{rdbuf()}}
+{\footnotesize\ttfamily \hyperlink{classzipfilebuf}{zipfilebuf}$\ast$ zipifstream\+::rdbuf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct stream on already open zip file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & File descriptor. \\
+\hline
+{\em mode} & Open mode flags (forced to contain ios\+::in). Obtain underlying stream buffer. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{zipfstream_8h}{zipfstream.\+h}\end{DoxyCompactItemize}

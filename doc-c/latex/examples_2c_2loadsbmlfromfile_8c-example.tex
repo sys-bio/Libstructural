@@ -22,7 +22,7 @@ This is an example of how to load a S\+B\+ML file and print structural analysis 
         \}
         
         \textcolor{comment}{// load the sbml file and check the argument}
-        result = \hyperlink{libstructural_8cpp_a8fe9803fda8adddfd10c7d48f6fdbfe1}{LibStructural\_loadSBMLFromFile}(argv[1], &message, &length);
+        result = \hyperlink{libstructural_8h_a8fe9803fda8adddfd10c7d48f6fdbfe1}{LibStructural\_loadSBMLFromFile}(argv[1], &message, &length);
         \textcolor{keywordflow}{if} (result != 0)
         \{
                 printf(\textcolor{stringliteral}{"the SBML file %s could not be loaded."}, argv[1]);
@@ -33,14 +33,14 @@ This is an example of how to load a S\+B\+ML file and print structural analysis 
         printf(\textcolor{stringliteral}{"%s"}, message);
         
         \textcolor{comment}{// free the memory used by the message}
-        \hyperlink{libstructural_8cpp_a43ec36f000082b338e1aad9cff3b0b23}{LibStructural\_freeVector}(message);
+        \hyperlink{libstructural_8h_a43ec36f000082b338e1aad9cff3b0b23}{LibStructural\_freeVector}(message);
         
         \textcolor{comment}{// obtain and print the test results}
-        \hyperlink{libstructural_8cpp_a76fa7cdfb5333db9e78bf36ac6bc292e}{LibStructural\_getTestDetails}( &message, &length );
+        \hyperlink{libstructural_8h_a76fa7cdfb5333db9e78bf36ac6bc292e}{LibStructural\_getTestDetails}( &message, &length );
         printf(\textcolor{stringliteral}{"%s"}, message);
         
         \textcolor{comment}{// finally free the memory used by the message}
-        \hyperlink{libstructural_8cpp_a43ec36f000082b338e1aad9cff3b0b23}{LibStructural\_freeVector}(message);
+        \hyperlink{libstructural_8h_a43ec36f000082b338e1aad9cff3b0b23}{LibStructural\_freeVector}(message);
         
         
         \textcolor{keywordflow}{return} 0;

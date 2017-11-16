@@ -1,0 +1,17 @@
+\hypertarget{classdoc__warning__reaction__cant__ignore__fast}{}\section{doc\+\_\+warning\+\_\+reaction\+\_\+cant\+\_\+ignore\+\_\+fast Class Reference}
+\label{classdoc__warning__reaction__cant__ignore__fast}\index{doc\+\_\+warning\+\_\+reaction\+\_\+cant\+\_\+ignore\+\_\+fast@{doc\+\_\+warning\+\_\+reaction\+\_\+cant\+\_\+ignore\+\_\+fast}}
+
+
+{\ttfamily \#include $<$Reaction.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\begin{DoxyWarning}{Warning}
+S\+B\+ML definitions before S\+B\+ML Level~2 Version~2 incorrectly indicated that software tools could ignore the \char`\"{}fast\char`\"{} attribute if they did not implement support for the corresponding concept; however, further research in S\+B\+ML has revealed that this is not true, and \char`\"{}fast\char`\"{} {\itshape cannot be ignored} if it is set to {\ttfamily true}. Beginning with S\+B\+ML Level~2 Versions~2, the S\+B\+ML specifications therefore stipulate that if a model has any reactions with \char`\"{}fast\char`\"{} set to {\ttfamily true}, a software tool must be able to respect the attribute or else indicate to the user that it does not have the capacity to do so. Readers are directed to the S\+B\+ML specifications, which provides more detail about the conditions under which a reaction can be considered to be fast in this sense. 
+\end{DoxyWarning}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_reaction_8h}{Reaction.\+h}\end{DoxyCompactItemize}

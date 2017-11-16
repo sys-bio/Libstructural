@@ -1,0 +1,28 @@
+\hypertarget{classdoc__renamemetasidref__common}{}\section{doc\+\_\+renamemetasidref\+\_\+common Class Reference}
+\label{classdoc__renamemetasidref__common}\index{doc\+\_\+renamemetasidref\+\_\+common@{doc\+\_\+renamemetasidref\+\_\+common}}
+
+
+{\ttfamily \#include $<$common-\/documentation.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+Replaces all uses of a given meta identifier attribute value with another value.
+
+\begin{DoxyParagraph}{}
+In S\+B\+ML, object \char`\"{}meta\char`\"{} identifiers are of the X\+ML data type {\ttfamily ID}; the S\+B\+ML object attribute itself is typically named {\ttfamily metaid}. All attributes that hold values {\itshape referring} to values of type {\ttfamily ID} are of the X\+ML data type {\ttfamily I\+D\+R\+EF}. They are also sometimes informally referred to as \char`\"{}metaid refs\char`\"{}, in analogy to the S\+B\+M\+L-\/defined type {\ttfamily S\+Id\+Ref}.
+\end{DoxyParagraph}
+This method works by looking at all meta-\/identifier attribute values, comparing the identifiers to the value of {\ttfamily oldid}. If any matches are found, the matching identifiers are replaced with {\ttfamily newid}. The method does {\itshape not} descend into child elements.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oldid} & the old identifier. \\
+\hline
+{\em newid} & the new identifier. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{common-documentation_8h}{common-\/documentation.\+h}\end{DoxyCompactItemize}

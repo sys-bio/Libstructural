@@ -1,0 +1,17 @@
+\hypertarget{classdoc__virtual__method__for__l2namespaces}{}\section{doc\+\_\+virtual\+\_\+method\+\_\+for\+\_\+l2namespaces Class Reference}
+\label{classdoc__virtual__method__for__l2namespaces}\index{doc\+\_\+virtual\+\_\+method\+\_\+for\+\_\+l2namespaces@{doc\+\_\+virtual\+\_\+method\+\_\+for\+\_\+l2namespaces}}
+
+
+{\ttfamily \#include $<$S\+B\+M\+L\+Extension.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\begin{DoxyParagraph}{}
+This method is related to special facilities designed to support legacy behaviors surrounding S\+B\+ML Level~2 models. Due to the historical background of the S\+B\+ML Layout package, lib\+S\+B\+ML implements special behavior for that package\+: it {\itshape always} creates a Layout plugin object for any S\+B\+ML Level~2 document it reads in, regardless of whether that document actually uses Layout constructs. Since Level~2 does not use namespaces on the top level of the S\+B\+ML document object, lib\+S\+B\+ML simply keys off the fact that the model is a Level~2 model. To allow the extensions for the Layout and Render (and possibly other) packages to support this behavior, the \hyperlink{class_s_b_m_l_extension}{S\+B\+M\+L\+Extension} class contains special methods to allow packages to hook themselves into the Level~2 parsing apparatus when necessary. 
+\end{DoxyParagraph}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_s_b_m_l_extension_8h}{S\+B\+M\+L\+Extension.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,108 @@
+\hypertarget{class_c_v_term}{}\section{C\+V\+Term Class Reference}
+\label{class_c_v_term}\index{C\+V\+Term@{C\+V\+Term}}
+
+
+{\ttfamily \#include $<$C\+V\+Term.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} A M\+I\+R\+I\+A\+M-\/compliant controlled vocabulary term.
+
+
+
+The S\+B\+ML Level~2 and Level~3 specifications define a simple format for annotating models when (a) referring to controlled vocabulary terms and database identifiers that define and describe biological and biochemical entities, and (b) describing the creator of a model and the model\textquotesingle{}s modification history. This S\+B\+ML format is a concrete syntax that conforms to the guidelines of M\+I\+R\+I\+AM (\href{http://www.nature.com/nbt/journal/v23/n12/abs/nbt1156.html}{\tt \char`\"{}\+Minimum
+  Information Requested in the Annotation of biochemical Models\char`\"{}}, {\itshape Nature Biotechnology}, vol. 23, no. 12, Dec. 2005). The format uses a subset of W3C R\+DF (\href{http://www.w3.org/RDF/}{\tt Resource Description Format}). In order to help application developers work with annotations in this format, lib\+S\+B\+ML provides several helper classes that provide higher-\/level interfaces to the data elements; these classes include \hyperlink{class_c_v_term}{C\+V\+Term}, \hyperlink{class_model_creator}{Model\+Creator}, \hyperlink{class_model_history}{Model\+History}, \hyperlink{class_r_d_f_annotation_parser}{R\+D\+F\+Annotation\+Parser}, and \hyperlink{class_date}{Date}.\hypertarget{class_c_v_term_annotation-parts}{}\subsection{Components of an S\+B\+M\+L annotation}\label{class_c_v_term_annotation-parts}
+The S\+B\+ML annotation format consists of R\+D\+F-\/based content placed inside an {\ttfamily $<$annotation$>$} element attached to an S\+B\+ML component such as \hyperlink{class_species}{Species}, \hyperlink{class_compartment}{Compartment}, etc. A small change was introduced in S\+B\+ML Level~2 Version~5 and S\+B\+ML Level~3 Version~2 to permit nested annotations\+: lower Versions of the S\+B\+ML specifications did not explicitly allow this. We first describe the different parts of S\+B\+ML annotations in X\+ML form for S\+B\+ML Level~2 below Version~5 and S\+B\+ML Level~3 below Version~2\+:
+
+
+\begin{DoxyPre}
+<SBML\_ELEMENT +++ metaid="meta id" +++>
+  +++
+  <annotation>
+    +++
+    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+             xmlns:dcterm="http://purl.org/dc/terms/"
+             xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#"
+             xmlns:bqbiol="http://biomodels.net/biology-qualifiers/"
+             xmlns:bqmodel="http://biomodels.net/model-qualifiers/" >
+      <rdf:Description rdf:about="\#meta id">
+        HISTORY
+        <RELATION\_ELEMENT>
+          <rdf:Bag>
+            <rdf:li rdf:resource="URI" />
+            ...
+          </rdf:Bag>
+        </RELATION\_ELEMENT>
+        ...
+      </rdf:Description>
+      +++
+    </rdf:RDF>
+    +++
+  </annotation>
+  +++
+</SBML\_ELEMENT>
+\end{DoxyPre}
+
+
+In the template above, the placeholder S\+B\+M\+L\+\_\+\+E\+L\+E\+M\+E\+NT stands for the X\+ML tag name of an S\+B\+ML model component (e.\+g., {\ttfamily model}, {\ttfamily reaction}, etc.) and the placeholder meta id stands for the element\textquotesingle{}s meta identifier, which is a field available on all S\+B\+ML components derived from the \hyperlink{class_s_base}{S\+Base} base object class. The dotted portions are optional, the symbol +++ is a placeholder for either no content or valid X\+ML content that is not defined by this annotation scheme, and the ellipses ... are placeholders for zero or more elements of the same form as the immediately preceding element. The optional content H\+I\+S\+T\+O\+RY is a creation and modification history; in lib\+S\+B\+ML, this is stored using \hyperlink{class_model_history}{Model\+History} objects.
+
+The placeholder R\+E\+L\+A\+T\+I\+O\+N\+\_\+\+E\+L\+E\+M\+E\+NT refers to a Bio\+Models.\+net qualifier element name. This is an element in either the X\+ML namespace {\ttfamily \char`\"{}http\+://biomodels.\+net/model-\/qualifiers\char`\"{}} (for model qualifiers) or {\ttfamily \char`\"{}http\+://biomodels.\+net/biology-\/qualifiers\char`\"{}} (for biological qualifier). Note that these namespace U\+R\+Is are only labels, and not actual Web locations, which means you cannot visit an address such as {\ttfamily \char`\"{}http\+://biomodels.\+net/model-\/qualifiers\char`\"{}} in your browser or try to have your application access it.
+
+The U\+RI is a required data value that uniquely identifies a resource and data within that resource to which the annotation refers. Again, being U\+R\+Is, these do not refer to physical Web locations; nevertheless, applications will often want a means of finding the resource to which a given U\+RI refers. Providing the facilities for this task is the purpose of M\+I\+R\+I\+AM Resources, described in detail online at \href{http://biomodels.net/miriam}{\tt http\+://biomodels.\+net/miriam}) and also in the paper \href{http://www.biomedcentral.com/1752-0509/1/58}{\tt \char`\"{}\+M\+I\+R\+I\+A\+M Resources\+: tools to generate and
+  resolve robust cross-\/references in Systems Biology\char`\"{}}, {\itshape B\+MC Systems Biology}, 58(1), 2007.
+
+Finally, the following is the same template as above, but this time showing the nested content permitted by the most recent S\+B\+ML specifications (S\+B\+ML Level~2 Version~5 and Level~3 Version~2)\+: 
+\begin{DoxyPre}
+<SBML\_ELEMENT +++ metaid="meta id" +++>
+  +++
+  <annotation>
+    +++
+    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+             xmlns:dcterm="http://purl.org/dc/terms/"
+             xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#"
+             xmlns:bqbiol="http://biomodels.net/biology-qualifiers/"
+             xmlns:bqmodel="http://biomodels.net/model-qualifiers/" >
+      <rdf:Description rdf:about="\#meta id">
+        HISTORY
+        <RELATION\_ELEMENT>
+          <rdf:Bag>
+            <rdf:li rdf:resource="URI" />
+            NESTED\_CONTENT
+            ...
+          </rdf:Bag>
+        </RELATION\_ELEMENT>
+        ...
+      </rdf:Description>
+      +++
+    </rdf:RDF>
+    +++
+  </annotation>
+  +++
+</SBML\_ELEMENT>
+\end{DoxyPre}
+
+
+The placeholder N\+E\+S\+T\+E\+D\+\_\+\+C\+O\+N\+T\+E\+NT refers to other optional R\+DF elements such as {\ttfamily \char`\"{}bqbiol\+:is\+Described\+By\char`\"{}} that describe a clarification or another annotation about the R\+E\+L\+A\+T\+I\+O\+N\+\_\+\+E\+L\+E\+M\+E\+NT in which it appears. Nested content allows one to, for example, describe protein modifications on species, or to add evidence codes for an annotation. Nested content relates to its containing R\+E\+L\+A\+T\+I\+O\+N\+\_\+\+E\+L\+E\+M\+E\+NT, not the other way around. It qualifies it, but does not change its meaning. As such, ignoring a N\+E\+S\+T\+E\+D\+\_\+\+C\+O\+N\+T\+E\+NT does not affect the information provided by the containing R\+E\+L\+A\+T\+I\+O\+N\+\_\+\+E\+L\+E\+M\+E\+NT.
+
+For more information about S\+B\+ML annotations in general, please refer to Section~6 in the S\+B\+ML Level~2 (Versions 2--4) or Level~3 specification documents.\hypertarget{class_c_v_term_cvterm-parts}{}\subsection{The parts of a C\+V\+Term}\label{class_c_v_term_cvterm-parts}
+Annotations that refer to controlled vocabularies are managed in lib\+S\+B\+ML using \hyperlink{class_c_v_term}{C\+V\+Term} objects. The relation-\/resource pairs discussed in the previous section are the \char`\"{}controlled vocabulary\char`\"{} terms that \hyperlink{class_c_v_term}{C\+V\+Term} is designed to store and manipulate. A set of R\+D\+F-\/based annotations attached to a given S\+B\+ML {\ttfamily $<$annotation$>$} element are read by \hyperlink{class_r_d_f_annotation_parser}{R\+D\+F\+Annotation\+Parser} and converted into a list of these \hyperlink{class_c_v_term}{C\+V\+Term} objects. Each \hyperlink{class_c_v_term}{C\+V\+Term} object instance stores the following components of an annotation\+:
+
+
+\begin{DoxyItemize}
+\item The {\itshape qualifier}, which can be a Bio\+Models.\+net \char`\"{}biological
+  qualifier\char`\"{}, a Bio\+Models.\+net \char`\"{}model qualifier\char`\"{}, or an unknown qualifier (as far as the \hyperlink{class_c_v_term}{C\+V\+Term} class is concerned). Qualifiers are used in M\+I\+R\+I\+AM to indicate the nature of the relationship between the object being annotated and the resource. In \hyperlink{class_c_v_term}{C\+V\+Term}, the qualifiers can be manipulated using the methods C\+V\+Term\+::get\+Qualifier\+Type(), C\+V\+Term\+::set\+Qualifier\+Type(), and related methods.
+
+
+\item The {\itshape resource}, represented by a U\+RI (which, we must remind developers, is not the same as a U\+RL). In the \hyperlink{class_c_v_term}{C\+V\+Term} class, the resource component can be manipulated using the methods C\+V\+Term\+::add\+Resource() and C\+V\+Term\+::remove\+Resource().
+
+
+\end{DoxyItemize}
+
+Note that a \hyperlink{class_c_v_term}{C\+V\+Term} contains a single qualifier, but possibly more than one resource. This corresponds to the possibility of an annotation that points to multiple resources, all of which are qualified by the same Bio\+Models.\+net qualifier. The \hyperlink{class_c_v_term}{C\+V\+Term} object class supports this by supporting a list of resources.
+
+Detailed explanations of the qualifiers defined by Bio\+Models.\+net can be found at \href{http://co.mbine.org/standards/qualifiers}{\tt http\+://co.\+mbine.\+org/standards/qualifiers}. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_c_v_term_8h}{C\+V\+Term.\+h}\end{DoxyCompactItemize}

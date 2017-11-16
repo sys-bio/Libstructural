@@ -1,0 +1,80 @@
+\hypertarget{classdoc__add__behavior__explanation}{}\section{doc\+\_\+add\+\_\+behavior\+\_\+explanation Class Reference}
+\label{classdoc__add__behavior__explanation}\index{doc\+\_\+add\+\_\+behavior\+\_\+explanation@{doc\+\_\+add\+\_\+behavior\+\_\+explanation}}
+
+
+{\ttfamily \#include $<$X\+M\+L\+Attributes.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\begin{DoxyParagraph}{}
+Some explanations are in order about the behavior of \hyperlink{class_x_m_l_attributes}{X\+M\+L\+Attributes} with respect to namespace prefixes and namespace U\+R\+Is. \hyperlink{class_x_m_l_attributes}{X\+M\+L\+Attributes} does {\itshape not} verify the consistency of different uses of an X\+ML namespace and the prefix used to refer to it in a given context. It cannot, because the prefix used for a given X\+ML namespace in an X\+ML document may intentionally be different on different elements in the document. Consequently, callers need to manage their own prefix-\/to-\/namespace mappings, and need to ensure that the desired prefix is used in any given context.
+\end{DoxyParagraph}
+When called with attribute names, prefixes and namespace U\+R\+Is, \hyperlink{class_x_m_l_attributes}{X\+M\+L\+Attributes} pays attention to the namespace U\+R\+Is and not the prefixes\+: a match is established by a combination of attribute name and namespace U\+RI, and if on different occasions a different prefix is used for the same name/namespace combination, the prefix associated with the namespace on that attribute is overwritten.
+
+Some examples will hopefully clarify this. Here are the results of a sequence of calls to the \hyperlink{class_x_m_l_attributes}{X\+M\+L\+Attributes} {\ttfamily add} methods with different argument combinations. First, we create the object and add one attribute\+:
+
+
+\begin{DoxyCode}
+\hyperlink{class_x_m_l_attributes}{XMLAttributes} * att = \textcolor{keyword}{new} \hyperlink{class_x_m_l_attributes}{XMLAttributes}();
+att->add(\textcolor{stringliteral}{"myattribute"}, \textcolor{stringliteral}{"1"}, \textcolor{stringliteral}{"myuri"});
+\end{DoxyCode}
+ The above adds an attribute named {\ttfamily myattribute} in the namespace {\ttfamily myuri}, and with the attribute value {\ttfamily 1}. No namespace prefix is associated with the attribute (but the attribute is recorded to exist in the namespace {\ttfamily myuri}). If this attribute object were written out in X\+ML, it would look like the following (and note that, since no namespace prefix was assigned, none is written out)\+: \begin{center}
+\begin{DoxyPre}
+myattribute="1"
+   \end{DoxyPre}
+\end{center} 
+
+Continuing with this series of examples, suppose we invoke the {\ttfamily add} method again as follows\+:
+
+
+\begin{DoxyCode}
+att->add(\textcolor{stringliteral}{"myattribute"}, \textcolor{stringliteral}{"2"});
+\end{DoxyCode}
+ The above adds a {\itshape new} attribute {\itshape also} named {\ttfamily myattribute}, but in a different X\+ML namespace\+: it is placed in the namespace with no U\+RI, which is to say, the default X\+ML namespace. Both attributes coexist on this \hyperlink{class_x_m_l_attributes}{X\+M\+L\+Attributes} object; both can be independently retrieved.
+
+
+\begin{DoxyCode}
+att->add(\textcolor{stringliteral}{"myattribute"}, \textcolor{stringliteral}{"3"});
+\end{DoxyCode}
+ The code above now replaces the value of the attribute {\ttfamily myattribute} that resides in the default namespace. The attribute in the namespace {\ttfamily myuri} remains untouched.
+
+
+\begin{DoxyCode}
+att->add(\textcolor{stringliteral}{"myattribute"}, \textcolor{stringliteral}{"4"}, \textcolor{stringliteral}{"myuri"});
+\end{DoxyCode}
+ The code above replaces the value of the attribute {\ttfamily myattribute} that resides in the {\ttfamily myuri} namespace. The attribute in the default namespace remains untouched.
+
+
+\begin{DoxyCode}
+att->add(\textcolor{stringliteral}{"myattribute"}, \textcolor{stringliteral}{"5"}, \textcolor{stringliteral}{"myuri"}, \textcolor{stringliteral}{"foo"});
+\end{DoxyCode}
+ The code above replaces the value of the attribute {\ttfamily myattribute} that resides in the {\ttfamily myuri} namespace. It also now assigns a namespace prefix, {\ttfamily foo}, to the attribute. The attribute {\ttfamily myattribute} in the default namespace remains untouched. If this \hyperlink{class_x_m_l_attributes}{X\+M\+L\+Attributes} object were written out in X\+ML, it would look like the following\+: \begin{center}
+\begin{DoxyPre}
+myattribute="3"
+foo:myattribute="5"
+   \end{DoxyPre}
+\end{center}  Pressing on, now suppose we call the {\ttfamily add} method as follows\+:
+
+
+\begin{DoxyCode}
+att->add(\textcolor{stringliteral}{"myattribute"}, \textcolor{stringliteral}{"6"}, \textcolor{stringliteral}{"myuri"}, \textcolor{stringliteral}{"bar"});
+\end{DoxyCode}
+ The code above replaces the value of the attribute {\ttfamily myattribute} that resides in the {\ttfamily myuri} namespace. It also assigns a different prefix to the attribute. The namespace of the attribute remains {\ttfamily myuri}.
+
+
+\begin{DoxyCode}
+att->add(\textcolor{stringliteral}{"myattribute"}, \textcolor{stringliteral}{"7"}, \textcolor{stringliteral}{""}, \textcolor{stringliteral}{"foo"});
+\end{DoxyCode}
+
+
+The code above replaces the value of the attribute {\ttfamily myattribute} that resides in the default namespace. It also now assigns a namespace prefix, {\ttfamily foo}, to that attribute. If this \hyperlink{class_x_m_l_attributes}{X\+M\+L\+Attributes} object were written out in X\+ML, it would look like the following\+: \begin{center}
+\begin{DoxyPre}
+bar:myattribute="6"
+foo:myattribute="7"
+   \end{DoxyPre}
+\end{center}  
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_x_m_l_attributes_8h}{X\+M\+L\+Attributes.\+h}\end{DoxyCompactItemize}

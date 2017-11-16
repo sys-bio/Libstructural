@@ -1,0 +1,22 @@
+\hypertarget{class_s_b_m_l_internal_validator}{}\section{S\+B\+M\+L\+Internal\+Validator Class Reference}
+\label{class_s_b_m_l_internal_validator}\index{S\+B\+M\+L\+Internal\+Validator@{S\+B\+M\+L\+Internal\+Validator}}
+
+
+{\ttfamily \#include $<$S\+B\+M\+L\+Internal\+Validator.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} Basic S\+B\+ML consistency checks and other validations.
+
+
+
+Lib\+S\+B\+ML implements facilities for verifying that a given S\+B\+ML document is valid according to the S\+B\+ML specifications; it also exposes the validation interface so that user programs and S\+B\+ML Level~3 package authors may use the facilities to implement new validators. The entry point for this is the \hyperlink{class_s_b_m_l_validator}{S\+B\+M\+L\+Validator} class.
+
+The subclass \hyperlink{class_s_b_m_l_internal_validator}{S\+B\+M\+L\+Internal\+Validator} embodies the implementation of the consistency-\/checking methods defined on \hyperlink{class_s_b_m_l_document}{S\+B\+M\+L\+Document}. The methods S\+B\+M\+L\+Document\+::set\+Consistency\+Checks(), S\+B\+M\+L\+Document\+::check\+Consistency(), S\+B\+M\+L\+Document\+::check\+Internal\+Consistency() and other method of that sort are in fact implemented by \hyperlink{class_s_b_m_l_internal_validator}{S\+B\+M\+L\+Internal\+Validator}. These validations are all performed on the internal (in-\/memory) representation of an S\+B\+ML model.
+
+Users should not need to call \hyperlink{class_s_b_m_l_internal_validator}{S\+B\+M\+L\+Internal\+Validator} methods directly, since the interface is already provided on \hyperlink{class_s_b_m_l_document}{S\+B\+M\+L\+Document}. However, this class is exposed in case users would like to implement new or additional validations by extending this class (\hyperlink{class_s_b_m_l_internal_validator}{S\+B\+M\+L\+Internal\+Validator}) or using this class as an example of how to implement such validators. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_s_b_m_l_internal_validator_8h}{S\+B\+M\+L\+Internal\+Validator.\+h}\end{DoxyCompactItemize}

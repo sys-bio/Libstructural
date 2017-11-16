@@ -127,10 +127,10 @@ L\+I\+B\+\_\+\+E\+X\+T\+E\+RN double \hyperlink{libstructural_8h_a06859d9fda7ce4
 \begin{DoxyCompactList}\small\item\em Get user specified tolerance. \end{DoxyCompactList}\item 
 L\+I\+B\+\_\+\+E\+X\+T\+E\+RN int \hyperlink{libstructural_8h_a2e96b0ac21b0026228a600b754759f93}{Lib\+Structural\+\_\+load\+Reaction\+Names} (const char $\ast$$\ast$reaction\+Names, const int n\+Length)
 \begin{DoxyCompactList}\small\item\em Load reaction names. \end{DoxyCompactList}\item 
-L\+I\+B\+\_\+\+E\+X\+T\+E\+RN int \hyperlink{libstructural_8h_a7e6ac965eb3db9d20d0ced5484616085}{Lib\+Structural\+\_\+load\+S\+B\+ML} (const char $\ast$s\+S\+B\+ML, char $\ast$$\ast$out\+Message, int $\ast$n\+Length)
-\begin{DoxyCompactList}\small\item\em Load a S\+B\+ML model. \end{DoxyCompactList}\item 
 L\+I\+B\+\_\+\+E\+X\+T\+E\+RN int \hyperlink{libstructural_8h_a8fe9803fda8adddfd10c7d48f6fdbfe1}{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+File} (const char $\ast$s\+File\+Name, char $\ast$$\ast$out\+Message, int $\ast$n\+Length)
 \begin{DoxyCompactList}\small\item\em Load a S\+B\+ML model from the specified file. \end{DoxyCompactList}\item 
+L\+I\+B\+\_\+\+E\+X\+T\+E\+RN int \hyperlink{libstructural_8h_ace4569259e4e5a92277f279e52d1e09e}{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+String} (const char $\ast$s\+S\+B\+ML, char $\ast$$\ast$out\+Message, int $\ast$n\+Length)
+\begin{DoxyCompactList}\small\item\em Load a S\+B\+ML model. \end{DoxyCompactList}\item 
 L\+I\+B\+\_\+\+E\+X\+T\+E\+RN int \hyperlink{libstructural_8h_a614f57707fbb725025feed06c0129f77}{Lib\+Structural\+\_\+load\+S\+B\+M\+Lwith\+Tests} (const char $\ast$s\+S\+B\+ML, char $\ast$$\ast$out\+Message, int $\ast$n\+Length)
 \begin{DoxyCompactList}\small\item\em Load an S\+B\+ML model into the library and carry out tests using the internal test suite. \end{DoxyCompactList}\item 
 L\+I\+B\+\_\+\+E\+X\+T\+E\+RN int \hyperlink{libstructural_8h_a6e313370663b6098b228f251129eaddc}{Lib\+Structural\+\_\+load\+Species} (const char $\ast$$\ast$species\+Names, const double $\ast$species\+Values, const int n\+Length)
@@ -185,7 +185,7 @@ Ravishankar Rao Vallabhajosyula (developed a previous version of the sructural a
 
 Uses fully pivoted LU decomposition for structural analysis. 
 
-This method performs the actual analysis of the stoichiometry matrix (loaded either via \hyperlink{libstructural_8h_a9ac01e88f015f584389d08fcf721ba7d}{Lib\+Structural\+\_\+load\+Stoichiometry\+Matrix} or \hyperlink{libstructural_8h_a7e6ac965eb3db9d20d0ced5484616085}{Lib\+Structural\+\_\+load\+S\+B\+ML}. Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
+This method performs the actual analysis of the stoichiometry matrix (loaded either via \hyperlink{libstructural_8h_a9ac01e88f015f584389d08fcf721ba7d}{Lib\+Structural\+\_\+load\+Stoichiometry\+Matrix} or \hyperlink{libstructural_8h_ace4569259e4e5a92277f279e52d1e09e}{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+String}. Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
 
 \begin{DoxyItemize}
 \item \hyperlink{libstructural_8h_a505eacbf357b087e0d10a09feb0d69e2}{Lib\+Structural\+\_\+analyze\+With\+QR}, \item \hyperlink{libstructural_8h_a13ce53ad07a204595273d9ea038deae8}{Lib\+Structural\+\_\+analyze\+With\+LU}, \item \hyperlink{libstructural_8h_a3e5c25b964b0c2ed8dd12758465338a1}{Lib\+Structural\+\_\+analyze\+With\+L\+Uand\+Run\+Tests}, \item \hyperlink{libstructural_8h_aa2c3d999b0833889b21535a7198a90c9}{Lib\+Structural\+\_\+analyze\+With\+Fully\+Pivoted\+LU} or \item \hyperlink{libstructural_8h_a898b127f85d38e01edd9c8f6d2f2932b}{Lib\+Structural\+\_\+analyze\+With\+Fully\+Pivoted\+L\+Uwith\+Tests}\end{DoxyItemize}
@@ -200,7 +200,7 @@ Unlike the other methods, this method handles only square stoichiometry matrices
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The return value will be zero (0) when successful, and negative (-\/1) in case no stoichiometry matrix was loaded beforehand. See \hyperlink{libstructural_8h_a9ac01e88f015f584389d08fcf721ba7d}{Lib\+Structural\+\_\+load\+Stoichiometry\+Matrix} or \hyperlink{libstructural_8h_a7e6ac965eb3db9d20d0ced5484616085}{Lib\+Structural\+\_\+load\+S\+B\+ML} or \hyperlink{libstructural_8h_a8fe9803fda8adddfd10c7d48f6fdbfe1}{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+File} 
+The return value will be zero (0) when successful, and negative (-\/1) in case no stoichiometry matrix was loaded beforehand. See \hyperlink{libstructural_8h_a9ac01e88f015f584389d08fcf721ba7d}{Lib\+Structural\+\_\+load\+Stoichiometry\+Matrix} or \hyperlink{libstructural_8h_ace4569259e4e5a92277f279e52d1e09e}{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+String} or \hyperlink{libstructural_8h_a8fe9803fda8adddfd10c7d48f6fdbfe1}{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+File} 
 \end{DoxyReturn}
 \mbox{\Hypertarget{libstructural_8h_a898b127f85d38e01edd9c8f6d2f2932b}\label{libstructural_8h_a898b127f85d38e01edd9c8f6d2f2932b}} 
 \index{libstructural.\+h@{libstructural.\+h}!Lib\+Structural\+\_\+analyze\+With\+Fully\+Pivoted\+L\+Uwith\+Tests@{Lib\+Structural\+\_\+analyze\+With\+Fully\+Pivoted\+L\+Uwith\+Tests}}
@@ -212,7 +212,7 @@ The return value will be zero (0) when successful, and negative (-\/1) in case n
 
 Uses fully pivoted LU decomposition for structural analysis. 
 
-This method performs the actual analysis of the stoichiometry matrix (loaded either via \hyperlink{libstructural_8h_a9ac01e88f015f584389d08fcf721ba7d}{Lib\+Structural\+\_\+load\+Stoichiometry\+Matrix} or \hyperlink{libstructural_8h_a7e6ac965eb3db9d20d0ced5484616085}{Lib\+Structural\+\_\+load\+S\+B\+ML}. Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
+This method performs the actual analysis of the stoichiometry matrix (loaded either via \hyperlink{libstructural_8h_a9ac01e88f015f584389d08fcf721ba7d}{Lib\+Structural\+\_\+load\+Stoichiometry\+Matrix} or \hyperlink{libstructural_8h_ace4569259e4e5a92277f279e52d1e09e}{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+String}. Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
 
 \begin{DoxyItemize}
 \item \hyperlink{libstructural_8h_a505eacbf357b087e0d10a09feb0d69e2}{Lib\+Structural\+\_\+analyze\+With\+QR}, \item \hyperlink{libstructural_8h_a13ce53ad07a204595273d9ea038deae8}{Lib\+Structural\+\_\+analyze\+With\+LU}, \item \hyperlink{libstructural_8h_a3e5c25b964b0c2ed8dd12758465338a1}{Lib\+Structural\+\_\+analyze\+With\+L\+Uand\+Run\+Tests}, \item \hyperlink{libstructural_8h_aa2c3d999b0833889b21535a7198a90c9}{Lib\+Structural\+\_\+analyze\+With\+Fully\+Pivoted\+LU} or \item \hyperlink{libstructural_8h_a898b127f85d38e01edd9c8f6d2f2932b}{Lib\+Structural\+\_\+analyze\+With\+Fully\+Pivoted\+L\+Uwith\+Tests}\end{DoxyItemize}
@@ -229,7 +229,7 @@ Unlike the other methods, this method handles only square stoichiometry matrices
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The return value will be zero (0) when successful, and negative (-\/1) in case no stoichiometry matrix was loaded beforehand see \hyperlink{libstructural_8h_a9ac01e88f015f584389d08fcf721ba7d}{Lib\+Structural\+\_\+load\+Stoichiometry\+Matrix} or \hyperlink{libstructural_8h_a7e6ac965eb3db9d20d0ced5484616085}{Lib\+Structural\+\_\+load\+S\+B\+ML} or \hyperlink{libstructural_8h_a8fe9803fda8adddfd10c7d48f6fdbfe1}{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+File} 
+The return value will be zero (0) when successful, and negative (-\/1) in case no stoichiometry matrix was loaded beforehand see \hyperlink{libstructural_8h_a9ac01e88f015f584389d08fcf721ba7d}{Lib\+Structural\+\_\+load\+Stoichiometry\+Matrix} or \hyperlink{libstructural_8h_ace4569259e4e5a92277f279e52d1e09e}{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+String} or \hyperlink{libstructural_8h_a8fe9803fda8adddfd10c7d48f6fdbfe1}{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+File} 
 \end{DoxyReturn}
 \mbox{\Hypertarget{libstructural_8h_a13ce53ad07a204595273d9ea038deae8}\label{libstructural_8h_a13ce53ad07a204595273d9ea038deae8}} 
 \index{libstructural.\+h@{libstructural.\+h}!Lib\+Structural\+\_\+analyze\+With\+LU@{Lib\+Structural\+\_\+analyze\+With\+LU}}
@@ -241,7 +241,7 @@ The return value will be zero (0) when successful, and negative (-\/1) in case n
 
 Uses LU Decomposition for structural analysis. 
 
-This method performs the actual analysis of the stoichiometry matrix (loaded either via \hyperlink{libstructural_8h_a9ac01e88f015f584389d08fcf721ba7d}{Lib\+Structural\+\_\+load\+Stoichiometry\+Matrix} or \hyperlink{libstructural_8h_a7e6ac965eb3db9d20d0ced5484616085}{Lib\+Structural\+\_\+load\+S\+B\+ML}. Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
+This method performs the actual analysis of the stoichiometry matrix (loaded either via \hyperlink{libstructural_8h_a9ac01e88f015f584389d08fcf721ba7d}{Lib\+Structural\+\_\+load\+Stoichiometry\+Matrix} or \hyperlink{libstructural_8h_ace4569259e4e5a92277f279e52d1e09e}{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+String}. Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
 
 \begin{DoxyItemize}
 \item \hyperlink{libstructural_8h_a505eacbf357b087e0d10a09feb0d69e2}{Lib\+Structural\+\_\+analyze\+With\+QR}, \item \hyperlink{libstructural_8h_a13ce53ad07a204595273d9ea038deae8}{Lib\+Structural\+\_\+analyze\+With\+LU}, \item \hyperlink{libstructural_8h_a3e5c25b964b0c2ed8dd12758465338a1}{Lib\+Structural\+\_\+analyze\+With\+L\+Uand\+Run\+Tests}, \item \hyperlink{libstructural_8h_aa2c3d999b0833889b21535a7198a90c9}{Lib\+Structural\+\_\+analyze\+With\+Fully\+Pivoted\+LU} or \item \hyperlink{libstructural_8h_a898b127f85d38e01edd9c8f6d2f2932b}{Lib\+Structural\+\_\+analyze\+With\+Fully\+Pivoted\+L\+Uwith\+Tests}\end{DoxyItemize}
@@ -253,7 +253,7 @@ This method performs the actual analysis of the stoichiometry matrix (loaded eit
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The return value will be zero (0) when successful, and negative (-\/1) in case no stoichiometry matrix was loaded beforehand see \hyperlink{libstructural_8h_a9ac01e88f015f584389d08fcf721ba7d}{Lib\+Structural\+\_\+load\+Stoichiometry\+Matrix} or \hyperlink{libstructural_8h_a7e6ac965eb3db9d20d0ced5484616085}{Lib\+Structural\+\_\+load\+S\+B\+ML} or \hyperlink{libstructural_8h_a8fe9803fda8adddfd10c7d48f6fdbfe1}{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+File} 
+The return value will be zero (0) when successful, and negative (-\/1) in case no stoichiometry matrix was loaded beforehand see \hyperlink{libstructural_8h_a9ac01e88f015f584389d08fcf721ba7d}{Lib\+Structural\+\_\+load\+Stoichiometry\+Matrix} or \hyperlink{libstructural_8h_ace4569259e4e5a92277f279e52d1e09e}{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+String} or \hyperlink{libstructural_8h_a8fe9803fda8adddfd10c7d48f6fdbfe1}{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+File} 
 \end{DoxyReturn}
 \mbox{\Hypertarget{libstructural_8h_a3e5c25b964b0c2ed8dd12758465338a1}\label{libstructural_8h_a3e5c25b964b0c2ed8dd12758465338a1}} 
 \index{libstructural.\+h@{libstructural.\+h}!Lib\+Structural\+\_\+analyze\+With\+L\+Uand\+Run\+Tests@{Lib\+Structural\+\_\+analyze\+With\+L\+Uand\+Run\+Tests}}
@@ -265,7 +265,7 @@ The return value will be zero (0) when successful, and negative (-\/1) in case n
 
 Uses LU Decomposition for structural analysis. 
 
-This method performs the actual analysis of the stoichiometry matrix (loaded either via \hyperlink{libstructural_8h_a9ac01e88f015f584389d08fcf721ba7d}{Lib\+Structural\+\_\+load\+Stoichiometry\+Matrix} or \hyperlink{libstructural_8h_a7e6ac965eb3db9d20d0ced5484616085}{Lib\+Structural\+\_\+load\+S\+B\+ML}. Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
+This method performs the actual analysis of the stoichiometry matrix (loaded either via \hyperlink{libstructural_8h_a9ac01e88f015f584389d08fcf721ba7d}{Lib\+Structural\+\_\+load\+Stoichiometry\+Matrix} or \hyperlink{libstructural_8h_ace4569259e4e5a92277f279e52d1e09e}{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+String}. Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
 
 \begin{DoxyItemize}
 \item \hyperlink{libstructural_8h_a505eacbf357b087e0d10a09feb0d69e2}{Lib\+Structural\+\_\+analyze\+With\+QR}, \item \hyperlink{libstructural_8h_a13ce53ad07a204595273d9ea038deae8}{Lib\+Structural\+\_\+analyze\+With\+LU}, \item \hyperlink{libstructural_8h_a3e5c25b964b0c2ed8dd12758465338a1}{Lib\+Structural\+\_\+analyze\+With\+L\+Uand\+Run\+Tests}, \item \hyperlink{libstructural_8h_aa2c3d999b0833889b21535a7198a90c9}{Lib\+Structural\+\_\+analyze\+With\+Fully\+Pivoted\+LU} or \item \hyperlink{libstructural_8h_a898b127f85d38e01edd9c8f6d2f2932b}{Lib\+Structural\+\_\+analyze\+With\+Fully\+Pivoted\+L\+Uwith\+Tests}\end{DoxyItemize}
@@ -279,7 +279,7 @@ This method additionally performs the integrated test suite and returns those re
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The return value will be zero (0) when successful, and negative (-\/1) in case no stoichiometry matrix was loaded beforehand see \hyperlink{libstructural_8h_a9ac01e88f015f584389d08fcf721ba7d}{Lib\+Structural\+\_\+load\+Stoichiometry\+Matrix} or \hyperlink{libstructural_8h_a7e6ac965eb3db9d20d0ced5484616085}{Lib\+Structural\+\_\+load\+S\+B\+ML} or \hyperlink{libstructural_8h_a8fe9803fda8adddfd10c7d48f6fdbfe1}{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+File} 
+The return value will be zero (0) when successful, and negative (-\/1) in case no stoichiometry matrix was loaded beforehand see \hyperlink{libstructural_8h_a9ac01e88f015f584389d08fcf721ba7d}{Lib\+Structural\+\_\+load\+Stoichiometry\+Matrix} or \hyperlink{libstructural_8h_ace4569259e4e5a92277f279e52d1e09e}{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+String} or \hyperlink{libstructural_8h_a8fe9803fda8adddfd10c7d48f6fdbfe1}{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+File} 
 \end{DoxyReturn}
 \mbox{\Hypertarget{libstructural_8h_a505eacbf357b087e0d10a09feb0d69e2}\label{libstructural_8h_a505eacbf357b087e0d10a09feb0d69e2}} 
 \index{libstructural.\+h@{libstructural.\+h}!Lib\+Structural\+\_\+analyze\+With\+QR@{Lib\+Structural\+\_\+analyze\+With\+QR}}
@@ -291,7 +291,7 @@ The return value will be zero (0) when successful, and negative (-\/1) in case n
 
 Uses QR factorization for structural analysis. 
 
-This method performs the actual analysis of the stoichiometry matrix (loaded either via \hyperlink{libstructural_8h_a9ac01e88f015f584389d08fcf721ba7d}{Lib\+Structural\+\_\+load\+Stoichiometry\+Matrix} or \hyperlink{libstructural_8h_a7e6ac965eb3db9d20d0ced5484616085}{Lib\+Structural\+\_\+load\+S\+B\+ML}. Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
+This method performs the actual analysis of the stoichiometry matrix (loaded either via \hyperlink{libstructural_8h_a9ac01e88f015f584389d08fcf721ba7d}{Lib\+Structural\+\_\+load\+Stoichiometry\+Matrix} or \hyperlink{libstructural_8h_ace4569259e4e5a92277f279e52d1e09e}{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+String}. Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
 
 \begin{DoxyItemize}
 \item \hyperlink{libstructural_8h_a505eacbf357b087e0d10a09feb0d69e2}{Lib\+Structural\+\_\+analyze\+With\+QR}, \item \hyperlink{libstructural_8h_a13ce53ad07a204595273d9ea038deae8}{Lib\+Structural\+\_\+analyze\+With\+LU}, \item \hyperlink{libstructural_8h_a3e5c25b964b0c2ed8dd12758465338a1}{Lib\+Structural\+\_\+analyze\+With\+L\+Uand\+Run\+Tests}, \item \hyperlink{libstructural_8h_aa2c3d999b0833889b21535a7198a90c9}{Lib\+Structural\+\_\+analyze\+With\+Fully\+Pivoted\+LU} or \item \hyperlink{libstructural_8h_a898b127f85d38e01edd9c8f6d2f2932b}{Lib\+Structural\+\_\+analyze\+With\+Fully\+Pivoted\+L\+Uwith\+Tests}\end{DoxyItemize}
@@ -306,8 +306,11 @@ This is the prefered method for structural analysis.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The return value will be zero (0) when successful, and negative (-\/1) in case no stoichiometry matrix was loaded beforehand see \hyperlink{libstructural_8h_a9ac01e88f015f584389d08fcf721ba7d}{Lib\+Structural\+\_\+load\+Stoichiometry\+Matrix} or \hyperlink{libstructural_8h_a7e6ac965eb3db9d20d0ced5484616085}{Lib\+Structural\+\_\+load\+S\+B\+ML} or \hyperlink{libstructural_8h_a8fe9803fda8adddfd10c7d48f6fdbfe1}{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+File} 
+The return value will be zero (0) when successful, and negative (-\/1) in case no stoichiometry matrix was loaded beforehand see \hyperlink{libstructural_8h_a9ac01e88f015f584389d08fcf721ba7d}{Lib\+Structural\+\_\+load\+Stoichiometry\+Matrix} or \hyperlink{libstructural_8h_ace4569259e4e5a92277f279e52d1e09e}{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+String} or \hyperlink{libstructural_8h_a8fe9803fda8adddfd10c7d48f6fdbfe1}{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+File} 
 \end{DoxyReturn}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{examples_2c_2loadlabelledstoichiometry_8c-example}{examples/c/loadlabelledstoichiometry.\+c}, and \hyperlink{examples_2c_2loadstoichiometry_8c-example}{examples/c/loadstoichiometry.\+c}.\end{Desc}
 \mbox{\Hypertarget{libstructural_8h_a6380ece22157462632a02b0288f295f9}\label{libstructural_8h_a6380ece22157462632a02b0288f295f9}} 
 \index{libstructural.\+h@{libstructural.\+h}!Lib\+Structural\+\_\+find\+Positive\+Gamma\+Matrix@{Lib\+Structural\+\_\+find\+Positive\+Gamma\+Matrix}}
 \index{Lib\+Structural\+\_\+find\+Positive\+Gamma\+Matrix@{Lib\+Structural\+\_\+find\+Positive\+Gamma\+Matrix}!libstructural.\+h@{libstructural.\+h}}
@@ -324,6 +327,9 @@ The return value will be zero (0) when successful, and negative (-\/1) in case n
 
 Frees a matrix previously allocated by this library. 
 
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{examples_2c_2loadlabelledstoichiometry_8c-example}{examples/c/loadlabelledstoichiometry.\+c}.\end{Desc}
 \mbox{\Hypertarget{libstructural_8h_a43ec36f000082b338e1aad9cff3b0b23}\label{libstructural_8h_a43ec36f000082b338e1aad9cff3b0b23}} 
 \index{libstructural.\+h@{libstructural.\+h}!Lib\+Structural\+\_\+free\+Vector@{Lib\+Structural\+\_\+free\+Vector}}
 \index{Lib\+Structural\+\_\+free\+Vector@{Lib\+Structural\+\_\+free\+Vector}!libstructural.\+h@{libstructural.\+h}}
@@ -334,6 +340,9 @@ Frees a matrix previously allocated by this library.
 
 Frees a vector previously allocated by this library. 
 
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{examples_2c_2loadlabelledstoichiometry_8c-example}{examples/c/loadlabelledstoichiometry.\+c}, \hyperlink{examples_2c_2loadsbmlfromfile_8c-example}{examples/c/loadsbmlfromfile.\+c}, and \hyperlink{examples_2c_2loadstoichiometry_8c-example}{examples/c/loadstoichiometry.\+c}.\end{Desc}
 \mbox{\Hypertarget{libstructural_8h_a2c5a256653e5f38326937f7f00c6daee}\label{libstructural_8h_a2c5a256653e5f38326937f7f00c6daee}} 
 \index{libstructural.\+h@{libstructural.\+h}!Lib\+Structural\+\_\+get\+Column\+Reordered\+Nr\+Matrix@{Lib\+Structural\+\_\+get\+Column\+Reordered\+Nr\+Matrix}}
 \index{Lib\+Structural\+\_\+get\+Column\+Reordered\+Nr\+Matrix@{Lib\+Structural\+\_\+get\+Column\+Reordered\+Nr\+Matrix}!libstructural.\+h@{libstructural.\+h}}
@@ -557,6 +566,9 @@ The return value will be zero (0) when successful, and negative (-\/1) in case n
 \begin{DoxyRemark}{Remarks}
 To free the returned matrix call \hyperlink{libstructural_8h_a12ff3358b228a0e3a9fbefee2af8103f}{Lib\+Structural\+\_\+free\+Matrix} with the out\+Matrix and out\+Rows as parameter. 
 \end{DoxyRemark}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{examples_2c_2loadlabelledstoichiometry_8c-example}{examples/c/loadlabelledstoichiometry.\+c}.\end{Desc}
 \mbox{\Hypertarget{libstructural_8h_ace129897d02f102cf63318111cf402d7}\label{libstructural_8h_ace129897d02f102cf63318111cf402d7}} 
 \index{libstructural.\+h@{libstructural.\+h}!Lib\+Structural\+\_\+get\+Gamma\+Matrix\+GJ@{Lib\+Structural\+\_\+get\+Gamma\+Matrix\+GJ}}
 \index{Lib\+Structural\+\_\+get\+Gamma\+Matrix\+GJ@{Lib\+Structural\+\_\+get\+Gamma\+Matrix\+GJ}!libstructural.\+h@{libstructural.\+h}}
@@ -590,6 +602,9 @@ The return value will be zero (0) when successful, and negative (-\/1) in case n
 \begin{DoxyRemark}{Remarks}
 To free the string arrays (out\+Row\+Labels and out\+Col\+Labels) call \hyperlink{libstructural_8h_a12ff3358b228a0e3a9fbefee2af8103f}{Lib\+Structural\+\_\+free\+Matrix} with the string array and its corresponding length (out\+Row\+Count or out\+Col\+Count) 
 \end{DoxyRemark}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{examples_2c_2loadlabelledstoichiometry_8c-example}{examples/c/loadlabelledstoichiometry.\+c}.\end{Desc}
 \mbox{\Hypertarget{libstructural_8h_ab442d96d09acce069c038aa967d89bc9}\label{libstructural_8h_ab442d96d09acce069c038aa967d89bc9}} 
 \index{libstructural.\+h@{libstructural.\+h}!Lib\+Structural\+\_\+get\+Independent\+Reaction\+Ids@{Lib\+Structural\+\_\+get\+Independent\+Reaction\+Ids}}
 \index{Lib\+Structural\+\_\+get\+Independent\+Reaction\+Ids@{Lib\+Structural\+\_\+get\+Independent\+Reaction\+Ids}!libstructural.\+h@{libstructural.\+h}}
@@ -1291,6 +1306,9 @@ The return value will be zero (0) when successful, and negative (-\/1) in case n
 \begin{DoxyRemark}{Remarks}
 To free the returned matrix call \hyperlink{libstructural_8h_a12ff3358b228a0e3a9fbefee2af8103f}{Lib\+Structural\+\_\+free\+Matrix} with the out\+Matrix and out\+Rows as parameter. 
 \end{DoxyRemark}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{examples_2c_2loadlabelledstoichiometry_8c-example}{examples/c/loadlabelledstoichiometry.\+c}.\end{Desc}
 \mbox{\Hypertarget{libstructural_8h_a385210f1ccbddaf02f28efc490ca4114}\label{libstructural_8h_a385210f1ccbddaf02f28efc490ca4114}} 
 \index{libstructural.\+h@{libstructural.\+h}!Lib\+Structural\+\_\+get\+Reordered\+Stoichiometry\+Matrix\+Labels@{Lib\+Structural\+\_\+get\+Reordered\+Stoichiometry\+Matrix\+Labels}}
 \index{Lib\+Structural\+\_\+get\+Reordered\+Stoichiometry\+Matrix\+Labels@{Lib\+Structural\+\_\+get\+Reordered\+Stoichiometry\+Matrix\+Labels}!libstructural.\+h@{libstructural.\+h}}
@@ -1318,6 +1336,9 @@ The return value will be zero (0) when successful, and negative (-\/1) in case n
 \begin{DoxyRemark}{Remarks}
 To free the string arrays (out\+Row\+Labels and out\+Col\+Labels) call \hyperlink{libstructural_8h_a12ff3358b228a0e3a9fbefee2af8103f}{Lib\+Structural\+\_\+free\+Matrix} with the string array and its corresponding length (out\+Row\+Count or out\+Col\+Count) 
 \end{DoxyRemark}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{examples_2c_2loadlabelledstoichiometry_8c-example}{examples/c/loadlabelledstoichiometry.\+c}.\end{Desc}
 \mbox{\Hypertarget{libstructural_8h_a2bc6bc2f2eca8a9f5dc9c03475c4586f}\label{libstructural_8h_a2bc6bc2f2eca8a9f5dc9c03475c4586f}} 
 \index{libstructural.\+h@{libstructural.\+h}!Lib\+Structural\+\_\+get\+Species\+Ids@{Lib\+Structural\+\_\+get\+Species\+Ids}}
 \index{Lib\+Structural\+\_\+get\+Species\+Ids@{Lib\+Structural\+\_\+get\+Species\+Ids}!libstructural.\+h@{libstructural.\+h}}
@@ -1364,9 +1385,9 @@ Returns the original, unaltered stoichiometry matrix.
 The return value will be zero (0) when successful, and negative (-\/1) in case no stoichiometry matrix was loaded beforehand or none of the analysis methods has been called yet.
 \end{DoxyReturn}
 \begin{DoxyRemark}{Remarks}
-To free the returned matrix call \hyperlink{libstructural_8h_a12ff3358b228a0e3a9fbefee2af8103f}{Lib\+Structural\+\_\+free\+Matrix} with the out\+Matrix and out\+Rows as parameter.
+To free the returned matrix call \hyperlink{libstructural_8h_a12ff3358b228a0e3a9fbefee2af8103f}{Lib\+Structural\+\_\+free\+Matrix} with the out\+Matrix and out\+Rows as parameter. 
 \end{DoxyRemark}
-Returns the original, unaltered stoichiometry matrix. \mbox{\Hypertarget{libstructural_8h_a69f28adaf3a39b73edaeedad711c419e}\label{libstructural_8h_a69f28adaf3a39b73edaeedad711c419e}} 
+\mbox{\Hypertarget{libstructural_8h_a69f28adaf3a39b73edaeedad711c419e}\label{libstructural_8h_a69f28adaf3a39b73edaeedad711c419e}} 
 \index{libstructural.\+h@{libstructural.\+h}!Lib\+Structural\+\_\+get\+Stoichiometry\+Matrix\+Labels@{Lib\+Structural\+\_\+get\+Stoichiometry\+Matrix\+Labels}}
 \index{Lib\+Structural\+\_\+get\+Stoichiometry\+Matrix\+Labels@{Lib\+Structural\+\_\+get\+Stoichiometry\+Matrix\+Labels}!libstructural.\+h@{libstructural.\+h}}
 \subsubsection{\texorpdfstring{Lib\+Structural\+\_\+get\+Stoichiometry\+Matrix\+Labels()}{LibStructural\_getStoichiometryMatrixLabels()}}
@@ -1416,6 +1437,9 @@ free out\+Message using \hyperlink{libstructural_8h_a43ec36f000082b338e1aad9cff3
 \begin{DoxyReturn}{Returns}
 The return value will be zero (0) when successful, and negative (-\/1) in case no stoichiometry matrix was loaded beforehand or none of the analysis methods has been called yet. 
 \end{DoxyReturn}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{examples_2c_2loadlabelledstoichiometry_8c-example}{examples/c/loadlabelledstoichiometry.\+c}, \hyperlink{examples_2c_2loadsbmlfromfile_8c-example}{examples/c/loadsbmlfromfile.\+c}, and \hyperlink{examples_2c_2loadstoichiometry_8c-example}{examples/c/loadstoichiometry.\+c}.\end{Desc}
 \mbox{\Hypertarget{libstructural_8h_a06859d9fda7ce427a80c492b2b825022}\label{libstructural_8h_a06859d9fda7ce427a80c492b2b825022}} 
 \index{libstructural.\+h@{libstructural.\+h}!Lib\+Structural\+\_\+get\+Tolerance@{Lib\+Structural\+\_\+get\+Tolerance}}
 \index{Lib\+Structural\+\_\+get\+Tolerance@{Lib\+Structural\+\_\+get\+Tolerance}!libstructural.\+h@{libstructural.\+h}}
@@ -1456,28 +1480,9 @@ The return value will be zero (0) when successful, and negative (-\/1) in case a
 \begin{DoxyRemark}{Remarks}
 This method should only be called after \hyperlink{libstructural_8h_a9ac01e88f015f584389d08fcf721ba7d}{Lib\+Structural\+\_\+load\+Stoichiometry\+Matrix} 
 \end{DoxyRemark}
-\mbox{\Hypertarget{libstructural_8h_a7e6ac965eb3db9d20d0ced5484616085}\label{libstructural_8h_a7e6ac965eb3db9d20d0ced5484616085}} 
-\index{libstructural.\+h@{libstructural.\+h}!Lib\+Structural\+\_\+load\+S\+B\+ML@{Lib\+Structural\+\_\+load\+S\+B\+ML}}
-\index{Lib\+Structural\+\_\+load\+S\+B\+ML@{Lib\+Structural\+\_\+load\+S\+B\+ML}!libstructural.\+h@{libstructural.\+h}}
-\subsubsection{\texorpdfstring{Lib\+Structural\+\_\+load\+S\+B\+M\+L()}{LibStructural\_loadSBML()}}
-{\footnotesize\ttfamily L\+I\+B\+\_\+\+E\+X\+T\+E\+RN int Lib\+Structural\+\_\+load\+S\+B\+ML (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s\+S\+B\+ML,  }\item[{char $\ast$$\ast$}]{out\+Message,  }\item[{int $\ast$}]{n\+Length }\end{DoxyParamCaption})}
-
-
-
-Load a S\+B\+ML model. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em s\+S\+B\+ML} & the S\+B\+ML string to load into the library \\
-\hline
-{\em out\+Message} & a pointer to a string that the library can use to provide information about the loaded S\+B\+ML \\
-\hline
-{\em n\+Length} & is the length of the above message\\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-The return value will be zero (0) when successful, and negative (-\/1) in case an error occurred (invalid S\+B\+ML) 
-\end{DoxyReturn}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{examples_2c_2loadlabelledstoichiometry_8c-example}{examples/c/loadlabelledstoichiometry.\+c}.\end{Desc}
 \mbox{\Hypertarget{libstructural_8h_a8fe9803fda8adddfd10c7d48f6fdbfe1}\label{libstructural_8h_a8fe9803fda8adddfd10c7d48f6fdbfe1}} 
 \index{libstructural.\+h@{libstructural.\+h}!Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+File@{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+File}}
 \index{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+File@{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+File}!libstructural.\+h@{libstructural.\+h}}
@@ -1502,6 +1507,31 @@ To avoid unintentional errors be sure to pass in the full path to the S\+B\+ML f
 \end{DoxyRemark}
 \begin{DoxyReturn}{Returns}
 The return value will be zero (0) when successful, and negative (-\/1) in case an error occurred (invalid S\+B\+ML, file not readable ...). 
+\end{DoxyReturn}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{examples_2c_2loadsbmlfromfile_8c-example}{examples/c/loadsbmlfromfile.\+c}.\end{Desc}
+\mbox{\Hypertarget{libstructural_8h_ace4569259e4e5a92277f279e52d1e09e}\label{libstructural_8h_ace4569259e4e5a92277f279e52d1e09e}} 
+\index{libstructural.\+h@{libstructural.\+h}!Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+String@{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+String}}
+\index{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+String@{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+String}!libstructural.\+h@{libstructural.\+h}}
+\subsubsection{\texorpdfstring{Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+String()}{LibStructural\_loadSBMLFromString()}}
+{\footnotesize\ttfamily L\+I\+B\+\_\+\+E\+X\+T\+E\+RN int Lib\+Structural\+\_\+load\+S\+B\+M\+L\+From\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s\+S\+B\+ML,  }\item[{char $\ast$$\ast$}]{out\+Message,  }\item[{int $\ast$}]{n\+Length }\end{DoxyParamCaption})}
+
+
+
+Load a S\+B\+ML model. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s\+S\+B\+ML} & the S\+B\+ML string to load into the library \\
+\hline
+{\em out\+Message} & a pointer to a string that the library can use to provide information about the loaded S\+B\+ML \\
+\hline
+{\em n\+Length} & is the length of the above message\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The return value will be zero (0) when successful, and negative (-\/1) in case an error occurred (invalid S\+B\+ML) 
 \end{DoxyReturn}
 \mbox{\Hypertarget{libstructural_8h_a614f57707fbb725025feed06c0129f77}\label{libstructural_8h_a614f57707fbb725025feed06c0129f77}} 
 \index{libstructural.\+h@{libstructural.\+h}!Lib\+Structural\+\_\+load\+S\+B\+M\+Lwith\+Tests@{Lib\+Structural\+\_\+load\+S\+B\+M\+Lwith\+Tests}}
@@ -1552,6 +1582,9 @@ The return value will be zero (0) when successful, and negative (-\/1) in case a
 \begin{DoxyRemark}{Remarks}
 This method should only be called after \hyperlink{libstructural_8h_a9ac01e88f015f584389d08fcf721ba7d}{Lib\+Structural\+\_\+load\+Stoichiometry\+Matrix} 
 \end{DoxyRemark}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{examples_2c_2loadlabelledstoichiometry_8c-example}{examples/c/loadlabelledstoichiometry.\+c}.\end{Desc}
 \mbox{\Hypertarget{libstructural_8h_a9ac01e88f015f584389d08fcf721ba7d}\label{libstructural_8h_a9ac01e88f015f584389d08fcf721ba7d}} 
 \index{libstructural.\+h@{libstructural.\+h}!Lib\+Structural\+\_\+load\+Stoichiometry\+Matrix@{Lib\+Structural\+\_\+load\+Stoichiometry\+Matrix}}
 \index{Lib\+Structural\+\_\+load\+Stoichiometry\+Matrix@{Lib\+Structural\+\_\+load\+Stoichiometry\+Matrix}!libstructural.\+h@{libstructural.\+h}}
@@ -1581,6 +1614,9 @@ if matrix labels are needed it is recommended to call \hyperlink{libstructural_8
 \begin{DoxyReturn}{Returns}
 The return value will be zero (0) when successful, and negative (-\/1) in case an error occurred 
 \end{DoxyReturn}
+\begin{Desc}
+\item[Examples\+: ]\par
+\hyperlink{examples_2c_2loadlabelledstoichiometry_8c-example}{examples/c/loadlabelledstoichiometry.\+c}, and \hyperlink{examples_2c_2loadstoichiometry_8c-example}{examples/c/loadstoichiometry.\+c}.\end{Desc}
 \mbox{\Hypertarget{libstructural_8h_abd4a3b119793c7e1f56cd4c0f3d85f69}\label{libstructural_8h_abd4a3b119793c7e1f56cd4c0f3d85f69}} 
 \index{libstructural.\+h@{libstructural.\+h}!Lib\+Structural\+\_\+set\+Tolerance@{Lib\+Structural\+\_\+set\+Tolerance}}
 \index{Lib\+Structural\+\_\+set\+Tolerance@{Lib\+Structural\+\_\+set\+Tolerance}!libstructural.\+h@{libstructural.\+h}}

@@ -1,0 +1,56 @@
+\hypertarget{spstrf_8c}{}\section{spstrf.\+c File Reference}
+\label{spstrf_8c}\index{spstrf.\+c@{spstrf.\+c}}
+{\ttfamily \#include \char`\"{}f2c.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}blaswrap.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{spstrf_8c_a24f8782f0bfef59070ac4c0f799ce79a}{spstrf\+\_\+} (char $\ast$uplo, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$n, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a031f8951175b43076c2084a6c2173410}{real} $\ast$a, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$lda, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$piv, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$rank, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a031f8951175b43076c2084a6c2173410}{real} $\ast$tol, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a031f8951175b43076c2084a6c2173410}{real} $\ast$work, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$\hyperlink{lp__lib_8h_a5c24524aad8cde9b56633a9d8290f857}{info})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} \hyperlink{spstrf_8c_aac061f9822f71d2164eeeaae0e2a342c}{c\+\_\+\+\_\+1} = 1
+\item 
+static \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a031f8951175b43076c2084a6c2173410}{real} \hyperlink{spstrf_8c_adb13aef155a6c7d29753ecd3ba84ae17}{c\+\_\+b22} = -\/1.f
+\item 
+static \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a031f8951175b43076c2084a6c2173410}{real} \hyperlink{spstrf_8c_a98f055dad2d4b3abd965611795d9c50a}{c\+\_\+b24} = 1.f
+\item 
+static \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} \hyperlink{spstrf_8c_a9e9287f317ef3436252a395791a899f6}{c\+\_\+n1} = -\/1
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{spstrf_8c_a24f8782f0bfef59070ac4c0f799ce79a}\label{spstrf_8c_a24f8782f0bfef59070ac4c0f799ce79a}} 
+\index{spstrf.\+c@{spstrf.\+c}!spstrf\+\_\+@{spstrf\+\_\+}}
+\index{spstrf\+\_\+@{spstrf\+\_\+}!spstrf.\+c@{spstrf.\+c}}
+\subsubsection{\texorpdfstring{spstrf\+\_\+()}{spstrf\_()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} spstrf\+\_\+ (\begin{DoxyParamCaption}\item[{char $\ast$}]{uplo,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{n,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a031f8951175b43076c2084a6c2173410}{real} $\ast$}]{a,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{lda,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{piv,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{rank,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a031f8951175b43076c2084a6c2173410}{real} $\ast$}]{tol,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a031f8951175b43076c2084a6c2173410}{real} $\ast$}]{work,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{info }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{spstrf_8c_aac061f9822f71d2164eeeaae0e2a342c}\label{spstrf_8c_aac061f9822f71d2164eeeaae0e2a342c}} 
+\index{spstrf.\+c@{spstrf.\+c}!c\+\_\+\+\_\+1@{c\+\_\+\+\_\+1}}
+\index{c\+\_\+\+\_\+1@{c\+\_\+\+\_\+1}!spstrf.\+c@{spstrf.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+\+\_\+1}{c\_\_1}}
+{\footnotesize\ttfamily \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} c\+\_\+\+\_\+1 = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{spstrf_8c_adb13aef155a6c7d29753ecd3ba84ae17}\label{spstrf_8c_adb13aef155a6c7d29753ecd3ba84ae17}} 
+\index{spstrf.\+c@{spstrf.\+c}!c\+\_\+b22@{c\+\_\+b22}}
+\index{c\+\_\+b22@{c\+\_\+b22}!spstrf.\+c@{spstrf.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+b22}{c\_b22}}
+{\footnotesize\ttfamily \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a031f8951175b43076c2084a6c2173410}{real} c\+\_\+b22 = -\/1.f\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{spstrf_8c_a98f055dad2d4b3abd965611795d9c50a}\label{spstrf_8c_a98f055dad2d4b3abd965611795d9c50a}} 
+\index{spstrf.\+c@{spstrf.\+c}!c\+\_\+b24@{c\+\_\+b24}}
+\index{c\+\_\+b24@{c\+\_\+b24}!spstrf.\+c@{spstrf.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+b24}{c\_b24}}
+{\footnotesize\ttfamily \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a031f8951175b43076c2084a6c2173410}{real} c\+\_\+b24 = 1.f\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{spstrf_8c_a9e9287f317ef3436252a395791a899f6}\label{spstrf_8c_a9e9287f317ef3436252a395791a899f6}} 
+\index{spstrf.\+c@{spstrf.\+c}!c\+\_\+n1@{c\+\_\+n1}}
+\index{c\+\_\+n1@{c\+\_\+n1}!spstrf.\+c@{spstrf.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+n1}{c\_n1}}
+{\footnotesize\ttfamily \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} c\+\_\+n1 = -\/1\hspace{0.3cm}{\ttfamily [static]}}
+

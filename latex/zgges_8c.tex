@@ -1,0 +1,64 @@
+\hypertarget{zgges_8c}{}\section{zgges.\+c File Reference}
+\label{zgges_8c}\index{zgges.\+c@{zgges.\+c}}
+{\ttfamily \#include \char`\"{}f2c.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}blaswrap.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{zgges_8c_a166c99cc0feb060c68e95697796f75aa}{zgges\+\_\+} (char $\ast$jobvsl, char $\ast$jobvsr, char $\ast$sort, \hyperlink{include_2f2c_8h_a2ec9dcbc3e0cc3a4215a1c0fc6e890d4}{L\+\_\+fp} selctg, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$n, \hyperlink{structdoublecomplex}{doublecomplex} $\ast$a, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$lda, \hyperlink{structdoublecomplex}{doublecomplex} $\ast$b, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$ldb, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$sdim, \hyperlink{structdoublecomplex}{doublecomplex} $\ast$alpha, \hyperlink{structdoublecomplex}{doublecomplex} $\ast$beta, \hyperlink{structdoublecomplex}{doublecomplex} $\ast$vsl, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$ldvsl, \hyperlink{structdoublecomplex}{doublecomplex} $\ast$vsr, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$ldvsr, \hyperlink{structdoublecomplex}{doublecomplex} $\ast$work, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$lwork, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a1e69afaa4e6077b67397e6c36454b97a}{doublereal} $\ast$rwork, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_aa8e2851dd42d4dd9f14b0686e32a956c}{logical} $\ast$bwork, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$\hyperlink{lp__lib_8h_a5c24524aad8cde9b56633a9d8290f857}{info})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} \hyperlink{zgges_8c_a6a4ee26669af052a7e7fb5dda2b01f63}{c\+\_\+\+\_\+0} = 0
+\item 
+static \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} \hyperlink{zgges_8c_aac061f9822f71d2164eeeaae0e2a342c}{c\+\_\+\+\_\+1} = 1
+\item 
+static \hyperlink{structdoublecomplex}{doublecomplex} \hyperlink{zgges_8c_ad99d79248621b52aa42036799b839c90}{c\+\_\+b1} = \{0.,0.\}
+\item 
+static \hyperlink{structdoublecomplex}{doublecomplex} \hyperlink{zgges_8c_aff0bd03b3a13b46ed9be8f7e11a7caa3}{c\+\_\+b2} = \{1.,0.\}
+\item 
+static \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} \hyperlink{zgges_8c_a9e9287f317ef3436252a395791a899f6}{c\+\_\+n1} = -\/1
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{zgges_8c_a166c99cc0feb060c68e95697796f75aa}\label{zgges_8c_a166c99cc0feb060c68e95697796f75aa}} 
+\index{zgges.\+c@{zgges.\+c}!zgges\+\_\+@{zgges\+\_\+}}
+\index{zgges\+\_\+@{zgges\+\_\+}!zgges.\+c@{zgges.\+c}}
+\subsubsection{\texorpdfstring{zgges\+\_\+()}{zgges\_()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} zgges\+\_\+ (\begin{DoxyParamCaption}\item[{char $\ast$}]{jobvsl,  }\item[{char $\ast$}]{jobvsr,  }\item[{char $\ast$}]{sort,  }\item[{\hyperlink{include_2f2c_8h_a2ec9dcbc3e0cc3a4215a1c0fc6e890d4}{L\+\_\+fp}}]{selctg,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{n,  }\item[{\hyperlink{structdoublecomplex}{doublecomplex} $\ast$}]{a,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{lda,  }\item[{\hyperlink{structdoublecomplex}{doublecomplex} $\ast$}]{b,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{ldb,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{sdim,  }\item[{\hyperlink{structdoublecomplex}{doublecomplex} $\ast$}]{alpha,  }\item[{\hyperlink{structdoublecomplex}{doublecomplex} $\ast$}]{beta,  }\item[{\hyperlink{structdoublecomplex}{doublecomplex} $\ast$}]{vsl,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{ldvsl,  }\item[{\hyperlink{structdoublecomplex}{doublecomplex} $\ast$}]{vsr,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{ldvsr,  }\item[{\hyperlink{structdoublecomplex}{doublecomplex} $\ast$}]{work,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{lwork,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a1e69afaa4e6077b67397e6c36454b97a}{doublereal} $\ast$}]{rwork,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_aa8e2851dd42d4dd9f14b0686e32a956c}{logical} $\ast$}]{bwork,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{info }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{zgges_8c_a6a4ee26669af052a7e7fb5dda2b01f63}\label{zgges_8c_a6a4ee26669af052a7e7fb5dda2b01f63}} 
+\index{zgges.\+c@{zgges.\+c}!c\+\_\+\+\_\+0@{c\+\_\+\+\_\+0}}
+\index{c\+\_\+\+\_\+0@{c\+\_\+\+\_\+0}!zgges.\+c@{zgges.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+\+\_\+0}{c\_\_0}}
+{\footnotesize\ttfamily \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} c\+\_\+\+\_\+0 = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{zgges_8c_aac061f9822f71d2164eeeaae0e2a342c}\label{zgges_8c_aac061f9822f71d2164eeeaae0e2a342c}} 
+\index{zgges.\+c@{zgges.\+c}!c\+\_\+\+\_\+1@{c\+\_\+\+\_\+1}}
+\index{c\+\_\+\+\_\+1@{c\+\_\+\+\_\+1}!zgges.\+c@{zgges.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+\+\_\+1}{c\_\_1}}
+{\footnotesize\ttfamily \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} c\+\_\+\+\_\+1 = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{zgges_8c_ad99d79248621b52aa42036799b839c90}\label{zgges_8c_ad99d79248621b52aa42036799b839c90}} 
+\index{zgges.\+c@{zgges.\+c}!c\+\_\+b1@{c\+\_\+b1}}
+\index{c\+\_\+b1@{c\+\_\+b1}!zgges.\+c@{zgges.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+b1}{c\_b1}}
+{\footnotesize\ttfamily \hyperlink{structdoublecomplex}{doublecomplex} c\+\_\+b1 = \{0.,0.\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{zgges_8c_aff0bd03b3a13b46ed9be8f7e11a7caa3}\label{zgges_8c_aff0bd03b3a13b46ed9be8f7e11a7caa3}} 
+\index{zgges.\+c@{zgges.\+c}!c\+\_\+b2@{c\+\_\+b2}}
+\index{c\+\_\+b2@{c\+\_\+b2}!zgges.\+c@{zgges.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+b2}{c\_b2}}
+{\footnotesize\ttfamily \hyperlink{structdoublecomplex}{doublecomplex} c\+\_\+b2 = \{1.,0.\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{zgges_8c_a9e9287f317ef3436252a395791a899f6}\label{zgges_8c_a9e9287f317ef3436252a395791a899f6}} 
+\index{zgges.\+c@{zgges.\+c}!c\+\_\+n1@{c\+\_\+n1}}
+\index{c\+\_\+n1@{c\+\_\+n1}!zgges.\+c@{zgges.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+n1}{c\_n1}}
+{\footnotesize\ttfamily \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} c\+\_\+n1 = -\/1\hspace{0.3cm}{\ttfamily [static]}}
+

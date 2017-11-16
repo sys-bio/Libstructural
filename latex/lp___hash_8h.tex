@@ -1,0 +1,101 @@
+\hypertarget{lp___hash_8h}{}\section{lp\+\_\+\+Hash.\+h File Reference}
+\label{lp___hash_8h}\index{lp\+\_\+\+Hash.\+h@{lp\+\_\+\+Hash.\+h}}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct__hashelem}{\+\_\+hashelem}
+\item 
+struct \hyperlink{structhashtable}{hashtable}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct__hashelem}{\+\_\+hashelem} \hyperlink{lp___hash_8h_a27375934623e0b5c611bb7ba867cc99f}{hashelem}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lp__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC} \hyperlink{structhashtable}{hashtable} $\ast$ \hyperlink{lp___hash_8h_ae6edcd0f73c54847e6a759f428c3a90a}{copy\+\_\+hash\+\_\+table} (\hyperlink{structhashtable}{hashtable} $\ast$ht, \hyperlink{lp___hash_8h_a27375934623e0b5c611bb7ba867cc99f}{hashelem} $\ast$$\ast$list, \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{lp__lib_8h_ac9101d127b4ecd9e52d535cbf443156f}{newsize})
+\item 
+\hyperlink{lp__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC} \hyperlink{structhashtable}{hashtable} $\ast$ \hyperlink{lp___hash_8h_a3e2d0dfb06918685a543d0191c3e20d2}{create\+\_\+hash\+\_\+table} (\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{ioapi_8h_a3728291d90c8c81bb270d14427a775d7}{size}, \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} base)
+\item 
+\hyperlink{lp__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC} \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} \hyperlink{lp___hash_8h_a604f398275bbfa26cde6b9c878ee6182}{drophash} (const char $\ast$\hyperlink{lp__lib_8h_a2946c588fc7fa2fa5b43ac54b7872725}{name}, \hyperlink{lp___hash_8h_a27375934623e0b5c611bb7ba867cc99f}{hashelem} $\ast$$\ast$list, \hyperlink{structhashtable}{hashtable} $\ast$ht)
+\item 
+\hyperlink{lp__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC} \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{lp___hash_8h_af641364834ee86a40c668aee248633d7}{find\+\_\+row} (\hyperlink{lp__types_8h_afe42f1373b9ee8d824b5cad6a22d24c6}{lprec} $\ast$lp, char $\ast$\hyperlink{lp__lib_8h_a2946c588fc7fa2fa5b43ac54b7872725}{name}, \hyperlink{lp__lib_8h_aad848328fb3018217ac9f01d97b6bd88}{M\+Y\+B\+O\+OL} Unconstrained\+\_\+rows\+\_\+found)
+\item 
+\hyperlink{lp__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC} \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{lp___hash_8h_ad823b30e8d5693a5119c96693744da08}{find\+\_\+var} (\hyperlink{lp__types_8h_afe42f1373b9ee8d824b5cad6a22d24c6}{lprec} $\ast$lp, char $\ast$\hyperlink{lp__lib_8h_a2946c588fc7fa2fa5b43ac54b7872725}{name}, \hyperlink{lp__lib_8h_aad848328fb3018217ac9f01d97b6bd88}{M\+Y\+B\+O\+OL} \hyperlink{lp__lib_8h_a8d8ced43f591f010c5eeabecb29cefc7}{verbose})
+\item 
+\hyperlink{lp__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC} \hyperlink{lp___hash_8h_a27375934623e0b5c611bb7ba867cc99f}{hashelem} $\ast$ \hyperlink{lp___hash_8h_abec9215783a6417ac6d2eaa8fb5455b6}{findhash} (const char $\ast$\hyperlink{lp__lib_8h_a2946c588fc7fa2fa5b43ac54b7872725}{name}, \hyperlink{structhashtable}{hashtable} $\ast$ht)
+\item 
+\hyperlink{lp__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC} \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} \hyperlink{lp___hash_8h_a5c6e22d45ec51e55ccb4d2748230841b}{free\+\_\+hash\+\_\+item} (\hyperlink{lp___hash_8h_a27375934623e0b5c611bb7ba867cc99f}{hashelem} $\ast$$\ast$hp)
+\item 
+\hyperlink{lp__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC} \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} \hyperlink{lp___hash_8h_aa4ed66a189b6b64e06121cb9f94c1efb}{free\+\_\+hash\+\_\+table} (\hyperlink{structhashtable}{hashtable} $\ast$ht)
+\item 
+\hyperlink{lp__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC} \hyperlink{lp___hash_8h_a27375934623e0b5c611bb7ba867cc99f}{hashelem} $\ast$ \hyperlink{lp___hash_8h_aa4c1bd8f327e858bde2234bb6ef18772}{puthash} (const char $\ast$\hyperlink{lp__lib_8h_a2946c588fc7fa2fa5b43ac54b7872725}{name}, \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{lp__lib_8h_a1499949ec4dbbc5290ece2ac210bba35}{index}, \hyperlink{lp___hash_8h_a27375934623e0b5c611bb7ba867cc99f}{hashelem} $\ast$$\ast$list, \hyperlink{structhashtable}{hashtable} $\ast$ht)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{lp___hash_8h_a27375934623e0b5c611bb7ba867cc99f}\label{lp___hash_8h_a27375934623e0b5c611bb7ba867cc99f}} 
+\index{lp\+\_\+\+Hash.\+h@{lp\+\_\+\+Hash.\+h}!hashelem@{hashelem}}
+\index{hashelem@{hashelem}!lp\+\_\+\+Hash.\+h@{lp\+\_\+\+Hash.\+h}}
+\subsubsection{\texorpdfstring{hashelem}{hashelem}}
+{\footnotesize\ttfamily typedef struct \hyperlink{struct__hashelem}{\+\_\+hashelem}  \hyperlink{lp___hash_8h_a27375934623e0b5c611bb7ba867cc99f}{hashelem}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{lp___hash_8h_ae6edcd0f73c54847e6a759f428c3a90a}\label{lp___hash_8h_ae6edcd0f73c54847e6a759f428c3a90a}} 
+\index{lp\+\_\+\+Hash.\+h@{lp\+\_\+\+Hash.\+h}!copy\+\_\+hash\+\_\+table@{copy\+\_\+hash\+\_\+table}}
+\index{copy\+\_\+hash\+\_\+table@{copy\+\_\+hash\+\_\+table}!lp\+\_\+\+Hash.\+h@{lp\+\_\+\+Hash.\+h}}
+\subsubsection{\texorpdfstring{copy\+\_\+hash\+\_\+table()}{copy\_hash\_table()}}
+{\footnotesize\ttfamily \hyperlink{lp__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC} \hyperlink{structhashtable}{hashtable}$\ast$ copy\+\_\+hash\+\_\+table (\begin{DoxyParamCaption}\item[{\hyperlink{structhashtable}{hashtable} $\ast$}]{ht,  }\item[{\hyperlink{lp___hash_8h_a27375934623e0b5c611bb7ba867cc99f}{hashelem} $\ast$$\ast$}]{list,  }\item[{\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}}]{newsize }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lp___hash_8h_a3e2d0dfb06918685a543d0191c3e20d2}\label{lp___hash_8h_a3e2d0dfb06918685a543d0191c3e20d2}} 
+\index{lp\+\_\+\+Hash.\+h@{lp\+\_\+\+Hash.\+h}!create\+\_\+hash\+\_\+table@{create\+\_\+hash\+\_\+table}}
+\index{create\+\_\+hash\+\_\+table@{create\+\_\+hash\+\_\+table}!lp\+\_\+\+Hash.\+h@{lp\+\_\+\+Hash.\+h}}
+\subsubsection{\texorpdfstring{create\+\_\+hash\+\_\+table()}{create\_hash\_table()}}
+{\footnotesize\ttfamily \hyperlink{lp__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC} \hyperlink{structhashtable}{hashtable}$\ast$ create\+\_\+hash\+\_\+table (\begin{DoxyParamCaption}\item[{\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}}]{size,  }\item[{\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}}]{base }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lp___hash_8h_a604f398275bbfa26cde6b9c878ee6182}\label{lp___hash_8h_a604f398275bbfa26cde6b9c878ee6182}} 
+\index{lp\+\_\+\+Hash.\+h@{lp\+\_\+\+Hash.\+h}!drophash@{drophash}}
+\index{drophash@{drophash}!lp\+\_\+\+Hash.\+h@{lp\+\_\+\+Hash.\+h}}
+\subsubsection{\texorpdfstring{drophash()}{drophash()}}
+{\footnotesize\ttfamily \hyperlink{lp__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC} \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} drophash (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{\hyperlink{lp___hash_8h_a27375934623e0b5c611bb7ba867cc99f}{hashelem} $\ast$$\ast$}]{list,  }\item[{\hyperlink{structhashtable}{hashtable} $\ast$}]{ht }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lp___hash_8h_af641364834ee86a40c668aee248633d7}\label{lp___hash_8h_af641364834ee86a40c668aee248633d7}} 
+\index{lp\+\_\+\+Hash.\+h@{lp\+\_\+\+Hash.\+h}!find\+\_\+row@{find\+\_\+row}}
+\index{find\+\_\+row@{find\+\_\+row}!lp\+\_\+\+Hash.\+h@{lp\+\_\+\+Hash.\+h}}
+\subsubsection{\texorpdfstring{find\+\_\+row()}{find\_row()}}
+{\footnotesize\ttfamily \hyperlink{lp__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC} \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} find\+\_\+row (\begin{DoxyParamCaption}\item[{\hyperlink{lp__types_8h_afe42f1373b9ee8d824b5cad6a22d24c6}{lprec} $\ast$}]{lp,  }\item[{char $\ast$}]{name,  }\item[{\hyperlink{lp__lib_8h_aad848328fb3018217ac9f01d97b6bd88}{M\+Y\+B\+O\+OL}}]{Unconstrained\+\_\+rows\+\_\+found }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lp___hash_8h_ad823b30e8d5693a5119c96693744da08}\label{lp___hash_8h_ad823b30e8d5693a5119c96693744da08}} 
+\index{lp\+\_\+\+Hash.\+h@{lp\+\_\+\+Hash.\+h}!find\+\_\+var@{find\+\_\+var}}
+\index{find\+\_\+var@{find\+\_\+var}!lp\+\_\+\+Hash.\+h@{lp\+\_\+\+Hash.\+h}}
+\subsubsection{\texorpdfstring{find\+\_\+var()}{find\_var()}}
+{\footnotesize\ttfamily \hyperlink{lp__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC} \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} find\+\_\+var (\begin{DoxyParamCaption}\item[{\hyperlink{lp__types_8h_afe42f1373b9ee8d824b5cad6a22d24c6}{lprec} $\ast$}]{lp,  }\item[{char $\ast$}]{name,  }\item[{\hyperlink{lp__lib_8h_aad848328fb3018217ac9f01d97b6bd88}{M\+Y\+B\+O\+OL}}]{verbose }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lp___hash_8h_abec9215783a6417ac6d2eaa8fb5455b6}\label{lp___hash_8h_abec9215783a6417ac6d2eaa8fb5455b6}} 
+\index{lp\+\_\+\+Hash.\+h@{lp\+\_\+\+Hash.\+h}!findhash@{findhash}}
+\index{findhash@{findhash}!lp\+\_\+\+Hash.\+h@{lp\+\_\+\+Hash.\+h}}
+\subsubsection{\texorpdfstring{findhash()}{findhash()}}
+{\footnotesize\ttfamily \hyperlink{lp__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC} \hyperlink{lp___hash_8h_a27375934623e0b5c611bb7ba867cc99f}{hashelem}$\ast$ findhash (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{\hyperlink{structhashtable}{hashtable} $\ast$}]{ht }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lp___hash_8h_a5c6e22d45ec51e55ccb4d2748230841b}\label{lp___hash_8h_a5c6e22d45ec51e55ccb4d2748230841b}} 
+\index{lp\+\_\+\+Hash.\+h@{lp\+\_\+\+Hash.\+h}!free\+\_\+hash\+\_\+item@{free\+\_\+hash\+\_\+item}}
+\index{free\+\_\+hash\+\_\+item@{free\+\_\+hash\+\_\+item}!lp\+\_\+\+Hash.\+h@{lp\+\_\+\+Hash.\+h}}
+\subsubsection{\texorpdfstring{free\+\_\+hash\+\_\+item()}{free\_hash\_item()}}
+{\footnotesize\ttfamily \hyperlink{lp__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC} \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} free\+\_\+hash\+\_\+item (\begin{DoxyParamCaption}\item[{\hyperlink{lp___hash_8h_a27375934623e0b5c611bb7ba867cc99f}{hashelem} $\ast$$\ast$}]{hp }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lp___hash_8h_aa4ed66a189b6b64e06121cb9f94c1efb}\label{lp___hash_8h_aa4ed66a189b6b64e06121cb9f94c1efb}} 
+\index{lp\+\_\+\+Hash.\+h@{lp\+\_\+\+Hash.\+h}!free\+\_\+hash\+\_\+table@{free\+\_\+hash\+\_\+table}}
+\index{free\+\_\+hash\+\_\+table@{free\+\_\+hash\+\_\+table}!lp\+\_\+\+Hash.\+h@{lp\+\_\+\+Hash.\+h}}
+\subsubsection{\texorpdfstring{free\+\_\+hash\+\_\+table()}{free\_hash\_table()}}
+{\footnotesize\ttfamily \hyperlink{lp__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC} \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} free\+\_\+hash\+\_\+table (\begin{DoxyParamCaption}\item[{\hyperlink{structhashtable}{hashtable} $\ast$}]{ht }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{lp___hash_8h_aa4c1bd8f327e858bde2234bb6ef18772}\label{lp___hash_8h_aa4c1bd8f327e858bde2234bb6ef18772}} 
+\index{lp\+\_\+\+Hash.\+h@{lp\+\_\+\+Hash.\+h}!puthash@{puthash}}
+\index{puthash@{puthash}!lp\+\_\+\+Hash.\+h@{lp\+\_\+\+Hash.\+h}}
+\subsubsection{\texorpdfstring{puthash()}{puthash()}}
+{\footnotesize\ttfamily \hyperlink{lp__types_8h_a10b2d890d871e1489bb02b7e70d9bdfb}{S\+T\+A\+T\+IC} \hyperlink{lp___hash_8h_a27375934623e0b5c611bb7ba867cc99f}{hashelem}$\ast$ puthash (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}}]{index,  }\item[{\hyperlink{lp___hash_8h_a27375934623e0b5c611bb7ba867cc99f}{hashelem} $\ast$$\ast$}]{list,  }\item[{\hyperlink{structhashtable}{hashtable} $\ast$}]{ht }\end{DoxyParamCaption})}
+

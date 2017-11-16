@@ -1,0 +1,80 @@
+\hypertarget{cgesvd_8c}{}\section{cgesvd.\+c File Reference}
+\label{cgesvd_8c}\index{cgesvd.\+c@{cgesvd.\+c}}
+{\ttfamily \#include \char`\"{}f2c.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}blaswrap.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{cgesvd_8c_a9ff2aa02b869568eb40cddf7c297b44d}{cgesvd\+\_\+} (char $\ast$jobu, char $\ast$jobvt, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$m, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$n, \hyperlink{structcomplex}{complex} $\ast$a, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$lda, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a031f8951175b43076c2084a6c2173410}{real} $\ast$s, \hyperlink{structcomplex}{complex} $\ast$u, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$ldu, \hyperlink{structcomplex}{complex} $\ast$vt, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$ldvt, \hyperlink{structcomplex}{complex} $\ast$work, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$lwork, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a031f8951175b43076c2084a6c2173410}{real} $\ast$rwork, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$\hyperlink{lp__lib_8h_a5c24524aad8cde9b56633a9d8290f857}{info})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} \hyperlink{cgesvd_8c_a6a4ee26669af052a7e7fb5dda2b01f63}{c\+\_\+\+\_\+0} = 0
+\item 
+static \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} \hyperlink{cgesvd_8c_aac061f9822f71d2164eeeaae0e2a342c}{c\+\_\+\+\_\+1} = 1
+\item 
+static \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} \hyperlink{cgesvd_8c_a4e8bcb2aadbe17eeff89a0f201645d0a}{c\+\_\+\+\_\+2} = 2
+\item 
+static \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} \hyperlink{cgesvd_8c_a3543660f1ae989ebc88144db7ea3ecfd}{c\+\_\+\+\_\+6} = 6
+\item 
+static \hyperlink{structcomplex}{complex} \hyperlink{cgesvd_8c_acfa9ff04d907cc6b7c673819a66660f7}{c\+\_\+b1} = \{0.f,0.f\}
+\item 
+static \hyperlink{structcomplex}{complex} \hyperlink{cgesvd_8c_aa23816902970d6c51f291a983156f540}{c\+\_\+b2} = \{1.f,0.f\}
+\item 
+static \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} \hyperlink{cgesvd_8c_a9e9287f317ef3436252a395791a899f6}{c\+\_\+n1} = -\/1
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{cgesvd_8c_a9ff2aa02b869568eb40cddf7c297b44d}\label{cgesvd_8c_a9ff2aa02b869568eb40cddf7c297b44d}} 
+\index{cgesvd.\+c@{cgesvd.\+c}!cgesvd\+\_\+@{cgesvd\+\_\+}}
+\index{cgesvd\+\_\+@{cgesvd\+\_\+}!cgesvd.\+c@{cgesvd.\+c}}
+\subsubsection{\texorpdfstring{cgesvd\+\_\+()}{cgesvd\_()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} cgesvd\+\_\+ (\begin{DoxyParamCaption}\item[{char $\ast$}]{jobu,  }\item[{char $\ast$}]{jobvt,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{m,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{n,  }\item[{\hyperlink{structcomplex}{complex} $\ast$}]{a,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{lda,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a031f8951175b43076c2084a6c2173410}{real} $\ast$}]{s,  }\item[{\hyperlink{structcomplex}{complex} $\ast$}]{u,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{ldu,  }\item[{\hyperlink{structcomplex}{complex} $\ast$}]{vt,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{ldvt,  }\item[{\hyperlink{structcomplex}{complex} $\ast$}]{work,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{lwork,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a031f8951175b43076c2084a6c2173410}{real} $\ast$}]{rwork,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{info }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{cgesvd_8c_a6a4ee26669af052a7e7fb5dda2b01f63}\label{cgesvd_8c_a6a4ee26669af052a7e7fb5dda2b01f63}} 
+\index{cgesvd.\+c@{cgesvd.\+c}!c\+\_\+\+\_\+0@{c\+\_\+\+\_\+0}}
+\index{c\+\_\+\+\_\+0@{c\+\_\+\+\_\+0}!cgesvd.\+c@{cgesvd.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+\+\_\+0}{c\_\_0}}
+{\footnotesize\ttfamily \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} c\+\_\+\+\_\+0 = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{cgesvd_8c_aac061f9822f71d2164eeeaae0e2a342c}\label{cgesvd_8c_aac061f9822f71d2164eeeaae0e2a342c}} 
+\index{cgesvd.\+c@{cgesvd.\+c}!c\+\_\+\+\_\+1@{c\+\_\+\+\_\+1}}
+\index{c\+\_\+\+\_\+1@{c\+\_\+\+\_\+1}!cgesvd.\+c@{cgesvd.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+\+\_\+1}{c\_\_1}}
+{\footnotesize\ttfamily \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} c\+\_\+\+\_\+1 = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{cgesvd_8c_a4e8bcb2aadbe17eeff89a0f201645d0a}\label{cgesvd_8c_a4e8bcb2aadbe17eeff89a0f201645d0a}} 
+\index{cgesvd.\+c@{cgesvd.\+c}!c\+\_\+\+\_\+2@{c\+\_\+\+\_\+2}}
+\index{c\+\_\+\+\_\+2@{c\+\_\+\+\_\+2}!cgesvd.\+c@{cgesvd.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+\+\_\+2}{c\_\_2}}
+{\footnotesize\ttfamily \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} c\+\_\+\+\_\+2 = 2\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{cgesvd_8c_a3543660f1ae989ebc88144db7ea3ecfd}\label{cgesvd_8c_a3543660f1ae989ebc88144db7ea3ecfd}} 
+\index{cgesvd.\+c@{cgesvd.\+c}!c\+\_\+\+\_\+6@{c\+\_\+\+\_\+6}}
+\index{c\+\_\+\+\_\+6@{c\+\_\+\+\_\+6}!cgesvd.\+c@{cgesvd.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+\+\_\+6}{c\_\_6}}
+{\footnotesize\ttfamily \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} c\+\_\+\+\_\+6 = 6\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{cgesvd_8c_acfa9ff04d907cc6b7c673819a66660f7}\label{cgesvd_8c_acfa9ff04d907cc6b7c673819a66660f7}} 
+\index{cgesvd.\+c@{cgesvd.\+c}!c\+\_\+b1@{c\+\_\+b1}}
+\index{c\+\_\+b1@{c\+\_\+b1}!cgesvd.\+c@{cgesvd.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+b1}{c\_b1}}
+{\footnotesize\ttfamily \hyperlink{structcomplex}{complex} c\+\_\+b1 = \{0.f,0.f\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{cgesvd_8c_aa23816902970d6c51f291a983156f540}\label{cgesvd_8c_aa23816902970d6c51f291a983156f540}} 
+\index{cgesvd.\+c@{cgesvd.\+c}!c\+\_\+b2@{c\+\_\+b2}}
+\index{c\+\_\+b2@{c\+\_\+b2}!cgesvd.\+c@{cgesvd.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+b2}{c\_b2}}
+{\footnotesize\ttfamily \hyperlink{structcomplex}{complex} c\+\_\+b2 = \{1.f,0.f\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{cgesvd_8c_a9e9287f317ef3436252a395791a899f6}\label{cgesvd_8c_a9e9287f317ef3436252a395791a899f6}} 
+\index{cgesvd.\+c@{cgesvd.\+c}!c\+\_\+n1@{c\+\_\+n1}}
+\index{c\+\_\+n1@{c\+\_\+n1}!cgesvd.\+c@{cgesvd.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+n1}{c\_n1}}
+{\footnotesize\ttfamily \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} c\+\_\+n1 = -\/1\hspace{0.3cm}{\ttfamily [static]}}
+

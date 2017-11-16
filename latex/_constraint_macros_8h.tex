@@ -1,0 +1,94 @@
+\hypertarget{_constraint_macros_8h}{}\section{Constraint\+Macros.\+h File Reference}
+\label{_constraint_macros_8h}\index{Constraint\+Macros.\+h@{Constraint\+Macros.\+h}}
+
+
+Defines the validator constraint \char`\"{}language\char`\"{}.  
+
+
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_constraint_macros_8h_a52d9072529a1b19becd210fd064796a8}{E\+N\+D\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+NT}
+\item 
+\#define \hyperlink{_constraint_macros_8h_aaf7149643d48157d960e7413599f7325}{E\+X\+T\+E\+R\+N\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+NT}(Id,  Name)
+\item 
+\#define \hyperlink{_constraint_macros_8h_a73a3b169ac8c3419cbe15327e75ffcfd}{fail}()~m\+Log\+Msg = true; return;
+\item 
+\#define \hyperlink{_constraint_macros_8h_a757fd0738a5697b8d8f475b74e335c4e}{inv}(expr)~if (!(expr)) \{ m\+Log\+Msg = true; return; \}
+\item 
+\#define \hyperlink{_constraint_macros_8h_a4aecff2ee49b833951a3b9293329c2e9}{inv\+\_\+or}(expr)~if (expr) \{ m\+Log\+Msg = false; return; \} else m\+Log\+Msg = true;
+\item 
+\#define \hyperlink{_constraint_macros_8h_aedf3d28b19d44614d417213853b7eec5}{pre}(expr)~if (!(expr)) return;
+\item 
+\#define \hyperlink{_constraint_macros_8h_af2f91f2bb41dabb4ae4818b068613042}{S\+T\+A\+R\+T\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+NT}(Id,  Typename,  Varname)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines the validator constraint \char`\"{}language\char`\"{}. 
+
+\begin{DoxyAuthor}{Author}
+Ben Bornstein
+\end{DoxyAuthor}
+This file provides C/\+C++ macros that make it possible to easily define validation rules for S\+B\+ML. These are called \char`\"{}validation constraints\char`\"{} in S\+B\+ML (not to be confused with the \hyperlink{class_constraint}{Constraint} object in S\+B\+ML). The validator works by applying such constraints to a \hyperlink{class_model}{Model} object in memory. A constraint can have preconditions, invariants, and log failures. Failures are retrievable as \hyperlink{class_s_b_m_l_error}{S\+B\+M\+L\+Error} objects in the \hyperlink{class_s_b_m_l_error_log}{S\+B\+M\+L\+Error\+Log} attached to the \hyperlink{class_s_b_m_l_document}{S\+B\+M\+L\+Document} containing the model.
+
+Users can define their own additional validation constraints using the facilities in this file and the \hyperlink{class_validator}{Validator} class. Please consult the code from existing validation constraints for examples about how to use this. 
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_constraint_macros_8h_a52d9072529a1b19becd210fd064796a8}\label{_constraint_macros_8h_a52d9072529a1b19becd210fd064796a8}} 
+\index{Constraint\+Macros.\+h@{Constraint\+Macros.\+h}!E\+N\+D\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+NT@{E\+N\+D\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+NT}}
+\index{E\+N\+D\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+NT@{E\+N\+D\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+NT}!Constraint\+Macros.\+h@{Constraint\+Macros.\+h}}
+\subsubsection{\texorpdfstring{E\+N\+D\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+NT}{END\_CONSTRAINT}}
+{\footnotesize\ttfamily \#define E\+N\+D\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+NT}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\}; \(\backslash\)
+LIBSBML\_CPP\_NAMESPACE\_END
+\end{DoxyCode}
+\mbox{\Hypertarget{_constraint_macros_8h_aaf7149643d48157d960e7413599f7325}\label{_constraint_macros_8h_aaf7149643d48157d960e7413599f7325}} 
+\index{Constraint\+Macros.\+h@{Constraint\+Macros.\+h}!E\+X\+T\+E\+R\+N\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+NT@{E\+X\+T\+E\+R\+N\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+NT}}
+\index{E\+X\+T\+E\+R\+N\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+NT@{E\+X\+T\+E\+R\+N\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+NT}!Constraint\+Macros.\+h@{Constraint\+Macros.\+h}}
+\subsubsection{\texorpdfstring{E\+X\+T\+E\+R\+N\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+NT}{EXTERN\_CONSTRAINT}}
+{\footnotesize\ttfamily \#define E\+X\+T\+E\+R\+N\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+NT(\begin{DoxyParamCaption}\item[{}]{Id,  }\item[{}]{Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_constraint_macros_8h_a73a3b169ac8c3419cbe15327e75ffcfd}\label{_constraint_macros_8h_a73a3b169ac8c3419cbe15327e75ffcfd}} 
+\index{Constraint\+Macros.\+h@{Constraint\+Macros.\+h}!fail@{fail}}
+\index{fail@{fail}!Constraint\+Macros.\+h@{Constraint\+Macros.\+h}}
+\subsubsection{\texorpdfstring{fail}{fail}}
+{\footnotesize\ttfamily \#define fail(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~m\+Log\+Msg = true; return;}
+
+\mbox{\Hypertarget{_constraint_macros_8h_a757fd0738a5697b8d8f475b74e335c4e}\label{_constraint_macros_8h_a757fd0738a5697b8d8f475b74e335c4e}} 
+\index{Constraint\+Macros.\+h@{Constraint\+Macros.\+h}!inv@{inv}}
+\index{inv@{inv}!Constraint\+Macros.\+h@{Constraint\+Macros.\+h}}
+\subsubsection{\texorpdfstring{inv}{inv}}
+{\footnotesize\ttfamily \#define inv(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})~if (!(expr)) \{ m\+Log\+Msg = true; return; \}}
+
+\mbox{\Hypertarget{_constraint_macros_8h_a4aecff2ee49b833951a3b9293329c2e9}\label{_constraint_macros_8h_a4aecff2ee49b833951a3b9293329c2e9}} 
+\index{Constraint\+Macros.\+h@{Constraint\+Macros.\+h}!inv\+\_\+or@{inv\+\_\+or}}
+\index{inv\+\_\+or@{inv\+\_\+or}!Constraint\+Macros.\+h@{Constraint\+Macros.\+h}}
+\subsubsection{\texorpdfstring{inv\+\_\+or}{inv\_or}}
+{\footnotesize\ttfamily \#define inv\+\_\+or(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})~if (expr) \{ m\+Log\+Msg = false; return; \} else m\+Log\+Msg = true;}
+
+\mbox{\Hypertarget{_constraint_macros_8h_aedf3d28b19d44614d417213853b7eec5}\label{_constraint_macros_8h_aedf3d28b19d44614d417213853b7eec5}} 
+\index{Constraint\+Macros.\+h@{Constraint\+Macros.\+h}!pre@{pre}}
+\index{pre@{pre}!Constraint\+Macros.\+h@{Constraint\+Macros.\+h}}
+\subsubsection{\texorpdfstring{pre}{pre}}
+{\footnotesize\ttfamily \#define pre(\begin{DoxyParamCaption}\item[{}]{expr }\end{DoxyParamCaption})~if (!(expr)) return;}
+
+\mbox{\Hypertarget{_constraint_macros_8h_af2f91f2bb41dabb4ae4818b068613042}\label{_constraint_macros_8h_af2f91f2bb41dabb4ae4818b068613042}} 
+\index{Constraint\+Macros.\+h@{Constraint\+Macros.\+h}!S\+T\+A\+R\+T\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+NT@{S\+T\+A\+R\+T\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+NT}}
+\index{S\+T\+A\+R\+T\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+NT@{S\+T\+A\+R\+T\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+NT}!Constraint\+Macros.\+h@{Constraint\+Macros.\+h}}
+\subsubsection{\texorpdfstring{S\+T\+A\+R\+T\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+NT}{START\_CONSTRAINT}}
+{\footnotesize\ttfamily \#define S\+T\+A\+R\+T\+\_\+\+C\+O\+N\+S\+T\+R\+A\+I\+NT(\begin{DoxyParamCaption}\item[{}]{Id,  }\item[{}]{Typename,  }\item[{}]{Varname }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+LIBSBML\_CPP\_NAMESPACE\_BEGIN \(\backslash\)
+struct \hyperlink{class_v_constraint}{VConstraint} ## Typename ## Id: \textcolor{keyword}{public} TConstraint<Typename> \(\backslash\)
+\{                                                                 \(\backslash\)
+  VConstraint ## Typename ## Id (\hyperlink{class_validator}{Validator}& V) :                   \(\backslash\)
+    TConstraint<Typename>(Id, V) \{ \}                              \(\backslash\)
+protected:                                                        \(\backslash\)
+  void check\_ (\textcolor{keyword}{const} \hyperlink{class_model}{Model}& m, \textcolor{keyword}{const} Typename& Varname)
+\end{DoxyCode}

@@ -1,0 +1,88 @@
+\hypertarget{class_event}{}\section{Event Class Reference}
+\label{class_event}\index{Event@{Event}}
+
+
+{\ttfamily \#include $<$Event.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} A discontinuous S\+B\+ML {\itshape event}.
+
+An S\+B\+ML \hyperlink{class_event}{Event} object defines when the event can occur, the variables that are affected by it, how the variables are affected, and the event\textquotesingle{}s relationship to other events. The effect of the event can optionally be delayed after the occurrence of the condition which invokes it.
+
+The operation of \hyperlink{class_event}{Event} is divided into two phases (even when the event is not delayed)\+: one when the event is {\itshape triggered}, and the other when the event is {\itshape executed}. \hyperlink{class_trigger}{Trigger} objects define the conditions for triggering an event, \hyperlink{class_delay}{Delay} objects define when the event is actually executed, \hyperlink{class_event_assignment}{Event\+Assignment} objects define the effects of executing the event, and (in S\+B\+ML Level~3) \hyperlink{class_priority}{Priority} objects influence the order of \hyperlink{class_event_assignment}{Event\+Assignment} performance in cases of simultaneous events. Please consult the descriptions of \hyperlink{class_trigger}{Trigger}, \hyperlink{class_delay}{Delay}, \hyperlink{class_event_assignment}{Event\+Assignment} and \hyperlink{class_priority}{Priority} for more information.\hypertarget{class_event_event-version-diffs}{}\subsection{S\+B\+M\+L Level/\+Version differences}\label{class_event_event-version-diffs}
+\hypertarget{class_event_sbml-l2}{}\subsubsection{S\+B\+M\+L Level 2}\label{class_event_sbml-l2}
+In S\+B\+ML Level~2 versions before Version~4, the semantics of \hyperlink{class_event}{Event} time delays were defined such that the expressions in the event\textquotesingle{}s assignments were always evaluated at the time the event was {\itshape triggered}. This definition made it difficult to define an event whose assignment formulas were meant to be evaluated at the time the event was {\itshape executed} (i.\+e., after the time period defined by the value of the \hyperlink{class_delay}{Delay} element, or after any other simultaneous event may have been {\itshape executed} and changed the model state). In S\+B\+ML Level~2 Version~4 and in Level~3, the attribute \char`\"{}use\+Values\+From\+Trigger\+Time\char`\"{} on \hyperlink{class_event}{Event} was added to allow a model to indicate the time at which the event\textquotesingle{}s assignments are to be calculated, whether at the moment the event is triggered (if the value of the attribute is {\ttfamily true}), or at the moment of execution (if \char`\"{}use\+Values\+From\+Trigger\+Time\char`\"{}={\ttfamily false}). If the event has a delay, the \char`\"{}use\+Values\+From\+Trigger\+Time\char`\"{} is likely to make a significant difference in the values used in the assignment, but the possibility of simultaneous events mean that even zero-\/delay events can have different results depending on the value of this attribute.
+
+The definition of \hyperlink{class_event}{Event} in S\+B\+ML Level~2 Versions 1 and 2 includes an additional attribute called \char`\"{}time\+Units\char`\"{}, which allowed the time units of the \hyperlink{class_delay}{Delay} to be set explicitly. Later Versions of S\+B\+ML Level~2 as well as S\+B\+ML Level~3 do not define this attribute. Lib\+S\+B\+ML supports this attribute for compatibility with previous versions of S\+B\+ML Level~2; however, if a model in S\+B\+ML Level~3 or Level~2 Versions~3--4 format sets the attribute, the consistency-\/checking method S\+B\+M\+L\+Document\+::check\+Consistency() will report an error.
+
+The attribute \char`\"{}use\+Values\+From\+Trigger\+Time\char`\"{} was introduced in S\+B\+ML Level~2 Version~4. Models defined in prior Versions of S\+B\+ML Level~2 cannot use this attribute, and S\+B\+M\+L\+Document\+::check\+Consistency() will report an error if they do.\hypertarget{class_event_sbml-l3}{}\subsubsection{S\+B\+M\+L Level 3}\label{class_event_sbml-l3}
+S\+B\+ML Level 3 introduces several changes to the structure and components of Events compared to S\+B\+ML Level~2. These changes fall into two main categories\+: changes to what is optional or required, and additions of new attributes and elements. 
+\begin{DoxyItemize}
+\item The attribute \char`\"{}use\+Values\+From\+Trigger\+Time\char`\"{} on \hyperlink{class_event}{Event} is mandatory (it was optional in Level~2 and had a default value of {\ttfamily true}); 
+\item \hyperlink{class_event}{Event}\textquotesingle{}s \char`\"{}list\+Of\+Event\+Assignments\char`\"{} element (of class \hyperlink{class_list_of_event_assignments}{List\+Of\+Event\+Assignments}) is optional (it was mandatory in Level~2); 
+\item \hyperlink{class_event}{Event}\textquotesingle{}s \char`\"{}priority\char`\"{} element (of class \hyperlink{class_priority}{Priority}) is new in Level~3; and 
+\item The \hyperlink{class_trigger}{Trigger} object gains new mandatory attributes (described as part of the definition of \hyperlink{class_trigger}{Trigger}). 
+\item In S\+B\+ML Level~3 Version~2, the \hyperlink{class_trigger}{Trigger} object became optional. An \hyperlink{class_event}{Event} with no \hyperlink{class_trigger}{Trigger} will simply not fire. 
+\end{DoxyItemize}
+
+The changes to the attributes of \hyperlink{class_event}{Event} are described below; the changes to \hyperlink{class_trigger}{Trigger} and \hyperlink{class_priority}{Priority} are described in their respective sections.\hypertarget{class_event_semantics}{}\subsection{Semantics of events in S\+B\+M\+L Level 3 Version 1}\label{class_event_semantics}
+The detailed semantics of events are described in the specification documents for each S\+B\+ML Level/\+Version. Here we include the description from the S\+B\+ML Level~1 Version~1. Any transition of a \hyperlink{class_trigger}{Trigger} object\textquotesingle{}s \char`\"{}math\char`\"{} formula from the value {\ttfamily false} to {\ttfamily true} will cause the enclosing \hyperlink{class_event}{Event} object to {\itshape trigger}. Such a transition is not possible at the very start of a simulation (i.\+e., at time {\itshape t = 0}) unless the \hyperlink{class_trigger}{Trigger} object\textquotesingle{}s \char`\"{}initial\+Value\char`\"{} attribute has a value of {\ttfamily false}; this defines the value of the trigger formula to be {\ttfamily false} immediately prior to the start of simulation, thereby giving it the potential to change in value from {\ttfamily false} to {\ttfamily true} when the formula is evaluated at {\itshape t = 0}. If \char`\"{}initial\+Value\char`\"{}={\ttfamily true}, then the trigger expression cannot transition from {\ttfamily false} to {\ttfamily true} at {\itshape t = 0} but may do so at some time {\itshape t $>$ 0}.
+
+Consider an \hyperlink{class_event}{Event} object definition {\itshape E} with delay {\itshape d} in which the \hyperlink{class_trigger}{Trigger} object\textquotesingle{}s \char`\"{}math\char`\"{} formula makes a transition in value from {\ttfamily false} to {\ttfamily true} at times {\itshape t\textsubscript{1}} and {\itshape t\textsubscript{2}}. The \hyperlink{class_event_assignment}{Event\+Assignment} within the \hyperlink{class_event}{Event} object will have effect at {\itshape t\textsubscript{1} + d} and {\itshape t\textsubscript{2} + d} irrespective of the relative times of {\itshape t\textsubscript{1}} and {\itshape t\textsubscript{2}}. For example, events can \char`\"{}overlap\char`\"{} so that {\itshape t\textsubscript{1} $<$ t\textsubscript{2} $<$ t\textsubscript{1} + d} still causes an event assignments to occur at {\itshape t\textsubscript{1} + d} and {\itshape t\textsubscript{2} + d}.
+
+It is entirely possible for two events to be executed simultaneously, and it is possible for events to trigger other events (i.\+e., an event assignment can cause an event to trigger). This leads to several points\+: 
+\begin{DoxyItemize}
+\item A software package should retest all event triggers after executing an event assignment in order to account for the possibility that the assignment causes another event trigger to transition from {\ttfamily false} to {\ttfamily true}. This check should be made after each individual \hyperlink{class_event}{Event} object\textquotesingle{}s execution, even when several events are to be executed simultaneously.
+
+
+\item Any \hyperlink{class_event}{Event} object whose \hyperlink{class_trigger}{Trigger} \char`\"{}persistent\char`\"{} attribute has the value {\ttfamily false} must have its trigger expression reevaluated continuously between when the event is triggered and when it is executed. If its trigger expression ever evaluates to {\ttfamily false}, it must be removed from the queue of events pending execution and treated as any other event whose trigger expression evaluates to {\ttfamily false}.
+
+
+\item Although the precise time at which events are executed is not resolved beyond the given execution point in simulated time, it is assumed that the order in which the events occur {\itshape is} resolved. This order can be significant in determining the overall outcome of a given simulation. When an event {\itshape X} {\itshape triggers} another event {\itshape Y} and event {\itshape Y} has zero delay, then event {\itshape Y} is added to the existing set of simultaneous events that are pending {\itshape execution}. Events {\itshape X} and {\itshape Y} form a cascade of events at the same point in simulation time. An event such as {\itshape Y} may have a special priority if it contains a \hyperlink{class_priority}{Priority} subobject.
+
+
+\item All events in a model are open to being in a cascade. The position of an event in the event queue does not affect whether it can be in the cascade\+: event {\itshape Y} can be triggered whether it is before or after {\itshape X} in the queue of events pending execution. A cascade of events can be potentially infinite (never terminate); when this occurs a simulator should indicate this has occurred---it is incorrect for a simulator to break a cascade arbitrarily and continue the simulation without at least indicating that the infinite cascade occurred.
+
+
+\item Simultaneous events having no defined priorities are executed in an undefined order. This does not mean that the behavior of the simulation is completely undefined; merely that the {\itshape order} of execution of these particular events is undefined. A given simulator may use any algorithm to choose an order as long as every event is executed exactly once.
+
+
+\item Events with defined priorities are executed in the order implied by their \hyperlink{class_priority}{Priority} \char`\"{}math\char`\"{} formula values, with events having higher priorities being executed ahead of events with lower priorities, and events with identical priorities being executed in a random order with respect to one another (as determined at run-\/time by some random algorithm equivalent to coin-\/flipping). Newly-\/triggered events that are to be executed immediately (i.\+e., if they define no delays) should be inserted into the queue of events pending execution according to their priorities\+: events with higher priority values value must be inserted ahead of events with lower priority values and after any pending events with even higher priorities, and inserted randomly among pending events with the same priority values. Events without \hyperlink{class_priority}{Priority} objects must be inserted into the queue in some fashion, but the algorithm used to place it in the queue is undefined. Similarly, there is no restriction on the order of a newly-\/inserted event with a defined \hyperlink{class_priority}{Priority} with respect to any other pending \hyperlink{class_event}{Event} without a defined \hyperlink{class_priority}{Priority}.
+
+
+\item A model variable that is the target of one or more event assignments can change more than once when simultaneous events are processed at some time point {\itshape t}. The model\textquotesingle{}s behavior (output) for such a variable is the value of the variable at the end of processing all the simultaneous events at time {\itshape t}.
+
+
+\end{DoxyItemize}\hypertarget{class_event_l3v2_restrictions}{}\subsection{Restrictions relaxed in S\+B\+M\+L Level 3 Version 2}\label{class_event_l3v2_restrictions}
+In S\+B\+ML Level~3 Version~2, several restrictions were lifted that have the potential to affect the semantics of an \hyperlink{class_event}{Event}\+:
+
+
+\begin{DoxyItemize}
+\item The \hyperlink{class_trigger}{Trigger} subobject of an \hyperlink{class_event}{Event} is optional. If missing, an \hyperlink{class_event}{Event} is never {\itshape triggered}, unless an alternate triggering scheme is introduced by an S\+B\+ML Level~3 package.
+
+
+\item The \char`\"{}math\char`\"{} subelements of an \hyperlink{class_event}{Event} \hyperlink{class_trigger}{Trigger}, \hyperlink{class_delay}{Delay}, \hyperlink{class_priority}{Priority}, and \hyperlink{class_event_assignment}{Event\+Assignment} are all optional. If any of these elements lack a \char`\"{}math\char`\"{} subelement, and that information is not supplied in an S\+B\+ML Level~3 package, it is mathematically equivalent to the \hyperlink{class_trigger}{Trigger}, \hyperlink{class_delay}{Delay}, \hyperlink{class_priority}{Priority}, or \hyperlink{class_event_assignment}{Event\+Assignment} not being present at all.
+
+
+\item The \hyperlink{class_list_of_event_assignments}{List\+Of\+Event\+Assignments} may be empty, which is mathematically equivalent to the \hyperlink{class_event}{Event} not having a \hyperlink{class_list_of_event_assignments}{List\+Of\+Event\+Assignments} at all.
+
+
+\item Any \char`\"{}math\char`\"{} subelement may return a Boolean or a numeric value in any context. If a numeric value is used in a Boolean context, a \char`\"{}0\char`\"{} is interpreted as {\ttfamily false}, and all other values are interpreted as {\ttfamily true}. If a Boolean value is used in a numeric context, a {\ttfamily true} is interpreted as a 1, and a {\ttfamily false} is interpreted as a 0. This means (for example) that a \hyperlink{class_trigger}{Trigger} value that changes from 0.\+0 to anything else is equivalent to changing from {\ttfamily false} to {\ttfamily true}. 
+\end{DoxyItemize}
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_trigger}{Trigger} 
+
+\hyperlink{class_priority}{Priority} 
+
+\hyperlink{class_delay}{Delay} 
+
+\hyperlink{class_event_assignment}{Event\+Assignment} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_event_8h}{Event.\+h}\end{DoxyCompactItemize}

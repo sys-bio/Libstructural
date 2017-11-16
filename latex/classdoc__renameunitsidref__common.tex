@@ -1,0 +1,28 @@
+\hypertarget{classdoc__renameunitsidref__common}{}\section{doc\+\_\+renameunitsidref\+\_\+common Class Reference}
+\label{classdoc__renameunitsidref__common}\index{doc\+\_\+renameunitsidref\+\_\+common@{doc\+\_\+renameunitsidref\+\_\+common}}
+
+
+{\ttfamily \#include $<$common-\/documentation.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+Replaces all uses of a given {\ttfamily Unit\+S\+Id\+Ref} type attribute value with another value.
+
+\begin{DoxyParagraph}{}
+In S\+B\+ML, unit definitions have identifiers of type {\ttfamily Unit\+S\+Id}. In S\+B\+ML Level~3, an explicit data type called {\ttfamily Unit\+S\+Id\+Ref} was introduced for attribute values that refer to {\ttfamily Unit\+S\+Id} values; in previous Levels of S\+B\+ML, this data type did not exist and attributes were simply described to as \char`\"{}referring to a unit identifier\char`\"{}, but the effective data type was the same as {\ttfamily Unit\+S\+Id\+Ref} in Level~3. These and other methods of lib\+S\+B\+ML refer to the type {\ttfamily Unit\+S\+Id\+Ref} for all Levels of S\+B\+ML, even if the corresponding S\+B\+ML specification did not explicitly name the data type.
+\end{DoxyParagraph}
+This method works by looking at all unit identifier attribute values (including, if appropriate, inside mathematical formulas), comparing the referenced unit identifiers to the value of {\ttfamily oldid}. If any matches are found, the matching values are replaced with {\ttfamily newid}. The method does {\itshape not} descend into child elements.
+
+
+\begin{DoxyParams}{Parameters}
+{\em oldid} & the old identifier. \\
+\hline
+{\em newid} & the new identifier. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{common-documentation_8h}{common-\/documentation.\+h}\end{DoxyCompactItemize}

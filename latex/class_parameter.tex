@@ -1,0 +1,44 @@
+\hypertarget{class_parameter}{}\section{Parameter Class Reference}
+\label{class_parameter}\index{Parameter@{Parameter}}
+
+
+{\ttfamily \#include $<$Parameter.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} An S\+B\+ML parameter\+: a named symbol with a value.
+
+A \hyperlink{class_parameter}{Parameter} is used in S\+B\+ML to define a symbol associated with a value; this symbol can then be used in mathematical formulas in a model. By default, parameters have constant value for the duration of a simulation, and for this reason are called {\itshape parameters} instead of {\itshape variables} in S\+B\+ML, although it is crucial to understand that {\itshape S\+B\+ML parameters represent both concepts}. Whether a given S\+B\+ML parameter is intended to be constant or variable is indicated by the value of its \char`\"{}constant\char`\"{} attribute.
+
+S\+B\+ML\textquotesingle{}s \hyperlink{class_parameter}{Parameter} has a required attribute, \char`\"{}id\char`\"{}, that gives the parameter a unique identifier by which other parts of an S\+B\+ML model definition can refer to it. A parameter can also have an optional \char`\"{}name\char`\"{} attribute of type {\ttfamily string}. Identifiers and names must be used according to the guidelines described in the S\+B\+ML specifications.
+
+The optional attribute \char`\"{}value\char`\"{} determines the value (of type {\ttfamily double}) assigned to the parameter. A missing value for \char`\"{}value\char`\"{} implies that the value either is unknown, or to be obtained from an external source, or determined by an initial assignment. The unit of measurement associated with the value of the parameter can be specified using the optional attribute \char`\"{}units\char`\"{}. Here we only mention briefly some notable points about the possible unit choices, but readers are urged to consult the S\+B\+ML specification documents for more information\+: 
+\begin{DoxyItemize}
+\item In S\+B\+ML Level~3, there are no constraints on the units that can be assigned to parameters in a model; there are also no units to inherit from the enclosing \hyperlink{class_model}{Model} object (unlike the case for, e.\+g., \hyperlink{class_species}{Species} and \hyperlink{class_compartment}{Compartment}).
+
+
+\item In S\+B\+ML Level~2, the value assigned to the parameter\textquotesingle{}s \char`\"{}units\char`\"{} attribute must be chosen from one of the following possibilities\+: one of the base unit identifiers defined in S\+B\+ML; one of the built-\/in unit identifiers {\ttfamily \char`\"{}substance\char`\"{}}, {\ttfamily \char`\"{}time\char`\"{}}, {\ttfamily \char`\"{}volume\char`\"{}}, {\ttfamily \char`\"{}area\char`\"{}} or {\ttfamily \char`\"{}length\char`\"{}}; or the identifier of a new unit defined in the list of unit definitions in the enclosing \hyperlink{class_model}{Model} structure. There are no constraints on the units that can be chosen from these sets. There are no default units for parameters. 
+\end{DoxyItemize}
+
+The \hyperlink{class_parameter}{Parameter} structure has another boolean attribute named \char`\"{}constant\char`\"{} that is used to indicate whether the parameter\textquotesingle{}s value can vary during a simulation. (In S\+B\+ML Level~3, the attribute is mandatory and must be given a value; in S\+B\+ML Levels below Level~3, the attribute is optional.) A value of {\ttfamily true} indicates the parameter\textquotesingle{}s value cannot be changed by any construct except \hyperlink{class_initial_assignment}{Initial\+Assignment}. Conversely, if the value of \char`\"{}constant\char`\"{} is {\ttfamily false}, other constructs in S\+B\+ML, such as rules and events, can change the value of the parameter.
+
+S\+B\+ML Level~3 uses a separate object class, \hyperlink{class_local_parameter}{Local\+Parameter}, for parameters that are local to a \hyperlink{class_reaction}{Reaction}\textquotesingle{}s \hyperlink{class_kinetic_law}{Kinetic\+Law}. In Levels prior to S\+B\+ML Level~3, the \hyperlink{class_parameter}{Parameter} class is used both for definitions of global parameters, as well as reaction-\/local parameters stored in a list within \hyperlink{class_kinetic_law}{Kinetic\+Law} objects. \hyperlink{class_parameter}{Parameter} objects that are local to a reaction (that is, those defined within the \hyperlink{class_kinetic_law}{Kinetic\+Law} structure of a \hyperlink{class_reaction}{Reaction}) cannot be changed by rules and therefore are {\itshape implicitly always constant}; consequently, in S\+B\+ML Level~2, parameter definitions within \hyperlink{class_reaction}{Reaction} structures should {\itshape not} have their \char`\"{}constant\char`\"{} attribute set to {\ttfamily false}.
+
+What if a global parameter has its \char`\"{}constant\char`\"{} attribute set to {\ttfamily false}, but the model does not contain any rules, events or other constructs that ever change its value over time? Although the model may be suspect, this situation is not strictly an error. A value of {\ttfamily false} for \char`\"{}constant\char`\"{} only indicates that a parameter {\itshape can} change value, not that it {\itshape must}.
+
+As with all other major S\+B\+ML components, \hyperlink{class_parameter}{Parameter} is derived from \hyperlink{class_s_base}{S\+Base}, and the methods defined on \hyperlink{class_s_base}{S\+Base} are available on \hyperlink{class_parameter}{Parameter}.
+
+\begin{DoxyNote}{Note}
+The use of the term {\itshape parameter} in S\+B\+ML sometimes leads to confusion among readers who have a particular notion of what something called \char`\"{}parameter\char`\"{} should be. It has been the source of heated debate, but despite this, no one has yet found an adequate replacement term that does not have different connotations to different people and hence leads to confusion among {\itshape some} subset of users. Perhaps it would have been better to have two constructs, one called {\itshape constants} and the other called {\itshape variables}. The current approach in S\+B\+ML is simply more parsimonious, using a single \hyperlink{class_parameter}{Parameter} construct with the boolean flag \char`\"{}constant\char`\"{} indicating which flavor it is. In any case, readers are implored to look past their particular definition of a {\itshape parameter} and simply view S\+B\+ML\textquotesingle{}s \hyperlink{class_parameter}{Parameter} as a single mechanism for defining both constants and (additional) variables in a model. (We write {\itshape additional} because the species in a model are usually considered to be the central variables.) After all, software tools are not required to expose to users the actual names of particular S\+B\+ML constructs, and thus tools can present to their users whatever terms their designers feel best matches their target audience.
+\end{DoxyNote}
+In S\+B\+ML Level~3 Version~2, many restrictions were lifted requiring only Boolean values in Boolean contexts, and numeric values in numeric contexts. This means that a \hyperlink{class_parameter}{Parameter} may now be used as a Boolean, despite canonically having a numeric value. To be consistent, one should always assign it a value of {\ttfamily true} or {\ttfamily false}, and use it in Boolean contexts exclusively. It would be appropriate to give it an \hyperlink{class_s_b_o}{S\+BO} value of 602 (\textquotesingle{}Logical parameter\textquotesingle{}) if one chooses to do this.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_list_of_parameters}{List\+Of\+Parameters} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_parameter_8h}{Parameter.\+h}\end{DoxyCompactItemize}

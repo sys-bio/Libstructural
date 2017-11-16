@@ -1,0 +1,52 @@
+\hypertarget{class_list_of_event_assignments}{}\section{List\+Of\+Event\+Assignments Class Reference}
+\label{class_list_of_event_assignments}\index{List\+Of\+Event\+Assignments@{List\+Of\+Event\+Assignments}}
+
+
+{\ttfamily \#include $<$Event\+Assignment.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} A list of \hyperlink{class_event_assignment}{Event\+Assignment} objects.
+
+\begin{DoxyParagraph}{}
+The various List\+Of\+\_\+\+\_\+\+\_\+ classes in S\+B\+ML are merely containers used for organizing the main components of an S\+B\+ML model. In lib\+S\+B\+ML\textquotesingle{}s implementation, List\+Of\+\_\+\+\_\+\+\_\+ classes are derived from the intermediate utility class \hyperlink{class_list_of}{List\+Of}, which is not defined by the S\+B\+ML specifications but serves as a useful programmatic construct. \hyperlink{class_list_of}{List\+Of} is itself is in turn derived from \hyperlink{class_s_base}{S\+Base}, which provides all of the various List\+Of\+\_\+\+\_\+\+\_\+ classes with common features defined by the S\+B\+ML specification, such as \char`\"{}metaid\char`\"{} attributes and annotations.
+\end{DoxyParagraph}
+The relationship between the lists and the rest of an S\+B\+ML model is illustrated by the following (for S\+B\+ML Level~2 Version~4)\+:
+
+
+
+S\+B\+ML Level~3 Version~1 has essentially the same structure as Level~2 Version~4, depicted above, but S\+B\+ML Level~3 Version~2 allows containers to contain zero or more of the relevant object, instead of requiring at least one. As such, libsbml will write out an otherwise-\/empty List\+Of\+\_\+\+\_\+\+\_\+ element that has any optional attribute set (such as \textquotesingle{}id\textquotesingle{} or \textquotesingle{}metaid\textquotesingle{}), that has an optional child (such as a \textquotesingle{}notes\textquotesingle{} or \textquotesingle{}annotation\textquotesingle{}), or that has attributes or children set from any S\+B\+ML Level~3 package, whether or not the List\+Of\+\_\+\+\_\+\+\_\+ has any other children.
+
+Readers may wonder about the motivations for using the List\+Of\+\_\+\+\_\+\+\_\+ containers in S\+B\+ML. A simpler approach in X\+ML might be to place the components all directly at the top level of the model definition. The choice made in S\+B\+ML is to group them within X\+ML elements named after List\+Of{\itshape Classname}, in part because it helps organize the components. More importantly, the fact that the container classes are derived from \hyperlink{class_s_base}{S\+Base} means that software tools can add information {\itshape about} the lists themselves into each list container\textquotesingle{}s \char`\"{}annotation\char`\"{}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_list_of_function_definitions}{List\+Of\+Function\+Definitions} 
+
+\hyperlink{class_list_of_unit_definitions}{List\+Of\+Unit\+Definitions} 
+
+\hyperlink{class_list_of_compartment_types}{List\+Of\+Compartment\+Types} 
+
+\hyperlink{class_list_of_species_types}{List\+Of\+Species\+Types} 
+
+\hyperlink{class_list_of_compartments}{List\+Of\+Compartments} 
+
+\hyperlink{class_list_of_species}{List\+Of\+Species} 
+
+\hyperlink{class_list_of_parameters}{List\+Of\+Parameters} 
+
+\hyperlink{class_list_of_initial_assignments}{List\+Of\+Initial\+Assignments} 
+
+\hyperlink{class_list_of_rules}{List\+Of\+Rules} 
+
+\hyperlink{class_list_of_constraints}{List\+Of\+Constraints} 
+
+\hyperlink{class_list_of_reactions}{List\+Of\+Reactions} 
+
+\hyperlink{class_list_of_events}{List\+Of\+Events} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_event_assignment_8h}{Event\+Assignment.\+h}\end{DoxyCompactItemize}

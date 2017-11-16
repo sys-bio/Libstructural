@@ -1,0 +1,186 @@
+\hypertarget{_lib_structural_2fluxbalance_8cpp}{}\section{fluxbalance.\+cpp File Reference}
+\label{_lib_structural_2fluxbalance_8cpp}\index{fluxbalance.\+cpp@{fluxbalance.\+cpp}}
+{\ttfamily \#include \char`\"{}fluxbalance.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$lp\+\_\+lib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}libstructural.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}matrix.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}util.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}constraint.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}objective.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}lpresult.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{_lib_structural_2fluxbalance_8cpp_a611f7c25047efae785732e0b8a6bd979}{Flux\+Balance\+\_\+add\+Constraint} (const char $\ast$id, const \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} operation, const double \hyperlink{lp__lib_8h_a606ba870f46e132d61b5e2371014a998}{value})
+\item 
+\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{_lib_structural_2fluxbalance_8cpp_ac0edd301ff17ddf0a3138f2cc9f7ad0b}{Flux\+Balance\+\_\+add\+Objective} (const char $\ast$id, const double \hyperlink{lp__lib_8h_a606ba870f46e132d61b5e2371014a998}{value})
+\begin{DoxyCompactList}\small\item\em adds a new objective with given flux\+Names and objective value \end{DoxyCompactList}\item 
+\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{_lib_structural_2fluxbalance_8cpp_aab005ebefb258b57dce20358bd58d01c}{Flux\+Balance\+\_\+clear\+Constraints} ()
+\begin{DoxyCompactList}\small\item\em deletes all current constraints \end{DoxyCompactList}\item 
+\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{_lib_structural_2fluxbalance_8cpp_a0b33f8f149c1ecc8cc8380a59e2c8684}{Flux\+Balance\+\_\+clear\+Objectives} ()
+\begin{DoxyCompactList}\small\item\em deletes all current objectives \end{DoxyCompactList}\item 
+\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{_lib_structural_2fluxbalance_8cpp_aaac299d453de65f35f999f00ea06a9ea}{Flux\+Balance\+\_\+load\+S\+B\+ML} (const char $\ast$sbml\+Content)
+\begin{DoxyCompactList}\small\item\em initialize this class with a sbml model passed as string \end{DoxyCompactList}\item 
+\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{_lib_structural_2fluxbalance_8cpp_a5c56ca3f82339d8633c3d8b8fbfde3a5}{Flux\+Balance\+\_\+load\+Stoichiometry} (const double $\ast$$\ast$matrix, const \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} num\+Rows, const \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} num\+Cols, const char $\ast$$\ast$flux\+Names)
+\begin{DoxyCompactList}\small\item\em initialize class with the given stoichiometry matrix and vector of flux\+Names. \end{DoxyCompactList}\item 
+\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{_lib_structural_2fluxbalance_8cpp_a76228dbfb1ffdc526bd5050db7f7271d}{Flux\+Balance\+\_\+maximize} (char $\ast$$\ast$$\ast$out\+Names, double $\ast$$\ast$out\+Values, \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} $\ast$out\+Length)
+\begin{DoxyCompactList}\small\item\em transforms the current model along with constraint and objectives as lp problem and solves the maximization objective using lpsolve. \end{DoxyCompactList}\item 
+\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{_lib_structural_2fluxbalance_8cpp_a8a6cdbcc71734664f23c0a09b0abc1ff}{Flux\+Balance\+\_\+minimize} (char $\ast$$\ast$$\ast$out\+Names, double $\ast$$\ast$out\+Values, \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} $\ast$out\+Length)
+\begin{DoxyCompactList}\small\item\em transforms the current model along with constraint and objectives as lp problem and solves the minimization objective using lpsolve. \end{DoxyCompactList}\item 
+\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{_lib_structural_2fluxbalance_8cpp_a9d5636acfac372d872a73ba29e0ade84}{Flux\+Balance\+\_\+set\+Constraints} (const char $\ast$$\ast$ids, const \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} $\ast$operations, const double $\ast$\hyperlink{lp__lib_8h_a7b72c61d6eb1542d2d9550bbdf37c344}{values}, const \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} length)
+\begin{DoxyCompactList}\small\item\em replaces the current constraints with the ones specified in the given constraint vector \end{DoxyCompactList}\item 
+\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{_lib_structural_2fluxbalance_8cpp_a2b88fb8e0a96ea37a0a1eda0552a5930}{Flux\+Balance\+\_\+set\+Objectives} (const char $\ast$$\ast$ids, const double $\ast$\hyperlink{lp__lib_8h_a7b72c61d6eb1542d2d9550bbdf37c344}{values}, const \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} length)
+\begin{DoxyCompactList}\small\item\em replaces all current objectives with the ones specified in the given objective vector \end{DoxyCompactList}\item 
+\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{_lib_structural_2fluxbalance_8cpp_a5bad84f27e0c66bf7cc5376ccbb77afd}{Flux\+Balance\+\_\+solve} (char $\ast$$\ast$$\ast$out\+Names, double $\ast$$\ast$out\+Values, \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} $\ast$out\+Length)
+\begin{DoxyCompactList}\small\item\em transforms the current model along with constraint and objectives as lp problem and solves the maximization objective using lpsolve. \end{DoxyCompactList}\item 
+\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} \hyperlink{_lib_structural_2fluxbalance_8cpp_a8707232c02769c6fcf5a29c2f66a8085}{Flux\+Balance\+\_\+write\+To\+Free\+M\+P\+S\+File} (const char $\ast$file\+Name)
+\begin{DoxyCompactList}\small\item\em writes the LP problem specified by model, objectives and constraints as free mps file \end{DoxyCompactList}\item 
+\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} \hyperlink{_lib_structural_2fluxbalance_8cpp_a4cf55ac75e9abeb18d9acf5dbe708077}{Flux\+Balance\+\_\+write\+To\+L\+P\+File} (const char $\ast$file\+Name)
+\begin{DoxyCompactList}\small\item\em writes the LP problem specified by model, objectives and constraints as lp file \end{DoxyCompactList}\item 
+\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} \hyperlink{_lib_structural_2fluxbalance_8cpp_ac0f6ef1646cd3b372f7975a2839daa88}{Flux\+Balance\+\_\+write\+To\+M\+P\+S\+File} (const char $\ast$file\+Name)
+\begin{DoxyCompactList}\small\item\em writes the LP problem specified by model, objectives and constraints as mps file \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_lib_structural_2fluxbalance_8cpp_a611f7c25047efae785732e0b8a6bd979}\label{_lib_structural_2fluxbalance_8cpp_a611f7c25047efae785732e0b8a6bd979}} 
+\index{Lib\+Structural/fluxbalance.\+cpp@{Lib\+Structural/fluxbalance.\+cpp}!Flux\+Balance\+\_\+add\+Constraint@{Flux\+Balance\+\_\+add\+Constraint}}
+\index{Flux\+Balance\+\_\+add\+Constraint@{Flux\+Balance\+\_\+add\+Constraint}!Lib\+Structural/fluxbalance.\+cpp@{Lib\+Structural/fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Flux\+Balance\+\_\+add\+Constraint()}{FluxBalance\_addConstraint()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} Flux\+Balance\+\_\+add\+Constraint (\begin{DoxyParamCaption}\item[{const char $\ast$}]{id,  }\item[{const \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}}]{operation,  }\item[{const double}]{value }\end{DoxyParamCaption})}
+
+Adds a new constraint with given flux\+Name, operation type and constraint value. \begin{DoxyRemark}{Remarks}
+operation is one of 1\+: Less\+Or\+Equal, 2\+: Greater\+Or\+Equal, 3\+:Equal for convenience the defines F\+B\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+L\+EQ, F\+B\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+G\+EQ and F\+B\+\_\+\+O\+P\+E\+R\+A\+T\+I\+O\+N\+\_\+\+EQ are defined. 
+\end{DoxyRemark}
+\mbox{\Hypertarget{_lib_structural_2fluxbalance_8cpp_ac0edd301ff17ddf0a3138f2cc9f7ad0b}\label{_lib_structural_2fluxbalance_8cpp_ac0edd301ff17ddf0a3138f2cc9f7ad0b}} 
+\index{Lib\+Structural/fluxbalance.\+cpp@{Lib\+Structural/fluxbalance.\+cpp}!Flux\+Balance\+\_\+add\+Objective@{Flux\+Balance\+\_\+add\+Objective}}
+\index{Flux\+Balance\+\_\+add\+Objective@{Flux\+Balance\+\_\+add\+Objective}!Lib\+Structural/fluxbalance.\+cpp@{Lib\+Structural/fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Flux\+Balance\+\_\+add\+Objective()}{FluxBalance\_addObjective()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} Flux\+Balance\+\_\+add\+Objective (\begin{DoxyParamCaption}\item[{const char $\ast$}]{id,  }\item[{const double}]{value }\end{DoxyParamCaption})}
+
+
+
+adds a new objective with given flux\+Names and objective value 
+
+\mbox{\Hypertarget{_lib_structural_2fluxbalance_8cpp_aab005ebefb258b57dce20358bd58d01c}\label{_lib_structural_2fluxbalance_8cpp_aab005ebefb258b57dce20358bd58d01c}} 
+\index{Lib\+Structural/fluxbalance.\+cpp@{Lib\+Structural/fluxbalance.\+cpp}!Flux\+Balance\+\_\+clear\+Constraints@{Flux\+Balance\+\_\+clear\+Constraints}}
+\index{Flux\+Balance\+\_\+clear\+Constraints@{Flux\+Balance\+\_\+clear\+Constraints}!Lib\+Structural/fluxbalance.\+cpp@{Lib\+Structural/fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Flux\+Balance\+\_\+clear\+Constraints()}{FluxBalance\_clearConstraints()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} Flux\+Balance\+\_\+clear\+Constraints (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+deletes all current constraints 
+
+\mbox{\Hypertarget{_lib_structural_2fluxbalance_8cpp_a0b33f8f149c1ecc8cc8380a59e2c8684}\label{_lib_structural_2fluxbalance_8cpp_a0b33f8f149c1ecc8cc8380a59e2c8684}} 
+\index{Lib\+Structural/fluxbalance.\+cpp@{Lib\+Structural/fluxbalance.\+cpp}!Flux\+Balance\+\_\+clear\+Objectives@{Flux\+Balance\+\_\+clear\+Objectives}}
+\index{Flux\+Balance\+\_\+clear\+Objectives@{Flux\+Balance\+\_\+clear\+Objectives}!Lib\+Structural/fluxbalance.\+cpp@{Lib\+Structural/fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Flux\+Balance\+\_\+clear\+Objectives()}{FluxBalance\_clearObjectives()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} Flux\+Balance\+\_\+clear\+Objectives (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+deletes all current objectives 
+
+\mbox{\Hypertarget{_lib_structural_2fluxbalance_8cpp_aaac299d453de65f35f999f00ea06a9ea}\label{_lib_structural_2fluxbalance_8cpp_aaac299d453de65f35f999f00ea06a9ea}} 
+\index{Lib\+Structural/fluxbalance.\+cpp@{Lib\+Structural/fluxbalance.\+cpp}!Flux\+Balance\+\_\+load\+S\+B\+ML@{Flux\+Balance\+\_\+load\+S\+B\+ML}}
+\index{Flux\+Balance\+\_\+load\+S\+B\+ML@{Flux\+Balance\+\_\+load\+S\+B\+ML}!Lib\+Structural/fluxbalance.\+cpp@{Lib\+Structural/fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Flux\+Balance\+\_\+load\+S\+B\+M\+L()}{FluxBalance\_loadSBML()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} Flux\+Balance\+\_\+load\+S\+B\+ML (\begin{DoxyParamCaption}\item[{const char $\ast$}]{sbml\+Content }\end{DoxyParamCaption})}
+
+
+
+initialize this class with a sbml model passed as string 
+
+\mbox{\Hypertarget{_lib_structural_2fluxbalance_8cpp_a5c56ca3f82339d8633c3d8b8fbfde3a5}\label{_lib_structural_2fluxbalance_8cpp_a5c56ca3f82339d8633c3d8b8fbfde3a5}} 
+\index{Lib\+Structural/fluxbalance.\+cpp@{Lib\+Structural/fluxbalance.\+cpp}!Flux\+Balance\+\_\+load\+Stoichiometry@{Flux\+Balance\+\_\+load\+Stoichiometry}}
+\index{Flux\+Balance\+\_\+load\+Stoichiometry@{Flux\+Balance\+\_\+load\+Stoichiometry}!Lib\+Structural/fluxbalance.\+cpp@{Lib\+Structural/fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Flux\+Balance\+\_\+load\+Stoichiometry()}{FluxBalance\_loadStoichiometry()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} Flux\+Balance\+\_\+load\+Stoichiometry (\begin{DoxyParamCaption}\item[{const double $\ast$$\ast$}]{matrix,  }\item[{const \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}}]{num\+Rows,  }\item[{const \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}}]{num\+Cols,  }\item[{const char $\ast$$\ast$}]{flux\+Names }\end{DoxyParamCaption})}
+
+
+
+initialize class with the given stoichiometry matrix and vector of flux\+Names. 
+
+\mbox{\Hypertarget{_lib_structural_2fluxbalance_8cpp_a76228dbfb1ffdc526bd5050db7f7271d}\label{_lib_structural_2fluxbalance_8cpp_a76228dbfb1ffdc526bd5050db7f7271d}} 
+\index{Lib\+Structural/fluxbalance.\+cpp@{Lib\+Structural/fluxbalance.\+cpp}!Flux\+Balance\+\_\+maximize@{Flux\+Balance\+\_\+maximize}}
+\index{Flux\+Balance\+\_\+maximize@{Flux\+Balance\+\_\+maximize}!Lib\+Structural/fluxbalance.\+cpp@{Lib\+Structural/fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Flux\+Balance\+\_\+maximize()}{FluxBalance\_maximize()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} Flux\+Balance\+\_\+maximize (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$$\ast$}]{out\+Names,  }\item[{double $\ast$$\ast$}]{out\+Values,  }\item[{\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} $\ast$}]{out\+Length }\end{DoxyParamCaption})}
+
+
+
+transforms the current model along with constraint and objectives as lp problem and solves the maximization objective using lpsolve. 
+
+\mbox{\Hypertarget{_lib_structural_2fluxbalance_8cpp_a8a6cdbcc71734664f23c0a09b0abc1ff}\label{_lib_structural_2fluxbalance_8cpp_a8a6cdbcc71734664f23c0a09b0abc1ff}} 
+\index{Lib\+Structural/fluxbalance.\+cpp@{Lib\+Structural/fluxbalance.\+cpp}!Flux\+Balance\+\_\+minimize@{Flux\+Balance\+\_\+minimize}}
+\index{Flux\+Balance\+\_\+minimize@{Flux\+Balance\+\_\+minimize}!Lib\+Structural/fluxbalance.\+cpp@{Lib\+Structural/fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Flux\+Balance\+\_\+minimize()}{FluxBalance\_minimize()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} Flux\+Balance\+\_\+minimize (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$$\ast$}]{out\+Names,  }\item[{double $\ast$$\ast$}]{out\+Values,  }\item[{\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} $\ast$}]{out\+Length }\end{DoxyParamCaption})}
+
+
+
+transforms the current model along with constraint and objectives as lp problem and solves the minimization objective using lpsolve. 
+
+\mbox{\Hypertarget{_lib_structural_2fluxbalance_8cpp_a9d5636acfac372d872a73ba29e0ade84}\label{_lib_structural_2fluxbalance_8cpp_a9d5636acfac372d872a73ba29e0ade84}} 
+\index{Lib\+Structural/fluxbalance.\+cpp@{Lib\+Structural/fluxbalance.\+cpp}!Flux\+Balance\+\_\+set\+Constraints@{Flux\+Balance\+\_\+set\+Constraints}}
+\index{Flux\+Balance\+\_\+set\+Constraints@{Flux\+Balance\+\_\+set\+Constraints}!Lib\+Structural/fluxbalance.\+cpp@{Lib\+Structural/fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Flux\+Balance\+\_\+set\+Constraints()}{FluxBalance\_setConstraints()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} Flux\+Balance\+\_\+set\+Constraints (\begin{DoxyParamCaption}\item[{const char $\ast$$\ast$}]{ids,  }\item[{const \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} $\ast$}]{operations,  }\item[{const double $\ast$}]{values,  }\item[{const \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}}]{length }\end{DoxyParamCaption})}
+
+
+
+replaces the current constraints with the ones specified in the given constraint vector 
+
+\mbox{\Hypertarget{_lib_structural_2fluxbalance_8cpp_a2b88fb8e0a96ea37a0a1eda0552a5930}\label{_lib_structural_2fluxbalance_8cpp_a2b88fb8e0a96ea37a0a1eda0552a5930}} 
+\index{Lib\+Structural/fluxbalance.\+cpp@{Lib\+Structural/fluxbalance.\+cpp}!Flux\+Balance\+\_\+set\+Objectives@{Flux\+Balance\+\_\+set\+Objectives}}
+\index{Flux\+Balance\+\_\+set\+Objectives@{Flux\+Balance\+\_\+set\+Objectives}!Lib\+Structural/fluxbalance.\+cpp@{Lib\+Structural/fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Flux\+Balance\+\_\+set\+Objectives()}{FluxBalance\_setObjectives()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} Flux\+Balance\+\_\+set\+Objectives (\begin{DoxyParamCaption}\item[{const char $\ast$$\ast$}]{ids,  }\item[{const double $\ast$}]{values,  }\item[{const \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}}]{length }\end{DoxyParamCaption})}
+
+
+
+replaces all current objectives with the ones specified in the given objective vector 
+
+\mbox{\Hypertarget{_lib_structural_2fluxbalance_8cpp_a5bad84f27e0c66bf7cc5376ccbb77afd}\label{_lib_structural_2fluxbalance_8cpp_a5bad84f27e0c66bf7cc5376ccbb77afd}} 
+\index{Lib\+Structural/fluxbalance.\+cpp@{Lib\+Structural/fluxbalance.\+cpp}!Flux\+Balance\+\_\+solve@{Flux\+Balance\+\_\+solve}}
+\index{Flux\+Balance\+\_\+solve@{Flux\+Balance\+\_\+solve}!Lib\+Structural/fluxbalance.\+cpp@{Lib\+Structural/fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Flux\+Balance\+\_\+solve()}{FluxBalance\_solve()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} Flux\+Balance\+\_\+solve (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$$\ast$}]{out\+Names,  }\item[{double $\ast$$\ast$}]{out\+Values,  }\item[{\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} $\ast$}]{out\+Length }\end{DoxyParamCaption})}
+
+
+
+transforms the current model along with constraint and objectives as lp problem and solves the maximization objective using lpsolve. 
+
+\mbox{\Hypertarget{_lib_structural_2fluxbalance_8cpp_a8707232c02769c6fcf5a29c2f66a8085}\label{_lib_structural_2fluxbalance_8cpp_a8707232c02769c6fcf5a29c2f66a8085}} 
+\index{Lib\+Structural/fluxbalance.\+cpp@{Lib\+Structural/fluxbalance.\+cpp}!Flux\+Balance\+\_\+write\+To\+Free\+M\+P\+S\+File@{Flux\+Balance\+\_\+write\+To\+Free\+M\+P\+S\+File}}
+\index{Flux\+Balance\+\_\+write\+To\+Free\+M\+P\+S\+File@{Flux\+Balance\+\_\+write\+To\+Free\+M\+P\+S\+File}!Lib\+Structural/fluxbalance.\+cpp@{Lib\+Structural/fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Flux\+Balance\+\_\+write\+To\+Free\+M\+P\+S\+File()}{FluxBalance\_writeToFreeMPSFile()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} Flux\+Balance\+\_\+write\+To\+Free\+M\+P\+S\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+writes the LP problem specified by model, objectives and constraints as free mps file 
+
+\mbox{\Hypertarget{_lib_structural_2fluxbalance_8cpp_a4cf55ac75e9abeb18d9acf5dbe708077}\label{_lib_structural_2fluxbalance_8cpp_a4cf55ac75e9abeb18d9acf5dbe708077}} 
+\index{Lib\+Structural/fluxbalance.\+cpp@{Lib\+Structural/fluxbalance.\+cpp}!Flux\+Balance\+\_\+write\+To\+L\+P\+File@{Flux\+Balance\+\_\+write\+To\+L\+P\+File}}
+\index{Flux\+Balance\+\_\+write\+To\+L\+P\+File@{Flux\+Balance\+\_\+write\+To\+L\+P\+File}!Lib\+Structural/fluxbalance.\+cpp@{Lib\+Structural/fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Flux\+Balance\+\_\+write\+To\+L\+P\+File()}{FluxBalance\_writeToLPFile()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} Flux\+Balance\+\_\+write\+To\+L\+P\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+writes the LP problem specified by model, objectives and constraints as lp file 
+
+\mbox{\Hypertarget{_lib_structural_2fluxbalance_8cpp_ac0f6ef1646cd3b372f7975a2839daa88}\label{_lib_structural_2fluxbalance_8cpp_ac0f6ef1646cd3b372f7975a2839daa88}} 
+\index{Lib\+Structural/fluxbalance.\+cpp@{Lib\+Structural/fluxbalance.\+cpp}!Flux\+Balance\+\_\+write\+To\+M\+P\+S\+File@{Flux\+Balance\+\_\+write\+To\+M\+P\+S\+File}}
+\index{Flux\+Balance\+\_\+write\+To\+M\+P\+S\+File@{Flux\+Balance\+\_\+write\+To\+M\+P\+S\+File}!Lib\+Structural/fluxbalance.\+cpp@{Lib\+Structural/fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Flux\+Balance\+\_\+write\+To\+M\+P\+S\+File()}{FluxBalance\_writeToMPSFile()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} Flux\+Balance\+\_\+write\+To\+M\+P\+S\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+writes the LP problem specified by model, objectives and constraints as mps file 
+

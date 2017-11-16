@@ -1,0 +1,56 @@
+\hypertarget{zhbevd_8c}{}\section{zhbevd.\+c File Reference}
+\label{zhbevd_8c}\index{zhbevd.\+c@{zhbevd.\+c}}
+{\ttfamily \#include \char`\"{}f2c.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}blaswrap.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{zhbevd_8c_a39089d911835fff06a70b0556610e7e8}{zhbevd\+\_\+} (char $\ast$jobz, char $\ast$uplo, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$n, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$kd, \hyperlink{structdoublecomplex}{doublecomplex} $\ast$ab, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$ldab, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a1e69afaa4e6077b67397e6c36454b97a}{doublereal} $\ast$w, \hyperlink{structdoublecomplex}{doublecomplex} $\ast$z\+\_\+\+\_\+, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$ldz, \hyperlink{structdoublecomplex}{doublecomplex} $\ast$work, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$lwork, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a1e69afaa4e6077b67397e6c36454b97a}{doublereal} $\ast$rwork, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$lrwork, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$iwork, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$liwork, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$\hyperlink{lp__lib_8h_a5c24524aad8cde9b56633a9d8290f857}{info})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} \hyperlink{zhbevd_8c_aac061f9822f71d2164eeeaae0e2a342c}{c\+\_\+\+\_\+1} = 1
+\item 
+static \hyperlink{structdoublecomplex}{doublecomplex} \hyperlink{zhbevd_8c_ad99d79248621b52aa42036799b839c90}{c\+\_\+b1} = \{0.,0.\}
+\item 
+static \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a1e69afaa4e6077b67397e6c36454b97a}{doublereal} \hyperlink{zhbevd_8c_a15b4a8c9da35b7ad212a485f4148c237}{c\+\_\+b13} = 1.
+\item 
+static \hyperlink{structdoublecomplex}{doublecomplex} \hyperlink{zhbevd_8c_aff0bd03b3a13b46ed9be8f7e11a7caa3}{c\+\_\+b2} = \{1.,0.\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{zhbevd_8c_a39089d911835fff06a70b0556610e7e8}\label{zhbevd_8c_a39089d911835fff06a70b0556610e7e8}} 
+\index{zhbevd.\+c@{zhbevd.\+c}!zhbevd\+\_\+@{zhbevd\+\_\+}}
+\index{zhbevd\+\_\+@{zhbevd\+\_\+}!zhbevd.\+c@{zhbevd.\+c}}
+\subsubsection{\texorpdfstring{zhbevd\+\_\+()}{zhbevd\_()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} zhbevd\+\_\+ (\begin{DoxyParamCaption}\item[{char $\ast$}]{jobz,  }\item[{char $\ast$}]{uplo,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{n,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{kd,  }\item[{\hyperlink{structdoublecomplex}{doublecomplex} $\ast$}]{ab,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{ldab,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a1e69afaa4e6077b67397e6c36454b97a}{doublereal} $\ast$}]{w,  }\item[{\hyperlink{structdoublecomplex}{doublecomplex} $\ast$}]{z\+\_\+\+\_\+,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{ldz,  }\item[{\hyperlink{structdoublecomplex}{doublecomplex} $\ast$}]{work,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{lwork,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a1e69afaa4e6077b67397e6c36454b97a}{doublereal} $\ast$}]{rwork,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{lrwork,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{iwork,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{liwork,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{info }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{zhbevd_8c_aac061f9822f71d2164eeeaae0e2a342c}\label{zhbevd_8c_aac061f9822f71d2164eeeaae0e2a342c}} 
+\index{zhbevd.\+c@{zhbevd.\+c}!c\+\_\+\+\_\+1@{c\+\_\+\+\_\+1}}
+\index{c\+\_\+\+\_\+1@{c\+\_\+\+\_\+1}!zhbevd.\+c@{zhbevd.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+\+\_\+1}{c\_\_1}}
+{\footnotesize\ttfamily \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} c\+\_\+\+\_\+1 = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{zhbevd_8c_ad99d79248621b52aa42036799b839c90}\label{zhbevd_8c_ad99d79248621b52aa42036799b839c90}} 
+\index{zhbevd.\+c@{zhbevd.\+c}!c\+\_\+b1@{c\+\_\+b1}}
+\index{c\+\_\+b1@{c\+\_\+b1}!zhbevd.\+c@{zhbevd.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+b1}{c\_b1}}
+{\footnotesize\ttfamily \hyperlink{structdoublecomplex}{doublecomplex} c\+\_\+b1 = \{0.,0.\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{zhbevd_8c_a15b4a8c9da35b7ad212a485f4148c237}\label{zhbevd_8c_a15b4a8c9da35b7ad212a485f4148c237}} 
+\index{zhbevd.\+c@{zhbevd.\+c}!c\+\_\+b13@{c\+\_\+b13}}
+\index{c\+\_\+b13@{c\+\_\+b13}!zhbevd.\+c@{zhbevd.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+b13}{c\_b13}}
+{\footnotesize\ttfamily \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a1e69afaa4e6077b67397e6c36454b97a}{doublereal} c\+\_\+b13 = 1.\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{zhbevd_8c_aff0bd03b3a13b46ed9be8f7e11a7caa3}\label{zhbevd_8c_aff0bd03b3a13b46ed9be8f7e11a7caa3}} 
+\index{zhbevd.\+c@{zhbevd.\+c}!c\+\_\+b2@{c\+\_\+b2}}
+\index{c\+\_\+b2@{c\+\_\+b2}!zhbevd.\+c@{zhbevd.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+b2}{c\_b2}}
+{\footnotesize\ttfamily \hyperlink{structdoublecomplex}{doublecomplex} c\+\_\+b2 = \{1.,0.\}\hspace{0.3cm}{\ttfamily [static]}}
+

@@ -1,0 +1,58 @@
+\hypertarget{examples_2cpp_2fluxbalance_8cpp}{}\section{fluxbalance.\+cpp File Reference}
+\label{examples_2cpp_2fluxbalance_8cpp}\index{fluxbalance.\+cpp@{fluxbalance.\+cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$libstructural.\+h$>$}\newline
+{\ttfamily \#include $<$fluxbalance.\+h$>$}\newline
+{\ttfamily \#include $<$matrix.\+h$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} \hyperlink{examples_2cpp_2fluxbalance_8cpp_aaa98657c2637a39997d580db8c95af33}{Initialize\+Values} (Double\+Matrix $\ast$\&o\+Matrix, vector$<$ string $>$ \&species\+Names, vector$<$ double $>$ \&initial\+Concentrations, vector$<$ string $>$ \&reaction\+Names)
+\item 
+\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{examples_2cpp_2fluxbalance_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static double \hyperlink{examples_2cpp_2fluxbalance_8cpp_a5f75f182cad994ff3d91ca9b0d093598}{S\+T\+O\+I\+C\+H\+I\+O\+M\+E\+T\+RY} \mbox{[}11\mbox{]}\mbox{[}11\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{examples_2cpp_2fluxbalance_8cpp_aaa98657c2637a39997d580db8c95af33}\label{examples_2cpp_2fluxbalance_8cpp_aaa98657c2637a39997d580db8c95af33}} 
+\index{examples/cpp/fluxbalance.\+cpp@{examples/cpp/fluxbalance.\+cpp}!Initialize\+Values@{Initialize\+Values}}
+\index{Initialize\+Values@{Initialize\+Values}!examples/cpp/fluxbalance.\+cpp@{examples/cpp/fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{Initialize\+Values()}{InitializeValues()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} Initialize\+Values (\begin{DoxyParamCaption}\item[{Double\+Matrix $\ast$\&}]{o\+Matrix,  }\item[{vector$<$ string $>$ \&}]{species\+Names,  }\item[{vector$<$ double $>$ \&}]{initial\+Concentrations,  }\item[{vector$<$ string $>$ \&}]{reaction\+Names }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{examples_2cpp_2fluxbalance_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{examples_2cpp_2fluxbalance_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{examples/cpp/fluxbalance.\+cpp@{examples/cpp/fluxbalance.\+cpp}!main@{main}}
+\index{main@{main}!examples/cpp/fluxbalance.\+cpp@{examples/cpp/fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} main (\begin{DoxyParamCaption}\item[{\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{examples_2cpp_2fluxbalance_8cpp_a5f75f182cad994ff3d91ca9b0d093598}\label{examples_2cpp_2fluxbalance_8cpp_a5f75f182cad994ff3d91ca9b0d093598}} 
+\index{examples/cpp/fluxbalance.\+cpp@{examples/cpp/fluxbalance.\+cpp}!S\+T\+O\+I\+C\+H\+I\+O\+M\+E\+T\+RY@{S\+T\+O\+I\+C\+H\+I\+O\+M\+E\+T\+RY}}
+\index{S\+T\+O\+I\+C\+H\+I\+O\+M\+E\+T\+RY@{S\+T\+O\+I\+C\+H\+I\+O\+M\+E\+T\+RY}!examples/cpp/fluxbalance.\+cpp@{examples/cpp/fluxbalance.\+cpp}}
+\subsubsection{\texorpdfstring{S\+T\+O\+I\+C\+H\+I\+O\+M\+E\+T\+RY}{STOICHIOMETRY}}
+{\footnotesize\ttfamily double S\+T\+O\+I\+C\+H\+I\+O\+M\+E\+T\+RY\mbox{[}11\mbox{]}\mbox{[}11\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{ \{ 0.0, -2.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0, -1.0, 0.0\}, 
+\{ 0.0, 0.0, 2.0, -1.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0\}, 
+\{ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0, -1.0, 0.0, 0.0\}, 
+\{ 0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0\}, 
+\{ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, -1.0\}, 
+\{ 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0\}, 
+\{ 1.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0\}, 
+\{ 0.0, 0.0, 0.0, 0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0\}, 
+\{ 0.0, 1.0, -1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0\}, 
+\{ 0.0, 0.0, 0.0, -1.0, 1.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0\}, 
+\{ 0.0, 2.0, 0.0, 0.0, -1.0, -1.0, 0.0, 0.0, 0.0, 1.0, 0.0\}\}
+\end{DoxyCode}

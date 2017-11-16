@@ -1,0 +1,66 @@
+\hypertarget{class_event_assignment}{}\section{Event\+Assignment Class Reference}
+\label{class_event_assignment}\index{Event\+Assignment@{Event\+Assignment}}
+
+
+{\ttfamily \#include $<$Event\+Assignment.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} An assignment to a variable by an S\+B\+ML {\itshape event}.
+
+\hyperlink{class_event}{Event} contains an optional element called \char`\"{}list\+Of\+Event\+Assignments\char`\"{}, of class \hyperlink{class_list_of_event_assignments}{List\+Of\+Event\+Assignments}. In every instance of an event definition in a model, the object\textquotesingle{}s \char`\"{}list\+Of\+Event\+Assignments\char`\"{} element must have a non-\/empty list of one or more \char`\"{}event\+Assignment\char`\"{} elements of class \hyperlink{class_event_assignment}{Event\+Assignment}. The object class \hyperlink{class_event_assignment}{Event\+Assignment} has one required attribute, \char`\"{}variable\char`\"{}, and a required element, \char`\"{}math\char`\"{}. Being derived from \hyperlink{class_s_base}{S\+Base}, it also has all the usual attributes and elements of its parent class.
+
+An \hyperlink{class_event}{Event} object defines when the event can occur, the variables that are affected by the event, and how the variables are affected. The purpose of the \hyperlink{class_event_assignment}{Event\+Assignment} object class is to define how variables are affected by an \hyperlink{class_event}{Event}. In S\+B\+ML Level~2, every \hyperlink{class_event}{Event} object instance must have a nonempty list of event assignments; in S\+B\+ML Level~3, the list of assignments is optional.
+
+The operation of an \hyperlink{class_event}{Event} is divided into two phases (regardless of whether a delay is involved)\+: one phase when the event is {\itshape triggered}, and the other when the event is {\itshape executed}. \hyperlink{class_event_assignment}{Event\+Assignment} objects are interpreted when an event is executed. The effects are described below.\hypertarget{class_event_assignment_event-variable}{}\subsection{The attribute \char`\"{}variable\char`\"{}}\label{class_event_assignment_event-variable}
+The \hyperlink{class_event_assignment}{Event\+Assignment} attribute \char`\"{}variable\char`\"{} must be the identifier of an existing \hyperlink{class_compartment}{Compartment}, \hyperlink{class_species}{Species}, \hyperlink{class_species_reference}{Species\+Reference}, or \hyperlink{class_parameter}{Parameter} instance defined in the model. In S\+B\+ML Level~3 Version~2, this list was expanded to include identifiers of S\+B\+ML Level~3 package variables that have both mathematical meaning and the ability to be assigned. When the event is executed, the value of the model component identified by \char`\"{}variable\char`\"{} is changed by the \hyperlink{class_event_assignment}{Event\+Assignment} to the value computed by the \char`\"{}math\char`\"{} element; that is, a species\textquotesingle{} quantity, species reference\textquotesingle{}s stoichiometry, compartment\textquotesingle{}s size or parameter\textquotesingle{}s value are reset to the value computed by \char`\"{}math\char`\"{}.
+
+Certain restrictions are placed on what can appear in \char`\"{}variable\char`\"{}\+: 
+\begin{DoxyItemize}
+\item The object identified by the value of the \hyperlink{class_event_assignment}{Event\+Assignment} attribute \char`\"{}variable\char`\"{} must not have its \char`\"{}constant\char`\"{} attribute set to or default to {\ttfamily true}. (Constants cannot be affected by events.)
+
+
+\item The \char`\"{}variable\char`\"{} attribute must not contain the identifier of a reaction. In S\+B\+ML Level~2 and S\+B\+ML Level~3 Version~1, only species, species references, compartment and parameter values may be set by an \hyperlink{class_event}{Event}. In S\+B\+ML Level~3 Version~2, the \char`\"{}variable\char`\"{} attribute may also be the identifier of an S\+B\+ML Level~3 package element with mathematical meaning and the ability to be assigned a value. This situation may only arise if the S\+B\+ML package is present in the S\+B\+ML document with a package\+:required attribute of {\ttfamily true} 
+
+
+\item The value of every \char`\"{}variable\char`\"{} attribute must be unique among the set of \hyperlink{class_event_assignment}{Event\+Assignment} structures within a given \hyperlink{class_event}{Event} structure. In other words, a single event cannot have multiple \hyperlink{class_event_assignment}{Event\+Assignment} objects assigning the same variable. (All of them would be performed at the same time when that particular \hyperlink{class_event}{Event} triggers, resulting in indeterminacy.) However, {\itshape separate} \hyperlink{class_event}{Event} instances can refer to the same variable.
+
+
+\item A variable cannot be assigned a value in an \hyperlink{class_event_assignment}{Event\+Assignment} object instance and also be assigned a value by an \hyperlink{class_assignment_rule}{Assignment\+Rule}; i.\+e., the value of an \hyperlink{class_event_assignment}{Event\+Assignment}\textquotesingle{}s \char`\"{}variable\char`\"{} attribute cannot be the same as the value of a \hyperlink{class_assignment_rule}{Assignment\+Rule}\textquotesingle{} \char`\"{}variable\char`\"{} attribute. (Assignment rules hold at all times, therefore it would be inconsistent to also define an event that reassigns the value of the same variable.) 
+\end{DoxyItemize}
+
+If the variable attribute of an \hyperlink{class_event_assignment}{Event\+Assignment} object references an object in an S\+B\+ML namespace that is not understood by the interpreter reading a given S\+B\+ML document (that is, if the object is defined by an S\+B\+ML Level~3 package that the software does not support), the event assignment must be ignored--the object\textquotesingle{}s value will not need to be set, as the interpreter could not understand that package. If an interpreter cannot establish whether a referenced object is missing from the model or instead is defined in an S\+B\+ML namespace not understood by the interpreter, it may produce a warning to the user. (The latter situation may only arise if an S\+B\+ML package is present in the S\+B\+ML document with a package\+:required attribute of \char`\"{}true\char`\"{}.)
+
+Note that the time of assignment of the object identified by the value of the \char`\"{}variable\char`\"{} attribute is always the time at which the \hyperlink{class_event}{Event} is {\itshape executed}, not when it is {\itshape triggered}. The timing is controlled by the optional \hyperlink{class_delay}{Delay} in an \hyperlink{class_event}{Event}. The time of assignment is not affected by the \char`\"{}use\+Values\+From\+Trigger\+Time\char`\"{} attribute on \hyperlink{class_event}{Event}---that attribute affects the time at which the \hyperlink{class_event_assignment}{Event\+Assignment}\textquotesingle{}s \char`\"{}math\char`\"{} expression is {\itshape evaluated}. In other words, S\+B\+ML allows decoupling the time at which the \char`\"{}variable\char`\"{} is assigned from the time at which its value expression is calculated.\hypertarget{class_event_assignment_event-math}{}\subsection{The \char`\"{}math\char`\"{} subelement in an Event\+Assignment}\label{class_event_assignment_event-math}
+The Math\+ML expression contained in an \hyperlink{class_event_assignment}{Event\+Assignment} defines the new value of the variable being assigned by the \hyperlink{class_event}{Event}.
+
+As mentioned above, the time at which the expression in \char`\"{}math\char`\"{} is evaluated is determined by the attribute \char`\"{}use\+Values\+From\+Trigger\+Time\char`\"{} on \hyperlink{class_event}{Event}. If the attribute value is {\ttfamily true}, the expression must be evaluated when the event is {\itshape triggered}; more precisely, the values of identifiers occurring in Math\+ML {\ttfamily $<$ci$>$} elements in the \hyperlink{class_event_assignment}{Event\+Assignment}\textquotesingle{}s \char`\"{}math\char`\"{} expression are the values they have at the point when the event {\itshape triggered}. If, instead, \char`\"{}use\+Values\+From\+Trigger\+Time\char`\"{}\textquotesingle{}s value is {\ttfamily false}, it means the values at {\itshape execution} time should be used; that is, the values of identifiers occurring in Math\+ML {\ttfamily $<$ci$>$} elements in the \hyperlink{class_event_assignment}{Event\+Assignment}\textquotesingle{}s \char`\"{}math\char`\"{} expression are the values they have at the point when the event {\itshape executed}.\hypertarget{class_event_assignment_eventassignment-version-diffs}{}\subsection{S\+B\+M\+L Level/\+Version differences}\label{class_event_assignment_eventassignment-version-diffs}
+Between Version~4 and previous versions of S\+B\+ML Level~2, the requirements regarding the matching of units between an Eveng\+Assignment\textquotesingle{}s formula and the units of the object identified by the \char`\"{}variable\char`\"{} attribute changed. Previous versions required consistency, but in S\+B\+ML Level~2 Version~4 and in S\+B\+ML Level~3, unit consistency is only {\itshape recommended}. More precisely\+: 
+\begin{DoxyItemize}
+\item In the case of a species, an \hyperlink{class_event_assignment}{Event\+Assignment} sets the referenced species\textquotesingle{} quantity (concentration or amount of substance) to the value determined by the formula in the \hyperlink{class_event_assignment}{Event\+Assignment}\textquotesingle{}s \char`\"{}math\char`\"{} subelement. The units of the \char`\"{}math\char`\"{} formula should (in S\+B\+ML Level~2 Version~4 and in Level~3) or must (in previous Versions of Level~2) be identical to the units of the species.
+
+
+\item (S\+B\+ML Level~3 only.) In the case of a species reference, an \hyperlink{class_event_assignment}{Event\+Assignment} sets the stoichiometry of the reactant or product referenced by the \hyperlink{class_species_reference}{Species\+Reference} object to the value determined by the formula in the \char`\"{}math\char`\"{} element. The unit associated with the value produced by the \char`\"{}math\char`\"{} formula should be {\ttfamily dimensionless}, because reactant and product stoichiometries in reactions are dimensionless quantities.
+
+
+\item In the case of a compartment, an \hyperlink{class_event_assignment}{Event\+Assignment} sets the referenced compartment\textquotesingle{}s size to the size determined by the formula in the \char`\"{}math\char`\"{} subelement of the \hyperlink{class_event_assignment}{Event\+Assignment}. The overall units of the formula should (in S\+B\+ML Level~2 Version~4 and in Level~3) or must (in previous Versions of Level~2) be identical to the units specified for the size of the compartment identified by the \hyperlink{class_event_assignment}{Event\+Assignment}\textquotesingle{}s \char`\"{}variable\char`\"{} attribute.
+
+
+\item In the case of a parameter, an \hyperlink{class_event_assignment}{Event\+Assignment} sets the referenced parameter\textquotesingle{}s value to that determined by the formula in \char`\"{}math\char`\"{}. The overall units of the formula should (in S\+B\+ML Level~2 Version~4 and Level~3) or must (in previous Versions of Level~2) be identical to the units defined for the parameter.
+
+
+\item (For S\+B\+ML Level~3 Version~2 only) {\itshape In the case of an object from an S\+B\+ML Level~3 package}, an \hyperlink{class_event_assignment}{Event\+Assignment} sets the referenced object\textquotesingle{}s value (as defined by that package) to the value of the formula in \char`\"{}math\char`\"{}. The unit of measurement associated with the value produced by the formula should be the same as that object\textquotesingle{}s units attribute value (if it has such an attribute), or be equal to the units of model components of that type (if objects of that class are defined by the package as having the same units). 
+\end{DoxyItemize}
+
+Note that the formula placed in the \char`\"{}math\char`\"{} element {\itshape has no assumed units}. The consistency of the units of the formula, and the units of the entity which the assignment affects, must be explicitly established just as in the case of the value of the \hyperlink{class_delay}{Delay} subelement. An approach similar to the one discussed in the context of \hyperlink{class_delay}{Delay} may be used for the formula of an \hyperlink{class_event_assignment}{Event\+Assignment}.\hypertarget{class_event_assignment_event-asnt-restrictions}{}\subsection{Restrictions relaxed in S\+B\+M\+L Level 3 Version 2}\label{class_event_assignment_event-asnt-restrictions}
+In S\+B\+ML Level~3 Version~2, the requirement that an \hyperlink{class_event_assignment}{Event\+Assignment} have a \char`\"{}math\char`\"{} subelement was relaxed, making it optional. In this case, the \hyperlink{class_event_assignment}{Event\+Assignment} remains undefined, and unless that information is provided in some other form (such as with an S\+B\+ML Level~3 package), the \hyperlink{class_event}{Event} behaves as if it had no \hyperlink{class_event_assignment}{Event\+Assignment}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_event}{Event} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_event_assignment_8h}{Event\+Assignment.\+h}\end{DoxyCompactItemize}

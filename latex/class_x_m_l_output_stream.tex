@@ -1,0 +1,32 @@
+\hypertarget{class_x_m_l_output_stream}{}\section{X\+M\+L\+Output\+Stream Class Reference}
+\label{class_x_m_l_output_stream}\index{X\+M\+L\+Output\+Stream@{X\+M\+L\+Output\+Stream}}
+
+
+{\ttfamily \#include $<$X\+M\+L\+Output\+Stream.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} Interface to an X\+ML output stream.
+
+
+
+S\+B\+ML content is serialized using X\+ML; the resulting data can be stored and read to/from a file or data stream. Low-\/level X\+ML parsers such as Xerces provide facilities to read X\+ML data. To permit the use of different X\+ML parsers (Xerces, Expat or libxml2), lib\+S\+B\+ML implements an abstraction layer. \hyperlink{class_x_m_l_input_stream}{X\+M\+L\+Input\+Stream} and \hyperlink{class_x_m_l_output_stream}{X\+M\+L\+Output\+Stream} are two parts of that abstraction layer.
+
+\hyperlink{class_x_m_l_output_stream}{X\+M\+L\+Output\+Stream} provides a wrapper above output streams to facilitate writing X\+ML. \hyperlink{class_x_m_l_output_stream}{X\+M\+L\+Output\+Stream} keeps track of start and end elements, indentation, X\+ML namespace prefixes, and more. The interface provides features for converting non-\/text data types into appropriate textual form; this takes the form of overloaded {\ttfamily write\+Attribute(...)} methods that allow users to simply use the same method with any data type. For example, suppose an element {\ttfamily test\+Element} has two attributes, {\ttfamily size} and {\ttfamily id}, and the attributes are variables in your code as follows\+: Then, the element and the attributes can be written to the standard output stream (provided as {\ttfamily cout} in the lib\+S\+B\+ML language bindings) as follows\+:
+
+Other classes in S\+B\+ML take \hyperlink{class_x_m_l_output_stream}{X\+M\+L\+Output\+Stream} objects as arguments, and use that to write elements and attributes seamlessly to the X\+ML output stream.
+
+It is also worth noting that unlike \hyperlink{class_x_m_l_input_stream}{X\+M\+L\+Input\+Stream}, \hyperlink{class_x_m_l_output_stream}{X\+M\+L\+Output\+Stream} is actually independent of the underlying X\+ML parsers. It does not use the X\+ML parser libraries at all.
+
+\begin{DoxyNote}{Note}
+The convenience of the \hyperlink{class_x_m_l_input_stream}{X\+M\+L\+Input\+Stream} and \hyperlink{class_x_m_l_output_stream}{X\+M\+L\+Output\+Stream} abstraction may be useful for developers interested in creating parsers for other X\+ML formats besides S\+B\+ML. It can provide developers with a layer above more basic X\+ML parsers, as well as some useful programmatic elements such as \hyperlink{class_x_m_l_token}{X\+M\+L\+Token}, \hyperlink{class_x_m_l_error}{X\+M\+L\+Error}, etc.
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_x_m_l_input_stream}{X\+M\+L\+Input\+Stream} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_x_m_l_output_stream_8h}{X\+M\+L\+Output\+Stream.\+h}\end{DoxyCompactItemize}

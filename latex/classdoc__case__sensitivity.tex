@@ -1,0 +1,17 @@
+\hypertarget{classdoc__case__sensitivity}{}\section{doc\+\_\+case\+\_\+sensitivity Class Reference}
+\label{classdoc__case__sensitivity}\index{doc\+\_\+case\+\_\+sensitivity@{doc\+\_\+case\+\_\+sensitivity}}
+
+
+{\ttfamily \#include $<$L3\+Parser\+Settings.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\begin{DoxyParagraph}{}
+By default (which is the value \{L3\+P\+\_\+\+C\+O\+M\+P\+A\+R\+E\+\_\+\+B\+U\+I\+L\+T\+I\+N\+S\+\_\+\+C\+A\+S\+E\+\_\+\+I\+N\+S\+E\+N\+S\+I\+T\+I\+VE,\}), the parser compares symbols in a case {\itshape insensitive} manner for built-\/in functions such as {\ttfamily \char`\"{}sin\char`\"{}} and {\ttfamily \char`\"{}piecewise\char`\"{}}, and for constants such as {\ttfamily \char`\"{}true\char`\"{}} and {\ttfamily \char`\"{}avogadro\char`\"{}}. Setting this option to \{L3\+P\+\_\+\+C\+O\+M\+P\+A\+R\+E\+\_\+\+B\+U\+I\+L\+T\+I\+N\+S\+\_\+\+C\+A\+S\+E\+\_\+\+S\+E\+N\+S\+I\+T\+I\+VE,\} causes the parser to become case sensitive. In that mode, for example, the symbols {\ttfamily \char`\"{}sin\char`\"{}} and {\ttfamily \char`\"{}true\char`\"{}} will match the built-\/in values, but the symbols {\ttfamily \char`\"{}\+S\+I\+N\char`\"{}}, {\ttfamily \char`\"{}\+Sin\char`\"{}}, {\ttfamily \char`\"{}\+True\char`\"{}}, {\ttfamily \char`\"{}\+T\+R\+U\+E\char`\"{}}, and so on, will not. 
+\end{DoxyParagraph}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_l3_parser_settings_8h}{L3\+Parser\+Settings.\+h}\end{DoxyCompactItemize}

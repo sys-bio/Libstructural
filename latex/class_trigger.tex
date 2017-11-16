@@ -1,0 +1,40 @@
+\hypertarget{class_trigger}{}\section{Trigger Class Reference}
+\label{class_trigger}\index{Trigger@{Trigger}}
+
+
+{\ttfamily \#include $<$Trigger.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} The trigger expression for an S\+B\+ML {\itshape event}.
+
+An \hyperlink{class_event}{Event} object defines when the event can occur, the variables that are affected by the event, and how the variables are affected. The \hyperlink{class_trigger}{Trigger} construct in S\+B\+ML is used to define a mathematical expression that determines when an \hyperlink{class_event}{Event} is {\itshape triggered}.
+
+A \hyperlink{class_trigger}{Trigger} object in S\+B\+ML Level~2 and Level~3 contains one subelement named \char`\"{}math\char`\"{} containing a Math\+ML expression. The expression is evaluated as a value of type {\ttfamily boolean}. The exact moment at which the expression evaluates to {\ttfamily true} is the time point when the \hyperlink{class_event}{Event} is {\itshape triggered}. In S\+B\+ML Level~3, \hyperlink{class_trigger}{Trigger} has additional attributes that must be assigned values; they are discussed in a separate section below.
+
+In S\+B\+ML Level~2 and S\+B\+ML Level~3 Version~1, the \char`\"{}math\char`\"{} subelement is required, and it must evaluate to a {\ttfamily boolean} expression. In S\+B\+ML Level~3 Version~2, those restrictions are relaxed\+: the \char`\"{}math\char`\"{} element is optional, and numeric values are allowed in Boolean contexts (a \textquotesingle{}0\textquotesingle{} is interpreted as {\ttfamily false}, and all other values are interpreted as {\ttfamily true}). If a \hyperlink{class_trigger}{Trigger} with no \char`\"{}math\char`\"{} is present in an \hyperlink{class_event}{Event}, that \hyperlink{class_event}{Event} will never {\itshape trigger}, unless that missing information is included in an S\+B\+ML Level~3 package.
+
+An event only {\itshape triggers} when its \hyperlink{class_trigger}{Trigger} expression makes the transition in value from {\ttfamily false} to {\ttfamily true}. The event will also trigger at any subsequent time points when the trigger makes this transition; in other words, an event can be triggered multiple times during a simulation if its trigger condition makes the transition from {\ttfamily false} to {\ttfamily true} more than once. In S\+B\+ML Level~3, the behavior at the very start of simulation (i.\+e., at {\itshape t = 0}, where {\itshape t} stands for time) is determined in part by the boolean flag \char`\"{}initial\+Value\char`\"{}. This and other additional features introduced in S\+B\+ML Level~3 are discussed further below.\hypertarget{class_trigger_trigger-version-diffs}{}\subsection{Version differences}\label{class_trigger_trigger-version-diffs}
+S\+B\+ML Level~3 Version~1 introduces two required attributes on the \hyperlink{class_trigger}{Trigger} object\+: \char`\"{}persistent\char`\"{} and \char`\"{}initial\+Value\char`\"{}. The rest of this introduction describes these two attributes.\hypertarget{class_trigger_trigger-persistent}{}\subsubsection{The \char`\"{}persistent\char`\"{} attribute on Trigger}\label{class_trigger_trigger-persistent}
+In the interval between when an \hyperlink{class_event}{Event} object {\itshape triggers} (i.\+e., its \hyperlink{class_trigger}{Trigger} object expression transitions in value from {\ttfamily false} to {\ttfamily true}) and when its assignments are to be {\itshape executed}, conditions in the model may change such that the trigger expression transitions back from {\ttfamily true} to {\ttfamily false}. Should the event\textquotesingle{}s assignments still be made if this happens? Answering this question is the purpose of the \char`\"{}persistent\char`\"{} attribute on \hyperlink{class_trigger}{Trigger}.
+
+If the boolean attribute \char`\"{}persistent\char`\"{} has a value of {\ttfamily true}, then once the event is triggered, all of its assignments are always performed when the time of execution is reached. The name {\itshape persistent} is meant to evoke the idea that the trigger expression does not have to be re-\/checked after it triggers if \char`\"{}persistent\char`\"{}={\ttfamily true}. Conversely, if the attribute value is {\ttfamily false}, then the trigger expression is not assumed to persist\+: if the expression transitions in value back to {\ttfamily false} at any time between when the event triggered and when it is to be executed, the event is no longer considered to have triggered and its assignments are not executed. (If the trigger expression transitions once more to {\ttfamily true} after that point, then the event is triggered, but this then constitutes a whole new event trigger-\/and-\/execute sequence.)
+
+The \char`\"{}persistent\char`\"{} attribute can be especially useful when \hyperlink{class_event}{Event} objects contain \hyperlink{class_delay}{Delay} objects, but it is relevant even in a model without delays if the model contains two or more events. As explained in the introduction to this section, the operation of all events in S\+B\+ML (delayed or not) is conceptually divided into two phases, {\itshape triggering} and {\itshape execution}; however, unless events have priorities associated with them, S\+B\+ML does not mandate a particular ordering of event execution in the case of simultaneous events. Models with multiple events can lead to situations where the execution of one event affects another event\textquotesingle{}s trigger expression value. If that other event has \char`\"{}persistent\char`\"{}={\ttfamily false}, and its trigger expression evaluates to {\ttfamily false} before it is to be executed, the event must not be executed after all.\hypertarget{class_trigger_trigger-initialvalue}{}\subsubsection{The \char`\"{}initial\+Value\char`\"{} attribute on Trigger}\label{class_trigger_trigger-initialvalue}
+As mentioned above, an event {\itshape triggers} when the mathematical expression in its \hyperlink{class_trigger}{Trigger} object transitions in value from {\ttfamily false} to {\ttfamily true}. An unanswered question concerns what happens at the start of a simulation\+: can event triggers make this transition at {\itshape t = 0}, where {\itshape t} stands for time?
+
+In order to determine whether an event may trigger at {\itshape t = 0}, it is necessary to know what value the \hyperlink{class_trigger}{Trigger} object\textquotesingle{}s \char`\"{}math\char`\"{} expression had immediately prior to {\itshape t = 0}. This starting value of the trigger expression is determined by the value of the boolean attribute \char`\"{}initial\+Value\char`\"{}. A value of {\ttfamily true} means the trigger expression is taken to have the value {\ttfamily true} immediately prior to {\itshape t = 0}. In that case, the trigger cannot transition in value from {\ttfamily false} to {\ttfamily true} at the moment simulation begins (because it has the value {\ttfamily true} both before and after {\itshape t = 0}), and can only make the transition from {\ttfamily false} to {\ttfamily true} sometime {\itshape after} {\itshape t = 0}. (To do that, it would also first have to transition to {\ttfamily false} before it could make the transition from {\ttfamily false} back to {\ttfamily true}.) Conversely, if \char`\"{}initial\+Value\char`\"{}={\ttfamily false}, then the trigger expression is assumed to start with the value {\ttfamily false}, and therefore may trigger at {\itshape t = 0} if the expression evaluates to {\ttfamily true} at that moment.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_event}{Event} 
+
+\hyperlink{class_delay}{Delay} 
+
+\hyperlink{class_event_assignment}{Event\+Assignment} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_trigger_8h}{Trigger.\+h}\end{DoxyCompactItemize}

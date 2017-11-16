@@ -1,0 +1,17 @@
+\hypertarget{classdoc__note__object__is__copied}{}\section{doc\+\_\+note\+\_\+object\+\_\+is\+\_\+copied Class Reference}
+\label{classdoc__note__object__is__copied}\index{doc\+\_\+note\+\_\+object\+\_\+is\+\_\+copied@{doc\+\_\+note\+\_\+object\+\_\+is\+\_\+copied}}
+
+
+{\ttfamily \#include $<$common-\/documentation.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\begin{DoxyNote}{Note}
+This method should be used with some caution. The fact that this method {\itshape copies} the object passed to it means that the caller will be left holding a physically different object instance than the one contained inside this object. Changes made to the original object instance (such as resetting attribute values) will {\itshape not affect the instance in this object}. In addition, the caller should make sure to free the original object if it is no longer being used, or else a memory leak will result. Please see other methods on this class (particularly a corresponding method whose name begins with the word {\ttfamily create}) for alternatives that do not lead to these issues. 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{common-documentation_8h}{common-\/documentation.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,105 @@
+\hypertarget{class_species_reference}{}\section{Species\+Reference Class Reference}
+\label{class_species_reference}\index{Species\+Reference@{Species\+Reference}}
+
+
+{\ttfamily \#include $<$Species\+Reference.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} A reference to an S\+B\+ML species in a reaction.
+
+The \hyperlink{class_reaction}{Reaction} structure provides a way to express which species act as reactants and which species act as products in a reaction. In a given reaction, references to those species acting as reactants and/or products are made using instances of \hyperlink{class_species_reference}{Species\+Reference} structures in a \hyperlink{class_reaction}{Reaction} object\textquotesingle{}s lists of reactants and products.
+
+A species can occur more than once in the lists of reactants and products of a given \hyperlink{class_reaction}{Reaction} instance. The effective stoichiometry for a species in a reaction is the sum of the stoichiometry values given on the \hyperlink{class_species_reference}{Species\+Reference} object in the list of products minus the sum of stoichiometry values given on the \hyperlink{class_species_reference}{Species\+Reference} objects in the list of reactants. A positive value indicates the species is effectively a product and a negative value indicates the species is effectively a reactant. S\+B\+ML places no restrictions on the effective stoichiometry of a species in a reaction; for example, it can be zero. In the following S\+B\+ML fragment, the two reactions have the same effective stoichiometry for all their species\+: \begin{DoxyVerb}<reaction id="x">
+    <listOfReactants>
+        <speciesReference species="a"/>
+        <speciesReference species="a"/>
+        <speciesReference species="b"/>
+    </listOfReactants>
+    <listOfProducts>
+        <speciesReference species="c"/>
+        <speciesReference species="b"/>
+    </listProducts>
+</reaction>
+<reaction id="y">
+    <listOfReactants>
+        <speciesReference species="a" stoichiometry="2"/>
+    </listOfReactants>
+    <listOfProducts>
+        <speciesReference species="c"/>
+    </listProducts>
+</reaction>
+\end{DoxyVerb}
+
+
+The precise structure of \hyperlink{class_species_reference}{Species\+Reference} differs between S\+B\+ML Level~2 and Level~3. We discuss the two variants in separate sections below.\hypertarget{class_species_reference_spr-l2}{}\subsection{Species\+Reference in S\+B\+M\+L Level 2}\label{class_species_reference_spr-l2}
+The mandatory \char`\"{}species\char`\"{} attribute of \hyperlink{class_species_reference}{Species\+Reference} must have as its value the identifier of an existing species defined in the enclosing \hyperlink{class_model}{Model}. The species is thereby designated as a reactant or product in the reaction. Which one it is (i.\+e., reactant or product) is indicated by whether the \hyperlink{class_species_reference}{Species\+Reference} appears in the \hyperlink{class_reaction}{Reaction}\textquotesingle{}s \char`\"{}reactant\char`\"{} or \char`\"{}product\char`\"{} lists.
+
+Product and reactant stoichiometries can be specified using {\itshape either} \char`\"{}stoichiometry\char`\"{} or \char`\"{}stoichiometry\+Math\char`\"{} in a \hyperlink{class_species_reference}{Species\+Reference} object. The \char`\"{}stoichiometry\char`\"{} attribute is of type double and should contain values greater than zero (0). The \char`\"{}stoichiometry\+Math\char`\"{} element is implemented as an element containing a Math\+ML expression. These two are mutually exclusive; only one of \char`\"{}stoichiometry\char`\"{} or \char`\"{}stoichiometry\+Math\char`\"{} should be defined in a given \hyperlink{class_species_reference}{Species\+Reference} instance. When neither the attribute nor the element is present, the value of \char`\"{}stoichiometry\char`\"{} in the \hyperlink{class_species_reference}{Species\+Reference} instance defaults to {\ttfamily 1}.
+
+For maximum interoperability, the \char`\"{}stoichiometry\char`\"{} attribute should be used in preference to \char`\"{}stoichiometry\+Math\char`\"{} when a species\textquotesingle{} stoichiometry is a simple scalar number (integer or decimal). When the stoichiometry is a rational number, or when it is a more complicated formula, \char`\"{}stoichiometry\+Math\char`\"{} must be used. The Math\+ML expression in \char`\"{}stoichiometry\+Math\char`\"{} may also refer to identifiers of entities in a model (except reaction identifiers). However, the only species identifiers that can be used in \char`\"{}stoichiometry\+Math\char`\"{} are those referenced in the \hyperlink{class_reaction}{Reaction} list of reactants, products and modifiers.
+
+The following is a simple example of a species reference for species {\ttfamily X0}, with stoichiometry {\ttfamily 2}, in a list of reactants within a reaction having the identifier {\ttfamily J1\+:} \begin{DoxyVerb}<model>
+    ...
+    <listOfReactions>
+        <reaction id="J1">
+            <listOfReactants>
+                <speciesReference species="X0" stoichiometry="2">
+            </listOfReactants>
+            ...
+        </reaction>
+        ...
+    </listOfReactions>
+    ...
+</model>
+\end{DoxyVerb}
+
+
+The following is a more complex example of a species reference for species X0, with a stoichiometry formula consisting of the parameter {\ttfamily x\+:} \begin{DoxyVerb}<model>
+    ...
+    <listOfReactions>
+        <reaction id="J1">
+            <listOfReactants>
+                <speciesReference species="X0">
+                    <stoichiometryMath>
+                        <math xmlns="http://www.w3.org/1998/Math/MathML">
+                            <ci>x</ci>
+                        </math>
+                    </stoichiometryMath>
+                </speciesReference>
+            </listOfReactants>
+            ...
+        </reaction>
+        ...
+    </listOfReactions>
+    ...
+</model>
+\end{DoxyVerb}
+\hypertarget{class_species_reference_spr-l3}{}\subsection{Species\+Reference in S\+B\+M\+L Level 3}\label{class_species_reference_spr-l3}
+In Level 2\textquotesingle{}s definition of a reaction, the stoichiometry attribute of a \hyperlink{class_species_reference}{Species\+Reference} is actually a combination of two factors, the standard biochemical stoichiometry and a conversion factor that may be needed to translate the units of the species quantity to the units of the reaction rate. Unfortunately, Level~2 offers no direct way of decoupling these two factors, or for explicitly indicating the units. The only way to do it in Level~2 is to use the \hyperlink{class_stoichiometry_math}{Stoichiometry\+Math} object associated with Species\+References, and to reference S\+B\+ML \hyperlink{class_parameter}{Parameter} objects from within the \hyperlink{class_stoichiometry_math}{Stoichiometry\+Math} formula. This works because \hyperlink{class_parameter}{Parameter} offers a way to attach units to a numerical value, but the solution is indirect and awkward for something that should be a simple matter. Moreover, the question of how to properly encode stoichiometries in S\+B\+ML reactions has caused much confusion among implementors of S\+B\+ML software.
+
+S\+B\+ML Level~3 approaches this problem differently. It (1) extends the the use of the \hyperlink{class_species_reference}{Species\+Reference} identifier to represent the value of the \char`\"{}stoichiometry\char`\"{} attribute, (2) makes the \char`\"{}stoichiometry\char`\"{} attribute optional, (3) removes \hyperlink{class_stoichiometry_math}{Stoichiometry\+Math}, and (4) adds a new \char`\"{}constant\char`\"{} boolean attribute on \hyperlink{class_species_reference}{Species\+Reference}.
+
+As in Level~2, the \char`\"{}stoichiometry\char`\"{} attribute is of type {\ttfamily double} and should contain values greater than zero ({\ttfamily 0}). A missing \char`\"{}stoichiometry\char`\"{} implies that the stoichiometry is either unknown, or to be obtained from an external source, or determined by an \hyperlink{class_initial_assignment}{Initial\+Assignment} object or other S\+B\+ML construct elsewhere in the model.
+
+A species reference\textquotesingle{}s stoichiometry is set by its \char`\"{}stoichiometry\char`\"{} attribute exactly once. If the \hyperlink{class_species_reference}{Species\+Reference} object\textquotesingle{}s \char`\"{}constant\char`\"{} attribute has the value {\ttfamily true}, then the stoichiometry is fixed and cannot be changed except by an \hyperlink{class_initial_assignment}{Initial\+Assignment} object. These two methods of setting the stoichiometry (i.\+e., using \char`\"{}stoichiometry\char`\"{} directly, or using \hyperlink{class_initial_assignment}{Initial\+Assignment}) differ in that the \char`\"{}stoichiometry\char`\"{} attribute can only be set to a literal floating-\/point number, whereas \hyperlink{class_initial_assignment}{Initial\+Assignment} allows the value to be set using an arbitrary mathematical expression. (As an example, the approach could be used to set the stoichiometry to a rational number of the form {\itshape p/{\itshape q},} where {\itshape p} and {\itshape q} are integers, something that is occasionally useful in the context of biochemical reaction networks.) If the species reference\textquotesingle{}s \char`\"{}constant\char`\"{} attribute has the value {\ttfamily false}, the species reference\textquotesingle{}s value may be overridden by an \hyperlink{class_initial_assignment}{Initial\+Assignment} or changed by \hyperlink{class_assignment_rule}{Assignment\+Rule} or \hyperlink{class_algebraic_rule}{Algebraic\+Rule}, and in addition, for simulation time {\itshape t $>$ 0}, it may also be changed by a \hyperlink{class_rate_rule}{Rate\+Rule} or \hyperlink{class_event}{Event} objects. (However, some of these constructs are mutually exclusive; see the S\+B\+ML Level~3 Core specifiation for more details.) It is not an error to define \char`\"{}stoichiometry\char`\"{} on a species reference and also redefine the stoichiometry using an \hyperlink{class_initial_assignment}{Initial\+Assignment}, but the \char`\"{}stoichiometry\char`\"{} attribute in that case is ignored.
+
+The value of the \char`\"{}id\char`\"{} attribute of a \hyperlink{class_species_reference}{Species\+Reference} can be used as the content of a {\ttfamily $<$ci$>$} element in Math\+ML formulas elsewhere in the model. When the identifier appears in a Math\+ML {\ttfamily $<$ci$>$} element, it represents the stoichiometry of the corresponding species in the reaction where the \hyperlink{class_species_reference}{Species\+Reference} object instance appears. More specifically, it represents the value of the \char`\"{}stoichiometry\char`\"{} attribute on the \hyperlink{class_species_reference}{Species\+Reference} object.
+
+In S\+B\+ML Level 3, the unit of measurement associated with the value of a species\textquotesingle{} stoichiometry is always considered to be {\ttfamily dimensionless}. This has the following implications\+: 
+\begin{DoxyItemize}
+\item When a species reference\textquotesingle{}s identifier appears in mathematical formulas elsewhere in the model, the unit associated with that value is {\ttfamily dimensionless}.
+
+
+\item The units of the \char`\"{}math\char`\"{} elements of \hyperlink{class_assignment_rule}{Assignment\+Rule}, \hyperlink{class_initial_assignment}{Initial\+Assignment} and \hyperlink{class_event_assignment}{Event\+Assignment} objects setting the stoichiometry of the species reference should be {\ttfamily dimensionless}.
+
+
+\item If a species reference\textquotesingle{}s identifier is the subject of a \hyperlink{class_rate_rule}{Rate\+Rule}, the unit associated with the \hyperlink{class_rate_rule}{Rate\+Rule} object\textquotesingle{}s value should be {\ttfamily dimensionless}/{\itshape time}, where {\itshape time} is the model-\/wide unit of time set on the \hyperlink{class_model}{Model} object.
+
+
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_species_reference_8h}{Species\+Reference.\+h}\end{DoxyCompactItemize}

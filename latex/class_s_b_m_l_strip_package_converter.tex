@@ -1,0 +1,38 @@
+\hypertarget{class_s_b_m_l_strip_package_converter}{}\section{S\+B\+M\+L\+Strip\+Package\+Converter Class Reference}
+\label{class_s_b_m_l_strip_package_converter}\index{S\+B\+M\+L\+Strip\+Package\+Converter@{S\+B\+M\+L\+Strip\+Package\+Converter}}
+
+
+{\ttfamily \#include $<$S\+B\+M\+L\+Strip\+Package\+Converter.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} Converter that removes S\+B\+ML Level 3 packages.
+
+
+
+This S\+B\+ML converter takes an S\+B\+ML document and removes (strips) an S\+B\+ML Level~3 package from it. No conversion is performed; the package constructs are simply removed from the S\+B\+ML document. The package to be stripped is determined by the value of the option {\ttfamily \char`\"{}package\char`\"{}} on the conversion properties.\hypertarget{class_s_b_m_l_strip_package_converter_SBMLStripPackageConverter-usage}{}\subsection{Configuration and use of S\+B\+M\+L\+Strip\+Package\+Converter}\label{class_s_b_m_l_strip_package_converter_SBMLStripPackageConverter-usage}
+\hyperlink{class_s_b_m_l_strip_package_converter}{S\+B\+M\+L\+Strip\+Package\+Converter} is enabled by creating a \hyperlink{class_conversion_properties}{Conversion\+Properties} object with the option {\ttfamily \char`\"{}strip\+Package\char`\"{}}, and passing this properties object to S\+B\+M\+L\+Document\+::convert(). This converter takes one required option\+:
+
+\begin{DoxyItemize}
+\item {\ttfamily \char`\"{}package\char`\"{}}\+: the value of this option should be a text string, the nickname of the S\+B\+ML Level~3 package to be stripped from the model.\end{DoxyItemize}
+In addition, the converter understands an additional optional\+:
+
+\begin{DoxyItemize}
+\item {\ttfamily \char`\"{}strip\+All\+Unrecognized\char`\"{}}\+: if set to {\ttfamily true}, the converter will remove all S\+B\+ML Level~3 package constructs for Level~3 packages that this copy of lib\+S\+B\+ML does not recognize. Note that what a given copy of lib\+S\+B\+ML recognizes is determined by which plug-\/ins it has been configured to include. If this option is enabled, it may remove S\+B\+ML Level~3 package constructs that are legitimate in the sense that they are officially defined S\+B\+ML constructs, but not recognized because the running copy of lib\+S\+B\+ML has not had support enabled for them.\end{DoxyItemize}
+\hypertarget{classdoc__section__using__sbml__converters_using-converters}{}\subsection{General information about the use of S\+B\+M\+L converters}\label{classdoc__section__using__sbml__converters_using-converters}
+The use of all the converters follows a similar approach. First, one creates a \hyperlink{class_conversion_properties}{Conversion\+Properties} object and calls Conversion\+Properties\+::add\+Option() on this object with one argument\+: a text string that identifies the desired converter. (The text string is specific to each converter; consult the documentation for a given converter to find out how it should be enabled.)
+
+Next, for some converters, the caller can optionally set some converter-\/specific properties using additional calls to Conversion\+Properties\+::add\+Option(). Many converters provide the ability to configure their behavior to some extent; this is realized through the use of properties that offer different options. The default property values for each converter can be interrogated using the method S\+B\+M\+L\+Converter\+::get\+Default\+Properties() on the converter class in question .
+
+Finally, the caller should invoke the method S\+B\+M\+L\+Document\+::convert() with the \hyperlink{class_conversion_properties}{Conversion\+Properties} object as an argument.\hypertarget{classdoc__section__using__sbml__converters_converter-example}{}\subsubsection{Example of invoking an S\+B\+M\+L converter}\label{classdoc__section__using__sbml__converters_converter-example}
+The following code fragment illustrates an example using \hyperlink{class_s_b_m_l_reaction_converter}{S\+B\+M\+L\+Reaction\+Converter}, which is invoked using the option string {\ttfamily \char`\"{}replace\+Reactions\char`\"{}}\+:
+
+In the case of \hyperlink{class_s_b_m_l_reaction_converter}{S\+B\+M\+L\+Reaction\+Converter}, there are no options to affect its behavior, so the next step is simply to invoke the converter on an \hyperlink{class_s_b_m_l_document}{S\+B\+M\+L\+Document} object. Continuing the example code\+:
+
+Here is an example of using a converter that offers an option. The following code invokes \hyperlink{class_s_b_m_l_strip_package_converter}{S\+B\+M\+L\+Strip\+Package\+Converter} to remove the S\+B\+ML Level~3 {\itshape Layout} package from a model. It sets the name of the package to be removed by adding a value for the option named {\ttfamily \char`\"{}package\char`\"{}} defined by that converter\+:\hypertarget{classdoc__section__using__sbml__converters_available-converters}{}\subsubsection{Available S\+B\+M\+L converters in lib\+S\+B\+ML}\label{classdoc__section__using__sbml__converters_available-converters}
+Lib\+S\+B\+ML provides a number of built-\/in converters; by convention, their names end in {\itshape Converter}. The following are the built-\/in converters provided by lib\+S\+B\+ML \+:
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_s_b_m_l_strip_package_converter_8h}{S\+B\+M\+L\+Strip\+Package\+Converter.\+h}\end{DoxyCompactItemize}

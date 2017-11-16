@@ -1,0 +1,19 @@
+\hypertarget{classdoc__extension__layout__plugin__is__special}{}\section{doc\+\_\+extension\+\_\+layout\+\_\+plugin\+\_\+is\+\_\+special Class Reference}
+\label{classdoc__extension__layout__plugin__is__special}\index{doc\+\_\+extension\+\_\+layout\+\_\+plugin\+\_\+is\+\_\+special@{doc\+\_\+extension\+\_\+layout\+\_\+plugin\+\_\+is\+\_\+special}}
+
+
+{\ttfamily \#include $<$common-\/documentation.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\begin{DoxyParagraph}{}
+Due to the historical background of the S\+B\+ML Layout package, lib\+S\+B\+ML implements special behavior for that package\+: it {\itshape always} creates a Layout plugin object for any S\+B\+ML Level~2 document it reads in, regardless of whether that document actually uses Layout constructs. This is unlike the case for S\+B\+ML Level~3 documents that use Layout; for them, lib\+S\+B\+ML will {\itshape not} create a plugin object unless the document actually declares the use of the Layout package (via the usual Level~3 namespace declaration for Level~3 packages).
+\end{DoxyParagraph}
+This has the following consequence. If an application queries for the presence of Layout in an S\+B\+ML Level~2 document by testing only for the existence of the plugin object, {\bfseries it will always get a positive result}; in other words, the presence of a Layout extension object is not an indication of whether a read-\/in Level~2 document does or does not use S\+B\+ML Layout. Instead, callers have to query explicitly for the existence of layout information. An example of such a query is the following code\+:
+
+The special, always-\/available Level~2 Layout behavior was motivated by a desire to support legacy applications. In S\+B\+ML Level~3, the Layout package uses the normal S\+B\+ML Level~3 scheme of requiring declarations on the S\+B\+ML document element. This means that upon reading a model, lib\+S\+B\+ML knows right away whether it contains layout information. In S\+B\+ML Level~2, there is no top-\/level declaration because layout is stored as annotations in the body of the model. Detecting the presence of layout information when reading a Level~2 model requires parsing the annotations. For efficiency reasons, lib\+S\+B\+ML normally does not parse annotations automatically when reading a model. However, applications that predated the introduction of Level~3 Layout and the updated version of lib\+S\+B\+ML never had to do anything special to enable parsing layout; the facilities were always available for every Level~2 model as long as lib\+S\+B\+ML was compiled with Layout support. To avoid burdening developers of legacy applications with the need to modify their software, lib\+S\+B\+ML provides backward compatibility by always preloading the Layout package extension when reading Level~2 models. The same applies to the creation of Level~2 models\+: with the plugin-\/oriented lib\+S\+B\+ML, applications normally would have to take deliberate steps to activate package code, instantiate objects, manage namespaces, and so on. Lib\+S\+B\+ML again loads the Layout package plugin automatically when creating a Level~2 model, thereby making the A\+P\+Is available to legacy applications without further work on their part. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{common-documentation_8h}{common-\/documentation.\+h}\end{DoxyCompactItemize}

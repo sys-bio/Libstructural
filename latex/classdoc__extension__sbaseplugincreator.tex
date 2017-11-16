@@ -1,0 +1,31 @@
+\hypertarget{classdoc__extension__sbaseplugincreator}{}\section{doc\+\_\+extension\+\_\+sbaseplugincreator Class Reference}
+\label{classdoc__extension__sbaseplugincreator}\index{doc\+\_\+extension\+\_\+sbaseplugincreator@{doc\+\_\+extension\+\_\+sbaseplugincreator}}
+
+
+{\ttfamily \#include $<$common-\/documentation.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\begin{DoxyParagraph}{}
+This is a template class that constitutes another piece of glue used to connect package extension objects to the overall package support framework in lib\+S\+B\+ML. This particular template class is used to create factory objects that in turn construct new instances of package plugin objects when necessary. These factories are invoked when, for example, lib\+S\+B\+ML encounters an S\+B\+ML Level~3 package in an S\+B\+ML document and needs to activate the corresponding lib\+S\+B\+ML package extension.
+\end{DoxyParagraph}
+The use of \hyperlink{class_s_base_plugin_creator}{S\+Base\+Plugin\+Creator} is a simple matter of invoking it on every object derived from \hyperlink{class_s_base_plugin}{S\+Base\+Plugin} or \hyperlink{class_s_b_m_l_document_plugin}{S\+B\+M\+L\+Document\+Plugin} (which is itself derived from \hyperlink{class_s_base_plugin}{S\+Base\+Plugin}). The typical use is illustrated by the following code fragment\+:
+
+
+\begin{DoxyCode}
+\hyperlink{class_s_base_extension_point}{SBaseExtensionPoint} docExtPoint(\textcolor{stringliteral}{"core"}, \hyperlink{_s_b_m_l_type_codes_8h_aa283dddfd7671179362b2f38e2938cfeabfe976c674a5a708c1373dfdfa3bfa63}{SBML\_DOCUMENT});
+\hyperlink{class_s_base_extension_point}{SBaseExtensionPoint} modelExtPoint(\textcolor{stringliteral}{"core"}, \hyperlink{_s_b_m_l_type_codes_8h_aa283dddfd7671179362b2f38e2938cfea3c866be107d7858b6dd1e978ed103028}{SBML\_MODEL});
+
+\hyperlink{class_s_base_plugin_creator}{SBasePluginCreator<GroupsSBMLDocumentPlugin, GroupsExtension>}
+       docPluginCreator(docExtPoint, pkgURIs);
+\hyperlink{class_s_base_plugin_creator}{SBasePluginCreator<GroupsModelPlugin, GroupsExtension>}
+       modelPluginCreator(modelExtPoint, pkgURIs);
+\end{DoxyCode}
+
+
+The code above is typically placed in the implementation of the {\ttfamily init()} method of the package class derived from \hyperlink{class_s_b_m_l_extension}{S\+B\+M\+L\+Extension}. (For the example above, it would be in the {\ttfamily Groups\+Extension.\+cpp} file.) 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{common-documentation_8h}{common-\/documentation.\+h}\end{DoxyCompactItemize}

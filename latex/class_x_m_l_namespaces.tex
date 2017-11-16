@@ -1,0 +1,25 @@
+\hypertarget{class_x_m_l_namespaces}{}\section{X\+M\+L\+Namespaces Class Reference}
+\label{class_x_m_l_namespaces}\index{X\+M\+L\+Namespaces@{X\+M\+L\+Namespaces}}
+
+
+{\ttfamily \#include $<$X\+M\+L\+Namespaces.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} An X\+ML Namespace.
+
+
+
+This class serves to organize functionality for tracking X\+ML namespaces in a document or data stream. The namespace declarations are stored as a list of pairs of X\+ML namespace U\+R\+Is and prefix strings. These correspond to the parts of a namespace declaration on an X\+ML element. For example, in the following X\+ML fragment, \begin{DoxyVerb}<annotation>
+    <mysim:nodecolors xmlns:mysim="urn:lsid:mysim.org"
+         mysim:bgcolor="green" mysim:fgcolor="white"/>
+</annotation>
+\end{DoxyVerb}
+ there is one namespace declaration. Its U\+RI is {\ttfamily urn\+:lsid\+:mysim.\+org} and its prefix is {\ttfamily mysim}. This pair could be stored as one item in an \hyperlink{class_x_m_l_namespaces}{X\+M\+L\+Namespaces} list.
+
+\hyperlink{class_x_m_l_namespaces}{X\+M\+L\+Namespaces} provides various methods for manipulating the list of prefix-\/\+U\+RI pairs. Individual namespaces stored in a given X\+M\+L\+Namespace object instance can be retrieved based on their index using X\+M\+L\+Namespaces\+::get\+Prefix(int index), or by their characteristics such as their U\+RI or position in the list. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_x_m_l_namespaces_8h}{X\+M\+L\+Namespaces.\+h}\end{DoxyCompactItemize}

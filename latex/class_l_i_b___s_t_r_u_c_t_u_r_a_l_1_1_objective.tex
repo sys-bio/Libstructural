@@ -1,0 +1,140 @@
+\hypertarget{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective}{}\section{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+AL\+:\+:Objective Class Reference}
+\label{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective}\index{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective@{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective}}
+
+
+basic storage class for constraints used by L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Flux\+Balance  
+
+
+
+
+{\ttfamily \#include $<$objective.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{libutil_8h_a48cc004c21e097c0d7c1c5fa8dc03b96}{L\+I\+B\+\_\+\+E\+X\+T\+E\+RN} std\+::string \hyperlink{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective_a1003bb99af516f1308ed6a0acffcecb9}{get\+Id} ()
+\begin{DoxyCompactList}\small\item\em get the flux name \end{DoxyCompactList}\item 
+\hyperlink{libutil_8h_a48cc004c21e097c0d7c1c5fa8dc03b96}{L\+I\+B\+\_\+\+E\+X\+T\+E\+RN} double \hyperlink{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective_afc8ed4b806e717897bd49c41458c9c46}{get\+Value} ()
+\begin{DoxyCompactList}\small\item\em return the current objective value \end{DoxyCompactList}\item 
+\hyperlink{libutil_8h_a48cc004c21e097c0d7c1c5fa8dc03b96}{L\+I\+B\+\_\+\+E\+X\+T\+E\+RN} \hyperlink{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective_a6b731a65cbefc80f0cde3763126a5284}{Objective} (\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void})
+\begin{DoxyCompactList}\small\item\em create a new objective \end{DoxyCompactList}\item 
+\hyperlink{libutil_8h_a48cc004c21e097c0d7c1c5fa8dc03b96}{L\+I\+B\+\_\+\+E\+X\+T\+E\+RN} \hyperlink{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective_aecdd9a42869c81bf897039bfa6bee991}{Objective} (std\+::string \&id, double \hyperlink{lp__lib_8h_a606ba870f46e132d61b5e2371014a998}{value})
+\begin{DoxyCompactList}\small\item\em create a new objective with the given values \end{DoxyCompactList}\item 
+\hyperlink{libutil_8h_a48cc004c21e097c0d7c1c5fa8dc03b96}{L\+I\+B\+\_\+\+E\+X\+T\+E\+RN} \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} \hyperlink{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective_ae2224c32f5c6bd1150c5cbdfe2190679}{set\+Id} (std\+::string id)
+\begin{DoxyCompactList}\small\item\em set the flux name for this constraint \end{DoxyCompactList}\item 
+\hyperlink{libutil_8h_a48cc004c21e097c0d7c1c5fa8dc03b96}{L\+I\+B\+\_\+\+E\+X\+T\+E\+RN} \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} \hyperlink{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective_a78216246f2d3536f0290e91d68150487}{set\+Value} (double \hyperlink{lp__lib_8h_a606ba870f46e132d61b5e2371014a998}{value})
+\begin{DoxyCompactList}\small\item\em set the current objective value \end{DoxyCompactList}\item 
+virtual \hyperlink{libutil_8h_a48cc004c21e097c0d7c1c5fa8dc03b96}{L\+I\+B\+\_\+\+E\+X\+T\+E\+RN} \hyperlink{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective_a24c7e7a5d88bb8160339ccd3416c7089}{$\sim$\+Objective} (\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void})
+\begin{DoxyCompactList}\small\item\em virtual destructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective_aa8263b47a8a71acc061d15fba04879c7}{Id}
+\item 
+double \hyperlink{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective_ad16219309ff97937c5e4fec319abe863}{Value}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+basic storage class for constraints used by L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Flux\+Balance 
+
+\begin{DoxyParagraph}{}
+\hyperlink{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective}{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective} consist of an Id and value that has to be met. 
+\end{DoxyParagraph}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective_a6b731a65cbefc80f0cde3763126a5284}\label{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective_a6b731a65cbefc80f0cde3763126a5284}} 
+\index{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective@{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective}!Objective@{Objective}}
+\index{Objective@{Objective}!L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective@{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective}}
+\subsubsection{\texorpdfstring{Objective()}{Objective()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Objective\+::\+Objective (\begin{DoxyParamCaption}\item[{\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void}}]{ }\end{DoxyParamCaption})}
+
+
+
+create a new objective 
+
+\mbox{\Hypertarget{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective_aecdd9a42869c81bf897039bfa6bee991}\label{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective_aecdd9a42869c81bf897039bfa6bee991}} 
+\index{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective@{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective}!Objective@{Objective}}
+\index{Objective@{Objective}!L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective@{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective}}
+\subsubsection{\texorpdfstring{Objective()}{Objective()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{libutil_8h_a48cc004c21e097c0d7c1c5fa8dc03b96}{L\+I\+B\+\_\+\+E\+X\+T\+E\+RN} L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective\+::\+Objective (\begin{DoxyParamCaption}\item[{std\+::string \&}]{id,  }\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+create a new objective with the given values 
+
+\mbox{\Hypertarget{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective_a24c7e7a5d88bb8160339ccd3416c7089}\label{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective_a24c7e7a5d88bb8160339ccd3416c7089}} 
+\index{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective@{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective}!````~Objective@{$\sim$\+Objective}}
+\index{````~Objective@{$\sim$\+Objective}!L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective@{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective}}
+\subsubsection{\texorpdfstring{$\sim$\+Objective()}{~Objective()}}
+{\footnotesize\ttfamily Objective\+::$\sim$\+Objective (\begin{DoxyParamCaption}\item[{\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+virtual destructor 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective_a1003bb99af516f1308ed6a0acffcecb9}\label{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective_a1003bb99af516f1308ed6a0acffcecb9}} 
+\index{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective@{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective}!get\+Id@{get\+Id}}
+\index{get\+Id@{get\+Id}!L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective@{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective}}
+\subsubsection{\texorpdfstring{get\+Id()}{getId()}}
+{\footnotesize\ttfamily \hyperlink{libutil_8h_a48cc004c21e097c0d7c1c5fa8dc03b96}{L\+I\+B\+\_\+\+E\+X\+T\+E\+RN} std\+::string L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get the flux name 
+
+\mbox{\Hypertarget{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective_afc8ed4b806e717897bd49c41458c9c46}\label{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective_afc8ed4b806e717897bd49c41458c9c46}} 
+\index{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective@{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective}!get\+Value@{get\+Value}}
+\index{get\+Value@{get\+Value}!L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective@{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective}}
+\subsubsection{\texorpdfstring{get\+Value()}{getValue()}}
+{\footnotesize\ttfamily \hyperlink{libutil_8h_a48cc004c21e097c0d7c1c5fa8dc03b96}{L\+I\+B\+\_\+\+E\+X\+T\+E\+RN} double L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return the current objective value 
+
+\mbox{\Hypertarget{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective_ae2224c32f5c6bd1150c5cbdfe2190679}\label{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective_ae2224c32f5c6bd1150c5cbdfe2190679}} 
+\index{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective@{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective}!set\+Id@{set\+Id}}
+\index{set\+Id@{set\+Id}!L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective@{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective}}
+\subsubsection{\texorpdfstring{set\+Id()}{setId()}}
+{\footnotesize\ttfamily \hyperlink{libutil_8h_a48cc004c21e097c0d7c1c5fa8dc03b96}{L\+I\+B\+\_\+\+E\+X\+T\+E\+RN} \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective\+::set\+Id (\begin{DoxyParamCaption}\item[{std\+::string}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set the flux name for this constraint 
+
+\mbox{\Hypertarget{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective_a78216246f2d3536f0290e91d68150487}\label{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective_a78216246f2d3536f0290e91d68150487}} 
+\index{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective@{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective}!set\+Value@{set\+Value}}
+\index{set\+Value@{set\+Value}!L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective@{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective}}
+\subsubsection{\texorpdfstring{set\+Value()}{setValue()}}
+{\footnotesize\ttfamily \hyperlink{libutil_8h_a48cc004c21e097c0d7c1c5fa8dc03b96}{L\+I\+B\+\_\+\+E\+X\+T\+E\+RN} \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective\+::set\+Value (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+set the current objective value 
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective_aa8263b47a8a71acc061d15fba04879c7}\label{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective_aa8263b47a8a71acc061d15fba04879c7}} 
+\index{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective@{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective}!Id@{Id}}
+\index{Id@{Id}!L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective@{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective}}
+\subsubsection{\texorpdfstring{Id}{Id}}
+{\footnotesize\ttfamily std\+::string L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective\+::\+Id}
+
+\mbox{\Hypertarget{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective_ad16219309ff97937c5e4fec319abe863}\label{class_l_i_b___s_t_r_u_c_t_u_r_a_l_1_1_objective_ad16219309ff97937c5e4fec319abe863}} 
+\index{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective@{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective}!Value@{Value}}
+\index{Value@{Value}!L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective@{L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective}}
+\subsubsection{\texorpdfstring{Value}{Value}}
+{\footnotesize\ttfamily double L\+I\+B\+\_\+\+S\+T\+R\+U\+C\+T\+U\+R\+A\+L\+::\+Objective\+::\+Value}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{objective_8h}{objective.\+h}\item 
+\hyperlink{objective_8cpp}{objective.\+cpp}\end{DoxyCompactItemize}

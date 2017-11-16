@@ -1,0 +1,39 @@
+\hypertarget{class_s_b_m_l_rule_converter}{}\section{S\+B\+M\+L\+Rule\+Converter Class Reference}
+\label{class_s_b_m_l_rule_converter}\index{S\+B\+M\+L\+Rule\+Converter@{S\+B\+M\+L\+Rule\+Converter}}
+
+
+{\ttfamily \#include $<$S\+B\+M\+L\+Rule\+Converter.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} Converter that sorts S\+B\+ML rules and assignments.
+
+
+
+This converter reorders assignments in a model. Specifically, it sorts the list of assignment rules (i.\+e., the \hyperlink{class_assignment_rule}{Assignment\+Rule} objects contained in the List\+Of\+Assignment\+Rules within the \hyperlink{class_model}{Model} object) and the initial assignments (i.\+e., the \hyperlink{class_initial_assignment}{Initial\+Assignment} objects contained in the \hyperlink{class_list_of_initial_assignments}{List\+Of\+Initial\+Assignments}) such that, within each set, assignments that depend on {\itshape prior} values are placed {\itshape after} the values are set. For example, if there is an assignment rule stating {\itshape a = b + 1}, and another rule stating {\itshape b = 3}, the list of rules is sorted and the rules are arranged so that the rule for {\itshape b = 3} appears {\itshape before} the rule for {\itshape a = b + 1}. Similarly, if dependencies of this sort exist in the list of initial assignments in the model, the initial assignments are sorted as well.
+
+Beginning with S\+B\+ML Level 2, assignment rules have no ordering required---the order in which the rules appear in an S\+B\+ML file has no significance. Software tools, however, may need to reorder assignments for purposes of evaluating them. For example, for simulators that use time integration methods, it would be a good idea to reorder assignment rules such as the following,
+
+{\itshape b = a + 10 seconds}~\newline
+ {\itshape a = time}
+
+so that the evaluation of the rules is independent of integrator step sizes. (This is due to the fact that, in this case, the order in which the rules are evaluated changes the result.) \hyperlink{class_s_b_m_l_rule_converter}{S\+B\+M\+L\+Rule\+Converter} can be used to reorder the S\+B\+ML objects regardless of whether the input file contained them in the desired order.
+
+Note that the two sets of S\+B\+ML assignments (list of assignment rules on the one hand, and list of initial assignments on the other hand) are handled {\itshape independently}. In an S\+B\+ML model, these entities are treated differently and no amount of sorting can deal with inter-\/dependencies between assignments of the two kinds.\hypertarget{class_s_b_m_l_rule_converter_SBMLRuleConverter-usage}{}\subsection{Configuration and use of S\+B\+M\+L\+Rule\+Converter}\label{class_s_b_m_l_rule_converter_SBMLRuleConverter-usage}
+\hyperlink{class_s_b_m_l_rule_converter}{S\+B\+M\+L\+Rule\+Converter} is enabled by creating a \hyperlink{class_conversion_properties}{Conversion\+Properties} object with the option {\ttfamily \char`\"{}sort\+Rules\char`\"{}}, and passing this properties object to S\+B\+M\+L\+Document\+::convert(). This converter offers no other options.\hypertarget{classdoc__section__using__sbml__converters_using-converters}{}\subsection{General information about the use of S\+B\+M\+L converters}\label{classdoc__section__using__sbml__converters_using-converters}
+The use of all the converters follows a similar approach. First, one creates a \hyperlink{class_conversion_properties}{Conversion\+Properties} object and calls Conversion\+Properties\+::add\+Option() on this object with one argument\+: a text string that identifies the desired converter. (The text string is specific to each converter; consult the documentation for a given converter to find out how it should be enabled.)
+
+Next, for some converters, the caller can optionally set some converter-\/specific properties using additional calls to Conversion\+Properties\+::add\+Option(). Many converters provide the ability to configure their behavior to some extent; this is realized through the use of properties that offer different options. The default property values for each converter can be interrogated using the method S\+B\+M\+L\+Converter\+::get\+Default\+Properties() on the converter class in question .
+
+Finally, the caller should invoke the method S\+B\+M\+L\+Document\+::convert() with the \hyperlink{class_conversion_properties}{Conversion\+Properties} object as an argument.\hypertarget{classdoc__section__using__sbml__converters_converter-example}{}\subsubsection{Example of invoking an S\+B\+M\+L converter}\label{classdoc__section__using__sbml__converters_converter-example}
+The following code fragment illustrates an example using \hyperlink{class_s_b_m_l_reaction_converter}{S\+B\+M\+L\+Reaction\+Converter}, which is invoked using the option string {\ttfamily \char`\"{}replace\+Reactions\char`\"{}}\+:
+
+In the case of \hyperlink{class_s_b_m_l_reaction_converter}{S\+B\+M\+L\+Reaction\+Converter}, there are no options to affect its behavior, so the next step is simply to invoke the converter on an \hyperlink{class_s_b_m_l_document}{S\+B\+M\+L\+Document} object. Continuing the example code\+:
+
+Here is an example of using a converter that offers an option. The following code invokes \hyperlink{class_s_b_m_l_strip_package_converter}{S\+B\+M\+L\+Strip\+Package\+Converter} to remove the S\+B\+ML Level~3 {\itshape Layout} package from a model. It sets the name of the package to be removed by adding a value for the option named {\ttfamily \char`\"{}package\char`\"{}} defined by that converter\+:\hypertarget{classdoc__section__using__sbml__converters_available-converters}{}\subsubsection{Available S\+B\+M\+L converters in lib\+S\+B\+ML}\label{classdoc__section__using__sbml__converters_available-converters}
+Lib\+S\+B\+ML provides a number of built-\/in converters; by convention, their names end in {\itshape Converter}. The following are the built-\/in converters provided by lib\+S\+B\+ML \+:
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_s_b_m_l_rule_converter_8h}{S\+B\+M\+L\+Rule\+Converter.\+h}\end{DoxyCompactItemize}

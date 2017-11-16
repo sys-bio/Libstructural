@@ -1,0 +1,47 @@
+\hypertarget{zfstream_8h}{}\section{zfstream.\+h File Reference}
+\label{zfstream_8h}\index{zfstream.\+h@{zfstream.\+h}}
+{\ttfamily \#include $<$istream$>$}\newline
+{\ttfamily \#include $<$ostream$>$}\newline
+{\ttfamily \#include \char`\"{}zlib.\+h\char`\"{}}\newline
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classgzfilebuf}{gzfilebuf}
+\begin{DoxyCompactList}\small\item\em Gzipped file stream buffer class. \end{DoxyCompactList}\item 
+class \hyperlink{classgzifstream}{gzifstream}
+\begin{DoxyCompactList}\small\item\em Gzipped file input stream class. \end{DoxyCompactList}\item 
+class \hyperlink{classgzofstream}{gzofstream}
+\begin{DoxyCompactList}\small\item\em Gzipped file output stream class. \end{DoxyCompactList}\item 
+class \hyperlink{classgzomanip2}{gzomanip2$<$ T1, T2 $>$}
+\begin{DoxyCompactList}\small\item\em Gzipped file output stream manipulator class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T1 , typename T2 $>$ }\\\hyperlink{classgzofstream}{gzofstream} \& \hyperlink{zfstream_8h_a62a73c5962cb539b3194b9cd8e81cb01}{operator$<$$<$} (\hyperlink{classgzofstream}{gzofstream} \&s, const \hyperlink{classgzomanip2}{gzomanip2}$<$ T1, T2 $>$ \&m)
+\item 
+\hyperlink{classgzofstream}{gzofstream} \& \hyperlink{zfstream_8h_aab289b98ea9cf29d109df4969c77bc10}{setcompression} (\hyperlink{classgzofstream}{gzofstream} \&gzs, \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} l, \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} s=Z\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+T\+R\+A\+T\+E\+GY)
+\item 
+\hyperlink{classgzomanip2}{gzomanip2}$<$ \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}, \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} $>$ \hyperlink{zfstream_8h_a9faf10ab9ba2398c393ad3691421c180}{setcompression} (\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} l, \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} s=Z\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+S\+T\+R\+A\+T\+E\+GY)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{zfstream_8h_a62a73c5962cb539b3194b9cd8e81cb01}\label{zfstream_8h_a62a73c5962cb539b3194b9cd8e81cb01}} 
+\index{zfstream.\+h@{zfstream.\+h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!zfstream.\+h@{zfstream.\+h}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily template$<$typename T1 , typename T2 $>$ \\
+\hyperlink{classgzofstream}{gzofstream}\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{\hyperlink{classgzofstream}{gzofstream} \&}]{s,  }\item[{const \hyperlink{classgzomanip2}{gzomanip2}$<$ T1, T2 $>$ \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{zfstream_8h_aab289b98ea9cf29d109df4969c77bc10}\label{zfstream_8h_aab289b98ea9cf29d109df4969c77bc10}} 
+\index{zfstream.\+h@{zfstream.\+h}!setcompression@{setcompression}}
+\index{setcompression@{setcompression}!zfstream.\+h@{zfstream.\+h}}
+\subsubsection{\texorpdfstring{setcompression()}{setcompression()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classgzofstream}{gzofstream}\& setcompression (\begin{DoxyParamCaption}\item[{\hyperlink{classgzofstream}{gzofstream} \&}]{gzs,  }\item[{\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}}]{l,  }\item[{\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}}]{s = {\ttfamily Z\+\_\+DEFAULT\+\_\+STRATEGY} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{zfstream_8h_a9faf10ab9ba2398c393ad3691421c180}\label{zfstream_8h_a9faf10ab9ba2398c393ad3691421c180}} 
+\index{zfstream.\+h@{zfstream.\+h}!setcompression@{setcompression}}
+\index{setcompression@{setcompression}!zfstream.\+h@{zfstream.\+h}}
+\subsubsection{\texorpdfstring{setcompression()}{setcompression()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classgzomanip2}{gzomanip2}$<$\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int},\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}$>$ setcompression (\begin{DoxyParamCaption}\item[{\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}}]{l,  }\item[{\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}}]{s = {\ttfamily Z\+\_\+DEFAULT\+\_\+STRATEGY} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+

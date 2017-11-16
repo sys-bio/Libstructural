@@ -1,0 +1,112 @@
+\hypertarget{zipfstream_8h}{}\section{zipfstream.\+h File Reference}
+\label{zipfstream_8h}\index{zipfstream.\+h@{zipfstream.\+h}}
+
+
+C++ I/O streams interface to the zip/unzip functions in Minizip.  
+
+
+{\ttfamily \#include $<$istream$>$}\newline
+{\ttfamily \#include $<$ostream$>$}\newline
+{\ttfamily \#include \char`\"{}zip.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}unzip.\+h\char`\"{}}\newline
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classzipfilebuf}{zipfilebuf}
+\begin{DoxyCompactList}\small\item\em zip file stream buffer class. \end{DoxyCompactList}\item 
+class \hyperlink{classzipifstream}{zipifstream}
+\begin{DoxyCompactList}\small\item\em zip file input stream class. \end{DoxyCompactList}\item 
+class \hyperlink{classzipofstream}{zipofstream}
+\begin{DoxyCompactList}\small\item\em Gzipped file output stream class. \end{DoxyCompactList}\item 
+class \hyperlink{classzipomanip2}{zipomanip2$<$ T1, T2 $>$}
+\begin{DoxyCompactList}\small\item\em Gzipped file output stream manipulator class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T1 , typename T2 $>$ }\\\hyperlink{classzipofstream}{zipofstream} \& \hyperlink{zipfstream_8h_a11c0024f1d9c754b13469c28a6df882d}{operator$<$$<$} (\hyperlink{classzipofstream}{zipofstream} \&s, const \hyperlink{classzipomanip2}{zipomanip2}$<$ T1, T2 $>$ \&m)
+\item 
+\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{zipfstream_8h_ac99e21cefa400e819ed6a4aad029759b}{unzipclose} (\hyperlink{unzip_8h_ad578db1d36691a2a244482a3b2360ca3}{unz\+File} file)
+\item 
+\hyperlink{unzip_8h_ad578db1d36691a2a244482a3b2360ca3}{unz\+File} \hyperlink{zipfstream_8h_a3e640cfb6080616de0af3e20cc897179}{unzipopen} (const char $\ast$path)
+\item 
+\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{zipfstream_8h_a7657f49fb752381e3efcfbf0b09419b7}{unzipread} (\hyperlink{unzip_8h_ad578db1d36691a2a244482a3b2360ca3}{unz\+File} file, voidp \hyperlink{ioapi_8h_ae28c9430ba2b97dabdc5ca98ff772987}{buf}, unsigned len)
+\item 
+\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{zipfstream_8h_a84b6624278c983b28ba80a15b823215d}{zipclose} (\hyperlink{zip_8h_af69b9a5ea9aaf8e8f0b7681e451b224c}{zip\+File} file)
+\item 
+\hyperlink{zip_8h_af69b9a5ea9aaf8e8f0b7681e451b224c}{zip\+File} \hyperlink{zipfstream_8h_a1817c718d453767f5ef9632e1c5d9844}{zipopen} (const char $\ast$path, const char $\ast$filenameinzip, \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} append)
+\item 
+\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{zipfstream_8h_a9bf4448b4afc2d9410a16630cb97268d}{zipwrite} (\hyperlink{zip_8h_af69b9a5ea9aaf8e8f0b7681e451b224c}{zip\+File} file, voidp \hyperlink{ioapi_8h_ae28c9430ba2b97dabdc5ca98ff772987}{buf}, unsigned len)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+C++ I/O streams interface to the zip/unzip functions in Minizip. 
+
+\begin{DoxyAuthor}{Author}
+Akiya Jouraku
+\end{DoxyAuthor}
+Most of the code (except for zip/unzip specific code) is based on \hyperlink{zfstream_8h}{zfstream.\+h} implemented by Ludwig Schwardt \href{mailto:schwardt@sun.ac.za}{\tt schwardt@sun.\+ac.\+za} original version by Kevin Ruland \href{mailto:kevin@rodin.wustl.edu}{\tt kevin@rodin.\+wustl.\+edu} \hyperlink{zfstream_8h}{zfstream.\+h} is contained in the contributed samples in zlib version 1.\+2.\+3 (\href{http://www.zlib.net}{\tt http\+://www.\+zlib.\+net}).
+
+The following zip/unzip specific functions are implemented based on the code in minizip.\+c and miniunz.\+c contained in Minizip version 1.\+01e (\href{http://www.winimage.com/zLibDll/minizip.html}{\tt http\+://www.\+winimage.\+com/z\+Lib\+Dll/minizip.\+html}) implemented by Gilles Vollant.
+
+zip\+File zipopen (const char$\ast$ path, const char$\ast$ filenameinzip, int append); int \hyperlink{zipfstream_8h_a84b6624278c983b28ba80a15b823215d}{zipclose(zip\+File file)}; int \hyperlink{zipfstream_8h_a9bf4448b4afc2d9410a16630cb97268d}{zipwrite(zip\+File file, voidp buf, unsigned len)}; unz\+File unzipopen (const char$\ast$ path); int \hyperlink{zipfstream_8h_ac99e21cefa400e819ed6a4aad029759b}{unzipclose(unz\+File file)}; int unzipread (unz\+File file, voidp buf, unsigned len);
+
+\subsubsection*{Minizip is distributed under the following terms\+: }
+
+Copyright (C) 1998-\/2005 Gilles Vollant
+
+This software is provided \textquotesingle{}as-\/is\textquotesingle{}, without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
+
+Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions\+:
+
+
+\begin{DoxyEnumerate}
+\item The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
+\item Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
+\item This notice may not be removed or altered from any source distribution. -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/--- --$>$ 
+\end{DoxyEnumerate}
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{zipfstream_8h_a11c0024f1d9c754b13469c28a6df882d}\label{zipfstream_8h_a11c0024f1d9c754b13469c28a6df882d}} 
+\index{zipfstream.\+h@{zipfstream.\+h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!zipfstream.\+h@{zipfstream.\+h}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily template$<$typename T1 , typename T2 $>$ \\
+\hyperlink{classzipofstream}{zipofstream}\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{\hyperlink{classzipofstream}{zipofstream} \&}]{s,  }\item[{const \hyperlink{classzipomanip2}{zipomanip2}$<$ T1, T2 $>$ \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{zipfstream_8h_ac99e21cefa400e819ed6a4aad029759b}\label{zipfstream_8h_ac99e21cefa400e819ed6a4aad029759b}} 
+\index{zipfstream.\+h@{zipfstream.\+h}!unzipclose@{unzipclose}}
+\index{unzipclose@{unzipclose}!zipfstream.\+h@{zipfstream.\+h}}
+\subsubsection{\texorpdfstring{unzipclose()}{unzipclose()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} unzipclose (\begin{DoxyParamCaption}\item[{\hyperlink{unzip_8h_ad578db1d36691a2a244482a3b2360ca3}{unz\+File}}]{file }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{zipfstream_8h_a3e640cfb6080616de0af3e20cc897179}\label{zipfstream_8h_a3e640cfb6080616de0af3e20cc897179}} 
+\index{zipfstream.\+h@{zipfstream.\+h}!unzipopen@{unzipopen}}
+\index{unzipopen@{unzipopen}!zipfstream.\+h@{zipfstream.\+h}}
+\subsubsection{\texorpdfstring{unzipopen()}{unzipopen()}}
+{\footnotesize\ttfamily \hyperlink{unzip_8h_ad578db1d36691a2a244482a3b2360ca3}{unz\+File} unzipopen (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{zipfstream_8h_a7657f49fb752381e3efcfbf0b09419b7}\label{zipfstream_8h_a7657f49fb752381e3efcfbf0b09419b7}} 
+\index{zipfstream.\+h@{zipfstream.\+h}!unzipread@{unzipread}}
+\index{unzipread@{unzipread}!zipfstream.\+h@{zipfstream.\+h}}
+\subsubsection{\texorpdfstring{unzipread()}{unzipread()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} unzipread (\begin{DoxyParamCaption}\item[{\hyperlink{unzip_8h_ad578db1d36691a2a244482a3b2360ca3}{unz\+File}}]{file,  }\item[{voidp}]{buf,  }\item[{unsigned}]{len }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{zipfstream_8h_a84b6624278c983b28ba80a15b823215d}\label{zipfstream_8h_a84b6624278c983b28ba80a15b823215d}} 
+\index{zipfstream.\+h@{zipfstream.\+h}!zipclose@{zipclose}}
+\index{zipclose@{zipclose}!zipfstream.\+h@{zipfstream.\+h}}
+\subsubsection{\texorpdfstring{zipclose()}{zipclose()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} zipclose (\begin{DoxyParamCaption}\item[{\hyperlink{zip_8h_af69b9a5ea9aaf8e8f0b7681e451b224c}{zip\+File}}]{file }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{zipfstream_8h_a1817c718d453767f5ef9632e1c5d9844}\label{zipfstream_8h_a1817c718d453767f5ef9632e1c5d9844}} 
+\index{zipfstream.\+h@{zipfstream.\+h}!zipopen@{zipopen}}
+\index{zipopen@{zipopen}!zipfstream.\+h@{zipfstream.\+h}}
+\subsubsection{\texorpdfstring{zipopen()}{zipopen()}}
+{\footnotesize\ttfamily \hyperlink{zip_8h_af69b9a5ea9aaf8e8f0b7681e451b224c}{zip\+File} zipopen (\begin{DoxyParamCaption}\item[{const char $\ast$}]{path,  }\item[{const char $\ast$}]{filenameinzip,  }\item[{\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}}]{append }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{zipfstream_8h_a9bf4448b4afc2d9410a16630cb97268d}\label{zipfstream_8h_a9bf4448b4afc2d9410a16630cb97268d}} 
+\index{zipfstream.\+h@{zipfstream.\+h}!zipwrite@{zipwrite}}
+\index{zipwrite@{zipwrite}!zipfstream.\+h@{zipfstream.\+h}}
+\subsubsection{\texorpdfstring{zipwrite()}{zipwrite()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} zipwrite (\begin{DoxyParamCaption}\item[{\hyperlink{zip_8h_af69b9a5ea9aaf8e8f0b7681e451b224c}{zip\+File}}]{file,  }\item[{voidp}]{buf,  }\item[{unsigned}]{len }\end{DoxyParamCaption})}
+

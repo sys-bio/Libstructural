@@ -1,0 +1,38 @@
+\hypertarget{class_s_b_m_l_id_converter}{}\section{S\+B\+M\+L\+Id\+Converter Class Reference}
+\label{class_s_b_m_l_id_converter}\index{S\+B\+M\+L\+Id\+Converter@{S\+B\+M\+L\+Id\+Converter}}
+
+
+{\ttfamily \#include $<$S\+B\+M\+L\+Id\+Converter.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} Converter for replacing object identifiers.
+
+
+
+This converter translates all instances of a given identifier (i.\+e., S\+B\+ML object \char`\"{}id\char`\"{} attribute value) of type \char`\"{}\+S\+Id\char`\"{} in a \hyperlink{class_model}{Model} to another identifier. It does this based on a list of source identifiers, translating each one to its corresponding replacement value in a list of replacement identifiers. It also updates all references to the identifiers so replaced. (More technically, it replaces all values known as type {\ttfamily S\+Id\+Ref} in the S\+B\+ML Level~3 specifications.)
+
+This converter only searches the global S\+Id namespace for the \hyperlink{class_model}{Model} child of the \hyperlink{class_s_b_m_l_document}{S\+B\+M\+L\+Document}. It does not replace any I\+Ds or S\+Id\+Refs for Local\+Parameters, nor does it replace any Unit\+S\+Ids or Unit\+S\+Id\+Refs. It likewise does not replace any I\+Ds in a new namespace introduced by a package, such as the Port\+S\+Id namespace from the Hierarchical Model Composition package, nor any \hyperlink{class_model}{Model} objects that are not the direct child of the \hyperlink{class_s_b_m_l_document}{S\+B\+M\+L\+Document}, such as the Model\+Definitions from the Hierarchical Model Composition package.
+
+If, however, a package introduces a new element with an \char`\"{}id\char`\"{} attribute of type S\+Id, any attribute of type S\+Id\+Ref, or child of type S\+Id\+Ref (such as a new Math child of a package element), those I\+Ds will be replaced if they match a source identifier.\hypertarget{class_s_b_m_l_id_converter_SBMLIdConverter-usage}{}\subsection{Configuration and use of S\+B\+M\+L\+Id\+Converter}\label{class_s_b_m_l_id_converter_SBMLIdConverter-usage}
+\hyperlink{class_s_b_m_l_id_converter}{S\+B\+M\+L\+Id\+Converter} is enabled by creating a \hyperlink{class_conversion_properties}{Conversion\+Properties} object with the option {\ttfamily \char`\"{}rename\+S\+Ids\char`\"{}}, and passing this properties object to S\+B\+M\+L\+Document\+::convert(). The converter accepts two options, and both must be set or else no conversion is performed\+:
+
+\begin{DoxyItemize}
+\item {\ttfamily \char`\"{}current\+Ids\char`\"{}}\+: A comma-\/separated list of identifiers to replace. \item {\ttfamily \char`\"{}new\+Ids\char`\"{}}\+: A comma-\/separated list of identifiers to use as the replacements. The values should correspond one-\/to-\/one with the identifiers in {\ttfamily \char`\"{}current\+Ids\char`\"{}} that should be replaced.\end{DoxyItemize}
+\hypertarget{classdoc__section__using__sbml__converters_using-converters}{}\subsection{General information about the use of S\+B\+M\+L converters}\label{classdoc__section__using__sbml__converters_using-converters}
+The use of all the converters follows a similar approach. First, one creates a \hyperlink{class_conversion_properties}{Conversion\+Properties} object and calls Conversion\+Properties\+::add\+Option() on this object with one argument\+: a text string that identifies the desired converter. (The text string is specific to each converter; consult the documentation for a given converter to find out how it should be enabled.)
+
+Next, for some converters, the caller can optionally set some converter-\/specific properties using additional calls to Conversion\+Properties\+::add\+Option(). Many converters provide the ability to configure their behavior to some extent; this is realized through the use of properties that offer different options. The default property values for each converter can be interrogated using the method S\+B\+M\+L\+Converter\+::get\+Default\+Properties() on the converter class in question .
+
+Finally, the caller should invoke the method S\+B\+M\+L\+Document\+::convert() with the \hyperlink{class_conversion_properties}{Conversion\+Properties} object as an argument.\hypertarget{classdoc__section__using__sbml__converters_converter-example}{}\subsubsection{Example of invoking an S\+B\+M\+L converter}\label{classdoc__section__using__sbml__converters_converter-example}
+The following code fragment illustrates an example using \hyperlink{class_s_b_m_l_reaction_converter}{S\+B\+M\+L\+Reaction\+Converter}, which is invoked using the option string {\ttfamily \char`\"{}replace\+Reactions\char`\"{}}\+:
+
+In the case of \hyperlink{class_s_b_m_l_reaction_converter}{S\+B\+M\+L\+Reaction\+Converter}, there are no options to affect its behavior, so the next step is simply to invoke the converter on an \hyperlink{class_s_b_m_l_document}{S\+B\+M\+L\+Document} object. Continuing the example code\+:
+
+Here is an example of using a converter that offers an option. The following code invokes \hyperlink{class_s_b_m_l_strip_package_converter}{S\+B\+M\+L\+Strip\+Package\+Converter} to remove the S\+B\+ML Level~3 {\itshape Layout} package from a model. It sets the name of the package to be removed by adding a value for the option named {\ttfamily \char`\"{}package\char`\"{}} defined by that converter\+:\hypertarget{classdoc__section__using__sbml__converters_available-converters}{}\subsubsection{Available S\+B\+M\+L converters in lib\+S\+B\+ML}\label{classdoc__section__using__sbml__converters_available-converters}
+Lib\+S\+B\+ML provides a number of built-\/in converters; by convention, their names end in {\itshape Converter}. The following are the built-\/in converters provided by lib\+S\+B\+ML \+:
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_s_b_m_l_id_converter_8h}{S\+B\+M\+L\+Id\+Converter.\+h}\end{DoxyCompactItemize}

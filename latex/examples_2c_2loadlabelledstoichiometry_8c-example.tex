@@ -1,0 +1,277 @@
+\hypertarget{examples_2c_2loadlabelledstoichiometry_8c-example}{}\section{examples/c/loadlabelledstoichiometry.\+c}
+This is an example of how to load a labeled stoichiometry matrix and read test results. The example also shows how to print the reordered stoichiometry matrix as well as the Gamma matrix.
+
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#include <stdio.h>}           \textcolor{comment}{// for printf}
+\textcolor{preprocessor}{#include <stdlib.h>}          \textcolor{comment}{// for malloc}
+\textcolor{preprocessor}{#include <string.h>}          \textcolor{comment}{// for memset}
+\textcolor{preprocessor}{#include <\hyperlink{libstructural_8h}{libstructural.h}>}   \textcolor{comment}{// the structural analysis library}
+
+\textcolor{comment}{// construct simple stoichiometry matrix with labelled species and reactions}
+\textcolor{keywordtype}{void} \hyperlink{loadlabelledstoichiometry_8c_a45d5e3cd5275b375230af630e15886ce}{GetMatrixFromSomeWhere}(\textcolor{keywordtype}{double}** *oMatrix, \textcolor{keywordtype}{int} *nRows, \textcolor{keywordtype}{int} *nCols, 
+         \textcolor{keywordtype}{char}** *speciesNames, \textcolor{keywordtype}{double}* *initialConcentrations, 
+         \textcolor{keywordtype}{char}** *reactionNames);
+
+\textcolor{comment}{// gets the reordered stoichiometry matrix from the library}
+\textcolor{keywordtype}{void} \hyperlink{loadlabelledstoichiometry_8c_ae467e9e38b5eb49f8559695a4341e44b}{PrintReorderedStoichiometryMatrix}();
+
+\textcolor{comment}{// gets the gamma matrix from the librar}
+\textcolor{keywordtype}{void} \hyperlink{loadlabelledstoichiometry_8c_ac99d30fb2b9d6e7f5c08e9fff04feab8}{PrintGammaMatrix}();
+
+
+\textcolor{keywordtype}{int} \hyperlink{arithchk_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (\textcolor{keywordtype}{int} argc, \textcolor{keywordtype}{char}** argv)
+\{
+        \textcolor{keywordtype}{int}      i,\hyperlink{lp__lib_8h_a06b53c1efb3823879093de05b4e0b46b}{j};
+        \textcolor{keywordtype}{int}      nRows;
+        \textcolor{keywordtype}{int}      nCols;
+        \textcolor{keywordtype}{double}** oMatrix;
+        \textcolor{keywordtype}{char}*    sMessage;
+        \textcolor{keywordtype}{char}**   \hyperlink{namespacepython_test_a0a8e8643e0a24523d16aa025aa13df5c}{speciesNames};
+        \textcolor{keywordtype}{char}**   \hyperlink{namespacepython_test_a004f052ba812c8e03bbab159cd7d3b75}{reactionNames};
+        \textcolor{keywordtype}{double}*  initialConcentrations;
+        \textcolor{keywordtype}{int}      nLength;
+                
+        
+        \textcolor{comment}{// get matrix to analyze from another part of the code as well }
+        \textcolor{comment}{// as species and reaction names}
+        \hyperlink{loadlabelledstoichiometry_8c_a45d5e3cd5275b375230af630e15886ce}{GetMatrixFromSomeWhere}(&oMatrix, &nRows, &nCols, 
+               &speciesNames, &initialConcentrations, &reactionNames);
+        
+        
+        \textcolor{comment}{// load matrix into the structural analysis library}
+        \hyperlink{libstructural_8h_a9ac01e88f015f584389d08fcf721ba7d}{LibStructural\_loadStoichiometryMatrix} (oMatrix, nRows, nCols);
+        \textcolor{comment}{// load species names and initial concentrations}
+        \hyperlink{libstructural_8h_a6e313370663b6098b228f251129eaddc}{LibStructural\_loadSpecies}(speciesNames, initialConcentrations, nRows);
+        \textcolor{comment}{// load reaction names}
+        \hyperlink{libstructural_8h_a2e96b0ac21b0026228a600b754759f93}{LibStructural\_loadReactionNames}(reactionNames, nCols);
+        
+        \textcolor{comment}{// analyze the stoichiometry matrix using the QR method}
+        \hyperlink{libstructural_8h_a505eacbf357b087e0d10a09feb0d69e2}{LibStructural\_analyzeWithQR}( &sMessage, &nLength);
+        
+        \textcolor{comment}{// print model overview}
+        printf(\textcolor{stringliteral}{"%s"}, sMessage);
+        
+        \textcolor{comment}{// free the memory used by the message}
+        \hyperlink{libstructural_8h_a43ec36f000082b338e1aad9cff3b0b23}{LibStructural\_freeVector}(sMessage);
+        
+        \textcolor{comment}{// obtain and print the test results}
+        \hyperlink{libstructural_8h_a76fa7cdfb5333db9e78bf36ac6bc292e}{LibStructural\_getTestDetails}( &sMessage, &nLength );
+        printf(\textcolor{stringliteral}{"%s"}, sMessage);
+        
+        \textcolor{comment}{// finally free the memory used by the message}
+        \hyperlink{libstructural_8h_a43ec36f000082b338e1aad9cff3b0b23}{LibStructural\_freeVector}(sMessage);
+        
+        
+        \textcolor{comment}{// Print Reordered Stoichiometry Matrix}
+        \hyperlink{loadlabelledstoichiometry_8c_ae467e9e38b5eb49f8559695a4341e44b}{PrintReorderedStoichiometryMatrix}();
+        
+        \textcolor{comment}{// Print Gamma Matrix}
+        \hyperlink{loadlabelledstoichiometry_8c_ac99d30fb2b9d6e7f5c08e9fff04feab8}{PrintGammaMatrix}();
+        
+                        
+        \textcolor{comment}{// and free the memory used to hold the stoichiometry matrix}
+        \textcolor{keywordflow}{for} (i = 0; i < nRows; i++)
+                free(oMatrix[i]);
+        free(oMatrix);
+        
+        \textcolor{comment}{// free species names}
+        \textcolor{keywordflow}{for} (i = 0; i < nRows; i++)
+                free(speciesNames[i]);
+        free(speciesNames);
+
+        \textcolor{comment}{// free reaction names}
+        \textcolor{keywordflow}{for} (i = 0; i < nCols; i++)
+                free(reactionNames[i]);
+        free(reactionNames);
+        
+        \textcolor{keywordflow}{return} 0;
+        
+\}
+
+\textcolor{keywordtype}{void} \hyperlink{loadlabelledstoichiometry_8c_ae467e9e38b5eb49f8559695a4341e44b}{PrintReorderedStoichiometryMatrix}()
+\{
+        \textcolor{keywordtype}{int}      i,\hyperlink{lp__lib_8h_a06b53c1efb3823879093de05b4e0b46b}{j};
+        \textcolor{keywordtype}{double}** reorderedStoichiometryMatrix;
+        \textcolor{keywordtype}{int}      reorderedNumRows;
+        \textcolor{keywordtype}{int}      reorderedNumCols;
+        \textcolor{keywordtype}{char}**   reorderedCols;
+        \textcolor{keywordtype}{char}**   reorderedRows;
+        
+        printf(\textcolor{stringliteral}{"\(\backslash\)nReordered Stoichiometry Matrix"});
+
+        \textcolor{comment}{// get Reordered Stoichiometry Matrix}
+        \hyperlink{libstructural_8h_a7a4bb54cd3509c8c7f014eb1ffba155b}{LibStructural\_getReorderedStoichiometryMatrix}
+                (&reorderedStoichiometryMatrix, &reorderedNumRows, &reorderedNumCols);
+        \hyperlink{libstructural_8h_a385210f1ccbddaf02f28efc490ca4114}{LibStructural\_getReorderedStoichiometryMatrixLabels}
+                (&reorderedRows, &reorderedNumRows, &reorderedCols, &reorderedNumCols);
+        
+        \textcolor{comment}{// print Reordered stoichiometry matrix:}
+        printf(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)t"}); 
+        \textcolor{keywordflow}{for} (i = 0; i < reorderedNumCols; i++)
+                printf(\textcolor{stringliteral}{"%s\(\backslash\)t"}, reorderedCols[i]);
+        printf(\textcolor{stringliteral}{"\(\backslash\)n"});
+        
+        \textcolor{keywordflow}{for} (i = 0; i < reorderedNumRows; i++)
+        \{
+                printf(\textcolor{stringliteral}{"%s\(\backslash\)t"}, reorderedRows[i]);
+                \textcolor{keywordflow}{for} (j = 0; j < reorderedNumCols; j++)
+                        printf (\textcolor{stringliteral}{"%2.1lf\(\backslash\)t"}, reorderedStoichiometryMatrix[i][j]);
+                printf(\textcolor{stringliteral}{"\(\backslash\)n"});
+        \}
+                           
+        \textcolor{comment}{// free reordered stoichiometry matrix and labels}
+        \hyperlink{libstructural_8h_a12ff3358b228a0e3a9fbefee2af8103f}{LibStructural\_freeMatrix}((\textcolor{keywordtype}{void}**)reorderedStoichiometryMatrix, 
+      reorderedNumRows);
+        \hyperlink{libstructural_8h_a12ff3358b228a0e3a9fbefee2af8103f}{LibStructural\_freeMatrix}((\textcolor{keywordtype}{void}**)reorderedCols, reorderedNumCols);
+        \hyperlink{libstructural_8h_a12ff3358b228a0e3a9fbefee2af8103f}{LibStructural\_freeMatrix}((\textcolor{keywordtype}{void}**)reorderedRows, reorderedNumRows);
+
+        printf(\textcolor{stringliteral}{"\(\backslash\)n"});
+\}
+
+\textcolor{keywordtype}{void} \hyperlink{loadlabelledstoichiometry_8c_ac99d30fb2b9d6e7f5c08e9fff04feab8}{PrintGammaMatrix}()
+\{
+        \textcolor{keywordtype}{int}      i,\hyperlink{lp__lib_8h_a06b53c1efb3823879093de05b4e0b46b}{j};   
+        \textcolor{keywordtype}{double}** gammaMatrix;
+        \textcolor{keywordtype}{int}      gammaNumRows;
+        \textcolor{keywordtype}{int}      gammaNumCols;
+        \textcolor{keywordtype}{char}**   gammaCols;
+        \textcolor{keywordtype}{char}**   gammaRows;
+
+        
+        printf(\textcolor{stringliteral}{"\(\backslash\)nGamma Matrix"});
+        
+        \textcolor{comment}{// get Gamma Matrix and labels}
+        \hyperlink{libstructural_8h_ad8fcf1c405fed42135b1a9c0f8290655}{LibStructural\_getGammaMatrix}
+                (&gammaMatrix, &gammaNumRows, &gammaNumCols);
+        \hyperlink{libstructural_8h_aed6a2f6cfa77f69bfdee264b7dc4c004}{LibStructural\_getGammaMatrixLabels}
+                (&gammaRows, &gammaNumRows, &gammaCols, &gammaNumCols);
+        
+        \textcolor{comment}{// print gamma matrix:}
+        printf(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)t"}); 
+        \textcolor{keywordflow}{for} (i = 0; i < gammaNumCols; i++)
+                printf(\textcolor{stringliteral}{"%s\(\backslash\)t"}, gammaCols[i]);
+        printf(\textcolor{stringliteral}{"\(\backslash\)n"});
+        
+        \textcolor{keywordflow}{for} (i = 0; i < gammaNumRows; i++)
+        \{
+                printf(\textcolor{stringliteral}{"%s\(\backslash\)t"}, gammaRows[i]);
+                \textcolor{keywordflow}{for} (j = 0; j < gammaNumCols; j++)
+                        printf (\textcolor{stringliteral}{"%2.1lf\(\backslash\)t"}, gammaMatrix[i][j]);
+                printf(\textcolor{stringliteral}{"\(\backslash\)n"});
+        \}
+                           
+        \textcolor{comment}{// free gamma stoichiometry matrix and labels}
+        \hyperlink{libstructural_8h_a12ff3358b228a0e3a9fbefee2af8103f}{LibStructural\_freeMatrix}((\textcolor{keywordtype}{void}**)gammaMatrix, gammaNumRows);
+        \hyperlink{libstructural_8h_a12ff3358b228a0e3a9fbefee2af8103f}{LibStructural\_freeMatrix}((\textcolor{keywordtype}{void}**)gammaCols, gammaNumCols);
+        \hyperlink{libstructural_8h_a12ff3358b228a0e3a9fbefee2af8103f}{LibStructural\_freeMatrix}((\textcolor{keywordtype}{void}**)gammaRows, gammaNumRows);
+        
+        printf(\textcolor{stringliteral}{"\(\backslash\)n"});
+
+\}
+
+
+\textcolor{keywordtype}{void} \hyperlink{loadlabelledstoichiometry_8c_a45d5e3cd5275b375230af630e15886ce}{GetMatrixFromSomeWhere}(\textcolor{keywordtype}{double}** *oMatrix, \textcolor{keywordtype}{int} *nRows, \textcolor{keywordtype}{int} *nCols, 
+         \textcolor{keywordtype}{char}** *speciesNames, \textcolor{keywordtype}{double}* *initialConcentrations, 
+         \textcolor{keywordtype}{char}** *reactionNames)
+\{
+        \textcolor{keywordtype}{int} numCols, numRows, i;
+        numRows = 4; numCols = 3;
+        
+        \textcolor{comment}{// initialize memory needed for the stoichiometry matrix}
+        *oMatrix = (\textcolor{keywordtype}{double}**)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}*)*numRows); 
+        memset(*oMatrix, 0, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double}*)*numRows);
+        
+        \textcolor{keywordflow}{for} (i = 0; i < numRows; i ++)
+        \{
+                (*oMatrix)[i] = (\textcolor{keywordtype}{double}*)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double})*numCols); 
+                memset((*oMatrix)[i], 0, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double})*numCols);
+        \}
+        
+        \textcolor{comment}{// initialize memory needed for speciesNames}
+        (*speciesNames) = (\textcolor{keywordtype}{char}**)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}*)*numRows); 
+        memset(*speciesNames, 0, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}*)*numRows);
+        
+        *initialConcentrations = (\textcolor{keywordtype}{double}*)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double})*numRows); 
+        memset(*initialConcentrations, 0, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{double})*numRows);
+                
+        \textcolor{comment}{// initialize memory needed for reactionNames}
+        (*reactionNames) = (\textcolor{keywordtype}{char}**)malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}*)*numCols); 
+        memset(*reactionNames, 0, \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{char}*)*numCols);
+        
+        \textcolor{comment}{// set non zero entries of the stoichiometry matrix}
+        (*oMatrix)[0][1] = -1.0;        (*oMatrix)[0][2] =  1.0;      \textcolor{comment}{// ES}
+        (*oMatrix)[1][0] =  1.0;        (*oMatrix)[1][2] = -1.0;      \textcolor{comment}{// S2}
+        (*oMatrix)[2][0] = -1.0;        (*oMatrix)[2][1] =  1.0;      \textcolor{comment}{// S1}
+        (*oMatrix)[3][1] =  1.0;        (*oMatrix)[3][2] = -1.0;      \textcolor{comment}{// E}
+        
+        \textcolor{comment}{// set species names}
+        (*speciesNames)[0] = strdup(\textcolor{stringliteral}{"S2"});  (*speciesNames)[1] = strdup(\textcolor{stringliteral}{"ES"});
+        (*speciesNames)[2] = strdup(\textcolor{stringliteral}{"S1"});  (*speciesNames)[3] = strdup(\textcolor{stringliteral}{"E"});
+        
+        \textcolor{comment}{// set reaction names}
+        (*reactionNames)[0] = strdup(\textcolor{stringliteral}{"J1"}); (*reactionNames)[1] = strdup(\textcolor{stringliteral}{"J2"});     
+        (*reactionNames)[2] = strdup(\textcolor{stringliteral}{"J3"});     
+        
+        \textcolor{comment}{// be sure to return number of rows and columns}
+        *nRows = numRows;
+        *nCols = numCols;
+\}
+
+
+
+\textcolor{comment}{//The above returns the following output: }
+\textcolor{comment}{//}
+\textcolor{comment}{//-----------------------------------------------------------------------------}
+\textcolor{comment}{//-----------------------------------------------------------------------------}
+\textcolor{comment}{//STRUCTURAL ANALYSIS MODULE : Results }
+\textcolor{comment}{//-----------------------------------------------------------------------------}
+\textcolor{comment}{//-----------------------------------------------------------------------------}
+\textcolor{comment}{//Size of Stochiometric Matrix: 4 x 3 (Rank is  2)}
+\textcolor{comment}{//Nonzero entries in Stochiometric Matrix: 8  (66.6667% full)}
+\textcolor{comment}{//}
+\textcolor{comment}{//Independent Species (2) :}
+\textcolor{comment}{//S2, ES}
+\textcolor{comment}{//}
+\textcolor{comment}{//Dependent Species (2) :}
+\textcolor{comment}{//S1, E}
+\textcolor{comment}{//}
+\textcolor{comment}{//L0 : There are 2 dependencies. L0 is a 2x2 matrix.}
+\textcolor{comment}{//}
+\textcolor{comment}{//Conserved Entities}
+\textcolor{comment}{//1:  + S2 + ES + S1}
+\textcolor{comment}{//2:  + S2 + E}
+\textcolor{comment}{//-----------------------------------------------------------------------------}
+\textcolor{comment}{//-----------------------------------------------------------------------------}
+\textcolor{comment}{//Developed by the Computational Systems Biology Group at Keck Graduate Institute }
+\textcolor{comment}{//and the Saurolab at the Bioengineering Departmant at  University of Washington.}
+\textcolor{comment}{//Contact : Frank T. Bergmann (fbergman@u.washington.edu) or Herbert M. Sauro.   }
+\textcolor{comment}{//}
+\textcolor{comment}{//(previous authors) Ravishankar Rao Vallabhajosyula                   }
+\textcolor{comment}{//-----------------------------------------------------------------------------}
+\textcolor{comment}{//-----------------------------------------------------------------------------}
+\textcolor{comment}{//}
+\textcolor{comment}{//Testing Validity of Conservation Laws.}
+\textcolor{comment}{//}
+\textcolor{comment}{//Passed Test 1 : Gamma*N = 0 (Zero matrix)}
+\textcolor{comment}{//Passed Test 2 : Rank(N) using SVD (2) is same as m0 (2)}
+\textcolor{comment}{//Passed Test 3 : Rank(NR) using SVD (2) is same as m0 (2)}
+\textcolor{comment}{//Passed Test 4 : Rank(NR) using QR (2) is same as m0 (2)}
+\textcolor{comment}{//Passed Test 5 : L0 obtained with QR matches Q21*inv(Q11)}
+\textcolor{comment}{//Passed Test 6 : N*K = 0 (Zero matrix)}
+\textcolor{comment}{//}
+\textcolor{comment}{//Reordered Stoichiometry Matrix}
+\textcolor{comment}{//J1      J2      J3      }
+\textcolor{comment}{//S2      0.0     -1.0    1.0     }
+\textcolor{comment}{//ES      1.0     0.0     -1.0    }
+\textcolor{comment}{//S1      -1.0    1.0     0.0     }
+\textcolor{comment}{//E       0.0     1.0     -1.0    }
+\textcolor{comment}{//}
+\textcolor{comment}{//}
+\textcolor{comment}{//Gamma Matrix}
+\textcolor{comment}{//S2      ES      S1      E       }
+\textcolor{comment}{//0       1.0     1.0     1.0     0.0     }
+\textcolor{comment}{//1       1.0     -0.0    0.0     1.0     }
+\textcolor{comment}{//}
+\end{DoxyCodeInclude}
+ 

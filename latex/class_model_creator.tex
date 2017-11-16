@@ -1,0 +1,37 @@
+\hypertarget{class_model_creator}{}\section{Model\+Creator Class Reference}
+\label{class_model_creator}\index{Model\+Creator@{Model\+Creator}}
+
+
+{\ttfamily \#include $<$Model\+Creator.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} M\+I\+R\+I\+A\+M-\/compliant data about a model\textquotesingle{}s creator.
+
+
+
+The S\+B\+ML specification beginning with Level~2 Version~2 defines a standard approach to recording model history and model creator information in a form that complies with M\+I\+R\+I\+AM (\char`\"{}\+Minimum Information
+  Requested in the Annotation of biochemical Models\char`\"{}, {\itshape Nature Biotechnology}, vol. 23, no. 12, Dec. 2005). For the model creator, this form involves the use of parts of the \href{http://en.wikipedia.org/wiki/VCard}{\tt v\+Card} representation. Lib\+S\+B\+ML provides the \hyperlink{class_model_creator}{Model\+Creator} class as a convenience high-\/level interface for working with model creator data. Objects of class \hyperlink{class_model_creator}{Model\+Creator} can be used to store and carry around creator data within a program, and the various methods in this object class let callers manipulate the different parts of the model creator representation.\hypertarget{class_model_creator_parts}{}\subsection{The different parts of a model creator definition}\label{class_model_creator_parts}
+The \hyperlink{class_model_creator}{Model\+Creator} class mirrors the structure of the M\+I\+R\+I\+AM model creator annotations in S\+B\+ML. The following template illustrates these different fields when they are written in X\+ML form\+:
+
+
+\begin{DoxyPre}
+<vCard:N rdf:parseType="Resource">
+  <vCard:Family>family name</vCard:Family>
+  <vCard:Given>given name</vCard:Given>
+</vCard:N>
+...
+<vCard:EMAIL>email address</vCard:EMAIL>
+...
+<vCard:ORG rdf:parseType="Resource">
+  <vCard:Orgname>organization</vCard:Orgname>
+</vCard:ORG>
+\end{DoxyPre}
+
+
+Each of the separate data values family name, given name, email address, and organization can be set and retrieved via corresponding methods in the \hyperlink{class_model_creator}{Model\+Creator} class. These methods are documented in more detail below. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_model_creator_8h}{Model\+Creator.\+h}\end{DoxyCompactItemize}

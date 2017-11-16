@@ -1,0 +1,20 @@
+\hypertarget{classdoc__readsbmlfromstring}{}\section{doc\+\_\+readsbmlfromstring Class Reference}
+\label{classdoc__readsbmlfromstring}\index{doc\+\_\+readsbmlfromstring@{doc\+\_\+readsbmlfromstring}}
+
+
+{\ttfamily \#include $<$S\+B\+M\+L\+Reader.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+Reads an S\+B\+ML document from a text string.
+
+This method is flexible with respect to the presence of an X\+ML declaration at the beginning of the string. In particular, if the string in {\ttfamily xml} does not begin with the X\+ML declaration \begin{DoxyVerb}<?xml version='1.0' encoding='UTF-8'?>
+\end{DoxyVerb}
+ then this method will automatically prepend the declaration to {\ttfamily xml}.
+
+This method will log a fatal error if the content given in the parameter {\ttfamily xml} is not in S\+B\+ML format. See the method documentation for S\+B\+M\+L\+Reader\+::read\+S\+B\+M\+L() for an example of code for testing the returned error code. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_s_b_m_l_reader_8h}{S\+B\+M\+L\+Reader.\+h}\end{DoxyCompactItemize}

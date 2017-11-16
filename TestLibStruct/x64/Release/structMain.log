@@ -8,24 +8,24 @@
 ..\..\libstruct\LibLA\util.cpp(745): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   constraint.cpp
   libstructural.cpp
-..\..\libstruct\LibStructural\libstructural.cpp(308): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-..\..\libstruct\LibStructural\libstructural.cpp(309): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-..\..\libstruct\LibStructural\libstructural.cpp(2200): warning C4018: '<': signed/unsigned mismatch
-..\..\libstruct\LibStructural\libstructural.cpp(2201): warning C4018: '<': signed/unsigned mismatch
-..\..\libstruct\LibStructural\libstructural.cpp(2314): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-..\..\libstruct\LibStructural\libstructural.cpp(2328): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-..\..\libstruct\LibStructural\libstructural.cpp(2346): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-..\..\libstruct\LibStructural\libstructural.cpp(2361): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-..\..\libstruct\LibStructural\libstructural.cpp(2369): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-..\..\libstruct\LibStructural\libstructural.cpp(2377): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-..\..\libstruct\LibStructural\libstructural.cpp(2385): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-..\..\libstruct\LibStructural\libstructural.cpp(2393): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-..\..\libstruct\LibStructural\libstructural.cpp(2582): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-..\..\libstruct\LibStructural\libstructural.cpp(2595): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-..\..\libstruct\LibStructural\libstructural.cpp(2604): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-..\..\libstruct\LibStructural\libstructural.cpp(2751): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibStructural\libstructural.cpp(313): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibStructural\libstructural.cpp(314): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibStructural\libstructural.cpp(2205): warning C4018: '<': signed/unsigned mismatch
+..\..\libstruct\LibStructural\libstructural.cpp(2206): warning C4018: '<': signed/unsigned mismatch
+..\..\libstruct\LibStructural\libstructural.cpp(2319): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibStructural\libstructural.cpp(2333): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibStructural\libstructural.cpp(2351): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibStructural\libstructural.cpp(2366): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibStructural\libstructural.cpp(2374): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibStructural\libstructural.cpp(2382): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibStructural\libstructural.cpp(2390): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibStructural\libstructural.cpp(2398): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibStructural\libstructural.cpp(2587): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibStructural\libstructural.cpp(2600): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibStructural\libstructural.cpp(2609): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+..\..\libstruct\LibStructural\libstructural.cpp(2756): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   lpresult.cpp
-C:\Users\hsauro\Documents\Visual Studio 2017\Projects\libstruct\include\lpresult.h(41): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\include\lpresult.h(41): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
   objective.cpp
   sbmlmodel.cpp
   Main.cpp
@@ -35,9 +35,11 @@ C:\Users\hsauro\Documents\Visual Studio 2017\Projects\libstruct\include\lpresult
 .\src\Main.cpp(41): warning C4101: 'i': unreferenced local variable
 .\src\Main.cpp(45): warning C4101: 'sMessage': unreferenced local variable
 .\src\Main.cpp(46): warning C4101: 'nLength': unreferenced local variable
-     Creating library C:\Users\hsauro\Documents\Visual Studio 2017\Projects\libstruct\TestLibStruct\x64\Release\structMain.lib and object C:\Users\hsauro\Documents\Visual Studio 2017\Projects\libstruct\TestLibStruct\x64\Release\structMain.exp
+     Creating library C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\TestLibStruct\x64\Release\structMain.lib and object C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\TestLibStruct\x64\Release\structMain.exp
 LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
-  All 745 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  632 of 632 functions (100.0%) were compiled, the rest were copied from previous compilation.
+    124 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  structMain.vcxproj -> C:\Users\hsauro\Documents\Visual Studio 2017\Projects\libstruct\TestLibStruct\x64\Release\structMain.exe
+  structMain.vcxproj -> C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\TestLibStruct\x64\Release\structMain.exe

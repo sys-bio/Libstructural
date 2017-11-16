@@ -1,0 +1,72 @@
+\hypertarget{dtrevc_8c}{}\section{dtrevc.\+c File Reference}
+\label{dtrevc_8c}\index{dtrevc.\+c@{dtrevc.\+c}}
+{\ttfamily \#include \char`\"{}f2c.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}blaswrap.\+h\char`\"{}}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{dtrevc_8c_aa02984fced3c6ba1774e9ad220fa170a}{dtrevc\+\_\+} (char $\ast$side, char $\ast$howmny, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_aa8e2851dd42d4dd9f14b0686e32a956c}{logical} $\ast$select, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$n, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a1e69afaa4e6077b67397e6c36454b97a}{doublereal} $\ast$t, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$ldt, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a1e69afaa4e6077b67397e6c36454b97a}{doublereal} $\ast$vl, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$ldvl, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a1e69afaa4e6077b67397e6c36454b97a}{doublereal} $\ast$vr, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$ldvr, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$mm, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$m, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a1e69afaa4e6077b67397e6c36454b97a}{doublereal} $\ast$work, \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$\hyperlink{lp__lib_8h_a5c24524aad8cde9b56633a9d8290f857}{info})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} \hyperlink{dtrevc_8c_aac061f9822f71d2164eeeaae0e2a342c}{c\+\_\+\+\_\+1} = 1
+\item 
+static \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} \hyperlink{dtrevc_8c_a4e8bcb2aadbe17eeff89a0f201645d0a}{c\+\_\+\+\_\+2} = 2
+\item 
+static \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a1e69afaa4e6077b67397e6c36454b97a}{doublereal} \hyperlink{dtrevc_8c_a0026ec960c96f9d9e560e50f5291f58c}{c\+\_\+b22} = 1.
+\item 
+static \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a1e69afaa4e6077b67397e6c36454b97a}{doublereal} \hyperlink{dtrevc_8c_af5617d521bdc76b944fc9ebda189e30c}{c\+\_\+b25} = 0.
+\item 
+static \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_aa8e2851dd42d4dd9f14b0686e32a956c}{logical} \hyperlink{dtrevc_8c_a8342546d3cd785fd43bf78b45948d124}{c\+\_\+false} = \hyperlink{include_2f2c_8h_ad4986ecbba005b963f63a85f7c8c281d}{F\+A\+L\+S\+E\+\_\+}
+\item 
+static \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_aa8e2851dd42d4dd9f14b0686e32a956c}{logical} \hyperlink{dtrevc_8c_a0edff5a6e24bbbb3600c720f34a19abf}{c\+\_\+true} = \hyperlink{include_2f2c_8h_aca1e6c3771fa0306e1dad2b11d22a8e5}{T\+R\+U\+E\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{dtrevc_8c_aa02984fced3c6ba1774e9ad220fa170a}\label{dtrevc_8c_aa02984fced3c6ba1774e9ad220fa170a}} 
+\index{dtrevc.\+c@{dtrevc.\+c}!dtrevc\+\_\+@{dtrevc\+\_\+}}
+\index{dtrevc\+\_\+@{dtrevc\+\_\+}!dtrevc.\+c@{dtrevc.\+c}}
+\subsubsection{\texorpdfstring{dtrevc\+\_\+()}{dtrevc\_()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} dtrevc\+\_\+ (\begin{DoxyParamCaption}\item[{char $\ast$}]{side,  }\item[{char $\ast$}]{howmny,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_aa8e2851dd42d4dd9f14b0686e32a956c}{logical} $\ast$}]{select,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{n,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a1e69afaa4e6077b67397e6c36454b97a}{doublereal} $\ast$}]{t,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{ldt,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a1e69afaa4e6077b67397e6c36454b97a}{doublereal} $\ast$}]{vl,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{ldvl,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a1e69afaa4e6077b67397e6c36454b97a}{doublereal} $\ast$}]{vr,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{ldvr,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{mm,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{m,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a1e69afaa4e6077b67397e6c36454b97a}{doublereal} $\ast$}]{work,  }\item[{\hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} $\ast$}]{info }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{dtrevc_8c_aac061f9822f71d2164eeeaae0e2a342c}\label{dtrevc_8c_aac061f9822f71d2164eeeaae0e2a342c}} 
+\index{dtrevc.\+c@{dtrevc.\+c}!c\+\_\+\+\_\+1@{c\+\_\+\+\_\+1}}
+\index{c\+\_\+\+\_\+1@{c\+\_\+\+\_\+1}!dtrevc.\+c@{dtrevc.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+\+\_\+1}{c\_\_1}}
+{\footnotesize\ttfamily \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} c\+\_\+\+\_\+1 = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{dtrevc_8c_a4e8bcb2aadbe17eeff89a0f201645d0a}\label{dtrevc_8c_a4e8bcb2aadbe17eeff89a0f201645d0a}} 
+\index{dtrevc.\+c@{dtrevc.\+c}!c\+\_\+\+\_\+2@{c\+\_\+\+\_\+2}}
+\index{c\+\_\+\+\_\+2@{c\+\_\+\+\_\+2}!dtrevc.\+c@{dtrevc.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+\+\_\+2}{c\_\_2}}
+{\footnotesize\ttfamily \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a99e088ad9e1bf72a6c0e148a6c2b7012}{integer} c\+\_\+\+\_\+2 = 2\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{dtrevc_8c_a0026ec960c96f9d9e560e50f5291f58c}\label{dtrevc_8c_a0026ec960c96f9d9e560e50f5291f58c}} 
+\index{dtrevc.\+c@{dtrevc.\+c}!c\+\_\+b22@{c\+\_\+b22}}
+\index{c\+\_\+b22@{c\+\_\+b22}!dtrevc.\+c@{dtrevc.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+b22}{c\_b22}}
+{\footnotesize\ttfamily \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a1e69afaa4e6077b67397e6c36454b97a}{doublereal} c\+\_\+b22 = 1.\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{dtrevc_8c_af5617d521bdc76b944fc9ebda189e30c}\label{dtrevc_8c_af5617d521bdc76b944fc9ebda189e30c}} 
+\index{dtrevc.\+c@{dtrevc.\+c}!c\+\_\+b25@{c\+\_\+b25}}
+\index{c\+\_\+b25@{c\+\_\+b25}!dtrevc.\+c@{dtrevc.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+b25}{c\_b25}}
+{\footnotesize\ttfamily \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_a1e69afaa4e6077b67397e6c36454b97a}{doublereal} c\+\_\+b25 = 0.\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{dtrevc_8c_a8342546d3cd785fd43bf78b45948d124}\label{dtrevc_8c_a8342546d3cd785fd43bf78b45948d124}} 
+\index{dtrevc.\+c@{dtrevc.\+c}!c\+\_\+false@{c\+\_\+false}}
+\index{c\+\_\+false@{c\+\_\+false}!dtrevc.\+c@{dtrevc.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+false}{c\_false}}
+{\footnotesize\ttfamily \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_aa8e2851dd42d4dd9f14b0686e32a956c}{logical} c\+\_\+false = \hyperlink{include_2f2c_8h_ad4986ecbba005b963f63a85f7c8c281d}{F\+A\+L\+S\+E\+\_\+}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{dtrevc_8c_a0edff5a6e24bbbb3600c720f34a19abf}\label{dtrevc_8c_a0edff5a6e24bbbb3600c720f34a19abf}} 
+\index{dtrevc.\+c@{dtrevc.\+c}!c\+\_\+true@{c\+\_\+true}}
+\index{c\+\_\+true@{c\+\_\+true}!dtrevc.\+c@{dtrevc.\+c}}
+\subsubsection{\texorpdfstring{c\+\_\+true}{c\_true}}
+{\footnotesize\ttfamily \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_aa8e2851dd42d4dd9f14b0686e32a956c}{logical} c\+\_\+true = \hyperlink{include_2f2c_8h_aca1e6c3771fa0306e1dad2b11d22a8e5}{T\+R\+U\+E\+\_\+}\hspace{0.3cm}{\ttfamily [static]}}
+

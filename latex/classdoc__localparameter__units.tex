@@ -1,0 +1,17 @@
+\hypertarget{classdoc__localparameter__units}{}\section{doc\+\_\+localparameter\+\_\+units Class Reference}
+\label{classdoc__localparameter__units}\index{doc\+\_\+localparameter\+\_\+units@{doc\+\_\+localparameter\+\_\+units}}
+
+
+{\ttfamily \#include $<$Local\+Parameter.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\begin{DoxyParagraph}{}
+Local\+Parameters in S\+B\+ML have an attribute (\char`\"{}units\char`\"{}) for declaring the units of measurement intended for the parameter\textquotesingle{}s value. {\bfseries No defaults are defined} by S\+B\+ML in the absence of a definition for \char`\"{}units\char`\"{}. This method returns a \hyperlink{class_unit_definition}{Unit\+Definition} object based on the units declared for this \hyperlink{class_local_parameter}{Local\+Parameter} using its \char`\"{}units\char`\"{} attribute, or it returns {\ttfamily N\+U\+LL} if no units have been declared.
+\end{DoxyParagraph}
+Note that unit declarations for \hyperlink{class_local_parameter}{Local\+Parameter} objects are specified in terms of the {\itshape identifier} of a unit (e.\+g., using set\+Units()), but {\itshape this} method returns a \hyperlink{class_unit_definition}{Unit\+Definition} object, not a unit identifier. It does this by constructing an appropriate \hyperlink{class_unit_definition}{Unit\+Definition}. For S\+B\+ML Level~2 models, it will do this even when the value of the \char`\"{}units\char`\"{} attribute is one of the predefined S\+B\+ML units {\ttfamily \char`\"{}substance\char`\"{}}, {\ttfamily \char`\"{}volume\char`\"{}}, {\ttfamily \char`\"{}area\char`\"{}}, {\ttfamily \char`\"{}length\char`\"{}} or {\ttfamily \char`\"{}time\char`\"{}}. Callers may find this useful in conjunction with the helper methods provided by the \hyperlink{class_unit_definition}{Unit\+Definition} class for comparing different \hyperlink{class_unit_definition}{Unit\+Definition} objects. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_local_parameter_8h}{Local\+Parameter.\+h}\end{DoxyCompactItemize}

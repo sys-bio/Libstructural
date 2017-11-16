@@ -1,0 +1,42 @@
+\hypertarget{class_local_parameter}{}\section{Local\+Parameter Class Reference}
+\label{class_local_parameter}\index{Local\+Parameter@{Local\+Parameter}}
+
+
+{\ttfamily \#include $<$Local\+Parameter.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} A parameter inside an S\+B\+ML {\itshape reaction} definition.
+
+\hyperlink{class_local_parameter}{Local\+Parameter} has been introduced in S\+B\+ML Level~3 to serve as the object class for parameter definitions that are intended to be local to a \hyperlink{class_reaction}{Reaction}. Objects of class \hyperlink{class_local_parameter}{Local\+Parameter} never appear at the \hyperlink{class_model}{Model} level; they are always contained within \hyperlink{class_list_of_local_parameters}{List\+Of\+Local\+Parameters} lists which are in turn contained within \hyperlink{class_kinetic_law}{Kinetic\+Law} objects.
+
+Like its global \hyperlink{class_parameter}{Parameter} counterpart, the \hyperlink{class_local_parameter}{Local\+Parameter} object class is used to define a symbol associated with a value; this symbol can then be used in a model\textquotesingle{}s mathematical formulas (and specifically, for \hyperlink{class_local_parameter}{Local\+Parameter}, reaction rate formulas). Unlike \hyperlink{class_parameter}{Parameter}, the \hyperlink{class_local_parameter}{Local\+Parameter} class does not have a \char`\"{}constant\char`\"{} attribute\+: local parameters within reactions are {\itshape always} constant.
+
+\hyperlink{class_local_parameter}{Local\+Parameter} has one required attribute, \char`\"{}id\char`\"{}, to give the parameter a unique identifier by which other parts of an S\+B\+ML model definition can refer to it. A parameter can also have an optional \char`\"{}name\char`\"{} attribute of type {\ttfamily string}. Identifiers and names must be used according to the guidelines described in the S\+B\+ML specifications.
+
+The optional attribute \char`\"{}value\char`\"{} determines the value (of type {\ttfamily double}) assigned to the parameter. A missing value for \char`\"{}value\char`\"{} implies that the value either is unknown, or to be obtained from an external source, or determined by an initial assignment. The unit of measurement associated with the value of the parameter can be specified using the optional attribute \char`\"{}units\char`\"{}. Here we only mention briefly some notable points about the possible unit choices, but readers are urged to consult the S\+B\+ML specification documents for more information\+: 
+\begin{DoxyItemize}
+\item In S\+B\+ML Level~3, there are no constraints on the units that can be assigned to parameters in a model; there are also no units to inherit from the enclosing \hyperlink{class_model}{Model} object.
+
+
+\item In S\+B\+ML Level~2, the value assigned to the parameter\textquotesingle{}s \char`\"{}units\char`\"{} attribute must be chosen from one of the following possibilities\+: one of the base unit identifiers defined in S\+B\+ML; one of the built-\/in unit identifiers {\ttfamily \char`\"{}substance\char`\"{}}, {\ttfamily \char`\"{}time\char`\"{}}, {\ttfamily \char`\"{}volume\char`\"{}}, {\ttfamily \char`\"{}area\char`\"{}} or {\ttfamily \char`\"{}length\char`\"{}}; or the identifier of a new unit defined in the list of unit definitions in the enclosing \hyperlink{class_model}{Model} structure. There are no constraints on the units that can be chosen from these sets. There are no default units for local parameters. 
+\end{DoxyItemize}
+
+As with all other major S\+B\+ML components, \hyperlink{class_local_parameter}{Local\+Parameter} is derived from \hyperlink{class_s_base}{S\+Base}, and the methods defined on \hyperlink{class_s_base}{S\+Base} are available on \hyperlink{class_local_parameter}{Local\+Parameter}.
+
+In S\+B\+ML Level~3 Version~2, the scope of the \hyperlink{class_local_parameter}{Local\+Parameter} was expanded slightly to officially encompass the entire \hyperlink{class_reaction}{Reaction} instead of just the \hyperlink{class_kinetic_law}{Kinetic\+Law} in which it appears. This has no effect on models using only S\+B\+ML Level~3 Core constructs, but has the potential to allow S\+B\+ML Level~3 Packages to include elements in a \hyperlink{class_reaction}{Reaction} that could reference a \hyperlink{class_local_parameter}{Local\+Parameter} from that \hyperlink{class_reaction}{Reaction}\textquotesingle{}s \hyperlink{class_kinetic_law}{Kinetic\+Law}. It also means that no \hyperlink{class_local_parameter}{Local\+Parameter} may have the same {\ttfamily \char`\"{}id\char`\"{}} as a referenced \hyperlink{class_species}{Species} in any \hyperlink{class_simple_species_reference}{Simple\+Species\+Reference} in that \hyperlink{class_reaction}{Reaction}.
+
+\begin{DoxyWarning}{Warning}
+Lib\+S\+B\+ML derives \hyperlink{class_local_parameter}{Local\+Parameter} from \hyperlink{class_parameter}{Parameter}; however, this does not precisely match the object hierarchy defined by S\+B\+ML Level~3, where \hyperlink{class_local_parameter}{Local\+Parameter} is derived directly from \hyperlink{class_s_base}{S\+Base} and not \hyperlink{class_parameter}{Parameter}. We believe this arrangement makes it easier for lib\+S\+B\+ML users to program applications that work with both S\+B\+ML Level~2 and S\+B\+ML Level~3, but programmers should also keep in mind this difference exists. A side-\/effect of lib\+S\+B\+ML\textquotesingle{}s scheme is that certain methods on \hyperlink{class_local_parameter}{Local\+Parameter} that are inherited from \hyperlink{class_parameter}{Parameter} do not actually have relevance to \hyperlink{class_local_parameter}{Local\+Parameter} objects. An example of this is the methods pertaining to \hyperlink{class_parameter}{Parameter}\textquotesingle{}s attribute \char`\"{}constant\char`\"{} (i.\+e., is\+Set\+Constant(), set\+Constant(), and get\+Constant()).
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_list_of_local_parameters}{List\+Of\+Local\+Parameters} 
+
+\hyperlink{class_kinetic_law}{Kinetic\+Law} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_local_parameter_8h}{Local\+Parameter.\+h}\end{DoxyCompactItemize}

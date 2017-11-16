@@ -1,0 +1,17 @@
+\hypertarget{classdoc__what__is__required__attribute}{}\section{doc\+\_\+what\+\_\+is\+\_\+required\+\_\+attribute Class Reference}
+\label{classdoc__what__is__required__attribute}\index{doc\+\_\+what\+\_\+is\+\_\+required\+\_\+attribute@{doc\+\_\+what\+\_\+is\+\_\+required\+\_\+attribute}}
+
+
+{\ttfamily \#include $<$common-\/documentation.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\begin{DoxyParagraph}{}
+S\+B\+ML Level~3 requires that every package defines an attribute named \char`\"{}required\char`\"{} on the root {\ttfamily $<$sbml$>$} element in an S\+B\+ML file or data stream. The attribute, being in the namespace of the Level~3 package in question, must be prefixed by the X\+ML namespace prefix associated with the package. The value of the \char`\"{}required\char`\"{} attribute indicates whether constructs in that package may change the mathematical interpretation of constructs defined in S\+B\+ML Level~3 Core. A \char`\"{}required\char`\"{} value of {\ttfamily true} indicates that the package may do so. The value of the attribute is set by the Level~3 package specification, and does {\itshape not} depend on the actual presence or absence of particular package constructs in a given S\+B\+ML document\+: in other words, if the package specification defines any construct that can change the model\textquotesingle{}s meaning, the value of the \char`\"{}required\char`\"{} attribute must always be set to {\ttfamily true} in any S\+B\+ML document that uses the package.
+\end{DoxyParagraph}
+The X\+ML namespace declaration for an S\+B\+ML Level~3 package is an indication that a model makes use of features defined by that package, while the \char`\"{}required\char`\"{} attribute indicates whether the features may be ignored without compromising the mathematical meaning of the model. Both are necessary for a complete reference to an S\+B\+ML Level~3 package. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{common-documentation_8h}{common-\/documentation.\+h}\end{DoxyCompactItemize}

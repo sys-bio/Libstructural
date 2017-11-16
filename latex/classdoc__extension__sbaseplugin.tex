@@ -1,0 +1,71 @@
+\hypertarget{classdoc__extension__sbaseplugin}{}\section{doc\+\_\+extension\+\_\+sbaseplugin Class Reference}
+\label{classdoc__extension__sbaseplugin}\index{doc\+\_\+extension\+\_\+sbaseplugin@{doc\+\_\+extension\+\_\+sbaseplugin}}
+
+
+{\ttfamily \#include $<$common-\/documentation.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\begin{DoxyParagraph}{}
+Lib\+S\+B\+ML package extensions can extend existing lib\+S\+B\+ML objects such as \hyperlink{class_model}{Model} using \hyperlink{class_s_base_plugin}{S\+Base\+Plugin} as a base class, to hold attributes and/or subcomponents necessary for the S\+B\+ML package being implemented. Package developers must implement an \hyperlink{class_s_base_plugin}{S\+Base\+Plugin} extended class for each element to be extended (e.\+g., \hyperlink{class_model}{Model}, \hyperlink{class_reaction}{Reaction}, and others) where additional attributes and/or top-\/level objects of the package extension are directly contained. The following subsections detail the basic steps necessary to use \hyperlink{class_s_base_plugin}{S\+Base\+Plugin} for the implementation of a class extension.
+\end{DoxyParagraph}
+
+
+The specification for a S\+B\+ML Level~3 package will define the attributes and subojects that make up the package constructs. Those constructs that modify existing S\+B\+ML components such as \hyperlink{class_model}{Model}, \hyperlink{class_reaction}{Reaction}, etc., will be the ones that need to be extended using \hyperlink{class_s_base_plugin}{S\+Base\+Plugin}.
+
+For example, the Layout package makes additions to \hyperlink{class_model}{Model}, \hyperlink{class_species_reference}{Species\+Reference}, and the {\ttfamily $<$sbml$>$} element (which is represented in lib\+S\+B\+ML by \hyperlink{class_s_b_m_l_document}{S\+B\+M\+L\+Document}). This means that the Layout package extension in lib\+S\+B\+ML needs to define extended versions of \hyperlink{class_model}{Model}, \hyperlink{class_species_reference}{Species\+Reference} and \hyperlink{class_s_b_m_l_document}{S\+B\+M\+L\+Document}. Elements {\itshape other} than the S\+B\+ML document need to be implemented using \hyperlink{class_s_base_plugin}{S\+Base\+Plugin}; the document component must be implemented using \hyperlink{class_s_b_m_l_document_plugin}{S\+B\+M\+L\+Document\+Plugin} instead.
+
+A new class definition that subclasses \hyperlink{class_s_base_plugin}{S\+Base\+Plugin} needs to be created for each S\+B\+ML component to be extended by the package. For instance, the Layout package needs Layout\+Model\+Plugin and Layout\+Species\+Reference\+Plugin. (As mentioned above, the Layout class also needs Layout\+S\+B\+M\+L\+Document\+Plugin, but this one is implemented using \hyperlink{class_s_b_m_l_document_plugin}{S\+B\+M\+L\+Document\+Plugin} instead of \hyperlink{class_s_base_plugin}{S\+Base\+Plugin}.) Below, we describe in detail the different parts of an \hyperlink{class_s_base_plugin}{S\+Base\+Plugin} subclass definition.
+
+Data attributes on each extended class in an S\+B\+ML package will have one of the data types {\ttfamily std\+::string}, {\ttfamily double}, {\ttfamily int}, or {\ttfamily bool}. Subelements/subobjects will normally be derived from the \hyperlink{class_list_of}{List\+Of} class or from \hyperlink{class_s_base}{S\+Base}.
+
+The additional data members must be properly initialized in the class constructor, and must be properly copied in the copy constructor and assignment operator. For example, the following data member is defined in the {\ttfamily Groups\+Model\+Plugin} class (in the file {\ttfamily Groups\+Model\+Plugin.\+h})\+: 
+\begin{DoxyCode}
+ListOfGroups mGroups;
+\end{DoxyCode}
+
+
+The derived class must override the constructor, copy constructor, assignment operator ({\ttfamily operator=}) and {\ttfamily clone()} methods from \hyperlink{class_s_base_plugin}{S\+Base\+Plugin}.
+
+If the extended component is defined by the S\+B\+ML Level~3 package to have attributes, then the extended class definition needs to override the following internal methods on \hyperlink{class_s_base_plugin}{S\+Base\+Plugin} and provide appropriate implementations\+:
+
+\begin{DoxyItemize}
+\item {\ttfamily add\+Expected\+Attributes(\+Expected\+Attributes\& attributes)}\+: This method should add the attributes that are expected to be found on this kind of extended component in an S\+B\+ML file or data stream.\end{DoxyItemize}
+\begin{DoxyItemize}
+\item {\ttfamily read\+Attributes(\hyperlink{class_x_m_l_attributes}{X\+M\+L\+Attributes}\& attributes, Expected\+Attributes\& expected\+Attributes)}\+: This method should read the attributes expected to be found on this kind of extended component in an S\+B\+ML file or data stream.\end{DoxyItemize}
+\begin{DoxyItemize}
+\item {\ttfamily has\+Required\+Attributes()}\+: This method should return {\ttfamily true} if all of the required attribute for this extended component are present on instance of the object.\end{DoxyItemize}
+\begin{DoxyItemize}
+\item {\ttfamily write\+Attributes(\+X\+M\+L\+Output\+Stream\& stream)}\+: This method should write out the attributes of an extended component. The implementation should use the different kinds of {\ttfamily write\+Attribute} methods defined by \hyperlink{class_x_m_l_output_stream}{X\+M\+L\+Output\+Stream} to achieve this.\end{DoxyItemize}
+
+
+If the extended component is defined by the Level~3 package to have subcomponents (i.\+e., full X\+ML elements rather than mere attributes), then the extended class definition needs to override the following internal \hyperlink{class_s_base_plugin}{S\+Base\+Plugin} methods and provide appropriate implementations\+:
+
+\begin{DoxyItemize}
+\item {\ttfamily create\+Object(\+X\+M\+L\+Input\+Stream\& stream)}\+: Subclasses must override this method to create, store, and then return an S\+B\+ML object corresponding to the next \hyperlink{class_x_m_l_token}{X\+M\+L\+Token} in the \hyperlink{class_x_m_l_input_stream}{X\+M\+L\+Input\+Stream}. To do this, implementations can use methods like {\ttfamily peek()} on \hyperlink{class_x_m_l_input_stream}{X\+M\+L\+Input\+Stream} to test if the next object in the stream is something expected for the package. For example, Layout\+Model\+Plugin uses {\ttfamily peek()} to examine the next element in the input stream, then tests that element against the Layout namespace and the element name {\ttfamily \char`\"{}list\+Of\+Layouts\char`\"{}} to see if it\textquotesingle{}s the single subcomponent (List\+Of\+Layouts) permitted on a \hyperlink{class_model}{Model} object using the Layout package. If it is, it returns the appropriate object.\end{DoxyItemize}
+\begin{DoxyItemize}
+\item {\ttfamily connect\+To\+Parent(\+S\+Base $\ast$sbase)}\+: This creates a parent-\/child relationship between a given extended component and its subcomponent(s).\end{DoxyItemize}
+\begin{DoxyItemize}
+\item {\ttfamily set\+S\+B\+M\+L\+Document(\+S\+B\+M\+L\+Document$\ast$ d)}\+: This method should set the parent \hyperlink{class_s_b_m_l_document}{S\+B\+M\+L\+Document} object on the subcomponent object instances, so that the subcomponent instances know which \hyperlink{class_s_b_m_l_document}{S\+B\+M\+L\+Document} contains them.\end{DoxyItemize}
+\begin{DoxyItemize}
+\item {\ttfamily enable\+Package\+Internal(std\+::string\& pkg\+U\+RI, std\+::string\& pkg\+Prefix, bool flag)}\+: This method should enable or disable the subcomponent based on whether a given X\+ML namespace is active.\end{DoxyItemize}
+\begin{DoxyItemize}
+\item {\ttfamily write\+Elements(\+X\+M\+L\+Output\+Stream\& stream)}\+: This method must be overridden to provide an implementation that will write out the expected subcomponents/subelements to the X\+ML output stream.\end{DoxyItemize}
+\begin{DoxyItemize}
+\item {\ttfamily read\+Other\+X\+M\+L(\+S\+Base$\ast$ parent\+Object, X\+M\+L\+Input\+Stream\& stream)}\+: This function should be overridden if elements of annotation, notes, Math\+ML content, etc., need to be directly parsed from the given \hyperlink{class_x_m_l_input_stream}{X\+M\+L\+Input\+Stream} object.\end{DoxyItemize}
+\begin{DoxyItemize}
+\item {\ttfamily has\+Required\+Elements()}\+: This method should return {\ttfamily true} if a given object contains all the required subcomponents defined by the specification for that S\+B\+ML Level~3 package.\end{DoxyItemize}
+
+
+If the package needs to add additional {\ttfamily xmlns} attributes to declare additional X\+ML namespace U\+R\+Is, the extended class should override the following method\+:
+
+\begin{DoxyItemize}
+\item {\ttfamily write\+X\+M\+L\+N\+S(\+X\+M\+L\+Output\+Stream\& stream)}\+: This method should write out any additional X\+ML namespaces that might be needed by a package implementation.\end{DoxyItemize}
+
+
+Extended component implementations can add whatever additional utility methods are useful for their implementation. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{common-documentation_8h}{common-\/documentation.\+h}\end{DoxyCompactItemize}

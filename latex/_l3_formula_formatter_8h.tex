@@ -1,0 +1,168 @@
+\hypertarget{_l3_formula_formatter_8h}{}\section{L3\+Formula\+Formatter.\+h File Reference}
+\label{_l3_formula_formatter_8h}\index{L3\+Formula\+Formatter.\+h@{L3\+Formula\+Formatter.\+h}}
+
+
+Formats an L3 A\+ST formula tree as an S\+B\+ML formula string.  
+
+
+{\ttfamily \#include $<$sbml/common/extern.\+h$>$}\newline
+{\ttfamily \#include $<$sbml/util/\+String\+Buffer.\+h$>$}\newline
+{\ttfamily \#include $<$sbml/math/\+A\+S\+T\+Node.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{libsbml-namespace_8h_a41d9f1012efdaa799c31e8e4ddde0fbd}{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+P\+P\+\_\+\+N\+A\+M\+E\+S\+P\+A\+C\+E\+\_\+\+B\+E\+G\+IN} \hyperlink{libstructural_8h_a004aeed0f22bd5ee77b75a434e2e2a30}{B\+E\+G\+I\+N\+\_\+\+C\+\_\+\+D\+E\+C\+LS} \hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} char $\ast$ \hyperlink{_l3_formula_formatter_8h_a349ffb96f6aadfea79366d4749323fec}{S\+B\+M\+L\+\_\+formula\+To\+L3\+String} (const \hyperlink{sbmlfwd_8h_addddfd009cab31c5e3e1fd5fdbcb9efa}{A\+S\+T\+Node\+\_\+t} $\ast$tree)
+\item 
+\hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} char $\ast$ \hyperlink{_l3_formula_formatter_8h_a8c2b057928713a5e391e39e53a0000d9}{S\+B\+M\+L\+\_\+formula\+To\+L3\+String\+With\+Settings} (const \hyperlink{sbmlfwd_8h_addddfd009cab31c5e3e1fd5fdbcb9efa}{A\+S\+T\+Node\+\_\+t} $\ast$tree, const \hyperlink{sbmlfwd_8h_a230968dbbf0e6dd9ae871b376484dbb7}{L3\+Parser\+Settings\+\_\+t} $\ast$settings)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Formats an L3 A\+ST formula tree as an S\+B\+ML formula string. 
+
+\begin{DoxyAuthor}{Author}
+Lucian Smith 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_l3_formula_formatter_8h_a349ffb96f6aadfea79366d4749323fec}\label{_l3_formula_formatter_8h_a349ffb96f6aadfea79366d4749323fec}} 
+\index{L3\+Formula\+Formatter.\+h@{L3\+Formula\+Formatter.\+h}!S\+B\+M\+L\+\_\+formula\+To\+L3\+String@{S\+B\+M\+L\+\_\+formula\+To\+L3\+String}}
+\index{S\+B\+M\+L\+\_\+formula\+To\+L3\+String@{S\+B\+M\+L\+\_\+formula\+To\+L3\+String}!L3\+Formula\+Formatter.\+h@{L3\+Formula\+Formatter.\+h}}
+\subsubsection{\texorpdfstring{S\+B\+M\+L\+\_\+formula\+To\+L3\+String()}{SBML\_formulaToL3String()}}
+{\footnotesize\ttfamily \hyperlink{libsbml-namespace_8h_a41d9f1012efdaa799c31e8e4ddde0fbd}{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+P\+P\+\_\+\+N\+A\+M\+E\+S\+P\+A\+C\+E\+\_\+\+B\+E\+G\+IN} \hyperlink{libstructural_8h_a004aeed0f22bd5ee77b75a434e2e2a30}{B\+E\+G\+I\+N\+\_\+\+C\+\_\+\+D\+E\+C\+LS} \hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} char$\ast$ S\+B\+M\+L\+\_\+formula\+To\+L3\+String (\begin{DoxyParamCaption}\item[{const \hyperlink{sbmlfwd_8h_addddfd009cab31c5e3e1fd5fdbcb9efa}{A\+S\+T\+Node\+\_\+t} $\ast$}]{tree }\end{DoxyParamCaption})}
+
+Converts an A\+ST to a text string representation of a formula using an extended syntax.
+
+\begin{DoxyParagraph}{}
+The text-\/string form of mathematical formulas read by the function \{parse\+L3\+Formula, String\} and written by the function \{formula\+To\+L3\+String, \hyperlink{class_a_s_t_node}{A\+S\+T\+Node}\} uses an expanded version of the syntax read and written by \{parse\+Formula, String\} and \{formula\+To\+String, \hyperlink{class_a_s_t_node}{A\+S\+T\+Node}\}, respectively. The latter two lib\+S\+B\+ML functions were originally developed to support conversion between S\+B\+ML Levels~1 and~2, and were focused on the syntax of mathematical formulas used in S\+B\+ML Level~1. With time, and the use of Math\+ML in S\+B\+ML Levels~2 and~3, it became clear that supporting Level~2 and~3\textquotesingle{}s expanded mathematical syntax would be useful for software developers. To maintain backwards compatibility for lib\+S\+B\+ML users, the original \{formula\+To\+String, \hyperlink{class_a_s_t_node}{A\+S\+T\+Node}\} and \{parse\+Formula, String\} have been left untouched, and instead, the new functionality is provided in the form of \{parse\+L3\+Formula, String\} and \{formula\+To\+L3\+String, \hyperlink{class_a_s_t_node}{A\+S\+T\+Node}\}.
+\end{DoxyParagraph}
+The following lists the main differences in the formula syntax supported by the \char`\"{}\+Level 3\char`\"{} or L3 versions of the formula parsers and formatters, compared to what is supported by the Level~1-\/oriented \{parse\+Formula, String\} and \{formula\+To\+String, \hyperlink{class_a_s_t_node}{A\+S\+T\+Node}\}\+:
+
+\begin{DoxyItemize}
+\item Units may be asociated with bare numbers, using the following syntax\+:  number unit  The number may be in any form (an integer, real, or rational number), and the unit must conform to the syntax of an S\+B\+ML identifier (technically, the type defined as {\ttfamily S\+Id} in the S\+B\+ML specifications). The whitespace between number and unit is optional.\end{DoxyItemize}
+\begin{DoxyItemize}
+\item The Boolean function symbols {\ttfamily \&\&}, {\ttfamily $\vert$$\vert$}, {\ttfamily !}, and {\ttfamily !=} may be used.\end{DoxyItemize}
+\begin{DoxyItemize}
+\item The {\itshape modulo} operation is allowed as the symbol {\ttfamily \%} and will produce a {\ttfamily $<$piecewise$>$} function in the corresponding Math\+ML output.\end{DoxyItemize}
+\begin{DoxyItemize}
+\item All inverse trigonometric functions may be defined in the infix either using {\ttfamily arc} as a prefix or simply {\ttfamily a}; in other words, both {\ttfamily arccsc} and {\ttfamily acsc} are interpreted as the operator {\itshape arccosecant} as defined in Math\+ML~2.\+0. (Many functions in the simpler S\+B\+ML Level~1 oriented parser implemented by \{parse\+Formula, String\} are defined this way as well, but not all.)\end{DoxyItemize}
+\begin{DoxyItemize}
+\item The following expression is parsed as a rational number instead of as a numerical division\+: 
+\begin{DoxyPre}
+   (integer/integer)\end{DoxyPre}
+ {\bfseries Spaces are not allowed} in this construct; in other words, "{\ttfamily (3 / 4)}" (with whitespace between the numbers and the operator) will be parsed into the Math\+ML {\ttfamily $<$divide$>$} construct rather than a rational number. You can, however, assign units to a rational number as a whole; here is an example\+: "{\ttfamily (3/4) ml}". (In the case of division rather than a rational number, units are not interpreted in this way.)\end{DoxyItemize}
+\begin{DoxyItemize}
+\item Various parser and formatter behaviors may be altered through the use of a \hyperlink{class_l3_parser_settings}{L3\+Parser\+Settings} object in conjunction with the functions \{parse\+L3\+Formula\+With\+Settings, String\textbackslash{}, \hyperlink{class_l3_parser_settings}{L3\+Parser\+Settings}\} and \{formula\+To\+L3\+String\+With\+Settings, \hyperlink{class_a_s_t_node}{A\+S\+T\+Node}\textbackslash{}, \hyperlink{class_l3_parser_settings}{L3\+Parser\+Settings}\} The settings available include the following\+: 
+\begin{DoxyItemize}
+\item The function {\ttfamily log} with a single argument ("{\ttfamily log(x)}") can be parsed as {\ttfamily log10(x)}, {\ttfamily ln(x)}, or treated as an error, as desired.
+
+
+\item Unary minus signs can be collapsed or preserved; that is, sequential pairs of unary minuses (e.\+g., "{\ttfamily -\/ -\/3}") can be removed from the input entirely and single unary minuses can be incorporated into the number node, or all minuses can be preserved in the A\+ST node structure.
+
+
+\item Parsing of units embedded in the input string can be turned on and off.
+
+
+\item The string {\ttfamily avogadro} can be parsed as a Math\+ML {\itshape csymbol} or as an identifier.
+
+
+\item A \hyperlink{class_model}{Model} object may optionally be provided to the parser using the variant function call \{parse\+L3\+Formula\+With\+Model, String\textbackslash{}, \hyperlink{class_model}{Model}\} or stored in a \hyperlink{class_l3_parser_settings}{L3\+Parser\+Settings} object passed to the variant function \{parse\+L3\+Formula\+With\+Settings, String\textbackslash{}, \hyperlink{class_l3_parser_settings}{L3\+Parser\+Settings}\}. When a \hyperlink{class_model}{Model} object is provided, identifiers (values of type {\ttfamily S\+Id}) from that model are used in preference to pre-\/defined Math\+ML definitions for both symbols and functions. More precisely\+: 
+\begin{DoxyItemize}
+\item {\itshape In the case of symbols}\+: the \hyperlink{class_model}{Model} entities whose identifiers will shadow identical symbols in the mathematical formula are\+: \hyperlink{class_species}{Species}, \hyperlink{class_compartment}{Compartment}, \hyperlink{class_parameter}{Parameter}, \hyperlink{class_reaction}{Reaction}, and \hyperlink{class_species_reference}{Species\+Reference}. For instance, if the parser is given a \hyperlink{class_model}{Model} containing a \hyperlink{class_species}{Species} with the identifier "{\ttfamily pi}", and the formula to be parsed is "{\ttfamily 3$\ast$pi}", the Math\+ML produced will contain the construct {\ttfamily $<$ci$>$ pi $<$/ci$>$} instead of the construct {\ttfamily $<$pi/$>$}.
+
+
+\item {\itshape In the case of user-\/defined functions}\+: when a \hyperlink{class_model}{Model} object is provided, {\ttfamily S\+Id} values of user-\/defined functions present in the model will be used preferentially over pre-\/defined Math\+ML functions. For example, if the passed-\/in \hyperlink{class_model}{Model} contains a \hyperlink{class_function_definition}{Function\+Definition} object with the identifier "{\ttfamily sin}", that function will be used instead of the predefined Math\+ML function {\ttfamily $<$sin/$>$}. 
+\end{DoxyItemize}
+
+
+\item An \hyperlink{class_s_b_m_l_namespaces}{S\+B\+M\+L\+Namespaces} object may optionally be provided to identify S\+B\+ML Level~3 packages that extend the syntax understood by the formula parser. When the namespaces are provided, the parser will interpret possible additional syntax defined by the lib\+S\+B\+ML plug-\/ins implementing the S\+B\+ML Level~3 packages; for example, it may understand vector/array extensions introduced by the S\+B\+ML Level~3 {\itshape Arrays} package. 
+\end{DoxyItemize}\end{DoxyItemize}
+These configuration settings cannot be changed directly using the basic parser and formatter functions, but {\itshape can} be changed on a per-\/call basis by using the alternative functions \{parse\+L3\+Formula\+With\+Settings, String\textbackslash{}, \hyperlink{class_l3_parser_settings}{L3\+Parser\+Settings}\} and \{formula\+To\+L3\+String\+With\+Settings, \hyperlink{class_a_s_t_node}{A\+S\+T\+Node}\textbackslash{}, \hyperlink{class_l3_parser_settings}{L3\+Parser\+Settings}\}.
+
+Neither S\+B\+ML nor the Math\+ML standard define a \char`\"{}string-\/form\char`\"{} equivalent to Math\+ML expressions. The approach taken by lib\+S\+B\+ML is to start with the formula syntax defined by S\+B\+ML Level~1 (which in fact used a custom text-\/string representation of formulas, and not Math\+ML), and expand it to include the functionality described above. This formula syntax is based mostly on C programming syntax, and may contain operators, function calls, symbols, and white space characters. The following table provides the precedence rules for the different entities that may appear in formula strings.
+
+
+
+In the table above, {\itshape operand} implies the construct is an operand, {\itshape prefix} implies the operation is applied to the following arguments, {\itshape unary} implies there is one argument, and {\itshape binary} implies there are two arguments. The values in the {\bfseries Precedence} column show how the order of different types of operation are determined. For example, the expression {\ttfamily a + b $\ast$ c} is evaluated as {\ttfamily a + (b $\ast$ c)} because the {\ttfamily $\ast$} operator has higher precedence. The {\bfseries Associates} column shows how the order of similar precedence operations is determined; for example, {\ttfamily a \&\& b $\vert$$\vert$ c} is evaluated as {\ttfamily (a \&\& b) $\vert$$\vert$ c} because the {\ttfamily \&\&} and {\ttfamily $\vert$$\vert$} operators are left-\/associative and have the same precedence.
+
+The function call syntax consists of a function name, followed by optional white space, followed by an opening parenthesis token, followed by a sequence of zero or more arguments separated by commas (with each comma optionally preceded and/or followed by zero or more white space characters), followed by a closing parenthesis token. The function name must be chosen from one of the pre-\/defined functions in S\+B\+ML or a user-\/defined function in the model. The following table lists the names of certain common mathematical functions; this table corresponds to Table~6 in the \href{http://sbml.org/Documents/Specifications#SBML_Level_1_Version_2}{\tt S\+B\+ML Level~1 Version~2 specification} with additions based on the functions added in S\+B\+ML Level 2 and Level 3\+:
+
+
+
+Parsing of the various Math\+ML functions and constants are all case-\/insensitive by default\+: function names such as {\ttfamily cos}, {\ttfamily Cos} and {\ttfamily C\+OS} are all parsed as the Math\+ML cosine operator, {\ttfamily $<$cos$>$}. However, {\itshape when a \hyperlink{class_model}{Model} object is used} in conjunction with either \{parse\+L3\+Formula\+With\+Model, String\textbackslash{}, \hyperlink{class_model}{Model}\} or \{parse\+L3\+Formula\+With\+Settings, String\textbackslash{}, \hyperlink{class_l3_parser_settings}{L3\+Parser\+Settings}\}, any identifiers found in that model will be parsed in a case-\/{\itshape sensitive} way. For example, if a model contains a \hyperlink{class_species}{Species} having the identifier {\ttfamily Pi}, the parser will parse "{\ttfamily Pi}" in the input as "{\ttfamily $<$ci$>$ Pi $<$/ci$>$}" but will continue to parse the symbols "{\ttfamily pi}" and "{\ttfamily PI}" as "{\ttfamily $<$pi$>$}".
+
+As mentioned above, the manner in which the \char`\"{}\+L3\char`\"{} versions of the formula parser and formatter interpret the function "{\ttfamily log}" can be changed. To do so, callers should use the function \{parse\+L3\+Formula\+With\+Settings, String\textbackslash{}, \hyperlink{class_l3_parser_settings}{L3\+Parser\+Settings}\} and pass it an appropriate \hyperlink{class_l3_parser_settings}{L3\+Parser\+Settings} object. By default, unlike the S\+B\+ML Level~1 parser implemented by \{parse\+Formula, String\}, the string "{\ttfamily log}" is interpreted as the base~10 logarithm, and {\itshape not} as the natural logarithm. However, you can change the interpretation to be base-\/10 log, natural log, or as an error; since the name \char`\"{}log\char`\"{} by itself is ambiguous, you require that the parser uses {\ttfamily log10} or {\ttfamily ln} instead, which are more clear. Please refer to \{parse\+L3\+Formula\+With\+Settings, String\textbackslash{}, \hyperlink{class_l3_parser_settings}{L3\+Parser\+Settings}\}.
+
+In addition, the following symbols will be translated to their Math\+ML equivalents, if no symbol with the same {\ttfamily S\+Id} identifier string exists in the \hyperlink{class_model}{Model} object provided\+:
+
+
+
+Again, as mentioned above, whether the string "{\ttfamily avogadro}" is parsed as an A\+ST node of type \{A\+S\+T\+\_\+\+N\+A\+M\+E\+\_\+\+A\+V\+O\+G\+A\+D\+RO, A\+S\+T\+Node\+Type\+\_\+t\} or \{A\+S\+T\+\_\+\+N\+A\+ME, A\+S\+T\+Node\+Type\+\_\+t\} is configurable; use the version of the parser function called \{parse\+L3\+Formula\+With\+Settings, String\textbackslash{}, \hyperlink{class_l3_parser_settings}{L3\+Parser\+Settings}\}. This Avogadro-\/related functionality is provided because S\+B\+ML Level~2 models may not use \{A\+S\+T\+\_\+\+N\+A\+M\+E\+\_\+\+A\+V\+O\+G\+A\+D\+RO, A\+S\+T\+Node\+Type\+\_\+t\} A\+ST nodes.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & the A\+ST to be converted.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the formula from the given A\+ST as text string, with a syntax oriented towards the capabilities defined in S\+B\+ML Level~3. The caller owns the returned string and is responsible for freeing it when it is no longer needed. If {\ttfamily tree} is a null pointer, then a null pointer is returned.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\{formula\+To\+L3\+String\+With\+Settings, \hyperlink{class_a_s_t_node}{A\+S\+T\+Node}\textbackslash{}, \hyperlink{class_l3_parser_settings}{L3\+Parser\+Settings}\} 
+
+\{formula\+To\+String, \hyperlink{class_a_s_t_node}{A\+S\+T\+Node}\} 
+
+\{parse\+L3\+Formula\+With\+Settings, String\textbackslash{}, \hyperlink{class_l3_parser_settings}{L3\+Parser\+Settings}\} 
+
+\{parse\+L3\+Formula\+With\+Model, String\textbackslash{}, \hyperlink{class_model}{Model}\} 
+
+\{parse\+Formula, String\} 
+
+\hyperlink{class_l3_parser_settings}{L3\+Parser\+Settings} 
+
+\{get\+Default\+L3\+Parser\+Settings,\} 
+
+\{get\+Last\+Parse\+L3\+Error,\} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{_l3_formula_formatter_8h_a8c2b057928713a5e391e39e53a0000d9}\label{_l3_formula_formatter_8h_a8c2b057928713a5e391e39e53a0000d9}} 
+\index{L3\+Formula\+Formatter.\+h@{L3\+Formula\+Formatter.\+h}!S\+B\+M\+L\+\_\+formula\+To\+L3\+String\+With\+Settings@{S\+B\+M\+L\+\_\+formula\+To\+L3\+String\+With\+Settings}}
+\index{S\+B\+M\+L\+\_\+formula\+To\+L3\+String\+With\+Settings@{S\+B\+M\+L\+\_\+formula\+To\+L3\+String\+With\+Settings}!L3\+Formula\+Formatter.\+h@{L3\+Formula\+Formatter.\+h}}
+\subsubsection{\texorpdfstring{S\+B\+M\+L\+\_\+formula\+To\+L3\+String\+With\+Settings()}{SBML\_formulaToL3StringWithSettings()}}
+{\footnotesize\ttfamily \hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} char$\ast$ S\+B\+M\+L\+\_\+formula\+To\+L3\+String\+With\+Settings (\begin{DoxyParamCaption}\item[{const \hyperlink{sbmlfwd_8h_addddfd009cab31c5e3e1fd5fdbcb9efa}{A\+S\+T\+Node\+\_\+t} $\ast$}]{tree,  }\item[{const \hyperlink{sbmlfwd_8h_a230968dbbf0e6dd9ae871b376484dbb7}{L3\+Parser\+Settings\+\_\+t} $\ast$}]{settings }\end{DoxyParamCaption})}
+
+Converts an A\+ST to a text string representation of a formula, using specific formatter settings.
+
+This function behaves identically to \{formula\+To\+L3\+String, \hyperlink{class_a_s_t_node}{A\+S\+T\+Node}\} but its behavior is controlled by two fields in the {\ttfamily settings} object, namely\+:
+
+\begin{DoxyItemize}
+\item {\itshape parseunits} (\char`\"{}parse units\char`\"{})\+: If this field in the {\ttfamily settings} object is set to {\ttfamily true} (the default), the function will write out the units of any numerical A\+S\+T\+Nodes that have them, producing (for example) "{\ttfamily 3 mL}", "{\ttfamily (3/4) m}", or "{\ttfamily 5.\+5e-\/10 M}". If this is set to {\ttfamily false}, this function will only write out the number itself ("{\ttfamily 3}", "{\ttfamily (3/4)}", and "{\ttfamily 5.\+5e-\/10}", in the previous examples). \item {\itshape collapseminus} (\char`\"{}collapse minus\char`\"{})\+: If this field in the {\ttfamily settings} object is set to {\ttfamily false} (the default), the function will write out explicitly any doubly-\/nested unary minus A\+S\+T\+Nodes, producing (for example) "{\ttfamily -\/ -\/x}" or even "{\ttfamily -\/ -\/ -\/ -\/ -\/3.\+1}". If this is set to {\ttfamily true}, the function will collapse the nodes before producing the infix form, producing "{\ttfamily x}" and "{\ttfamily -\/3.\+1}" in the previous examples.\end{DoxyItemize}
+All the other settings of the \hyperlink{class_l3_parser_settings}{L3\+Parser\+Settings} object passed in as {\ttfamily settings} will be ignored for the purposes of this function\+: the {\itshape parselog} (\char`\"{}parse log\char`\"{}) setting is ignored so that "{\ttfamily log10(x)}", "{\ttfamily ln(x)}", and "{\ttfamily log(x, y)}" are always produced; the {\itshape avocsymbol} (\char`\"{}\+Avogadro csymbol\char`\"{}) is irrelevant to the behavior of this function; and nothing in the \hyperlink{class_model}{Model} object set via the {\itshape model} setting is used.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & the A\+ST to be converted.\\
+\hline
+{\em settings} & the \hyperlink{class_l3_parser_settings}{L3\+Parser\+Settings} object used to modify the behavior of this function.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the formula from the given A\+ST as text string, with a syntax oriented towards the capabilities defined in S\+B\+ML Level~3. The caller owns the returned string and is responsible for freeing it when it is no longer needed. If {\ttfamily tree} is a null pointer, then a null pointer is returned.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\{formula\+To\+L3\+String, \hyperlink{class_a_s_t_node}{A\+S\+T\+Node}\} 
+
+\{formula\+To\+String, \hyperlink{class_a_s_t_node}{A\+S\+T\+Node}\} 
+
+\{parse\+L3\+Formula\+With\+Settings, String\textbackslash{}, \hyperlink{class_l3_parser_settings}{L3\+Parser\+Settings}\} 
+
+\{parse\+L3\+Formula\+With\+Model, String\textbackslash{}, \hyperlink{class_model}{Model}\} 
+
+\{parse\+Formula, String\} 
+
+\hyperlink{class_l3_parser_settings}{L3\+Parser\+Settings} 
+
+\{get\+Default\+L3\+Parser\+Settings,\} 
+
+\{get\+Last\+Parse\+L3\+Error,\} 
+\end{DoxySeeAlso}

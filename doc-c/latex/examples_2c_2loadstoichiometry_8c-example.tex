@@ -50,23 +50,23 @@ This is an example of how to load a (unlabeled) stoichiometry matrix and read te
         GetMatrixFromSomeWhere(&oMatrix, &nRows, &nCols);
         
         \textcolor{comment}{// load it into the structural analysis library}
-        \hyperlink{libstructural_8cpp_aedb61ed1eaedaa02687d35f5b39d4736}{LibStructural\_loadStoichiometryMatrix} (oMatrix, nRows, nCols);
+        \hyperlink{libstructural_8h_a9ac01e88f015f584389d08fcf721ba7d}{LibStructural\_loadStoichiometryMatrix} (oMatrix, nRows, nCols);
         
         \textcolor{comment}{// analyze the stoichiometry matrix using the QR method}
-        \hyperlink{libstructural_8cpp_a505eacbf357b087e0d10a09feb0d69e2}{LibStructural\_analyzeWithQR}( &sMessage, &nLength);
+        \hyperlink{libstructural_8h_a505eacbf357b087e0d10a09feb0d69e2}{LibStructural\_analyzeWithQR}( &sMessage, &nLength);
         
         \textcolor{comment}{// print model overview}
         printf(\textcolor{stringliteral}{"%s"}, sMessage);
         
         \textcolor{comment}{// free the memory used by the message}
-        \hyperlink{libstructural_8cpp_a43ec36f000082b338e1aad9cff3b0b23}{LibStructural\_freeVector}(sMessage);
+        \hyperlink{libstructural_8h_a43ec36f000082b338e1aad9cff3b0b23}{LibStructural\_freeVector}(sMessage);
         
         \textcolor{comment}{// obtain and print the test results}
-        \hyperlink{libstructural_8cpp_a76fa7cdfb5333db9e78bf36ac6bc292e}{LibStructural\_getTestDetails}( &sMessage, &nLength );
+        \hyperlink{libstructural_8h_a76fa7cdfb5333db9e78bf36ac6bc292e}{LibStructural\_getTestDetails}( &sMessage, &nLength );
         printf(\textcolor{stringliteral}{"%s"}, sMessage);
         
         \textcolor{comment}{// finally free the memory used by the message}
-        \hyperlink{libstructural_8cpp_a43ec36f000082b338e1aad9cff3b0b23}{LibStructural\_freeVector}(sMessage);
+        \hyperlink{libstructural_8h_a43ec36f000082b338e1aad9cff3b0b23}{LibStructural\_freeVector}(sMessage);
         
         \textcolor{comment}{// and free the memory used to hold the stoichiometry matrix}
         \textcolor{keywordflow}{for} (i = 0; i < nRows; i++)

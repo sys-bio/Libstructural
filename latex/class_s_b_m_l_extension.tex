@@ -1,0 +1,32 @@
+\hypertarget{class_s_b_m_l_extension}{}\section{S\+B\+M\+L\+Extension Class Reference}
+\label{class_s_b_m_l_extension}\index{S\+B\+M\+L\+Extension@{S\+B\+M\+L\+Extension}}
+
+
+{\ttfamily \#include $<$S\+B\+M\+L\+Extension.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} Base class for S\+B\+ML Level 3 package plug-\/ins.
+
+
+
+The \hyperlink{class_s_b_m_l_extension}{S\+B\+M\+L\+Extension} class is a component of the lib\+S\+B\+ML package extension mechanism. It is an abstract class that is extended by each package extension implementation.\hypertarget{classdoc__basics__of__extensions_ext-basics}{}\subsection{Basic principles of S\+B\+M\+L package extensions in lib\+S\+B\+ML}\label{classdoc__basics__of__extensions_ext-basics}
+\begin{DoxyParagraph}{}
+S\+B\+ML Level~3\textquotesingle{}s package structure permits modular extensions to the core S\+B\+ML format. In lib\+S\+B\+ML, support for S\+B\+ML Level~3 packages is provided through optional {\itshape package extensions} that can be plugged into lib\+S\+B\+ML at the time it is built/compiled. Users of lib\+S\+B\+ML can thus choose which extensions are enabled in their software applications.
+\end{DoxyParagraph}
+Lib\+S\+B\+ML defines a number of classes that developers of package extensions can use to implement support for an S\+B\+ML Level~3 package. These classes make it easier to extend lib\+S\+B\+ML objects with new attributes and/or subobjects as needed by a particular Level~3 package. Three overall categories of classes make up lib\+S\+B\+ML\textquotesingle{}s facilities for implementing package extensions. There are (1) classes that serve as base classes meant to be subclassed, (2) template classes meant to be instantiated rather than subclassed, and (3) support classes that provide utility features. A given package implementation for lib\+S\+B\+ML will take the form of code using these and other lib\+S\+B\+ML classes, placed in a subdirectory of {\ttfamily src/sbml/packages/}.
+
+The basic lib\+S\+B\+ML distribution includes a number of package extensions implementing support for officially-\/endorsed S\+B\+ML Level~3 packages; among these are {\itshape Flux Balance Constraints} (\char`\"{}fbc\char`\"{}), {\itshape Hierarchical Model Composition} (\char`\"{}comp\char`\"{}), {\itshape Layout} (\char`\"{}layout\char`\"{}), and {\itshape Qualitative Models} (\char`\"{}qual\char`\"{}). They can serve as working examples for developers working to implement other packages.
+
+Extensions in lib\+S\+B\+ML can currently only be implemented in C++ or C; there is no mechanism to implement them first in languages such as Java or Python. However, once implemented in C++ or C, language interfaces can be generated semi-\/automatically using the framework in place in lib\+S\+B\+ML. (The approach is based on using \href{http://www.swig.org}{\tt S\+W\+IG} and facilities in lib\+S\+B\+ML\textquotesingle{}s build system.)\hypertarget{class_s_b_m_l_extension_sbmlextension-l2-special}{}\subsection{Special handling for S\+B\+M\+L Level 2}\label{class_s_b_m_l_extension_sbmlextension-l2-special}
+\begin{DoxyParagraph}{}
+Due to the historical background of the S\+B\+ML Layout package, lib\+S\+B\+ML implements special behavior for that package\+: it {\itshape always} creates a Layout plugin object for any S\+B\+ML Level~2 document it reads in, regardless of whether that document actually uses Layout constructs. This is unlike the case for S\+B\+ML Level~3 documents that use Layout; for them, lib\+S\+B\+ML will {\itshape not} create a plugin object unless the document actually declares the use of the Layout package (via the usual Level~3 namespace declaration for Level~3 packages).
+\end{DoxyParagraph}
+This has the following consequence. If an application queries for the presence of Layout in an S\+B\+ML Level~2 document by testing only for the existence of the plugin object, {\bfseries it will always get a positive result}; in other words, the presence of a Layout extension object is not an indication of whether a read-\/in Level~2 document does or does not use S\+B\+ML Layout. Instead, callers have to query explicitly for the existence of layout information. An example of such a query is the following code\+:
+
+The special, always-\/available Level~2 Layout behavior was motivated by a desire to support legacy applications. In S\+B\+ML Level~3, the Layout package uses the normal S\+B\+ML Level~3 scheme of requiring declarations on the S\+B\+ML document element. This means that upon reading a model, lib\+S\+B\+ML knows right away whether it contains layout information. In S\+B\+ML Level~2, there is no top-\/level declaration because layout is stored as annotations in the body of the model. Detecting the presence of layout information when reading a Level~2 model requires parsing the annotations. For efficiency reasons, lib\+S\+B\+ML normally does not parse annotations automatically when reading a model. However, applications that predated the introduction of Level~3 Layout and the updated version of lib\+S\+B\+ML never had to do anything special to enable parsing layout; the facilities were always available for every Level~2 model as long as lib\+S\+B\+ML was compiled with Layout support. To avoid burdening developers of legacy applications with the need to modify their software, lib\+S\+B\+ML provides backward compatibility by always preloading the Layout package extension when reading Level~2 models. The same applies to the creation of Level~2 models\+: with the plugin-\/oriented lib\+S\+B\+ML, applications normally would have to take deliberate steps to activate package code, instantiate objects, manage namespaces, and so on. Lib\+S\+B\+ML again loads the Layout package plugin automatically when creating a Level~2 model, thereby making the A\+P\+Is available to legacy applications without further work on their part. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_s_b_m_l_extension_8h}{S\+B\+M\+L\+Extension.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,297 @@
+\hypertarget{_list_8h}{}\section{List.\+h File Reference}
+\label{_list_8h}\index{List.\+h@{List.\+h}}
+
+
+Simple, generic list utility class.  
+
+
+{\ttfamily \#include $<$sbml/common/extern.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$sbml/common/sbmlfwd.\+h$>$}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_list_8h_a296b46cbc3c3eb585466437c160ddb01}{List\+\_\+free\+Items}(list,  free\+\_\+item,  type)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void}($\ast$ \hyperlink{_list_8h_a6b83bf97175734797a787eaedb974685}{List\+Delete\+Item\+Func}) (\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} $\ast$item)
+\item 
+typedef \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}($\ast$ \hyperlink{_list_8h_ad4c55078b97a01d644e27dd30f48e9c3}{List\+Item\+Predicate}) (const \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} $\ast$item)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} \hyperlink{_list_8h_ac5c4dec10e83b935fdc306c78bb61c77}{List\+\_\+add} (\hyperlink{sbmlfwd_8h_a97087abb9a4cc5ba86486da9dd71488d}{List\+\_\+t} $\ast$lst, \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} $\ast$item)
+\item 
+\hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} unsigned \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{_list_8h_a8e75a47455e2e1d1085da0bcaa08c8ce}{List\+\_\+count\+If} (const \hyperlink{sbmlfwd_8h_a97087abb9a4cc5ba86486da9dd71488d}{List\+\_\+t} $\ast$lst, \hyperlink{_list_8h_ad4c55078b97a01d644e27dd30f48e9c3}{List\+Item\+Predicate} predicate)
+\item 
+\hyperlink{libsbml-namespace_8h_ab1841eceb76d5f2baade2e6b6ffec7c1}{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+P\+P\+\_\+\+N\+A\+M\+E\+S\+P\+A\+C\+E\+\_\+\+E\+ND} \hyperlink{libsbml-namespace_8h_a41d9f1012efdaa799c31e8e4ddde0fbd}{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+P\+P\+\_\+\+N\+A\+M\+E\+S\+P\+A\+C\+E\+\_\+\+B\+E\+G\+IN} \hyperlink{libstructural_8h_a004aeed0f22bd5ee77b75a434e2e2a30}{B\+E\+G\+I\+N\+\_\+\+C\+\_\+\+D\+E\+C\+LS} \hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} \hyperlink{sbmlfwd_8h_a97087abb9a4cc5ba86486da9dd71488d}{List\+\_\+t} $\ast$ \hyperlink{_list_8h_af170cc7f9e55420242a4103c482c1e9b}{List\+\_\+create} (\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void})
+\item 
+\hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} $\ast$ \hyperlink{_list_8h_a138c381889d8b2d124278a83b4126ec7}{List\+\_\+find} (const \hyperlink{sbmlfwd_8h_a97087abb9a4cc5ba86486da9dd71488d}{List\+\_\+t} $\ast$lst, const \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} $\ast$item1, \hyperlink{_list_8h_a183277d7e14a899d6585355574136e63}{List\+Item\+Comparator} comparator)
+\item 
+\hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} \hyperlink{sbmlfwd_8h_a97087abb9a4cc5ba86486da9dd71488d}{List\+\_\+t} $\ast$ \hyperlink{_list_8h_a90b2736b0384232237ad7110d195fb30}{List\+\_\+find\+If} (const \hyperlink{sbmlfwd_8h_a97087abb9a4cc5ba86486da9dd71488d}{List\+\_\+t} $\ast$lst, \hyperlink{_list_8h_ad4c55078b97a01d644e27dd30f48e9c3}{List\+Item\+Predicate} predicate)
+\item 
+\hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} \hyperlink{_list_8h_ab4d5d63d90e1692f57e08a9b2967c140}{List\+\_\+free} (\hyperlink{sbmlfwd_8h_a97087abb9a4cc5ba86486da9dd71488d}{List\+\_\+t} $\ast$lst)
+\item 
+\hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} $\ast$ \hyperlink{_list_8h_a3995071f446b621d9f3a05e46db2a068}{List\+\_\+get} (const \hyperlink{sbmlfwd_8h_a97087abb9a4cc5ba86486da9dd71488d}{List\+\_\+t} $\ast$lst, unsigned \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} n)
+\item 
+\hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} \hyperlink{_list_8h_a3ff1f36961b3910c108d337a4ca714cd}{List\+\_\+prepend} (\hyperlink{sbmlfwd_8h_a97087abb9a4cc5ba86486da9dd71488d}{List\+\_\+t} $\ast$lst, \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} $\ast$item)
+\item 
+\hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} $\ast$ \hyperlink{_list_8h_aa0974bf4aa485f9954219fed7b504415}{List\+\_\+remove} (\hyperlink{sbmlfwd_8h_a97087abb9a4cc5ba86486da9dd71488d}{List\+\_\+t} $\ast$lst, unsigned \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} n)
+\item 
+\hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} unsigned \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{_list_8h_a44c7c7cfbbfe51663b3a453fd03464ac}{List\+\_\+size} (const \hyperlink{sbmlfwd_8h_a97087abb9a4cc5ba86486da9dd71488d}{List\+\_\+t} $\ast$lst)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{libsbml-namespace_8h_a41d9f1012efdaa799c31e8e4ddde0fbd}{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+P\+P\+\_\+\+N\+A\+M\+E\+S\+P\+A\+C\+E\+\_\+\+B\+E\+G\+IN} typedef \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}($\ast$ \hyperlink{_list_8h_a183277d7e14a899d6585355574136e63}{List\+Item\+Comparator} )(const \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} $\ast$item1, const \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} $\ast$item2)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simple, generic list utility class. 
+
+\begin{DoxyAuthor}{Author}
+Ben Bornstein 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_list_8h_a296b46cbc3c3eb585466437c160ddb01}\label{_list_8h_a296b46cbc3c3eb585466437c160ddb01}} 
+\index{List.\+h@{List.\+h}!List\+\_\+free\+Items@{List\+\_\+free\+Items}}
+\index{List\+\_\+free\+Items@{List\+\_\+free\+Items}!List.\+h@{List.\+h}}
+\subsubsection{\texorpdfstring{List\+\_\+free\+Items}{List\_freeItems}}
+{\footnotesize\ttfamily \#define List\+\_\+free\+Items(\begin{DoxyParamCaption}\item[{}]{list,  }\item[{}]{free\+\_\+item,  }\item[{}]{type }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{                                                            \(\backslash\)
+  unsigned \textcolor{keywordtype}{int} \hyperlink{ioapi_8h_a3728291d90c8c81bb270d14427a775d7}{size} = \hyperlink{_list_8h_a44c7c7cfbbfe51663b3a453fd03464ac}{List\_size}(list);                       \(\backslash\)
+  while (size--) free\_item( (type *) \hyperlink{_list_8h_aa0974bf4aa485f9954219fed7b504415}{List\_remove}(list, 0) ); \(\backslash\)
+\}
+\end{DoxyCode}
+Frees the items in the given \hyperlink{class_list}{List}.
+
+Iterates over the items in this \hyperlink{class_list}{List} and frees each one in turn by calling the passed-\/in \textquotesingle{}void free\+\_\+item(type $\ast$)\textquotesingle{} function.
+
+The \hyperlink{class_list}{List} itself will not be freed and so may be re-\/used. To free the \hyperlink{class_list}{List}, use the destructor.
+
+While the function prototype cannot be expressed precisely in C syntax, it is roughly\+: 
+\begin{DoxyCode}
+\hyperlink{_list_8h_a296b46cbc3c3eb585466437c160ddb01}{List\_freeItems}(\hyperlink{sbmlfwd_8h_a97087abb9a4cc5ba86486da9dd71488d}{List\_t} *lst, \textcolor{keywordtype}{void} (*free\_item)(type *), type)
+\end{DoxyCode}
+ where {\ttfamily type} is a C type resolved at compile time.
+
+Believe it or not, defining \hyperlink{_list_8h_a296b46cbc3c3eb585466437c160ddb01}{List\+\_\+free\+Items()} as a macro is actually more type safe than can be acheived with straight C. That is, in C, the free\+\_\+item() function would need to take a void pointer argument, requiring any type safe X\+X\+X\+\_\+free() functions to be re-\/written to be less safe.
+
+As with all line-\/continuation macros, compile-\/time errors will still report the correct line number. 
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{_list_8h_a6b83bf97175734797a787eaedb974685}\label{_list_8h_a6b83bf97175734797a787eaedb974685}} 
+\index{List.\+h@{List.\+h}!List\+Delete\+Item\+Func@{List\+Delete\+Item\+Func}}
+\index{List\+Delete\+Item\+Func@{List\+Delete\+Item\+Func}!List.\+h@{List.\+h}}
+\subsubsection{\texorpdfstring{List\+Delete\+Item\+Func}{ListDeleteItemFunc}}
+{\footnotesize\ttfamily typedef \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void}($\ast$ List\+Delete\+Item\+Func) (\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} $\ast$item)}
+
+List\+Delete\+Item\+Func
+
+This is a typedef for a pointer to a function that takes a \hyperlink{class_list}{List} item and deletes / frees it as apropriate. \mbox{\Hypertarget{_list_8h_ad4c55078b97a01d644e27dd30f48e9c3}\label{_list_8h_ad4c55078b97a01d644e27dd30f48e9c3}} 
+\index{List.\+h@{List.\+h}!List\+Item\+Predicate@{List\+Item\+Predicate}}
+\index{List\+Item\+Predicate@{List\+Item\+Predicate}!List.\+h@{List.\+h}}
+\subsubsection{\texorpdfstring{List\+Item\+Predicate}{ListItemPredicate}}
+{\footnotesize\ttfamily typedef \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}($\ast$ List\+Item\+Predicate) (const \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} $\ast$item)}
+
+List\+Item\+Predicate
+
+This is a typedef for a pointer to a function that takes a \hyperlink{class_list}{List} item and returns nonzero (for true) or zero (for false).
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{_list_8h_a8e75a47455e2e1d1085da0bcaa08c8ce}{List\+\_\+count\+If()} 
+\end{DoxySeeAlso}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_list_8h_ac5c4dec10e83b935fdc306c78bb61c77}\label{_list_8h_ac5c4dec10e83b935fdc306c78bb61c77}} 
+\index{List.\+h@{List.\+h}!List\+\_\+add@{List\+\_\+add}}
+\index{List\+\_\+add@{List\+\_\+add}!List.\+h@{List.\+h}}
+\subsubsection{\texorpdfstring{List\+\_\+add()}{List\_add()}}
+{\footnotesize\ttfamily \hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} List\+\_\+add (\begin{DoxyParamCaption}\item[{\hyperlink{sbmlfwd_8h_a97087abb9a4cc5ba86486da9dd71488d}{List\+\_\+t} $\ast$}]{lst,  }\item[{\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} $\ast$}]{item }\end{DoxyParamCaption})}
+
+Adds item to the end of this List\+\_\+t.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lst} & the List\+\_\+t structure. \\
+\hline
+{\em item} & the item to add to the end of the list. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_list_8h_a8e75a47455e2e1d1085da0bcaa08c8ce}\label{_list_8h_a8e75a47455e2e1d1085da0bcaa08c8ce}} 
+\index{List.\+h@{List.\+h}!List\+\_\+count\+If@{List\+\_\+count\+If}}
+\index{List\+\_\+count\+If@{List\+\_\+count\+If}!List.\+h@{List.\+h}}
+\subsubsection{\texorpdfstring{List\+\_\+count\+If()}{List\_countIf()}}
+{\footnotesize\ttfamily \hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} unsigned \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} List\+\_\+count\+If (\begin{DoxyParamCaption}\item[{const \hyperlink{sbmlfwd_8h_a97087abb9a4cc5ba86486da9dd71488d}{List\+\_\+t} $\ast$}]{lst,  }\item[{\hyperlink{_list_8h_ad4c55078b97a01d644e27dd30f48e9c3}{List\+Item\+Predicate}}]{predicate }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+the number of items in this List\+\_\+t for which predicate(item) returns true.
+\end{DoxyReturn}
+The typedef for List\+Item\+Predicate is\+:
+
+int ($\ast$\+List\+Item\+Predicate) (const void $\ast$item);
+
+where a return value of non-\/zero represents true and zero represents false.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lst} & the List\+\_\+t structure. \\
+\hline
+{\em predicate} & the predicate to test the elements of the list against. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_list_8h_af170cc7f9e55420242a4103c482c1e9b}\label{_list_8h_af170cc7f9e55420242a4103c482c1e9b}} 
+\index{List.\+h@{List.\+h}!List\+\_\+create@{List\+\_\+create}}
+\index{List\+\_\+create@{List\+\_\+create}!List.\+h@{List.\+h}}
+\subsubsection{\texorpdfstring{List\+\_\+create()}{List\_create()}}
+{\footnotesize\ttfamily \hyperlink{libsbml-namespace_8h_ab1841eceb76d5f2baade2e6b6ffec7c1}{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+P\+P\+\_\+\+N\+A\+M\+E\+S\+P\+A\+C\+E\+\_\+\+E\+ND} \hyperlink{libsbml-namespace_8h_a41d9f1012efdaa799c31e8e4ddde0fbd}{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+P\+P\+\_\+\+N\+A\+M\+E\+S\+P\+A\+C\+E\+\_\+\+B\+E\+G\+IN} \hyperlink{libstructural_8h_a004aeed0f22bd5ee77b75a434e2e2a30}{B\+E\+G\+I\+N\+\_\+\+C\+\_\+\+D\+E\+C\+LS} \hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} \hyperlink{sbmlfwd_8h_a97087abb9a4cc5ba86486da9dd71488d}{List\+\_\+t}$\ast$ List\+\_\+create (\begin{DoxyParamCaption}\item[{\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void}}]{ }\end{DoxyParamCaption})}
+
+Creates a new List\+\_\+t and returns a pointer to it. \mbox{\Hypertarget{_list_8h_a138c381889d8b2d124278a83b4126ec7}\label{_list_8h_a138c381889d8b2d124278a83b4126ec7}} 
+\index{List.\+h@{List.\+h}!List\+\_\+find@{List\+\_\+find}}
+\index{List\+\_\+find@{List\+\_\+find}!List.\+h@{List.\+h}}
+\subsubsection{\texorpdfstring{List\+\_\+find()}{List\_find()}}
+{\footnotesize\ttfamily \hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void}$\ast$ List\+\_\+find (\begin{DoxyParamCaption}\item[{const \hyperlink{sbmlfwd_8h_a97087abb9a4cc5ba86486da9dd71488d}{List\+\_\+t} $\ast$}]{lst,  }\item[{const \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} $\ast$}]{item1,  }\item[{\hyperlink{_list_8h_a183277d7e14a899d6585355574136e63}{List\+Item\+Comparator}}]{comparator }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+the first occurrence of item1 in this List\+\_\+t or N\+U\+LL if item was not found. List\+Item\+Comparator is a pointer to a function used to find item. The typedef for List\+Item\+Comparator is\+:
+\end{DoxyReturn}
+int ($\ast$\+List\+Item\+Comparator) (void $\ast$item1, void $\ast$item2);
+
+The return value semantics are the same as for strcmp\+:
+
+-\/1 item1 $<$ item2, 0 item1 == item 2 1 item1 $>$ item2
+
+
+\begin{DoxyParams}{Parameters}
+{\em lst} & the List\+\_\+t structure. \\
+\hline
+{\em item1} & the item to look for. \\
+\hline
+{\em comparator} & the pointer to the function used to find the item. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_list_8h_a90b2736b0384232237ad7110d195fb30}\label{_list_8h_a90b2736b0384232237ad7110d195fb30}} 
+\index{List.\+h@{List.\+h}!List\+\_\+find\+If@{List\+\_\+find\+If}}
+\index{List\+\_\+find\+If@{List\+\_\+find\+If}!List.\+h@{List.\+h}}
+\subsubsection{\texorpdfstring{List\+\_\+find\+If()}{List\_findIf()}}
+{\footnotesize\ttfamily \hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} \hyperlink{sbmlfwd_8h_a97087abb9a4cc5ba86486da9dd71488d}{List\+\_\+t}$\ast$ List\+\_\+find\+If (\begin{DoxyParamCaption}\item[{const \hyperlink{sbmlfwd_8h_a97087abb9a4cc5ba86486da9dd71488d}{List\+\_\+t} $\ast$}]{lst,  }\item[{\hyperlink{_list_8h_ad4c55078b97a01d644e27dd30f48e9c3}{List\+Item\+Predicate}}]{predicate }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+a new List\+\_\+t containing (pointers to) all items in this List\+\_\+t for which predicate(item) was true.
+\end{DoxyReturn}
+The returned list may be empty.
+
+The caller owns the returned list (but not its constituent items) and is responsible for freeing it with \hyperlink{_list_8h_ab4d5d63d90e1692f57e08a9b2967c140}{List\+\_\+free()}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lst} & the List\+\_\+t structure. \\
+\hline
+{\em predicate} & the predicate to test the elements of the list against. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_list_8h_ab4d5d63d90e1692f57e08a9b2967c140}\label{_list_8h_ab4d5d63d90e1692f57e08a9b2967c140}} 
+\index{List.\+h@{List.\+h}!List\+\_\+free@{List\+\_\+free}}
+\index{List\+\_\+free@{List\+\_\+free}!List.\+h@{List.\+h}}
+\subsubsection{\texorpdfstring{List\+\_\+free()}{List\_free()}}
+{\footnotesize\ttfamily \hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} List\+\_\+free (\begin{DoxyParamCaption}\item[{\hyperlink{sbmlfwd_8h_a97087abb9a4cc5ba86486da9dd71488d}{List\+\_\+t} $\ast$}]{lst }\end{DoxyParamCaption})}
+
+Frees the given List\+\_\+t.
+
+This function does not free List\+\_\+t items. It frees only the List\+\_\+t structure and its constituent internal structures (if any).
+
+Presumably, you either i) have pointers to the individual list items elsewhere in your program and you want to keep them around for awhile longer or ii) the list has no items (List\+\_\+size(lst) == 0). If neither are true, try \hyperlink{_list_8h_a296b46cbc3c3eb585466437c160ddb01}{List\+\_\+free\+Items()} instead.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lst} & the List\+\_\+t structure. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_list_8h_a3995071f446b621d9f3a05e46db2a068}\label{_list_8h_a3995071f446b621d9f3a05e46db2a068}} 
+\index{List.\+h@{List.\+h}!List\+\_\+get@{List\+\_\+get}}
+\index{List\+\_\+get@{List\+\_\+get}!List.\+h@{List.\+h}}
+\subsubsection{\texorpdfstring{List\+\_\+get()}{List\_get()}}
+{\footnotesize\ttfamily \hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void}$\ast$ List\+\_\+get (\begin{DoxyParamCaption}\item[{const \hyperlink{sbmlfwd_8h_a97087abb9a4cc5ba86486da9dd71488d}{List\+\_\+t} $\ast$}]{lst,  }\item[{unsigned \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}}]{n }\end{DoxyParamCaption})}
+
+Returns the nth item in this List\+\_\+t. If n $>$ List\+\_\+size(lst) returns N\+U\+LL.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lst} & the List\+\_\+t structure. \\
+\hline
+{\em n} & the index of the item to find. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_list_8h_a3ff1f36961b3910c108d337a4ca714cd}\label{_list_8h_a3ff1f36961b3910c108d337a4ca714cd}} 
+\index{List.\+h@{List.\+h}!List\+\_\+prepend@{List\+\_\+prepend}}
+\index{List\+\_\+prepend@{List\+\_\+prepend}!List.\+h@{List.\+h}}
+\subsubsection{\texorpdfstring{List\+\_\+prepend()}{List\_prepend()}}
+{\footnotesize\ttfamily \hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} List\+\_\+prepend (\begin{DoxyParamCaption}\item[{\hyperlink{sbmlfwd_8h_a97087abb9a4cc5ba86486da9dd71488d}{List\+\_\+t} $\ast$}]{lst,  }\item[{\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} $\ast$}]{item }\end{DoxyParamCaption})}
+
+Adds item to the beginning of this List\+\_\+t.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lst} & the List\+\_\+t structure. \\
+\hline
+{\em item} & the item to add to the list. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_list_8h_aa0974bf4aa485f9954219fed7b504415}\label{_list_8h_aa0974bf4aa485f9954219fed7b504415}} 
+\index{List.\+h@{List.\+h}!List\+\_\+remove@{List\+\_\+remove}}
+\index{List\+\_\+remove@{List\+\_\+remove}!List.\+h@{List.\+h}}
+\subsubsection{\texorpdfstring{List\+\_\+remove()}{List\_remove()}}
+{\footnotesize\ttfamily \hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void}$\ast$ List\+\_\+remove (\begin{DoxyParamCaption}\item[{\hyperlink{sbmlfwd_8h_a97087abb9a4cc5ba86486da9dd71488d}{List\+\_\+t} $\ast$}]{lst,  }\item[{unsigned \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}}]{n }\end{DoxyParamCaption})}
+
+Removes the nth item from this List\+\_\+t and returns a pointer to it. If n $>$ List\+\_\+size(lst) returns N\+U\+LL.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lst} & the List\+\_\+t structure. \\
+\hline
+{\em n} & the index of the item to remove. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_list_8h_a44c7c7cfbbfe51663b3a453fd03464ac}\label{_list_8h_a44c7c7cfbbfe51663b3a453fd03464ac}} 
+\index{List.\+h@{List.\+h}!List\+\_\+size@{List\+\_\+size}}
+\index{List\+\_\+size@{List\+\_\+size}!List.\+h@{List.\+h}}
+\subsubsection{\texorpdfstring{List\+\_\+size()}{List\_size()}}
+{\footnotesize\ttfamily \hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} unsigned \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} List\+\_\+size (\begin{DoxyParamCaption}\item[{const \hyperlink{sbmlfwd_8h_a97087abb9a4cc5ba86486da9dd71488d}{List\+\_\+t} $\ast$}]{lst }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+the number of elements in this List\+\_\+t.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em lst} & the List\+\_\+t structure. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{_list_8h_a183277d7e14a899d6585355574136e63}\label{_list_8h_a183277d7e14a899d6585355574136e63}} 
+\index{List.\+h@{List.\+h}!List\+Item\+Comparator@{List\+Item\+Comparator}}
+\index{List\+Item\+Comparator@{List\+Item\+Comparator}!List.\+h@{List.\+h}}
+\subsubsection{\texorpdfstring{List\+Item\+Comparator}{ListItemComparator}}
+{\footnotesize\ttfamily \hyperlink{libsbml-namespace_8h_a41d9f1012efdaa799c31e8e4ddde0fbd}{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+P\+P\+\_\+\+N\+A\+M\+E\+S\+P\+A\+C\+E\+\_\+\+B\+E\+G\+IN} typedef \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}($\ast$ List\+Item\+Comparator) (const \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} $\ast$item1, const \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} $\ast$item2)}
+
+List\+Item\+Comparator
+
+This is a typedef for a pointer to a function that compares two list items. The return value semantics are the same as for the C library function {\ttfamily strcmp\+:} 
+\begin{DoxyItemize}
+\item -\/1\+: {\ttfamily item1} $<$ {\ttfamily item2} 
+\item 0\+: {\ttfamily item1} == {\ttfamily item2} 
+\item 1\+: {\ttfamily item1} $>$ {\ttfamily item2} 
+\end{DoxyItemize}\begin{DoxySeeAlso}{See also}
+\hyperlink{_list_8h_a138c381889d8b2d124278a83b4126ec7}{List\+\_\+find()} 
+\end{DoxySeeAlso}

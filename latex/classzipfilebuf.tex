@@ -1,0 +1,218 @@
+\hypertarget{classzipfilebuf}{}\section{zipfilebuf Class Reference}
+\label{classzipfilebuf}\index{zipfilebuf@{zipfilebuf}}
+
+
+zip file stream buffer class.  
+
+
+
+
+{\ttfamily \#include $<$zipfstream.\+h$>$}
+
+
+
+Inherits streambuf.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classzipfilebuf}{zipfilebuf} $\ast$ \hyperlink{classzipfilebuf_af9c0ac8b4fef88831bf6f76a7ae35952}{close} ()
+\begin{DoxyCompactList}\small\item\em Attach to already open zip file. \end{DoxyCompactList}\item 
+bool \hyperlink{classzipfilebuf_a7563b8596d1b48825f1cb097a3859972}{is\+\_\+open} () const
+\begin{DoxyCompactList}\small\item\em Check if file is open. \end{DoxyCompactList}\item 
+\hyperlink{classzipfilebuf}{zipfilebuf} $\ast$ \hyperlink{classzipfilebuf_a92684f54693ebbc9eff315fe0e9350ad}{open} (const char $\ast$\hyperlink{lp__lib_8h_a2946c588fc7fa2fa5b43ac54b7872725}{name}, const char $\ast$filenameinzip, std\+::ios\+\_\+base\+::openmode \hyperlink{ioapi_8h_ab77191763734fbb3e515371393ccb606}{mode})
+\begin{DoxyCompactList}\small\item\em Open zip file for writing. \end{DoxyCompactList}\item 
+\hyperlink{classzipfilebuf_a9d57ce4c64f37bfe40ec169a0569d010}{zipfilebuf} ()
+\item 
+virtual \hyperlink{classzipfilebuf_a3b54e3912c0d1a9df244ee1cf4567a78}{$\sim$zipfilebuf} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classzipfilebuf_ad1dc142298bab5d64fdd16000ce206fe}{open\+\_\+mode} (std\+::ios\+\_\+base\+::openmode \hyperlink{ioapi_8h_ab77191763734fbb3e515371393ccb606}{mode}, char $\ast$c\+\_\+mode) const
+\begin{DoxyCompactList}\small\item\em Convert ios open mode int to mode string used by zlib. \end{DoxyCompactList}\item 
+virtual int\+\_\+type \hyperlink{classzipfilebuf_a7b8c8c309d1c1175a62a37e1b3e8820c}{overflow} (int\+\_\+type c=std\+::streambuf\+::traits\+\_\+type\+::eof())
+\begin{DoxyCompactList}\small\item\em Write put area to zip file. \end{DoxyCompactList}\item 
+virtual std\+::streambuf $\ast$ \hyperlink{classzipfilebuf_a3b9b3c269535ed0d792c12c42506ccd4}{setbuf} (char\+\_\+type $\ast$p, std\+::streamsize n)
+\begin{DoxyCompactList}\small\item\em Installs external stream buffer. \end{DoxyCompactList}\item 
+virtual std\+::streamsize \hyperlink{classzipfilebuf_ae3700c160ef70e63b08482a91b222ce1}{showmanyc} ()
+\begin{DoxyCompactList}\small\item\em Number of characters available in stream buffer. \end{DoxyCompactList}\item 
+virtual \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{classzipfilebuf_a9db1a908810f7eee6dab4351c2c6924c}{sync} ()
+\begin{DoxyCompactList}\small\item\em Flush stream buffer to file. \end{DoxyCompactList}\item 
+virtual int\+\_\+type \hyperlink{classzipfilebuf_a6ac8465585d86e24c76fb43d3b8ace99}{underflow} ()
+\begin{DoxyCompactList}\small\item\em Fill get area from zip file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+zip file stream buffer class. 
+
+This class implements basic\+\_\+filebuf for zip files. It doesn\textquotesingle{}t yet support seeking, putback and read/write access (tricky). Otherwise, it attempts to be a drop-\/in replacement for the standard file streambuf. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classzipfilebuf_a9d57ce4c64f37bfe40ec169a0569d010}\label{classzipfilebuf_a9d57ce4c64f37bfe40ec169a0569d010}} 
+\index{zipfilebuf@{zipfilebuf}!zipfilebuf@{zipfilebuf}}
+\index{zipfilebuf@{zipfilebuf}!zipfilebuf@{zipfilebuf}}
+\subsubsection{\texorpdfstring{zipfilebuf()}{zipfilebuf()}}
+{\footnotesize\ttfamily zipfilebuf\+::zipfilebuf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classzipfilebuf_a3b54e3912c0d1a9df244ee1cf4567a78}\label{classzipfilebuf_a3b54e3912c0d1a9df244ee1cf4567a78}} 
+\index{zipfilebuf@{zipfilebuf}!````~zipfilebuf@{$\sim$zipfilebuf}}
+\index{````~zipfilebuf@{$\sim$zipfilebuf}!zipfilebuf@{zipfilebuf}}
+\subsubsection{\texorpdfstring{$\sim$zipfilebuf()}{~zipfilebuf()}}
+{\footnotesize\ttfamily virtual zipfilebuf\+::$\sim$zipfilebuf (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classzipfilebuf_af9c0ac8b4fef88831bf6f76a7ae35952}\label{classzipfilebuf_af9c0ac8b4fef88831bf6f76a7ae35952}} 
+\index{zipfilebuf@{zipfilebuf}!close@{close}}
+\index{close@{close}!zipfilebuf@{zipfilebuf}}
+\subsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily \hyperlink{classzipfilebuf}{zipfilebuf}$\ast$ zipfilebuf\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Attach to already open zip file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & File descriptor. \\
+\hline
+{\em mode} & Open mode flags. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily this} on success, N\+U\+LL on failure. Close zip file. 
+
+{\ttfamily this} on success, N\+U\+LL on failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classzipfilebuf_a7563b8596d1b48825f1cb097a3859972}\label{classzipfilebuf_a7563b8596d1b48825f1cb097a3859972}} 
+\index{zipfilebuf@{zipfilebuf}!is\+\_\+open@{is\+\_\+open}}
+\index{is\+\_\+open@{is\+\_\+open}!zipfilebuf@{zipfilebuf}}
+\subsubsection{\texorpdfstring{is\+\_\+open()}{is\_open()}}
+{\footnotesize\ttfamily bool zipfilebuf\+::is\+\_\+open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Check if file is open. 
+
+\begin{DoxyReturn}{Returns}
+True if file is open. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classzipfilebuf_a92684f54693ebbc9eff315fe0e9350ad}\label{classzipfilebuf_a92684f54693ebbc9eff315fe0e9350ad}} 
+\index{zipfilebuf@{zipfilebuf}!open@{open}}
+\index{open@{open}!zipfilebuf@{zipfilebuf}}
+\subsubsection{\texorpdfstring{open()}{open()}}
+{\footnotesize\ttfamily \hyperlink{classzipfilebuf}{zipfilebuf}$\ast$ zipfilebuf\+::open (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{const char $\ast$}]{filenameinzip,  }\item[{std\+::ios\+\_\+base\+::openmode}]{mode }\end{DoxyParamCaption})}
+
+
+
+Open zip file for writing. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Zip file name. \\
+\hline
+{\em name} & A file name in the zip file for writing a zip file. (The zip fill will be opened for reading if the value if N\+U\+LL.) \\
+\hline
+{\em mode} & Open mode flags. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily this} on success, N\+U\+LL on failure. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classzipfilebuf_ad1dc142298bab5d64fdd16000ce206fe}\label{classzipfilebuf_ad1dc142298bab5d64fdd16000ce206fe}} 
+\index{zipfilebuf@{zipfilebuf}!open\+\_\+mode@{open\+\_\+mode}}
+\index{open\+\_\+mode@{open\+\_\+mode}!zipfilebuf@{zipfilebuf}}
+\subsubsection{\texorpdfstring{open\+\_\+mode()}{open\_mode()}}
+{\footnotesize\ttfamily bool zipfilebuf\+::open\+\_\+mode (\begin{DoxyParamCaption}\item[{std\+::ios\+\_\+base\+::openmode}]{mode,  }\item[{char $\ast$}]{c\+\_\+mode }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Convert ios open mode int to mode string used by zlib. 
+
+\begin{DoxyReturn}{Returns}
+True if valid mode flag combination. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classzipfilebuf_a7b8c8c309d1c1175a62a37e1b3e8820c}\label{classzipfilebuf_a7b8c8c309d1c1175a62a37e1b3e8820c}} 
+\index{zipfilebuf@{zipfilebuf}!overflow@{overflow}}
+\index{overflow@{overflow}!zipfilebuf@{zipfilebuf}}
+\subsubsection{\texorpdfstring{overflow()}{overflow()}}
+{\footnotesize\ttfamily virtual int\+\_\+type zipfilebuf\+::overflow (\begin{DoxyParamCaption}\item[{int\+\_\+type}]{c = {\ttfamily std\+:\+:streambuf\+:\+:traits\+\_\+type\+:\+:eof()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Write put area to zip file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & Extra character to add to buffer contents. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Non-\/\+E\+OF on success, E\+OF on error.
+\end{DoxyReturn}
+This actually writes characters in stream buffer to zip file. With unbuffered output this is done one character at a time. \mbox{\Hypertarget{classzipfilebuf_a3b9b3c269535ed0d792c12c42506ccd4}\label{classzipfilebuf_a3b9b3c269535ed0d792c12c42506ccd4}} 
+\index{zipfilebuf@{zipfilebuf}!setbuf@{setbuf}}
+\index{setbuf@{setbuf}!zipfilebuf@{zipfilebuf}}
+\subsubsection{\texorpdfstring{setbuf()}{setbuf()}}
+{\footnotesize\ttfamily virtual std\+::streambuf$\ast$ zipfilebuf\+::setbuf (\begin{DoxyParamCaption}\item[{char\+\_\+type $\ast$}]{p,  }\item[{std\+::streamsize}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Installs external stream buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Pointer to char buffer. \\
+\hline
+{\em n} & Size of external buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily this} on success, N\+U\+LL on failure.
+\end{DoxyReturn}
+Call setbuf(0,0) to enable unbuffered output. \mbox{\Hypertarget{classzipfilebuf_ae3700c160ef70e63b08482a91b222ce1}\label{classzipfilebuf_ae3700c160ef70e63b08482a91b222ce1}} 
+\index{zipfilebuf@{zipfilebuf}!showmanyc@{showmanyc}}
+\index{showmanyc@{showmanyc}!zipfilebuf@{zipfilebuf}}
+\subsubsection{\texorpdfstring{showmanyc()}{showmanyc()}}
+{\footnotesize\ttfamily virtual std\+::streamsize zipfilebuf\+::showmanyc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Number of characters available in stream buffer. 
+
+\begin{DoxyReturn}{Returns}
+Number of characters.
+\end{DoxyReturn}
+This indicates number of characters in get area of stream buffer. These characters can be read without accessing the zip file. \mbox{\Hypertarget{classzipfilebuf_a9db1a908810f7eee6dab4351c2c6924c}\label{classzipfilebuf_a9db1a908810f7eee6dab4351c2c6924c}} 
+\index{zipfilebuf@{zipfilebuf}!sync@{sync}}
+\index{sync@{sync}!zipfilebuf@{zipfilebuf}}
+\subsubsection{\texorpdfstring{sync()}{sync()}}
+{\footnotesize\ttfamily virtual \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} zipfilebuf\+::sync (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Flush stream buffer to file. 
+
+\begin{DoxyReturn}{Returns}
+0 on success, -\/1 on error.
+\end{DoxyReturn}
+This calls underflow(\+E\+O\+F) to do the job. \mbox{\Hypertarget{classzipfilebuf_a6ac8465585d86e24c76fb43d3b8ace99}\label{classzipfilebuf_a6ac8465585d86e24c76fb43d3b8ace99}} 
+\index{zipfilebuf@{zipfilebuf}!underflow@{underflow}}
+\index{underflow@{underflow}!zipfilebuf@{zipfilebuf}}
+\subsubsection{\texorpdfstring{underflow()}{underflow()}}
+{\footnotesize\ttfamily virtual int\+\_\+type zipfilebuf\+::underflow (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Fill get area from zip file. 
+
+\begin{DoxyReturn}{Returns}
+First character in get area on success, E\+OF on error.
+\end{DoxyReturn}
+This actually reads characters from zip file to stream buffer. Always buffered. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{zipfstream_8h}{zipfstream.\+h}\end{DoxyCompactItemize}

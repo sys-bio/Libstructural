@@ -1,0 +1,17 @@
+\hypertarget{classdoc__what__are__notes}{}\section{doc\+\_\+what\+\_\+are\+\_\+notes Class Reference}
+\label{classdoc__what__are__notes}\index{doc\+\_\+what\+\_\+are\+\_\+notes@{doc\+\_\+what\+\_\+are\+\_\+notes}}
+
+
+{\ttfamily \#include $<$common-\/documentation.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\begin{DoxyParagraph}{}
+The optional S\+B\+ML element named \char`\"{}notes\char`\"{}, present on every major S\+B\+ML component type (and in S\+B\+ML Level~3, the \char`\"{}message\char`\"{} subelement of \hyperlink{class_constraint}{Constraint}), is intended as a place for storing optional information intended to be seen by humans. An example use of the \char`\"{}notes\char`\"{} element would be to contain formatted user comments about the model element in which the \char`\"{}notes\char`\"{} element is enclosed. Every object derived directly or indirectly from type \hyperlink{class_s_base}{S\+Base} can have a separate value for \char`\"{}notes\char`\"{}, allowing users considerable freedom when adding comments to their models.
+\end{DoxyParagraph}
+The format of \char`\"{}notes\char`\"{} elements conform to the definition of \href{http://www.w3.org/TR/xhtml1/}{\tt X\+H\+T\+ML~1.\+0}. However, the content cannot be {\itshape entirely} free-\/form; it must satisfy certain requirements defined in the \href{http://sbml.org/Documents/Specifications}{\tt S\+B\+ML specifications} for specific S\+B\+ML Levels. To help verify the formatting of \char`\"{}notes\char`\"{} content, lib\+S\+B\+ML provides the static utility method Syntax\+Checker\+::has\+Expected\+X\+H\+T\+M\+L\+Syntax(); this method implements a verification process that lets callers check whether the content of a given \hyperlink{class_x_m_l_node}{X\+M\+L\+Node} object conforms to the S\+B\+ML requirements for \char`\"{}notes\char`\"{} and \char`\"{}message\char`\"{} structure. Developers are urged to consult the appropriate \href{http://sbml.org/Documents/Specifications}{\tt S\+B\+ML specification document} for the Level and Version of their model for more in-\/depth explanations of using \char`\"{}notes\char`\"{} in S\+B\+ML. The S\+B\+ML Level~2 and~3 specifications have considerable detail about how \char`\"{}notes\char`\"{} element content must be structured. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{common-documentation_8h}{common-\/documentation.\+h}\end{DoxyCompactItemize}

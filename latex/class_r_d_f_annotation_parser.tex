@@ -1,0 +1,21 @@
+\hypertarget{class_r_d_f_annotation_parser}{}\section{R\+D\+F\+Annotation\+Parser Class Reference}
+\label{class_r_d_f_annotation_parser}\index{R\+D\+F\+Annotation\+Parser@{R\+D\+F\+Annotation\+Parser}}
+
+
+{\ttfamily \#include $<$R\+D\+F\+Annotation\+Parser.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} M\+I\+R\+I\+A\+M-\/compliant R\+DF annotation reader/writer.
+
+
+
+\hyperlink{class_r_d_f_annotation_parser}{R\+D\+F\+Annotation\+Parser} is a lib\+S\+B\+ML construct used as part of the lib\+S\+B\+ML support for annotations conforming to the guidelines specified by M\+I\+R\+I\+AM (\href{http://www.nature.com/nbt/journal/v23/n12/abs/nbt1156.html}{\tt \char`\"{}\+Minimum
+\+Information Requested in the Annotation of biochemical Models\char`\"{}}, {\itshape Nature Biotechnology}, vol. 23, no. 12, Dec. 2005). Section 6 of the S\+B\+ML Level~2 and Level~3 specification documents defines a recommended way of encoding M\+I\+R\+I\+AM information using a subset of R\+DF (\href{http://www.w3.org/RDF/}{\tt Resource Description Format}). The general scheme is as follows. A set of R\+D\+F-\/based annotations attached to a given S\+B\+ML {\ttfamily $<$annotation$>$} element are read by \hyperlink{class_r_d_f_annotation_parser}{R\+D\+F\+Annotation\+Parser} and converted into a list of \hyperlink{class_c_v_term}{C\+V\+Term} objects. There are different versions of the main method, and R\+D\+F\+Annotation\+Parser\+::parse\+R\+D\+F\+Annotation(const X\+M\+L\+Node $\ast$annotation), used depending on whether the annotation in question concerns the M\+I\+R\+I\+AM model history or other M\+I\+R\+I\+AM resource annotations. A special object class, \hyperlink{class_model_history}{Model\+History}, is used to make it easier to manipulate model history annotations.
+
+All of the methods on \hyperlink{class_r_d_f_annotation_parser}{R\+D\+F\+Annotation\+Parser} are static; the class exists only to encapsulate the annotation and \hyperlink{class_c_v_term}{C\+V\+Term} parsing and manipulation functionality. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_r_d_f_annotation_parser_8h}{R\+D\+F\+Annotation\+Parser.\+h}\end{DoxyCompactItemize}

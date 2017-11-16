@@ -1,0 +1,101 @@
+\hypertarget{class_a_s_t_node}{}\section{A\+S\+T\+Node Class Reference}
+\label{class_a_s_t_node}\index{A\+S\+T\+Node@{A\+S\+T\+Node}}
+
+
+{\ttfamily \#include $<$A\+S\+T\+Node.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} Abstract Syntax Trees for mathematical expressions.
+
+
+
+\href{http://en.wikipedia.org/wiki/Abstract_syntax_tree}{\tt Abstract Syntax Trees} (A\+S\+Ts) are a simple kind of data structure used in lib\+S\+B\+ML for storing mathematical expressions. Lib\+S\+B\+ML A\+S\+Ts provide a canonical, in-\/memory representation for all mathematical formulas regardless of their original format (which might be Math\+ML or might be text strings).
+
+\begin{DoxyParagraph}{}
+An A\+ST {\itshape node} in lib\+S\+B\+ML is a recursive tree structure; each node has a type, a pointer to a value, and a list of children nodes. Each \hyperlink{class_a_s_t_node}{A\+S\+T\+Node} node may have none, one, two, or more children depending on its type. There are node types to represent numbers (with subtypes to distinguish integer, real, and rational numbers), names (e.\+g., constants or variables), simple mathematical operators, logical or relational operators and functions. The following diagram illustrates an example of how the mathematical expression {\ttfamily \char`\"{}1 + 2\char`\"{}} is represented as an A\+ST with one {\itshape plus} node having two {\itshape integer} children nodes for the numbers {\ttfamily 1} and {\ttfamily 2}. The figure also shows the corresponding Math\+ML representation\+:
+\end{DoxyParagraph}
+
+
+The following are other noteworthy points about the A\+ST representation in lib\+S\+B\+ML\+:
+
+\begin{DoxyItemize}
+\item A numerical value represented in Math\+ML as a real number with an exponent is preserved as such in the A\+ST node representation, even if the number could be stored in a {\ttfamily double} data type. This is done so that when an S\+B\+ML model is read in and then written out again, the amount of change introduced by lib\+S\+B\+ML to the S\+B\+ML during the round-\/trip activity is minimized.\end{DoxyItemize}
+\begin{DoxyItemize}
+\item Rational numbers are represented in an A\+ST node using separate numerator and denominator values. These can be retrieved using the methods A\+S\+T\+Node\+::get\+Numerator() and A\+S\+T\+Node\+::get\+Denominator().\end{DoxyItemize}
+\begin{DoxyItemize}
+\item The children of an \hyperlink{class_a_s_t_node}{A\+S\+T\+Node} are other \hyperlink{class_a_s_t_node}{A\+S\+T\+Node} objects. The list of children is empty for nodes that are leaf elements, such as numbers. For nodes that are actually roots of expression subtrees, the list of children points to the parsed objects that make up the rest of the expression.\end{DoxyItemize}
+For many applications, the details of A\+S\+Ts are irrelevant because lib\+S\+B\+ML provides text-\/string based translation functions such as \{formula\+To\+L3\+String, \hyperlink{class_a_s_t_node}{A\+S\+T\+Node}\} and \{parse\+L3\+Formula, String\}. If you find the complexity of using the A\+ST representation of expressions too high for your purposes, perhaps the string-\/based functions will be more suitable.
+
+\paragraph*{\label{_ASTNodeType_t}%
+The set of possible A\+S\+T\+Node types}
+
+\begin{DoxyParagraph}{}
+Every \hyperlink{class_a_s_t_node}{A\+S\+T\+Node} has an associated type code to indicate whether, for example, it holds a number or stands for an arithmetic operator.
+\end{DoxyParagraph}
+The list of possible types is quite long, because it covers all the mathematical functions that are permitted in S\+B\+ML. The values are shown in the following table\+:
+
+
+
+The types have the following meanings\+:
+
+\begin{DoxyItemize}
+\item If the node is basic mathematical operator (e.\+g., {\ttfamily \char`\"{}+\char`\"{}}), then the node\textquotesingle{}s type will be \{A\+S\+T\+\_\+\+P\+L\+US,A\+S\+T\+Node\+Type\+\_\+t\}, \{A\+S\+T\+\_\+\+M\+I\+N\+US, A\+S\+T\+Node\+Type\+\_\+t\}, \{A\+S\+T\+\_\+\+T\+I\+M\+ES, A\+S\+T\+Node\+Type\+\_\+t\}, \{A\+S\+T\+\_\+\+D\+I\+V\+I\+DE, A\+S\+T\+Node\+Type\+\_\+t\}, or \{A\+S\+T\+\_\+\+P\+O\+W\+ER, A\+S\+T\+Node\+Type\+\_\+t\}, as appropriate.\end{DoxyItemize}
+\begin{DoxyItemize}
+\item If the node is a predefined function or operator from S\+B\+ML Level~1 (in the string-\/based formula syntax used in Level~1) or S\+B\+ML Level~2 and~3 (in the subset of Math\+ML used in S\+B\+ML Levels~2 and~3), then the node\textquotesingle{}s type will be either {\ttfamily A\+S\+T\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+}X, {\ttfamily A\+S\+T\+\_\+\+L\+O\+G\+I\+C\+A\+L\+\_\+}X, or {\ttfamily A\+S\+T\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+A\+L\+\_\+}X, as appropriate. (Examples\+: \{A\+S\+T\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+L\+OG, A\+S\+T\+Node\+Type\+\_\+t\}, \{A\+S\+T\+\_\+\+R\+E\+L\+A\+T\+I\+O\+N\+A\+L\+\_\+\+L\+EQ, A\+S\+T\+Node\+Type\+\_\+t\}.)\end{DoxyItemize}
+\begin{DoxyItemize}
+\item If the node refers to a user-\/defined function, the node\textquotesingle{}s type will be \{A\+S\+T\+\_\+\+F\+U\+N\+C\+T\+I\+ON, A\+S\+T\+Node\+Type\+\_\+t\} (because it holds the name of the function).\end{DoxyItemize}
+\begin{DoxyItemize}
+\item If the node is a lambda expression, its type will be \{A\+S\+T\+\_\+\+L\+A\+M\+B\+DA, A\+S\+T\+Node\+Type\+\_\+t\}.\end{DoxyItemize}
+\begin{DoxyItemize}
+\item If the node is a predefined constant ({\ttfamily \char`\"{}\+Exponential\+E\char`\"{}}, {\ttfamily \char`\"{}\+Pi\char`\"{}}, {\ttfamily \char`\"{}\+True\char`\"{}} or {\ttfamily \char`\"{}\+False\char`\"{}}), then the node\textquotesingle{}s type will be \{A\+S\+T\+\_\+\+C\+O\+N\+S\+T\+A\+N\+T\+\_\+E, A\+S\+T\+Node\+Type\+\_\+t\}, \{A\+S\+T\+\_\+\+C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+PI, A\+S\+T\+Node\+Type\+\_\+t\}, \{A\+S\+T\+\_\+\+C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+T\+R\+UE, A\+S\+T\+Node\+Type\+\_\+t\}, or \{A\+S\+T\+\_\+\+C\+O\+N\+S\+T\+A\+N\+T\+\_\+\+F\+A\+L\+SE, A\+S\+T\+Node\+Type\+\_\+t\}.\end{DoxyItemize}
+\begin{DoxyItemize}
+\item (Levels~2 and~3 only) If the node is the special Math\+ML csymbol {\ttfamily time}, the value of the node will be \{A\+S\+T\+\_\+\+N\+A\+M\+E\+\_\+\+T\+I\+ME, A\+S\+T\+Node\+Type\+\_\+t\}. (Note, however, that the Math\+ML csymbol {\ttfamily delay} is translated into a node of type \{A\+S\+T\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+D\+E\+L\+AY, A\+S\+T\+Node\+Type\+\_\+t\}. The difference is due to the fact that {\ttfamily time} is a single variable, whereas {\ttfamily delay} is actually a function taking arguments.)\end{DoxyItemize}
+\begin{DoxyItemize}
+\item (Level~3 only) If the node is the special Math\+ML csymbol {\ttfamily avogadro}, the value of the node will be \{A\+S\+T\+\_\+\+N\+A\+M\+E\+\_\+\+A\+V\+O\+G\+A\+D\+RO, A\+S\+T\+Node\+Type\+\_\+t\}.\end{DoxyItemize}
+\begin{DoxyItemize}
+\item (Level~3 Version~2+ only) If the node is the special Math\+ML csymbol {\ttfamily rate\+Of}, the value of the node will be \{A\+S\+T\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+R\+A\+T\+E\+\_\+\+OF, A\+S\+T\+Node\+Type\+\_\+t\}.\end{DoxyItemize}
+\begin{DoxyItemize}
+\item (Level~3 Version~2+ only) If the node is a Math\+ML operator that originates in a package, and is not defined in S\+B\+ML Leve~3 core, the value of the node will be \{A\+S\+T\+\_\+\+O\+R\+I\+G\+I\+N\+A\+T\+E\+S\+\_\+\+I\+N\+\_\+\+P\+A\+C\+K\+A\+GE, A\+S\+T\+Node\+Type\+\_\+t\}.\end{DoxyItemize}
+\begin{DoxyItemize}
+\item If the node contains a numerical value, its type will be \{A\+S\+T\+\_\+\+I\+N\+T\+E\+G\+ER, A\+S\+T\+Node\+Type\+\_\+t\}, \{A\+S\+T\+\_\+\+R\+E\+AL, A\+S\+T\+Node\+Type\+\_\+t\}, \{A\+S\+T\+\_\+\+R\+E\+A\+L\+\_\+E, A\+S\+T\+Node\+Type\+\_\+t\}, or \{A\+S\+T\+\_\+\+R\+A\+T\+I\+O\+N\+AL, A\+S\+T\+Node\+Type\+\_\+t\}, as appropriate.\end{DoxyItemize}
+\paragraph*{\label{_math-convert}%
+Converting between A\+S\+Ts and text strings}
+
+The text-\/string form of mathematical formulas produced by \{formula\+To\+String, String\} and \{formula\+To\+L3\+String, String\}, and read by \{parse\+Formula, \hyperlink{class_a_s_t_node}{A\+S\+T\+Node}\} and \{parse\+L3\+Formula, \hyperlink{class_a_s_t_node}{A\+S\+T\+Node}\}, are in a simple C-\/inspired infix notation. A formula in one of these two text-\/string formats can be handed to a program that understands S\+B\+ML mathematical expressions, or used as part of a translation system. The lib\+S\+B\+ML distribution comes with example programs in the {\ttfamily \char`\"{}examples\char`\"{}} subdirectory that demonstrate such things as translating infix formulas into Math\+ML and vice-\/versa.
+
+Please see the documentation for the functions \{parse\+Formula, \hyperlink{class_a_s_t_node}{A\+S\+T\+Node}\} and \{parse\+L3\+Formula, \hyperlink{class_a_s_t_node}{A\+S\+T\+Node}\} for detailed explanations of the infix syntax they accept.
+
+\paragraph*{\label{_math-interpretation}%
+Interpretation}
+
+Proper mathematical interpretation of an \hyperlink{class_a_s_t_node}{A\+S\+T\+Node} requires an understanding of all the allowed Math\+ML operators, the S\+B\+M\+L-\/specific csymbols, and of the named variables in the S\+B\+ML model. It is important to note that an invalid \hyperlink{class_a_s_t_node}{A\+S\+T\+Node} might not have a proper mathematical interpretation--a \textquotesingle{}minus\textquotesingle{} node with three children is simply illegal, and cannot be interpreted. Similarly, a named variable that does not exist in the \hyperlink{class_model}{Model} also cannot be interpreted. In S\+B\+ML Level~3 Version~2, the ability was added to reference named variables in Math\+ML that might exist in S\+B\+ML Level~3 packages. This means that if the software reading the S\+B\+ML file (or this version of libsbml) does not understand that package, Math\+ML using named variables from those packages will be legal, but will not be interpretable. It is valid to issue a warning in this case, and may be otherwise handled as if an invalid variable name was used. In all cases, the \char`\"{}required\char`\"{} attribute for the package in question must be set to \char`\"{}true\char`\"{}.
+
+\paragraph*{\label{_math-history}%
+Historical notes}
+
+Readers may wonder why this part of lib\+S\+B\+ML uses a seemingly less object-\/oriented design than other parts. Originally, much of lib\+S\+B\+ML was written in~C. All subsequent development was done in C++, but the complexity of some of the functionality for converting between infix, A\+ST and Math\+ML, coupled with the desire to maintain stability and backward compatibility, means that some of the underlying code is still written in~C. This has lead to the exposed A\+PI being more C-\/like.
+
+\begin{DoxySeeAlso}{See also}
+\{parse\+L3\+Formula, String\} 
+
+\{parse\+L3\+Formula\+With\+Settings, String\textbackslash{}, \hyperlink{class_l3_parser_settings}{L3\+Parser\+Settings}\} 
+
+\{parse\+L3\+Formula\+With\+Model, String\textbackslash{}, \hyperlink{class_model}{Model}\} 
+
+\{parse\+Formula, String\} 
+
+\{formula\+To\+L3\+String\+With\+Settings, \hyperlink{class_a_s_t_node}{A\+S\+T\+Node}\textbackslash{}, \hyperlink{class_l3_parser_settings}{L3\+Parser\+Settings}\} 
+
+\{formula\+To\+L3\+String, \hyperlink{class_a_s_t_node}{A\+S\+T\+Node}\} 
+
+\{formula\+To\+String, \hyperlink{class_a_s_t_node}{A\+S\+T\+Node}\} 
+
+\{get\+Default\+L3\+Parser\+Settings,\} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_a_s_t_node_8h}{A\+S\+T\+Node.\+h}\end{DoxyCompactItemize}

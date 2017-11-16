@@ -1,0 +1,23 @@
+\hypertarget{class_s_b_m_l_document_plugin_not_required}{}\section{S\+B\+M\+L\+Document\+Plugin\+Not\+Required Class Reference}
+\label{class_s_b_m_l_document_plugin_not_required}\index{S\+B\+M\+L\+Document\+Plugin\+Not\+Required@{S\+B\+M\+L\+Document\+Plugin\+Not\+Required}}
+
+
+{\ttfamily \#include $<$S\+B\+M\+L\+Document\+Plugin\+Not\+Required.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} Base class for non-\/required Level 3 packages plug-\/ins.
+
+
+
+The \hyperlink{class_s_b_m_l_document_plugin_not_required}{S\+B\+M\+L\+Document\+Plugin\+Not\+Required} class extends the \hyperlink{class_s_b_m_l_document_plugin}{S\+B\+M\+L\+Document\+Plugin} class, adding a validation test such that it reports an error if an S\+B\+ML document read in has a \char`\"{}required\char`\"{} flag set to {\ttfamily true}. The purpose of this is to make it simpler to implement packages that are supposed to have \char`\"{}required\char`\"{} flag values of {\ttfamily false} (such as Layout and other S\+B\+ML packages that cannot affect the mathematical interpretation of a model).
+
+\begin{DoxyNote}{Note}
+This class is not used currently in any package extension. This class was introduced at a time when lib\+S\+B\+ML did not provide the necessary hooks into the validation system for packages to add their own validation rules, but this has since changed. New developments should use the regular \hyperlink{class_s_b_m_l_document_plugin}{S\+B\+M\+L\+Document\+Plugin} class instead of this one. 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_s_b_m_l_document_plugin_not_required_8h}{S\+B\+M\+L\+Document\+Plugin\+Not\+Required.\+h}\end{DoxyCompactItemize}

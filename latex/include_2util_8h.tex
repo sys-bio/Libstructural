@@ -1,0 +1,88 @@
+\hypertarget{include_2util_8h}{}\section{util.\+h File Reference}
+\label{include_2util_8h}\index{util.\+h@{util.\+h}}
+{\ttfamily \#include \char`\"{}libla.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}libutil.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$string$>$}\newline
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_l_i_b___l_a_1_1_application_exception}{L\+I\+B\+\_\+\+L\+A\+::\+Application\+Exception}
+\item 
+class \hyperlink{class_l_i_b___l_a_1_1_util}{L\+I\+B\+\_\+\+L\+A\+::\+Util}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_l_i_b___l_a}{L\+I\+B\+\_\+\+LA}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{include_2util_8h_a358067f04e29b0afa6a5ca876bbff42f}{C\+R\+E\+A\+T\+E\+\_\+\+A\+R\+R\+AY}(variable\+Name,  type,  length)
+\item 
+\#define \hyperlink{include_2util_8h_af62ba8ab60f04ee9f9804cae132e3610}{D\+E\+L\+E\+T\+E\+\_\+2\+D\+\_\+\+A\+R\+R\+AY}(o\+Array,  n\+Length)
+\item 
+\#define \hyperlink{include_2util_8h_a47e39ae84c8ee0aeb91ef0dbfb5f02ad}{D\+E\+L\+E\+T\+E\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+I\+F\+\_\+\+N\+O\+N\+\_\+\+N\+U\+LL}(target)~if(target) \{ delete\mbox{[}$\,$\mbox{]} target; target = \hyperlink{lp__types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\+U\+LL};\}
+\item 
+\#define \hyperlink{include_2util_8h_a676f04a5e5816a1fa3f8ee4c8dd77110}{D\+E\+L\+E\+T\+E\+\_\+\+I\+F\+\_\+\+N\+O\+N\+\_\+\+N\+U\+LL}(target)~if(target) \{ delete target; target = \hyperlink{lp__types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\+U\+LL};\}
+\item 
+\#define \hyperlink{include_2util_8h_a77b74fa3c4936d85cb99d40b09ab691f}{F\+R\+E\+E\+\_\+2\+D\+\_\+\+A\+R\+R\+AY}(o\+Array,  n\+Length)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{include_2util_8h_a358067f04e29b0afa6a5ca876bbff42f}\label{include_2util_8h_a358067f04e29b0afa6a5ca876bbff42f}} 
+\index{include/util.\+h@{include/util.\+h}!C\+R\+E\+A\+T\+E\+\_\+\+A\+R\+R\+AY@{C\+R\+E\+A\+T\+E\+\_\+\+A\+R\+R\+AY}}
+\index{C\+R\+E\+A\+T\+E\+\_\+\+A\+R\+R\+AY@{C\+R\+E\+A\+T\+E\+\_\+\+A\+R\+R\+AY}!include/util.\+h@{include/util.\+h}}
+\subsubsection{\texorpdfstring{C\+R\+E\+A\+T\+E\+\_\+\+A\+R\+R\+AY}{CREATE\_ARRAY}}
+{\footnotesize\ttfamily \#define C\+R\+E\+A\+T\+E\+\_\+\+A\+R\+R\+AY(\begin{DoxyParamCaption}\item[{}]{variable\+Name,  }\item[{}]{type,  }\item[{}]{length }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\textcolor{keywordflow}{if}(variableName) \{ \textcolor{keyword}{delete}[] variableName; variableName = \hyperlink{lp__types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};\}\(\backslash\)
+        variableName = \textcolor{keyword}{new} type[length]; memset(variableName, 0, \textcolor{keyword}{sizeof}(type)*length);
+\end{DoxyCode}
+\mbox{\Hypertarget{include_2util_8h_af62ba8ab60f04ee9f9804cae132e3610}\label{include_2util_8h_af62ba8ab60f04ee9f9804cae132e3610}} 
+\index{include/util.\+h@{include/util.\+h}!D\+E\+L\+E\+T\+E\+\_\+2\+D\+\_\+\+A\+R\+R\+AY@{D\+E\+L\+E\+T\+E\+\_\+2\+D\+\_\+\+A\+R\+R\+AY}}
+\index{D\+E\+L\+E\+T\+E\+\_\+2\+D\+\_\+\+A\+R\+R\+AY@{D\+E\+L\+E\+T\+E\+\_\+2\+D\+\_\+\+A\+R\+R\+AY}!include/util.\+h@{include/util.\+h}}
+\subsubsection{\texorpdfstring{D\+E\+L\+E\+T\+E\+\_\+2\+D\+\_\+\+A\+R\+R\+AY}{DELETE\_2D\_ARRAY}}
+{\footnotesize\ttfamily \#define D\+E\+L\+E\+T\+E\+\_\+2\+D\+\_\+\+A\+R\+R\+AY(\begin{DoxyParamCaption}\item[{}]{o\+Array,  }\item[{}]{n\+Length }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{\(\backslash\)
+                for (\textcolor{keywordtype}{int} i=0; i<nLength; i++) \{\(\backslash\)
+                        delete[] oArray[i];\(\backslash\)
+                \}\(\backslash\)
+                delete[] oArray;\(\backslash\)
+                oArray = \hyperlink{lp__types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};\(\backslash\)
+        \}
+\end{DoxyCode}
+This file contains several useful utility functions \mbox{\Hypertarget{include_2util_8h_a47e39ae84c8ee0aeb91ef0dbfb5f02ad}\label{include_2util_8h_a47e39ae84c8ee0aeb91ef0dbfb5f02ad}} 
+\index{include/util.\+h@{include/util.\+h}!D\+E\+L\+E\+T\+E\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+I\+F\+\_\+\+N\+O\+N\+\_\+\+N\+U\+LL@{D\+E\+L\+E\+T\+E\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+I\+F\+\_\+\+N\+O\+N\+\_\+\+N\+U\+LL}}
+\index{D\+E\+L\+E\+T\+E\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+I\+F\+\_\+\+N\+O\+N\+\_\+\+N\+U\+LL@{D\+E\+L\+E\+T\+E\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+I\+F\+\_\+\+N\+O\+N\+\_\+\+N\+U\+LL}!include/util.\+h@{include/util.\+h}}
+\subsubsection{\texorpdfstring{D\+E\+L\+E\+T\+E\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+I\+F\+\_\+\+N\+O\+N\+\_\+\+N\+U\+LL}{DELETE\_ARRAY\_IF\_NON\_NULL}}
+{\footnotesize\ttfamily \#define D\+E\+L\+E\+T\+E\+\_\+\+A\+R\+R\+A\+Y\+\_\+\+I\+F\+\_\+\+N\+O\+N\+\_\+\+N\+U\+LL(\begin{DoxyParamCaption}\item[{}]{target }\end{DoxyParamCaption})~if(target) \{ delete\mbox{[}$\,$\mbox{]} target; target = \hyperlink{lp__types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\+U\+LL};\}}
+
+\mbox{\Hypertarget{include_2util_8h_a676f04a5e5816a1fa3f8ee4c8dd77110}\label{include_2util_8h_a676f04a5e5816a1fa3f8ee4c8dd77110}} 
+\index{include/util.\+h@{include/util.\+h}!D\+E\+L\+E\+T\+E\+\_\+\+I\+F\+\_\+\+N\+O\+N\+\_\+\+N\+U\+LL@{D\+E\+L\+E\+T\+E\+\_\+\+I\+F\+\_\+\+N\+O\+N\+\_\+\+N\+U\+LL}}
+\index{D\+E\+L\+E\+T\+E\+\_\+\+I\+F\+\_\+\+N\+O\+N\+\_\+\+N\+U\+LL@{D\+E\+L\+E\+T\+E\+\_\+\+I\+F\+\_\+\+N\+O\+N\+\_\+\+N\+U\+LL}!include/util.\+h@{include/util.\+h}}
+\subsubsection{\texorpdfstring{D\+E\+L\+E\+T\+E\+\_\+\+I\+F\+\_\+\+N\+O\+N\+\_\+\+N\+U\+LL}{DELETE\_IF\_NON\_NULL}}
+{\footnotesize\ttfamily \#define D\+E\+L\+E\+T\+E\+\_\+\+I\+F\+\_\+\+N\+O\+N\+\_\+\+N\+U\+LL(\begin{DoxyParamCaption}\item[{}]{target }\end{DoxyParamCaption})~if(target) \{ delete target; target = \hyperlink{lp__types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{N\+U\+LL};\}}
+
+\mbox{\Hypertarget{include_2util_8h_a77b74fa3c4936d85cb99d40b09ab691f}\label{include_2util_8h_a77b74fa3c4936d85cb99d40b09ab691f}} 
+\index{include/util.\+h@{include/util.\+h}!F\+R\+E\+E\+\_\+2\+D\+\_\+\+A\+R\+R\+AY@{F\+R\+E\+E\+\_\+2\+D\+\_\+\+A\+R\+R\+AY}}
+\index{F\+R\+E\+E\+\_\+2\+D\+\_\+\+A\+R\+R\+AY@{F\+R\+E\+E\+\_\+2\+D\+\_\+\+A\+R\+R\+AY}!include/util.\+h@{include/util.\+h}}
+\subsubsection{\texorpdfstring{F\+R\+E\+E\+\_\+2\+D\+\_\+\+A\+R\+R\+AY}{FREE\_2D\_ARRAY}}
+{\footnotesize\ttfamily \#define F\+R\+E\+E\+\_\+2\+D\+\_\+\+A\+R\+R\+AY(\begin{DoxyParamCaption}\item[{}]{o\+Array,  }\item[{}]{n\+Length }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}
+\{\(\backslash\)
+                for (\textcolor{keywordtype}{int} i=0; i<nLength; i++) \{\(\backslash\)
+                        free(oArray[i]);\(\backslash\)
+                \}\(\backslash\)
+                free(oArray);\(\backslash\)
+                oArray = \hyperlink{lp__types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};\(\backslash\)
+        \}
+\end{DoxyCode}

@@ -1,0 +1,355 @@
+\hypertarget{classdoc__extension__sbmlextension}{}\section{doc\+\_\+extension\+\_\+sbmlextension Class Reference}
+\label{classdoc__extension__sbmlextension}\index{doc\+\_\+extension\+\_\+sbmlextension@{doc\+\_\+extension\+\_\+sbmlextension}}
+
+
+{\ttfamily \#include $<$common-\/documentation.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\begin{DoxyParagraph}{}
+Each package implementation must contain a class that extends \hyperlink{class_s_b_m_l_extension}{S\+B\+M\+L\+Extension}. For example, the class {\ttfamily Groups\+Extension} serves this purpose for the S\+B\+ML Level~3 {\itshape Groups} package extension in lib\+S\+B\+ML. The following subsections detail the basic steps involved in implementing such an extended class.
+\end{DoxyParagraph}
+
+
+Define a method named {\ttfamily get\+Package\+Name()} that returns the name of the package as a string. The following is an example from the implementation of the Groups package extension\+: 
+\begin{DoxyCode}
+\textcolor{keyword}{const} std::string& GroupsExtension::getPackageName ()
+\{
+      \textcolor{keyword}{static} \textcolor{keyword}{const} std::string pkgName = \textcolor{stringliteral}{"groups"};
+      \textcolor{keywordflow}{return} pkgName;
+\}
+\end{DoxyCode}
+
+
+Define a set of methods that return the default S\+B\+ML Level, S\+B\+ML Version and version of the package. These methods must be named {\ttfamily get\+Default\+Level()}, {\ttfamily get\+Default\+Version()} and {\ttfamily get\+Default\+Package\+Version()}, respectively. The following are examples drawn from the Groups package implementation\+: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} GroupsExtension::getDefaultLevel()
+\{
+      \textcolor{keywordflow}{return} 3;
+\}
+\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} GroupsExtension::getDefaultVersion()
+\{
+      \textcolor{keywordflow}{return} 1;
+\}
+\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} GroupsExtension::getDefaultPackageVersion()
+\{
+      \textcolor{keywordflow}{return} 1;
+\}
+\end{DoxyCode}
+
+
+Define methods that return strings representing the X\+ML namespace U\+RI for the package. One method should be defined for each S\+B\+ML Level/\+Version combination for which the package can be used. For instance, if a package is only usable in S\+B\+ML Level~3 Version~1, and the lib\+S\+B\+ML extension for the package implements version~1 of the package, the necessary method is {\ttfamily get\+Xmlns\+L3\+V1\+V1()}. 
+\begin{DoxyCode}
+\textcolor{keyword}{const} std::string& GroupsExtension::getXmlnsL3V1V1 ()
+\{
+      \textcolor{keyword}{static} \textcolor{keyword}{const} std::string xmlns = \textcolor{stringliteral}{"http://www.sbml.org/sbml/level3/version1/groups/version1"};
+      \textcolor{keywordflow}{return} xmlns;
+\}
+\end{DoxyCode}
+
+
+Define other similar methods to return additional namespace U\+R\+Is if the package extension implements other package versions or supports other S\+B\+ML Level/\+Version combinations.
+
+Override the following pure virtual methods on \hyperlink{class_s_b_m_l_extension}{S\+B\+M\+L\+Extension}\+:
+
+\begin{DoxyItemize}
+\item {\ttfamily virtual const std\+::string\& get\+Name() const =0}. This method returns the nickname of the package (e.\+g., \char`\"{}layout\char`\"{}, \char`\"{}groups\char`\"{}).\end{DoxyItemize}
+\begin{DoxyItemize}
+\item {\ttfamily virtual unsigned int get\+Level(const std\+::string \&uri) const =0}. This method returns the S\+B\+ML Level with the given U\+RI of this package.\end{DoxyItemize}
+\begin{DoxyItemize}
+\item {\ttfamily virtual unsigned int get\+Version(const std\+::string \&uri) const =0}. This method returns the S\+B\+ML Version with the given U\+RI of this package.\end{DoxyItemize}
+\begin{DoxyItemize}
+\item {\ttfamily virtual unsigned int get\+Package\+Version(const std\+::string \&uri) const =0}. This method returns the package version with the given U\+RI of this package.\end{DoxyItemize}
+\begin{DoxyItemize}
+\item {\ttfamily virtual unsigned int get\+U\+RI(unsigned int sbml\+Level, unsigned int sbml\+Version, unsigned int pkg\+Version) const =0}. This method returns the U\+RI (namespace) of the package corresponding to the combination of the given S\+B\+ML Level, S\+B\+ML Version, and package version\end{DoxyItemize}
+\begin{DoxyItemize}
+\item {\ttfamily virtual S\+B\+M\+L\+Extension$\ast$ clone() const = 0}. This method creates and returns a deep copy of this derived object.\end{DoxyItemize}
+As an example, the following are the versions of these methods for the Groups package\+: 
+\begin{DoxyCode}
+\textcolor{keyword}{const} std::string& GroupsExtension::getName()\textcolor{keyword}{ const}
+\textcolor{keyword}{}\{
+  \textcolor{keywordflow}{return} getPackageName();
+\}
+
+\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} GroupsExtension::getLevel(\textcolor{keyword}{const} std::string &uri)\textcolor{keyword}{ const}
+\textcolor{keyword}{}\{
+  \textcolor{keywordflow}{if} (uri == getXmlnsL3V1V1())
+    \textcolor{keywordflow}{return} 3;
+  \textcolor{keywordflow}{else}
+    \textcolor{keywordflow}{return} 0;
+\}
+
+\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \hyperlink{libstructural_8cpp_a197ace0ff709d82e38564777071f6826}{GroupsExtension::getVersion}(\textcolor{keyword}{const} std::string &uri)\textcolor{keyword}{ const}
+\textcolor{keyword}{}\{
+  \textcolor{keywordflow}{if} (uri == getXmlnsL3V1V1())
+    \textcolor{keywordflow}{return} 1;
+  \textcolor{keywordflow}{else}
+    \textcolor{keywordflow}{return} 0;
+\}
+
+\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} GroupsExtension::getPackageVersion(\textcolor{keyword}{const} std::string &uri)\textcolor{keyword}{ const}
+\textcolor{keyword}{}\{
+  \textcolor{keywordflow}{if} (uri == getXmlnsL3V1V1())
+    \textcolor{keywordflow}{return} 1;
+  \textcolor{keywordflow}{else}
+    \textcolor{keywordflow}{return} 0;
+\}
+
+\textcolor{keyword}{const} std::string& GroupsExtension::getURI(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} sbmlLevel,
+                                           \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} sbmlVersion,
+                                           \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pkgVersion)\textcolor{keyword}{ const}
+\textcolor{keyword}{}\{
+  \textcolor{keywordflow}{if} (sbmlLevel == 3 && sbmlVersion == 1 && pkgVersion == 1)
+    \textcolor{keywordflow}{return} getXmlnsL3V1V1();
+
+  \textcolor{keyword}{static} std::string empty = \textcolor{stringliteral}{""};
+  \textcolor{keywordflow}{return} empty;
+\}
+
+GroupsExtension* GroupsExtension::clone()\textcolor{keyword}{ const}
+\textcolor{keyword}{}\{
+  \textcolor{keywordflow}{return} \textcolor{keyword}{new} GroupsExtension(*\textcolor{keyword}{this});
+\}
+\end{DoxyCode}
+
+
+Constructor, copy constructor, and destructor methods also must be overridden if additional data members are defined in the derived class.
+
+Define typedef and template instantiation code for a package-\/specific subclass of the \hyperlink{class_s_b_m_l_extension_namespaces}{S\+B\+M\+L\+Extension\+Namespaces} template class. The \hyperlink{class_s_b_m_l_extension_namespaces}{S\+B\+M\+L\+Extension\+Namespaces} template class is a derived class of \hyperlink{class_s_b_m_l_namespaces}{S\+B\+M\+L\+Namespaces} and can be used as an argument of constructors of S\+Base-\/derived classes defined in the package extensions.
+
+
+\begin{DoxyEnumerate}
+\item Define a typedef. For example, the typedef for {\ttfamily Groups\+Extension} is implemented in the file {\ttfamily Groups\+Extension.\+h} as follows\+: 
+\begin{DoxyCode}
+\textcolor{comment}{// GroupsPkgNamespaces is derived from the SBMLNamespaces class.}
+\textcolor{comment}{// It is used when creating a Groups package object of a class}
+\textcolor{comment}{// derived from SBase.}
+\textcolor{keyword}{typedef} SBMLExtensionNamespaces<GroupsExtension> GroupsPkgNamespaces;
+\end{DoxyCode}
+ 
+
+
+\item Define a template instantiation for the typedef. For example, the template instantiation code for {\ttfamily Groups\+Extension is} implemented in the file {\ttfamily Groups\+Extension.\+cpp} as follows\+: 
+\begin{DoxyCode}
+\textcolor{keyword}{template} \textcolor{keyword}{class }\hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{LIBSBML\_EXTERN} SBMLExtensionNamespaces<GroupsExtension>;
+\end{DoxyCode}
+ 
+
+
+\end{DoxyEnumerate}
+
+Here is example of how the resulting class is used. The definitions above allow a {\ttfamily Groups\+Pkg\+Namespaces} object to be used when creating a new {\ttfamily Group} object. The {\ttfamily Groups\+Pkg\+Namespaces} is handed to the constructor as an argument, as shown below\+: 
+\begin{DoxyCode}
+GroupPkgNamespaces gpns(3, 1, 1);  \textcolor{comment}{// SBML Level, Version, & pkg version.}
+Group g = \textcolor{keyword}{new} Group(&gpns);        \textcolor{comment}{// Creates a Group object.}
+\end{DoxyCode}
+
+
+The {\ttfamily Groups\+Pkg\+Namespaces} object can also be used when creating an \hyperlink{class_s_b_m_l_document}{S\+B\+M\+L\+Document} object with the Groups package. The code fragment below shows an example of this\+: 
+\begin{DoxyCode}
+GroupsPkgNamespaces gpns(3, 1, 1);
+\hyperlink{class_s_b_m_l_document}{SBMLDocument}* doc;
+doc  = \textcolor{keyword}{new} \hyperlink{class_s_b_m_l_document}{SBMLDocument}(&gnps);
+\end{DoxyCode}
+
+
+Override the pure virtual method {\ttfamily get\+S\+B\+M\+L\+Extension\+Namespaces()}, which returns an \hyperlink{class_s_b_m_l_namespaces}{S\+B\+M\+L\+Namespaces} derived object. For example, the method is overridden in the class {\ttfamily Groups\+Extension} as follows\+: 
+\begin{DoxyCode}
+\hyperlink{class_s_b_m_l_namespaces}{SBMLNamespaces}*
+GroupsExtension::getSBMLExtensionNamespaces(\textcolor{keyword}{const} std::string &uri)\textcolor{keyword}{ const}
+\textcolor{keyword}{}\{
+  GroupsPkgNamespaces* pkgns = \hyperlink{lp__types_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
+  \textcolor{keywordflow}{if} ( uri == getXmlnsL3V1V1())
+  \{
+    pkgns = \textcolor{keyword}{new} GroupsPkgNamespaces(3, 1, 1);
+  \}
+  \textcolor{keywordflow}{return} pkgns;
+\}
+\end{DoxyCode}
+
+
+Define an enum type for representing the type code of the objects defined in the package extension. For example, the enumeration {\ttfamily S\+B\+M\+L\+Groups\+Type\+Code\+\_\+t} for the Groups package is defined in {\ttfamily Groups\+Extension.\+h} as follows\+: 
+\begin{DoxyCode}
+\textcolor{keyword}{typedef} \textcolor{keyword}{enum}
+\{
+   SBML\_GROUPS\_GROUP  = 500
+ , SBML\_GROUPS\_MEMBER = 501
+\} SBMLGroupsTypeCode\_t;
+\end{DoxyCode}
+
+
+In the enumeration above, {\ttfamily S\+B\+M\+L\+\_\+\+G\+R\+O\+U\+P\+S\+\_\+\+G\+R\+O\+UP} corresponds to the {\ttfamily Group} class (for the {\ttfamily $<$group$>$} element defined by the S\+B\+ML Level~3 Groups package) and {\ttfamily S\+B\+M\+L\+\_\+\+G\+R\+O\+U\+P\+S\+\_\+\+M\+E\+M\+B\+ER} corresponds to the {\ttfamily Member} class (for the {\ttfamily $<$member$>$} element defined by the Level~3 Groups package), respectively.
+
+Similarly, \#\+S\+B\+M\+L\+Layout\+Type\+Code\+\_\+t for the Layout package is defined in the file {\ttfamily Layout\+Extension.\+h} as follows\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{typedef} \textcolor{keyword}{enum}
+\{
+   SBML\_LAYOUT\_BOUNDINGBOX           = 100
+ , SBML\_LAYOUT\_COMPARTMENTGLYPH      = 101
+ , SBML\_LAYOUT\_CUBICBEZIER           = 102
+ , SBML\_LAYOUT\_CURVE                 = 103
+ , SBML\_LAYOUT\_DIMENSIONS            = 104
+ , SBML\_LAYOUT\_GRAPHICALOBJECT       = 105
+ , SBML\_LAYOUT\_LAYOUT                = 106
+ , SBML\_LAYOUT\_LINESEGMENT           = 107
+ , SBML\_LAYOUT\_POINT                 = 108
+ , SBML\_LAYOUT\_REACTIONGLYPH         = 109
+ , SBML\_LAYOUT\_SPECIESGLYPH          = 110
+ , SBML\_LAYOUT\_SPECIESREFERENCEGLYPH = 111
+ , SBML\_LAYOUT\_TEXTGLYPH             = 112
+\} SBMLLayoutTypeCode\_t;
+\end{DoxyCode}
+
+
+These enum values are returned by corresponding {\ttfamily get\+Type\+Code()} methods. (E.\+g., {\ttfamily S\+B\+M\+L\+\_\+\+G\+R\+O\+U\+P\+S\+\_\+\+G\+R\+O\+UP} is returned in {\ttfamily Group\+::get\+Type\+Code()}.)
+
+Note that lib\+S\+B\+ML does not require that type codes are unique across all packages---the same type codes may be used within individual package extensions. Lib\+S\+B\+ML development must permit this because package implementations are developed by separate groups at different times; coordinating the type codes used is impractical. It does mean that callers must check two things when identifying objects\+: to distinguish the type codes of different packages, callers much check not only the return value of the method {\ttfamily get\+Type\+Code()} method but also that of the method {\ttfamily get\+Package\+Name()}. Here is an example of doing that\+: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{void} example (\textcolor{keyword}{const} \hyperlink{class_s_base}{SBase} *sb)
+\{
+  \textcolor{keyword}{const} std::string pkgName = sb->getPackageName();
+  \textcolor{keywordflow}{if} (pkgName == \textcolor{stringliteral}{"core"}) \{
+    \textcolor{keywordflow}{switch} (sb->getTypeCode()) \{
+      \textcolor{keywordflow}{case} \hyperlink{_s_b_m_l_type_codes_8h_aa283dddfd7671179362b2f38e2938cfea3c866be107d7858b6dd1e978ed103028}{SBML\_MODEL}:
+         ....
+         \textcolor{keywordflow}{break};
+      \textcolor{keywordflow}{case} \hyperlink{_s_b_m_l_type_codes_8h_aa283dddfd7671179362b2f38e2938cfea54de874fd61e13450bdf024d41a336c9}{SBML\_REACTION}:
+         ....
+    \}
+  \}
+  \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (pkgName == \textcolor{stringliteral}{"layout"}) \{
+    \textcolor{keywordflow}{switch} (sb->getTypeCode()) \{
+      \textcolor{keywordflow}{case} SBML\_LAYOUT\_LAYOUT:
+         ....
+         \textcolor{keywordflow}{break};
+      \textcolor{keywordflow}{case} SBML\_LAYOUT\_REACTIONGLYPH:
+         ....
+    \}
+  \}
+  \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (pkgName == \textcolor{stringliteral}{"groups"}) \{
+    \textcolor{keywordflow}{switch} (sb->getTypeCode()) \{
+      \textcolor{keywordflow}{case} SBML\_GROUPS\_GROUP:
+         ....
+         \textcolor{keywordflow}{break};
+      \textcolor{keywordflow}{case} SBML\_GROUPS\_MEMBER:
+         ....
+    \}
+  \}
+  ...
+\}
+\end{DoxyCode}
+
+
+Readers may have noticed that in the \#\+S\+B\+M\+L\+Layout\+Type\+Code\+\_\+t and {\ttfamily S\+B\+M\+L\+Groups\+Type\+Code\+\_\+t} enumerations above, unique values are in fact assigned to the enumeration values. This can be convenient when it can be arranged, but it is not required by lib\+S\+B\+ML.
+
+Override the pure virtual method {\ttfamily get\+String\+From\+Type\+Code()}, which returns a string corresponding to the given type code. Here is an example, again drawn from the implementation of the Groups package\+: 
+\begin{DoxyCode}
+\textcolor{keyword}{virtual} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* \hyperlink{class_s_b_m_l_extension}{SBMLExtension}::(\textcolor{keywordtype}{int} typeCode) \textcolor{keyword}{const};
+\end{DoxyCode}
+
+
+For example, the method for the Groups extension is implemented as shown below\+: 
+\begin{DoxyCode}
+\textcolor{keyword}{static} \textcolor{keyword}{const} \textcolor{keywordtype}{char}* SBML\_GROUPS\_TYPECODE\_STRINGS[] =
+\{
+    \textcolor{stringliteral}{"Group"}
+  , \textcolor{stringliteral}{"Member"}
+\};
+
+\textcolor{keyword}{const} \textcolor{keywordtype}{char}* GroupsExtension::getStringFromTypeCode(\textcolor{keywordtype}{int} typeCode)\textcolor{keyword}{ const}
+\textcolor{keyword}{}\{
+  \textcolor{keywordtype}{int} min = SBML\_GROUPS\_GROUP;
+  \textcolor{keywordtype}{int} max = SBML\_GROUPS\_MEMBER;
+
+  \textcolor{keywordflow}{if} (typeCode < min || typeCode > max)
+  \{
+    \textcolor{keywordflow}{return} \textcolor{stringliteral}{"(Unknown SBML Groups Type)"};
+  \}
+
+  \textcolor{keywordflow}{return} SBML\_GROUPS\_TYPECODE\_STRINGS[typeCode - \hyperlink{dependencies_2third-party_2clapack_23_82_81_2_f2_c_l_i_b_s_2libf2c_2f2c_8h_ac6afabdc09a49a433ee19d8a9486056d}{min}];
+\}
+\end{DoxyCode}
+
+
+Implement a {\ttfamily static void init()} method in the derived class. This method serves to encapsulate initialization code that creates an instance of the derived class and registration code that registers the instance with the \hyperlink{class_s_b_m_l_extension_registry}{S\+B\+M\+L\+Extension\+Registry} class.
+
+For example, the {\ttfamily init()} method for the Groups package is implemented as follows\+: 
+\begin{DoxyCode}
+\textcolor{keywordtype}{void} GroupsExtension::init()
+\{
+  \textcolor{comment}{// 1. Check if the Groups package has already been registered.}
+
+  \textcolor{keywordflow}{if} ( SBMLExtensionRegistry::getInstance().isRegistered(getPackageName()) )
+  \{
+    \textcolor{comment}{// do nothing;}
+    \textcolor{keywordflow}{return};
+  \}
+
+  \textcolor{comment}{// 2. Create an SBMLExtension derived object.}
+
+  GroupsExtension gext;
+
+  \textcolor{comment}{// 3. Create SBasePluginCreator-derived objects. The derived classes}
+  \textcolor{comment}{// can be instantiated by using the following template class:}
+  \textcolor{comment}{//}
+  \textcolor{comment}{//   template<class SBasePluginType> class SBasePluginCreator}
+  \textcolor{comment}{//}
+  \textcolor{comment}{// The constructor of the creator class takes two arguments:}
+  \textcolor{comment}{//}
+  \textcolor{comment}{// 1) SBaseExtensionPoint: extension point to which the plugin connects}
+  \textcolor{comment}{// 2) std::vector<std::string>: a vector that contains a list of URI}
+  \textcolor{comment}{// (package versions) supported by the plugin object.}
+  \textcolor{comment}{//}
+  \textcolor{comment}{// For example, two plugin objects are required as part of the Groups}
+  \textcolor{comment}{// implementation: one plugged into SBMLDocument and one into Model.}
+  \textcolor{comment}{// For the former, since the specification for the SBML Groups package}
+  \textcolor{comment}{// mandates that the 'required' flag is always 'false', the existing}
+  \textcolor{comment}{// SBMLDocumentPluginNotRequired class can be used as-is as part of}
+  \textcolor{comment}{// the implementation.  For Model, since the lists of supported}
+  \textcolor{comment}{// package versions (currently only SBML L3V1 Groups V1) are equal}
+  \textcolor{comment}{// in the both plugin objects, the same vector can be handed to each}
+  \textcolor{comment}{// constructor.}
+
+  std::vector<std::string> pkgURIs;
+  pkgURIs.push\_back(getXmlnsL3V1V1());
+
+  \hyperlink{class_s_base_extension_point}{SBaseExtensionPoint} docExtPoint(\textcolor{stringliteral}{"core"}, \hyperlink{_s_b_m_l_type_codes_8h_aa283dddfd7671179362b2f38e2938cfeabfe976c674a5a708c1373dfdfa3bfa63}{SBML\_DOCUMENT});
+  \hyperlink{class_s_base_extension_point}{SBaseExtensionPoint} modelExtPoint(\textcolor{stringliteral}{"core"}, \hyperlink{_s_b_m_l_type_codes_8h_aa283dddfd7671179362b2f38e2938cfea3c866be107d7858b6dd1e978ed103028}{SBML\_MODEL});
+
+  \hyperlink{class_s_base_plugin_creator}{SBasePluginCreator<GroupsSBMLDocumentPlugin, GroupsExtension>}
+       docPluginCreator(docExtPoint, pkgURIs);
+  \hyperlink{class_s_base_plugin_creator}{SBasePluginCreator<GroupsModelPlugin, GroupsExtension>}
+       modelPluginCreator(modelExtPoint, pkgURIs);
+
+  \textcolor{comment}{// 4. Add the above objects to the SBMLExtension-derived object.}
+
+  gext.addSBasePluginCreator(&docPluginCreator);
+  gext.addSBasePluginCreator(&modelPluginCreator);
+
+  \textcolor{comment}{// 5. Register the SBMLExtension-derived object with the extension}
+  \textcolor{comment}{// registry, SBMLExtensionRegistry.}
+
+  \textcolor{keywordtype}{int} result = SBMLExtensionRegistry::getInstance().addExtension(&gext);
+  \textcolor{keywordflow}{if} (result != \hyperlink{operation_return_values_8h_a87d90022619ee855654b2b8f4997886daf67ea900ebcd56036019237463be26b3}{LIBSBML\_OPERATION\_SUCCESS})
+  \{
+    std::cerr << \textcolor{stringliteral}{"[Error] GroupsExtension::init() failed."} << std::endl;
+  \}
+\}
+\end{DoxyCode}
+
+
+Instantiate a global \hyperlink{class_s_b_m_l_extension_register}{S\+B\+M\+L\+Extension\+Register} object using the class derived from \hyperlink{class_s_b_m_l_extension}{S\+B\+M\+L\+Extension} (discussed above). Here is an example for the Groups package extension, for the object {\ttfamily Groups\+Extension}. This could is placed in the {\ttfamily Groups\+Extension.\+cpp}\+: 
+\begin{DoxyCode}
+\textcolor{keyword}{static} \hyperlink{class_s_b_m_l_extension_register}{SBMLExtensionRegister<GroupsExtension>} groupsExtensionRegister
+      ;
+\end{DoxyCode}
+
+
+The {\ttfamily init()} method on {\ttfamily Groups\+Extension} is automatically invoked when the \char`\"{}register\char`\"{} object is instantiated. This results in initialization and registration of the package extension with lib\+S\+B\+ML. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{common-documentation_8h}{common-\/documentation.\+h}\end{DoxyCompactItemize}

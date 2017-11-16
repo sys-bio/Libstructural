@@ -1,0 +1,143 @@
+\hypertarget{main_8c}{}\section{main.\+c File Reference}
+\label{main_8c}\index{main.\+c@{main.\+c}}
+{\ttfamily \#include \char`\"{}stdio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}signal1.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stdlib.\+h\char`\"{}}\newline
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{main_8c_a91adff1610bdf681555a8f2e330dc963}{Int}~\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}
+\item 
+\#define \hyperlink{main_8c_a08d6ddc0a0f3d0867dfe09d1b25b6750}{O\+N\+E\+X\+IT}~\hyperlink{main_8c_a7cb771250232f7f27f31079208f4428a}{atexit}
+\item 
+\#define \hyperlink{main_8c_a7f319bfc2492a2136964194204e7a8cf}{V\+O\+ID}~\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{main_8c_a7cb771250232f7f27f31079208f4428a}{atexit} (\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void}($\ast$)(\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void}))
+\item 
+\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} \hyperlink{main_8c_aef4839e129da1a151079fb1831472702}{f\+\_\+exit} (\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void})
+\item 
+\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} \hyperlink{main_8c_a673cc962acefa8a1dc98a54808c6e0c9}{f\+\_\+init} (\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void})
+\item 
+\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}{main} (\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} argc, char $\ast$$\ast$argv)
+\item 
+\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{main_8c_a9a907c7bc378786c272d0ea9a6f68da3}{M\+A\+I\+N\+\_\+\+\_\+} (\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void})
+\item 
+\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} \hyperlink{main_8c_a163097b9f67194b9c793c706d4e121ba}{sig\+\_\+die} (const char $\ast$, \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int})
+\item 
+static \hyperlink{include_2f2c_8h_a7f319bfc2492a2136964194204e7a8cf}{V\+O\+ID} \hyperlink{main_8c_a0d8a73dc9db95f9996221de79ed1e3f9}{sigfdie} (\hyperlink{signal1_8h_a4267e8d0d5510871e5654bc676ee5b8b}{Sigarg})
+\item 
+static \hyperlink{include_2f2c_8h_a7f319bfc2492a2136964194204e7a8cf}{V\+O\+ID} \hyperlink{main_8c_a86885b24f4961fc5ce13841523111517}{sigidie} (\hyperlink{signal1_8h_a4267e8d0d5510871e5654bc676ee5b8b}{Sigarg})
+\item 
+static \hyperlink{include_2f2c_8h_a7f319bfc2492a2136964194204e7a8cf}{V\+O\+ID} \hyperlink{main_8c_a4469b89e2c9a7b44a372b261900dad5d}{sigindie} (\hyperlink{signal1_8h_a4267e8d0d5510871e5654bc676ee5b8b}{Sigarg})
+\item 
+static \hyperlink{include_2f2c_8h_a7f319bfc2492a2136964194204e7a8cf}{V\+O\+ID} \hyperlink{main_8c_ac3b8deb17fdc252c398da1aa0d534314}{sigtdie} (\hyperlink{signal1_8h_a4267e8d0d5510871e5654bc676ee5b8b}{Sigarg})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} \hyperlink{main_8c_acfe6a1815950bab0c9d42258d1b33bb0}{xargc}
+\item 
+char $\ast$$\ast$ \hyperlink{main_8c_ae0f0d94675c7aa305daaaa0f561300b4}{xargv}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{main_8c_a91adff1610bdf681555a8f2e330dc963}\label{main_8c_a91adff1610bdf681555a8f2e330dc963}} 
+\index{main.\+c@{main.\+c}!Int@{Int}}
+\index{Int@{Int}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{Int}{Int}}
+{\footnotesize\ttfamily \#define Int~\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}}
+
+\mbox{\Hypertarget{main_8c_a08d6ddc0a0f3d0867dfe09d1b25b6750}\label{main_8c_a08d6ddc0a0f3d0867dfe09d1b25b6750}} 
+\index{main.\+c@{main.\+c}!O\+N\+E\+X\+IT@{O\+N\+E\+X\+IT}}
+\index{O\+N\+E\+X\+IT@{O\+N\+E\+X\+IT}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{O\+N\+E\+X\+IT}{ONEXIT}}
+{\footnotesize\ttfamily \#define O\+N\+E\+X\+IT~\hyperlink{main_8c_a7cb771250232f7f27f31079208f4428a}{atexit}}
+
+\mbox{\Hypertarget{main_8c_a7f319bfc2492a2136964194204e7a8cf}\label{main_8c_a7f319bfc2492a2136964194204e7a8cf}} 
+\index{main.\+c@{main.\+c}!V\+O\+ID@{V\+O\+ID}}
+\index{V\+O\+ID@{V\+O\+ID}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{V\+O\+ID}{VOID}}
+{\footnotesize\ttfamily \#define V\+O\+ID~\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void}}
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a7cb771250232f7f27f31079208f4428a}\label{main_8c_a7cb771250232f7f27f31079208f4428a}} 
+\index{main.\+c@{main.\+c}!atexit@{atexit}}
+\index{atexit@{atexit}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{atexit()}{atexit()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} atexit (\begin{DoxyParamCaption}\item[{\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void}($\ast$)(\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void})}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_aef4839e129da1a151079fb1831472702}\label{main_8c_aef4839e129da1a151079fb1831472702}} 
+\index{main.\+c@{main.\+c}!f\+\_\+exit@{f\+\_\+exit}}
+\index{f\+\_\+exit@{f\+\_\+exit}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{f\+\_\+exit()}{f\_exit()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} f\+\_\+exit (\begin{DoxyParamCaption}\item[{\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a673cc962acefa8a1dc98a54808c6e0c9}\label{main_8c_a673cc962acefa8a1dc98a54808c6e0c9}} 
+\index{main.\+c@{main.\+c}!f\+\_\+init@{f\+\_\+init}}
+\index{f\+\_\+init@{f\+\_\+init}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{f\+\_\+init()}{f\_init()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} f\+\_\+init (\begin{DoxyParamCaption}\item[{\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}\label{main_8c_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{main.\+c@{main.\+c}!main@{main}}
+\index{main@{main}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} main (\begin{DoxyParamCaption}\item[{\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a9a907c7bc378786c272d0ea9a6f68da3}\label{main_8c_a9a907c7bc378786c272d0ea9a6f68da3}} 
+\index{main.\+c@{main.\+c}!M\+A\+I\+N\+\_\+\+\_\+@{M\+A\+I\+N\+\_\+\+\_\+}}
+\index{M\+A\+I\+N\+\_\+\+\_\+@{M\+A\+I\+N\+\_\+\+\_\+}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{M\+A\+I\+N\+\_\+\+\_\+()}{MAIN\_\_()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} M\+A\+I\+N\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{\hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a163097b9f67194b9c793c706d4e121ba}\label{main_8c_a163097b9f67194b9c793c706d4e121ba}} 
+\index{main.\+c@{main.\+c}!sig\+\_\+die@{sig\+\_\+die}}
+\index{sig\+\_\+die@{sig\+\_\+die}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{sig\+\_\+die()}{sig\_die()}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_ac7828c7b2b31d2e11af17bdb6289c5d9}{void} sig\+\_\+die (\begin{DoxyParamCaption}\item[{const char $\ast$}]{,  }\item[{\hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a0d8a73dc9db95f9996221de79ed1e3f9}\label{main_8c_a0d8a73dc9db95f9996221de79ed1e3f9}} 
+\index{main.\+c@{main.\+c}!sigfdie@{sigfdie}}
+\index{sigfdie@{sigfdie}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{sigfdie()}{sigfdie()}}
+{\footnotesize\ttfamily static \hyperlink{include_2f2c_8h_a7f319bfc2492a2136964194204e7a8cf}{V\+O\+ID} sigfdie (\begin{DoxyParamCaption}\item[{\hyperlink{signal1_8h_a4267e8d0d5510871e5654bc676ee5b8b}{Sigarg}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{main_8c_a86885b24f4961fc5ce13841523111517}\label{main_8c_a86885b24f4961fc5ce13841523111517}} 
+\index{main.\+c@{main.\+c}!sigidie@{sigidie}}
+\index{sigidie@{sigidie}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{sigidie()}{sigidie()}}
+{\footnotesize\ttfamily static \hyperlink{include_2f2c_8h_a7f319bfc2492a2136964194204e7a8cf}{V\+O\+ID} sigidie (\begin{DoxyParamCaption}\item[{\hyperlink{signal1_8h_a4267e8d0d5510871e5654bc676ee5b8b}{Sigarg}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{main_8c_a4469b89e2c9a7b44a372b261900dad5d}\label{main_8c_a4469b89e2c9a7b44a372b261900dad5d}} 
+\index{main.\+c@{main.\+c}!sigindie@{sigindie}}
+\index{sigindie@{sigindie}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{sigindie()}{sigindie()}}
+{\footnotesize\ttfamily static \hyperlink{include_2f2c_8h_a7f319bfc2492a2136964194204e7a8cf}{V\+O\+ID} sigindie (\begin{DoxyParamCaption}\item[{\hyperlink{signal1_8h_a4267e8d0d5510871e5654bc676ee5b8b}{Sigarg}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{main_8c_ac3b8deb17fdc252c398da1aa0d534314}\label{main_8c_ac3b8deb17fdc252c398da1aa0d534314}} 
+\index{main.\+c@{main.\+c}!sigtdie@{sigtdie}}
+\index{sigtdie@{sigtdie}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{sigtdie()}{sigtdie()}}
+{\footnotesize\ttfamily static \hyperlink{include_2f2c_8h_a7f319bfc2492a2136964194204e7a8cf}{V\+O\+ID} sigtdie (\begin{DoxyParamCaption}\item[{\hyperlink{signal1_8h_a4267e8d0d5510871e5654bc676ee5b8b}{Sigarg}}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{main_8c_acfe6a1815950bab0c9d42258d1b33bb0}\label{main_8c_acfe6a1815950bab0c9d42258d1b33bb0}} 
+\index{main.\+c@{main.\+c}!xargc@{xargc}}
+\index{xargc@{xargc}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{xargc}{xargc}}
+{\footnotesize\ttfamily \hyperlink{lp__lib_8h_adeb9ec6400320e4923ac9d836d509ddb}{int} xargc}
+
+\mbox{\Hypertarget{main_8c_ae0f0d94675c7aa305daaaa0f561300b4}\label{main_8c_ae0f0d94675c7aa305daaaa0f561300b4}} 
+\index{main.\+c@{main.\+c}!xargv@{xargv}}
+\index{xargv@{xargv}!main.\+c@{main.\+c}}
+\subsubsection{\texorpdfstring{xargv}{xargv}}
+{\footnotesize\ttfamily char$\ast$$\ast$ xargv}
+

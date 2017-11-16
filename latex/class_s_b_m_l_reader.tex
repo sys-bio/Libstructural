@@ -1,0 +1,27 @@
+\hypertarget{class_s_b_m_l_reader}{}\section{S\+B\+M\+L\+Reader Class Reference}
+\label{class_s_b_m_l_reader}\index{S\+B\+M\+L\+Reader@{S\+B\+M\+L\+Reader}}
+
+
+{\ttfamily \#include $<$S\+B\+M\+L\+Reader.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} File and text-\/string S\+B\+ML reader.
+
+
+
+The \hyperlink{class_s_b_m_l_reader}{S\+B\+M\+L\+Reader} class provides the main interface for reading S\+B\+ML content from files and strings. The methods for reading S\+B\+ML all return an \hyperlink{class_s_b_m_l_document}{S\+B\+M\+L\+Document} object representing the results. In the case of failures (such as if the S\+B\+ML contains errors or a file cannot be read), the errors will be recorded with the \hyperlink{class_s_b_m_l_error_log}{S\+B\+M\+L\+Error\+Log} object kept in the \hyperlink{class_s_b_m_l_document}{S\+B\+M\+L\+Document} returned by \hyperlink{class_s_b_m_l_reader}{S\+B\+M\+L\+Reader}. Consequently, immediately after calling a method on \hyperlink{class_s_b_m_l_reader}{S\+B\+M\+L\+Reader}, callers should always check for errors and warnings using the methods for this purpose provided by \hyperlink{class_s_b_m_l_document}{S\+B\+M\+L\+Document}.
+
+For convenience as well as easy access from other languages besides C++, this file also defines two global functions, \{read\+S\+B\+ML, String\} and \{read\+S\+B\+M\+L\+From\+String, String\}. They are equivalent to creating an \hyperlink{class_s_b_m_l_reader}{S\+B\+M\+L\+Reader} object and then calling the and methods, respectively.\hypertarget{class_s_b_m_l_reader_compression}{}\subsection{Support for reading compressed files}\label{class_s_b_m_l_reader_compression}
+Lib\+S\+B\+ML provides support for reading (as well as writing) compressed S\+B\+ML files. The process is transparent to the calling application---the application does not need to do anything deliberate to invoke the functionality. If a given S\+B\+ML filename ends with an extension for the {\itshape gzip}, {\itshape zip} or {\itshape bzip2} compression formats (respectively, {\ttfamily }.gz, {\ttfamily }.zip, or {\ttfamily }.bz2), then the methods and
+
+will automatically decompress and compress the file while reading and writing it. If the filename has no such extension, it will be read and written uncompressed as normal.
+
+The compression feature requires that the {\itshape zlib} (for {\itshape gzip} and {\itshape zip} formats) and/or {\itshape bzip2} (for {\itshape bzip2} format) be available on the system running lib\+S\+B\+ML, and that lib\+S\+B\+ML was configured with their support compiled-\/in. Please see the lib\+S\+B\+ML \href{libsbml-installation.html}{\tt installation instructions} for more information about this. The methods has\+Zlib() and has\+Bzip2() can be used by an application to query at run-\/time whether support for the compression libraries is available in the present copy of lib\+S\+B\+ML.
+
+Support for compression is not mandated by the S\+B\+ML standard, but applications may find it helpful, particularly when large S\+B\+ML models are being communicated across data links of limited bandwidth. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_s_b_m_l_reader_8h}{S\+B\+M\+L\+Reader.\+h}\end{DoxyCompactItemize}

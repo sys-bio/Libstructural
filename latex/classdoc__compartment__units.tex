@@ -1,0 +1,17 @@
+\hypertarget{classdoc__compartment__units}{}\section{doc\+\_\+compartment\+\_\+units Class Reference}
+\label{classdoc__compartment__units}\index{doc\+\_\+compartment\+\_\+units@{doc\+\_\+compartment\+\_\+units}}
+
+
+{\ttfamily \#include $<$Compartment.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\begin{DoxyParagraph}{}
+Compartments in S\+B\+ML have an attribute (\char`\"{}units\char`\"{}) for declaring the units of measurement intended for the value of the compartment\textquotesingle{}s size. In the absence of a value given for this attribute, the units are inherited from values either defined on the enclosing \hyperlink{class_model}{Model} (in S\+B\+ML Level~3) or in defaults (in S\+B\+ML Level~2). This method returns a \hyperlink{class_unit_definition}{Unit\+Definition} object based on how this compartment\textquotesingle{}s units are interpreted according to the relevant S\+B\+ML guidelines, or it returns {\ttfamily N\+U\+LL} if no units have been declared and no defaults are defined by the relevant S\+B\+ML specification.
+\end{DoxyParagraph}
+Note that unit declarations for \hyperlink{class_compartment}{Compartment} objects are specified in terms of the {\itshape identifier} of a unit, but {\itshape this} method returns an object , not a unit identifier. It does this by constructing an appropriate \hyperlink{class_unit_definition}{Unit\+Definition} object. For S\+B\+ML Level~2 models, it will do this even when the value of the \char`\"{}units\char`\"{} attribute is one of the special S\+B\+ML Level~2 unit identifiers {\ttfamily \char`\"{}substance\char`\"{}}, {\ttfamily \char`\"{}volume\char`\"{}}, {\ttfamily \char`\"{}area\char`\"{}}, {\ttfamily \char`\"{}length\char`\"{}} or {\ttfamily \char`\"{}time\char`\"{}}. Callers may find this useful in conjunction with the helper methods provided by the \hyperlink{class_unit_definition}{Unit\+Definition} class for comparing different \hyperlink{class_unit_definition}{Unit\+Definition} objects. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_compartment_8h}{Compartment.\+h}\end{DoxyCompactItemize}

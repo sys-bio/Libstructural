@@ -1,0 +1,17 @@
+\hypertarget{classdoc__event__using__use_values_from_trigger_time}{}\section{doc\+\_\+event\+\_\+using\+\_\+use\+Values\+From\+Trigger\+Time Class Reference}
+\label{classdoc__event__using__use_values_from_trigger_time}\index{doc\+\_\+event\+\_\+using\+\_\+use\+Values\+From\+Trigger\+Time@{doc\+\_\+event\+\_\+using\+\_\+use\+Values\+From\+Trigger\+Time}}
+
+
+{\ttfamily \#include $<$Event.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\begin{DoxyParagraph}{}
+The optional \hyperlink{class_delay}{Delay} on \hyperlink{class_event}{Event} and the fact that multiple events may be simultaneously executed means there are two times to consider when computing the results of an event\+: the time at which the event is {\itshape triggered}, and the time at which assignments are {\itshape executed}. It is also possible to distinguish between the time at which the \hyperlink{class_event_assignment}{Event\+Assignment}\textquotesingle{}s expression is calculated, and the time at which the assignment is made\+: the expression could be evaluated at the same time the assignments are performed, i.\+e., when the event is {\itshape executed}, but it could also be defined to be evaluated at the time the event is {\itshape triggered}.
+\end{DoxyParagraph}
+In S\+B\+ML Level~2 versions prior to Version~4, the semantics of \hyperlink{class_event}{Event} time delays were defined such that the expressions in the event\textquotesingle{}s assignments were always evaluated at the time the event was {\itshape triggered}. This definition made it difficult to define an event whose assignment formulas were meant to be evaluated at the time the event was {\itshape executed} (i.\+e., after the time period defined by the value of the \hyperlink{class_delay}{Delay} element, or after any other simultaneous event may have been {\itshape executed} and changed the model state). In S\+B\+ML Level~2 Version~4, the attribute \char`\"{}use\+Values\+From\+Trigger\+Time\char`\"{} on \hyperlink{class_event}{Event} allows a model to indicate the time at which the event\textquotesingle{}s assignments are intended to be evaluated. In S\+B\+ML Level~2, the attribute has a default value of {\ttfamily true}, which corresponds to the interpretation of event assignments prior to Version~4\+: the values of the assignment formulas are computed at the moment the event is triggered, not after the delay. If \char`\"{}use\+Values\+From\+Trigger\+Time\char`\"{}={\ttfamily false}, it means that the formulas in the event\textquotesingle{}s assignments are to be computed after the delay, at the time the event is executed. In S\+B\+ML Level~3, the attribute is mandatory, not optional, and all events must specify a value for it. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_event_8h}{Event.\+h}\end{DoxyCompactItemize}

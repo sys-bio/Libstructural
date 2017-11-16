@@ -1,0 +1,121 @@
+\hypertarget{class_x_m_l_error}{}\section{X\+M\+L\+Error Class Reference}
+\label{class_x_m_l_error}\index{X\+M\+L\+Error@{X\+M\+L\+Error}}
+
+
+{\ttfamily \#include $<$X\+M\+L\+Error.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} X\+M\+L-\/level errors, warnings and other diagnostics.
+
+
+
+Lib\+S\+B\+ML can be configured to use any of a number of X\+ML parsers; at the time of this writing, lib\+S\+B\+ML supports Xerces versions 2.\+4 through 3.\+1, Expat version 1.\+95.\+x and higher, and libxml2 version 2.\+6.\+16 and higher. These parsers each report different status codes for the various exceptions that can occur during X\+ML processing. The \hyperlink{class_x_m_l_error}{X\+M\+L\+Error} object class abstracts away from the particular diagnostics reported by the different parsers and presents a single uniform interface and set of status codes, along with operations for manipulating the error objects.
+
+When the lib\+S\+B\+ML X\+ML parser layer encounters an error in the X\+ML content being processed, or when there is something else wrong (such as an out-\/of-\/memory condition), the problems are reported as \hyperlink{class_x_m_l_error}{X\+M\+L\+Error} objects. Each \hyperlink{class_x_m_l_error}{X\+M\+L\+Error} object instance has an identification number that identifies the nature of the problem. This error identifier is one of the constants listed in the next section below. Applications can use the error identifiers as a means of recognizing the error encountered and changing their behavior if desired.
+
+Integer error codes are useful for software, but not so much for telling humans what happened. For this reason, \hyperlink{class_x_m_l_error}{X\+M\+L\+Error} also provides two text messages describing the nature of the error. These messages are accessible by means of the methods X\+M\+L\+Error\+::get\+Short\+Message() and X\+M\+L\+Error\+::get\+Message(). The method X\+M\+L\+Error\+::get\+Short\+Message() returns a very brief synopsis of the warning or error condition, whereas X\+M\+L\+Error\+::get\+Message() returns a longer explanation. These text strings are suitable for displaying to human users.
+
+Each \hyperlink{class_x_m_l_error}{X\+M\+L\+Error} object also contains a category code; its value may be retrieved using the method X\+M\+L\+Error\+::get\+Category(). Category values are drawn from a set of constants whose names begin with the characters {\ttfamily L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+A\+T\+\_\+}, described below.~Categories are used by lib\+S\+B\+ML to provide more information to calling programs about the nature of a given error.
+
+In addition to category codes, each \hyperlink{class_x_m_l_error}{X\+M\+L\+Error} object also has a severity code; its value may be retrieved using the method X\+M\+L\+Error\+::get\+Severity(). Severity code values are drawn from a set of constants whose names begin with the characters {\ttfamily L\+I\+B\+S\+B\+M\+L\+\_\+\+S\+E\+V\+\_\+}, described below. Severity levels range from informational (\{L\+I\+B\+S\+B\+M\+L\+\_\+\+S\+E\+V\+\_\+\+I\+N\+FO, X\+M\+L\+Error\+Severity\+\_\+t\}) to fatal errors (\{L\+I\+B\+S\+B\+M\+L\+\_\+\+S\+E\+V\+\_\+\+F\+A\+T\+AL, X\+M\+L\+Error\+Severity\+\_\+t\}).
+
+Finally, \hyperlink{class_x_m_l_error}{X\+M\+L\+Error} objects record the line and column near where the problem occurred in the X\+ML content. The values can be retrieved using the methods X\+M\+L\+Error\+::get\+Line() and X\+M\+L\+Error\+::get\+Column(). We say \char`\"{}near
+where the problem occurred\char`\"{}, because many factors affect how accurate the line/column information ultimately is. For example, sometimes, the underlying X\+ML parsers can only report such information for the parent X\+ML element where an error occurs, and not for the specific point where the problem occurs. In other situations, some parsers report invalid line and/or column numbers altogether. If this occurs, lib\+S\+B\+ML sets the line and/or column number in the \hyperlink{class_x_m_l_error}{X\+M\+L\+Error} object to either {\ttfamily 0} or the value of the maximum unsigned long integer representable on the platform where lib\+S\+B\+ML is running. The probability that a true line or column number in an S\+B\+ML model would equal this value is vanishingly small; thus, if an application encounters these values in an \hyperlink{class_x_m_l_error}{X\+M\+L\+Error} object, it can assume no valid line/column number could be provided by lib\+S\+B\+ML in that situation.
+
+\begin{center} 
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{4}{|X[-1]}|}
+\caption{Possible \hyperlink{class_x_m_l_error}{X\+M\+L\+Error} error codes. Depending on the programming language in use, the {\itshape Enumerator} values will be defined either as a value from an enumeration type or as integer constants. To make this table more compact, we have shortened the identifiers for the category and severity codes to their essential parts. To get the actual names of the constants, prepend {\ttfamily L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+A\+T\+\_\+} to the category names and {\ttfamily L\+I\+B\+S\+B\+M\+L\+\_\+\+S\+E\+V\+\_\+} to the severity names shown in the two right-\/hand columns. }\label{_}\\
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Enumerator }&\textbf{ Meaning }&\textbf{ Category }&\textbf{ Severity  }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Enumerator }&\textbf{ Meaning }&\textbf{ Category }&\textbf{ Severity  }\\\cline{1-4}
+\endhead
+\{X\+M\+L\+Unknown\+Error, X\+M\+L\+Error\+Code\+\_\+t\}&Unrecognized error encountered internally&I\+N\+T\+E\+R\+N\+AL&F\+A\+T\+AL \\\cline{1-4}
+\{X\+M\+L\+Out\+Of\+Memory, X\+M\+L\+Error\+Code\+\_\+t\} &Out of memory&S\+Y\+S\+T\+EM&F\+A\+T\+AL \\\cline{1-4}
+\{X\+M\+L\+File\+Unreadable, X\+M\+L\+Error\+Code\+\_\+t\} &File unreadable&S\+Y\+S\+T\+EM&E\+R\+R\+OR \\\cline{1-4}
+\{X\+M\+L\+File\+Unwritable, X\+M\+L\+Error\+Code\+\_\+t\} &File unwritable&S\+Y\+S\+T\+EM&E\+R\+R\+OR \\\cline{1-4}
+\{X\+M\+L\+File\+Operation\+Error, X\+M\+L\+Error\+Code\+\_\+t\}&Error encountered while attempting file operation&S\+Y\+S\+T\+EM&E\+R\+R\+OR \\\cline{1-4}
+\{X\+M\+L\+Network\+Access\+Error, X\+M\+L\+Error\+Code\+\_\+t\}&Network access error&S\+Y\+S\+T\+EM&E\+R\+R\+OR \\\cline{1-4}
+\{Internal\+X\+M\+L\+Parser\+Error, X\+M\+L\+Error\+Code\+\_\+t\}&Internal X\+ML parser state error&I\+N\+T\+E\+R\+N\+AL&F\+A\+T\+AL \\\cline{1-4}
+\{Unrecognized\+X\+M\+L\+Parser\+Code, X\+M\+L\+Error\+Code\+\_\+t\}&X\+ML parser returned an unrecognized error code&I\+N\+T\+E\+R\+N\+AL&F\+A\+T\+AL \\\cline{1-4}
+\{X\+M\+L\+Transcoder\+Error, X\+M\+L\+Error\+Code\+\_\+t\}&Character transcoder error&I\+N\+T\+E\+R\+N\+AL&F\+A\+T\+AL \\\cline{1-4}
+\{Missing\+X\+M\+L\+Decl, X\+M\+L\+Error\+Code\+\_\+t\}&Missing X\+ML declaration at beginning of X\+ML input&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{Missing\+X\+M\+L\+Encoding, X\+M\+L\+Error\+Code\+\_\+t\}&Missing encoding attribute in X\+ML declaration&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{Bad\+X\+M\+L\+Decl, X\+M\+L\+Error\+Code\+\_\+t\}&Invalid or unrecognized X\+ML declaration or X\+ML encoding&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{Bad\+X\+M\+L\+D\+O\+C\+T\+Y\+PE, X\+M\+L\+Error\+Code\+\_\+t\}&Invalid, malformed or unrecognized X\+ML D\+O\+C\+T\+Y\+PE declaration&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{Invalid\+Char\+In\+X\+ML, X\+M\+L\+Error\+Code\+\_\+t\}&Invalid character in X\+ML content&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{Badly\+Formed\+X\+ML, X\+M\+L\+Error\+Code\+\_\+t\}&X\+ML content is not well-\/formed&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{Unclosed\+X\+M\+L\+Token, X\+M\+L\+Error\+Code\+\_\+t\}&Unclosed X\+ML token&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{Invalid\+X\+M\+L\+Construct, X\+M\+L\+Error\+Code\+\_\+t\}&X\+ML construct is invalid or not permitted&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{X\+M\+L\+Tag\+Mismatch, X\+M\+L\+Error\+Code\+\_\+t\}&Element tag mismatch or missing tag&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{Duplicate\+X\+M\+L\+Attribute, X\+M\+L\+Error\+Code\+\_\+t\}&Duplicate X\+ML attribute&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{Undefined\+X\+M\+L\+Entity, X\+M\+L\+Error\+Code\+\_\+t\}&Undefined X\+ML entity&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{Bad\+Processing\+Instruction, X\+M\+L\+Error\+Code\+\_\+t\}&Invalid, malformed or unrecognized X\+ML processing instruction&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{Bad\+X\+M\+L\+Prefix, X\+M\+L\+Error\+Code\+\_\+t\}&Invalid or undefined X\+ML namespace prefix&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{Bad\+X\+M\+L\+Prefix\+Value, X\+M\+L\+Error\+Code\+\_\+t\}&Invalid X\+ML namespace prefix value&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{Missing\+X\+M\+L\+Required\+Attribute, X\+M\+L\+Error\+Code\+\_\+t\}&Missing a required X\+ML attribute&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{X\+M\+L\+Attribute\+Type\+Mismatch, X\+M\+L\+Error\+Code\+\_\+t\}&Data type mismatch for the value of an attribute&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{X\+M\+L\+Bad\+U\+T\+F8\+Content, X\+M\+L\+Error\+Code\+\_\+t\}&Invalid U\+T\+F8 content&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{Missing\+X\+M\+L\+Attribute\+Value, X\+M\+L\+Error\+Code\+\_\+t\}&Missing or improperly formed attribute value&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{Bad\+X\+M\+L\+Attribute\+Value, X\+M\+L\+Error\+Code\+\_\+t\}&Invalid or unrecognizable attribute value&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{Bad\+X\+M\+L\+Attribute, X\+M\+L\+Error\+Code\+\_\+t\}&Invalid, unrecognized or malformed attribute&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{Unrecognized\+X\+M\+L\+Element, X\+M\+L\+Error\+Code\+\_\+t\}&Element either not recognized or not permitted&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{Bad\+X\+M\+L\+Comment, X\+M\+L\+Error\+Code\+\_\+t\}&Badly formed X\+ML comment&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{Bad\+X\+M\+L\+Decl\+Location, X\+M\+L\+Error\+Code\+\_\+t\}&X\+ML declaration not permitted in this location&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{X\+M\+L\+Unexpected\+E\+OF, X\+M\+L\+Error\+Code\+\_\+t\}&Reached end of input unexpectedly&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{Bad\+X\+M\+L\+I\+D\+Value, X\+M\+L\+Error\+Code\+\_\+t\}&Value is invalid for X\+ML ID, or has already been used&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{Bad\+X\+M\+L\+I\+D\+Ref, X\+M\+L\+Error\+Code\+\_\+t\}&X\+ML ID value was never declared&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{Uninterpretable\+X\+M\+L\+Content, X\+M\+L\+Error\+Code\+\_\+t\}&Unable to interpret content&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{Bad\+X\+M\+L\+Document\+Structure, X\+M\+L\+Error\+Code\+\_\+t\}&Bad X\+ML document structure&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{Invalid\+After\+X\+M\+L\+Content, X\+M\+L\+Error\+Code\+\_\+t\}&Encountered invalid content after expected content&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{X\+M\+L\+Expected\+Quoted\+String, X\+M\+L\+Error\+Code\+\_\+t\}&Expected to find a quoted string&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{X\+M\+L\+Empty\+Value\+Not\+Permitted, X\+M\+L\+Error\+Code\+\_\+t\}&An empty value is not permitted in this context&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{X\+M\+L\+Bad\+Number, X\+M\+L\+Error\+Code\+\_\+t\}&Invalid or unrecognized number&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{X\+M\+L\+Bad\+Colon, X\+M\+L\+Error\+Code\+\_\+t\}&Colon characters are invalid in this context&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{Missing\+X\+M\+L\+Elements, X\+M\+L\+Error\+Code\+\_\+t\}&One or more expected elements are missing&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\{X\+M\+L\+Content\+Empty, X\+M\+L\+Error\+Code\+\_\+t\}&Main X\+ML content is empty&X\+ML&E\+R\+R\+OR \\\cline{1-4}
+\end{longtabu}
+\end{center} 
+
+\begin{center} \tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Enumerator }&\textbf{ Meaning  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Enumerator }&\textbf{ Meaning  }\\\cline{1-2}
+\endhead
+\{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+A\+T\+\_\+\+I\+N\+T\+E\+R\+N\+AL, X\+M\+L\+Error\+Category\+\_\+t\} &A problem involving the lib\+S\+B\+ML software itself or the underlying X\+ML parser. This almost certainly indicates a software defect (i.\+e., bug) in lib\+S\+B\+ML. Please report instances of this to the lib\+S\+B\+ML developers. \\\cline{1-2}
+\{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+A\+T\+\_\+\+S\+Y\+S\+T\+EM, X\+M\+L\+Error\+Category\+\_\+t\} &A problem reported by the operating system, such as an inability to read or write a file. This indicates something that is not a program error but is outside of the control of lib\+S\+B\+ML. \\\cline{1-2}
+\{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+A\+T\+\_\+\+X\+ML, X\+M\+L\+Error\+Category\+\_\+t\} &A problem in the X\+ML content itself. This usually arises from malformed X\+ML or the use of constructs not permitted in S\+B\+ML. \\\cline{1-2}
+\end{longtabu}
+\end{center} 
+
+\begin{center} \tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Enumerator }&\textbf{ Meaning  }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Enumerator }&\textbf{ Meaning  }\\\cline{1-2}
+\endhead
+\{L\+I\+B\+S\+B\+M\+L\+\_\+\+S\+E\+V\+\_\+\+I\+N\+FO, X\+M\+L\+Error\+Severity\+\_\+t\} &The error is actually informational and not necessarily a serious problem. \\\cline{1-2}
+\{L\+I\+B\+S\+B\+M\+L\+\_\+\+S\+E\+V\+\_\+\+W\+A\+R\+N\+I\+NG, X\+M\+L\+Error\+Severity\+\_\+t\} &The error object represents a problem that is not serious enough to necessarily stop the problem, but applications should take note of the problem and evaluate what its implications may be. \\\cline{1-2}
+\{L\+I\+B\+S\+B\+M\+L\+\_\+\+S\+E\+V\+\_\+\+E\+R\+R\+OR, X\+M\+L\+Error\+Severity\+\_\+t\} &The error object represents a serious error. The application may continue running but it is unlikely to be able to continue processing the same X\+ML file or data stream. \\\cline{1-2}
+\{L\+I\+B\+S\+B\+M\+L\+\_\+\+S\+E\+V\+\_\+\+F\+A\+T\+AL, X\+M\+L\+Error\+Severity\+\_\+t\} &A serious error occurred, such as an out-\/of-\/memory condition, and the software should terminate immediately. \\\cline{1-2}
+\end{longtabu}
+\end{center}  
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_x_m_l_error_8h}{X\+M\+L\+Error.\+h}\end{DoxyCompactItemize}

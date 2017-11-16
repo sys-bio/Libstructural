@@ -1,0 +1,81 @@
+\hypertarget{class_delay}{}\section{Delay Class Reference}
+\label{class_delay}\index{Delay@{Delay}}
+
+
+{\ttfamily \#include $<$Delay.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} A delay on the time of execution of an S\+B\+ML {\itshape event}.
+
+An \hyperlink{class_event}{Event} object defines when the event can occur, the variables that are affected by the event, and how the variables are affected. The effect of the event can optionally be delayed after the occurrence of the condition which invokes it. An event delay is defined using an object of class \hyperlink{class_delay}{Delay}.
+
+The object class \hyperlink{class_delay}{Delay} is derived from \hyperlink{class_s_base}{S\+Base} and adds a single subelement called \char`\"{}math\char`\"{}. This subelement is used to hold Math\+ML content. The mathematical formula represented by \char`\"{}math\char`\"{} must evaluate to a numerical value. It is used as the length of time between when the event is {\itshape triggered} and when the event\textquotesingle{}s assignments are actually {\itshape executed}. If no delay is present on a given \hyperlink{class_event}{Event}, a time delay of zero is assumed.
+
+The expression in \char`\"{}math\char`\"{} must be evaluated at the time the event is {\itshape triggered}. The expression must always evaluate to a nonnegative number (otherwise, a nonsensical situation could arise where an event is defined to execute before it is triggered!).\hypertarget{class_delay_delay-units}{}\subsection{The units of the mathematical expression in a Delay}\label{class_delay_delay-units}
+In S\+B\+ML Level~2 versions before Version~4, the units of the numerical value computed by the \hyperlink{class_delay}{Delay}\textquotesingle{}s \char`\"{}math\char`\"{} expression are {\itshape required} to be in units of time, or the model is considered to have a unit consistency error. In Level~2 Version~4 as well as S\+B\+ML Level~3, this requirement is relaxed; these specifications only stipulate that the units of the numerical value computed by a \hyperlink{class_delay}{Delay} instance\textquotesingle{}s \char`\"{}math\char`\"{} expression {\itshape should} match the model\textquotesingle{}s units of time (meaning the definition of the {\ttfamily time} units in the model). Lib\+S\+B\+ML respects these requirements, and depending on whether an earlier Version of S\+B\+ML Level~2 is in use, lib\+S\+B\+ML may or may not flag unit inconsistencies as errors or merely warnings.
+
+Note that {\itshape units are not predefined or assumed} for the contents of \char`\"{}math\char`\"{} in a \hyperlink{class_delay}{Delay} object; rather, they must be defined explicitly for each instance of a \hyperlink{class_delay}{Delay} object in a model. This is an important point to bear in mind when literal numbers are used in delay expressions. For example, the following \hyperlink{class_event}{Event} instance would result in a warning logged by S\+B\+M\+L\+Document\+::check\+Consistency() about the fact that lib\+S\+B\+ML cannot verify the consistency of the units of the expression. The reason is that the formula inside the \char`\"{}math\char`\"{} element does not have any declared units, whereas what is expected in this context is units of time\+: \begin{DoxyVerb}<model>
+    ...
+    <listOfEvents>
+        <event useValuesFromTriggerTime="true">
+            ...
+            <delay>
+                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                    <cn> 1 </cn>
+                </math>
+            </delay>
+            ...
+        </event>
+    </listOfEvents>
+    ...
+</model>
+\end{DoxyVerb}
+
+
+The {\ttfamily $<$cn$>$ 1 $<$/cn$>$} within the mathematical formula of the {\ttfamily delay} above has {\itshape no units declared}. To make the expression have the needed units of time, literal numbers should be avoided in favor of defining \hyperlink{class_parameter}{Parameter} objects for each quantity, and declaring units for the \hyperlink{class_parameter}{Parameter} values. The following fragment of S\+B\+ML illustrates this approach\+: \begin{DoxyVerb}<model>
+    ...
+    <listOfParameters>
+        <parameter id="transcriptionDelay" value="10" units="second"/>
+    </listOfParameters>
+    ...
+    <listOfEvents>
+        <event useValuesFromTriggerTime="true">
+            ...
+            <delay>
+                <math xmlns="http://www.w3.org/1998/Math/MathML">
+                    <ci> transcriptionDelay </ci>
+                </math>
+            </delay>
+            ...
+        </event>
+    </listOfEvents>
+    ...
+</model>
+\end{DoxyVerb}
+
+
+In S\+B\+ML Level~3, an alternative approach is available in the form of the {\ttfamily units} attribute, which S\+B\+ML Level~3 allows to appear on Math\+ML {\ttfamily cn} elements. The value of this attribute can be used to indicate the unit of measurement to be associated with the number in the content of a {\ttfamily cn} element. The attribute is named {\ttfamily units} but, because it appears inside Math\+ML element (which is in the X\+ML namespace for Math\+ML and not the namespace for S\+B\+ML), it must always be prefixed with an X\+ML namespace prefix for an S\+B\+ML Level~3 namespace. The following is an example of this approach\+: \begin{DoxyVerb}<model timeUnits="second" ...>
+    ...
+    <listOfEvents>
+        <event useValuesFromTriggerTime="true">
+            ...
+            <delay>
+                <math xmlns="http://www.w3.org/1998/Math/MathML"
+                      xmlns:sbml="http://www.sbml.org/sbml/level3/version1/core">
+                    <cn sbml:units="second"> 10 </cn>
+                </math>
+            </delay>
+            ...
+        </event>
+    </listOfEvents>
+    ...
+</model>
+\end{DoxyVerb}
+\hypertarget{class_delay_delay-restrictions}{}\subsection{Restrictions relaxed in S\+B\+M\+L Level 3 Version 2}\label{class_delay_delay-restrictions}
+In S\+B\+ML Level~3 Version~2, the requirement that a \hyperlink{class_delay}{Delay} have a \char`\"{}math\char`\"{} subelement was relaxed, making it optional. In this case, the \hyperlink{class_delay}{Delay} remains undefined, and unless that information is provided in some other form (such as with an S\+B\+ML Level~3 package), the \hyperlink{class_event}{Event} behaves as if it had no \hyperlink{class_delay}{Delay}. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_delay_8h}{Delay.\+h}\end{DoxyCompactItemize}

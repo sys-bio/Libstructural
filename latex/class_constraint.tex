@@ -1,0 +1,33 @@
+\hypertarget{class_constraint}{}\section{Constraint Class Reference}
+\label{class_constraint}\index{Constraint@{Constraint}}
+
+
+{\ttfamily \#include $<$Constraint.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} An S\+B\+ML {\itshape constraint}, for stating validity assumptions.
+
+The \hyperlink{class_constraint}{Constraint} object class was introduced in S\+B\+ML Level~2 Version~2 as a mechanism for stating the assumptions under which a model is designed to operate. The {\itshape constraints} are statements about permissible values of different quantities in a model. Constraints are not used to compute dynamical values for simulation or analysis, but rather, they serve an advisory role for simulation/analysis tools.
+
+S\+B\+ML\textquotesingle{}s \hyperlink{class_constraint}{Constraint} object class has one required attribute, \char`\"{}id\char`\"{}, to give the parameter a unique identifier by which other parts of an S\+B\+ML model definition can refer to it. A \hyperlink{class_constraint}{Constraint} object can also have an optional \char`\"{}name\char`\"{} attribute of type {\ttfamily string}. Identifiers and names must be used according to the guidelines described in the S\+B\+ML specification (e.\+g., Section 3.\+3 in the Level~2 Version 4 specification).
+
+\hyperlink{class_constraint}{Constraint} has one subelement, \char`\"{}math\char`\"{}, containing a Math\+ML formula defining the condition of the constraint. This formula will return a Boolean value of {\ttfamily true} when the model is a {\itshape valid} state. The formula can be an arbitrary expression referencing the variables and other entities in an S\+B\+ML model. The evaluation of \char`\"{}math\char`\"{} and behavior of constraints are described in more detail below.
+
+In S\+B\+ML Level~2 and S\+B\+ML Level~3 Version~1, the \char`\"{}math\char`\"{} subelement is required, and its formula must be a Boolean value. In S\+B\+ML Level~3 Version~2, these restrictions were relaxed\+: the \char`\"{}math\char`\"{} subelement is optional, and numeric values are allowed in Boolean contexts (a \textquotesingle{}0\textquotesingle{} is interpreted as {\ttfamily false}, and all other values are interpreted as {\ttfamily true}). If a \hyperlink{class_constraint}{Constraint} with no \char`\"{}math\char`\"{} is present in a \hyperlink{class_model}{Model}, no restriction on the \hyperlink{class_model}{Model}\textquotesingle{}s behavior is implied or enforced.
+
+A \hyperlink{class_constraint}{Constraint} structure also has an optional subelement called \char`\"{}message\char`\"{}. This can contain a message in X\+H\+T\+ML format that may be displayed to the user when the condition of the formula in the \char`\"{}math\char`\"{} subelement evaluates to a value of {\ttfamily false}. Software tools are not required to display the message, but it is recommended that they do so as a matter of best practice. The X\+H\+T\+ML content within a \char`\"{}message\char`\"{} subelement must follow the same restrictions as for the \char`\"{}notes\char`\"{} element on \hyperlink{class_s_base}{S\+Base} described in in the S\+B\+ML Level~2 specification; please consult the \href{http://sbml.org/Documents/Specifications}{\tt S\+B\+ML specification document} corresponding to the S\+B\+ML Level and Version of your model for more information about the requirements for \char`\"{}notes\char`\"{} content.
+
+\hyperlink{class_constraint}{Constraint} was introduced in S\+B\+ML Level~2 Version~2. It is not available in earlier versions of Level~2 nor in any version of Level~1.\hypertarget{class_constraint_constraint-semantics}{}\subsection{Semantics of Constraints}\label{class_constraint_constraint-semantics}
+In the context of a simulation, a \hyperlink{class_constraint}{Constraint} has effect at all times {\itshape t $\geq$ 0}. Each \hyperlink{class_constraint}{Constraint}\textquotesingle{}s \char`\"{}math\char`\"{} subelement is first evaluated after any \hyperlink{class_initial_assignment}{Initial\+Assignment} definitions in a model at {\itshape t = 0} and can conceivably trigger at that point. (In other words, a simulation could fail a constraint immediately.)
+
+\hyperlink{class_constraint}{Constraint} structures {\itshape cannot and should not} be used to compute the dynamical behavior of a model as part of, for example, simulation. Constraints may be used as input to non-\/dynamical analysis, for instance by expressing flux constraints for flux balance analysis.
+
+The results of a simulation of a model containing a constraint are invalid from any simulation time at and after a point when the function given by the \char`\"{}math\char`\"{} subelement returns a value of {\ttfamily false}. Invalid simulation results do not make a prediction of the behavior of the biochemical reaction network represented by the model. The precise behavior of simulation tools is left undefined with respect to constraints. If invalid results are detected with respect to a given constraint, the \char`\"{}message\char`\"{} subelement may optionally be displayed to the user. The simulation tool may also halt the simulation or clearly delimit in output data the simulation time point at which the simulation results become invalid.
+
+S\+B\+ML does not impose restrictions on duplicate \hyperlink{class_constraint}{Constraint} definitions or the order of evaluation of \hyperlink{class_constraint}{Constraint} objects in a model. It is possible for a model to define multiple constraints all with the same mathematical expression. Since the failure of any constraint indicates that the model simulation has entered an invalid state, a system is not required to attempt to detect whether other constraints in the model have failed once any one constraint has failed. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{dependencies_2libsbml-5_815_80-vs2017-release-64_2include_2sbml_2_constraint_8h}{dependencies/libsbml-\/5.\+15.\+0-\/vs2017-\/release-\/64/include/sbml/\+Constraint.\+h}\end{DoxyCompactItemize}

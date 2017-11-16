@@ -1,0 +1,26 @@
+\hypertarget{class_s_b_m_l_extension_register}{}\section{S\+B\+M\+L\+Extension\+Register Class Reference}
+\label{class_s_b_m_l_extension_register}\index{S\+B\+M\+L\+Extension\+Register@{S\+B\+M\+L\+Extension\+Register}}
+
+
+{\ttfamily \#include $<$S\+B\+M\+L\+Extension\+Register.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} Template class for extension package registration
+
+
+
+This is the registration template class for S\+B\+ML package extensions in lib\+S\+B\+ML. It is used by package extensions to register themselves with the \hyperlink{class_s_b_m_l_extension_registry}{S\+B\+M\+L\+Extension\+Registry} when lib\+S\+B\+ML starts up. An instance of this class needs to be created by each package extension and used in a call to a method on \hyperlink{class_s_b_m_l_extension_registry}{S\+B\+M\+L\+Extension\+Registry}.\hypertarget{classdoc__basics__of__extensions_ext-basics}{}\subsection{Basic principles of S\+B\+M\+L package extensions in lib\+S\+B\+ML}\label{classdoc__basics__of__extensions_ext-basics}
+\begin{DoxyParagraph}{}
+S\+B\+ML Level~3\textquotesingle{}s package structure permits modular extensions to the core S\+B\+ML format. In lib\+S\+B\+ML, support for S\+B\+ML Level~3 packages is provided through optional {\itshape package extensions} that can be plugged into lib\+S\+B\+ML at the time it is built/compiled. Users of lib\+S\+B\+ML can thus choose which extensions are enabled in their software applications.
+\end{DoxyParagraph}
+Lib\+S\+B\+ML defines a number of classes that developers of package extensions can use to implement support for an S\+B\+ML Level~3 package. These classes make it easier to extend lib\+S\+B\+ML objects with new attributes and/or subobjects as needed by a particular Level~3 package. Three overall categories of classes make up lib\+S\+B\+ML\textquotesingle{}s facilities for implementing package extensions. There are (1) classes that serve as base classes meant to be subclassed, (2) template classes meant to be instantiated rather than subclassed, and (3) support classes that provide utility features. A given package implementation for lib\+S\+B\+ML will take the form of code using these and other lib\+S\+B\+ML classes, placed in a subdirectory of {\ttfamily src/sbml/packages/}.
+
+The basic lib\+S\+B\+ML distribution includes a number of package extensions implementing support for officially-\/endorsed S\+B\+ML Level~3 packages; among these are {\itshape Flux Balance Constraints} (\char`\"{}fbc\char`\"{}), {\itshape Hierarchical Model Composition} (\char`\"{}comp\char`\"{}), {\itshape Layout} (\char`\"{}layout\char`\"{}), and {\itshape Qualitative Models} (\char`\"{}qual\char`\"{}). They can serve as working examples for developers working to implement other packages.
+
+Extensions in lib\+S\+B\+ML can currently only be implemented in C++ or C; there is no mechanism to implement them first in languages such as Java or Python. However, once implemented in C++ or C, language interfaces can be generated semi-\/automatically using the framework in place in lib\+S\+B\+ML. (The approach is based on using \href{http://www.swig.org}{\tt S\+W\+IG} and facilities in lib\+S\+B\+ML\textquotesingle{}s build system.) 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_s_b_m_l_extension_register_8h}{S\+B\+M\+L\+Extension\+Register.\+h}\end{DoxyCompactItemize}

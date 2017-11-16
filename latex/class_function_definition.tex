@@ -1,0 +1,31 @@
+\hypertarget{class_function_definition}{}\section{Function\+Definition Class Reference}
+\label{class_function_definition}\index{Function\+Definition@{Function\+Definition}}
+
+
+{\ttfamily \#include $<$Function\+Definition.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} A user-\/defined function in an S\+B\+ML model.
+
+The \hyperlink{class_function_definition}{Function\+Definition} structure associates an identifier with a function definition. This identifier can then be used as the function called in subsequent Math\+ML content elsewhere in an S\+B\+ML model.
+
+\hyperlink{class_function_definition}{Function\+Definition} has one required attribute, \char`\"{}id\char`\"{}, to give the function a unique identifier by which other parts of an S\+B\+ML model definition can refer to it. A \hyperlink{class_function_definition}{Function\+Definition} instance can also have an optional \char`\"{}name\char`\"{} attribute of type {\ttfamily string}. Identifiers and names must be used according to the guidelines described in the S\+B\+ML specification (e.\+g., Section 3.\+3 in the Level 2 Version 4 specification).
+
+\hyperlink{class_function_definition}{Function\+Definition} has a \char`\"{}math\char`\"{} subelement containing a Math\+ML expression defining the function body. In S\+B\+ML Level~2 and S\+B\+ML Level~3 Version~1, that \char`\"{}math\char`\"{} subelement is required; in S\+B\+ML Level~3 Version~2, this restriction was relaxed, making the \char`\"{}math\char`\"{} subelement optional. The content of this element can only be a Math\+ML \char`\"{}lambda\char`\"{} element. The \char`\"{}lambda\char`\"{} element must begin with zero or more \char`\"{}bvar\char`\"{} elements, followed by any other of the elements in the Math\+ML subset allowed in S\+B\+ML Level 2 {\itshape except} \char`\"{}lambda\char`\"{} (i.\+e., a \char`\"{}lambda\char`\"{} element cannot contain another \char`\"{}lambda\char`\"{} element). This is the only place in S\+B\+ML where a \char`\"{}lambda\char`\"{} element can be used. The function defined by a \hyperlink{class_function_definition}{Function\+Definition} is only available for use in other Math\+ML elements that {\itshape follow} the \hyperlink{class_function_definition}{Function\+Definition} definition in the model. (These restrictions prevent recursive and mutually-\/recursive functions from being expressed.)
+
+A further restriction on the content of \char`\"{}math\char`\"{} is that it cannot contain references to variables other than the variables declared to the \char`\"{}lambda\char`\"{} itself. That is, the contents of Math\+ML \char`\"{}ci\char`\"{} elements inside the body of the \char`\"{}lambda\char`\"{} can only be the variables declared by its \char`\"{}bvar\char`\"{} elements, or the identifiers of other \hyperlink{class_function_definition}{Function\+Definition} instances in the model. This means must be written so that all variables or parameters used in the Math\+ML content are passed to them via their function parameters. In S\+B\+ML Level~2, this restriction applies also to the Math\+ML {\ttfamily csymbol} elements for {\itshape time} and {\itshape delay}; in S\+B\+ML Level~3, it additionally applies to the {\ttfamily csymbol} element for {\itshape avogadro}.
+
+In S\+B\+ML Level~3 Version~2, if no math element is present in the \hyperlink{class_function_definition}{Function\+Definition}, the function has no mathematical meaning defined in S\+B\+ML Level~3 Core. This situation may arise when models are incomplete, or when additional meanings are provided by an S\+B\+ML Level~3 package.
+
+\begin{DoxyNote}{Note}
+Function definitions (also informally known as user-\/defined functions) were introduced in S\+B\+ML Level 2. They have purposefully limited capabilities. A function cannot reference parameters or other model quantities outside of itself; values must be passed as parameters to the function. Moreover, recursive and mutually-\/recursive functions are not permitted. The purpose of these limitations is to balance power against complexity of implementation. With the restrictions as they are, function definitions could be implemented as textual substitutions---they are simply macros. Software implementations therefore do not need the full function-\/definition machinery typically associated with programming languages. ~\newline
+~\newline
+ Another important point to note is \hyperlink{class_function_definition}{Function\+Definition} does not have a separate attribute for defining the units of the value returned by the function. The units associated with the function\textquotesingle{}s return value, when the function is called from within Math\+ML expressions elsewhere in S\+B\+ML, are simply the overall units of the expression in \hyperlink{class_function_definition}{Function\+Definition}\textquotesingle{}s \char`\"{}math\char`\"{} subelement when applied to the arguments supplied in the call to the function. Ascertaining these units requires performing dimensional analysis on the expression. (Readers may wonder why there is no attribute. The reason is that having a separate attribute for declaring the units would not only be redundant, but also lead to the potential for having conflicting information. In the case of a conflict between the declared units and those of the value actually returned by the function, the only logical resolution rule would be to assume that the correct units are those of the expression anyway.) 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_function_definition_8h}{Function\+Definition.\+h}\end{DoxyCompactItemize}

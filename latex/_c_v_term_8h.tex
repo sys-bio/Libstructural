@@ -1,0 +1,289 @@
+\hypertarget{_c_v_term_8h}{}\section{C\+V\+Term.\+h File Reference}
+\label{_c_v_term_8h}\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}}
+
+
+Definition of a \hyperlink{class_c_v_term}{C\+V\+Term} class for adding annotations to a \hyperlink{class_model}{Model}.  
+
+
+{\ttfamily \#include $<$sbml/common/extern.\+h$>$}\newline
+{\ttfamily \#include $<$sbml/common/sbmlfwd.\+h$>$}\newline
+{\ttfamily \#include $<$sbml/common/operation\+Return\+Values.\+h$>$}\newline
+{\ttfamily \#include $<$sbml/xml/\+X\+M\+L\+Attributes.\+h$>$}\newline
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18}{Biol\+Qualifier\+Type\+\_\+t} \{ \newline
+\hyperlink{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a7b4a827435b6f39f8122620589252d89}{B\+Q\+B\+\_\+\+IS}, 
+\hyperlink{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18abcb372d7076d076d536093dda97c3dd5}{B\+Q\+B\+\_\+\+H\+A\+S\+\_\+\+P\+A\+RT}, 
+\hyperlink{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18af951c999d7af76bb16e3d3aae140ce9e}{B\+Q\+B\+\_\+\+I\+S\+\_\+\+P\+A\+R\+T\+\_\+\+OF}, 
+\hyperlink{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a91d60f1c51d4748fe73e77d438ec0626}{B\+Q\+B\+\_\+\+I\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+OF}, 
+\newline
+\hyperlink{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a023325fc4ce0ce13769e7de14233bd7f}{B\+Q\+B\+\_\+\+H\+A\+S\+\_\+\+V\+E\+R\+S\+I\+ON}, 
+\hyperlink{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a5179e76f1c36a8825efdf2e4bede1797}{B\+Q\+B\+\_\+\+I\+S\+\_\+\+H\+O\+M\+O\+L\+O\+G\+\_\+\+TO}, 
+\hyperlink{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a9ad003fee5db81b93c8424dd64c25993}{B\+Q\+B\+\_\+\+I\+S\+\_\+\+D\+E\+S\+C\+R\+I\+B\+E\+D\+\_\+\+BY}, 
+\hyperlink{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a4f067e9261f205dd59b494439256ad6a}{B\+Q\+B\+\_\+\+I\+S\+\_\+\+E\+N\+C\+O\+D\+E\+D\+\_\+\+BY}, 
+\newline
+\hyperlink{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a0489418f87021ebef959247814c470ec}{B\+Q\+B\+\_\+\+E\+N\+C\+O\+D\+ES}, 
+\hyperlink{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a46444cce34ddd420f2de2b3f5e7fbc29}{B\+Q\+B\+\_\+\+O\+C\+C\+U\+R\+S\+\_\+\+IN}, 
+\hyperlink{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a5ad39b91f5dc72d1239050ed2b376349}{B\+Q\+B\+\_\+\+H\+A\+S\+\_\+\+P\+R\+O\+P\+E\+R\+TY}, 
+\hyperlink{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a2d22926cce3d10f8d9e8eda609225c02}{B\+Q\+B\+\_\+\+I\+S\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+OF}, 
+\newline
+\hyperlink{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a5e706485e6530223de8ad248ceead23d}{B\+Q\+B\+\_\+\+H\+A\+S\+\_\+\+T\+A\+X\+ON}, 
+\hyperlink{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18af1cf563d5624cd63df7777702421046b}{B\+Q\+B\+\_\+\+U\+N\+K\+N\+O\+WN}
+ \}
+\item 
+enum \hyperlink{_c_v_term_8h_a969edcb49472d95685722a541f391d9d}{Model\+Qualifier\+Type\+\_\+t} \{ \newline
+\hyperlink{_c_v_term_8h_a969edcb49472d95685722a541f391d9da1e8e69b3f23d42bc90a98cbbba161742}{B\+Q\+M\+\_\+\+IS}, 
+\hyperlink{_c_v_term_8h_a969edcb49472d95685722a541f391d9dae671899d0b3e9844e5855c694cfb9f8b}{B\+Q\+M\+\_\+\+I\+S\+\_\+\+D\+E\+S\+C\+R\+I\+B\+E\+D\+\_\+\+BY}, 
+\hyperlink{_c_v_term_8h_a969edcb49472d95685722a541f391d9dae4caa25fc006b084395ee1403b6e8a53}{B\+Q\+M\+\_\+\+I\+S\+\_\+\+D\+E\+R\+I\+V\+E\+D\+\_\+\+F\+R\+OM}, 
+\hyperlink{_c_v_term_8h_a969edcb49472d95685722a541f391d9da435347531d0e79a0dbcedb3dcbe18612}{B\+Q\+M\+\_\+\+I\+S\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+OF}, 
+\newline
+\hyperlink{_c_v_term_8h_a969edcb49472d95685722a541f391d9da5d8997aec45063bf407d118d7800f856}{B\+Q\+M\+\_\+\+H\+A\+S\+\_\+\+I\+N\+S\+T\+A\+N\+CE}, 
+\hyperlink{_c_v_term_8h_a969edcb49472d95685722a541f391d9da8b1e2ab645e23a7f1c5dfde0b85e1b25}{B\+Q\+M\+\_\+\+U\+N\+K\+N\+O\+WN}
+ \}
+\item 
+enum \hyperlink{_c_v_term_8h_ac2fb398f257edf4edd04e795f878abc5}{Qualifier\+Type\+\_\+t} \{ \hyperlink{_c_v_term_8h_ac2fb398f257edf4edd04e795f878abc5a212caf1da8ffd70753c854a0458d9c79}{M\+O\+D\+E\+L\+\_\+\+Q\+U\+A\+L\+I\+F\+I\+ER}, 
+\hyperlink{_c_v_term_8h_ac2fb398f257edf4edd04e795f878abc5a4d9f621f4a6b81ecab0499b8e995f9ff}{B\+I\+O\+L\+O\+G\+I\+C\+A\+L\+\_\+\+Q\+U\+A\+L\+I\+F\+I\+ER}, 
+\hyperlink{_c_v_term_8h_ac2fb398f257edf4edd04e795f878abc5a5a56e414a1f5ecad18d93f6975a58fd4}{U\+N\+K\+N\+O\+W\+N\+\_\+\+Q\+U\+A\+L\+I\+F\+I\+ER}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} \hyperlink{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18}{Biol\+Qualifier\+Type\+\_\+t} \hyperlink{_c_v_term_8h_aae844c95e702cdaf516d7528b26db3de}{Biol\+Qualifier\+Type\+\_\+from\+String} (const char $\ast$s)
+\item 
+\hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} const char $\ast$ \hyperlink{_c_v_term_8h_a82b0261d50ba41010700e6a83d294b6a}{Biol\+Qualifier\+Type\+\_\+to\+String} (\hyperlink{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18}{Biol\+Qualifier\+Type\+\_\+t} type)
+\item 
+\hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} \hyperlink{_c_v_term_8h_a969edcb49472d95685722a541f391d9d}{Model\+Qualifier\+Type\+\_\+t} \hyperlink{_c_v_term_8h_ad4db5b05d40e428077f122a734d390b2}{Model\+Qualifier\+Type\+\_\+from\+String} (const char $\ast$s)
+\item 
+\hyperlink{libsbml-namespace_8h_ab1841eceb76d5f2baade2e6b6ffec7c1}{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+P\+P\+\_\+\+N\+A\+M\+E\+S\+P\+A\+C\+E\+\_\+\+E\+ND} \hyperlink{libsbml-namespace_8h_a41d9f1012efdaa799c31e8e4ddde0fbd}{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+P\+P\+\_\+\+N\+A\+M\+E\+S\+P\+A\+C\+E\+\_\+\+B\+E\+G\+IN} \hyperlink{libstructural_8h_a004aeed0f22bd5ee77b75a434e2e2a30}{B\+E\+G\+I\+N\+\_\+\+C\+\_\+\+D\+E\+C\+LS} \hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} const char $\ast$ \hyperlink{_c_v_term_8h_ae5a6cec1d8bdfcae5736807adf6afb7b}{Model\+Qualifier\+Type\+\_\+to\+String} (\hyperlink{_c_v_term_8h_a969edcb49472d95685722a541f391d9d}{Model\+Qualifier\+Type\+\_\+t} type)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Definition of a \hyperlink{class_c_v_term}{C\+V\+Term} class for adding annotations to a \hyperlink{class_model}{Model}. 
+
+\begin{DoxyAuthor}{Author}
+Sarah Keating 
+\end{DoxyAuthor}
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18}\label{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18}} 
+\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!Biol\+Qualifier\+Type\+\_\+t@{Biol\+Qualifier\+Type\+\_\+t}}
+\index{Biol\+Qualifier\+Type\+\_\+t@{Biol\+Qualifier\+Type\+\_\+t}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}
+\subsubsection{\texorpdfstring{Biol\+Qualifier\+Type\+\_\+t}{BiolQualifierType\_t}}
+{\footnotesize\ttfamily enum \hyperlink{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18}{Biol\+Qualifier\+Type\+\_\+t}}
+
+Enumeration of possible {\itshape biological qualifiers} used for annotations. Annotations with this type of qualifier express a relationship between an annotation resource and the {\itshape biological concept} represented by a given object in the model. The diagram below illustrates the relationship in this case\+:
+
+
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{biology-qualifiers.png}
+\doxyfigcaption{Relationship expressed by biological qualifiers}
+\end{DoxyImage}
+~\newline
+ \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+Q\+B\+\_\+\+IS@{B\+Q\+B\+\_\+\+IS}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!B\+Q\+B\+\_\+\+IS@{B\+Q\+B\+\_\+\+IS}}}\mbox{\Hypertarget{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a7b4a827435b6f39f8122620589252d89}\label{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a7b4a827435b6f39f8122620589252d89}} 
+B\+Q\+B\+\_\+\+IS&The biological entity represented by the object in the model is identical to the subject of the referenced resource. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+Q\+B\+\_\+\+H\+A\+S\+\_\+\+P\+A\+RT@{B\+Q\+B\+\_\+\+H\+A\+S\+\_\+\+P\+A\+RT}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!B\+Q\+B\+\_\+\+H\+A\+S\+\_\+\+P\+A\+RT@{B\+Q\+B\+\_\+\+H\+A\+S\+\_\+\+P\+A\+RT}}}\mbox{\Hypertarget{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18abcb372d7076d076d536093dda97c3dd5}\label{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18abcb372d7076d076d536093dda97c3dd5}} 
+B\+Q\+B\+\_\+\+H\+A\+S\+\_\+\+P\+A\+RT&The biological entity represented by the object in the model includes the subject of the referenced resource. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+Q\+B\+\_\+\+I\+S\+\_\+\+P\+A\+R\+T\+\_\+\+OF@{B\+Q\+B\+\_\+\+I\+S\+\_\+\+P\+A\+R\+T\+\_\+\+OF}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!B\+Q\+B\+\_\+\+I\+S\+\_\+\+P\+A\+R\+T\+\_\+\+OF@{B\+Q\+B\+\_\+\+I\+S\+\_\+\+P\+A\+R\+T\+\_\+\+OF}}}\mbox{\Hypertarget{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18af951c999d7af76bb16e3d3aae140ce9e}\label{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18af951c999d7af76bb16e3d3aae140ce9e}} 
+B\+Q\+B\+\_\+\+I\+S\+\_\+\+P\+A\+R\+T\+\_\+\+OF&The biological entity represented by the object in the model is a physical or logical part of the subject of the referenced resource. For example, this could be used to indicate that the molecular entity represented by a given object in the model is part of the referenced molecular complex. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+Q\+B\+\_\+\+I\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+OF@{B\+Q\+B\+\_\+\+I\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+OF}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!B\+Q\+B\+\_\+\+I\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+OF@{B\+Q\+B\+\_\+\+I\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+OF}}}\mbox{\Hypertarget{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a91d60f1c51d4748fe73e77d438ec0626}\label{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a91d60f1c51d4748fe73e77d438ec0626}} 
+B\+Q\+B\+\_\+\+I\+S\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+OF&The biological entity represented by the object in the model is a version or an instance of the subject of the referenced resource. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+Q\+B\+\_\+\+H\+A\+S\+\_\+\+V\+E\+R\+S\+I\+ON@{B\+Q\+B\+\_\+\+H\+A\+S\+\_\+\+V\+E\+R\+S\+I\+ON}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!B\+Q\+B\+\_\+\+H\+A\+S\+\_\+\+V\+E\+R\+S\+I\+ON@{B\+Q\+B\+\_\+\+H\+A\+S\+\_\+\+V\+E\+R\+S\+I\+ON}}}\mbox{\Hypertarget{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a023325fc4ce0ce13769e7de14233bd7f}\label{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a023325fc4ce0ce13769e7de14233bd7f}} 
+B\+Q\+B\+\_\+\+H\+A\+S\+\_\+\+V\+E\+R\+S\+I\+ON&The subject of the referenced resource is a version or an instance of the biological entity represented by the model element. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+Q\+B\+\_\+\+I\+S\+\_\+\+H\+O\+M\+O\+L\+O\+G\+\_\+\+TO@{B\+Q\+B\+\_\+\+I\+S\+\_\+\+H\+O\+M\+O\+L\+O\+G\+\_\+\+TO}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!B\+Q\+B\+\_\+\+I\+S\+\_\+\+H\+O\+M\+O\+L\+O\+G\+\_\+\+TO@{B\+Q\+B\+\_\+\+I\+S\+\_\+\+H\+O\+M\+O\+L\+O\+G\+\_\+\+TO}}}\mbox{\Hypertarget{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a5179e76f1c36a8825efdf2e4bede1797}\label{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a5179e76f1c36a8825efdf2e4bede1797}} 
+B\+Q\+B\+\_\+\+I\+S\+\_\+\+H\+O\+M\+O\+L\+O\+G\+\_\+\+TO&The biological entity represented by the object in the model is homologous to the subject of the referenced resource. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+Q\+B\+\_\+\+I\+S\+\_\+\+D\+E\+S\+C\+R\+I\+B\+E\+D\+\_\+\+BY@{B\+Q\+B\+\_\+\+I\+S\+\_\+\+D\+E\+S\+C\+R\+I\+B\+E\+D\+\_\+\+BY}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!B\+Q\+B\+\_\+\+I\+S\+\_\+\+D\+E\+S\+C\+R\+I\+B\+E\+D\+\_\+\+BY@{B\+Q\+B\+\_\+\+I\+S\+\_\+\+D\+E\+S\+C\+R\+I\+B\+E\+D\+\_\+\+BY}}}\mbox{\Hypertarget{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a9ad003fee5db81b93c8424dd64c25993}\label{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a9ad003fee5db81b93c8424dd64c25993}} 
+B\+Q\+B\+\_\+\+I\+S\+\_\+\+D\+E\+S\+C\+R\+I\+B\+E\+D\+\_\+\+BY&The biological entity represented by the object in the model is described by the subject of the referenced resource. This could be used, for example, to link a species or a parameter to the literature that describes the concentration of that species or the value of that parameter. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+Q\+B\+\_\+\+I\+S\+\_\+\+E\+N\+C\+O\+D\+E\+D\+\_\+\+BY@{B\+Q\+B\+\_\+\+I\+S\+\_\+\+E\+N\+C\+O\+D\+E\+D\+\_\+\+BY}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!B\+Q\+B\+\_\+\+I\+S\+\_\+\+E\+N\+C\+O\+D\+E\+D\+\_\+\+BY@{B\+Q\+B\+\_\+\+I\+S\+\_\+\+E\+N\+C\+O\+D\+E\+D\+\_\+\+BY}}}\mbox{\Hypertarget{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a4f067e9261f205dd59b494439256ad6a}\label{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a4f067e9261f205dd59b494439256ad6a}} 
+B\+Q\+B\+\_\+\+I\+S\+\_\+\+E\+N\+C\+O\+D\+E\+D\+\_\+\+BY&The biological entity represented by the object in the model is encoded, directly or transitively, by the subject of the referenced resource. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+Q\+B\+\_\+\+E\+N\+C\+O\+D\+ES@{B\+Q\+B\+\_\+\+E\+N\+C\+O\+D\+ES}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!B\+Q\+B\+\_\+\+E\+N\+C\+O\+D\+ES@{B\+Q\+B\+\_\+\+E\+N\+C\+O\+D\+ES}}}\mbox{\Hypertarget{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a0489418f87021ebef959247814c470ec}\label{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a0489418f87021ebef959247814c470ec}} 
+B\+Q\+B\+\_\+\+E\+N\+C\+O\+D\+ES&The biological entity represented by the object in the model encodes directly or transitively the subject of the referenced resource. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+Q\+B\+\_\+\+O\+C\+C\+U\+R\+S\+\_\+\+IN@{B\+Q\+B\+\_\+\+O\+C\+C\+U\+R\+S\+\_\+\+IN}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!B\+Q\+B\+\_\+\+O\+C\+C\+U\+R\+S\+\_\+\+IN@{B\+Q\+B\+\_\+\+O\+C\+C\+U\+R\+S\+\_\+\+IN}}}\mbox{\Hypertarget{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a46444cce34ddd420f2de2b3f5e7fbc29}\label{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a46444cce34ddd420f2de2b3f5e7fbc29}} 
+B\+Q\+B\+\_\+\+O\+C\+C\+U\+R\+S\+\_\+\+IN&The biological entity represented by the object in the model is physically limited to a location. The location is the subject of the referenced resource. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+Q\+B\+\_\+\+H\+A\+S\+\_\+\+P\+R\+O\+P\+E\+R\+TY@{B\+Q\+B\+\_\+\+H\+A\+S\+\_\+\+P\+R\+O\+P\+E\+R\+TY}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!B\+Q\+B\+\_\+\+H\+A\+S\+\_\+\+P\+R\+O\+P\+E\+R\+TY@{B\+Q\+B\+\_\+\+H\+A\+S\+\_\+\+P\+R\+O\+P\+E\+R\+TY}}}\mbox{\Hypertarget{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a5ad39b91f5dc72d1239050ed2b376349}\label{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a5ad39b91f5dc72d1239050ed2b376349}} 
+B\+Q\+B\+\_\+\+H\+A\+S\+\_\+\+P\+R\+O\+P\+E\+R\+TY&The subject of the referenced resource is a property of the biological entity represented by the model element. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+Q\+B\+\_\+\+I\+S\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+OF@{B\+Q\+B\+\_\+\+I\+S\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+OF}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!B\+Q\+B\+\_\+\+I\+S\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+OF@{B\+Q\+B\+\_\+\+I\+S\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+OF}}}\mbox{\Hypertarget{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a2d22926cce3d10f8d9e8eda609225c02}\label{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a2d22926cce3d10f8d9e8eda609225c02}} 
+B\+Q\+B\+\_\+\+I\+S\+\_\+\+P\+R\+O\+P\+E\+R\+T\+Y\+\_\+\+OF&The biological entity represented by the object in the model is a property of the referenced resource. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+Q\+B\+\_\+\+H\+A\+S\+\_\+\+T\+A\+X\+ON@{B\+Q\+B\+\_\+\+H\+A\+S\+\_\+\+T\+A\+X\+ON}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!B\+Q\+B\+\_\+\+H\+A\+S\+\_\+\+T\+A\+X\+ON@{B\+Q\+B\+\_\+\+H\+A\+S\+\_\+\+T\+A\+X\+ON}}}\mbox{\Hypertarget{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a5e706485e6530223de8ad248ceead23d}\label{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18a5e706485e6530223de8ad248ceead23d}} 
+B\+Q\+B\+\_\+\+H\+A\+S\+\_\+\+T\+A\+X\+ON&The biological entity represented by the object in the model is taxonomically restricted, where the restriction is the subject of the referenced resource. This relation may be used to ascribe a species restriction to a biochemical reaction. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+Q\+B\+\_\+\+U\+N\+K\+N\+O\+WN@{B\+Q\+B\+\_\+\+U\+N\+K\+N\+O\+WN}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!B\+Q\+B\+\_\+\+U\+N\+K\+N\+O\+WN@{B\+Q\+B\+\_\+\+U\+N\+K\+N\+O\+WN}}}\mbox{\Hypertarget{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18af1cf563d5624cd63df7777702421046b}\label{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18af1cf563d5624cd63df7777702421046b}} 
+B\+Q\+B\+\_\+\+U\+N\+K\+N\+O\+WN&The relationship is unknown. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{_c_v_term_8h_a969edcb49472d95685722a541f391d9d}\label{_c_v_term_8h_a969edcb49472d95685722a541f391d9d}} 
+\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!Model\+Qualifier\+Type\+\_\+t@{Model\+Qualifier\+Type\+\_\+t}}
+\index{Model\+Qualifier\+Type\+\_\+t@{Model\+Qualifier\+Type\+\_\+t}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}
+\subsubsection{\texorpdfstring{Model\+Qualifier\+Type\+\_\+t}{ModelQualifierType\_t}}
+{\footnotesize\ttfamily enum \hyperlink{_c_v_term_8h_a969edcb49472d95685722a541f391d9d}{Model\+Qualifier\+Type\+\_\+t}}
+
+Enumeration of possible {\itshape model qualifiers} used for annotations. Annotations with this type of qualifier express a relationship between an annotation resource and the {\itshape modeling concept} represented by a given object in the model. The diagram below illustrates the relationship in this case\+:
+
+
+\begin{DoxyImage}
+\includegraphics[width=\textwidth,height=\textheight/2,keepaspectratio=true]{model-qualifiers.png}
+\doxyfigcaption{Relationship expressed by model qualifiers}
+\end{DoxyImage}
+~\newline
+ \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+Q\+M\+\_\+\+IS@{B\+Q\+M\+\_\+\+IS}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!B\+Q\+M\+\_\+\+IS@{B\+Q\+M\+\_\+\+IS}}}\mbox{\Hypertarget{_c_v_term_8h_a969edcb49472d95685722a541f391d9da1e8e69b3f23d42bc90a98cbbba161742}\label{_c_v_term_8h_a969edcb49472d95685722a541f391d9da1e8e69b3f23d42bc90a98cbbba161742}} 
+B\+Q\+M\+\_\+\+IS&The modeling entity represented by the object in the model is identical to the subject of the referenced resource. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+Q\+M\+\_\+\+I\+S\+\_\+\+D\+E\+S\+C\+R\+I\+B\+E\+D\+\_\+\+BY@{B\+Q\+M\+\_\+\+I\+S\+\_\+\+D\+E\+S\+C\+R\+I\+B\+E\+D\+\_\+\+BY}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!B\+Q\+M\+\_\+\+I\+S\+\_\+\+D\+E\+S\+C\+R\+I\+B\+E\+D\+\_\+\+BY@{B\+Q\+M\+\_\+\+I\+S\+\_\+\+D\+E\+S\+C\+R\+I\+B\+E\+D\+\_\+\+BY}}}\mbox{\Hypertarget{_c_v_term_8h_a969edcb49472d95685722a541f391d9dae671899d0b3e9844e5855c694cfb9f8b}\label{_c_v_term_8h_a969edcb49472d95685722a541f391d9dae671899d0b3e9844e5855c694cfb9f8b}} 
+B\+Q\+M\+\_\+\+I\+S\+\_\+\+D\+E\+S\+C\+R\+I\+B\+E\+D\+\_\+\+BY&The modeling entity represented by the object in the model is described by the subject of the referenced resource. For example, this relationship could be used to link a model element to a document (such as a paper published in the literature) describing the element. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+Q\+M\+\_\+\+I\+S\+\_\+\+D\+E\+R\+I\+V\+E\+D\+\_\+\+F\+R\+OM@{B\+Q\+M\+\_\+\+I\+S\+\_\+\+D\+E\+R\+I\+V\+E\+D\+\_\+\+F\+R\+OM}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!B\+Q\+M\+\_\+\+I\+S\+\_\+\+D\+E\+R\+I\+V\+E\+D\+\_\+\+F\+R\+OM@{B\+Q\+M\+\_\+\+I\+S\+\_\+\+D\+E\+R\+I\+V\+E\+D\+\_\+\+F\+R\+OM}}}\mbox{\Hypertarget{_c_v_term_8h_a969edcb49472d95685722a541f391d9dae4caa25fc006b084395ee1403b6e8a53}\label{_c_v_term_8h_a969edcb49472d95685722a541f391d9dae4caa25fc006b084395ee1403b6e8a53}} 
+B\+Q\+M\+\_\+\+I\+S\+\_\+\+D\+E\+R\+I\+V\+E\+D\+\_\+\+F\+R\+OM&The modeling entity represented by the object in the model is derived from or adapted from the referenced resource. This relation could be used, for instance, to express a refinement or adaptation in usage of a model component located elsewere. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+Q\+M\+\_\+\+I\+S\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+OF@{B\+Q\+M\+\_\+\+I\+S\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+OF}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!B\+Q\+M\+\_\+\+I\+S\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+OF@{B\+Q\+M\+\_\+\+I\+S\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+OF}}}\mbox{\Hypertarget{_c_v_term_8h_a969edcb49472d95685722a541f391d9da435347531d0e79a0dbcedb3dcbe18612}\label{_c_v_term_8h_a969edcb49472d95685722a541f391d9da435347531d0e79a0dbcedb3dcbe18612}} 
+B\+Q\+M\+\_\+\+I\+S\+\_\+\+I\+N\+S\+T\+A\+N\+C\+E\+\_\+\+OF&The modeling entity represented by the object in the model is is an instance of the subject of the referenced resource. For instance, this qualifier might be used to link a specific model with its generic form. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+Q\+M\+\_\+\+H\+A\+S\+\_\+\+I\+N\+S\+T\+A\+N\+CE@{B\+Q\+M\+\_\+\+H\+A\+S\+\_\+\+I\+N\+S\+T\+A\+N\+CE}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!B\+Q\+M\+\_\+\+H\+A\+S\+\_\+\+I\+N\+S\+T\+A\+N\+CE@{B\+Q\+M\+\_\+\+H\+A\+S\+\_\+\+I\+N\+S\+T\+A\+N\+CE}}}\mbox{\Hypertarget{_c_v_term_8h_a969edcb49472d95685722a541f391d9da5d8997aec45063bf407d118d7800f856}\label{_c_v_term_8h_a969edcb49472d95685722a541f391d9da5d8997aec45063bf407d118d7800f856}} 
+B\+Q\+M\+\_\+\+H\+A\+S\+\_\+\+I\+N\+S\+T\+A\+N\+CE&The modeling entity represented by the object in the model has for instance (is a class of) the subject of the referenced resource. For instance, this qualifier might be used to link a generic model with its specific forms. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+Q\+M\+\_\+\+U\+N\+K\+N\+O\+WN@{B\+Q\+M\+\_\+\+U\+N\+K\+N\+O\+WN}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!B\+Q\+M\+\_\+\+U\+N\+K\+N\+O\+WN@{B\+Q\+M\+\_\+\+U\+N\+K\+N\+O\+WN}}}\mbox{\Hypertarget{_c_v_term_8h_a969edcb49472d95685722a541f391d9da8b1e2ab645e23a7f1c5dfde0b85e1b25}\label{_c_v_term_8h_a969edcb49472d95685722a541f391d9da8b1e2ab645e23a7f1c5dfde0b85e1b25}} 
+B\+Q\+M\+\_\+\+U\+N\+K\+N\+O\+WN&The relationship is unknown. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{_c_v_term_8h_ac2fb398f257edf4edd04e795f878abc5}\label{_c_v_term_8h_ac2fb398f257edf4edd04e795f878abc5}} 
+\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!Qualifier\+Type\+\_\+t@{Qualifier\+Type\+\_\+t}}
+\index{Qualifier\+Type\+\_\+t@{Qualifier\+Type\+\_\+t}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}
+\subsubsection{\texorpdfstring{Qualifier\+Type\+\_\+t}{QualifierType\_t}}
+{\footnotesize\ttfamily enum \hyperlink{_c_v_term_8h_ac2fb398f257edf4edd04e795f878abc5}{Qualifier\+Type\+\_\+t}}
+
+Enumeration used to indicate the type of \href{http://co.mbine.org/standards/qualifiers/}{\tt Bio\+Models.\+net} qualifier in a given \hyperlink{class_c_v_term}{C\+V\+Term} object. The qualification of an annotation is important to convey the relationship between a given model component and the resource used to annotate it. This relationship is rarely one-\/to-\/one, and the information content of an annotation is greatly increased if one knows what it represents (as opposed to knowing merely that the two \char`\"{}are related
+somehow\char`\"{}).
+
+In the S\+B\+M\+L/\+M\+I\+R\+I\+A\+M/\+Bio\+Models.\+net scheme of things, there are currently two kinds of qualifiers. They are used for different purposes. One purpose is in the refinement of the relationship between an annotation resource and the {\itshape modeling concept} represented by a model element. The second purpose is in the refinement of the relationship between an annotation resource and the {\itshape biological object} represented by a model element. In lib\+S\+B\+ML, each of these two categories of qualifiers have their own set of constants\+: those whose names begin with {\ttfamily B\+Q\+M\+\_\+} for the former type, and those whose names begin with {\ttfamily B\+Q\+B\+\_\+} for the latter..
+
+One can view the annotation of a model component as a statement in the form of a {\itshape triple}. The resource used in the annotation is the {\itshape object}, while the qualifier is the {\itshape predicate}. In situations where a model qualifier is used, the {\itshape subject} of the relation is the modeling concept represented by the model component referenced by the annotation. The modeling concept may be the model itself, a mathematical construct, or a hypothesis that is proposed, changing the way we previously understood the model, etc. Conversely, in situations where a biology qualifier is used, the {\itshape subject} of the relation is the biological or biochemical object represented by the enclosing model element. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+O\+D\+E\+L\+\_\+\+Q\+U\+A\+L\+I\+F\+I\+ER@{M\+O\+D\+E\+L\+\_\+\+Q\+U\+A\+L\+I\+F\+I\+ER}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!M\+O\+D\+E\+L\+\_\+\+Q\+U\+A\+L\+I\+F\+I\+ER@{M\+O\+D\+E\+L\+\_\+\+Q\+U\+A\+L\+I\+F\+I\+ER}}}\mbox{\Hypertarget{_c_v_term_8h_ac2fb398f257edf4edd04e795f878abc5a212caf1da8ffd70753c854a0458d9c79}\label{_c_v_term_8h_ac2fb398f257edf4edd04e795f878abc5a212caf1da8ffd70753c854a0458d9c79}} 
+M\+O\+D\+E\+L\+\_\+\+Q\+U\+A\+L\+I\+F\+I\+ER&The qualifier is a model qualifier. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\+I\+O\+L\+O\+G\+I\+C\+A\+L\+\_\+\+Q\+U\+A\+L\+I\+F\+I\+ER@{B\+I\+O\+L\+O\+G\+I\+C\+A\+L\+\_\+\+Q\+U\+A\+L\+I\+F\+I\+ER}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!B\+I\+O\+L\+O\+G\+I\+C\+A\+L\+\_\+\+Q\+U\+A\+L\+I\+F\+I\+ER@{B\+I\+O\+L\+O\+G\+I\+C\+A\+L\+\_\+\+Q\+U\+A\+L\+I\+F\+I\+ER}}}\mbox{\Hypertarget{_c_v_term_8h_ac2fb398f257edf4edd04e795f878abc5a4d9f621f4a6b81ecab0499b8e995f9ff}\label{_c_v_term_8h_ac2fb398f257edf4edd04e795f878abc5a4d9f621f4a6b81ecab0499b8e995f9ff}} 
+B\+I\+O\+L\+O\+G\+I\+C\+A\+L\+\_\+\+Q\+U\+A\+L\+I\+F\+I\+ER&The qualifier is a biological qualifier. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+N\+K\+N\+O\+W\+N\+\_\+\+Q\+U\+A\+L\+I\+F\+I\+ER@{U\+N\+K\+N\+O\+W\+N\+\_\+\+Q\+U\+A\+L\+I\+F\+I\+ER}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!U\+N\+K\+N\+O\+W\+N\+\_\+\+Q\+U\+A\+L\+I\+F\+I\+ER@{U\+N\+K\+N\+O\+W\+N\+\_\+\+Q\+U\+A\+L\+I\+F\+I\+ER}}}\mbox{\Hypertarget{_c_v_term_8h_ac2fb398f257edf4edd04e795f878abc5a5a56e414a1f5ecad18d93f6975a58fd4}\label{_c_v_term_8h_ac2fb398f257edf4edd04e795f878abc5a5a56e414a1f5ecad18d93f6975a58fd4}} 
+U\+N\+K\+N\+O\+W\+N\+\_\+\+Q\+U\+A\+L\+I\+F\+I\+ER&The qualifier has not been set or is unknown. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_c_v_term_8h_aae844c95e702cdaf516d7528b26db3de}\label{_c_v_term_8h_aae844c95e702cdaf516d7528b26db3de}} 
+\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!Biol\+Qualifier\+Type\+\_\+from\+String@{Biol\+Qualifier\+Type\+\_\+from\+String}}
+\index{Biol\+Qualifier\+Type\+\_\+from\+String@{Biol\+Qualifier\+Type\+\_\+from\+String}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}
+\subsubsection{\texorpdfstring{Biol\+Qualifier\+Type\+\_\+from\+String()}{BiolQualifierType\_fromString()}}
+{\footnotesize\ttfamily \hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} \hyperlink{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18}{Biol\+Qualifier\+Type\+\_\+t} Biol\+Qualifier\+Type\+\_\+from\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s }\end{DoxyParamCaption})}
+
+This method takes a a string and returns a biol qualifier representing the string.
+
+This method takes a string as argument and returns a biol qualifier type corresponding to that string. For example, passing it the string {\ttfamily \char`\"{}has\+Version\char`\"{}} will return the qualifier {\ttfamily B\+Q\+B\+\_\+\+H\+A\+S\+\_\+\+V\+E\+R\+S\+I\+ON}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & the string to translate to a lib\+S\+B\+ML constant value representing a biological qualifier.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a lib\+S\+B\+ML qualifier enumeration value for the given human readable qualifier name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_c_v_term_8h_a82b0261d50ba41010700e6a83d294b6a}\label{_c_v_term_8h_a82b0261d50ba41010700e6a83d294b6a}} 
+\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!Biol\+Qualifier\+Type\+\_\+to\+String@{Biol\+Qualifier\+Type\+\_\+to\+String}}
+\index{Biol\+Qualifier\+Type\+\_\+to\+String@{Biol\+Qualifier\+Type\+\_\+to\+String}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}
+\subsubsection{\texorpdfstring{Biol\+Qualifier\+Type\+\_\+to\+String()}{BiolQualifierType\_toString()}}
+{\footnotesize\ttfamily \hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} const char$\ast$ Biol\+Qualifier\+Type\+\_\+to\+String (\begin{DoxyParamCaption}\item[{\hyperlink{_c_v_term_8h_a7dbfb6956b3be9e61e65509cb2052f18}{Biol\+Qualifier\+Type\+\_\+t}}]{type }\end{DoxyParamCaption})}
+
+This method takes a biol qualifier type code and returns a string representing the code.
+
+This method takes a biol qualifier type as argument and returns a string name corresponding to that code. For example, passing it the qualifier {\ttfamily B\+Q\+B\+\_\+\+H\+A\+S\+\_\+\+V\+E\+R\+S\+I\+ON} will return the string {\ttfamily \char`\"{}has\+Version\char`\"{}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & the value to translate. The value should be a constant whose name begins with {\ttfamily B\+Q\+B\+\_\+}, such as (for example) \{B\+Q\+B\+\_\+\+IS, Biol\+Qualifier\+Type\+\_\+t\}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a human readable qualifier name for the given type.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The caller does not own the returned string and is therefore not allowed to modify it. 
+\end{DoxyNote}
+\mbox{\Hypertarget{_c_v_term_8h_ad4db5b05d40e428077f122a734d390b2}\label{_c_v_term_8h_ad4db5b05d40e428077f122a734d390b2}} 
+\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!Model\+Qualifier\+Type\+\_\+from\+String@{Model\+Qualifier\+Type\+\_\+from\+String}}
+\index{Model\+Qualifier\+Type\+\_\+from\+String@{Model\+Qualifier\+Type\+\_\+from\+String}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}
+\subsubsection{\texorpdfstring{Model\+Qualifier\+Type\+\_\+from\+String()}{ModelQualifierType\_fromString()}}
+{\footnotesize\ttfamily \hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} \hyperlink{_c_v_term_8h_a969edcb49472d95685722a541f391d9d}{Model\+Qualifier\+Type\+\_\+t} Model\+Qualifier\+Type\+\_\+from\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s }\end{DoxyParamCaption})}
+
+This method takes a a string and returns a model qualifier representing the string.
+
+This method takes a string as argument and returns a model qualifier type corresponding to that string. For example, passing it the string {\ttfamily \char`\"{}is\+Described\+By\char`\"{}} will return the qualifier {\ttfamily B\+Q\+M\+\_\+\+I\+S\+\_\+\+D\+E\+S\+C\+R\+I\+B\+E\+D\+\_\+\+BY}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & the string to translate to a lib\+S\+B\+ML constant value representing a model qualifier.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a lib\+S\+B\+ML qualifier enumeration value for the given human readable qualifier name. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_c_v_term_8h_ae5a6cec1d8bdfcae5736807adf6afb7b}\label{_c_v_term_8h_ae5a6cec1d8bdfcae5736807adf6afb7b}} 
+\index{C\+V\+Term.\+h@{C\+V\+Term.\+h}!Model\+Qualifier\+Type\+\_\+to\+String@{Model\+Qualifier\+Type\+\_\+to\+String}}
+\index{Model\+Qualifier\+Type\+\_\+to\+String@{Model\+Qualifier\+Type\+\_\+to\+String}!C\+V\+Term.\+h@{C\+V\+Term.\+h}}
+\subsubsection{\texorpdfstring{Model\+Qualifier\+Type\+\_\+to\+String()}{ModelQualifierType\_toString()}}
+{\footnotesize\ttfamily \hyperlink{libsbml-namespace_8h_ab1841eceb76d5f2baade2e6b6ffec7c1}{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+P\+P\+\_\+\+N\+A\+M\+E\+S\+P\+A\+C\+E\+\_\+\+E\+ND} \hyperlink{libsbml-namespace_8h_a41d9f1012efdaa799c31e8e4ddde0fbd}{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+P\+P\+\_\+\+N\+A\+M\+E\+S\+P\+A\+C\+E\+\_\+\+B\+E\+G\+IN} \hyperlink{libstructural_8h_a004aeed0f22bd5ee77b75a434e2e2a30}{B\+E\+G\+I\+N\+\_\+\+C\+\_\+\+D\+E\+C\+LS} \hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} const char$\ast$ Model\+Qualifier\+Type\+\_\+to\+String (\begin{DoxyParamCaption}\item[{\hyperlink{_c_v_term_8h_a969edcb49472d95685722a541f391d9d}{Model\+Qualifier\+Type\+\_\+t}}]{type }\end{DoxyParamCaption})}
+
+This method takes a model qualifier type code and returns a string representing the code.
+
+This method takes a model qualifier type as argument and returns a string name corresponding to that code. For example, passing it the qualifier {\ttfamily B\+Q\+M\+\_\+\+I\+S\+\_\+\+D\+E\+S\+C\+R\+I\+B\+E\+D\+\_\+\+BY} will return the string {\ttfamily \char`\"{}is\+Described\+By\char`\"{}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & the value to translate. The value should be a lib\+S\+B\+ML constant whose name begins with {\ttfamily B\+Q\+M\+\_\+}, such as (for example) \{B\+Q\+M\+\_\+\+IS, Biol\+Qualifier\+Type\+\_\+t\}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a human readable qualifier name for the given qualifier type.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The caller does not own the returned string and is therefore not allowed to modify it. 
+\end{DoxyNote}

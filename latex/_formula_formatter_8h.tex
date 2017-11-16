@@ -1,0 +1,78 @@
+\hypertarget{_formula_formatter_8h}{}\section{Formula\+Formatter.\+h File Reference}
+\label{_formula_formatter_8h}\index{Formula\+Formatter.\+h@{Formula\+Formatter.\+h}}
+
+
+Formats an A\+ST formula tree as an S\+B\+ML formula string.  
+
+
+{\ttfamily \#include $<$sbml/common/extern.\+h$>$}\newline
+{\ttfamily \#include $<$sbml/util/\+String\+Buffer.\+h$>$}\newline
+{\ttfamily \#include $<$sbml/math/\+A\+S\+T\+Node.\+h$>$}\newline
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{libsbml-namespace_8h_a41d9f1012efdaa799c31e8e4ddde0fbd}{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+P\+P\+\_\+\+N\+A\+M\+E\+S\+P\+A\+C\+E\+\_\+\+B\+E\+G\+IN} \hyperlink{libstructural_8h_a004aeed0f22bd5ee77b75a434e2e2a30}{B\+E\+G\+I\+N\+\_\+\+C\+\_\+\+D\+E\+C\+LS} \hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} char $\ast$ \hyperlink{_formula_formatter_8h_a33fa76f0ec1fed628d8e46643d58b2f8}{S\+B\+M\+L\+\_\+formula\+To\+String} (const \hyperlink{sbmlfwd_8h_addddfd009cab31c5e3e1fd5fdbcb9efa}{A\+S\+T\+Node\+\_\+t} $\ast$tree)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Formats an A\+ST formula tree as an S\+B\+ML formula string. 
+
+\begin{DoxyAuthor}{Author}
+Ben Bornstein 
+\end{DoxyAuthor}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_formula_formatter_8h_a33fa76f0ec1fed628d8e46643d58b2f8}\label{_formula_formatter_8h_a33fa76f0ec1fed628d8e46643d58b2f8}} 
+\index{Formula\+Formatter.\+h@{Formula\+Formatter.\+h}!S\+B\+M\+L\+\_\+formula\+To\+String@{S\+B\+M\+L\+\_\+formula\+To\+String}}
+\index{S\+B\+M\+L\+\_\+formula\+To\+String@{S\+B\+M\+L\+\_\+formula\+To\+String}!Formula\+Formatter.\+h@{Formula\+Formatter.\+h}}
+\subsubsection{\texorpdfstring{S\+B\+M\+L\+\_\+formula\+To\+String()}{SBML\_formulaToString()}}
+{\footnotesize\ttfamily \hyperlink{libsbml-namespace_8h_a41d9f1012efdaa799c31e8e4ddde0fbd}{L\+I\+B\+S\+B\+M\+L\+\_\+\+C\+P\+P\+\_\+\+N\+A\+M\+E\+S\+P\+A\+C\+E\+\_\+\+B\+E\+G\+IN} \hyperlink{libstructural_8h_a004aeed0f22bd5ee77b75a434e2e2a30}{B\+E\+G\+I\+N\+\_\+\+C\+\_\+\+D\+E\+C\+LS} \hyperlink{extern_8h_a8e9e5118f0c55d410f8bc217f2954dbf}{L\+I\+B\+S\+B\+M\+L\+\_\+\+E\+X\+T\+E\+RN} char$\ast$ S\+B\+M\+L\+\_\+formula\+To\+String (\begin{DoxyParamCaption}\item[{const \hyperlink{sbmlfwd_8h_addddfd009cab31c5e3e1fd5fdbcb9efa}{A\+S\+T\+Node\+\_\+t} $\ast$}]{tree }\end{DoxyParamCaption})}
+
+Converts an A\+ST to a text string representation of a formula using a basic syntax derived from S\+B\+ML Level~1.
+
+\begin{DoxyParagraph}{}
+The text-\/string form of mathematical formulas produced by \{formula\+To\+String, \hyperlink{class_a_s_t_node}{A\+S\+T\+Node}\} and read by \{parse\+Formula, String\} use a simple C-\/inspired infix notation taken from S\+B\+ML Level~1. A formula in this text-\/string form therefore can be handed to a program that understands S\+B\+ML Level~1 mathematical expressions, or used as part of a formula translation system. The syntax is described in detail in the documentation for \hyperlink{class_a_s_t_node}{A\+S\+T\+Node}. The following are illustrative examples of formulas expressed using this syntax\+: \begin{DoxyVerb}0.10 * k4^2
+\end{DoxyVerb}
+ \begin{DoxyVerb}(vm * s1)/(km + s1)
+\end{DoxyVerb}
+
+\end{DoxyParagraph}
+Note that this facility is provided as a convenience by lib\+S\+B\+ML---the Math\+ML standard does not actually define a \char`\"{}string-\/form\char`\"{} equivalent to Math\+ML expression trees, so the choice of formula syntax is somewhat arbitrary. The approach taken by lib\+S\+B\+ML is to use the syntax defined by S\+B\+ML Level~1 (which in fact used a text-\/string representation of formulas and not Math\+ML). This formula syntax is based mostly on C programming syntax, and may contain operators, function calls, symbols, and white space characters. The following table provides the precedence rules for the different entities that may appear in formula strings.
+
+
+
+In the table above, {\itshape operand} implies the construct is an operand, {\itshape prefix} implies the operation is applied to the following arguments, {\itshape unary} implies there is one argument, and {\itshape binary} implies there are two arguments. The values in the {\bfseries Precedence} column show how the order of different types of operation are determined. For example, the expression {\ttfamily a $\ast$ b + c} is evaluated as {\ttfamily (a $\ast$ b) + c} because the {\ttfamily $\ast$} operator has higher precedence. The {\bfseries Associates} column shows how the order of similar precedence operations is determined; for example, {\ttfamily a -\/ b + c} is evaluated as {\ttfamily (a -\/ b) + c} because the {\ttfamily +} and {\ttfamily -\/} operators are left-\/associative.
+
+The function call syntax consists of a function name, followed by optional white space, followed by an opening parenthesis token, followed by a sequence of zero or more arguments separated by commas (with each comma optionally preceded and/or followed by zero or more white space characters, followed by a closing parenthesis token. The function name must be chosen from one of the pre-\/defined functions in S\+B\+ML or a user-\/defined function in the model. The following table lists the names of certain common mathematical functions; this table corresponds to Table~6 in the \href{http://sbml.org/Documents/Specifications#SBML_Level_1_Version_2}{\tt S\+B\+ML Level~1 Version~2 specification}\+:
+
+
+
+\begin{DoxyWarning}{Warning}
+There are differences between the symbols used to represent the common mathematical functions and the corresponding Math\+ML token names. This is a potential source of incompatibilities. Note in particular that in this text-\/string syntax, {\ttfamily log(x)} represents the natural logarithm, whereas in Math\+ML, the natural logarithm is {\ttfamily $<$ln/$>$}. Application writers are urged to be careful when translating between text forms and Math\+ML forms, especially if they provide a direct text-\/string input facility to users of their software systems.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & the A\+ST to be converted.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the formula from the given A\+ST as a text-\/string mathematical formula oriented towards S\+B\+ML Level~1. The caller owns the returned string and is responsible for freeing it when it is no longer needed.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\{formula\+To\+L3\+String, \hyperlink{class_a_s_t_node}{A\+S\+T\+Node}\} 
+
+\{formula\+To\+L3\+String\+With\+Settings, \hyperlink{class_a_s_t_node}{A\+S\+T\+Node}\textbackslash{}, \hyperlink{class_l3_parser_settings}{L3\+Parser\+Settings}\} 
+
+\{parse\+L3\+Formula\+With\+Settings, String\textbackslash{}, \hyperlink{class_l3_parser_settings}{L3\+Parser\+Settings}\} 
+
+\{parse\+L3\+Formula\+With\+Model, String\textbackslash{}, \hyperlink{class_model}{Model}\} 
+
+\{parse\+Formula, String\}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+Callers using S\+B\+ML Level~3 are encouraged to use the facilities provided by lib\+S\+B\+ML\textquotesingle{}s newer and more powerful Level~3-\/oriented formula parser and formatter. The entry points to this second system are \{parse\+L3\+Formula, String\} and \{formula\+To\+L3\+String, \hyperlink{class_a_s_t_node}{A\+S\+T\+Node}\}. The Level~1-\/oriented system (i.\+e., what is provided by \{formula\+To\+String, String\} and \{parse\+Formula, \hyperlink{class_a_s_t_node}{A\+S\+T\+Node}\}) is provided untouched for backwards compatibility.
+
+We urge developers to keep in mind that the text-\/string formula syntax is specific to lib\+S\+B\+ML. {\itshape Neither Math\+ML nor S\+B\+ML define a text-\/string format for mathematical formulas.} Lib\+S\+B\+ML\textquotesingle{}s particular syntax should not be considered to be a canonical or standard general-\/purpose mathematical expression syntax. Lib\+S\+B\+ML provides methods for parsing and transforming text-\/string math formulas back and forth from A\+ST structures for the convenience of calling applications, but it is important to keep the system\textquotesingle{}s limitations in mind. 
+\end{DoxyNote}

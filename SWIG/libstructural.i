@@ -2,12 +2,14 @@
 
 // #pragma SWIG nowarn=516
 
+%feature("autodoc", "1");
 %inline
 %{
 #include "libstructural.h"
 #include "util.h"
 #include "libla.h"
 %}
+
 
 %rename (_my_loadStoichiometryMatrix) loadStoichiometryMatrix;
 %rename (_my_rref) rref;
@@ -28,7 +30,6 @@
 %rename (_my_getK0Matrix) getK0Matrix;
 %rename (_my_getKMatrix) getKMatrix;
 %rename (_my_getL0Matrix) getL0Matrix;
-%rename (_my_getLinkMatrix) getLinkMatrix;
 %rename (_my_getN0Matrix) getN0Matrix;
 %rename (_my_getNDCMatrix) getNDCMatrix;
 %rename (_my_getNICMatrix) getNICMatrix;
@@ -56,6 +57,7 @@
 %include "stl.i"
 %include "std_vector.i"
 %include "exception.i"
+%include "st_docstrings.i"
 
 %template(StringDouble) std::pair<std::string,double>;
 %template(StrDoubleVector) std::vector< std::pair<std::string,double> >;
@@ -180,24 +182,60 @@
 
 %pythoncode %{
 	def getStoichiometryMatrix(self):
+		"""
+		Returns the original, unaltered stoichiometry matrix.
+		"""
 		return self._my_getStoichiometryMatrix().toNumpy()
 		
 	def getColumnReorderedNrMatrix(self):
+		"""
+		Returns the Nr Matrix repartitioned into NIC (independent columns) and NDC (dependent columns).
+		"""
 		return self._my_getColumnReorderedNrMatrix().toNumpy()
 		
 	def getFullyReorderedN0StoichiometryMatrix(self):
+		"""
+		Returns the N0 Matrix.
+		The rows of the Nr matrix will be linearly Dependent.
+		"""
 		return self._my_getFullyReorderedN0StoichiometryMatrix().toNumpy()
 	
 	def getFullyReorderedNrMatrix(self):
+		"""
+		Returns the Nr Matrix.
+		"""
 		return self._my_getFullyReorderedNrMatrix().toNumpy()
 		
 	def getFullyReorderedStoichiometryMatrix(self):
+		"""
+		Returns the fully reordered stoichiometry matrix (row and column reordered stoichiometry matrix)
+		"""
 		return self._my_getFullyReorderedStoichiometryMatrix().toNumpy()
 		
 	def getGammaMatrix(self):
+		"""
+		Returns Gamma, the conservation law array.
+		Each row represents a single conservation law where the column indicate the 
+		participating molecular species. The number of rows is therefore equal to the 
+		number of conservation laws. Columns are ordered according to the rows in the 
+		reordered stoichiometry matrix, see ::LibStructural_getReorderedSpeciesId and 
+		::LibStructural_getReorderedStoichiometryMatrix. 
+
+		\param outMatrix a pointer to a double array that holds the output
+		\param outRows will be overwritten with the number of rows
+		\param outCols will be overwritten with the number of columns.
+
+		\return The return value will be zero (0) when successful, and negative (-1) in case
+		no stoichiometry matrix was loaded beforehand or none of the analysis methods has 
+		been called yet.
+
+		\remarks To free the returned matrix call ::LibStructural_freeMatrix with the outMatrix 
+		and outRows as parameter.
+		"""
 		return self._my_getGammaMatrix().toNumpy()
 		
 	def getGammaMatrixGJ(self,oMatrix):
+
 		import numpy as np
 
 		if (type(oMatrix) is list or type(oMatrix) is np.ndarray):
@@ -217,35 +255,126 @@
 		
 		
 	def getK0Matrix(self):
+		"""
+		Returns the K0 Matrix. 
+		K0 is defined such that K0 = -(NIC)^-1 NDC, or equivalently, [NDC NIC][I K0]' = 0 where [NDC NIC] = Nr
+		"""
 		return self._my_getK0Matrix().toNumpy()
 		
 	def getKMatrix(self):
+		"""
+		Returns the K matrix (right nullspace of Nr) 
+		The K matrix has the structure, [I K0]' 
+		"""
 		return self._my_getKMatrix().toNumpy()
 	
 	def getL0Matrix(self):
+		"""
+		Returns the L0 Matrix. 
+
+		L0 is defined such that  L0 Nr = N0. L0 forms part of the link matrix, L.  N0 is the set of 
+		linear dependent rows from the lower portion of the reordered stoichiometry matrix.
+
+		\param outMatrix a pointer to a double array that holds the output
+		\param outRows will be overwritten with the number of rows
+		\param outCols will be overwritten with the number of columns.
+
+		\return The return value will be zero (0) when successful, and negative (-1) in case
+		no stoichiometry matrix was loaded beforehand or none of the analysis methods have 
+		been called yet.
+
+		\remarks To free the returned matrix call ::LibStructural_freeMatrix with the outMatrix 
+		and outRows as parameter.
+		"""
 		return self._my_getL0Matrix().toNumpy()
 		
 	def getLinkMatrix(self):
-		return self._my_getLinkMatrix().toNumpy()
+		"""
+		Returns L, the Link Matrix, left nullspace (aka nullspace of the transpose Nr). 
+
+		L will have the structure, [I L0]', such that L Nr  = N
+
+		\param outMatrix a pointer to a double array that holds the output
+		\param outRows will be overwritten with the number of rows
+		\param outCols will be overwritten with the number of columns.
+
+		\return The return value will be zero (0) when successful, and negative (-1) in case
+		no stoichiometry matrix was loaded beforehand or none of the analysis methods has 
+		been called yet.
+
+		\remarks To free the returned matrix call ::LibStructural_freeMatrix with the outMatrix 
+		and outRows as parameter.
+		"""
+		return self.getLinkMatrix().toNumpy()
 		
 	def getN0Matrix(self):
+		"""
+		Returns the N0 Matrix. 
+		The N0 matrix is the set of linearly dependent rows of N where L0 Nr = N0.
+		"""
 		return self._my_getN0Matrix().toNumpy()
 		
 	def getNDCMatrix(self):
+		"""
+		Returns the NDC Matrix (the set of linearly dependent columns of Nr).
+
+		\param outMatrix a pointer to a double array that holds the output
+		\param outRows will be overwritten with the number of rows
+		\param outCols will be overwritten with the number of columns.
+
+		\return The return value will be zero (0) when successful, and negative (-1) in case
+		no stoichiometry matrix was loaded beforehand or none of the analysis methods has 
+		been called yet.
+
+		\remarks To free the returned matrix call ::LibStructural_freeMatrix with the outMatrix 
+		and outRows as parameter.
+		"""
 		return self._my_getNDCMatrix().toNumpy()
 	
 	def getNICMatrix(self):
+		"""
+		Returns the NIC Matrix (the set of linearly independent columns of Nr)
+		"""
 		return self._my_getNICMatrix().toNumpy()
 		
 	def getNrMatrix(self):
+		"""
+		Returns the Nr Matrix. 
+		The rows of the Nr matrix will be linearly independent.
+		\param outMatrix a pointer to a double array that holds the output
+		\param outRows will be overwritten with the number of rows
+		\param outCols will be overwritten with the number of columns.
+
+		\return The return value will be zero (0) when successful, and negative (-1) in case
+		no stoichiometry matrix was loaded beforehand or none of the analysis methods has 
+		been called yet.
+
+		\remarks To free the returned matrix call ::LibStructural_freeMatrix with the outMatrix 
+		and outRows as parameter.
+		"""
 		return self._my_getNrMatrix().toNumpy()
 		
 	def getReorderedStoichiometryMatrix(self):
+		"""
+		Returns the reordered stoichiometry matrix (row reordered stoichiometry matrix, columns are not reordered!)
+
+		\param outMatrix a pointer to a double array that holds the output
+		\param outRows will be overwritten with the number of rows
+		\param outCols will be overwritten with the number of columns.
+
+		\return The return value will be zero (0) when successful, and negative (-1) in case
+		no stoichiometry matrix was loaded beforehand or none of the analysis methods has 
+		been called yet.
+
+		\remarks To free the returned matrix call ::LibStructural_freeMatrix with the outMatrix 
+		and outRows as parameter.
+		"""
 		return self._my_getReorderedStoichiometryMatrix().toNumpy()
 %}
 	
 %pythoncode %{
 	def loadStoichiometryMatrix(self, data):
+
 			import numpy as np
 
 			if (type(data) is list or type(data) is np.ndarray):
@@ -461,6 +590,7 @@
 %ignore LIB_STRUCTURAL::LibStructural::getStoichiometryMatrixLabels;
 %ignore LIB_STRUCTURAL::LibStructural::getFullyReorderedStoichiometryMatrixLabels;
 %ignore LIB_STRUCTURAL::LibStructural::getReorderedStoichiometryMatrixLabels;
+%ignore LIB_STRUCTURAL::LibStructural::getLinkMatrix;
 
 
 

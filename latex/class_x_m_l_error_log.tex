@@ -1,0 +1,22 @@
+\hypertarget{class_x_m_l_error_log}{}\section{X\+M\+L\+Error\+Log Class Reference}
+\label{class_x_m_l_error_log}\index{X\+M\+L\+Error\+Log@{X\+M\+L\+Error\+Log}}
+
+
+{\ttfamily \#include $<$X\+M\+L\+Error\+Log.\+h$>$}
+
+
+
+\subsection{Detailed Description}
+\{core\} Log of diagnostics reported during X\+ML processing.
+
+
+
+The error log is a list. The X\+ML layer of lib\+S\+B\+ML maintains an error log associated with a given X\+ML document or data stream. When an operation results in an error, or when there is something wrong with the X\+ML content, the problem is reported as an \hyperlink{class_x_m_l_error}{X\+M\+L\+Error} object stored in the \hyperlink{class_x_m_l_error_log}{X\+M\+L\+Error\+Log} list. Potential problems range from low-\/level issues (such as the inability to open a file) to X\+ML syntax errors (such as mismatched tags or other problems).
+
+A typical approach for using this error log is to first use get\+Num\+Errors() to inquire how many \hyperlink{class_x_m_l_error}{X\+M\+L\+Error} object instances it contains, and then to iterate over the list of objects one at a time using get\+Error(unsigned int n) const. Indexing in the list begins at 0.
+
+In normal circumstances, programs using lib\+S\+B\+ML will actually obtain an \hyperlink{class_s_b_m_l_error_log}{S\+B\+M\+L\+Error\+Log} rather than an \hyperlink{class_x_m_l_error_log}{X\+M\+L\+Error\+Log}. The former is subclassed from \hyperlink{class_x_m_l_error_log}{X\+M\+L\+Error\+Log} and simply wraps commands for working with \hyperlink{class_s_b_m_l_error}{S\+B\+M\+L\+Error} objects rather than the low-\/level \hyperlink{class_x_m_l_error}{X\+M\+L\+Error} objects. Classes such as \hyperlink{class_s_b_m_l_document}{S\+B\+M\+L\+Document} use the higher-\/level \hyperlink{class_s_b_m_l_error_log}{S\+B\+M\+L\+Error\+Log}. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_x_m_l_error_log_8h}{X\+M\+L\+Error\+Log.\+h}\end{DoxyCompactItemize}
