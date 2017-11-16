@@ -1,0 +1,2 @@
+.. automodule:: structural.LibStructural
+   :members:
