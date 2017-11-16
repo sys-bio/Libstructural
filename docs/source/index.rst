@@ -9,7 +9,7 @@ Welcome to Libstructural's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-
+   API
 
 
 Indices and tables
