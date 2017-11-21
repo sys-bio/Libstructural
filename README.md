@@ -1,6 +1,6 @@
 # libStructural 0.0.1
 
-**libStructural ** is an API that provides a wide variety of methods that permit access to the constraint information in the stoichiometry matrix of a biochemical reaction network. 
+**libStructural** is an API that provides a wide variety of methods that permit access to the constraint information in the stoichiometry matrix of a biochemical reaction network. 
 
 ## DOCUMENTATION
 
