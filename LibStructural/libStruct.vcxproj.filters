@@ -18,34 +18,22 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\libstruct\LibLA\complex.cpp">
+    <ClCompile Include="libstructural.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\libstruct\LibLA\libla.cpp">
+    <ClCompile Include="sbmlmodel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\libstruct\LibLA\matrix.cpp">
+    <ClCompile Include="..\LibLA\complex.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\libstruct\LibLA\util.cpp">
+    <ClCompile Include="..\LibLA\libla.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\libstruct\LibStructural\constraint.cpp">
+    <ClCompile Include="..\LibLA\matrix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\libstruct\LibStructural\libstructural.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\libstruct\LibStructural\lpresult.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\libstruct\LibStructural\objective.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\libstruct\LibStructural\sbmlmodel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\libstruct\SWIG\libstructural_wrap_python.cpp">
+    <ClCompile Include="..\LibLA\util.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -69,9 +57,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\include\libla.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\include\libstructural.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\include\libutil.h">
@@ -111,6 +96,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\include\util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\libstructural.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
