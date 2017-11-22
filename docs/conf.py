@@ -32,7 +32,7 @@ import os
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #sys.path.insert(0, os.path.abspath('.'))
 # Set Win 32bit Python 2 file as the default source.
-sys.path.append(os.path.join(os.path.dirname(__name__), '../SWIG'))
+sys.path.append(os.path.join(os.path.dirname(__name__), '../SWIG/python'))
 
 # -- General configuration ------------------------------------------------
 
@@ -272,7 +272,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'libstructural', u'Libstructural Documentation',
+    (master_doc, 'Libstructural', u'Libstructural Documentation',
      [author], 1)
 ]
 
