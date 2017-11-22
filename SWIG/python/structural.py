@@ -1001,8 +1001,10 @@ class LibStructural(_object):
     def getFullyReorderedN0StoichiometryMatrix(self):
     	"""
     	LibStructural.getFullyReorderedN0StoichiometryMatrix(self)
+
     	:returns: the N0 Matrix.
     	The rows of the Nr matrix will be linearly Dependent.
+
     	"""
     	return self._my_getFullyReorderedN0StoichiometryMatrix().toNumpy()
 
