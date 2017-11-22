@@ -4,7 +4,7 @@
 
 ## DOCUMENTATION
 
-Full documentation for libStructural is available [here](https://http://libstructural.readthedocs.io/en/latest/index.html).
+Full documentation for libStructural is available [here](https://libstructural.readthedocs.io/en/latest/index.html).
 
 ## ACKNOWLEDGEMENTS
 
