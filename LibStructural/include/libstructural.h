@@ -257,22 +257,11 @@ namespace LIB_STRUCTURAL
 			\remarks This method should only be called after ::LibStructural_loadStoichiometryMatrix
 
 			\param reactionNames a vector of reaction names (ids)
+
+			\return a result string with information about the analysis process
 		*/
 		LIB_EXTERN void loadReactionNames ( std::vector< std::string > &reactionNames);
 
-		/*! \brief Load reaction names.
-
-		This function should be used whenever labeled matrices are important as these
-		labels will be used in labeling the structural matrices. This function sets the reaction
-		names (ids).
-
-		\remarks This method should only be called after ::LibStructural_loadStoichiometryMatrix
-
-		\param reactionNames a vector of reaction names (ids)
-
-		\return a result string with information about the analysis process
-
-		*/
 		LIB_EXTERN DoubleMatrix* rref(DoubleMatrix& oMatrix, double tolerance);
 		
 		LibStructural::DoubleMatrix* LibStructural::rref_FB(DoubleMatrix &oMatrix, double tolerance);
@@ -367,7 +356,7 @@ namespace LIB_STRUCTURAL
 
 			\return a result string with information about the analysis process
 		*/
-		LIB_EXTERN std::string analyzeWithFullyPivotedLU(); 
+		/*LIB_EXTERN*/ std::string analyzeWithFullyPivotedLU(); 
 		/*! \brief Uses fully pivoted LU Decomposition for Conservation analysis
 
 			This method performs the actual analysis of the stoichiometry matrix (loaded either
@@ -1001,7 +990,7 @@ will be returned.
 no stoichiometry matrix was loaded beforehand. See ::LibStructural_loadStoichiometryMatrix
 or ::LibStructural_loadSBMLFromString or ::LibStructural_loadSBMLFromFile
 */
-LIB_EXTERN  int LibStructural_analyzeWithFullyPivotedLU(char* *outMessage, int *nLength); 
+//LIB_EXTERN  int LibStructural_analyzeWithFullyPivotedLU(char* *outMessage, int *nLength); 
 /*! \brief Uses fully pivoted LU decomposition for structural analysis
 
 This method performs the actual analysis of the stoichiometry matrix (loaded either

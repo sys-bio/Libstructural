@@ -1,6 +1,6 @@
 API
 ===================
-.. automodule:: structural.LibStructural
+.. autoclass:: structural.LibStructural
    :members:
 
    

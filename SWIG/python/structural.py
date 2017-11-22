@@ -70,7 +70,6 @@ except AttributeError:
 
 
 class SwigPyIterator(_object):
-    """Proxy of C++ swig::SwigPyIterator class"""
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, SwigPyIterator, name, value)
     __swig_getmethods__ = {}
@@ -79,96 +78,33 @@ class SwigPyIterator(_object):
     __repr__ = _swig_repr
     __swig_destroy__ = _structural.delete_SwigPyIterator
     __del__ = lambda self : None;
-    def value(self):
-        """value(SwigPyIterator self) -> PyObject *"""
-        return _structural.SwigPyIterator_value(self)
-
-    def incr(self, n=1):
-        """
-        incr(SwigPyIterator self, size_t n=1) -> SwigPyIterator
-        incr(SwigPyIterator self) -> SwigPyIterator
-        """
-        return _structural.SwigPyIterator_incr(self, n)
-
-    def decr(self, n=1):
-        """
-        decr(SwigPyIterator self, size_t n=1) -> SwigPyIterator
-        decr(SwigPyIterator self) -> SwigPyIterator
-        """
-        return _structural.SwigPyIterator_decr(self, n)
-
-    def distance(self, *args):
-        """distance(SwigPyIterator self, SwigPyIterator x) -> ptrdiff_t"""
-        return _structural.SwigPyIterator_distance(self, *args)
-
-    def equal(self, *args):
-        """equal(SwigPyIterator self, SwigPyIterator x) -> bool"""
-        return _structural.SwigPyIterator_equal(self, *args)
-
-    def copy(self):
-        """copy(SwigPyIterator self) -> SwigPyIterator"""
-        return _structural.SwigPyIterator_copy(self)
-
-    def next(self):
-        """next(SwigPyIterator self) -> PyObject *"""
-        return _structural.SwigPyIterator_next(self)
-
-    def __next__(self):
-        """__next__(SwigPyIterator self) -> PyObject *"""
-        return _structural.SwigPyIterator___next__(self)
-
-    def previous(self):
-        """previous(SwigPyIterator self) -> PyObject *"""
-        return _structural.SwigPyIterator_previous(self)
-
-    def advance(self, *args):
-        """advance(SwigPyIterator self, ptrdiff_t n) -> SwigPyIterator"""
-        return _structural.SwigPyIterator_advance(self, *args)
-
-    def __eq__(self, *args):
-        """__eq__(SwigPyIterator self, SwigPyIterator x) -> bool"""
-        return _structural.SwigPyIterator___eq__(self, *args)
-
-    def __ne__(self, *args):
-        """__ne__(SwigPyIterator self, SwigPyIterator x) -> bool"""
-        return _structural.SwigPyIterator___ne__(self, *args)
-
-    def __iadd__(self, *args):
-        """__iadd__(SwigPyIterator self, ptrdiff_t n) -> SwigPyIterator"""
-        return _structural.SwigPyIterator___iadd__(self, *args)
-
-    def __isub__(self, *args):
-        """__isub__(SwigPyIterator self, ptrdiff_t n) -> SwigPyIterator"""
-        return _structural.SwigPyIterator___isub__(self, *args)
-
-    def __add__(self, *args):
-        """__add__(SwigPyIterator self, ptrdiff_t n) -> SwigPyIterator"""
-        return _structural.SwigPyIterator___add__(self, *args)
-
-    def __sub__(self, *args):
-        """
-        __sub__(SwigPyIterator self, ptrdiff_t n) -> SwigPyIterator
-        __sub__(SwigPyIterator self, SwigPyIterator x) -> ptrdiff_t
-        """
-        return _structural.SwigPyIterator___sub__(self, *args)
-
+    def value(self): return _structural.SwigPyIterator_value(self)
+    def incr(self, n=1): return _structural.SwigPyIterator_incr(self, n)
+    def decr(self, n=1): return _structural.SwigPyIterator_decr(self, n)
+    def distance(self, *args): return _structural.SwigPyIterator_distance(self, *args)
+    def equal(self, *args): return _structural.SwigPyIterator_equal(self, *args)
+    def copy(self): return _structural.SwigPyIterator_copy(self)
+    def next(self): return _structural.SwigPyIterator_next(self)
+    def __next__(self): return _structural.SwigPyIterator___next__(self)
+    def previous(self): return _structural.SwigPyIterator_previous(self)
+    def advance(self, *args): return _structural.SwigPyIterator_advance(self, *args)
+    def __eq__(self, *args): return _structural.SwigPyIterator___eq__(self, *args)
+    def __ne__(self, *args): return _structural.SwigPyIterator___ne__(self, *args)
+    def __iadd__(self, *args): return _structural.SwigPyIterator___iadd__(self, *args)
+    def __isub__(self, *args): return _structural.SwigPyIterator___isub__(self, *args)
+    def __add__(self, *args): return _structural.SwigPyIterator___add__(self, *args)
+    def __sub__(self, *args): return _structural.SwigPyIterator___sub__(self, *args)
     def __iter__(self): return self
 SwigPyIterator_swigregister = _structural.SwigPyIterator_swigregister
 SwigPyIterator_swigregister(SwigPyIterator)
 
 class StringDouble(_object):
-    """Proxy of C++ std::pair<(std::string,double)> class"""
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, StringDouble, name, value)
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, StringDouble, name)
     __repr__ = _swig_repr
     def __init__(self, *args): 
-        """
-        __init__(std::pair<(std::string,double)> self) -> StringDouble
-        __init__(std::pair<(std::string,double)> self, std::string first, double second) -> StringDouble
-        __init__(std::pair<(std::string,double)> self, StringDouble p) -> StringDouble
-        """
         this = _structural.new_StringDouble(*args)
         try: self.this.append(this)
         except: self.this = this
@@ -196,530 +132,153 @@ StringDouble_swigregister = _structural.StringDouble_swigregister
 StringDouble_swigregister(StringDouble)
 
 class StrDoubleVector(_object):
-    """Proxy of C++ std::vector<(std::pair<(std::string,double)>)> class"""
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, StrDoubleVector, name, value)
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, StrDoubleVector, name)
     __repr__ = _swig_repr
-    def iterator(self):
-        """iterator(StrDoubleVector self) -> SwigPyIterator"""
-        return _structural.StrDoubleVector_iterator(self)
-
+    def iterator(self): return _structural.StrDoubleVector_iterator(self)
     def __iter__(self): return self.iterator()
-    def __nonzero__(self):
-        """__nonzero__(StrDoubleVector self) -> bool"""
-        return _structural.StrDoubleVector___nonzero__(self)
-
-    def __bool__(self):
-        """__bool__(StrDoubleVector self) -> bool"""
-        return _structural.StrDoubleVector___bool__(self)
-
-    def __len__(self):
-        """__len__(StrDoubleVector self) -> std::vector< std::pair< std::string,double > >::size_type"""
-        return _structural.StrDoubleVector___len__(self)
-
-    def pop(self):
-        """pop(StrDoubleVector self) -> StringDouble"""
-        return _structural.StrDoubleVector_pop(self)
-
-    def __getslice__(self, *args):
-        """__getslice__(StrDoubleVector self, std::vector< std::pair< std::string,double > >::difference_type i, std::vector< std::pair< std::string,double > >::difference_type j) -> StrDoubleVector"""
-        return _structural.StrDoubleVector___getslice__(self, *args)
-
-    def __setslice__(self, *args):
-        """
-        __setslice__(StrDoubleVector self, std::vector< std::pair< std::string,double > >::difference_type i, std::vector< std::pair< std::string,double > >::difference_type j, 
-            StrDoubleVector v=std::vector< std::pair< std::string,double >,std::allocator< std::pair< std::string,double > > >())
-        __setslice__(StrDoubleVector self, std::vector< std::pair< std::string,double > >::difference_type i, std::vector< std::pair< std::string,double > >::difference_type j)
-        """
-        return _structural.StrDoubleVector___setslice__(self, *args)
-
-    def __delslice__(self, *args):
-        """__delslice__(StrDoubleVector self, std::vector< std::pair< std::string,double > >::difference_type i, std::vector< std::pair< std::string,double > >::difference_type j)"""
-        return _structural.StrDoubleVector___delslice__(self, *args)
-
-    def __delitem__(self, *args):
-        """
-        __delitem__(StrDoubleVector self, std::vector< std::pair< std::string,double > >::difference_type i)
-        __delitem__(StrDoubleVector self, PySliceObject * slice)
-        """
-        return _structural.StrDoubleVector___delitem__(self, *args)
-
-    def __getitem__(self, *args):
-        """
-        __getitem__(StrDoubleVector self, PySliceObject * slice) -> StrDoubleVector
-        __getitem__(StrDoubleVector self, std::vector< std::pair< std::string,double > >::difference_type i) -> StringDouble
-        """
-        return _structural.StrDoubleVector___getitem__(self, *args)
-
-    def __setitem__(self, *args):
-        """
-        __setitem__(StrDoubleVector self, PySliceObject * slice, StrDoubleVector v)
-        __setitem__(StrDoubleVector self, PySliceObject * slice)
-        __setitem__(StrDoubleVector self, std::vector< std::pair< std::string,double > >::difference_type i, StringDouble x)
-        """
-        return _structural.StrDoubleVector___setitem__(self, *args)
-
-    def append(self, *args):
-        """append(StrDoubleVector self, StringDouble x)"""
-        return _structural.StrDoubleVector_append(self, *args)
-
-    def empty(self):
-        """empty(StrDoubleVector self) -> bool"""
-        return _structural.StrDoubleVector_empty(self)
-
-    def size(self):
-        """size(StrDoubleVector self) -> std::vector< std::pair< std::string,double > >::size_type"""
-        return _structural.StrDoubleVector_size(self)
-
-    def clear(self):
-        """clear(StrDoubleVector self)"""
-        return _structural.StrDoubleVector_clear(self)
-
-    def swap(self, *args):
-        """swap(StrDoubleVector self, StrDoubleVector v)"""
-        return _structural.StrDoubleVector_swap(self, *args)
-
-    def get_allocator(self):
-        """get_allocator(StrDoubleVector self) -> std::vector< std::pair< std::string,double > >::allocator_type"""
-        return _structural.StrDoubleVector_get_allocator(self)
-
-    def begin(self):
-        """begin(StrDoubleVector self) -> std::vector< std::pair< std::string,double > >::iterator"""
-        return _structural.StrDoubleVector_begin(self)
-
-    def end(self):
-        """end(StrDoubleVector self) -> std::vector< std::pair< std::string,double > >::iterator"""
-        return _structural.StrDoubleVector_end(self)
-
-    def rbegin(self):
-        """rbegin(StrDoubleVector self) -> std::vector< std::pair< std::string,double > >::reverse_iterator"""
-        return _structural.StrDoubleVector_rbegin(self)
-
-    def rend(self):
-        """rend(StrDoubleVector self) -> std::vector< std::pair< std::string,double > >::reverse_iterator"""
-        return _structural.StrDoubleVector_rend(self)
-
-    def pop_back(self):
-        """pop_back(StrDoubleVector self)"""
-        return _structural.StrDoubleVector_pop_back(self)
-
-    def erase(self, *args):
-        """
-        erase(StrDoubleVector self, std::vector< std::pair< std::string,double > >::iterator pos) -> std::vector< std::pair< std::string,double > >::iterator
-        erase(StrDoubleVector self, std::vector< std::pair< std::string,double > >::iterator first, std::vector< std::pair< std::string,double > >::iterator last) -> std::vector< std::pair< std::string,double > >::iterator
-        """
-        return _structural.StrDoubleVector_erase(self, *args)
-
+    def __nonzero__(self): return _structural.StrDoubleVector___nonzero__(self)
+    def __bool__(self): return _structural.StrDoubleVector___bool__(self)
+    def __len__(self): return _structural.StrDoubleVector___len__(self)
+    def pop(self): return _structural.StrDoubleVector_pop(self)
+    def __getslice__(self, *args): return _structural.StrDoubleVector___getslice__(self, *args)
+    def __setslice__(self, *args): return _structural.StrDoubleVector___setslice__(self, *args)
+    def __delslice__(self, *args): return _structural.StrDoubleVector___delslice__(self, *args)
+    def __delitem__(self, *args): return _structural.StrDoubleVector___delitem__(self, *args)
+    def __getitem__(self, *args): return _structural.StrDoubleVector___getitem__(self, *args)
+    def __setitem__(self, *args): return _structural.StrDoubleVector___setitem__(self, *args)
+    def append(self, *args): return _structural.StrDoubleVector_append(self, *args)
+    def empty(self): return _structural.StrDoubleVector_empty(self)
+    def size(self): return _structural.StrDoubleVector_size(self)
+    def clear(self): return _structural.StrDoubleVector_clear(self)
+    def swap(self, *args): return _structural.StrDoubleVector_swap(self, *args)
+    def get_allocator(self): return _structural.StrDoubleVector_get_allocator(self)
+    def begin(self): return _structural.StrDoubleVector_begin(self)
+    def end(self): return _structural.StrDoubleVector_end(self)
+    def rbegin(self): return _structural.StrDoubleVector_rbegin(self)
+    def rend(self): return _structural.StrDoubleVector_rend(self)
+    def pop_back(self): return _structural.StrDoubleVector_pop_back(self)
+    def erase(self, *args): return _structural.StrDoubleVector_erase(self, *args)
     def __init__(self, *args): 
-        """
-        __init__(std::vector<(std::pair<(std::string,double)>)> self) -> StrDoubleVector
-        __init__(std::vector<(std::pair<(std::string,double)>)> self, StrDoubleVector arg2) -> StrDoubleVector
-        __init__(std::vector<(std::pair<(std::string,double)>)> self, std::vector< std::pair< std::string,double > >::size_type size) -> StrDoubleVector
-        __init__(std::vector<(std::pair<(std::string,double)>)> self, std::vector< std::pair< std::string,double > >::size_type size, StringDouble value) -> StrDoubleVector
-        """
         this = _structural.new_StrDoubleVector(*args)
         try: self.this.append(this)
         except: self.this = this
-    def push_back(self, *args):
-        """push_back(StrDoubleVector self, StringDouble x)"""
-        return _structural.StrDoubleVector_push_back(self, *args)
-
-    def front(self):
-        """front(StrDoubleVector self) -> StringDouble"""
-        return _structural.StrDoubleVector_front(self)
-
-    def back(self):
-        """back(StrDoubleVector self) -> StringDouble"""
-        return _structural.StrDoubleVector_back(self)
-
-    def assign(self, *args):
-        """assign(StrDoubleVector self, std::vector< std::pair< std::string,double > >::size_type n, StringDouble x)"""
-        return _structural.StrDoubleVector_assign(self, *args)
-
-    def resize(self, *args):
-        """
-        resize(StrDoubleVector self, std::vector< std::pair< std::string,double > >::size_type new_size)
-        resize(StrDoubleVector self, std::vector< std::pair< std::string,double > >::size_type new_size, StringDouble x)
-        """
-        return _structural.StrDoubleVector_resize(self, *args)
-
-    def insert(self, *args):
-        """
-        insert(StrDoubleVector self, std::vector< std::pair< std::string,double > >::iterator pos, StringDouble x) -> std::vector< std::pair< std::string,double > >::iterator
-        insert(StrDoubleVector self, std::vector< std::pair< std::string,double > >::iterator pos, std::vector< std::pair< std::string,double > >::size_type n, 
-            StringDouble x)
-        """
-        return _structural.StrDoubleVector_insert(self, *args)
-
-    def reserve(self, *args):
-        """reserve(StrDoubleVector self, std::vector< std::pair< std::string,double > >::size_type n)"""
-        return _structural.StrDoubleVector_reserve(self, *args)
-
-    def capacity(self):
-        """capacity(StrDoubleVector self) -> std::vector< std::pair< std::string,double > >::size_type"""
-        return _structural.StrDoubleVector_capacity(self)
-
+    def push_back(self, *args): return _structural.StrDoubleVector_push_back(self, *args)
+    def front(self): return _structural.StrDoubleVector_front(self)
+    def back(self): return _structural.StrDoubleVector_back(self)
+    def assign(self, *args): return _structural.StrDoubleVector_assign(self, *args)
+    def resize(self, *args): return _structural.StrDoubleVector_resize(self, *args)
+    def insert(self, *args): return _structural.StrDoubleVector_insert(self, *args)
+    def reserve(self, *args): return _structural.StrDoubleVector_reserve(self, *args)
+    def capacity(self): return _structural.StrDoubleVector_capacity(self)
     __swig_destroy__ = _structural.delete_StrDoubleVector
     __del__ = lambda self : None;
 StrDoubleVector_swigregister = _structural.StrDoubleVector_swigregister
 StrDoubleVector_swigregister(StrDoubleVector)
 
 class StringVector(_object):
-    """Proxy of C++ std::vector<(std::string)> class"""
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, StringVector, name, value)
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, StringVector, name)
     __repr__ = _swig_repr
-    def iterator(self):
-        """iterator(StringVector self) -> SwigPyIterator"""
-        return _structural.StringVector_iterator(self)
-
+    def iterator(self): return _structural.StringVector_iterator(self)
     def __iter__(self): return self.iterator()
-    def __nonzero__(self):
-        """__nonzero__(StringVector self) -> bool"""
-        return _structural.StringVector___nonzero__(self)
-
-    def __bool__(self):
-        """__bool__(StringVector self) -> bool"""
-        return _structural.StringVector___bool__(self)
-
-    def __len__(self):
-        """__len__(StringVector self) -> std::vector< std::string >::size_type"""
-        return _structural.StringVector___len__(self)
-
-    def pop(self):
-        """pop(StringVector self) -> std::vector< std::string >::value_type"""
-        return _structural.StringVector_pop(self)
-
-    def __getslice__(self, *args):
-        """__getslice__(StringVector self, std::vector< std::string >::difference_type i, std::vector< std::string >::difference_type j) -> StringVector"""
-        return _structural.StringVector___getslice__(self, *args)
-
-    def __setslice__(self, *args):
-        """
-        __setslice__(StringVector self, std::vector< std::string >::difference_type i, std::vector< std::string >::difference_type j, 
-            StringVector v=std::vector< std::string,std::allocator< std::string > >())
-        __setslice__(StringVector self, std::vector< std::string >::difference_type i, std::vector< std::string >::difference_type j)
-        """
-        return _structural.StringVector___setslice__(self, *args)
-
-    def __delslice__(self, *args):
-        """__delslice__(StringVector self, std::vector< std::string >::difference_type i, std::vector< std::string >::difference_type j)"""
-        return _structural.StringVector___delslice__(self, *args)
-
-    def __delitem__(self, *args):
-        """
-        __delitem__(StringVector self, std::vector< std::string >::difference_type i)
-        __delitem__(StringVector self, PySliceObject * slice)
-        """
-        return _structural.StringVector___delitem__(self, *args)
-
-    def __getitem__(self, *args):
-        """
-        __getitem__(StringVector self, PySliceObject * slice) -> StringVector
-        __getitem__(StringVector self, std::vector< std::string >::difference_type i) -> std::vector< std::string >::value_type const &
-        """
-        return _structural.StringVector___getitem__(self, *args)
-
-    def __setitem__(self, *args):
-        """
-        __setitem__(StringVector self, PySliceObject * slice, StringVector v)
-        __setitem__(StringVector self, PySliceObject * slice)
-        __setitem__(StringVector self, std::vector< std::string >::difference_type i, std::vector< std::string >::value_type const & x)
-        """
-        return _structural.StringVector___setitem__(self, *args)
-
-    def append(self, *args):
-        """append(StringVector self, std::vector< std::string >::value_type const & x)"""
-        return _structural.StringVector_append(self, *args)
-
-    def empty(self):
-        """empty(StringVector self) -> bool"""
-        return _structural.StringVector_empty(self)
-
-    def size(self):
-        """size(StringVector self) -> std::vector< std::string >::size_type"""
-        return _structural.StringVector_size(self)
-
-    def clear(self):
-        """clear(StringVector self)"""
-        return _structural.StringVector_clear(self)
-
-    def swap(self, *args):
-        """swap(StringVector self, StringVector v)"""
-        return _structural.StringVector_swap(self, *args)
-
-    def get_allocator(self):
-        """get_allocator(StringVector self) -> std::vector< std::string >::allocator_type"""
-        return _structural.StringVector_get_allocator(self)
-
-    def begin(self):
-        """begin(StringVector self) -> std::vector< std::string >::iterator"""
-        return _structural.StringVector_begin(self)
-
-    def end(self):
-        """end(StringVector self) -> std::vector< std::string >::iterator"""
-        return _structural.StringVector_end(self)
-
-    def rbegin(self):
-        """rbegin(StringVector self) -> std::vector< std::string >::reverse_iterator"""
-        return _structural.StringVector_rbegin(self)
-
-    def rend(self):
-        """rend(StringVector self) -> std::vector< std::string >::reverse_iterator"""
-        return _structural.StringVector_rend(self)
-
-    def pop_back(self):
-        """pop_back(StringVector self)"""
-        return _structural.StringVector_pop_back(self)
-
-    def erase(self, *args):
-        """
-        erase(StringVector self, std::vector< std::string >::iterator pos) -> std::vector< std::string >::iterator
-        erase(StringVector self, std::vector< std::string >::iterator first, std::vector< std::string >::iterator last) -> std::vector< std::string >::iterator
-        """
-        return _structural.StringVector_erase(self, *args)
-
+    def __nonzero__(self): return _structural.StringVector___nonzero__(self)
+    def __bool__(self): return _structural.StringVector___bool__(self)
+    def __len__(self): return _structural.StringVector___len__(self)
+    def pop(self): return _structural.StringVector_pop(self)
+    def __getslice__(self, *args): return _structural.StringVector___getslice__(self, *args)
+    def __setslice__(self, *args): return _structural.StringVector___setslice__(self, *args)
+    def __delslice__(self, *args): return _structural.StringVector___delslice__(self, *args)
+    def __delitem__(self, *args): return _structural.StringVector___delitem__(self, *args)
+    def __getitem__(self, *args): return _structural.StringVector___getitem__(self, *args)
+    def __setitem__(self, *args): return _structural.StringVector___setitem__(self, *args)
+    def append(self, *args): return _structural.StringVector_append(self, *args)
+    def empty(self): return _structural.StringVector_empty(self)
+    def size(self): return _structural.StringVector_size(self)
+    def clear(self): return _structural.StringVector_clear(self)
+    def swap(self, *args): return _structural.StringVector_swap(self, *args)
+    def get_allocator(self): return _structural.StringVector_get_allocator(self)
+    def begin(self): return _structural.StringVector_begin(self)
+    def end(self): return _structural.StringVector_end(self)
+    def rbegin(self): return _structural.StringVector_rbegin(self)
+    def rend(self): return _structural.StringVector_rend(self)
+    def pop_back(self): return _structural.StringVector_pop_back(self)
+    def erase(self, *args): return _structural.StringVector_erase(self, *args)
     def __init__(self, *args): 
-        """
-        __init__(std::vector<(std::string)> self) -> StringVector
-        __init__(std::vector<(std::string)> self, StringVector arg2) -> StringVector
-        __init__(std::vector<(std::string)> self, std::vector< std::string >::size_type size) -> StringVector
-        __init__(std::vector<(std::string)> self, std::vector< std::string >::size_type size, std::vector< std::string >::value_type const & value) -> StringVector
-        """
         this = _structural.new_StringVector(*args)
         try: self.this.append(this)
         except: self.this = this
-    def push_back(self, *args):
-        """push_back(StringVector self, std::vector< std::string >::value_type const & x)"""
-        return _structural.StringVector_push_back(self, *args)
-
-    def front(self):
-        """front(StringVector self) -> std::vector< std::string >::value_type const &"""
-        return _structural.StringVector_front(self)
-
-    def back(self):
-        """back(StringVector self) -> std::vector< std::string >::value_type const &"""
-        return _structural.StringVector_back(self)
-
-    def assign(self, *args):
-        """assign(StringVector self, std::vector< std::string >::size_type n, std::vector< std::string >::value_type const & x)"""
-        return _structural.StringVector_assign(self, *args)
-
-    def resize(self, *args):
-        """
-        resize(StringVector self, std::vector< std::string >::size_type new_size)
-        resize(StringVector self, std::vector< std::string >::size_type new_size, std::vector< std::string >::value_type const & x)
-        """
-        return _structural.StringVector_resize(self, *args)
-
-    def insert(self, *args):
-        """
-        insert(StringVector self, std::vector< std::string >::iterator pos, std::vector< std::string >::value_type const & x) -> std::vector< std::string >::iterator
-        insert(StringVector self, std::vector< std::string >::iterator pos, std::vector< std::string >::size_type n, 
-            std::vector< std::string >::value_type const & x)
-        """
-        return _structural.StringVector_insert(self, *args)
-
-    def reserve(self, *args):
-        """reserve(StringVector self, std::vector< std::string >::size_type n)"""
-        return _structural.StringVector_reserve(self, *args)
-
-    def capacity(self):
-        """capacity(StringVector self) -> std::vector< std::string >::size_type"""
-        return _structural.StringVector_capacity(self)
-
+    def push_back(self, *args): return _structural.StringVector_push_back(self, *args)
+    def front(self): return _structural.StringVector_front(self)
+    def back(self): return _structural.StringVector_back(self)
+    def assign(self, *args): return _structural.StringVector_assign(self, *args)
+    def resize(self, *args): return _structural.StringVector_resize(self, *args)
+    def insert(self, *args): return _structural.StringVector_insert(self, *args)
+    def reserve(self, *args): return _structural.StringVector_reserve(self, *args)
+    def capacity(self): return _structural.StringVector_capacity(self)
     __swig_destroy__ = _structural.delete_StringVector
     __del__ = lambda self : None;
 StringVector_swigregister = _structural.StringVector_swigregister
 StringVector_swigregister(StringVector)
 
 class DoubleVector(_object):
-    """Proxy of C++ std::vector<(double)> class"""
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, DoubleVector, name, value)
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, DoubleVector, name)
     __repr__ = _swig_repr
-    def iterator(self):
-        """iterator(DoubleVector self) -> SwigPyIterator"""
-        return _structural.DoubleVector_iterator(self)
-
+    def iterator(self): return _structural.DoubleVector_iterator(self)
     def __iter__(self): return self.iterator()
-    def __nonzero__(self):
-        """__nonzero__(DoubleVector self) -> bool"""
-        return _structural.DoubleVector___nonzero__(self)
-
-    def __bool__(self):
-        """__bool__(DoubleVector self) -> bool"""
-        return _structural.DoubleVector___bool__(self)
-
-    def __len__(self):
-        """__len__(DoubleVector self) -> std::vector< double >::size_type"""
-        return _structural.DoubleVector___len__(self)
-
-    def pop(self):
-        """pop(DoubleVector self) -> std::vector< double >::value_type"""
-        return _structural.DoubleVector_pop(self)
-
-    def __getslice__(self, *args):
-        """__getslice__(DoubleVector self, std::vector< double >::difference_type i, std::vector< double >::difference_type j) -> DoubleVector"""
-        return _structural.DoubleVector___getslice__(self, *args)
-
-    def __setslice__(self, *args):
-        """
-        __setslice__(DoubleVector self, std::vector< double >::difference_type i, std::vector< double >::difference_type j, 
-            DoubleVector v=std::vector< double,std::allocator< double > >())
-        __setslice__(DoubleVector self, std::vector< double >::difference_type i, std::vector< double >::difference_type j)
-        """
-        return _structural.DoubleVector___setslice__(self, *args)
-
-    def __delslice__(self, *args):
-        """__delslice__(DoubleVector self, std::vector< double >::difference_type i, std::vector< double >::difference_type j)"""
-        return _structural.DoubleVector___delslice__(self, *args)
-
-    def __delitem__(self, *args):
-        """
-        __delitem__(DoubleVector self, std::vector< double >::difference_type i)
-        __delitem__(DoubleVector self, PySliceObject * slice)
-        """
-        return _structural.DoubleVector___delitem__(self, *args)
-
-    def __getitem__(self, *args):
-        """
-        __getitem__(DoubleVector self, PySliceObject * slice) -> DoubleVector
-        __getitem__(DoubleVector self, std::vector< double >::difference_type i) -> std::vector< double >::value_type const &
-        """
-        return _structural.DoubleVector___getitem__(self, *args)
-
-    def __setitem__(self, *args):
-        """
-        __setitem__(DoubleVector self, PySliceObject * slice, DoubleVector v)
-        __setitem__(DoubleVector self, PySliceObject * slice)
-        __setitem__(DoubleVector self, std::vector< double >::difference_type i, std::vector< double >::value_type const & x)
-        """
-        return _structural.DoubleVector___setitem__(self, *args)
-
-    def append(self, *args):
-        """append(DoubleVector self, std::vector< double >::value_type const & x)"""
-        return _structural.DoubleVector_append(self, *args)
-
-    def empty(self):
-        """empty(DoubleVector self) -> bool"""
-        return _structural.DoubleVector_empty(self)
-
-    def size(self):
-        """size(DoubleVector self) -> std::vector< double >::size_type"""
-        return _structural.DoubleVector_size(self)
-
-    def clear(self):
-        """clear(DoubleVector self)"""
-        return _structural.DoubleVector_clear(self)
-
-    def swap(self, *args):
-        """swap(DoubleVector self, DoubleVector v)"""
-        return _structural.DoubleVector_swap(self, *args)
-
-    def get_allocator(self):
-        """get_allocator(DoubleVector self) -> std::vector< double >::allocator_type"""
-        return _structural.DoubleVector_get_allocator(self)
-
-    def begin(self):
-        """begin(DoubleVector self) -> std::vector< double >::iterator"""
-        return _structural.DoubleVector_begin(self)
-
-    def end(self):
-        """end(DoubleVector self) -> std::vector< double >::iterator"""
-        return _structural.DoubleVector_end(self)
-
-    def rbegin(self):
-        """rbegin(DoubleVector self) -> std::vector< double >::reverse_iterator"""
-        return _structural.DoubleVector_rbegin(self)
-
-    def rend(self):
-        """rend(DoubleVector self) -> std::vector< double >::reverse_iterator"""
-        return _structural.DoubleVector_rend(self)
-
-    def pop_back(self):
-        """pop_back(DoubleVector self)"""
-        return _structural.DoubleVector_pop_back(self)
-
-    def erase(self, *args):
-        """
-        erase(DoubleVector self, std::vector< double >::iterator pos) -> std::vector< double >::iterator
-        erase(DoubleVector self, std::vector< double >::iterator first, std::vector< double >::iterator last) -> std::vector< double >::iterator
-        """
-        return _structural.DoubleVector_erase(self, *args)
-
+    def __nonzero__(self): return _structural.DoubleVector___nonzero__(self)
+    def __bool__(self): return _structural.DoubleVector___bool__(self)
+    def __len__(self): return _structural.DoubleVector___len__(self)
+    def pop(self): return _structural.DoubleVector_pop(self)
+    def __getslice__(self, *args): return _structural.DoubleVector___getslice__(self, *args)
+    def __setslice__(self, *args): return _structural.DoubleVector___setslice__(self, *args)
+    def __delslice__(self, *args): return _structural.DoubleVector___delslice__(self, *args)
+    def __delitem__(self, *args): return _structural.DoubleVector___delitem__(self, *args)
+    def __getitem__(self, *args): return _structural.DoubleVector___getitem__(self, *args)
+    def __setitem__(self, *args): return _structural.DoubleVector___setitem__(self, *args)
+    def append(self, *args): return _structural.DoubleVector_append(self, *args)
+    def empty(self): return _structural.DoubleVector_empty(self)
+    def size(self): return _structural.DoubleVector_size(self)
+    def clear(self): return _structural.DoubleVector_clear(self)
+    def swap(self, *args): return _structural.DoubleVector_swap(self, *args)
+    def get_allocator(self): return _structural.DoubleVector_get_allocator(self)
+    def begin(self): return _structural.DoubleVector_begin(self)
+    def end(self): return _structural.DoubleVector_end(self)
+    def rbegin(self): return _structural.DoubleVector_rbegin(self)
+    def rend(self): return _structural.DoubleVector_rend(self)
+    def pop_back(self): return _structural.DoubleVector_pop_back(self)
+    def erase(self, *args): return _structural.DoubleVector_erase(self, *args)
     def __init__(self, *args): 
-        """
-        __init__(std::vector<(double)> self) -> DoubleVector
-        __init__(std::vector<(double)> self, DoubleVector arg2) -> DoubleVector
-        __init__(std::vector<(double)> self, std::vector< double >::size_type size) -> DoubleVector
-        __init__(std::vector<(double)> self, std::vector< double >::size_type size, std::vector< double >::value_type const & value) -> DoubleVector
-        """
         this = _structural.new_DoubleVector(*args)
         try: self.this.append(this)
         except: self.this = this
-    def push_back(self, *args):
-        """push_back(DoubleVector self, std::vector< double >::value_type const & x)"""
-        return _structural.DoubleVector_push_back(self, *args)
-
-    def front(self):
-        """front(DoubleVector self) -> std::vector< double >::value_type const &"""
-        return _structural.DoubleVector_front(self)
-
-    def back(self):
-        """back(DoubleVector self) -> std::vector< double >::value_type const &"""
-        return _structural.DoubleVector_back(self)
-
-    def assign(self, *args):
-        """assign(DoubleVector self, std::vector< double >::size_type n, std::vector< double >::value_type const & x)"""
-        return _structural.DoubleVector_assign(self, *args)
-
-    def resize(self, *args):
-        """
-        resize(DoubleVector self, std::vector< double >::size_type new_size)
-        resize(DoubleVector self, std::vector< double >::size_type new_size, std::vector< double >::value_type const & x)
-        """
-        return _structural.DoubleVector_resize(self, *args)
-
-    def insert(self, *args):
-        """
-        insert(DoubleVector self, std::vector< double >::iterator pos, std::vector< double >::value_type const & x) -> std::vector< double >::iterator
-        insert(DoubleVector self, std::vector< double >::iterator pos, std::vector< double >::size_type n, std::vector< double >::value_type const & x)
-        """
-        return _structural.DoubleVector_insert(self, *args)
-
-    def reserve(self, *args):
-        """reserve(DoubleVector self, std::vector< double >::size_type n)"""
-        return _structural.DoubleVector_reserve(self, *args)
-
-    def capacity(self):
-        """capacity(DoubleVector self) -> std::vector< double >::size_type"""
-        return _structural.DoubleVector_capacity(self)
-
+    def push_back(self, *args): return _structural.DoubleVector_push_back(self, *args)
+    def front(self): return _structural.DoubleVector_front(self)
+    def back(self): return _structural.DoubleVector_back(self)
+    def assign(self, *args): return _structural.DoubleVector_assign(self, *args)
+    def resize(self, *args): return _structural.DoubleVector_resize(self, *args)
+    def insert(self, *args): return _structural.DoubleVector_insert(self, *args)
+    def reserve(self, *args): return _structural.DoubleVector_reserve(self, *args)
+    def capacity(self): return _structural.DoubleVector_capacity(self)
     __swig_destroy__ = _structural.delete_DoubleVector
     __del__ = lambda self : None;
 DoubleVector_swigregister = _structural.DoubleVector_swigregister
 DoubleVector_swigregister(DoubleVector)
 
 class StringVectorx2(_object):
-    """Proxy of C++ std::pair<(std::vector<(std::string)>,std::vector<(std::string)>)> class"""
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, StringVectorx2, name, value)
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, StringVectorx2, name)
     __repr__ = _swig_repr
     def __init__(self, *args): 
-        """
-        __init__(std::pair<(std::vector<(std::string)>,std::vector<(std::string)>)> self) -> StringVectorx2
-        __init__(std::pair<(std::vector<(std::string)>,std::vector<(std::string)>)> self, StringVector first, StringVector second) -> StringVectorx2
-        __init__(std::pair<(std::vector<(std::string)>,std::vector<(std::string)>)> self, StringVectorx2 p) -> StringVectorx2
-        """
         this = _structural.new_StringVectorx2(*args)
         try: self.this.append(this)
         except: self.this = this
@@ -747,18 +306,12 @@ StringVectorx2_swigregister = _structural.StringVectorx2_swigregister
 StringVectorx2_swigregister(StringVectorx2)
 
 class DoubleMatrixStringVector(_object):
-    """Proxy of C++ std::pair<(p.LIB_LA::DoubleMatrix,std::vector<(std::string)>)> class"""
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, DoubleMatrixStringVector, name, value)
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, DoubleMatrixStringVector, name)
     __repr__ = _swig_repr
     def __init__(self, *args): 
-        """
-        __init__(std::pair<(p.LIB_LA::DoubleMatrix,std::vector<(std::string)>)> self) -> DoubleMatrixStringVector
-        __init__(std::pair<(p.LIB_LA::DoubleMatrix,std::vector<(std::string)>)> self, DoubleMatrix __a, StringVector __b) -> DoubleMatrixStringVector
-        __init__(std::pair<(p.LIB_LA::DoubleMatrix,std::vector<(std::string)>)> self, DoubleMatrixStringVector __p) -> DoubleMatrixStringVector
-        """
         this = _structural.new_DoubleMatrixStringVector(*args)
         try: self.this.append(this)
         except: self.this = this
@@ -787,69 +340,38 @@ DoubleMatrixStringVector_swigregister(DoubleMatrixStringVector)
 
 
 def getVersion():
-  """getVersion() -> char *"""
   return _structural.getVersion()
+getVersion = _structural.getVersion
 class LibStructural(_object):
-    """Proxy of C++ LIB_STRUCTURAL::LibStructural class"""
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, LibStructural, name, value)
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, LibStructural, name)
     __repr__ = _swig_repr
-    def _my_loadStoichiometryMatrix(self, *args):
-        """
-        _my_loadStoichiometryMatrix(LibStructural self, DoubleMatrix oMatrix)
-
-        LibStructural.loadStoichiometryMatrix(self, data)
-         Load a new stoichiometry matrix. 
-
-        Loads the stoichiometry matrix into the library. To analyze the stoichiometry 
-        call one of the following: 
-
-        \li ::LibStructural_analyzeWithQR, 
-        \li ::LibStructural_analyzeWithLU, 
-        \li ::LibStructural_analyzeWithLUandRunTests, 
-        \li ::LibStructural_analyzeWithFullyPivotedLU or
-        \li ::LibStructural_analyzeWithFullyPivotedLUwithTests
-
-        Remarks: if matrix labels are needed it is recommended to call LIB_STRUCTURAL::LibStructural::loadSpecies 
-        and LIB_STRUCTURAL::LibStructural::loadReactionNames after a call to this method.
-
-        :param: oMatrix the stoichiometry matrix to load
-
-
-        """
-        return _structural.LibStructural__my_loadStoichiometryMatrix(self, *args)
-
-    def _my_rref(self, *args):
-        """_my_rref(LibStructural self, DoubleMatrix oMatrix, double tolerance) -> DoubleMatrix"""
-        return _structural.LibStructural__my_rref(self, *args)
-
-    def _my_rref_FB(self, *args):
-        """_my_rref_FB(LibStructural self, DoubleMatrix oMatrix, double tolerance) -> DoubleMatrix"""
-        return _structural.LibStructural__my_rref_FB(self, *args)
-
+    def _my_loadStoichiometryMatrix(self, *args): return _structural.LibStructural__my_loadStoichiometryMatrix(self, *args)
+    def _my_rref(self, *args): return _structural.LibStructural__my_rref(self, *args)
+    def _my_rref_FB(self, *args): return _structural.LibStructural__my_rref_FB(self, *args)
     def loadSBMLFromString(self, *args):
         """
-        loadSBMLFromString(LibStructural self, std::string sSBML) -> std::string
-
         LibStructural.loadSBMLFromString(self, *args)
-         Load a SBML model.
-        :param: sSBML the SBML string to load
+
+        :param: SBML string to load
         :returns: information about the loaded model
+
+        Loads SBML model from a valid string.
+
 
         """
         return _structural.LibStructural_loadSBMLFromString(self, *args)
 
     def loadSBMLFromFile(self, *args):
         """
-        loadSBMLFromFile(LibStructural self, std::string sFileName) -> std::string
-
         LibStructural.loadSBMLFromFile(self, *args)
 
-         Load a SBML model from the specified file. 
         :param: sFileName a file name to a SBML file to load
         :returns: information about the loaded model
+
+        Loads SBML model from the specified file.
 
 
         """
@@ -857,13 +379,12 @@ class LibStructural(_object):
 
     def loadSBMLwithTests(self, *args):
         """
-        loadSBMLwithTests(LibStructural self, std::string sSBML) -> std::string
-
         LibStructural.loadSBMLwithTests(self, *args)
 
-         Load an SBML model into the library and carry out tests using the internal test suite.  
-        :param: sSBML the SBML file to load
+        :param: a file name to of SBML model to load
         :returns: information about the loaded model and results of the internal test suite
+
+        Loads an SBML model into the library and carry out tests using the internal test suite.
 
 
         """
@@ -871,22 +392,15 @@ class LibStructural(_object):
 
     def analyzeWithQR(self):
         """
-        analyzeWithQR(LibStructural self) -> std::string
-
         LibStructural.analyzeWithQR(self)
 
-         Uses QR factorization for structural analysis
+        Uses QR factorization for structural analysis. This method performs the actual analysis of the stoichiometry matrix loaded either via ``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``. Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
 
-        This method performs the actual analysis of the stoichiometry matrix (loaded either
-        via LIB_STRUCTURAL::LibStructural::loadStoichiometryMatrix or LIB_STRUCTURAL::LibStructural::loadSBMLFromString. Only after 
-        one of the analysis methods below has been called are the structural matrices (L0, K0...)
-        available. 
-
-        \li LIB_STRUCTURAL::LibStructural::analyzeWithQR, 
-        \li LIB_STRUCTURAL::LibStructural::analyzeWithLU, 
-        \li LIB_STRUCTURAL::LibStructural::analyzeWithLUandRunTests, 
-        \li LIB_STRUCTURAL::LibStructural::analyzeWithFullyPivotedLU or
-        \li LIB_STRUCTURAL::LibStructural::analyzeWithFullyPivotedLUwithTests
+        | ``LibStructural.analyzeWithQR``,
+        | ``LibStructural.analyzeWithLU``,
+        | ``LibStructural.analyzeWithLUandRunTests``,
+        | ``LibStructural.analyzeWithFullyPivotedLU`` or
+        | ``LibStructural.analyzeWithFullyPivotedLUwithTests``
 
 
         Remarks: This is the prefered method for structural analysis.
@@ -899,22 +413,14 @@ class LibStructural(_object):
 
     def analyzeWithLU(self):
         """
-        analyzeWithLU(LibStructural self) -> std::string
-
         LibStructural.analyzeWithLU(self)
+        Uses LU Decomposition for Conservation analysis. This method performs the actual analysis of the stoichiometry matrix (loaded either via ``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``. Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
 
-         Uses LU Decomposition for Conservation analysis
-
-        This method performs the actual analysis of the stoichiometry matrix (loaded either
-        via LIB_STRUCTURAL::LibStructural::loadStoichiometryMatrix or LIB_STRUCTURAL::LibStructural::loadSBMLFromString. Only after 
-        one of the analysis methods below has been called are the structural matrices (L0, K0...)
-        available. 
-
-        \li LIB_STRUCTURAL::LibStructural::analyzeWithQR, 
-        \li LIB_STRUCTURAL::LibStructural::analyzeWithLU, 
-        \li LIB_STRUCTURAL::LibStructural::analyzeWithLUandRunTests, 
-        \li LIB_STRUCTURAL::LibStructural::analyzeWithFullyPivotedLU or
-        \li LIB_STRUCTURAL::LibStructural::analyzeWithFullyPivotedLUwithTests
+        | ``LibStructural.analyzeWithQR``,
+        | ``LibStructural.analyzeWithLU``,
+        | ``LibStructural.analyzeWithLUandRunTests``,
+        | ``LibStructural.analyzeWithFullyPivotedLU`` or
+        | ``LibStructural.analyzeWithFullyPivotedLUwithTests``
 
         :returns: a result string with information about the analysis process
 
@@ -924,25 +430,16 @@ class LibStructural(_object):
 
     def analyzeWithLUandRunTests(self):
         """
-        analyzeWithLUandRunTests(LibStructural self) -> std::string
-
         LibStructural.analyzeWithLUandRunTests(self)
+        Uses LU Decomposition for Conservation analysis. This method performs the actual analysis of the stoichiometry matrix loaded either via ``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``. Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
 
-         Uses LU Decomposition for Conservation analysis
-
-        This method performs the actual analysis of the stoichiometry matrix (loaded either
-        via LIB_STRUCTURAL::LibStructural::loadStoichiometryMatrix or LIB_STRUCTURAL::LibStructural::loadSBMLFromString. Only after 
-        one of the analysis methods below has been called are the structural matrices (L0, K0...)
-        available. 
-
-        \li LIB_STRUCTURAL::LibStructural::analyzeWithQR, 
-        \li LIB_STRUCTURAL::LibStructural::analyzeWithLU, 
-        \li LIB_STRUCTURAL::LibStructural::analyzeWithLUandRunTests, 
-        \li LIB_STRUCTURAL::LibStructural::analyzeWithFullyPivotedLU or
-        \li LIB_STRUCTURAL::LibStructural::analyzeWithFullyPivotedLUwithTests
+        | ``LibStructural.analyzeWithQR``,
+        | ``LibStructural.analyzeWithLU``,
+        | ``LibStructural.analyzeWithLUandRunTests``,
+        | ``LibStructural.analyzeWithFullyPivotedLU`` or
+        | ``LibStructural.analyzeWithFullyPivotedLUwithTests''
 
         This method additionally performs the integrated test suite and returns	those results.
-
 
         :returns: a result string with information about the analysis process
 
@@ -952,23 +449,14 @@ class LibStructural(_object):
 
     def analyzeWithFullyPivotedLU(self):
         """
-        analyzeWithFullyPivotedLU(LibStructural self) -> std::string
-
         LibStructural.analyzeWithFullyPivotedLU(self)
+        Uses fully pivoted LU Decomposition for Conservation analysis.This method performs the actual analysis of the stoichiometry matrix loaded either via ``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``. Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
 
-         Uses fully pivoted LU Decomposition for Conservation analysis
-
-        This method performs the actual analysis of the stoichiometry matrix (loaded either
-        via LIB_STRUCTURAL::LibStructural::loadStoichiometryMatrix or LIB_STRUCTURAL::LibStructural::loadSBMLFromString. Only after 
-        one of the analysis methods below has been called are the structural matrices (L0, K0...)
-        available. 
-
-        \li LIB_STRUCTURAL::LibStructural::analyzeWithQR, 
-        \li LIB_STRUCTURAL::LibStructural::analyzeWithLU, 
-        \li LIB_STRUCTURAL::LibStructural::analyzeWithLUandRunTests, 
-        \li LIB_STRUCTURAL::LibStructural::analyzeWithFullyPivotedLU or
-        \li LIB_STRUCTURAL::LibStructural::analyzeWithFullyPivotedLUwithTests
-
+        | ``LibStructural.analyzeWithQR``
+        | ``LibStructural.analyzeWithLU``
+        | ``LibStructural.analyzeWithLUandRunTests``
+        | ``LibStructural.analyzeWithFullyPivotedLU`` or
+        | ``LibStructural.analyzeWithFullyPivotedLUwithTests``
 
         :returns: a result string with information about the analysis process
 
@@ -978,22 +466,16 @@ class LibStructural(_object):
 
     def analyzeWithFullyPivotedLUwithTests(self):
         """
-        analyzeWithFullyPivotedLUwithTests(LibStructural self) -> std::string
-
         LibStructural.analyzeWithFullyPivotedLUwithTests(self)
-
-         Uses fully pivoted LU Decomposition for Conservation analysis
-
-        This method performs the actual analysis of the stoichiometry matrix (loaded either
-        via LIB_STRUCTURAL::LibStructural::loadStoichiometryMatrix or LIB_STRUCTURAL::LibStructural::loadSBMLFromString. Only after 
+        Uses fully pivoted LU Decomposition for Conservation analysis. This method performs the actual analysis of the stoichiometry matrix loaded either via ``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``. Only after
         one of the analysis methods below has been called are the structural matrices (L0, K0...)
-        available. 
+        available.
 
-        \li LIB_STRUCTURAL::LibStructural::analyzeWithQR, 
-        \li LIB_STRUCTURAL::LibStructural::analyzeWithLU, 
-        \li LIB_STRUCTURAL::LibStructural::analyzeWithLUandRunTests, 
-        \li LIB_STRUCTURAL::LibStructural::analyzeWithFullyPivotedLU or
-        \li LIB_STRUCTURAL::LibStructural::analyzeWithFullyPivotedLUwithTests
+        | ``LibStructural.analyzeWithQR``,
+        | ``LibStructural.analyzeWithLU``,
+        | ``LibStructural.analyzeWithLU``andRunTests,
+        | ``LibStructural.analyzeWithFullyPivotedLU`` or
+        | ``LibStructural.analyzeWithFullyPivotedLUwithTests``
 
         This method additionally performs the integrated test suite and returns	those results.
 
@@ -1003,73 +485,26 @@ class LibStructural(_object):
         """
         return _structural.LibStructural_analyzeWithFullyPivotedLUwithTests(self)
 
-    def _my_getL0Matrix(self):
-        """_my_getL0Matrix(LibStructural self) -> DoubleMatrix"""
-        return _structural.LibStructural__my_getL0Matrix(self)
-
-    def _my_getNrMatrix(self):
-        """_my_getNrMatrix(LibStructural self) -> DoubleMatrix"""
-        return _structural.LibStructural__my_getNrMatrix(self)
-
-    def _my_getFullyReorderedNrMatrix(self):
-        """_my_getFullyReorderedNrMatrix(LibStructural self) -> DoubleMatrix"""
-        return _structural.LibStructural__my_getFullyReorderedNrMatrix(self)
-
-    def _my_getFullyReorderedN0StoichiometryMatrix(self):
-        """_my_getFullyReorderedN0StoichiometryMatrix(LibStructural self) -> DoubleMatrix"""
-        return _structural.LibStructural__my_getFullyReorderedN0StoichiometryMatrix(self)
-
-    def _my_getColumnReorderedNrMatrix(self):
-        """_my_getColumnReorderedNrMatrix(LibStructural self) -> DoubleMatrix"""
-        return _structural.LibStructural__my_getColumnReorderedNrMatrix(self)
-
-    def _my_getNICMatrix(self):
-        """_my_getNICMatrix(LibStructural self) -> DoubleMatrix"""
-        return _structural.LibStructural__my_getNICMatrix(self)
-
-    def _my_getNDCMatrix(self):
-        """_my_getNDCMatrix(LibStructural self) -> DoubleMatrix"""
-        return _structural.LibStructural__my_getNDCMatrix(self)
-
-    def _my_getN0Matrix(self):
-        """_my_getN0Matrix(LibStructural self) -> DoubleMatrix"""
-        return _structural.LibStructural__my_getN0Matrix(self)
-
-    def _my_getK0Matrix(self):
-        """_my_getK0Matrix(LibStructural self) -> DoubleMatrix"""
-        return _structural.LibStructural__my_getK0Matrix(self)
-
-    def _my_getKMatrix(self):
-        """_my_getKMatrix(LibStructural self) -> DoubleMatrix"""
-        return _structural.LibStructural__my_getKMatrix(self)
-
-    def _my_getGammaMatrix(self):
-        """_my_getGammaMatrix(LibStructural self) -> DoubleMatrix"""
-        return _structural.LibStructural__my_getGammaMatrix(self)
-
-    def _my_getGammaMatrixGJ(self, *args):
-        """_my_getGammaMatrixGJ(LibStructural self, DoubleMatrix stoichiometry) -> DoubleMatrix"""
-        return _structural.LibStructural__my_getGammaMatrixGJ(self, *args)
-
-    def _my_getStoichiometryMatrix(self):
-        """_my_getStoichiometryMatrix(LibStructural self) -> DoubleMatrix"""
-        return _structural.LibStructural__my_getStoichiometryMatrix(self)
-
-    def _my_getReorderedStoichiometryMatrix(self):
-        """_my_getReorderedStoichiometryMatrix(LibStructural self) -> DoubleMatrix"""
-        return _structural.LibStructural__my_getReorderedStoichiometryMatrix(self)
-
-    def _my_getFullyReorderedStoichiometryMatrix(self):
-        """_my_getFullyReorderedStoichiometryMatrix(LibStructural self) -> DoubleMatrix"""
-        return _structural.LibStructural__my_getFullyReorderedStoichiometryMatrix(self)
-
+    def _my_getL0Matrix(self): return _structural.LibStructural__my_getL0Matrix(self)
+    def _my_getNrMatrix(self): return _structural.LibStructural__my_getNrMatrix(self)
+    def _my_getFullyReorderedNrMatrix(self): return _structural.LibStructural__my_getFullyReorderedNrMatrix(self)
+    def _my_getFullyReorderedN0StoichiometryMatrix(self): return _structural.LibStructural__my_getFullyReorderedN0StoichiometryMatrix(self)
+    def _my_getColumnReorderedNrMatrix(self): return _structural.LibStructural__my_getColumnReorderedNrMatrix(self)
+    def _my_getNICMatrix(self): return _structural.LibStructural__my_getNICMatrix(self)
+    def _my_getNDCMatrix(self): return _structural.LibStructural__my_getNDCMatrix(self)
+    def _my_getN0Matrix(self): return _structural.LibStructural__my_getN0Matrix(self)
+    def _my_getK0Matrix(self): return _structural.LibStructural__my_getK0Matrix(self)
+    def _my_getKMatrix(self): return _structural.LibStructural__my_getKMatrix(self)
+    def _my_getGammaMatrix(self): return _structural.LibStructural__my_getGammaMatrix(self)
+    def _my_getGammaMatrixGJ(self, *args): return _structural.LibStructural__my_getGammaMatrixGJ(self, *args)
+    def _my_getStoichiometryMatrix(self): return _structural.LibStructural__my_getStoichiometryMatrix(self)
+    def _my_getReorderedStoichiometryMatrix(self): return _structural.LibStructural__my_getReorderedStoichiometryMatrix(self)
+    def _my_getFullyReorderedStoichiometryMatrix(self): return _structural.LibStructural__my_getFullyReorderedStoichiometryMatrix(self)
     def getReorderedSpecies(self):
         """
-        getReorderedSpecies(LibStructural self) -> StringVector
-
         LibStructural.getReorderedSpecies(self)
 
-        Returns the reordered list of molecular species. (choosing the SBML Id if possible )
+        :retruns: the reordered list of molecular species. (choosing the SBML Id if possible )
 
 
         """
@@ -1077,11 +512,9 @@ class LibStructural(_object):
 
     def getSpecies(self):
         """
-        getSpecies(LibStructural self) -> StringVector
-
         LibStructural.getSpecies(self)
 
-        Returns the unordered list of species Ids
+        :retruns: the unordered list of species Ids
 
 
         """
@@ -1089,11 +522,9 @@ class LibStructural(_object):
 
     def getReorderedSpeciesNamesList(self):
         """
-        getReorderedSpeciesNamesList(LibStructural self) -> StringVector
-
         LibStructural.getReorderedSpeciesNamesList(self)
 
-        Returns the reordered list of molecular species.  (choosing the SBML Name if possible )
+        :retruns: the reordered list of molecular species.  (choosing the SBML Name if possible )
 
 
         """
@@ -1101,11 +532,9 @@ class LibStructural(_object):
 
     def getIndependentSpecies(self):
         """
-        getIndependentSpecies(LibStructural self) -> StringVector
-
         LibStructural.getIndependentSpecies(self)
 
-        Returns the list of independent species 
+        :retruns: the list of independent species
 
 
         """
@@ -1113,11 +542,9 @@ class LibStructural(_object):
 
     def getIndependentSpeciesNamesList(self):
         """
-        getIndependentSpeciesNamesList(LibStructural self) -> StringVector
-
         LibStructural.getIndependentSpeciesNamesList(self)
 
-        Returns the actual names of the independent species 
+        :retruns: the actual names of the independent species
 
 
         """
@@ -1125,11 +552,9 @@ class LibStructural(_object):
 
     def getDependentSpecies(self):
         """
-        getDependentSpecies(LibStructural self) -> StringVector
-
         LibStructural.getDependentSpecies(self)
 
-        Returns the list of dependent species 
+        :retruns: the list of dependent species
 
 
         """
@@ -1137,11 +562,9 @@ class LibStructural(_object):
 
     def getDependentSpeciesNamesList(self):
         """
-        getDependentSpeciesNamesList(LibStructural self) -> StringVector
-
         LibStructural.getDependentSpeciesNamesList(self)
 
-        Returns the actual names of the dependent species 
+        :retruns: the actual names of the dependent species
 
 
         """
@@ -1149,11 +572,9 @@ class LibStructural(_object):
 
     def getReactions(self):
         """
-        getReactions(LibStructural self) -> StringVector
-
         LibStructural.getReactions(self)
 
-        Returns the list of Reactions 
+        :retruns: the list of Reactions
 
 
         """
@@ -1161,11 +582,9 @@ class LibStructural(_object):
 
     def getIndependentReactionIds(self):
         """
-        getIndependentReactionIds(LibStructural self) -> StringVector
-
         LibStructural.getIndependentReactionIds(self)
 
-        Returns the list of independent reactions 
+        :retruns: the list of independent reactions
 
 
         """
@@ -1173,11 +592,9 @@ class LibStructural(_object):
 
     def getDependentReactionIds(self):
         """
-        getDependentReactionIds(LibStructural self) -> StringVector
-
         LibStructural.getDependentReactionIds(self)
 
-        Returns the list of dependent reactions 
+        :retruns: the list of dependent reactions
 
 
 
@@ -1186,11 +603,9 @@ class LibStructural(_object):
 
     def getReactionsNamesList(self):
         """
-        getReactionsNamesList(LibStructural self) -> StringVector
-
         LibStructural.getReactionsNamesList(self)
 
-        Returns actual names of the Reactions 
+        :retruns: actual names of the Reactions
 
 
         """
@@ -1198,27 +613,29 @@ class LibStructural(_object):
 
     def getReorderedReactions(self):
         """
-        getReorderedReactions(LibStructural self) -> StringVector
-
         LibStructural.getReorderedReactions(self)
 
-        Returns the reordered list of reactions
+        :retruns: the reordered list of reactions
 
 
         """
         return _structural.LibStructural_getReorderedReactions(self)
 
     def getConservedLaws(self):
-        """getConservedLaws(LibStructural self) -> StringVector"""
+        """
+        LibStructural.getConservedLaws(self)
+
+        :retruns: algebraic expressions for conserved cycles
+
+
+        """
         return _structural.LibStructural_getConservedLaws(self)
 
     def getConservedSums(self):
         """
-        getConservedSums(LibStructural self) -> DoubleVector
-
         LibStructural.getConservedSums(self)
 
-        Returns values for conservation laws using the current initial conditions
+        :retruns: values for conservation laws using the current initial conditions
 
 
         """
@@ -1226,11 +643,9 @@ class LibStructural(_object):
 
     def getInitialConditions(self):
         """
-        getInitialConditions(LibStructural self) -> StrDoubleVector
-
         LibStructural.getInitialConditions(self)
 
-        Returns Initial Conditions used in the model
+        :retruns: Initial Conditions used in the model
 
 
         """
@@ -1238,33 +653,26 @@ class LibStructural(_object):
 
     def validateStructuralMatrices(self):
         """
-        validateStructuralMatrices(LibStructural self) -> StringVector
-
         LibStructural.validateStructuralMatrices(self)
 
-         Validates structural matrices.
-
-        Calling this method will run the internal test suite against the structural 
+        Validates structural matrices. Calling this method will run the internal test suite against the structural
         matrices those tests include:
 
-
-        \li Test 1 : Gamma*N = 0 (Zero matrix)
-        \li Test 2 : Rank(N) using SVD (5) is same as m0 (5)
-        \li Test 3 : Rank(NR) using SVD (5) is same as m0 (5)
-        \li Test 4 : Rank(NR) using QR (5) is same as m0 (5)
-        \li Test 5 : L0 obtained with QR matches Q21*inv(Q11)
-        \li Test 6 : N*K = 0 (Zero matrix)
+        | Test 1 : Gamma*N = 0 (Zero matrix)
+        | Test 2 : Rank(N) using SVD (5) is same as m0 (5)
+        | Test 3 : Rank(NR) using SVD (5) is same as m0 (5)
+        | Test 4 : Rank(NR) using QR (5) is same as m0 (5)
+        | Test 5 : L0 obtained with QR matches Q21*inv(Q11)
+        | Test 6 : N*K = 0 (Zero matrix)
 
         """
         return _structural.LibStructural_validateStructuralMatrices(self)
 
     def getTestDetails(self):
         """
-        getTestDetails(LibStructural self) -> std::string
-
         LibStructural.getTestDetails(self)
 
-        Return Return Details about validation tests.
+        :returns: Details about validation tests.
 
 
         """
@@ -1272,14 +680,9 @@ class LibStructural(_object):
 
     def getModelName(self):
         """
-        getModelName(LibStructural self) -> std::string
-
         LibStructural.getModelName(self)
 
-        Returns the name of the model. 
-
-        Returns the name of the model if SBML model has Name-tag, otherwise it returns the 
-        SBML id. If only a stoichiometry matrix was loaded 'untitled' will be returned.
+        :retruns: the name of the model if SBML model has Name-tag, otherwise it returns the SBML id. If only a stoichiometry matrix was loaded 'untitled' will be returned.
 
 
         """
@@ -1287,11 +690,9 @@ class LibStructural(_object):
 
     def getNumSpecies(self):
         """
-        getNumSpecies(LibStructural self) -> int
-
         LibStructural.getNumSpecies(self)
 
-        Returns the total number of species
+        :retruns: the total number of species
 
 
         """
@@ -1299,11 +700,9 @@ class LibStructural(_object):
 
     def getNumIndSpecies(self):
         """
-        getNumIndSpecies(LibStructural self) -> int
-
         LibStructural.getNumIndSpecies(self)
 
-        Returns the number of independent species
+        :retruns: the number of independent species
 
 
         """
@@ -1311,11 +710,9 @@ class LibStructural(_object):
 
     def getNumDepSpecies(self):
         """
-        getNumDepSpecies(LibStructural self) -> int
-
         LibStructural.getNumDepSpecies(self)
 
-        Returns the number of dependent species
+        :retruns: the number of dependent species
 
 
         """
@@ -1323,11 +720,9 @@ class LibStructural(_object):
 
     def getNumReactions(self):
         """
-        getNumReactions(LibStructural self) -> int
-
         LibStructural.getNumReactions(self)
 
-        Returns the total number of reactions
+        :retruns: the total number of reactions
 
 
         """
@@ -1335,11 +730,9 @@ class LibStructural(_object):
 
     def getNumIndReactions(self):
         """
-        getNumIndReactions(LibStructural self) -> int
-
         LibStructural.getNumIndReactions(self)
 
-        Returns the number of independent reactions
+        :retruns: the number of independent reactions
 
 
         """
@@ -1347,11 +740,9 @@ class LibStructural(_object):
 
     def getNumDepReactions(self):
         """
-        getNumDepReactions(LibStructural self) -> int
-
         LibStructural.getNumDepReactions(self)
 
-        Returns the number of dependent reactions
+        :retruns: the number of dependent reactions
 
 
         """
@@ -1359,48 +750,26 @@ class LibStructural(_object):
 
     def getNmatrixSparsity(self):
         """
-        getNmatrixSparsity(LibStructural self) -> double
-
         LibStructural.getNmatrixSparsity(self)
 
-        Returns the number of nonzero values in Stoichiometry matrix
+        :retruns: the number of nonzero values in Stoichiometry matrix
 
 
         """
         return _structural.LibStructural_getNmatrixSparsity(self)
 
-    def _my_getEigenValues(self, *args):
-        """_my_getEigenValues(LibStructural self, DoubleMatrix oMatrix) -> DoubleMatrix"""
-        return _structural.LibStructural__my_getEigenValues(self, *args)
-
-    def _my_getEigenVectors(self, *args):
-        """_my_getEigenVectors(LibStructural self, DoubleMatrix oMatrix) -> DoubleMatrix"""
-        return _structural.LibStructural__my_getEigenVectors(self, *args)
-
-    def _my_getConditionNumber(self, *args):
-        """_my_getConditionNumber(LibStructural self, DoubleMatrix oMatrix) -> double"""
-        return _structural.LibStructural__my_getConditionNumber(self, *args)
-
-    def _my_getLeftNullSpace(self, *args):
-        """_my_getLeftNullSpace(LibStructural self, DoubleMatrix oMatrix) -> DoubleMatrix"""
-        return _structural.LibStructural__my_getLeftNullSpace(self, *args)
-
-    def _my_getRightNullSpace(self, *args):
-        """_my_getRightNullSpace(LibStructural self, DoubleMatrix oMatrix) -> DoubleMatrix"""
-        return _structural.LibStructural__my_getRightNullSpace(self, *args)
-
+    def _my_getEigenValues(self, *args): return _structural.LibStructural__my_getEigenValues(self, *args)
+    def _my_getEigenVectors(self, *args): return _structural.LibStructural__my_getEigenVectors(self, *args)
+    def _my_getConditionNumber(self, *args): return _structural.LibStructural__my_getConditionNumber(self, *args)
+    def _my_getLeftNullSpace(self, *args): return _structural.LibStructural__my_getLeftNullSpace(self, *args)
+    def _my_getRightNullSpace(self, *args): return _structural.LibStructural__my_getRightNullSpace(self, *args)
     def _my_getRank(self, *args):
         """
-        _my_getRank(LibStructural self) -> int
-        _my_getRank(LibStructural self, DoubleMatrix oMatrix) -> int
-
         LibStructural.getRank(self);
 
-         Returns the rank of the matrix argument
+        :param: Matrix to find the rank of.
 
-        :param: oMatrix Matrix to find the rank of. 
-
-        esult Returns the rank as an integer
+        :retruns: the rank as an integer
 
 
         """
@@ -1408,8 +777,6 @@ class LibStructural(_object):
 
     def getRCond(self, *args):
         """
-        getRCond(LibStructural self, DoubleMatrix oMatrix) -> double
-
         LibStructural.getRCond(self, *args)
 
 
@@ -1419,18 +786,11 @@ class LibStructural(_object):
 
     def setTolerance(self, *args):
         """
-        setTolerance(LibStructural self, double dTolerance)
-
         LibStructural.setTolerance(self, *args)
 
-         Set user specified tolerance
+        :param:  an integer or float
 
-        This function sets the tolerance used by the library to determine what value 
-        is considered as zero. Any value with absolute value smaller than this tolerance is considered as zero 
-        and will be neglected. 
-
-        :param: dTolerance Sets the tolerance used by the library to determine a  value close to zero
-
+        Sets user specified tolerance. This function sets the tolerance used by the library to determine what value is considered as zero. Any value with absolute value smaller than this tolerance is considered as zero and will be neglected.
 
 
         """
@@ -1438,30 +798,25 @@ class LibStructural(_object):
 
     def getTolerance(self):
         """
-        getTolerance(LibStructural self) -> double
-
         LibStructural.getTolerance(self)
 
-         Returns the currently used tolerance
+        :retruns: the currently used tolerance
 
-        This function returns the tolerance currently used by the library to determine what value 
-        is considered as zero. Any value with absolute value smaller than this tolerance is considered zero 
-        and will be neglected. 
+        This function returns the tolerance currently used by the library to determine what value
+        is considered as zero. Any value with absolute value smaller than this tolerance is considered zero
+        and will be neglected.
 
 
         """
         return _structural.LibStructural_getTolerance(self)
 
     def __init__(self): 
-        """__init__(LIB_STRUCTURAL::LibStructural self) -> LibStructural"""
         this = _structural.new_LibStructural()
         try: self.this.append(this)
         except: self.this = this
     def getInstance():
         """
-        getInstance() -> LibStructural
-
-        LibStructural.getInstance()
+        LibStructural.getInstance(self)
 
         static method to get an instance of LibStructural (allows use as singleton)
 
@@ -1473,28 +828,9 @@ class LibStructural(_object):
     __swig_getmethods__["getInstance"] = lambda x: getInstance
     def getColumnReorderedNrMatrixLabels(self):
         """
-        getColumnReorderedNrMatrixLabels(LibStructural self) -> StringVectorx2
-
         LibStructural.getColumnReorderedNrMatrixLabels(self)
 
-        brief Returns the Nr Matrix row and column labels (repartitioned into NIC and NDC).
-
-        :param: outRowLabels a pointer to a string array where the row labels will be allocated 
-        and written.
-        :param: outRowCount after the call this variable will hold the number of row labels 
-        returned.
-        :param: outColLabels a pointer to a string array where the column labels will be allocated
-        and written.
-        :param: outColCount after the call this variable will hold the number of column labels
-        returned.
-
-        :returns: The return value will be zero (0) when successful, and negative (-1) in case
-        no stoichiometry matrix was loaded beforehand or none of the analysis methods has 
-        been called yet.
-
-        Remarks: To free the string arrays (outRowLabels and outColLabels) call 
-        ::LibStructural_freeMatrix with the string array and its corresponding length 
-        (outRowCount or outColCount)
+        :retruns: the Nr Matrix row and column labels (repartitioned into NIC and NDC).
 
 
         """
@@ -1502,20 +838,13 @@ class LibStructural(_object):
 
     def loadReactionNames(self, *args):
         """
-        loadReactionNames(LibStructural self, StringVector reactionNames)
-        loadReactionNames(LibStructural self, StringVector reactionNames)
-
         LibStructural.loadReactionNames(self, *args):
 
-         Load reaction names.
+        :param: a vector of reaction names (ids)
 
-        This function should be used whenever labeled matrices are important as these
-        labels will be used in labeling the structural matrices. This function sets the reaction 
-        names (ids). 
+        Loads reaction names. This function should be used whenever labeled matrices are important as these labels will be used in labeling the structural matrices. This function sets the reaction names (ids).
 
-        Remarks: This method should only be called after ::LibStructural_loadStoichiometryMatrix
-
-        :param: reactionNames a vector of reaction names (ids)
+        Remarks: This method should only be called after ``LibStructural.loadStoichiometryMatrix``
 
 
         """
@@ -1523,22 +852,14 @@ class LibStructural(_object):
 
     def loadSpecies(self, *args):
         """
-        loadSpecies(LibStructural self, StringVector speciesNames, DoubleVector speciesValues)
-        loadSpecies(LibStructural self, StringVector speciesNames, DoubleVector speciesValues)
-
         LibStructural.loadSpecies(self, *args):
 
-         Load species names and initial values. 
-
-        This function should be used whenever labeled matrices are important as these
-        labels will be used in labeling the structural matrices. This function sets the species 
-        names (ids). It is also possible to provide an initial condition for each of 
-        the species. This will be used when calculating the conserved sums.
-
-        Remarks: This method should only be called after ::LibStructural_loadStoichiometryMatrix
-
         :param: speciesNames a vector of species names (ids) to load
-        :param: speciesValues a vector of initial concentrations 
+        :param: speciesValues a vector of initial concentrations
+
+        Loads species names and initial values. This function should be used whenever labeled matrices are important as these labels will be used in labeling the structural matrices. This function sets the species names (ids). It is also possible to provide an initial condition for each of the species. This will be used when calculating the conserved sums.
+
+        Remarks: This method should only be called after ``LibStructural.loadStoichiometryMatrix``
 
 
         """
@@ -1546,42 +867,18 @@ class LibStructural(_object):
 
     def getGammaMatrixLabels(self):
         """
-        getGammaMatrixLabels(LibStructural self) -> StringVectorx2
-
         LibStructural.getGammaMatrixLabels(self)
 
-         Returns the row and column labels for Gamma, the conservation law array.
-        :param: oRows a string vector that will be overwritten to hold the row labels
-        :param: oCols a string vector that will be overwritten to hold the column labels.
-
+        :retruns: the row and column labels for Gamma, the conservation law array.
 
         """
         return _structural.LibStructural_getGammaMatrixLabels(self)
 
     def getK0MatrixLabels(self):
         """
-        getK0MatrixLabels(LibStructural self) -> StringVectorx2
-
         LibStructural.getK0MatrixLabels(self)
 
-         Returns the K0 Matrix row and column labels.
-
-        :param: outRowLabels a pointer to a string array where the row labels will be allocated 
-        and written.
-        :param: outRowCount after the call this variable will hold the number of row labels 
-        returned.
-        :param: outColLabels a pointer to a string array where the column labels will be allocated
-        and written.
-        :param: outColCount after the call this variable will hold the number of column labels
-        returned.
-
-        :returns: The return value will be zero (0) when successful, and negative (-1) in case
-        no stoichiometry matrix was loaded beforehand or none of the analysis methods has 
-        been called yet.
-
-        Remarks: To free the string arrays (outRowLabels and outColLabels) call 
-        ::LibStructural_freeMatrix with the string array and its corresponding length 
-        (outRowCount or outColCount)
+        :retruns: the K0 Matrix row and column labels.
 
 
         """
@@ -1589,28 +886,9 @@ class LibStructural(_object):
 
     def getKMatrixLabels(self):
         """
-        getKMatrixLabels(LibStructural self) -> StringVectorx2
-
         LibStructural.getKMatrixLabels(self)
 
-         Returns the K matrix row and column labels.
-
-        :param: outRowLabels a pointer to a string array where the row labels will be allocated 
-        and written.
-        :param: outRowCount after the call this variable will hold the number of row labels 
-        returned.
-        :param: outColLabels a pointer to a string array where the column labels will be allocated
-        and written.
-        :param: outColCount after the call this variable will hold the number of column labels
-        returned.
-
-        :returns: The return value will be zero (0) when successful, and negative (-1) in case
-        no stoichiometry matrix was loaded beforehand or none of the analysis methods has 
-        been called yet.
-
-        Remarks: To free the string arrays (outRowLabels and outColLabels) call 
-        ::LibStructural_freeMatrix with the string array and its corresponding length 
-        (outRowCount or outColCount)
+        :retruns: the K matrix row and column labels.
 
 
         """
@@ -1618,13 +896,9 @@ class LibStructural(_object):
 
     def getL0MatrixLabels(self):
         """
-        getL0MatrixLabels(LibStructural self) -> StringVectorx2
-
         LibStructural.getL0MatrixLabels(self)
 
-         Returns the L0 Matrix row and column labels.
-        :param: oRows a string vector that will be overwritten to hold the row labels
-        :param: oCols a string vector that will be overwritten to hold the column labels.
+        :retruns: the L0 Matrix row and column labels.
 
 
         """
@@ -1632,13 +906,9 @@ class LibStructural(_object):
 
     def getLinkMatrixLabels(self):
         """
-        getLinkMatrixLabels(LibStructural self) -> StringVectorx2
-
         LibStructural.getLinkMatrixLabels(self)
 
-         Returns the row and column labels for the Link Matrix, L
-        :param: oRows a string vector that will be overwritten to hold the row labels
-        :param: oCols a string vector that will be overwritten to hold the column labels.
+        :retruns: the row and column labels for the Link Matrix, L
 
 
         """
@@ -1646,13 +916,9 @@ class LibStructural(_object):
 
     def getN0MatrixLabels(self):
         """
-        getN0MatrixLabels(LibStructural self) -> StringVectorx2
-
         LibStructural.getN0MatrixLabels(self)
 
-         Returns the N0 Matrix row and column labels.
-        :param: oRows a string vector that will be overwritten to hold the row labels
-        :param: oCols a string vector that will be overwritten to hold the column labels
+        :retruns: the N0 Matrix row and column labels.
 
 
         """
@@ -1660,28 +926,9 @@ class LibStructural(_object):
 
     def getNDCMatrixLabels(self):
         """
-        getNDCMatrixLabels(LibStructural self) -> StringVectorx2
-
         LibStructural.getNDCMatrixLabels(self)
 
-         Returns the NDC Matrix row and column labels.
-
-        :param: outRowLabels a pointer to a string array where the row labels will be allocated 
-        and written.
-        :param: outRowCount after the call this variable will hold the number of row labels 
-        returned.
-        :param: outColLabels a pointer to a string array where the column labels will be allocated
-        and written.
-        :param: outColCount after the call this variable will hold the number of column labels
-        returned.
-
-        :returns: The return value will be zero (0) when successful, and negative (-1) in case
-        no stoichiometry matrix was loaded beforehand or none of the analysis methods has 
-        been called yet.
-
-        Remarks: To free the string arrays (outRowLabels and outColLabels) call 
-        ::LibStructural_freeMatrix with the string array and its corresponding length 
-        (outRowCount or outColCount)
+        :retruns: the NDC Matrix row and column labels.
 
 
         """
@@ -1689,13 +936,9 @@ class LibStructural(_object):
 
     def getNICMatrixLabels(self):
         """
-        getNICMatrixLabels(LibStructural self) -> StringVectorx2
-
         LibStructural.getNICMatrixLabels(self)
 
-        Returns the NIC Matrix row and column labels.
-        :param: oRows a string vector that will be overwritten to hold the row labels
-        :param: oCols a string vector that will be overwritten to hold the column labels.
+        :retruns: the NIC Matrix row and column labels.
 
 
         """
@@ -1703,28 +946,9 @@ class LibStructural(_object):
 
     def getNrMatrixLabels(self):
         """
-        getNrMatrixLabels(LibStructural self) -> StringVectorx2
-
         LibStructural.getNrMatrixLabels(self)
 
-        Returns the Nr Matrix row and column labels.
-
-        :param: outRowLabels a pointer to a string array where the row labels will be allocated 
-        and written.
-        :param: outRowCount after the call this variable will hold the number of row labels 
-        returned.
-        :param: outColLabels a pointer to a string array where the column labels will be allocated
-        and written.
-        :param: outColCount after the call this variable will hold the number of column labels
-        returned.
-
-        :returns: The return value will be zero (0) when successful, and negative (-1) in case
-        no stoichiometry matrix was loaded beforehand or none of the analysis methods has 
-        been called yet.
-
-        Remarks: To free the string arrays (outRowLabels and outColLabels) call 
-        ::LibStructural_freeMatrix with the string array and its corresponding length 
-        (outRowCount or outColCount)
+        :retruns: the Nr Matrix row and column labels.
 
 
         """
@@ -1732,28 +956,9 @@ class LibStructural(_object):
 
     def getStoichiometryMatrixLabels(self):
         """
-        getStoichiometryMatrixLabels(LibStructural self) -> StringVectorx2
-
         LibStructural.getStoichiometryMatrixLabels(self)
 
-         Returns the row and column labels for the original and unaltered stoichiometry matrix.
-
-        :param: outRowLabels a pointer to a string array where the row labels will be allocated 
-        and written.
-        :param: outRowCount after the call this variable will hold the number of row labels 
-        returned.
-        :param: outColLabels a pointer to a string array where the column labels will be allocated
-        and written.
-        :param: outColCount after the call this variable will hold the number of column labels
-        returned.
-
-        :returns: The return value will be zero (0) when successful, and negative (-1) in case
-        no stoichiometry matrix was loaded beforehand or none of the analysis methods has 
-        been called yet.
-
-        Remarks: To free the string arrays (outRowLabels and outColLabels) call 
-        ::LibStructural_freeMatrix with the string array and its corresponding length 
-        (outRowCount or outColCount)
+        :retruns: the row and column labels for the original and unaltered stoichiometry matrix.
 
 
         """
@@ -1761,28 +966,9 @@ class LibStructural(_object):
 
     def getFullyReorderedStoichiometryMatrixLabels(self):
         """
-        getFullyReorderedStoichiometryMatrixLabels(LibStructural self) -> StringVectorx2
-
         LibStructural.getFullyReorderedStoichiometryMatrixLabels(self)
 
-         Returns the row and column labels for the reordered stoichiometry matrix (row reordered stoichiometry matrix)
-
-        :param: outRowLabels a pointer to a string array where the row labels will be allocated 
-        and written.
-        :param: outRowCount after the call this variable will hold the number of row labels 
-        returned.
-        :param: outColLabels a pointer to a string array where the column labels will be allocated
-        and written.
-        :param: outColCount after the call this variable will hold the number of column labels
-        returned.
-
-        :returns: The return value will be zero (0) when successful, and negative (-1) in case
-        no stoichiometry matrix was loaded beforehand or none of the analysis methods has 
-        been called yet.
-
-        Remarks: To free the string arrays (outRowLabels and outColLabels) call 
-        ::LibStructural_freeMatrix with the string array and its corresponding length 
-        (outRowCount or outColCount)
+        :retruns: the row and column labels for the reordered stoichiometry matrix (row reordered stoichiometry matrix)
 
 
         """
@@ -1790,28 +976,9 @@ class LibStructural(_object):
 
     def getReorderedStoichiometryMatrixLabels(self):
         """
-        getReorderedStoichiometryMatrixLabels(LibStructural self) -> StringVectorx2
-
         LibStructural.getReorderedStoichiometryMatrixLabels(self)
 
-         Returns the row and column labels for the reordered stoichiometry matrix (row reordered stoichiometry matrix)
-
-        :param: outRowLabels a pointer to a string array where the row labels will be allocated 
-        and written.
-        :param: outRowCount after the call this variable will hold the number of row labels 
-        returned.
-        :param: outColLabels a pointer to a string array where the column labels will be allocated
-        and written.
-        :param: outColCount after the call this variable will hold the number of column labels
-        returned.
-
-        :returns: The return value will be zero (0) when successful, and negative (-1) in case
-        no stoichiometry matrix was loaded beforehand or none of the analysis methods has 
-        been called yet.
-
-        Remarks: To free the string arrays (outRowLabels and outColLabels) call 
-        ::LibStructural_freeMatrix with the string array and its corresponding length 
-        (outRowCount or outColCount)
+        :retruns: the row and column labels for the reordered stoichiometry matrix (row reordered stoichiometry matrix)
 
 
         """
@@ -1819,59 +986,62 @@ class LibStructural(_object):
 
     def getStoichiometryMatrix(self):
     	"""
-    	Returns the original, unaltered stoichiometry matrix.
+    	LibStructural.getStoichiometryMatrix(self)
+    	:returns: the original, unaltered stoichiometry matrix.
     	"""
     	return self._my_getStoichiometryMatrix().toNumpy()
-    	
+
     def getColumnReorderedNrMatrix(self):
     	"""
-    	Returns the Nr Matrix repartitioned into NIC (independent columns) and NDC (dependent columns).
+    	LibStructural.getColumnReorderedNrMatrix(self)
+    	:returns: the Nr Matrix repartitioned into NIC (independent columns) and NDC (dependent columns).
     	"""
     	return self._my_getColumnReorderedNrMatrix().toNumpy()
-    	
+
     def getFullyReorderedN0StoichiometryMatrix(self):
     	"""
-    	Returns the N0 Matrix.
+    	LibStructural.getFullyReorderedN0StoichiometryMatrix(self)
+    	:returns: the N0 Matrix.
     	The rows of the Nr matrix will be linearly Dependent.
     	"""
     	return self._my_getFullyReorderedN0StoichiometryMatrix().toNumpy()
 
     def getFullyReorderedNrMatrix(self):
     	"""
-    	Returns the Nr Matrix.
+    	LibStructural.getFullyReorderedNrMatrix(self)
+    	:returns: the Nr Matrix.
     	"""
     	return self._my_getFullyReorderedNrMatrix().toNumpy()
-    	
+
     def getFullyReorderedStoichiometryMatrix(self):
     	"""
-    	Returns the fully reordered stoichiometry matrix (row and column reordered stoichiometry matrix)
+    	LibStructural.getFullyReorderedStoichiometryMatrix(self)
+    	:returns: the fully reordered stoichiometry matrix (row and column reordered stoichiometry matrix)
     	"""
     	return self._my_getFullyReorderedStoichiometryMatrix().toNumpy()
-    	
+
     def getGammaMatrix(self):
     	"""
-    	Returns Gamma, the conservation law array.
-    	Each row represents a single conservation law where the column indicate the 
-    	participating molecular species. The number of rows is therefore equal to the 
-    	number of conservation laws. Columns are ordered according to the rows in the 
-    	reordered stoichiometry matrix, see ::LibStructural_getReorderedSpeciesId and 
-    	::LibStructural_getReorderedStoichiometryMatrix. 
+    	LibStructural.getGammaMatrix(self)
+    	:returns: Gamma, the conservation law array.
+    	Each row represents a single conservation law where the column indicate the participating molecular species. The number of rows is therefore equal to the number of conservation laws. Columns are ordered according to the rows in the reordered stoichiometry matrix, see LibStructural.getReorderedSpeciesId and LibStructural.getReorderedStoichiometryMatrix.
 
-    	\param outMatrix a pointer to a double array that holds the output
-    	\param outRows will be overwritten with the number of rows
-    	\param outCols will be overwritten with the number of columns.
-
-    	\return The return value will be zero (0) when successful, and negative (-1) in case
-    	no stoichiometry matrix was loaded beforehand or none of the analysis methods has 
-    	been called yet.
-
-    	\remarks To free the returned matrix call ::LibStructural_freeMatrix with the outMatrix 
-    	and outRows as parameter.
     	"""
     	return self._my_getGammaMatrix().toNumpy()
-    	
-    def getGammaMatrixGJ(self,oMatrix):
 
+    def getGammaMatrixGJ(self,oMatrix):
+    	"""
+    	LibStructural.getGammaMatrixGJ(self,matrix)
+
+    	:param: the stoichiometry matrix that will be used to calculate gamma
+    	:returns: Gamma, the conservation law array.
+    	Each row represents a single conservation law where the column indicate the participating molecular species. The number of rows is therefore equal to the number of conservation laws.
+    	In this case the Gamma Matrix is recalculated for the given stoichiometry matrix.
+    	Gamma is calculated based on R = GaussJordan ( [ stoichiometry  I ] ), where R has the form
+    	R = [ R11 R12
+    			0  GAMMA ]
+    	The RowLabels should be an increasing number, to numerate the conservation law, the column label will be the same label as the stoichiometry matrix.
+    	"""
     	import numpy as np
 
     	if (type(oMatrix) is list or type(oMatrix) is np.ndarray):
@@ -1888,127 +1058,106 @@ class LibStructural(_object):
     			raise ValueError("Expecting 2 dimensional list or numpy array")
     	else:
     		raise ValueError("Expecting list or numpy array")
-    	
-    	
+
+
     def getK0Matrix(self):
     	"""
-    	Returns the K0 Matrix. 
-    	K0 is defined such that K0 = -(NIC)^-1 NDC, or equivalently, [NDC NIC][I K0]' = 0 where [NDC NIC] = Nr
+    	LibStructural.getK0Matrix(self)
+
+    	:returns: the K0 Matrix.
+    	K0 is defined such that K0 = -(NIC)\ :sup:`-1`\ * NDC, or equivalently, [NDC NIC][I K0]' = 0 where [NDC NIC] = Nr
     	"""
     	return self._my_getK0Matrix().toNumpy()
-    	
+
     def getKMatrix(self):
     	"""
-    	Returns the K matrix (right nullspace of Nr) 
-    	The K matrix has the structure, [I K0]' 
+    	LibStructural.getKMatrix(self)
+    	:returns: the K matrix (right nullspace of Nr)
+    	The K matrix has the structure, [I K0]'
     	"""
     	return self._my_getKMatrix().toNumpy()
 
     def getL0Matrix(self):
     	"""
-    	Returns the L0 Matrix. 
+    	LibStructural.getL0Matrix(self)
 
-    	L0 is defined such that  L0 Nr = N0. L0 forms part of the link matrix, L.  N0 is the set of 
-    	linear dependent rows from the lower portion of the reordered stoichiometry matrix.
+    	:returns: the L0 Matrix.
 
-    	\param outMatrix a pointer to a double array that holds the output
-    	\param outRows will be overwritten with the number of rows
-    	\param outCols will be overwritten with the number of columns.
+    	L0 is defined such that  L0*Nr = N0. L0 forms part of the link matrix, L.  N0 is the set of linear dependent rows from the lower portion of the reordered stoichiometry matrix.
 
-    	\return The return value will be zero (0) when successful, and negative (-1) in case
-    	no stoichiometry matrix was loaded beforehand or none of the analysis methods have 
-    	been called yet.
-
-    	\remarks To free the returned matrix call ::LibStructural_freeMatrix with the outMatrix 
-    	and outRows as parameter.
     	"""
     	return self._my_getL0Matrix().toNumpy()
-    	
+
     def getLinkMatrix(self):
     	"""
-    	Returns L, the Link Matrix, left nullspace (aka nullspace of the transpose Nr). 
+    	LibStructural.getLinkMatrix(self)
+    	:returns: L, the Link Matrix, left nullspace (aka nullspace of the transpose Nr).
 
-    	L will have the structure, [I L0]', such that L Nr  = N
-
-    	\param outMatrix a pointer to a double array that holds the output
-    	\param outRows will be overwritten with the number of rows
-    	\param outCols will be overwritten with the number of columns.
-
-    	\return The return value will be zero (0) when successful, and negative (-1) in case
-    	no stoichiometry matrix was loaded beforehand or none of the analysis methods has 
-    	been called yet.
-
-    	\remarks To free the returned matrix call ::LibStructural_freeMatrix with the outMatrix 
-    	and outRows as parameter.
+    	L will have the structure, [I L0]', such that L*Nr = N
     	"""
     	return self.getLinkMatrix().toNumpy()
-    	
+
     def getN0Matrix(self):
     	"""
-    	Returns the N0 Matrix. 
+    	LibStructural.getN0Matrix(self)
+    	:returns: the N0 Matrix.
     	The N0 matrix is the set of linearly dependent rows of N where L0 Nr = N0.
     	"""
     	return self._my_getN0Matrix().toNumpy()
-    	
+
     def getNDCMatrix(self):
     	"""
-    	Returns the NDC Matrix (the set of linearly dependent columns of Nr).
+    	LibStructural.getNDCMatrix(self)
+    	:returns: the NDC Matrix (the set of linearly dependent columns of Nr).
 
-    	\param outMatrix a pointer to a double array that holds the output
-    	\param outRows will be overwritten with the number of rows
-    	\param outCols will be overwritten with the number of columns.
-
-    	\return The return value will be zero (0) when successful, and negative (-1) in case
-    	no stoichiometry matrix was loaded beforehand or none of the analysis methods has 
-    	been called yet.
-
-    	\remarks To free the returned matrix call ::LibStructural_freeMatrix with the outMatrix 
-    	and outRows as parameter.
     	"""
     	return self._my_getNDCMatrix().toNumpy()
 
     def getNICMatrix(self):
     	"""
-    	Returns the NIC Matrix (the set of linearly independent columns of Nr)
+    	LibStructural.getNICMatrix(self)
+    	:returns: the NIC Matrix (the set of linearly independent columns of Nr)
     	"""
     	return self._my_getNICMatrix().toNumpy()
-    	
+
     def getNrMatrix(self):
     	"""
-    	Returns the Nr Matrix. 
+    	LibStructural.getNrMatrix(self)
+
+    	:returns: the Nr Matrix.
+
     	The rows of the Nr matrix will be linearly independent.
-    	\param outMatrix a pointer to a double array that holds the output
-    	\param outRows will be overwritten with the number of rows
-    	\param outCols will be overwritten with the number of columns.
-
-    	\return The return value will be zero (0) when successful, and negative (-1) in case
-    	no stoichiometry matrix was loaded beforehand or none of the analysis methods has 
-    	been called yet.
-
-    	\remarks To free the returned matrix call ::LibStructural_freeMatrix with the outMatrix 
-    	and outRows as parameter.
     	"""
     	return self._my_getNrMatrix().toNumpy()
-    	
+
     def getReorderedStoichiometryMatrix(self):
     	"""
-    	Returns the reordered stoichiometry matrix (row reordered stoichiometry matrix, columns are not reordered!)
+    	LibStructural.getReorderedStoichiometryMatrix(self)
 
-    	\param outMatrix a pointer to a double array that holds the output
-    	\param outRows will be overwritten with the number of rows
-    	\param outCols will be overwritten with the number of columns.
+    	:returns: the reordered stoichiometry matrix (row reordered stoichiometry matrix, columns are not reordered!)
 
-    	\return The return value will be zero (0) when successful, and negative (-1) in case
-    	no stoichiometry matrix was loaded beforehand or none of the analysis methods has 
-    	been called yet.
-
-    	\remarks To free the returned matrix call ::LibStructural_freeMatrix with the outMatrix 
-    	and outRows as parameter.
     	"""
     	return self._my_getReorderedStoichiometryMatrix().toNumpy()
 
     def loadStoichiometryMatrix(self, data):
+    		"""
+    		LibStructural.loadStoichiometryMatrix(self, Matrix)
 
+    		:param: 2D array stoichiometry matrix
+
+    		Loads a stoichiometry matrix into the library.
+    		To analyze the stoichiometry call one of the following:
+
+    		| ``LibStructural.analyzeWithQR``,
+    		| ``LibStructural.analyzeWithLU``,
+    		| ``LibStructural.analyzeWithLUandRunTests``,
+    		| ``LibStructural.analyzeWithFullyPivotedLU``,
+    		| ``LibStructural.analyzeWithFullyPivotedLUwithTests``,
+
+    		Remarks: if matrix labels are needed it is recommended to call LibStructural.loadSpecies
+    		and ``LibStructural.loadReactionNames``after a call to this method.
+
+    		"""
     		import numpy as np
 
     		if (type(data) is list or type(data) is np.ndarray):
@@ -2024,9 +1173,15 @@ class LibStructural(_object):
     			else:
     				raise ValueError("Expecting 2 dimensional list or numpy array")
     		else:
-     		        raise ValueError("Expecting list or numpy array")
+    			raise ValueError("Expecting list or numpy array")
 
     def rref(self, data, tolerance=1e-6):
+    		"""
+    		LibStructural.rref(self, matrix, tol)
+
+    		:param: a matrix and a tolerance value
+    		:returns: reduced row echelon form of the matrix
+    		"""
     		import numpy as np
 
     		if (type(data) is list or type(data) is np.ndarray):
@@ -2063,6 +1218,13 @@ class LibStructural(_object):
      		        raise ValueError("Expecting list or numpy array")
 
     def getEigenValues (self, oMatrix):
+    		"""
+    		LibStructural.getEigenValues(self, matrix)
+
+    		:param: Matrix to find the eigenvalues for
+    		:returns: an array, first column are the real values and second column are imaginary values
+    		"""
+
     		import numpy as np
 
     		if (type(oMatrix) is list or type(oMatrix) is np.ndarray):
@@ -2081,6 +1243,13 @@ class LibStructural(_object):
      		        raise ValueError("Expecting list or numpy array")
 
     def getEigenVectors (self, oMatrix):
+    		"""
+    		LibStructural.getEigenVectors(self, matrix)
+
+    		:param: Matrix to find the eigenvectors for
+    		:returns: an array where each columns is an eigenvector
+    		"""
+
     		import numpy as np
 
     		if (type(oMatrix) is list or type(oMatrix) is np.ndarray):
@@ -2099,6 +1268,12 @@ class LibStructural(_object):
      		        raise ValueError("Expecting list or numpy array")
 
     def getConditionNumber (self, oMatrix):
+    		'''
+    		LibStructural.getConditionNumber(self, matrix)
+
+    		:param: Matrix to find the condition of
+    		:returns: the condition numbe
+    		'''
     		import numpy as np
 
     		if (type(oMatrix) is list or type(oMatrix) is np.ndarray):
@@ -2117,6 +1292,8 @@ class LibStructural(_object):
      		        raise ValueError("Expecting list or numpy array")
 
     def getRConditionNumber (self, oMatrix):
+
+
     		import numpy as np
 
     		if (type(oMatrix) is list or type(oMatrix) is np.ndarray):
@@ -2135,6 +1312,14 @@ class LibStructural(_object):
      		        raise ValueError("Expecting list or numpy array")
 
     def getLeftNullSpace (self, oMatrix):
+    		"""
+    		LibStructural.getConditionNumber(self, matrix)
+
+    		:param: Matrix to find the left nullspace of.
+    		:returns: the Left Nullspace of the matrix argument
+
+    		"""
+
     		import numpy as np
 
     		if (type(oMatrix) is list or type(oMatrix) is np.ndarray):
@@ -2153,6 +1338,13 @@ class LibStructural(_object):
      		        raise ValueError("Expecting list or numpy array")
 
     def getRightNullSpace (self, oMatrix):
+    		"""
+    		LibStructural.getRightNullSpace(self, matrix)
+
+    		:param: Matrix to find the right nullspace of
+    		:returns: the Right Nullspace of the matric argument
+    		"""
+
     		import numpy as np
 
     		if (type(oMatrix) is list or type(oMatrix) is np.ndarray):
@@ -2171,6 +1363,12 @@ class LibStructural(_object):
      		        raise ValueError("Expecting list or numpy array")
 
     def getRank (self, oMatrix):
+    		"""
+    		LibStructural.getRank(self, matrix)
+
+    		:param: Matrix to find the rank of.
+    		:returns: the rank as an integer
+    		"""
     		import numpy as np
 
     		if (type(oMatrix) is list or type(oMatrix) is np.ndarray):
@@ -2195,9 +1393,7 @@ LibStructural_swigregister(LibStructural)
 
 def LibStructural_getInstance():
   """
-    LibStructural_getInstance() -> LibStructural
-
-    LibStructural.getInstance()
+    LibStructural.getInstance(self)
 
     static method to get an instance of LibStructural (allows use as singleton)
 
@@ -2206,124 +1402,78 @@ def LibStructural_getInstance():
   return _structural.LibStructural_getInstance()
 
 class complexArray(_object):
-    """Proxy of C++ complexArray class"""
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, complexArray, name, value)
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, complexArray, name)
     __repr__ = _swig_repr
     def __init__(self, *args): 
-        """__init__(complexArray self, size_t nelements) -> complexArray"""
         this = _structural.new_complexArray(*args)
         try: self.this.append(this)
         except: self.this = this
     __swig_destroy__ = _structural.delete_complexArray
     __del__ = lambda self : None;
-    def __getitem__(self, *args):
-        """__getitem__(complexArray self, size_t index) -> LIB_LA::Complex"""
-        return _structural.complexArray___getitem__(self, *args)
-
-    def __setitem__(self, *args):
-        """__setitem__(complexArray self, size_t index, LIB_LA::Complex value)"""
-        return _structural.complexArray___setitem__(self, *args)
-
-    def cast(self):
-        """cast(complexArray self) -> LIB_LA::Complex *"""
-        return _structural.complexArray_cast(self)
-
-    def frompointer(*args):
-        """frompointer(LIB_LA::Complex * t) -> complexArray"""
-        return _structural.complexArray_frompointer(*args)
-
-    if _newclass:frompointer = staticmethod(frompointer)
-    __swig_getmethods__["frompointer"] = lambda x: frompointer
+    def __getitem__(self, *args): return _structural.complexArray___getitem__(self, *args)
+    def __setitem__(self, *args): return _structural.complexArray___setitem__(self, *args)
+    def cast(self): return _structural.complexArray_cast(self)
+    __swig_getmethods__["frompointer"] = lambda x: _structural.complexArray_frompointer
+    if _newclass:frompointer = staticmethod(_structural.complexArray_frompointer)
 complexArray_swigregister = _structural.complexArray_swigregister
 complexArray_swigregister(complexArray)
 
 def complexArray_frompointer(*args):
-  """complexArray_frompointer(LIB_LA::Complex * t) -> complexArray"""
   return _structural.complexArray_frompointer(*args)
+complexArray_frompointer = _structural.complexArray_frompointer
 
 class doubleArray(_object):
-    """Proxy of C++ doubleArray class"""
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, doubleArray, name, value)
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, doubleArray, name)
     __repr__ = _swig_repr
     def __init__(self, *args): 
-        """__init__(doubleArray self, size_t nelements) -> doubleArray"""
         this = _structural.new_doubleArray(*args)
         try: self.this.append(this)
         except: self.this = this
     __swig_destroy__ = _structural.delete_doubleArray
     __del__ = lambda self : None;
-    def __getitem__(self, *args):
-        """__getitem__(doubleArray self, size_t index) -> double"""
-        return _structural.doubleArray___getitem__(self, *args)
-
-    def __setitem__(self, *args):
-        """__setitem__(doubleArray self, size_t index, double value)"""
-        return _structural.doubleArray___setitem__(self, *args)
-
-    def cast(self):
-        """cast(doubleArray self) -> double *"""
-        return _structural.doubleArray_cast(self)
-
-    def frompointer(*args):
-        """frompointer(double * t) -> doubleArray"""
-        return _structural.doubleArray_frompointer(*args)
-
-    if _newclass:frompointer = staticmethod(frompointer)
-    __swig_getmethods__["frompointer"] = lambda x: frompointer
+    def __getitem__(self, *args): return _structural.doubleArray___getitem__(self, *args)
+    def __setitem__(self, *args): return _structural.doubleArray___setitem__(self, *args)
+    def cast(self): return _structural.doubleArray_cast(self)
+    __swig_getmethods__["frompointer"] = lambda x: _structural.doubleArray_frompointer
+    if _newclass:frompointer = staticmethod(_structural.doubleArray_frompointer)
 doubleArray_swigregister = _structural.doubleArray_swigregister
 doubleArray_swigregister(doubleArray)
 
 def doubleArray_frompointer(*args):
-  """doubleArray_frompointer(double * t) -> doubleArray"""
   return _structural.doubleArray_frompointer(*args)
+doubleArray_frompointer = _structural.doubleArray_frompointer
 
 class intArray(_object):
-    """Proxy of C++ intArray class"""
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, intArray, name, value)
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, intArray, name)
     __repr__ = _swig_repr
     def __init__(self, *args): 
-        """__init__(intArray self, size_t nelements) -> intArray"""
         this = _structural.new_intArray(*args)
         try: self.this.append(this)
         except: self.this = this
     __swig_destroy__ = _structural.delete_intArray
     __del__ = lambda self : None;
-    def __getitem__(self, *args):
-        """__getitem__(intArray self, size_t index) -> int"""
-        return _structural.intArray___getitem__(self, *args)
-
-    def __setitem__(self, *args):
-        """__setitem__(intArray self, size_t index, int value)"""
-        return _structural.intArray___setitem__(self, *args)
-
-    def cast(self):
-        """cast(intArray self) -> int *"""
-        return _structural.intArray_cast(self)
-
-    def frompointer(*args):
-        """frompointer(int * t) -> intArray"""
-        return _structural.intArray_frompointer(*args)
-
-    if _newclass:frompointer = staticmethod(frompointer)
-    __swig_getmethods__["frompointer"] = lambda x: frompointer
+    def __getitem__(self, *args): return _structural.intArray___getitem__(self, *args)
+    def __setitem__(self, *args): return _structural.intArray___setitem__(self, *args)
+    def cast(self): return _structural.intArray_cast(self)
+    __swig_getmethods__["frompointer"] = lambda x: _structural.intArray_frompointer
+    if _newclass:frompointer = staticmethod(_structural.intArray_frompointer)
 intArray_swigregister = _structural.intArray_swigregister
 intArray_swigregister(intArray)
 
 def intArray_frompointer(*args):
-  """intArray_frompointer(int * t) -> intArray"""
   return _structural.intArray_frompointer(*args)
+intArray_frompointer = _structural.intArray_frompointer
 
 class DoubleMatrix(_object):
-    """Proxy of C++ LIB_LA::Matrix<(double)> class"""
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, DoubleMatrix, name, value)
     __swig_getmethods__ = {}
@@ -2339,87 +1489,26 @@ class DoubleMatrix(_object):
     __swig_getmethods__["_Array"] = _structural.DoubleMatrix__Array_get
     if _newclass:_Array = _swig_property(_structural.DoubleMatrix__Array_get, _structural.DoubleMatrix__Array_set)
     def __init__(self, *args): 
-        """
-        __init__(LIB_LA::Matrix<(double)> self, unsigned int rows=0, unsigned int cols=0) -> DoubleMatrix
-        __init__(LIB_LA::Matrix<(double)> self, unsigned int rows=0) -> DoubleMatrix
-        __init__(LIB_LA::Matrix<(double)> self) -> DoubleMatrix
-        __init__(LIB_LA::Matrix<(double)> self, DoubleMatrix src) -> DoubleMatrix
-        __init__(LIB_LA::Matrix<(double)> self, double *& oRawData, int nRows, int nCols, bool transpose=True) -> DoubleMatrix
-        __init__(LIB_LA::Matrix<(double)> self, double *& oRawData, int nRows, int nCols) -> DoubleMatrix
-        __init__(LIB_LA::Matrix<(double)> self, double **& oRawData, int nRows, int nCols) -> DoubleMatrix
-        __init__(LIB_LA::Matrix<(double)> self, double const ** oRawData, int nRows, int nCols) -> DoubleMatrix
-        """
         this = _structural.new_DoubleMatrix(*args)
         try: self.this.append(this)
         except: self.this = this
-    def getArray(self):
-        """getArray(DoubleMatrix self) -> double *"""
-        return _structural.DoubleMatrix_getArray(self)
-
-    def getCopy(self, transpose=False):
-        """
-        getCopy(DoubleMatrix self, bool transpose=False) -> double
-        getCopy(DoubleMatrix self) -> double *
-        """
-        return _structural.DoubleMatrix_getCopy(self, transpose)
-
-    def initializeFrom2DMatrix(self, *args):
-        """initializeFrom2DMatrix(DoubleMatrix self, double **& oRawData, int nRows, int nCols)"""
-        return _structural.DoubleMatrix_initializeFrom2DMatrix(self, *args)
-
-    def initializeFromConst2DMatrix(self, *args):
-        """initializeFromConst2DMatrix(DoubleMatrix self, double const ** oRawData, int nRows, int nCols)"""
-        return _structural.DoubleMatrix_initializeFromConst2DMatrix(self, *args)
-
+    def getArray(self): return _structural.DoubleMatrix_getArray(self)
+    def getCopy(self, transpose=False): return _structural.DoubleMatrix_getCopy(self, transpose)
+    def initializeFrom2DMatrix(self, *args): return _structural.DoubleMatrix_initializeFrom2DMatrix(self, *args)
+    def initializeFromConst2DMatrix(self, *args): return _structural.DoubleMatrix_initializeFromConst2DMatrix(self, *args)
     __swig_destroy__ = _structural.delete_DoubleMatrix
     __del__ = lambda self : None;
-    def get2DMatrix(self, *args):
-        """get2DMatrix(DoubleMatrix self, int & nRows, int & nCols) -> double **"""
-        return _structural.DoubleMatrix_get2DMatrix(self, *args)
-
-    def swapRows(self, *args):
-        """swapRows(DoubleMatrix self, unsigned int row1, unsigned int row2)"""
-        return _structural.DoubleMatrix_swapRows(self, *args)
-
-    def swapCols(self, *args):
-        """swapCols(DoubleMatrix self, unsigned int col1, unsigned int col2)"""
-        return _structural.DoubleMatrix_swapCols(self, *args)
-
-    def resize(self, *args):
-        """resize(DoubleMatrix self, unsigned int rows, unsigned int cols)"""
-        return _structural.DoubleMatrix_resize(self, *args)
-
-    def getTranspose(self):
-        """getTranspose(DoubleMatrix self) -> DoubleMatrix"""
-        return _structural.DoubleMatrix_getTranspose(self)
-
-    def size(self):
-        """size(DoubleMatrix self) -> unsigned int"""
-        return _structural.DoubleMatrix_size(self)
-
-    def numRows(self):
-        """numRows(DoubleMatrix self) -> unsigned int"""
-        return _structural.DoubleMatrix_numRows(self)
-
-    def numCols(self):
-        """numCols(DoubleMatrix self) -> unsigned int"""
-        return _structural.DoubleMatrix_numCols(self)
-
-    def __call__(self, *args):
-        """
-        __call__(DoubleMatrix self, unsigned int const & row, unsigned int const & col) -> LIB_LA::Matrix< double >::_ElementType
-        __call__(DoubleMatrix self, unsigned int const & row, unsigned int const & col) -> LIB_LA::Matrix< double >::_ElementType const &
-        """
-        return _structural.DoubleMatrix___call__(self, *args)
-
-    def get(self, *args):
-        """get(DoubleMatrix self, unsigned int const row, unsigned int const col) -> double"""
-        return _structural.DoubleMatrix_get(self, *args)
-
-    def set(self, *args):
-        """set(DoubleMatrix self, unsigned int const row, unsigned int const col, double value)"""
-        return _structural.DoubleMatrix_set(self, *args)
-
+    def get2DMatrix(self, *args): return _structural.DoubleMatrix_get2DMatrix(self, *args)
+    def swapRows(self, *args): return _structural.DoubleMatrix_swapRows(self, *args)
+    def swapCols(self, *args): return _structural.DoubleMatrix_swapCols(self, *args)
+    def resize(self, *args): return _structural.DoubleMatrix_resize(self, *args)
+    def getTranspose(self): return _structural.DoubleMatrix_getTranspose(self)
+    def size(self): return _structural.DoubleMatrix_size(self)
+    def numRows(self): return _structural.DoubleMatrix_numRows(self)
+    def numCols(self): return _structural.DoubleMatrix_numCols(self)
+    def __call__(self, *args): return _structural.DoubleMatrix___call__(self, *args)
+    def get(self, *args): return _structural.DoubleMatrix_get(self, *args)
+    def set(self, *args): return _structural.DoubleMatrix_set(self, *args)
     def toNumpy(self):
     		import numpy as np
     		result = np.zeros((self.numRows(), self.numCols()))
@@ -2434,7 +1523,6 @@ DoubleMatrix_swigregister = _structural.DoubleMatrix_swigregister
 DoubleMatrix_swigregister(DoubleMatrix)
 
 class IntMatrix(_object):
-    """Proxy of C++ LIB_LA::Matrix<(int)> class"""
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, IntMatrix, name, value)
     __swig_getmethods__ = {}
@@ -2450,87 +1538,26 @@ class IntMatrix(_object):
     __swig_getmethods__["_Array"] = _structural.IntMatrix__Array_get
     if _newclass:_Array = _swig_property(_structural.IntMatrix__Array_get, _structural.IntMatrix__Array_set)
     def __init__(self, *args): 
-        """
-        __init__(LIB_LA::Matrix<(int)> self, unsigned int rows=0, unsigned int cols=0) -> IntMatrix
-        __init__(LIB_LA::Matrix<(int)> self, unsigned int rows=0) -> IntMatrix
-        __init__(LIB_LA::Matrix<(int)> self) -> IntMatrix
-        __init__(LIB_LA::Matrix<(int)> self, IntMatrix src) -> IntMatrix
-        __init__(LIB_LA::Matrix<(int)> self, int *& oRawData, int nRows, int nCols, bool transpose=True) -> IntMatrix
-        __init__(LIB_LA::Matrix<(int)> self, int *& oRawData, int nRows, int nCols) -> IntMatrix
-        __init__(LIB_LA::Matrix<(int)> self, int **& oRawData, int nRows, int nCols) -> IntMatrix
-        __init__(LIB_LA::Matrix<(int)> self, int const ** oRawData, int nRows, int nCols) -> IntMatrix
-        """
         this = _structural.new_IntMatrix(*args)
         try: self.this.append(this)
         except: self.this = this
-    def getArray(self):
-        """getArray(IntMatrix self) -> int *"""
-        return _structural.IntMatrix_getArray(self)
-
-    def getCopy(self, transpose=False):
-        """
-        getCopy(IntMatrix self, bool transpose=False) -> int
-        getCopy(IntMatrix self) -> int *
-        """
-        return _structural.IntMatrix_getCopy(self, transpose)
-
-    def initializeFrom2DMatrix(self, *args):
-        """initializeFrom2DMatrix(IntMatrix self, int **& oRawData, int nRows, int nCols)"""
-        return _structural.IntMatrix_initializeFrom2DMatrix(self, *args)
-
-    def initializeFromConst2DMatrix(self, *args):
-        """initializeFromConst2DMatrix(IntMatrix self, int const ** oRawData, int nRows, int nCols)"""
-        return _structural.IntMatrix_initializeFromConst2DMatrix(self, *args)
-
+    def getArray(self): return _structural.IntMatrix_getArray(self)
+    def getCopy(self, transpose=False): return _structural.IntMatrix_getCopy(self, transpose)
+    def initializeFrom2DMatrix(self, *args): return _structural.IntMatrix_initializeFrom2DMatrix(self, *args)
+    def initializeFromConst2DMatrix(self, *args): return _structural.IntMatrix_initializeFromConst2DMatrix(self, *args)
     __swig_destroy__ = _structural.delete_IntMatrix
     __del__ = lambda self : None;
-    def get2DMatrix(self, *args):
-        """get2DMatrix(IntMatrix self, int & nRows, int & nCols) -> int **"""
-        return _structural.IntMatrix_get2DMatrix(self, *args)
-
-    def swapRows(self, *args):
-        """swapRows(IntMatrix self, unsigned int row1, unsigned int row2)"""
-        return _structural.IntMatrix_swapRows(self, *args)
-
-    def swapCols(self, *args):
-        """swapCols(IntMatrix self, unsigned int col1, unsigned int col2)"""
-        return _structural.IntMatrix_swapCols(self, *args)
-
-    def resize(self, *args):
-        """resize(IntMatrix self, unsigned int rows, unsigned int cols)"""
-        return _structural.IntMatrix_resize(self, *args)
-
-    def getTranspose(self):
-        """getTranspose(IntMatrix self) -> IntMatrix"""
-        return _structural.IntMatrix_getTranspose(self)
-
-    def size(self):
-        """size(IntMatrix self) -> unsigned int"""
-        return _structural.IntMatrix_size(self)
-
-    def numRows(self):
-        """numRows(IntMatrix self) -> unsigned int"""
-        return _structural.IntMatrix_numRows(self)
-
-    def numCols(self):
-        """numCols(IntMatrix self) -> unsigned int"""
-        return _structural.IntMatrix_numCols(self)
-
-    def __call__(self, *args):
-        """
-        __call__(IntMatrix self, unsigned int const & row, unsigned int const & col) -> LIB_LA::Matrix< int >::_ElementType
-        __call__(IntMatrix self, unsigned int const & row, unsigned int const & col) -> LIB_LA::Matrix< int >::_ElementType const &
-        """
-        return _structural.IntMatrix___call__(self, *args)
-
-    def get(self, *args):
-        """get(IntMatrix self, unsigned int const row, unsigned int const col) -> int"""
-        return _structural.IntMatrix_get(self, *args)
-
-    def set(self, *args):
-        """set(IntMatrix self, unsigned int const row, unsigned int const col, int value)"""
-        return _structural.IntMatrix_set(self, *args)
-
+    def get2DMatrix(self, *args): return _structural.IntMatrix_get2DMatrix(self, *args)
+    def swapRows(self, *args): return _structural.IntMatrix_swapRows(self, *args)
+    def swapCols(self, *args): return _structural.IntMatrix_swapCols(self, *args)
+    def resize(self, *args): return _structural.IntMatrix_resize(self, *args)
+    def getTranspose(self): return _structural.IntMatrix_getTranspose(self)
+    def size(self): return _structural.IntMatrix_size(self)
+    def numRows(self): return _structural.IntMatrix_numRows(self)
+    def numCols(self): return _structural.IntMatrix_numCols(self)
+    def __call__(self, *args): return _structural.IntMatrix___call__(self, *args)
+    def get(self, *args): return _structural.IntMatrix_get(self, *args)
+    def set(self, *args): return _structural.IntMatrix_set(self, *args)
     def toNumpy(self):
     		import numpy as np
     		result = np.zeros((self.numRows(), self.numCols()), dtype=np.int)
@@ -2545,7 +1572,6 @@ IntMatrix_swigregister = _structural.IntMatrix_swigregister
 IntMatrix_swigregister(IntMatrix)
 
 class ComplexMatrix(_object):
-    """Proxy of C++ LIB_LA::Matrix<(LIB_LA::Complex)> class"""
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, ComplexMatrix, name, value)
     __swig_getmethods__ = {}
@@ -2561,87 +1587,26 @@ class ComplexMatrix(_object):
     __swig_getmethods__["_Array"] = _structural.ComplexMatrix__Array_get
     if _newclass:_Array = _swig_property(_structural.ComplexMatrix__Array_get, _structural.ComplexMatrix__Array_set)
     def __init__(self, *args): 
-        """
-        __init__(LIB_LA::Matrix<(LIB_LA::Complex)> self, unsigned int rows=0, unsigned int cols=0) -> ComplexMatrix
-        __init__(LIB_LA::Matrix<(LIB_LA::Complex)> self, unsigned int rows=0) -> ComplexMatrix
-        __init__(LIB_LA::Matrix<(LIB_LA::Complex)> self) -> ComplexMatrix
-        __init__(LIB_LA::Matrix<(LIB_LA::Complex)> self, ComplexMatrix src) -> ComplexMatrix
-        __init__(LIB_LA::Matrix<(LIB_LA::Complex)> self, LIB_LA::Complex *& oRawData, int nRows, int nCols, bool transpose=True) -> ComplexMatrix
-        __init__(LIB_LA::Matrix<(LIB_LA::Complex)> self, LIB_LA::Complex *& oRawData, int nRows, int nCols) -> ComplexMatrix
-        __init__(LIB_LA::Matrix<(LIB_LA::Complex)> self, LIB_LA::Complex **& oRawData, int nRows, int nCols) -> ComplexMatrix
-        __init__(LIB_LA::Matrix<(LIB_LA::Complex)> self, LIB_LA::Complex const ** oRawData, int nRows, int nCols) -> ComplexMatrix
-        """
         this = _structural.new_ComplexMatrix(*args)
         try: self.this.append(this)
         except: self.this = this
-    def getArray(self):
-        """getArray(ComplexMatrix self) -> LIB_LA::Complex *"""
-        return _structural.ComplexMatrix_getArray(self)
-
-    def getCopy(self, transpose=False):
-        """
-        getCopy(ComplexMatrix self, bool transpose=False) -> LIB_LA::Complex
-        getCopy(ComplexMatrix self) -> LIB_LA::Complex *
-        """
-        return _structural.ComplexMatrix_getCopy(self, transpose)
-
-    def initializeFrom2DMatrix(self, *args):
-        """initializeFrom2DMatrix(ComplexMatrix self, LIB_LA::Complex **& oRawData, int nRows, int nCols)"""
-        return _structural.ComplexMatrix_initializeFrom2DMatrix(self, *args)
-
-    def initializeFromConst2DMatrix(self, *args):
-        """initializeFromConst2DMatrix(ComplexMatrix self, LIB_LA::Complex const ** oRawData, int nRows, int nCols)"""
-        return _structural.ComplexMatrix_initializeFromConst2DMatrix(self, *args)
-
+    def getArray(self): return _structural.ComplexMatrix_getArray(self)
+    def getCopy(self, transpose=False): return _structural.ComplexMatrix_getCopy(self, transpose)
+    def initializeFrom2DMatrix(self, *args): return _structural.ComplexMatrix_initializeFrom2DMatrix(self, *args)
+    def initializeFromConst2DMatrix(self, *args): return _structural.ComplexMatrix_initializeFromConst2DMatrix(self, *args)
     __swig_destroy__ = _structural.delete_ComplexMatrix
     __del__ = lambda self : None;
-    def get2DMatrix(self, *args):
-        """get2DMatrix(ComplexMatrix self, int & nRows, int & nCols) -> LIB_LA::Complex **"""
-        return _structural.ComplexMatrix_get2DMatrix(self, *args)
-
-    def swapRows(self, *args):
-        """swapRows(ComplexMatrix self, unsigned int row1, unsigned int row2)"""
-        return _structural.ComplexMatrix_swapRows(self, *args)
-
-    def swapCols(self, *args):
-        """swapCols(ComplexMatrix self, unsigned int col1, unsigned int col2)"""
-        return _structural.ComplexMatrix_swapCols(self, *args)
-
-    def resize(self, *args):
-        """resize(ComplexMatrix self, unsigned int rows, unsigned int cols)"""
-        return _structural.ComplexMatrix_resize(self, *args)
-
-    def getTranspose(self):
-        """getTranspose(ComplexMatrix self) -> ComplexMatrix"""
-        return _structural.ComplexMatrix_getTranspose(self)
-
-    def size(self):
-        """size(ComplexMatrix self) -> unsigned int"""
-        return _structural.ComplexMatrix_size(self)
-
-    def numRows(self):
-        """numRows(ComplexMatrix self) -> unsigned int"""
-        return _structural.ComplexMatrix_numRows(self)
-
-    def numCols(self):
-        """numCols(ComplexMatrix self) -> unsigned int"""
-        return _structural.ComplexMatrix_numCols(self)
-
-    def __call__(self, *args):
-        """
-        __call__(ComplexMatrix self, unsigned int const & row, unsigned int const & col) -> LIB_LA::Matrix< LIB_LA::Complex >::_ElementType
-        __call__(ComplexMatrix self, unsigned int const & row, unsigned int const & col) -> LIB_LA::Matrix< LIB_LA::Complex >::_ElementType const &
-        """
-        return _structural.ComplexMatrix___call__(self, *args)
-
-    def get(self, *args):
-        """get(ComplexMatrix self, unsigned int const row, unsigned int const col) -> LIB_LA::Complex"""
-        return _structural.ComplexMatrix_get(self, *args)
-
-    def set(self, *args):
-        """set(ComplexMatrix self, unsigned int const row, unsigned int const col, LIB_LA::Complex value)"""
-        return _structural.ComplexMatrix_set(self, *args)
-
+    def get2DMatrix(self, *args): return _structural.ComplexMatrix_get2DMatrix(self, *args)
+    def swapRows(self, *args): return _structural.ComplexMatrix_swapRows(self, *args)
+    def swapCols(self, *args): return _structural.ComplexMatrix_swapCols(self, *args)
+    def resize(self, *args): return _structural.ComplexMatrix_resize(self, *args)
+    def getTranspose(self): return _structural.ComplexMatrix_getTranspose(self)
+    def size(self): return _structural.ComplexMatrix_size(self)
+    def numRows(self): return _structural.ComplexMatrix_numRows(self)
+    def numCols(self): return _structural.ComplexMatrix_numCols(self)
+    def __call__(self, *args): return _structural.ComplexMatrix___call__(self, *args)
+    def get(self, *args): return _structural.ComplexMatrix_get(self, *args)
+    def set(self, *args): return _structural.ComplexMatrix_set(self, *args)
     def toNumpy(self):
     		import numpy as np
     		result = np.zeros((self.numRows(), self.numCols()), dtype=np.complex_)

@@ -4,9 +4,9 @@ C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCT
      Creating library C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibStructural\structural.lib and object C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibStructural\structural.exp
 LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
-  63 of 2747 functions ( 2.3%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    38 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
+  66 of 2747 functions ( 2.4%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    34 functions had inline decision re-evaluated but remain unchanged
   libStruct.vcxproj -> C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibStructural\x64\Release\structural.dll
   libStruct.vcxproj -> C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibStructural\structural.pdb (Full PDB)

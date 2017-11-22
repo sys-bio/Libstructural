@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Welcome to Libstructural's documentation!
-===================================
+=========================================
 
 .. toctree::
    :maxdepth: 10
@@ -13,7 +13,7 @@ Welcome to Libstructural's documentation!
    installation
    getting_started
    repositories
-   sbol_examples
+   libstruct_examples
    testing_instructions
    API
 

@@ -1,0 +1,10 @@
+libstruct/__init__.py
+libstruct/_structural.iobj
+libstruct/_structural.ipdb
+libstruct/_structural.pyd
+libstruct/structural.py
+structural.egg-info/PKG-INFO
+structural.egg-info/SOURCES.txt
+structural.egg-info/dependency_links.txt
+structural.egg-info/not-zip-safe
+structural.egg-info/top_level.txt
