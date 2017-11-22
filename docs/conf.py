@@ -15,8 +15,8 @@
 import sys
 import os
 
-# import sphinx_rtd_theme
-# from mock import Mock as MagicMock
+import sphinx_rtd_theme
+from mock import Mock as MagicMock
 
 # # Mock things for readthedoc build
 class Mock(MagicMock):
