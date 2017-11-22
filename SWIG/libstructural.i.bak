@@ -184,7 +184,7 @@
 	def getStoichiometryMatrix(self):
 		"""
 		LibStructural.getStoichiometryMatrix(self)
-		:returns: the original, unaltered stoichiometry matrix.
+		:returns: Unaltered stoichiometry matrix.
 		"""
 		return self._my_getStoichiometryMatrix().toNumpy()
 
@@ -199,8 +199,9 @@
 		"""
 		LibStructural.getFullyReorderedN0StoichiometryMatrix(self)
 
+		Computes the N0 matrix if possible. The N0 matrix will contain all the dependent rows of the stoichiometry matrix.
+
 		:returns: the N0 Matrix.
-		The rows of the Nr matrix will be linearly Dependent.
 
 		"""
 		return self._my_getFullyReorderedN0StoichiometryMatrix().toNumpy()
