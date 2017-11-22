@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  libstructural_wrap_python.cpp
 ..\..\libstruct\SWIG\libstructural_wrap_python.cpp(5548): warning C4101: 'e': unreferenced local variable
 ..\..\libstruct\SWIG\libstructural_wrap_python.cpp(5594): warning C4101: 'e': unreferenced local variable
@@ -342,14 +343,26 @@
 ..\..\libstruct\SWIG\libstructural_wrap_python.cpp(24221): warning C4101: 'e': unreferenced local variable
 ..\..\libstruct\SWIG\libstructural_wrap_python.cpp(24291): warning C4101: 'e': unreferenced local variable
 C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(1198,5): warning MSB8012: TargetPath(C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibStructural\x64\Release\structural.dll) does not match the Linker's OutputFile property value (C:\Tellurium-Winpython\python-2.7.13.amd64\Lib\site-packages\structural\_structural.pyd). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+=======
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(1198,5): warning MSB8012: TargetPath(C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\x64\Release\structural.dll) does not match the Linker's OutputFile property value (C:\Tellurium-Winpython\python-2.7.13.amd64\Lib\site-packages\structural\_structural.pyd). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
+>>>>>>> 44ee7a0906bb69bdbb1e76fa0ea03e89286400de
 C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(1199,5): warning MSB8012: TargetExt(.dll) does not match the Linker's OutputFile property value (.pyd). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
 C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(1200,5): warning MSB8012: TargetName(structural) does not match the Linker's OutputFile property value (_structural). This may cause your project to build incorrectly. To correct this, please make sure that $(OutDir), $(TargetName) and $(TargetExt) property values match the value specified in %(Link.OutputFile).
-     Creating library C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibStructural\structural.lib and object C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibStructural\structural.exp
+     Creating library C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\structural.lib and object C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\structural.exp
 LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
+<<<<<<< HEAD
   61 of 2747 functions ( 2.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     39 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   libStruct.vcxproj -> C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibStructural\x64\Release\structural.dll
   libStruct.vcxproj -> C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibStructural\structural.pdb (Full PDB)
+=======
+  124 of 527 functions (23.5%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    13 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  libStruct.vcxproj -> C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\x64\Release\structural.dll
+  libStruct.vcxproj -> C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\structural.pdb (Full PDB)
+>>>>>>> 44ee7a0906bb69bdbb1e76fa0ea03e89286400de

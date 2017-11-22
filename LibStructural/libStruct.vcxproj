@@ -141,7 +141,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;_CRT_NONSTDC_NO_DEPRECATE;LIB_EXPORTS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\libsbml-5.15.0-vs2017-release-64\include;C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third_party\clapack\3.2.1\INCLUDE;C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\include;C:\Tellurium-Winpython\python-2.7.13.amd64\include;C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibStructural\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\libsbml-5.15.0-vs2017-release-64\include;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third_party\clapack\3.2.1\INCLUDE;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\include;C:\Tellurium-Winpython\python-2.7.13.amd64\include;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ProgramDataBaseFileName>$(ProjectDir)$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
       <AssemblerListingLocation>$(ProjectDir)$(IntDir)</AssemblerListingLocation>
       <ObjectFileName>$(ProjectDir)$(IntDir)</ObjectFileName>
@@ -154,7 +154,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\LIB\lapack.lib;C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\LIB\blas.lib;C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\LIB\libf2c.lib;C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\libsbml-5.15.0-vs2017-release-64\lib\libsbml-static.lib;C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\libsbml-5.15.0-vs2017-release-64\lib\zdll.lib;C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\libsbml-5.15.0-vs2017-release-64\lib\libxml2.lib;C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\libsbml-5.15.0-vs2017-release-64\lib\libbz2.lib;C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\libsbml-5.15.0-vs2017-release-64\lib\\libiconv.lib;ws2_32.lib;C:\Tellurium-Winpython\python-2.7.13.amd64\libs\python27.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)dependencies\third-party\clapack\3.2.1\LIB\lapack.lib;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack\3.2.1\LIB\blas.lib;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack\3.2.1\LIB\libf2c.lib;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\libsbml-5.15.0-vs2017-release-64\lib\libsbml-static.lib;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\libsbml-5.15.0-vs2017-release-64\lib\zdll.lib;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\libsbml-5.15.0-vs2017-release-64\lib\libxml2.lib;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\libsbml-5.15.0-vs2017-release-64\lib\libbz2.lib;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\libsbml-5.15.0-vs2017-release-64\lib\\libiconv.lib;ws2_32.lib;C:\Tellurium-Winpython\python-2.7.13.amd64\libs\python27.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>C:\Tellurium-Winpython\python-2.7.13.amd64\Lib\site-packages\structural\_structural.pyd</OutputFile>
       <ProgramDatabaseFile>$(ProjectDir)$(TargetName).pdb</ProgramDatabaseFile>
       <ProfileGuidedDatabase>$(ProjectDir)$(TargetName).pgd</ProfileGuidedDatabase>
@@ -166,16 +166,12 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\libstruct\LibLA\complex.cpp" />
-    <ClCompile Include="..\..\libstruct\LibLA\libla.cpp" />
-    <ClCompile Include="..\..\libstruct\LibLA\matrix.cpp" />
-    <ClCompile Include="..\..\libstruct\LibLA\util.cpp" />
-    <ClCompile Include="..\..\libstruct\LibStructural\constraint.cpp" />
-    <ClCompile Include="..\..\libstruct\LibStructural\libstructural.cpp" />
-    <ClCompile Include="..\..\libstruct\LibStructural\lpresult.cpp" />
-    <ClCompile Include="..\..\libstruct\LibStructural\objective.cpp" />
-    <ClCompile Include="..\..\libstruct\LibStructural\sbmlmodel.cpp" />
-    <ClCompile Include="..\..\libstruct\SWIG\libstructural_wrap_python.cpp" />
+    <ClCompile Include="..\LibLA\complex.cpp" />
+    <ClCompile Include="..\LibLA\libla.cpp" />
+    <ClCompile Include="..\LibLA\matrix.cpp" />
+    <ClCompile Include="..\LibLA\util.cpp" />
+    <ClCompile Include="libstructural.cpp" />
+    <ClCompile Include="sbmlmodel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\blaswrap.h" />
@@ -185,7 +181,6 @@
     <ClInclude Include="..\include\f2c.h" />
     <ClInclude Include="..\include\fluxbalance.h" />
     <ClInclude Include="..\include\libla.h" />
-    <ClInclude Include="..\include\libstructural.h" />
     <ClInclude Include="..\include\libutil.h" />
     <ClInclude Include="..\include\lpresult.h" />
     <ClInclude Include="..\include\lp_Hash.h" />
@@ -199,6 +194,7 @@
     <ClInclude Include="..\include\objective.h" />
     <ClInclude Include="..\include\sbmlmodel.h" />
     <ClInclude Include="..\include\util.h" />
+    <ClInclude Include="include\libstructural.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
