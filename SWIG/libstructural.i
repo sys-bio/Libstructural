@@ -191,7 +191,8 @@
 	def getColumnReorderedNrMatrix(self):
 		"""
 		LibStructural.getColumnReorderedNrMatrix(self)
-		:returns: the Nr Matrix repartitioned into NIC (independent columns) and NDC (dependent columns).
+		:returns: the Nr Matrix repartitioned into NIC (independent columns) and NDC (dependent columns). The Nr matrix contains the independent rows of the
+		stoihciometry matrix
 		"""
 		return self._my_getColumnReorderedNrMatrix().toNumpy()
 
@@ -491,8 +492,8 @@
 			'''
 			LibStructural.getConditionNumber(self, matrix)
 
-			:param: Matrix to find the condition of
-			:returns: the condition numbe
+			:param: Takes a matrix (numpy) as an argument. Find the condition number of the matrix.
+			:returns: the condition number
 			'''
 			import numpy as np
 
@@ -514,7 +515,12 @@
 
 %pythoncode %{
 	def getRConditionNumber (self, oMatrix):
+			'''
+			LibStructural.getRConditionNumber(self, matrix)
 
+			:param: Takes a matrix (numpy) as an argument. Find the condition number of the matrix.
+			:returns: the condition number
+			'''
 
 			import numpy as np
 
@@ -541,7 +547,7 @@
 			LibStructural.getConditionNumber(self, matrix)
 
 			:param: Matrix to find the left nullspace of.
-			:returns: the Left Nullspace of the matrix argument
+			:returns: the Left Nullspace of the matrix argument.
 
 			"""
 
@@ -568,8 +574,8 @@
 			"""
 			LibStructural.getRightNullSpace(self, matrix)
 
-			:param: Matrix to find the right nullspace of
-			:returns: the Right Nullspace of the matric argument
+			:param: Matrix to find the right nullspace of.
+			:returns: the Right Nullspace of the matric argument.
 			"""
 
 			import numpy as np
@@ -596,7 +602,7 @@
 			LibStructural.getRank(self, matrix)
 
 			:param: Matrix to find the rank of.
-			:returns: the rank as an integer
+			:returns: the rank as an integer.
 			"""
 			import numpy as np
 

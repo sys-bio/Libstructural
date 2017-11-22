@@ -51,10 +51,7 @@ Remarks: This is the prefered method for structural analysis.
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::analyzeWithLU "
 LibStructural.analyzeWithLU(self)
-Uses LU Decomposition for Conservation analysis. This method performs the actual analysis of the stoichiometry matrix (loaded either 
-via ``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``. 
-
-Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
+Uses LU Decomposition for Conservation analysis. This method performs the actual analysis of the stoichiometry matrix (loaded either via ``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``. Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
 
 | ``LibStructural.analyzeWithQR``,
 | ``LibStructural.analyzeWithLU``,
@@ -68,10 +65,7 @@ Only after one of the analysis methods below has been called are the structural 
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::analyzeWithLUandRunTests "
 LibStructural.analyzeWithLUandRunTests(self)
-Uses LU Decomposition for Conservation analysis. This method performs the actual analysis of the stoichiometry matrix loaded either 
-via ``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``. 
-
-Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
+Uses LU Decomposition for Conservation analysis. This method performs the actual analysis of the stoichiometry matrix loaded either via ``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``. Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
 
 | ``LibStructural.analyzeWithQR``,
 | ``LibStructural.analyzeWithLU``,
@@ -124,28 +118,28 @@ This method additionally performs the integrated test suite and returns	those re
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getReorderedSpecies "
 LibStructural.getReorderedSpecies(self)
 
-:retruns: the reordered list of molecular species (choosing the SBML Id if possible).
+:retruns: the reordered list of molecular species. (choosing the SBML Id if possible )
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getSpecies "
 LibStructural.getSpecies(self)
 
-:retruns: the unordered list of species Ids.
+:retruns: the unordered list of species Ids
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getReorderedSpeciesNamesList "
 LibStructural.getReorderedSpeciesNamesList(self)
 
-:retruns: the reordered list of molecular species (choosing the SBML Name if possible).
+:retruns: the reordered list of molecular species.  (choosing the SBML Name if possible).
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getIndependentSpecies "
 LibStructural.getIndependentSpecies(self)
 
-:retruns: the list of Ids for the independent species.
+:retruns: the list of independent species.
 
 ";
 
@@ -180,7 +174,7 @@ LibStructural.getReactions(self)
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getIndependentReactionIds "
 LibStructural.getIndependentReactionIds(self)
 
-:retruns: the list of Ids for the independent reactions
+:retruns: the list of independent reactions
 
 ";
 
