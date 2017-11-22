@@ -987,7 +987,7 @@ class LibStructural(_object):
     def getStoichiometryMatrix(self):
     	"""
     	LibStructural.getStoichiometryMatrix(self)
-    	:returns: the original, unaltered stoichiometry matrix.
+    	:returns: Unaltered stoichiometry matrix.
     	"""
     	return self._my_getStoichiometryMatrix().toNumpy()
 
@@ -1002,8 +1002,9 @@ class LibStructural(_object):
     	"""
     	LibStructural.getFullyReorderedN0StoichiometryMatrix(self)
 
+    	Computes the N0 matrix if possible. The N0 matrix will contain all the dependent rows of the stoichiometry matrix.
+
     	:returns: the N0 Matrix.
-    	The rows of the Nr matrix will be linearly Dependent.
 
     	"""
     	return self._my_getFullyReorderedN0StoichiometryMatrix().toNumpy()
@@ -1011,6 +1012,9 @@ class LibStructural(_object):
     def getFullyReorderedNrMatrix(self):
     	"""
     	LibStructural.getFullyReorderedNrMatrix(self)
+    	
+    	The Nr matrix contains all the linearly independent rows of the stoichiometry matrix.
+    	
     	:returns: the Nr Matrix.
     	"""
     	return self._my_getFullyReorderedNrMatrix().toNumpy()
@@ -1018,7 +1022,8 @@ class LibStructural(_object):
     def getFullyReorderedStoichiometryMatrix(self):
     	"""
     	LibStructural.getFullyReorderedStoichiometryMatrix(self)
-    	:returns: the fully reordered stoichiometry matrix (row and column reordered stoichiometry matrix)
+    	:returns: the fully reordered stoichiometry matrix. Rows and columns are reordered so all indepedent rows
+    	of the stoichiometry matrix are brought to the top and left side of the matrix.
     	"""
     	return self._my_getFullyReorderedStoichiometryMatrix().toNumpy()
 
@@ -1026,22 +1031,26 @@ class LibStructural(_object):
     	"""
     	LibStructural.getGammaMatrix(self)
     	:returns: Gamma, the conservation law array.
-    	Each row represents a single conservation law where the column indicate the participating molecular species. The number of rows is therefore equal to the number of conservation laws. Columns are ordered according to the rows in the reordered stoichiometry matrix, see LibStructural.getReorderedSpeciesId and LibStructural.getReorderedStoichiometryMatrix.
+    	Each row represents a single conservation law where the column indicates the participating molecular species. 
+    	The number of rows is therefore equal to the number of conservation laws. Columns are ordered according to the 
+    	rows in the reordered stoichiometry matrix, see LibStructural.getReorderedSpeciesId and LibStructural.getReorderedStoichiometryMatrix.
 
     	"""
     	return self._my_getGammaMatrix().toNumpy()
 
-    def getGammaMatrixGJ(self,oMatrix):
+    def getGammaMatrixGJ(self, oMatrix):
     	"""
     	LibStructural.getGammaMatrixGJ(self,matrix)
 
     	:param: the stoichiometry matrix that will be used to calculate gamma
     	:returns: Gamma, the conservation law array.
+    	
     	Each row represents a single conservation law where the column indicate the participating molecular species. The number of rows is therefore equal to the number of conservation laws.
-    	In this case the Gamma Matrix is recalculated for the given stoichiometry matrix.
-    	Gamma is calculated based on R = GaussJordan ( [ stoichiometry  I ] ), where R has the form
+    	In this case the Gamma Matrix is recalculated for the given stoichiometry matrix. amma is calculated based on R = GaussJordan ( [ stoichiometry  I ] ), where R has the form
+    	
     	R = [ R11 R12
     			0  GAMMA ]
+    			
     	The RowLabels should be an increasing number, to numerate the conservation law, the column label will be the same label as the stoichiometry matrix.
     	"""
     	import numpy as np
