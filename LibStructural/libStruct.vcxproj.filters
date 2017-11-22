@@ -36,6 +36,9 @@
     <ClCompile Include="..\LibLA\util.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\SWIG\libstructural_wrap_python.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\blaswrap.h">
