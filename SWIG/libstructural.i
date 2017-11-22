@@ -184,7 +184,7 @@
 	def getStoichiometryMatrix(self):
 		"""
 		LibStructural.getStoichiometryMatrix(self)
-		:returns: the original, unaltered stoichiometry matrix.
+		:returns: Unaltered stoichiometry matrix.
 		"""
 		return self._my_getStoichiometryMatrix().toNumpy()
 
