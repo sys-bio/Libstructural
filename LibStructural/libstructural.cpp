@@ -2067,19 +2067,25 @@ void LibStructural::loadStoichiometryMatrix (DoubleMatrix& oMatrix)
 	_Nmat = new DoubleMatrix(oMatrix);
 
 	// Add default reaction names to matrix
-	//for (int i = 0; i < oMatrix.numCols(); i++) {
-	//	std::string sTemp; sTemp = "_J" + std::to_string (i);
-	//	_inputReactionNames.push_back (sTemp);
-	//}
+	for (int i = 0; i < oMatrix.numCols(); i++) {
+		std::string sTemp; sTemp = "_J" + std::to_string (i);
+		_inputReactionNames.push_back (sTemp);
+	}
 
 	// Add default species names to matrix
-	//for (int i = 0; i < oMatrix.numRows(); i++) {
-	//    std::string sTemp; sTemp = "S" + std::to_string (i);
-	//	_inputSpeciesNames.push_back (sTemp);
-	//	_inputValues.push_back (1.0);
-	//}
+	for (int i = 0; i < oMatrix.numRows(); i++) {
+	    std::string sTemp; sTemp = "S" + std::to_string (i);
+		_inputSpeciesNames.push_back (sTemp);
+		_inputValues.push_back (1.0);
+	}
 
+	DoubleMatrix oCopy (*_Nmat);
 
+	InitializeFromStoichiometryMatrix (oCopy,
+		_inputSpeciesNames, _inputReactionNames,
+		_inputValues);
+
+	analyzeWithQR ();
 }
 
 // load species names and initial values 
