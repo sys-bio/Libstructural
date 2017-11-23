@@ -341,7 +341,7 @@ Sets user specified tolerance. This function sets the tolerance used by the libr
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getTolerance "
 LibStructural.getTolerance(self)
 
-:returns: the currently used tolerance
+:returns: the currently used tolerance for decided whether a small number is considered zero or not. 
 
 This function returns the tolerance currently used by the library to determine what value
 is considered as zero. Any value with absolute value smaller than this tolerance is considered zero

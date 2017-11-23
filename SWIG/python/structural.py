@@ -403,8 +403,9 @@ class LibStructural(_object):
 
         | ``LibStructural.analyzeWithQR``,
         | ``LibStructural.analyzeWithLU``,
-        | ``LibStructural.analyzeWithLU`` and ``RunTests``,
-        | ``LibStructural.analyzeWithFullyPivotedLU`` or
+        | ``LibStructural.analyzeWithLU``,
+          ``RunTests``,
+        | ``LibStructural.analyzeWithFullyPivotedLU``,
         | ``LibStructural.analyzeWithFullyPivotedLUwithTests``
 
 

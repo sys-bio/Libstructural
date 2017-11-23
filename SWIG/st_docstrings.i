@@ -40,8 +40,9 @@ Only after one of the analysis methods below has been called are the structural 
 
 | ``LibStructural.analyzeWithQR``,
 | ``LibStructural.analyzeWithLU``,
-| ``LibStructural.analyzeWithLU`` and ``RunTests``,
-| ``LibStructural.analyzeWithFullyPivotedLU`` or
+| ``LibStructural.analyzeWithLU``,
+  ``RunTests``,
+| ``LibStructural.analyzeWithFullyPivotedLU``,
 | ``LibStructural.analyzeWithFullyPivotedLUwithTests``
 
 
