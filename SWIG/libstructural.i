@@ -191,8 +191,7 @@
 	def getColumnReorderedNrMatrix(self):
 		"""
 		LibStructural.getColumnReorderedNrMatrix(self)
-		:returns: the Nr Matrix repartitioned into NIC (independent columns) and NDC (dependent columns). The Nr matrix contains the independent rows of the
-		stoihciometry matrix
+		:returns: the Nr Matrix repartitioned into NIC (independent columns) and NDC (dependent columns). The Nr matrix contains the independent rows of the stoichiometry matrix
 		"""
 		return self._my_getColumnReorderedNrMatrix().toNumpy()
 
@@ -231,7 +230,7 @@
 		:returns: Gamma, the conservation law array.
 		Each row represents a single conservation law where the column indicates the participating molecular species. 
 		The number of rows is therefore equal to the number of conservation laws. Columns are ordered according to the 
-		rows in the reordered stoichiometry matrix, see LibStructural.getReorderedSpeciesId and LibStructural.getReorderedStoichiometryMatrix.
+		rows in the reordered stoichiometry matrix, see ``LibStructural.getReorderedSpeciesId`` and ``LibStructural.getReorderedStoichiometryMatrix``.
 
 		"""
 		return self._my_getGammaMatrix().toNumpy()
@@ -249,7 +248,7 @@
 		R = [ R11 R12
 				0  GAMMA ]
 				
-		The RowLabels should be an increasing number, to numerate the conservation law, the column label will be the same label as the stoichiometry matrix.
+		The RowLabels should be an increasing number, to enumerate the conservation law, the column label will be the same label as the stoichiometry matrix.
 		"""
 		import numpy as np
 
@@ -392,7 +391,10 @@
 			"""
 			LibStructural.rref(self, matrix, tol)
 
-			:param: a matrix and a tolerance value
+      Computes the reduced row echelon of the given matrix. Tolerance is set to indicate the smallest number consider to be zero.
+      
+			:param: a matrix (numpy)
+			:param: Optional: tolerance (double), default is 1E-6
 			:returns: reduced row echelon form of the matrix
 			"""
 			import numpy as np
@@ -415,6 +417,13 @@
 
 %pythoncode %{
 	def rref_FB(self, data, tolerance=1e-6):
+			"""
+			LibStructural.getEigenValues(self, matrix)
+
+			:param: Matrix to find the refuced row echelon for.
+			:returns: the reduce row echelon.
+			"""
+
 			import numpy as np
 
 			if (type(data) is list or type(data) is np.ndarray):
@@ -438,7 +447,7 @@
 			"""
 			LibStructural.getEigenValues(self, matrix)
 
-			:param: Matrix to find the eigenvalues for
+			:param: Matrix to find the eigenvalues for.
 			:returns: an array, first column are the real values and second column are imaginary values
 			"""
 

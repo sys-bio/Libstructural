@@ -191,8 +191,7 @@
 	def getColumnReorderedNrMatrix(self):
 		"""
 		LibStructural.getColumnReorderedNrMatrix(self)
-		:returns: the Nr Matrix repartitioned into NIC (independent columns) and NDC (dependent columns). The Nr matrix contains the independent rows of the
-		stoihciometry matrix
+		:returns: the Nr Matrix repartitioned into NIC (independent columns) and NDC (dependent columns). The Nr matrix contains the independent rows of the stoichiometry matrix
 		"""
 		return self._my_getColumnReorderedNrMatrix().toNumpy()
 
@@ -415,6 +414,13 @@
 
 %pythoncode %{
 	def rref_FB(self, data, tolerance=1e-6):
+			"""
+			LibStructural.getEigenValues(self, matrix)
+
+			:param: Matrix to find the refuced row echelon for.
+			:returns: the reduce row echelon.
+			"""
+
 			import numpy as np
 
 			if (type(data) is list or type(data) is np.ndarray):
@@ -438,7 +444,7 @@
 			"""
 			LibStructural.getEigenValues(self, matrix)
 
-			:param: Matrix to find the eigenvalues for
+			:param: Matrix to find the eigenvalues for.
 			:returns: an array, first column are the real values and second column are imaginary values
 			"""
 
@@ -515,7 +521,12 @@
 
 %pythoncode %{
 	def getRConditionNumber (self, oMatrix):
+			'''
+			LibStructural.getRConditionNumber(self, matrix)
 
+			:param: Takes a matrix (numpy) as an argument. Find the condition number of the matrix.
+			:returns: the condition number
+			'''
 
 			import numpy as np
 
@@ -542,7 +553,7 @@
 			LibStructural.getConditionNumber(self, matrix)
 
 			:param: Matrix to find the left nullspace of.
-			:returns: the Left Nullspace of the matrix argument
+			:returns: the Left Nullspace of the matrix argument.
 
 			"""
 
@@ -569,8 +580,8 @@
 			"""
 			LibStructural.getRightNullSpace(self, matrix)
 
-			:param: Matrix to find the right nullspace of
-			:returns: the Right Nullspace of the matric argument
+			:param: Matrix to find the right nullspace of.
+			:returns: the Right Nullspace of the matric argument.
 			"""
 
 			import numpy as np
@@ -597,7 +608,7 @@
 			LibStructural.getRank(self, matrix)
 
 			:param: Matrix to find the rank of.
-			:returns: the rank as an integer
+			:returns: the rank as an integer.
 			"""
 			import numpy as np
 
