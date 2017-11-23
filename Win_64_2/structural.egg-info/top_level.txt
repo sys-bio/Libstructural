@@ -1,1 +1,1 @@
-libstruct
+structural

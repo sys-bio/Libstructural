@@ -155,7 +155,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>$(SolutionDir)dependencies\third-party\clapack\3.2.1\LIB\lapack.lib;$(SolutionDir)dependencies\third-party\clapack\3.2.1\LIB\blas.lib;$(SolutionDir)dependencies\third-party\clapack\3.2.1\LIB\libf2c.lib;$(SolutionDir)dependencies\libsbml-5.15.0-vs2017-release-64\lib\libsbml-static.lib;$(SolutionDir)dependencies\libsbml-5.15.0-vs2017-release-64\lib\zdll.lib;$(SolutionDir)dependencies\libsbml-5.15.0-vs2017-release-64\lib\libxml2.lib;$(SolutionDir)dependencies\libsbml-5.15.0-vs2017-release-64\lib\libbz2.lib;$(SolutionDir)dependencies\libsbml-5.15.0-vs2017-release-64\lib\\libiconv.lib;ws2_32.lib;C:\Tellurium-Winpython\python-2.7.13.amd64\libs\python27.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>C:\Tellurium-Winpython\python-2.7.13.amd64\Lib\site-packages\structural\_structural.pyd</OutputFile>
+      <OutputFile>C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\python\_structural.pyd</OutputFile>
       <ProgramDatabaseFile>$(ProjectDir)$(TargetName).pdb</ProgramDatabaseFile>
       <ProfileGuidedDatabase>$(ProjectDir)$(TargetName).pgd</ProfileGuidedDatabase>
       <ImportLibrary>$(ProjectDir)$(TargetName).lib</ImportLibrary>

@@ -52,7 +52,7 @@ print(package_dir)
 if config[0] == 'Win':
     chdir(path.join(here,package_dir))
     package_data={
-    'libstruct': ['_structural.iobj', '_structural.ipdb','_structural.pyd','structural.py']
+    'structural': ['_structural.pyd','structural.py']
     }
 elif config[0] == 'Mac':
     chdir(path.join(here,package_dir))
@@ -118,7 +118,7 @@ setup(
     #packages = ['examples'],
     #packages = ['sbol']  # No subdirectory named sbol
     #packages=['sbol', 'sbol.test'],
-    packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
+    packages=['structural'],
 
     # List run-time dependencies here.  These will be installed by pip when
     # your project is installed. For an analysis of "install_requires" vs pip's

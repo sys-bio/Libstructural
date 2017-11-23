@@ -1,8 +1,6 @@
-libstruct/__init__.py
-libstruct/_structural.iobj
-libstruct/_structural.ipdb
-libstruct/_structural.pyd
-libstruct/structural.py
+structural/__init__.py
+structural/_structural.pyd
+structural/structural.py
 structural.egg-info/PKG-INFO
 structural.egg-info/SOURCES.txt
 structural.egg-info/dependency_links.txt
