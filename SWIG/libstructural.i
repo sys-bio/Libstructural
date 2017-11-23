@@ -182,16 +182,21 @@
 
 %pythoncode %{
 	def getStoichiometryMatrix(self):
-		"""
-		LibStructural.getStoichiometryMatrix(self)
-		:returns: the original, unaltered stoichiometry matrix.
-		"""
-		return self._my_getStoichiometryMatrix().toNumpy()
+    """
+    LibStructural.getStoichiometryMatrix(self)
+    :returns: Unaltered stoichiometry matrix.
+    """
+    m = self._my_getStoichiometryMatrix();
+    import numpy as np
+    if type (m) == 'numpy.ndarray':
+       return m.toNumpy()
+    else:
+       return m
 
 	def getColumnReorderedNrMatrix(self):
 		"""
 		LibStructural.getColumnReorderedNrMatrix(self)
-		:returns: the Nr Matrix repartitioned into NIC (independent columns) and NDC (dependent columns).
+		:returns: the Nr Matrix repartitioned into NIC (independent columns) and NDC (dependent columns). The Nr matrix contains the independent rows of the stoichiometry matrix
 		"""
 		return self._my_getColumnReorderedNrMatrix().toNumpy()
 
@@ -199,8 +204,9 @@
 		"""
 		LibStructural.getFullyReorderedN0StoichiometryMatrix(self)
 
+		Computes the N0 matrix if possible. The N0 matrix will contain all the dependent rows of the stoichiometry matrix.
+
 		:returns: the N0 Matrix.
-		The rows of the Nr matrix will be linearly Dependent.
 
 		"""
 		return self._my_getFullyReorderedN0StoichiometryMatrix().toNumpy()
@@ -208,6 +214,9 @@
 	def getFullyReorderedNrMatrix(self):
 		"""
 		LibStructural.getFullyReorderedNrMatrix(self)
+		
+		The Nr matrix contains all the linearly independent rows of the stoichiometry matrix.
+		
 		:returns: the Nr Matrix.
 		"""
 		return self._my_getFullyReorderedNrMatrix().toNumpy()
@@ -215,7 +224,8 @@
 	def getFullyReorderedStoichiometryMatrix(self):
 		"""
 		LibStructural.getFullyReorderedStoichiometryMatrix(self)
-		:returns: the fully reordered stoichiometry matrix (row and column reordered stoichiometry matrix)
+		:returns: the fully reordered stoichiometry matrix. Rows and columns are reordered so all indepedent rows
+		of the stoichiometry matrix are brought to the top and left side of the matrix.
 		"""
 		return self._my_getFullyReorderedStoichiometryMatrix().toNumpy()
 
@@ -223,23 +233,27 @@
 		"""
 		LibStructural.getGammaMatrix(self)
 		:returns: Gamma, the conservation law array.
-		Each row represents a single conservation law where the column indicate the participating molecular species. The number of rows is therefore equal to the number of conservation laws. Columns are ordered according to the rows in the reordered stoichiometry matrix, see LibStructural.getReorderedSpeciesId and LibStructural.getReorderedStoichiometryMatrix.
+		Each row represents a single conservation law where the column indicates the participating molecular species. 
+		The number of rows is therefore equal to the number of conservation laws. Columns are ordered according to the 
+		rows in the reordered stoichiometry matrix, see ``LibStructural.getReorderedSpeciesId`` and ``LibStructural.getReorderedStoichiometryMatrix``.
 
 		"""
 		return self._my_getGammaMatrix().toNumpy()
 
-	def getGammaMatrixGJ(self,oMatrix):
+	def getGammaMatrixGJ(self, oMatrix):
 		"""
 		LibStructural.getGammaMatrixGJ(self,matrix)
 
 		:param: the stoichiometry matrix that will be used to calculate gamma
 		:returns: Gamma, the conservation law array.
+		
 		Each row represents a single conservation law where the column indicate the participating molecular species. The number of rows is therefore equal to the number of conservation laws.
-		In this case the Gamma Matrix is recalculated for the given stoichiometry matrix.
-		Gamma is calculated based on R = GaussJordan ( [ stoichiometry  I ] ), where R has the form
+		In this case the Gamma Matrix is recalculated for the given stoichiometry matrix. amma is calculated based on R = GaussJordan ( [ stoichiometry  I ] ), where R has the form
+		
 		R = [ R11 R12
 				0  GAMMA ]
-		The RowLabels should be an increasing number, to numerate the conservation law, the column label will be the same label as the stoichiometry matrix.
+				
+		The RowLabels should be an increasing number, to enumerate the conservation law, the column label will be the same label as the stoichiometry matrix.
 		"""
 		import numpy as np
 
@@ -382,7 +396,10 @@
 			"""
 			LibStructural.rref(self, matrix, tol)
 
-			:param: a matrix and a tolerance value
+      Computes the reduced row echelon of the given matrix. Tolerance is set to indicate the smallest number consider to be zero.
+      
+			:param: a matrix (numpy)
+			:param: Optional: tolerance (double), default is 1E-6
 			:returns: reduced row echelon form of the matrix
 			"""
 			import numpy as np
@@ -405,6 +422,13 @@
 
 %pythoncode %{
 	def rref_FB(self, data, tolerance=1e-6):
+			"""
+			LibStructural.getEigenValues(self, matrix)
+
+			:param: Matrix to find the refuced row echelon for.
+			:returns: the reduce row echelon.
+			"""
+
 			import numpy as np
 
 			if (type(data) is list or type(data) is np.ndarray):
@@ -428,7 +452,7 @@
 			"""
 			LibStructural.getEigenValues(self, matrix)
 
-			:param: Matrix to find the eigenvalues for
+			:param: Matrix to find the eigenvalues for.
 			:returns: an array, first column are the real values and second column are imaginary values
 			"""
 
@@ -482,8 +506,8 @@
 			'''
 			LibStructural.getConditionNumber(self, matrix)
 
-			:param: Matrix to find the condition of
-			:returns: the condition numbe
+			:param: Takes a matrix (numpy) as an argument. Find the condition number of the matrix.
+			:returns: the condition number
 			'''
 			import numpy as np
 
@@ -505,7 +529,12 @@
 
 %pythoncode %{
 	def getRConditionNumber (self, oMatrix):
+			'''
+			LibStructural.getRConditionNumber(self, matrix)
 
+			:param: Takes a matrix (numpy) as an argument. Find the condition number of the matrix.
+			:returns: the condition number
+			'''
 
 			import numpy as np
 
@@ -532,7 +561,7 @@
 			LibStructural.getConditionNumber(self, matrix)
 
 			:param: Matrix to find the left nullspace of.
-			:returns: the Left Nullspace of the matrix argument
+			:returns: the Left Nullspace of the matrix argument.
 
 			"""
 
@@ -559,8 +588,8 @@
 			"""
 			LibStructural.getRightNullSpace(self, matrix)
 
-			:param: Matrix to find the right nullspace of
-			:returns: the Right Nullspace of the matric argument
+			:param: Matrix to find the right nullspace of.
+			:returns: the Right Nullspace of the matric argument.
 			"""
 
 			import numpy as np
@@ -587,7 +616,7 @@
 			LibStructural.getRank(self, matrix)
 
 			:param: Matrix to find the rank of.
-			:returns: the rank as an integer
+			:returns: the rank as an integer.
 			"""
 			import numpy as np
 

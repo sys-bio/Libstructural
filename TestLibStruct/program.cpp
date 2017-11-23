@@ -285,28 +285,52 @@ void PrintAllForFile(LibStructural &instance, string fileName)
 	{
 		cout << "failure in PrintAllForFile: " << fileName << endl;	
 	}
-
 }
+
+
+void PrintAllForLiteral (LibStructural &instance) {
+	try
+	{
+		DoubleMatrix *oMatrix = new DoubleMatrix (2, 2);
+
+		(*oMatrix)(0, 0) = 1.0;  (*oMatrix)(0, 1) = -1.0;
+		(*oMatrix)(1, 0) = -1.0; (*oMatrix)(1, 1) = 1.0;
+
+		instance.loadStoichiometryMatrix (*oMatrix);
+		cout << instance.analyzeWithQR () << endl;
+
+		PrintVectors (instance);
+		PrintMatrices (instance);
+	}
+	catch (...)
+	{
+		cout << "failure in PrintAllForLiteral: " << endl;
+	}
+}
+
 
 int main(int argc, char* argv[])
 {
+	LibStructural* instance = LibStructural::getInstance ();
+
 	if (argc < 2)
 	{
-		cout << "Need one fileName, SBML file" << endl;
-		return -1;
+		cout << "No SBML file specified, will only test loadStoichiometryMatrix" << endl;
+		PrintAllForLiteral (*instance);
+	}
+	else {
+
+		PrintAllForFile (*instance, argv[1]);
+
+		if (argc > 2)
+			PrintAllForFile (*instance, argv[2]);
+		if (argc > 3)
+			PrintAllForFile (*instance, argv[3]);
+		if (argc > 4)
+			PrintAllForFile (*instance, argv[4]);
 	}
 
-
-	LibStructural* instance = LibStructural::getInstance();
-
-	PrintAllForFile(*instance, argv[1]);	
-
-	if (argc > 2)
-		PrintAllForFile(*instance, argv[2]);	
-	if (argc > 3)
-		PrintAllForFile(*instance, argv[3]);	
-	if (argc > 4)
-		PrintAllForFile(*instance, argv[4]);		
+	getchar ();
 
 }
 

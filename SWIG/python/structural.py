@@ -358,7 +358,7 @@ class LibStructural(_object):
         :param: SBML string to load
         :returns: information about the loaded model
 
-        Loads SBML model from a valid string.
+        Loads SBML model from a string variable.
 
 
         """
@@ -381,10 +381,10 @@ class LibStructural(_object):
         """
         LibStructural.loadSBMLwithTests(self, *args)
 
-        :param: a file name to of SBML model to load
-        :returns: information about the loaded model and results of the internal test suite
+        :param: a file name to an SBML model to load.
+        :returns: information about the loaded model and results of the internal test suite.
 
-        Loads an SBML model into the library and carry out tests using the internal test suite.
+        Loads an SBML model into the library and carries out tests using the internal test suite.
 
 
         """
@@ -394,18 +394,24 @@ class LibStructural(_object):
         """
         LibStructural.analyzeWithQR(self)
 
-        Uses QR factorization for structural analysis. This method performs the actual analysis of the stoichiometry matrix loaded either via ``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``. Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
+        Uses QR factorization for structural analysis. This method performs the actual analysis of the stoichiometry matrix loaded 
+        either via 
+
+        ``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``. 
+
+        Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
 
         | ``LibStructural.analyzeWithQR``,
         | ``LibStructural.analyzeWithLU``,
-        | ``LibStructural.analyzeWithLUandRunTests``,
-        | ``LibStructural.analyzeWithFullyPivotedLU`` or
+        | ``LibStructural.analyzeWithLU``,
+          ``RunTests``,
+        | ``LibStructural.analyzeWithFullyPivotedLU``,
         | ``LibStructural.analyzeWithFullyPivotedLUwithTests``
 
 
         Remarks: This is the prefered method for structural analysis.
 
-        :returns: a result string with information about the analysis process
+        :returns: a string with information about the analysis process
 
 
         """
@@ -414,7 +420,12 @@ class LibStructural(_object):
     def analyzeWithLU(self):
         """
         LibStructural.analyzeWithLU(self)
-        Uses LU Decomposition for Conservation analysis. This method performs the actual analysis of the stoichiometry matrix (loaded either via ``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``. Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
+        Uses LU Decomposition for Conservation analysis. This method performs the actual analysis of the stoichiometry matrix (loaded either 
+        via 
+
+        ``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``. 
+
+        Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
 
         | ``LibStructural.analyzeWithQR``,
         | ``LibStructural.analyzeWithLU``,
@@ -422,7 +433,7 @@ class LibStructural(_object):
         | ``LibStructural.analyzeWithFullyPivotedLU`` or
         | ``LibStructural.analyzeWithFullyPivotedLUwithTests``
 
-        :returns: a result string with information about the analysis process
+        :returns: a string with information about the analysis process
 
 
         """
@@ -431,7 +442,12 @@ class LibStructural(_object):
     def analyzeWithLUandRunTests(self):
         """
         LibStructural.analyzeWithLUandRunTests(self)
-        Uses LU Decomposition for Conservation analysis. This method performs the actual analysis of the stoichiometry matrix loaded either via ``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``. Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
+        Uses LU Decomposition for Conservation analysis. This method performs the actual analysis of the stoichiometry matrix loaded either 
+        via 
+
+        ``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``. 
+
+        Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
 
         | ``LibStructural.analyzeWithQR``,
         | ``LibStructural.analyzeWithLU``,
@@ -441,7 +457,7 @@ class LibStructural(_object):
 
         This method additionally performs the integrated test suite and returns	those results.
 
-        :returns: a result string with information about the analysis process
+        :returns: a string with information about the analysis process
 
 
         """
@@ -450,7 +466,12 @@ class LibStructural(_object):
     def analyzeWithFullyPivotedLU(self):
         """
         LibStructural.analyzeWithFullyPivotedLU(self)
-        Uses fully pivoted LU Decomposition for Conservation analysis.This method performs the actual analysis of the stoichiometry matrix loaded either via ``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``. Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
+        Uses fully pivoted LU Decomposition for Conservation analysis.This method performs the actual analysis of the stoichiometry matrix loaded either 
+        via 
+
+        ``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``. 
+
+        Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
 
         | ``LibStructural.analyzeWithQR``
         | ``LibStructural.analyzeWithLU``
@@ -458,7 +479,7 @@ class LibStructural(_object):
         | ``LibStructural.analyzeWithFullyPivotedLU`` or
         | ``LibStructural.analyzeWithFullyPivotedLUwithTests``
 
-        :returns: a result string with information about the analysis process
+        :returns: a string with information about the analysis process
 
 
         """
@@ -467,9 +488,12 @@ class LibStructural(_object):
     def analyzeWithFullyPivotedLUwithTests(self):
         """
         LibStructural.analyzeWithFullyPivotedLUwithTests(self)
-        Uses fully pivoted LU Decomposition for Conservation analysis. This method performs the actual analysis of the stoichiometry matrix loaded either via ``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``. Only after
-        one of the analysis methods below has been called are the structural matrices (L0, K0...)
-        available.
+        Uses fully pivoted LU Decomposition for Conservation analysis. This method performs the actual analysis of the stoichiometry matrix loaded 
+        either via 
+
+        ``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``. 
+
+        Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
 
         | ``LibStructural.analyzeWithQR``,
         | ``LibStructural.analyzeWithLU``,
@@ -479,7 +503,7 @@ class LibStructural(_object):
 
         This method additionally performs the integrated test suite and returns	those results.
 
-        :returns: a result string with information about the analysis process
+        :returns: a string with information about the analysis process
 
 
         """
@@ -504,7 +528,7 @@ class LibStructural(_object):
         """
         LibStructural.getReorderedSpecies(self)
 
-        :retruns: the reordered list of molecular species. (choosing the SBML Id if possible )
+        :returns: the reordered list of molecular species (choosing the SBML Id if possible).
 
 
         """
@@ -514,7 +538,7 @@ class LibStructural(_object):
         """
         LibStructural.getSpecies(self)
 
-        :retruns: the unordered list of species Ids
+        :returns: the unordered list of species Ids.
 
 
         """
@@ -524,7 +548,7 @@ class LibStructural(_object):
         """
         LibStructural.getReorderedSpeciesNamesList(self)
 
-        :retruns: the reordered list of molecular species.  (choosing the SBML Name if possible )
+        :returns: the reordered list of molecular species (choosing the SBML Name if possible).
 
 
         """
@@ -534,7 +558,7 @@ class LibStructural(_object):
         """
         LibStructural.getIndependentSpecies(self)
 
-        :retruns: the list of independent species
+        :returns: the list of Ids for the independent species.
 
 
         """
@@ -544,7 +568,7 @@ class LibStructural(_object):
         """
         LibStructural.getIndependentSpeciesNamesList(self)
 
-        :retruns: the actual names of the independent species
+        :returns: the actual names of the independent species.
 
 
         """
@@ -554,7 +578,7 @@ class LibStructural(_object):
         """
         LibStructural.getDependentSpecies(self)
 
-        :retruns: the list of dependent species
+        :returns: the list of Ids for the dependent species.
 
 
         """
@@ -564,7 +588,7 @@ class LibStructural(_object):
         """
         LibStructural.getDependentSpeciesNamesList(self)
 
-        :retruns: the actual names of the dependent species
+        :returns: the display names of the dependent species.
 
 
         """
@@ -574,7 +598,7 @@ class LibStructural(_object):
         """
         LibStructural.getReactions(self)
 
-        :retruns: the list of Reactions
+        :returns: the list of Reactions.
 
 
         """
@@ -584,7 +608,7 @@ class LibStructural(_object):
         """
         LibStructural.getIndependentReactionIds(self)
 
-        :retruns: the list of independent reactions
+        :returns: the list of Ids for the independent reactions.
 
 
         """
@@ -594,7 +618,7 @@ class LibStructural(_object):
         """
         LibStructural.getDependentReactionIds(self)
 
-        :retruns: the list of dependent reactions
+        :returns: the list of Ids for the dependent reactions.
 
 
 
@@ -605,7 +629,7 @@ class LibStructural(_object):
         """
         LibStructural.getReactionsNamesList(self)
 
-        :retruns: actual names of the Reactions
+        :returns: display names of the reactions.
 
 
         """
@@ -615,7 +639,7 @@ class LibStructural(_object):
         """
         LibStructural.getReorderedReactions(self)
 
-        :retruns: the reordered list of reactions
+        :returns: the reordered Id list of reactions.
 
 
         """
@@ -625,7 +649,7 @@ class LibStructural(_object):
         """
         LibStructural.getConservedLaws(self)
 
-        :retruns: algebraic expressions for conserved cycles
+        :returns: algebraic expressions for the conserved cycles. Returns empty if none.
 
 
         """
@@ -635,7 +659,7 @@ class LibStructural(_object):
         """
         LibStructural.getConservedSums(self)
 
-        :retruns: values for conservation laws using the current initial conditions
+        :returns: Total mass for each conserved cycle in the model. The sum is based on the current initial conditions.
 
 
         """
@@ -645,7 +669,7 @@ class LibStructural(_object):
         """
         LibStructural.getInitialConditions(self)
 
-        :retruns: Initial Conditions used in the model
+        :returns: Initial Conditions used in the model.
 
 
         """
@@ -672,7 +696,7 @@ class LibStructural(_object):
         """
         LibStructural.getTestDetails(self)
 
-        :returns: Details about validation tests.
+        :returns: Details about the validation tests.
 
 
         """
@@ -682,7 +706,7 @@ class LibStructural(_object):
         """
         LibStructural.getModelName(self)
 
-        :retruns: the name of the model if SBML model has Name-tag, otherwise it returns the SBML id. If only a stoichiometry matrix was loaded 'untitled' will be returned.
+        :returns: the name of the model if SBML model has Name-tag, otherwise it returns the SBML id. If only a stoichiometry matrix was loaded 'untitled' will be returned.
 
 
         """
@@ -692,7 +716,7 @@ class LibStructural(_object):
         """
         LibStructural.getNumSpecies(self)
 
-        :retruns: the total number of species
+        :returns: the total number of species
 
 
         """
@@ -702,7 +726,7 @@ class LibStructural(_object):
         """
         LibStructural.getNumIndSpecies(self)
 
-        :retruns: the number of independent species
+        :returns: the number of independent species.
 
 
         """
@@ -712,7 +736,7 @@ class LibStructural(_object):
         """
         LibStructural.getNumDepSpecies(self)
 
-        :retruns: the number of dependent species
+        :returns: the number of dependent species.
 
 
         """
@@ -722,7 +746,7 @@ class LibStructural(_object):
         """
         LibStructural.getNumReactions(self)
 
-        :retruns: the total number of reactions
+        :returns: the total number of reactions.
 
 
         """
@@ -732,7 +756,7 @@ class LibStructural(_object):
         """
         LibStructural.getNumIndReactions(self)
 
-        :retruns: the number of independent reactions
+        :returns: the number of independent reactions
 
 
         """
@@ -742,7 +766,7 @@ class LibStructural(_object):
         """
         LibStructural.getNumDepReactions(self)
 
-        :retruns: the number of dependent reactions
+        :returns: the number of dependent reactions
 
 
         """
@@ -752,7 +776,7 @@ class LibStructural(_object):
         """
         LibStructural.getNmatrixSparsity(self)
 
-        :retruns: the number of nonzero values in Stoichiometry matrix
+        :returns: the number of nonzero values in Stoichiometry matrix
 
 
         """
@@ -769,7 +793,7 @@ class LibStructural(_object):
 
         :param: Matrix to find the rank of.
 
-        :retruns: the rank as an integer
+        :returns: the rank as an integer
 
 
         """
@@ -800,7 +824,7 @@ class LibStructural(_object):
         """
         LibStructural.getTolerance(self)
 
-        :retruns: the currently used tolerance
+        :returns: the currently used tolerance for decided whether a small number is considered zero or not. 
 
         This function returns the tolerance currently used by the library to determine what value
         is considered as zero. Any value with absolute value smaller than this tolerance is considered zero
@@ -820,6 +844,8 @@ class LibStructural(_object):
 
         static method to get an instance of LibStructural (allows use as singleton)
 
+         import structural 
+         ls = structural.LibStructural.getInstance()
 
         """
         return _structural.LibStructural_getInstance()
@@ -830,7 +856,7 @@ class LibStructural(_object):
         """
         LibStructural.getColumnReorderedNrMatrixLabels(self)
 
-        :retruns: the Nr Matrix row and column labels (repartitioned into NIC and NDC).
+        :returns: the Nr Matrix row and column labels (repartitioned into NIC and NDC).
 
 
         """
@@ -869,7 +895,7 @@ class LibStructural(_object):
         """
         LibStructural.getGammaMatrixLabels(self)
 
-        :retruns: the row and column labels for Gamma, the conservation law array.
+        :returns: the row and column labels for Gamma, the conservation law array.
 
         """
         return _structural.LibStructural_getGammaMatrixLabels(self)
@@ -878,7 +904,7 @@ class LibStructural(_object):
         """
         LibStructural.getK0MatrixLabels(self)
 
-        :retruns: the K0 Matrix row and column labels.
+        :returns: the K0 Matrix row and column labels.
 
 
         """
@@ -888,7 +914,7 @@ class LibStructural(_object):
         """
         LibStructural.getKMatrixLabels(self)
 
-        :retruns: the K matrix row and column labels.
+        :returns: the K matrix row and column labels.
 
 
         """
@@ -898,7 +924,7 @@ class LibStructural(_object):
         """
         LibStructural.getL0MatrixLabels(self)
 
-        :retruns: the L0 Matrix row and column labels.
+        :returns: the L0 Matrix row and column labels.
 
 
         """
@@ -908,7 +934,7 @@ class LibStructural(_object):
         """
         LibStructural.getLinkMatrixLabels(self)
 
-        :retruns: the row and column labels for the Link Matrix, L
+        :returns: the row and column labels for the Link Matrix, L
 
 
         """
@@ -918,7 +944,7 @@ class LibStructural(_object):
         """
         LibStructural.getN0MatrixLabels(self)
 
-        :retruns: the N0 Matrix row and column labels.
+        :returns: the N0 Matrix row and column labels.
 
 
         """
@@ -928,7 +954,7 @@ class LibStructural(_object):
         """
         LibStructural.getNDCMatrixLabels(self)
 
-        :retruns: the NDC Matrix row and column labels.
+        :returns: the NDC Matrix row and column labels.
 
 
         """
@@ -938,7 +964,7 @@ class LibStructural(_object):
         """
         LibStructural.getNICMatrixLabels(self)
 
-        :retruns: the NIC Matrix row and column labels.
+        :returns: the NIC Matrix row and column labels.
 
 
         """
@@ -948,7 +974,7 @@ class LibStructural(_object):
         """
         LibStructural.getNrMatrixLabels(self)
 
-        :retruns: the Nr Matrix row and column labels.
+        :returns: the Nr Matrix row and column labels.
 
 
         """
@@ -958,7 +984,7 @@ class LibStructural(_object):
         """
         LibStructural.getStoichiometryMatrixLabels(self)
 
-        :retruns: the row and column labels for the original and unaltered stoichiometry matrix.
+        :returns: the row and column labels for the original and unaltered stoichiometry matrix.
 
 
         """
@@ -968,7 +994,7 @@ class LibStructural(_object):
         """
         LibStructural.getFullyReorderedStoichiometryMatrixLabels(self)
 
-        :retruns: the row and column labels for the reordered stoichiometry matrix (row reordered stoichiometry matrix)
+        :returns: the row and column labels for the reordered stoichiometry matrix (row reordered stoichiometry matrix)
 
 
         """
@@ -978,23 +1004,28 @@ class LibStructural(_object):
         """
         LibStructural.getReorderedStoichiometryMatrixLabels(self)
 
-        :retruns: the row and column labels for the reordered stoichiometry matrix (row reordered stoichiometry matrix)
+        :returns: the row and column labels for the reordered stoichiometry matrix (row reordered stoichiometry matrix)
 
 
         """
         return _structural.LibStructural_getReorderedStoichiometryMatrixLabels(self)
 
     def getStoichiometryMatrix(self):
-    	"""
-    	LibStructural.getStoichiometryMatrix(self)
-    	:returns: the original, unaltered stoichiometry matrix.
-    	"""
-    	return self._my_getStoichiometryMatrix().toNumpy()
+       """
+       LibStructural.getStoichiometryMatrix(self)
+       :returns: Unaltered stoichiometry matrix.
+       """
+       m = self._my_getStoichiometryMatrix();
+       import numpy as np
+       if type (m) == 'numpy.ndarray':
+          return m.toNumpy()
+       else:
+          return m
 
     def getColumnReorderedNrMatrix(self):
     	"""
     	LibStructural.getColumnReorderedNrMatrix(self)
-    	:returns: the Nr Matrix repartitioned into NIC (independent columns) and NDC (dependent columns).
+    	:returns: the Nr Matrix repartitioned into NIC (independent columns) and NDC (dependent columns). The Nr matrix contains the independent rows of the stoichiometry matrix
     	"""
     	return self._my_getColumnReorderedNrMatrix().toNumpy()
 
@@ -1002,8 +1033,9 @@ class LibStructural(_object):
     	"""
     	LibStructural.getFullyReorderedN0StoichiometryMatrix(self)
 
+    	Computes the N0 matrix if possible. The N0 matrix will contain all the dependent rows of the stoichiometry matrix.
+
     	:returns: the N0 Matrix.
-    	The rows of the Nr matrix will be linearly Dependent.
 
     	"""
     	return self._my_getFullyReorderedN0StoichiometryMatrix().toNumpy()
@@ -1011,6 +1043,9 @@ class LibStructural(_object):
     def getFullyReorderedNrMatrix(self):
     	"""
     	LibStructural.getFullyReorderedNrMatrix(self)
+    	
+    	The Nr matrix contains all the linearly independent rows of the stoichiometry matrix.
+    	
     	:returns: the Nr Matrix.
     	"""
     	return self._my_getFullyReorderedNrMatrix().toNumpy()
@@ -1018,7 +1053,8 @@ class LibStructural(_object):
     def getFullyReorderedStoichiometryMatrix(self):
     	"""
     	LibStructural.getFullyReorderedStoichiometryMatrix(self)
-    	:returns: the fully reordered stoichiometry matrix (row and column reordered stoichiometry matrix)
+    	:returns: the fully reordered stoichiometry matrix. Rows and columns are reordered so all indepedent rows
+    	of the stoichiometry matrix are brought to the top and left side of the matrix.
     	"""
     	return self._my_getFullyReorderedStoichiometryMatrix().toNumpy()
 
@@ -1026,23 +1062,27 @@ class LibStructural(_object):
     	"""
     	LibStructural.getGammaMatrix(self)
     	:returns: Gamma, the conservation law array.
-    	Each row represents a single conservation law where the column indicate the participating molecular species. The number of rows is therefore equal to the number of conservation laws. Columns are ordered according to the rows in the reordered stoichiometry matrix, see LibStructural.getReorderedSpeciesId and LibStructural.getReorderedStoichiometryMatrix.
+    	Each row represents a single conservation law where the column indicates the participating molecular species. 
+    	The number of rows is therefore equal to the number of conservation laws. Columns are ordered according to the 
+    	rows in the reordered stoichiometry matrix, see ``LibStructural.getReorderedSpeciesId`` and ``LibStructural.getReorderedStoichiometryMatrix``.
 
     	"""
     	return self._my_getGammaMatrix().toNumpy()
 
-    def getGammaMatrixGJ(self,oMatrix):
+    def getGammaMatrixGJ(self, oMatrix):
     	"""
     	LibStructural.getGammaMatrixGJ(self,matrix)
 
     	:param: the stoichiometry matrix that will be used to calculate gamma
     	:returns: Gamma, the conservation law array.
+    	
     	Each row represents a single conservation law where the column indicate the participating molecular species. The number of rows is therefore equal to the number of conservation laws.
-    	In this case the Gamma Matrix is recalculated for the given stoichiometry matrix.
-    	Gamma is calculated based on R = GaussJordan ( [ stoichiometry  I ] ), where R has the form
+    	In this case the Gamma Matrix is recalculated for the given stoichiometry matrix. amma is calculated based on R = GaussJordan ( [ stoichiometry  I ] ), where R has the form
+    	
     	R = [ R11 R12
     			0  GAMMA ]
-    	The RowLabels should be an increasing number, to numerate the conservation law, the column label will be the same label as the stoichiometry matrix.
+    			
+    	The RowLabels should be an increasing number, to enumerate the conservation law, the column label will be the same label as the stoichiometry matrix.
     	"""
     	import numpy as np
 
@@ -1181,7 +1221,10 @@ class LibStructural(_object):
     		"""
     		LibStructural.rref(self, matrix, tol)
 
-    		:param: a matrix and a tolerance value
+         Computes the reduced row echelon of the given matrix. Tolerance is set to indicate the smallest number consider to be zero.
+         
+    		:param: a matrix (numpy)
+    		:param: Optional: tolerance (double), default is 1E-6
     		:returns: reduced row echelon form of the matrix
     		"""
     		import numpy as np
@@ -1202,6 +1245,13 @@ class LibStructural(_object):
      		        raise ValueError("Expecting list or numpy array")
 
     def rref_FB(self, data, tolerance=1e-6):
+    		"""
+    		LibStructural.getEigenValues(self, matrix)
+
+    		:param: Matrix to find the refuced row echelon for.
+    		:returns: the reduce row echelon.
+    		"""
+
     		import numpy as np
 
     		if (type(data) is list or type(data) is np.ndarray):
@@ -1223,7 +1273,7 @@ class LibStructural(_object):
     		"""
     		LibStructural.getEigenValues(self, matrix)
 
-    		:param: Matrix to find the eigenvalues for
+    		:param: Matrix to find the eigenvalues for.
     		:returns: an array, first column are the real values and second column are imaginary values
     		"""
 
@@ -1273,8 +1323,8 @@ class LibStructural(_object):
     		'''
     		LibStructural.getConditionNumber(self, matrix)
 
-    		:param: Matrix to find the condition of
-    		:returns: the condition numbe
+    		:param: Takes a matrix (numpy) as an argument. Find the condition number of the matrix.
+    		:returns: the condition number
     		'''
     		import numpy as np
 
@@ -1294,7 +1344,12 @@ class LibStructural(_object):
      		        raise ValueError("Expecting list or numpy array")
 
     def getRConditionNumber (self, oMatrix):
+    		'''
+    		LibStructural.getRConditionNumber(self, matrix)
 
+    		:param: Takes a matrix (numpy) as an argument. Find the condition number of the matrix.
+    		:returns: the condition number
+    		'''
 
     		import numpy as np
 
@@ -1318,7 +1373,7 @@ class LibStructural(_object):
     		LibStructural.getConditionNumber(self, matrix)
 
     		:param: Matrix to find the left nullspace of.
-    		:returns: the Left Nullspace of the matrix argument
+    		:returns: the Left Nullspace of the matrix argument.
 
     		"""
 
@@ -1343,8 +1398,8 @@ class LibStructural(_object):
     		"""
     		LibStructural.getRightNullSpace(self, matrix)
 
-    		:param: Matrix to find the right nullspace of
-    		:returns: the Right Nullspace of the matric argument
+    		:param: Matrix to find the right nullspace of.
+    		:returns: the Right Nullspace of the matric argument.
     		"""
 
     		import numpy as np
@@ -1369,7 +1424,7 @@ class LibStructural(_object):
     		LibStructural.getRank(self, matrix)
 
     		:param: Matrix to find the rank of.
-    		:returns: the rank as an integer
+    		:returns: the rank as an integer.
     		"""
     		import numpy as np
 
@@ -1399,6 +1454,8 @@ def LibStructural_getInstance():
 
     static method to get an instance of LibStructural (allows use as singleton)
 
+     import structural 
+     ls = structural.LibStructural.getInstance()
 
     """
   return _structural.LibStructural_getInstance()
