@@ -89,25 +89,7 @@ find_library(LIBSBML_LIBRARY
 	set(STRUCTURAL_LIBS ${STRUCTURAL_LIBS} ${LIBSBML_LIBRARY})
 	include_directories(${LIBSBML_INCLUDE})
 
-find_library(SBW_LIBRARY
-	NAMES SBW-static.lib SBW.lib SBW-static SBW
-	PATHS ${DEPENDENCY_DIR}/lib
-		  ${SBW_DIR}/lib
-		  /usr/lib /usr/local/lib
-		  ${CMAKE_SOURCE_DIR}
-		  ${CMAKE_SOURCE_DIR}/lib
-    )
-
-	find_path(SBW_INCLUDE
-		NAMES SBW/SBW.h
-		PATHS ${DEPENDENCY_DIR}/include
-			  ${SBW_DIR}/include
-			  /usr/include /usr/local/include
-			  ${CMAKE_SOURCE_DIR}/include
-			  )
-
 	set(STRUCTURAL_LIBS ${STRUCTURAL_LIBS} ${LIBSBML_LIBRARY})
-	include_directories(${SBW_INCLUDE})
 
 	find_library(CLAPACK_LIBRARY
 	NAMES clapack.lib  clapack lapack
@@ -250,11 +232,9 @@ endif(UNIX)
 #
 # Build the actual libraries
 #
-add_subdirectory(lp_solve_5.5)
+
 add_subdirectory(LibLA)
 add_subdirectory(LibStructural)
-add_subdirectory(SBW_CLAPACK)
-add_subdirectory(SBW_Structural)
 
 file(GLOB HEADER_FILES ${CMAKE_CURRENT_SOURCE_DIR}/include/*.h )
 install(FILES ${HEADER_FILES} DESTINATION include)
