@@ -210,7 +210,7 @@ LIBSBML_LIBRARY:FILEPATH=C:/Users/yosef/Documents/Visual Studio 2017/Projects/li
 LIBSBML_STATIC_LIB:BOOL=ON
 
 //Path to a library.
-LPSOLVE_STATIC_LIBRARY:FILEPATH=C:/Users/yosef/Projects/libstruct/dependencies/lib/liblpsolve55.lib
+LPSOLVE_STATIC_LIBRARY:FILEPATH=
 
 //Dependencies for the target
 LibLA-static_LIB_DEPENDS:STATIC=general;C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/third-party/clapack/3.2.1/LIB/lapack.lib;general;C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/third-party/clapack/3.2.1/LIB/blas.lib;general;C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/third-party/clapack/3.2.1/LIB/libf2c.lib;
@@ -225,7 +225,7 @@ LibStructural-static_LIB_DEPENDS:STATIC=general;C:/Users/yosef/Documents/Visual 
 LibStructural_BINARY_DIR:STATIC=C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64
 
 //Dependencies for the target
-LibStructural_LIB_DEPENDS:STATIC=general;C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libsbml-static.lib;general;C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/third-party/clapack/3.2.1/LIB/lapack.lib;general;C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/third-party/clapack/3.2.1/LIB/blas.lib;general;C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/third-party/clapack/3.2.1/LIB/libf2c.lib;general;C:/Users/yosef/Projects/libstruct/dependencies/lib/liblpsolve55.lib;
+LibStructural_LIB_DEPENDS:STATIC=general;C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libsbml-static.lib;general;C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/third-party/clapack/3.2.1/LIB/lapack.lib;general;C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/third-party/clapack/3.2.1/LIB/blas.lib;general;C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/third-party/clapack/3.2.1/LIB/libf2c.lib;
 
 //Value Computed by CMake
 LibStructural_SOURCE_DIR:STATIC=C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct
@@ -234,10 +234,10 @@ LibStructural_SOURCE_DIR:STATIC=C:/Users/yosef/Documents/Visual Studio 2017/Proj
 MSVC_REDIST_DIR:PATH=C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Redist/MSVC/14.11.25325
 
 //Path to a file.
-SBW_INCLUDE:PATH=C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/third-party/clapack/3.2.1/INCLUDE
+SBW_INCLUDE:PATH=
 
 //Path to a library.
-SBW_LIBRARY:FILEPATH=SBW_LIBRARY-NOTFOUND
+SBW_LIBRARY:FILEPATH=
 
 //Compile using the static MSVC Runtime
 WITH_STATIC_RUNTIME:BOOL=OFF
