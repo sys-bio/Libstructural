@@ -31,6 +31,7 @@ For loading a model in 2D array format or SBML string format:
     ls = structural.LibStructural.getInstance()
     matrix = [[  1, -1, -1], [  0, -1,  1], [  0,  1, -1]] # matrix can be a numpy 2d array
     ls.loadStoichiometryMatrix(matrix)
+    ls.analyzeWithQR()
 .. end
 
 If you use `tellurium <http://tellurium.analogmachine.org/>`_ you can load a model by converting the antimony model to SBML string or by using the Stoichiometry matrix of the antimony model.
@@ -65,5 +66,5 @@ Note: loading a stoichiometry matrix from antimony will result in losing some in
   r.exportToSBML('Test_model.xml') # creates an xml file in the current directory
   ls = structural.LibStructural.getInstance()
   ls.loadSBMLFromFile('Test_model.xml') # loads the xml file from the current directory
-
+  print(ls.analyzeWithQR())
 .. end
