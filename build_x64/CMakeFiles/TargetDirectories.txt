@@ -1,0 +1,12 @@
+/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/CMakeFiles/install.dir
+/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/CMakeFiles/package.dir
+/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/CMakeFiles/ALL_BUILD.dir
+/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/CMakeFiles/ZERO_CHECK.dir
+/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/CMakeFiles/install.dir
+/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/CMakeFiles/package.dir
+/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/CMakeFiles/LibLA-static.dir
+/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/CMakeFiles/LibLA.dir
+/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural/CMakeFiles/install.dir
+/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural/CMakeFiles/package.dir
+/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural/CMakeFiles/LibStructural-static.dir
+/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural/CMakeFiles/LibStructural.dir

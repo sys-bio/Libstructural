@@ -7,53 +7,53 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		084661BA604F4DB7AD9D3C24 /* install */ = {
+		9563026A2CEC4F8E895CC931 /* ZERO_CHECK */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 72E71B6ADE0A49AD82E2C524 /* Build configuration list for PBXAggregateTarget "install" */;
+			buildConfigurationList = 9EFD29347D844E8C9E2DE883 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
 			buildPhases = (
-				AB99A82D8ADC47DD8947793B /* CMake PostBuild Rules */,
-			);
-			dependencies = (
-				BD50F2E6ABB84CED909EC35A /* PBXTargetDependency */,
-			);
-			name = install;
-			productName = install;
-		};
-		79F0709908784DECA4F24549 /* ALL_BUILD */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 6A9508B4C90D490480B820C0 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
-			buildPhases = (
-				88255DB48BC84027831324A2 /* CMake Rules */,
-			);
-			dependencies = (
-				6E4533D50EEB48158C9A6B4C /* PBXTargetDependency */,
-				924F8269294E4B9CA4DA1EFC /* PBXTargetDependency */,
-				D3D0913CA5A54E849A275346 /* PBXTargetDependency */,
-				9E237EE1D13243CA99930C04 /* PBXTargetDependency */,
-				4BB66FAD5B49482F8215E9AF /* PBXTargetDependency */,
-			);
-			name = ALL_BUILD;
-			productName = ALL_BUILD;
-		};
-		A90206DFF7D0451A838E942B /* ZERO_CHECK */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = E338F0FC894249E780A11A31 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
-			buildPhases = (
-				284D036667CB40F7AEA84B7E /* CMake Rules */,
+				438F94307D7246579C096384 /* CMake Rules */,
 			);
 			dependencies = (
 			);
 			name = ZERO_CHECK;
 			productName = ZERO_CHECK;
 		};
-		FC62F89F7A9D4B0A9D8F4F66 /* package */ = {
+		DD2BFDF53CD04052ABC7D427 /* install */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 27B4B992C5974746835E84B1 /* Build configuration list for PBXAggregateTarget "package" */;
+			buildConfigurationList = 0646CBF2DF9B4B73BF0DFEEE /* Build configuration list for PBXAggregateTarget "install" */;
 			buildPhases = (
-				A71F7414632D4672B97ABC5F /* CMake PostBuild Rules */,
+				25EFCD973036448896F9FFF8 /* CMake PostBuild Rules */,
 			);
 			dependencies = (
-				6C61BE94C4F4421290F856AC /* PBXTargetDependency */,
+				8FDF19078F81419D9EB367E9 /* PBXTargetDependency */,
+			);
+			name = install;
+			productName = install;
+		};
+		E898878D03894362946D151F /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 4D12155D6E974DDA90AF1768 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				10E8A9E5830D4A9399FF097E /* CMake Rules */,
+			);
+			dependencies = (
+				A87D352056FA4D5E99FA0D1B /* PBXTargetDependency */,
+				4F4628DD20B449668F27C673 /* PBXTargetDependency */,
+				1E6FE7B4A4994081BA5539F8 /* PBXTargetDependency */,
+				C6E9E58BDD4C4C03A5FD0A95 /* PBXTargetDependency */,
+				E5A549CD483448AFABD7C025 /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+		F533CA0154BC4BDB9B9F0660 /* package */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = A038F2A1B8FB4E53ACCF18B0 /* Build configuration list for PBXAggregateTarget "package" */;
+			buildPhases = (
+				F6A114F83AD748E3AE744658 /* CMake PostBuild Rules */,
+			);
+			dependencies = (
+				ED225A72F22C4AF98C54E489 /* PBXTargetDependency */,
 			);
 			name = package;
 			productName = package;
@@ -61,541 +61,413 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		047F3EBF7170482A9B63D467 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/util.cpp */ = {isa = PBXBuildFile; fileRef = 7129CC0CF961472F917EF51D /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/util.cpp */; };
-		05A8E34D7E454209B901E0CB /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = FB67272D3E1F448CA74BEBD4 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/CMakeLists.txt */; };
-		063E5C97A31E45FB87CF739C /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/constraint.cpp */ = {isa = PBXBuildFile; fileRef = C24043EEBBD945EBA9009EB7 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/constraint.cpp */; };
-		1971DED9E6A64B9896992238 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/objective.cpp */ = {isa = PBXBuildFile; fileRef = 98082F54B21F4EDBB8D70814 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/objective.cpp */; };
-		1FA18A4BC5114BDAA2A38D1B /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/matrix.cpp */ = {isa = PBXBuildFile; fileRef = B87C7574695940009451F970 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/matrix.cpp */; };
-		348B3545D00B44F5918BCFB5 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/util.cpp */ = {isa = PBXBuildFile; fileRef = B737E53CAA73452296A1BAD8 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/util.cpp */; };
-		3907254153484110BD99842D /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/libla.cpp */ = {isa = PBXBuildFile; fileRef = E62C77A4670747DB8057DEC6 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/libla.cpp */; };
-		551E82CCA89440F18F72CEF6 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/lpresult.cpp */ = {isa = PBXBuildFile; fileRef = 775F88325514470384894D99 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/lpresult.cpp */; };
-		567B19233F1A413DBDBF5EDC /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/objective.cpp */ = {isa = PBXBuildFile; fileRef = 9CB4755A5B9B468E80E3A8A9 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/objective.cpp */; };
-		58468C5E10F94BE9850299EF /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/constraint.cpp */ = {isa = PBXBuildFile; fileRef = 1A60DB2C0419432DAD30CDD7 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/constraint.cpp */; };
-		58C40D14302141EB8505B89B /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/libstructural.cpp */ = {isa = PBXBuildFile; fileRef = 1711DCD3D9FD414286EBA734 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/libstructural.cpp */; };
-		71EFE7D157024181BC603C9F /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = B5B1145A2E244572B92BCF4D /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/CMakeLists.txt */; };
-		72DA353C7E98406BB7BC86A5 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/lpresult.cpp */ = {isa = PBXBuildFile; fileRef = D106616FBBD04092A1FC924D /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/lpresult.cpp */; };
-		771B9741E5E24AAFA77DC295 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/libstructural.cpp */ = {isa = PBXBuildFile; fileRef = 5CCF3C81860943C88B95BEC1 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/libstructural.cpp */; };
-		81A4D0726ACB4AFE95691E28 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/fluxbalance.cpp */ = {isa = PBXBuildFile; fileRef = C0B9CC066E02475398AF740D /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/fluxbalance.cpp */; };
-		96BD4B79543E4DC39D23027C /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/libla.cpp */ = {isa = PBXBuildFile; fileRef = 6B7A8DD11D454023AE5FD208 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/libla.cpp */; };
-		A7561C056B8A444A9FC5A942 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/sbmlmodel.cpp */ = {isa = PBXBuildFile; fileRef = B0D5B4CDB1324F419BF60E58 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/sbmlmodel.cpp */; };
-		A9F6A0FA217D4873B6FC8035 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/complex.cpp */ = {isa = PBXBuildFile; fileRef = CDF96200DC5D41FBAD183ECF /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/complex.cpp */; };
-		B2FB907B76F34E55B8F4B77A /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 7E43641A0D484DC28B1EDC90 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/CMakeLists.txt */; };
-		BD01B711D93247688CF8FBDF /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/libla.cpp */ = {isa = PBXBuildFile; fileRef = 74B6E3CB74264927B22C8D7A /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/libla.cpp */; };
-		C7C568164D264191A8FCAB2F /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/complex.cpp */ = {isa = PBXBuildFile; fileRef = B515148068F64C84B2F64912 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/complex.cpp */; };
-		CC346F21F3FC47BCB6751FBA /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/matrix.cpp */ = {isa = PBXBuildFile; fileRef = A25246B09EA948A6A7D8A747 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/matrix.cpp */; };
-		E17F45BB4CED41729DFFFCEB /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/matrix.cpp */ = {isa = PBXBuildFile; fileRef = 61DDF431A9AA4DC29840063C /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/matrix.cpp */; };
-		E97E9DDCB62B44B6AECA0918 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/complex.cpp */ = {isa = PBXBuildFile; fileRef = 14F45BA0DC1F4550B118C088 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/complex.cpp */; };
-		F3191CE699ED420EAB4D1C19 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/sbmlmodel.cpp */ = {isa = PBXBuildFile; fileRef = F5F5DC29F12E4FDBB3536FA0 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/sbmlmodel.cpp */; };
-		F6C9A37BBF174D9B85E8A560 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = C77A89F0F2E04F49804A73A4 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/CMakeLists.txt */; };
-		FA98576B7F8C47DFA63DCA3E /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/util.cpp */ = {isa = PBXBuildFile; fileRef = 6608ADE7161649739BE3EC6F /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/util.cpp */; };
-		FC51F46C17CE4B87973946C7 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/fluxbalance.cpp */ = {isa = PBXBuildFile; fileRef = 775243628F90457E9745A7F8 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/fluxbalance.cpp */; };
+		10F84D0085A045829545408C /* lpresult.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7A954D24E443463B85DA7E73 /* lpresult.cpp */; };
+		1AB611AF14AD4389AD4ABDD8 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F011F3753614AB181EF14FC /* util.cpp */; };
+		244EDA365E99495C9DA6990B /* sbmlmodel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D8F8E5D1FFD14B70A7B0B436 /* sbmlmodel.cpp */; };
+		24AE305AC3884BB69C1E14CE /* sbmlmodel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2074244081974B8B99CE5E59 /* sbmlmodel.cpp */; };
+		28A1059194824B39828F29C6 /* constraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 177615AA5B884DC7B6015919 /* constraint.cpp */; };
+		28DF071A4ECD4301AB188E4F /* matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 664B180C9F58498090444036 /* matrix.cpp */; };
+		31E5A050B4B749E2AB7C7D17 /* lpresult.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8C6310D0893F4670B79DF3B8 /* lpresult.cpp */; };
+		3A51846746484F38BB5D21C7 /* objective.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8CFDC0C342C844A6B6339F2B /* objective.cpp */; };
+		43044EEAD19645549034BF63 /* fluxbalance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD98E48A0E2944A6B5F40C9C /* fluxbalance.cpp */; };
+		4A75779321D341C6BB9E6358 /* libla.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2143DF79C9384952B3F6A836 /* libla.cpp */; };
+		4C23327CF5224AADA14A9328 /* libla.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18A6662600274D9CA9BAD39A /* libla.cpp */; };
+		5555AD47151F4643B35BCFD9 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3F1B312F643A4F9B801AB3B9 /* util.cpp */; };
+		56D80FE371064063A8A84216 /* constraint.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6100D3917FBD493883356326 /* constraint.cpp */; };
+		6F5E38093C1A45BD927E53BB /* libla.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FEFE6BFBE5C944498B0C622E /* libla.cpp */; };
+		7C89C256756A456BA2FA0633 /* complex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94B7C9B0D59340CDB19C3D2B /* complex.cpp */; };
+		7CF331CBDAFA418EAB71563C /* matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 59A7746DDD70455C929691FE /* matrix.cpp */; };
+		8BA6EE69624A4BA5AC11EBDD /* complex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 73761C5075E84EF98CF12F05 /* complex.cpp */; };
+		9BF5607A64A1470186C5B126 /* libstructural.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3FAB0979534B492B98F86820 /* libstructural.cpp */; };
+		A284D57D83CB4BA7B67B77C4 /* util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4E0889F693D14214B86E638A /* util.cpp */; };
+		ADEA0B2FB4FA4044B1A9CF6A /* complex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8FC03982847044E1916CE4A1 /* complex.cpp */; };
+		B74108101E7948778F76DB8C /* libstructural.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 126FE007859842599C149BB7 /* libstructural.cpp */; };
+		BA40981669CD47E2993F44F4 /* matrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB17CF5F4248464C9DA517AC /* matrix.cpp */; };
+		BCA0B6CDCB5649D2941E61D3 /* objective.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8777EA0729F7493EBDCAAA64 /* objective.cpp */; };
+		DBDB081474844DAEB21E16A0 /* fluxbalance.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E9D42310E664E6A80834539 /* fluxbalance.cpp */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXBuildStyle section */
-		21556A137EDC4203857D7BCA /* RelWithDebInfo */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = RelWithDebInfo;
-		};
-		2B828B44016A4ACA939A9A2C /* Release */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = Release;
-		};
-		64FDDEF886F94746B061D7F5 /* Debug */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = Debug;
-		};
-		C82AF87AC8CD4814B6B3A8B9 /* MinSizeRel */ = {
-			isa = PBXBuildStyle;
-			buildSettings = {
-				COPY_PHASE_STRIP = NO;
-			};
-			name = MinSizeRel;
-		};
-/* End PBXBuildStyle section */
-
 /* Begin PBXContainerItemProxy section */
-		34CFEBD23C8A48C58A4F3985 /* PBXContainerItemProxy */ = {
+		0CC1106CC6E743A6A75CF335 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C1B1A5E0789846AE8628DB4C /* Project object */;
+			containerPortal = C49E854777CD44739260B018 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A90206DFF7D0451A838E942B;
-			remoteInfo = ZERO_CHECK;
-		};
-		46D2ABB980534968B7FD5CFC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C1B1A5E0789846AE8628DB4C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 79F0709908784DECA4F24549;
-			remoteInfo = ALL_BUILD;
-		};
-		5BA25EE689E645B184A64310 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C1B1A5E0789846AE8628DB4C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4BE46E3C01B246BEA8250D05;
-			remoteInfo = LibLA;
-		};
-		63D798CE3FB3490D8048AB84 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C1B1A5E0789846AE8628DB4C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A90206DFF7D0451A838E942B;
-			remoteInfo = ZERO_CHECK;
-		};
-		6ABD4E9F3C494FB4AB7F3290 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C1B1A5E0789846AE8628DB4C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A90206DFF7D0451A838E942B;
-			remoteInfo = ZERO_CHECK;
-		};
-		72A7687656E74098A88B679F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C1B1A5E0789846AE8628DB4C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D53AE85732A74F96BF9A8204;
-			remoteInfo = LibStructural;
-		};
-		7C26D7DBC5444474B006D3F1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C1B1A5E0789846AE8628DB4C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F4753DCA035B4AD6B782F531;
-			remoteInfo = "LibLA-static";
-		};
-		984B562775EC4597AD8050B2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C1B1A5E0789846AE8628DB4C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A90206DFF7D0451A838E942B;
-			remoteInfo = ZERO_CHECK;
-		};
-		9B34209E6A494F2EBF409DD9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C1B1A5E0789846AE8628DB4C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 659281FE809F4867B4D13A17;
+			remoteGlobalIDString = F0E25425A016457986CFEFA9;
 			remoteInfo = "LibStructural-static";
 		};
-		A6566D32484541AD81BCECDE /* PBXContainerItemProxy */ = {
+		2FE44020345646699B1BCE5C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C1B1A5E0789846AE8628DB4C /* Project object */;
+			containerPortal = C49E854777CD44739260B018 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 79F0709908784DECA4F24549;
-			remoteInfo = ALL_BUILD;
-		};
-		BCC3F941B27F408AA67148CD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C1B1A5E0789846AE8628DB4C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F4753DCA035B4AD6B782F531;
+			remoteGlobalIDString = C854AC1064864BE18066FA87;
 			remoteInfo = "LibLA-static";
 		};
-		D7CC2733E29249E98C69D7DC /* PBXContainerItemProxy */ = {
+		32E167DF04E34A0A820E8D28 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C1B1A5E0789846AE8628DB4C /* Project object */;
+			containerPortal = C49E854777CD44739260B018 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A90206DFF7D0451A838E942B;
+			remoteGlobalIDString = CE846C959BFF4CC9A809A491;
+			remoteInfo = LibLA;
+		};
+		335245E681C445CD94D809DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C49E854777CD44739260B018 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9563026A2CEC4F8E895CC931;
 			remoteInfo = ZERO_CHECK;
 		};
-		E4315C1A67F945BB82767098 /* PBXContainerItemProxy */ = {
+		4D8C7FF6019B443FA8AEACD6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C1B1A5E0789846AE8628DB4C /* Project object */;
+			containerPortal = C49E854777CD44739260B018 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F4753DCA035B4AD6B782F531;
+			remoteGlobalIDString = 9563026A2CEC4F8E895CC931;
+			remoteInfo = ZERO_CHECK;
+		};
+		5ABBF9E380204EE8BDD35EC3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C49E854777CD44739260B018 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C854AC1064864BE18066FA87;
 			remoteInfo = "LibLA-static";
+		};
+		7964C8C5060C422788898F79 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C49E854777CD44739260B018 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E898878D03894362946D151F;
+			remoteInfo = ALL_BUILD;
+		};
+		AB1A293E186B4965A44AE80C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C49E854777CD44739260B018 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9563026A2CEC4F8E895CC931;
+			remoteInfo = ZERO_CHECK;
+		};
+		B0513F8B83864BC298E4520B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C49E854777CD44739260B018 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E898878D03894362946D151F;
+			remoteInfo = ALL_BUILD;
+		};
+		D65F4359CF474100B0EDD6C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C49E854777CD44739260B018 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9563026A2CEC4F8E895CC931;
+			remoteInfo = ZERO_CHECK;
+		};
+		D66EA2251D30415FB1E0D20D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C49E854777CD44739260B018 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C854AC1064864BE18066FA87;
+			remoteInfo = "LibLA-static";
+		};
+		EF7A4FF82F994DDE92504AE9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C49E854777CD44739260B018 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9563026A2CEC4F8E895CC931;
+			remoteInfo = ZERO_CHECK;
+		};
+		F28E7668AF2245A49E23DF89 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C49E854777CD44739260B018 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FBBEAFBF16504CB68748C2F6;
+			remoteInfo = LibStructural;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		14F45BA0DC1F4550B118C088 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/complex.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = complex.cpp; path = LibLA/complex.cpp; sourceTree = SOURCE_ROOT; };
-		1711DCD3D9FD414286EBA734 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/libstructural.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = libstructural.cpp; path = LibStructural/libstructural.cpp; sourceTree = SOURCE_ROOT; };
-		1A60DB2C0419432DAD30CDD7 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/constraint.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = constraint.cpp; path = LibStructural/constraint.cpp; sourceTree = SOURCE_ROOT; };
-		4C76C8507B364B49A1FE3701 /* LibLA-static */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libLibLA-static.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5CCF3C81860943C88B95BEC1 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/libstructural.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = libstructural.cpp; path = LibStructural/libstructural.cpp; sourceTree = SOURCE_ROOT; };
-		61DDF431A9AA4DC29840063C /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/matrix.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = matrix.cpp; path = LibLA/matrix.cpp; sourceTree = SOURCE_ROOT; };
-		6608ADE7161649739BE3EC6F /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/util.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = util.cpp; path = LibLA/util.cpp; sourceTree = SOURCE_ROOT; };
-		6B7A8DD11D454023AE5FD208 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/libla.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = libla.cpp; path = LibLA/libla.cpp; sourceTree = SOURCE_ROOT; };
-		7129CC0CF961472F917EF51D /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/util.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = util.cpp; path = LibLA/util.cpp; sourceTree = SOURCE_ROOT; };
-		74B6E3CB74264927B22C8D7A /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/libla.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = libla.cpp; path = LibLA/libla.cpp; sourceTree = SOURCE_ROOT; };
-		775243628F90457E9745A7F8 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/fluxbalance.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = fluxbalance.cpp; path = LibStructural/fluxbalance.cpp; sourceTree = SOURCE_ROOT; };
-		775F88325514470384894D99 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/lpresult.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = lpresult.cpp; path = LibStructural/lpresult.cpp; sourceTree = SOURCE_ROOT; };
-		7E43641A0D484DC28B1EDC90 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = LibStructural/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		81A650CAD3104801AE26563D /* LibLA */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libLibLA.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		98082F54B21F4EDBB8D70814 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/objective.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = objective.cpp; path = LibStructural/objective.cpp; sourceTree = SOURCE_ROOT; };
-		9CB4755A5B9B468E80E3A8A9 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/objective.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = objective.cpp; path = LibStructural/objective.cpp; sourceTree = SOURCE_ROOT; };
-		9DE386AD8D2A43F094CA295E /* LibStructural */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libLibStructural.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
-		A25246B09EA948A6A7D8A747 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/matrix.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = matrix.cpp; path = LibLA/matrix.cpp; sourceTree = SOURCE_ROOT; };
-		B0D5B4CDB1324F419BF60E58 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/sbmlmodel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = sbmlmodel.cpp; path = LibStructural/sbmlmodel.cpp; sourceTree = SOURCE_ROOT; };
-		B109FFBFB523437DAEF3D004 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		B515148068F64C84B2F64912 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/complex.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = complex.cpp; path = LibLA/complex.cpp; sourceTree = SOURCE_ROOT; };
-		B5B1145A2E244572B92BCF4D /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = LibLA/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		B737E53CAA73452296A1BAD8 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/util.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = util.cpp; path = LibLA/util.cpp; sourceTree = SOURCE_ROOT; };
-		B87C7574695940009451F970 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/matrix.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = matrix.cpp; path = LibLA/matrix.cpp; sourceTree = SOURCE_ROOT; };
-		C0B9CC066E02475398AF740D /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/fluxbalance.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = fluxbalance.cpp; path = LibStructural/fluxbalance.cpp; sourceTree = SOURCE_ROOT; };
-		C24043EEBBD945EBA9009EB7 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/constraint.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = constraint.cpp; path = LibStructural/constraint.cpp; sourceTree = SOURCE_ROOT; };
-		C77A89F0F2E04F49804A73A4 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = LibLA/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		CDF96200DC5D41FBAD183ECF /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/complex.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = complex.cpp; path = LibLA/complex.cpp; sourceTree = SOURCE_ROOT; };
-		D106616FBBD04092A1FC924D /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/lpresult.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = lpresult.cpp; path = LibStructural/lpresult.cpp; sourceTree = SOURCE_ROOT; };
-		D8B32AF9C653429B831C040F /* LibStructural-static */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libLibStructural-static.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF6CA4ADD4D6427ABEB17FEC /* /Users/yosefbedaso/Documents/GitHub/Libstructural/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		E62C77A4670747DB8057DEC6 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/libla.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = libla.cpp; path = LibLA/libla.cpp; sourceTree = SOURCE_ROOT; };
-		F5F5DC29F12E4FDBB3536FA0 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/sbmlmodel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = sbmlmodel.cpp; path = LibStructural/sbmlmodel.cpp; sourceTree = SOURCE_ROOT; };
-		FB67272D3E1F448CA74BEBD4 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = LibStructural/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		10E67D1EDBD64C7CA67FCAE9 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; name = CMakeLists.txt; path = LibLA/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		126FE007859842599C149BB7 /* libstructural.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = libstructural.cpp; path = LibStructural/libstructural.cpp; sourceTree = SOURCE_ROOT; };
+		177615AA5B884DC7B6015919 /* constraint.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = constraint.cpp; path = LibStructural/constraint.cpp; sourceTree = SOURCE_ROOT; };
+		18A6662600274D9CA9BAD39A /* libla.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = libla.cpp; path = LibLA/libla.cpp; sourceTree = SOURCE_ROOT; };
+		2074244081974B8B99CE5E59 /* sbmlmodel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = sbmlmodel.cpp; path = LibStructural/sbmlmodel.cpp; sourceTree = SOURCE_ROOT; };
+		2143DF79C9384952B3F6A836 /* libla.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = libla.cpp; path = LibLA/libla.cpp; sourceTree = SOURCE_ROOT; };
+		3F1B312F643A4F9B801AB3B9 /* util.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = util.cpp; path = LibLA/util.cpp; sourceTree = SOURCE_ROOT; };
+		3F645DC1BF41471089275D07 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; name = CMakeLists.txt; path = LibStructural/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		3FAB0979534B492B98F86820 /* libstructural.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = libstructural.cpp; path = LibStructural/libstructural.cpp; sourceTree = SOURCE_ROOT; };
+		4E0889F693D14214B86E638A /* util.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = util.cpp; path = LibLA/util.cpp; sourceTree = SOURCE_ROOT; };
+		58AA92BCE5344DB09380C037 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		59A7746DDD70455C929691FE /* matrix.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = matrix.cpp; path = LibLA/matrix.cpp; sourceTree = SOURCE_ROOT; };
+		6100D3917FBD493883356326 /* constraint.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = constraint.cpp; path = LibStructural/constraint.cpp; sourceTree = SOURCE_ROOT; };
+		664B180C9F58498090444036 /* matrix.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = matrix.cpp; path = LibLA/matrix.cpp; sourceTree = SOURCE_ROOT; };
+		68079EB5BD6943A9B37F779F /* libLibStructural-static.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libLibStructural-static.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		73761C5075E84EF98CF12F05 /* complex.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = complex.cpp; path = LibLA/complex.cpp; sourceTree = SOURCE_ROOT; };
+		7A954D24E443463B85DA7E73 /* lpresult.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = lpresult.cpp; path = LibStructural/lpresult.cpp; sourceTree = SOURCE_ROOT; };
+		7F011F3753614AB181EF14FC /* util.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = util.cpp; path = LibLA/util.cpp; sourceTree = SOURCE_ROOT; };
+		848BEBD5019D4A8C878AC8C0 /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		8777EA0729F7493EBDCAAA64 /* objective.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = objective.cpp; path = LibStructural/objective.cpp; sourceTree = SOURCE_ROOT; };
+		8C6310D0893F4670B79DF3B8 /* lpresult.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = lpresult.cpp; path = LibStructural/lpresult.cpp; sourceTree = SOURCE_ROOT; };
+		8CFDC0C342C844A6B6339F2B /* objective.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = objective.cpp; path = LibStructural/objective.cpp; sourceTree = SOURCE_ROOT; };
+		8E9D42310E664E6A80834539 /* fluxbalance.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = fluxbalance.cpp; path = LibStructural/fluxbalance.cpp; sourceTree = SOURCE_ROOT; };
+		8FC03982847044E1916CE4A1 /* complex.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = complex.cpp; path = LibLA/complex.cpp; sourceTree = SOURCE_ROOT; };
+		94B7C9B0D59340CDB19C3D2B /* complex.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = complex.cpp; path = LibLA/complex.cpp; sourceTree = SOURCE_ROOT; };
+		A1373D8977C847F0B380BA28 /* libLibLA.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libLibLA.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8FA0A5532B6495A9D209F3D /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; name = CMakeLists.txt; path = LibLA/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		BB17CF5F4248464C9DA517AC /* matrix.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = matrix.cpp; path = LibLA/matrix.cpp; sourceTree = SOURCE_ROOT; };
+		D8F8E5D1FFD14B70A7B0B436 /* sbmlmodel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = sbmlmodel.cpp; path = LibStructural/sbmlmodel.cpp; sourceTree = SOURCE_ROOT; };
+		DD484BF4F4E7411D843637DA /* libLibStructural.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; path = libLibStructural.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD98E48A0E2944A6B5F40C9C /* fluxbalance.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = fluxbalance.cpp; path = LibStructural/fluxbalance.cpp; sourceTree = SOURCE_ROOT; };
+		FC575337B0B942AF9F0E3541 /* libLibLA-static.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libLibLA-static.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD2E92DBCB384CD79A42EF5D /* CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; lastKnownFileType = text; name = CMakeLists.txt; path = LibStructural/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		FEFE6BFBE5C944498B0C622E /* libla.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = libla.cpp; path = LibLA/libla.cpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-		0A54E4E744A44BFDB48D9263 /* LibLA-static */ = {
-			isa = PBXGroup;
-			children = (
-				8209B0D40DDB4FC089FA7659 /* Source Files */,
-				C77A89F0F2E04F49804A73A4 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/CMakeLists.txt */,
-			);
-			name = "LibLA-static";
-			sourceTree = "<group>";
-		};
-		13688A031B974D55B60716C0 /* ZERO_CHECK */ = {
-			isa = PBXGroup;
-			children = (
-				62AFD95301A04F04990D12A0 /* CMake Rules */,
-				DF6CA4ADD4D6427ABEB17FEC /* /Users/yosefbedaso/Documents/GitHub/Libstructural/CMakeLists.txt */,
-			);
-			name = ZERO_CHECK;
-			sourceTree = "<group>";
-		};
-		38D5107553794B8EBD3C924E /* LibLA */ = {
-			isa = PBXGroup;
-			children = (
-				B93BA4E2B181447BA865E5EF /* Source Files */,
-				B5B1145A2E244572B92BCF4D /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/CMakeLists.txt */,
-			);
-			name = LibLA;
-			sourceTree = "<group>";
-		};
-		3FD45F333D674DDAB3B95AE1 /* CMake Rules */ = {
+		0B6C04CF27A643F6881E90A3 /* CMake Rules */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = "CMake Rules";
 			sourceTree = "<group>";
 		};
-		4676843B536B417D838BDA3A /* LibStructural-static */ = {
-			isa = PBXGroup;
-			children = (
-				AA1AB3E085B640F88CAA1E69 /* Source Files */,
-				7E43641A0D484DC28B1EDC90 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/CMakeLists.txt */,
-			);
-			name = "LibStructural-static";
-			sourceTree = "<group>";
-		};
-		4AC6AD53FC1D46F18684EA1D = {
-			isa = PBXGroup;
-			children = (
-				B481DA6220A941338BAB97EC /* ALL_BUILD */,
-				13688A031B974D55B60716C0 /* ZERO_CHECK */,
-				0A54E4E744A44BFDB48D9263 /* LibLA-static */,
-				38D5107553794B8EBD3C924E /* LibLA */,
-				4676843B536B417D838BDA3A /* LibStructural-static */,
-				5B5B31BA183E4394B7D81381 /* LibStructural */,
-				954F7800C1ED4118A114B698 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		5B5B31BA183E4394B7D81381 /* LibStructural */ = {
-			isa = PBXGroup;
-			children = (
-				6A142B97D0E446F49BA6621F /* Source Files */,
-				FB67272D3E1F448CA74BEBD4 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/CMakeLists.txt */,
-			);
-			name = LibStructural;
-			sourceTree = "<group>";
-		};
-		62AFD95301A04F04990D12A0 /* CMake Rules */ = {
+		212E9FF48D5A4F799550B870 /* CMake Rules */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = "CMake Rules";
 			sourceTree = "<group>";
 		};
-		6A142B97D0E446F49BA6621F /* Source Files */ = {
+		22D8037C35E54711A5B19097 /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
-				CDF96200DC5D41FBAD183ECF /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/complex.cpp */,
-				74B6E3CB74264927B22C8D7A /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/libla.cpp */,
-				A25246B09EA948A6A7D8A747 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/matrix.cpp */,
-				7129CC0CF961472F917EF51D /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/util.cpp */,
-				C24043EEBBD945EBA9009EB7 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/constraint.cpp */,
-				775243628F90457E9745A7F8 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/fluxbalance.cpp */,
-				1711DCD3D9FD414286EBA734 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/libstructural.cpp */,
-				775F88325514470384894D99 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/lpresult.cpp */,
-				9CB4755A5B9B468E80E3A8A9 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/objective.cpp */,
-				F5F5DC29F12E4FDBB3536FA0 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/sbmlmodel.cpp */,
+				94B7C9B0D59340CDB19C3D2B /* complex.cpp */,
+				18A6662600274D9CA9BAD39A /* libla.cpp */,
+				BB17CF5F4248464C9DA517AC /* matrix.cpp */,
+				3F1B312F643A4F9B801AB3B9 /* util.cpp */,
 			);
 			name = "Source Files";
 			sourceTree = "<group>";
 		};
-		8209B0D40DDB4FC089FA7659 /* Source Files */ = {
+		266ACB05FC8F4ECC8C8D7407 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				14F45BA0DC1F4550B118C088 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/complex.cpp */,
-				6B7A8DD11D454023AE5FD208 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/libla.cpp */,
-				B87C7574695940009451F970 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/matrix.cpp */,
-				B737E53CAA73452296A1BAD8 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/util.cpp */,
-			);
-			name = "Source Files";
-			sourceTree = "<group>";
-		};
-		954F7800C1ED4118A114B698 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				81A650CAD3104801AE26563D /* LibLA */,
-				4C76C8507B364B49A1FE3701 /* LibLA-static */,
-				9DE386AD8D2A43F094CA295E /* LibStructural */,
-				D8B32AF9C653429B831C040F /* LibStructural-static */,
+				A1373D8977C847F0B380BA28 /* libLibLA.dylib */,
+				FC575337B0B942AF9F0E3541 /* libLibLA-static.a */,
+				DD484BF4F4E7411D843637DA /* libLibStructural.dylib */,
+				68079EB5BD6943A9B37F779F /* libLibStructural-static.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AA1AB3E085B640F88CAA1E69 /* Source Files */ = {
+		2794B0965EB740188EF473CA = {
 			isa = PBXGroup;
 			children = (
-				1A60DB2C0419432DAD30CDD7 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/constraint.cpp */,
-				C0B9CC066E02475398AF740D /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/fluxbalance.cpp */,
-				5CCF3C81860943C88B95BEC1 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/libstructural.cpp */,
-				D106616FBBD04092A1FC924D /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/lpresult.cpp */,
-				98082F54B21F4EDBB8D70814 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/objective.cpp */,
-				B0D5B4CDB1324F419BF60E58 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/sbmlmodel.cpp */,
+				A6C03D7F002E48DAB6C23E49 /* ALL_BUILD */,
+				4B210CE333034BE69AA1BE4A /* ZERO_CHECK */,
+				30EACEB0A3EB4622B31B5141 /* LibLA-static */,
+				6C138CE173924485A303BDBF /* LibLA */,
+				D61AF74AB56C4F9F9FF98455 /* LibStructural-static */,
+				74DB92CB21F64FC49FD1DB62 /* LibStructural */,
+				266ACB05FC8F4ECC8C8D7407 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		30EACEB0A3EB4622B31B5141 /* LibLA-static */ = {
+			isa = PBXGroup;
+			children = (
+				22D8037C35E54711A5B19097 /* Source Files */,
+				B8FA0A5532B6495A9D209F3D /* CMakeLists.txt */,
+			);
+			name = "LibLA-static";
+			sourceTree = "<group>";
+		};
+		3C1513C76F8F42D7944771FB /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				177615AA5B884DC7B6015919 /* constraint.cpp */,
+				DD98E48A0E2944A6B5F40C9C /* fluxbalance.cpp */,
+				3FAB0979534B492B98F86820 /* libstructural.cpp */,
+				8C6310D0893F4670B79DF3B8 /* lpresult.cpp */,
+				8777EA0729F7493EBDCAAA64 /* objective.cpp */,
+				2074244081974B8B99CE5E59 /* sbmlmodel.cpp */,
 			);
 			name = "Source Files";
 			sourceTree = "<group>";
 		};
-		B481DA6220A941338BAB97EC /* ALL_BUILD */ = {
+		3C59927E4D894EA092F09BAD /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
-				3FD45F333D674DDAB3B95AE1 /* CMake Rules */,
-				B109FFBFB523437DAEF3D004 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/CMakeLists.txt */,
+				73761C5075E84EF98CF12F05 /* complex.cpp */,
+				2143DF79C9384952B3F6A836 /* libla.cpp */,
+				59A7746DDD70455C929691FE /* matrix.cpp */,
+				7F011F3753614AB181EF14FC /* util.cpp */,
+				6100D3917FBD493883356326 /* constraint.cpp */,
+				8E9D42310E664E6A80834539 /* fluxbalance.cpp */,
+				126FE007859842599C149BB7 /* libstructural.cpp */,
+				7A954D24E443463B85DA7E73 /* lpresult.cpp */,
+				8CFDC0C342C844A6B6339F2B /* objective.cpp */,
+				D8F8E5D1FFD14B70A7B0B436 /* sbmlmodel.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		4B210CE333034BE69AA1BE4A /* ZERO_CHECK */ = {
+			isa = PBXGroup;
+			children = (
+				0B6C04CF27A643F6881E90A3 /* CMake Rules */,
+				848BEBD5019D4A8C878AC8C0 /* CMakeLists.txt */,
+			);
+			name = ZERO_CHECK;
+			sourceTree = "<group>";
+		};
+		5E5462AA8D80422795833970 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				8FC03982847044E1916CE4A1 /* complex.cpp */,
+				FEFE6BFBE5C944498B0C622E /* libla.cpp */,
+				664B180C9F58498090444036 /* matrix.cpp */,
+				4E0889F693D14214B86E638A /* util.cpp */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		6C138CE173924485A303BDBF /* LibLA */ = {
+			isa = PBXGroup;
+			children = (
+				5E5462AA8D80422795833970 /* Source Files */,
+				10E67D1EDBD64C7CA67FCAE9 /* CMakeLists.txt */,
+			);
+			name = LibLA;
+			sourceTree = "<group>";
+		};
+		74DB92CB21F64FC49FD1DB62 /* LibStructural */ = {
+			isa = PBXGroup;
+			children = (
+				3C59927E4D894EA092F09BAD /* Source Files */,
+				3F645DC1BF41471089275D07 /* CMakeLists.txt */,
+			);
+			name = LibStructural;
+			sourceTree = "<group>";
+		};
+		A6C03D7F002E48DAB6C23E49 /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				212E9FF48D5A4F799550B870 /* CMake Rules */,
+				58AA92BCE5344DB09380C037 /* CMakeLists.txt */,
 			);
 			name = ALL_BUILD;
 			sourceTree = "<group>";
 		};
-		B93BA4E2B181447BA865E5EF /* Source Files */ = {
+		D61AF74AB56C4F9F9FF98455 /* LibStructural-static */ = {
 			isa = PBXGroup;
 			children = (
-				B515148068F64C84B2F64912 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/complex.cpp */,
-				E62C77A4670747DB8057DEC6 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/libla.cpp */,
-				61DDF431A9AA4DC29840063C /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/matrix.cpp */,
-				6608ADE7161649739BE3EC6F /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/util.cpp */,
+				3C1513C76F8F42D7944771FB /* Source Files */,
+				FD2E92DBCB384CD79A42EF5D /* CMakeLists.txt */,
 			);
-			name = "Source Files";
+			name = "LibStructural-static";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4BE46E3C01B246BEA8250D05 /* LibLA */ = {
+		C854AC1064864BE18066FA87 /* LibLA-static */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 254D52FAD2FF411DB9190EDB /* Build configuration list for PBXNativeTarget "LibLA" */;
+			buildConfigurationList = 715B5B04238B473F980A0290 /* Build configuration list for PBXNativeTarget "LibLA-static" */;
 			buildPhases = (
-				2DA26DCFFC28441795DAD455 /* Sources */,
-				C8FBADBF6A8848F796C2D05F /* CMake PostBuild Rules */,
+				E9073C97A5E5405896E4DD15 /* Sources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F2A6E6E8568E467381723F41 /* PBXTargetDependency */,
-			);
-			name = LibLA;
-			productName = LibLA;
-			productReference = 81A650CAD3104801AE26563D /* LibLA */;
-			productType = "com.apple.product-type.library.dynamic";
-		};
-		659281FE809F4867B4D13A17 /* LibStructural-static */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B20C08EE53D249E4A739B3BC /* Build configuration list for PBXNativeTarget "LibStructural-static" */;
-			buildPhases = (
-				EB1A2F07678A47728AE870FC /* Sources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				470C836E95DA421C9C023725 /* PBXTargetDependency */,
-				156F84682ECB4CD98FA53FE5 /* PBXTargetDependency */,
-			);
-			name = "LibStructural-static";
-			productName = "LibStructural-static";
-			productReference = D8B32AF9C653429B831C040F /* LibStructural-static */;
-			productType = "com.apple.product-type.library.static";
-		};
-		D53AE85732A74F96BF9A8204 /* LibStructural */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EAB757AE830B4A0B8B69CD32 /* Build configuration list for PBXNativeTarget "LibStructural" */;
-			buildPhases = (
-				F3F9DDC6736445AAAD69EC5F /* Sources */,
-				FBD00FF797B4441DA624F359 /* CMake PostBuild Rules */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F84880438F5D47A4B52A72A9 /* PBXTargetDependency */,
-				37025C600B2E46B081A7AC83 /* PBXTargetDependency */,
-			);
-			name = LibStructural;
-			productName = LibStructural;
-			productReference = 9DE386AD8D2A43F094CA295E /* LibStructural */;
-			productType = "com.apple.product-type.library.dynamic";
-		};
-		F4753DCA035B4AD6B782F531 /* LibLA-static */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = EC63B5F9DBFC4A54A5B242D6 /* Build configuration list for PBXNativeTarget "LibLA-static" */;
-			buildPhases = (
-				968D5B7176D74858B95E2B56 /* Sources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				047CC6E22AFB4A12BCF85669 /* PBXTargetDependency */,
+				D107C16A09CE4C3D83704E48 /* PBXTargetDependency */,
 			);
 			name = "LibLA-static";
 			productName = "LibLA-static";
-			productReference = 4C76C8507B364B49A1FE3701 /* LibLA-static */;
+			productReference = FC575337B0B942AF9F0E3541 /* libLibLA-static.a */;
 			productType = "com.apple.product-type.library.static";
+		};
+		CE846C959BFF4CC9A809A491 /* LibLA */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26F78976E8B5417E9657D824 /* Build configuration list for PBXNativeTarget "LibLA" */;
+			buildPhases = (
+				04C4BE2FB42B48F39CC703FF /* Sources */,
+				07B522073AA144A28C948154 /* CMake PostBuild Rules */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7472F364937A46E79555E87B /* PBXTargetDependency */,
+			);
+			name = LibLA;
+			productName = LibLA;
+			productReference = A1373D8977C847F0B380BA28 /* libLibLA.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		F0E25425A016457986CFEFA9 /* LibStructural-static */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7961C7C5B664429AFC6081D /* Build configuration list for PBXNativeTarget "LibStructural-static" */;
+			buildPhases = (
+				222847806AD84E1CA430B973 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E04800F34FCC461FA5075C35 /* PBXTargetDependency */,
+				2DADEB3928854825BBEC232F /* PBXTargetDependency */,
+			);
+			name = "LibStructural-static";
+			productName = "LibStructural-static";
+			productReference = 68079EB5BD6943A9B37F779F /* libLibStructural-static.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		FBBEAFBF16504CB68748C2F6 /* LibStructural */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD751C4E9B144A0FA958E423 /* Build configuration list for PBXNativeTarget "LibStructural" */;
+			buildPhases = (
+				EDB2B87531884AA4B6CCCA96 /* Sources */,
+				07D7647E599A4201937D1E8A /* CMake PostBuild Rules */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				183DABA4AEC44167B6841028 /* PBXTargetDependency */,
+				2F01E0A3946841F580F21E36 /* PBXTargetDependency */,
+			);
+			name = LibStructural;
+			productName = LibStructural;
+			productReference = DD484BF4F4E7411D843637DA /* libLibStructural.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C1B1A5E0789846AE8628DB4C /* Project object */ = {
+		C49E854777CD44739260B018 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 0830;
 			};
-			buildConfigurationList = 8BD2A1C4F6C543F2ACB4023A /* Build configuration list for PBXProject "LibStructural" */;
-			buildSettings = {
-			};
-			buildStyles = (
-				64FDDEF886F94746B061D7F5 /* Debug */,
-				2B828B44016A4ACA939A9A2C /* Release */,
-				C82AF87AC8CD4814B6B3A8B9 /* MinSizeRel */,
-				21556A137EDC4203857D7BCA /* RelWithDebInfo */,
-			);
+			buildConfigurationList = 9691E4E360C84251B30C261F /* Build configuration list for PBXProject "LibStructural" */;
 			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 0;
-			mainGroup = 4AC6AD53FC1D46F18684EA1D;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2794B0965EB740188EF473CA;
 			projectDirPath = ../;
 			projectRoot = "";
 			targets = (
-				79F0709908784DECA4F24549 /* ALL_BUILD */,
-				A90206DFF7D0451A838E942B /* ZERO_CHECK */,
-				084661BA604F4DB7AD9D3C24 /* install */,
-				FC62F89F7A9D4B0A9D8F4F66 /* package */,
-				4BE46E3C01B246BEA8250D05 /* LibLA */,
-				F4753DCA035B4AD6B782F531 /* LibLA-static */,
-				D53AE85732A74F96BF9A8204 /* LibStructural */,
-				659281FE809F4867B4D13A17 /* LibStructural-static */,
+				E898878D03894362946D151F /* ALL_BUILD */,
+				9563026A2CEC4F8E895CC931 /* ZERO_CHECK */,
+				DD2BFDF53CD04052ABC7D427 /* install */,
+				F533CA0154BC4BDB9B9F0660 /* package */,
+				CE846C959BFF4CC9A809A491 /* LibLA */,
+				C854AC1064864BE18066FA87 /* LibLA-static */,
+				FBBEAFBF16504CB68748C2F6 /* LibStructural */,
+				F0E25425A016457986CFEFA9 /* LibStructural-static */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		284D036667CB40F7AEA84B7E /* CMake Rules */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			name = "CMake Rules";
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "make -C /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64 -f /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
-			showEnvVarsInLog = 0;
-		};
-		3462A734C8204B4A93B643D7 = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# shell script goes here
-exit 0";
-			showEnvVarsInLog = 0;
-		};
-		844490084E234BAD8AFEBEB5 = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# shell script goes here
-exit 0";
-			showEnvVarsInLog = 0;
-		};
-		8622BF2BD71247B3BAC8A268 = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# shell script goes here
-exit 0";
-			showEnvVarsInLog = 0;
-		};
-		88255DB48BC84027831324A2 /* CMake Rules */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			name = "CMake Rules";
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "make -C /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64 -f /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
-			showEnvVarsInLog = 0;
-		};
-		A71F7414632D4672B97ABC5F /* CMake PostBuild Rules */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			name = "CMake PostBuild Rules";
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "make -C /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64 -f /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/CMakeScripts/package_postBuildPhase.make$CONFIGURATION all";
-			showEnvVarsInLog = 0;
-		};
-		AB99A82D8ADC47DD8947793B /* CMake PostBuild Rules */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			name = "CMake PostBuild Rules";
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "make -C /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64 -f /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/CMakeScripts/install_postBuildPhase.make$CONFIGURATION all";
-			showEnvVarsInLog = 0;
-		};
-		C8FBADBF6A8848F796C2D05F /* CMake PostBuild Rules */ = {
+		07B522073AA144A28C948154 /* CMake PostBuild Rules */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -606,22 +478,7 @@ exit 0";
 			shellScript = "make -C /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA -f /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/CMakeScripts/LibLA_postBuildPhase.make$CONFIGURATION all";
 			showEnvVarsInLog = 0;
 		};
-		D180389BEBEC4A6896EE7A20 = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# shell script goes here
-exit 0";
-			showEnvVarsInLog = 0;
-		};
-		FBD00FF797B4441DA624F359 /* CMake PostBuild Rules */ = {
+		07D7647E599A4201937D1E8A /* CMake PostBuild Rules */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -632,466 +489,186 @@ exit 0";
 			shellScript = "make -C /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural -f /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural/CMakeScripts/LibStructural_postBuildPhase.make$CONFIGURATION all";
 			showEnvVarsInLog = 0;
 		};
+		10E8A9E5830D4A9399FF097E /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64 -f /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		25EFCD973036448896F9FFF8 /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64 -f /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/CMakeScripts/install_postBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		438F94307D7246579C096384 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64 -f /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		F6A114F83AD748E3AE744658 /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64 -f /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/CMakeScripts/package_postBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		2DA26DCFFC28441795DAD455 /* Sources */ = {
+		04C4BE2FB42B48F39CC703FF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7C568164D264191A8FCAB2F /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/complex.cpp */,
-				3907254153484110BD99842D /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/libla.cpp */,
-				E17F45BB4CED41729DFFFCEB /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/matrix.cpp */,
-				FA98576B7F8C47DFA63DCA3E /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/util.cpp */,
+				ADEA0B2FB4FA4044B1A9CF6A /* complex.cpp in Sources */,
+				6F5E38093C1A45BD927E53BB /* libla.cpp in Sources */,
+				28DF071A4ECD4301AB188E4F /* matrix.cpp in Sources */,
+				A284D57D83CB4BA7B67B77C4 /* util.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		968D5B7176D74858B95E2B56 /* Sources */ = {
+		222847806AD84E1CA430B973 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E97E9DDCB62B44B6AECA0918 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/complex.cpp */,
-				96BD4B79543E4DC39D23027C /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/libla.cpp */,
-				1FA18A4BC5114BDAA2A38D1B /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/matrix.cpp */,
-				348B3545D00B44F5918BCFB5 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/util.cpp */,
+				28A1059194824B39828F29C6 /* constraint.cpp in Sources */,
+				43044EEAD19645549034BF63 /* fluxbalance.cpp in Sources */,
+				9BF5607A64A1470186C5B126 /* libstructural.cpp in Sources */,
+				31E5A050B4B749E2AB7C7D17 /* lpresult.cpp in Sources */,
+				BCA0B6CDCB5649D2941E61D3 /* objective.cpp in Sources */,
+				24AE305AC3884BB69C1E14CE /* sbmlmodel.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EB1A2F07678A47728AE870FC /* Sources */ = {
+		E9073C97A5E5405896E4DD15 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58468C5E10F94BE9850299EF /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/constraint.cpp */,
-				81A4D0726ACB4AFE95691E28 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/fluxbalance.cpp */,
-				771B9741E5E24AAFA77DC295 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/libstructural.cpp */,
-				72DA353C7E98406BB7BC86A5 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/lpresult.cpp */,
-				1971DED9E6A64B9896992238 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/objective.cpp */,
-				A7561C056B8A444A9FC5A942 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/sbmlmodel.cpp */,
+				7C89C256756A456BA2FA0633 /* complex.cpp in Sources */,
+				4C23327CF5224AADA14A9328 /* libla.cpp in Sources */,
+				BA40981669CD47E2993F44F4 /* matrix.cpp in Sources */,
+				5555AD47151F4643B35BCFD9 /* util.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F3F9DDC6736445AAAD69EC5F /* Sources */ = {
+		EDB2B87531884AA4B6CCCA96 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A9F6A0FA217D4873B6FC8035 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/complex.cpp */,
-				BD01B711D93247688CF8FBDF /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/libla.cpp */,
-				CC346F21F3FC47BCB6751FBA /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/matrix.cpp */,
-				047F3EBF7170482A9B63D467 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/util.cpp */,
-				063E5C97A31E45FB87CF739C /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/constraint.cpp */,
-				FC51F46C17CE4B87973946C7 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/fluxbalance.cpp */,
-				58C40D14302141EB8505B89B /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/libstructural.cpp */,
-				551E82CCA89440F18F72CEF6 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/lpresult.cpp */,
-				567B19233F1A413DBDBF5EDC /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/objective.cpp */,
-				F3191CE699ED420EAB4D1C19 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/sbmlmodel.cpp */,
+				8BA6EE69624A4BA5AC11EBDD /* complex.cpp in Sources */,
+				4A75779321D341C6BB9E6358 /* libla.cpp in Sources */,
+				7CF331CBDAFA418EAB71563C /* matrix.cpp in Sources */,
+				1AB611AF14AD4389AD4ABDD8 /* util.cpp in Sources */,
+				56D80FE371064063A8A84216 /* constraint.cpp in Sources */,
+				DBDB081474844DAEB21E16A0 /* fluxbalance.cpp in Sources */,
+				B74108101E7948778F76DB8C /* libstructural.cpp in Sources */,
+				10F84D0085A045829545408C /* lpresult.cpp in Sources */,
+				3A51846746484F38BB5D21C7 /* objective.cpp in Sources */,
+				244EDA365E99495C9DA6990B /* sbmlmodel.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		047CC6E22AFB4A12BCF85669 /* PBXTargetDependency */ = {
+		183DABA4AEC44167B6841028 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A90206DFF7D0451A838E942B /* ZERO_CHECK */;
-			targetProxy = 6ABD4E9F3C494FB4AB7F3290 /* PBXContainerItemProxy */;
+			target = C854AC1064864BE18066FA87 /* LibLA-static */;
+			targetProxy = 5ABBF9E380204EE8BDD35EC3 /* PBXContainerItemProxy */;
 		};
-		156F84682ECB4CD98FA53FE5 /* PBXTargetDependency */ = {
+		1E6FE7B4A4994081BA5539F8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A90206DFF7D0451A838E942B /* ZERO_CHECK */;
-			targetProxy = 34CFEBD23C8A48C58A4F3985 /* PBXContainerItemProxy */;
+			target = CE846C959BFF4CC9A809A491 /* LibLA */;
+			targetProxy = 32E167DF04E34A0A820E8D28 /* PBXContainerItemProxy */;
 		};
-		37025C600B2E46B081A7AC83 /* PBXTargetDependency */ = {
+		2DADEB3928854825BBEC232F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A90206DFF7D0451A838E942B /* ZERO_CHECK */;
-			targetProxy = D7CC2733E29249E98C69D7DC /* PBXContainerItemProxy */;
+			target = 9563026A2CEC4F8E895CC931 /* ZERO_CHECK */;
+			targetProxy = EF7A4FF82F994DDE92504AE9 /* PBXContainerItemProxy */;
 		};
-		470C836E95DA421C9C023725 /* PBXTargetDependency */ = {
+		2F01E0A3946841F580F21E36 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F4753DCA035B4AD6B782F531 /* LibLA-static */;
-			targetProxy = E4315C1A67F945BB82767098 /* PBXContainerItemProxy */;
+			target = 9563026A2CEC4F8E895CC931 /* ZERO_CHECK */;
+			targetProxy = D65F4359CF474100B0EDD6C9 /* PBXContainerItemProxy */;
 		};
-		4BB66FAD5B49482F8215E9AF /* PBXTargetDependency */ = {
+		4F4628DD20B449668F27C673 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D53AE85732A74F96BF9A8204 /* LibStructural */;
-			targetProxy = 72A7687656E74098A88B679F /* PBXContainerItemProxy */;
+			target = F0E25425A016457986CFEFA9 /* LibStructural-static */;
+			targetProxy = 0CC1106CC6E743A6A75CF335 /* PBXContainerItemProxy */;
 		};
-		6C61BE94C4F4421290F856AC /* PBXTargetDependency */ = {
+		7472F364937A46E79555E87B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 79F0709908784DECA4F24549 /* ALL_BUILD */;
-			targetProxy = A6566D32484541AD81BCECDE /* PBXContainerItemProxy */;
+			target = 9563026A2CEC4F8E895CC931 /* ZERO_CHECK */;
+			targetProxy = AB1A293E186B4965A44AE80C /* PBXContainerItemProxy */;
 		};
-		6E4533D50EEB48158C9A6B4C /* PBXTargetDependency */ = {
+		8FDF19078F81419D9EB367E9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4BE46E3C01B246BEA8250D05 /* LibLA */;
-			targetProxy = 5BA25EE689E645B184A64310 /* PBXContainerItemProxy */;
+			target = E898878D03894362946D151F /* ALL_BUILD */;
+			targetProxy = B0513F8B83864BC298E4520B /* PBXContainerItemProxy */;
 		};
-		924F8269294E4B9CA4DA1EFC /* PBXTargetDependency */ = {
+		A87D352056FA4D5E99FA0D1B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F4753DCA035B4AD6B782F531 /* LibLA-static */;
-			targetProxy = 7C26D7DBC5444474B006D3F1 /* PBXContainerItemProxy */;
+			target = FBBEAFBF16504CB68748C2F6 /* LibStructural */;
+			targetProxy = F28E7668AF2245A49E23DF89 /* PBXContainerItemProxy */;
 		};
-		9E237EE1D13243CA99930C04 /* PBXTargetDependency */ = {
+		C6E9E58BDD4C4C03A5FD0A95 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A90206DFF7D0451A838E942B /* ZERO_CHECK */;
-			targetProxy = 984B562775EC4597AD8050B2 /* PBXContainerItemProxy */;
+			target = C854AC1064864BE18066FA87 /* LibLA-static */;
+			targetProxy = D66EA2251D30415FB1E0D20D /* PBXContainerItemProxy */;
 		};
-		BD50F2E6ABB84CED909EC35A /* PBXTargetDependency */ = {
+		D107C16A09CE4C3D83704E48 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 79F0709908784DECA4F24549 /* ALL_BUILD */;
-			targetProxy = 46D2ABB980534968B7FD5CFC /* PBXContainerItemProxy */;
+			target = 9563026A2CEC4F8E895CC931 /* ZERO_CHECK */;
+			targetProxy = 335245E681C445CD94D809DC /* PBXContainerItemProxy */;
 		};
-		D3D0913CA5A54E849A275346 /* PBXTargetDependency */ = {
+		E04800F34FCC461FA5075C35 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 659281FE809F4867B4D13A17 /* LibStructural-static */;
-			targetProxy = 9B34209E6A494F2EBF409DD9 /* PBXContainerItemProxy */;
+			target = C854AC1064864BE18066FA87 /* LibLA-static */;
+			targetProxy = 2FE44020345646699B1BCE5C /* PBXContainerItemProxy */;
 		};
-		F2A6E6E8568E467381723F41 /* PBXTargetDependency */ = {
+		E5A549CD483448AFABD7C025 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A90206DFF7D0451A838E942B /* ZERO_CHECK */;
-			targetProxy = 63D798CE3FB3490D8048AB84 /* PBXContainerItemProxy */;
+			target = 9563026A2CEC4F8E895CC931 /* ZERO_CHECK */;
+			targetProxy = 4D8C7FF6019B443FA8AEACD6 /* PBXContainerItemProxy */;
 		};
-		F84880438F5D47A4B52A72A9 /* PBXTargetDependency */ = {
+		ED225A72F22C4AF98C54E489 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F4753DCA035B4AD6B782F531 /* LibLA-static */;
-			targetProxy = BCC3F941B27F408AA67148CD /* PBXContainerItemProxy */;
+			target = E898878D03894362946D151F /* ALL_BUILD */;
+			targetProxy = 7964C8C5060C422788898F79 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0328965FC0EA498AA89D0165 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .a;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",MACOSX,DARWIN,LINUX,"'PACKAGE_VERSION=\"1.1.0-a1\"'","'PACKAGE_NAME=\"LibStructural\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA,/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/../include);
-				INSTALL_PATH = "";
-				LIBRARY_STYLE = STATIC;
-				OTHER_CPLUSPLUSFLAGS = " -fPIC  ";
-				OTHER_LIBTOOLFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = "LibLA-static";
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		15A88ACC90B84A2C9C0DE430 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DYLIB_COMPATIBILITY_VERSION = "";
-				DYLIB_CURRENT_VERSION = "";
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .dylib;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",LibStructural_EXPORTS,MACOSX,DARWIN,LINUX,"'PACKAGE_VERSION=\"1.1.0-a1\"'","'PACKAGE_NAME=\"LibStructural\"'",LPSOLVE_STATIC);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural,/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/../include);
-				INSTALL_PATH = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural/RelWithDebInfo;
-				LIBRARY_SEARCH_PATHS = "";
-				LIBRARY_STYLE = DYNAMIC;
-				OTHER_CPLUSPLUSFLAGS = " -fPIC -fPIC  ";
-				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names  /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libsbml.lib /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/RelWithDebInfo/libLibLA-static.a /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/lapack.lib /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/blas.lib /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/libf2c.lib -llpsolve-static";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = LibStructural;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		1CAAD438816446AB8691688B /* Release */ = {
+		0F2E1CBDCB1E4DC893B7C2DA /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include");
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = Release;
-		};
-		1E1174373D4A43A79AA15BA1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DYLIB_COMPATIBILITY_VERSION = "";
-				DYLIB_CURRENT_VERSION = "";
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .dylib;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",LibStructural_EXPORTS,MACOSX,DARWIN,LINUX,"'PACKAGE_VERSION=\"1.1.0-a1\"'","'PACKAGE_NAME=\"LibStructural\"'",LPSOLVE_STATIC);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural,/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/../include);
-				INSTALL_PATH = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural/Debug;
-				LIBRARY_SEARCH_PATHS = "";
-				LIBRARY_STYLE = DYNAMIC;
-				OTHER_CPLUSPLUSFLAGS = " -fPIC -fPIC  ";
-				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names  /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libsbml.lib /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/Debug/libLibLA-static.a /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/lapack.lib /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/blas.lib /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/libf2c.lib -llpsolve-static";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = LibStructural;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = Debug;
-		};
-		2640241A37A54493BB9575B9 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include");
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		2700717886A64783B33405B9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DYLIB_COMPATIBILITY_VERSION = "";
-				DYLIB_CURRENT_VERSION = "";
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .dylib;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",LibLA_EXPORTS,MACOSX,DARWIN,LINUX,"'PACKAGE_VERSION=\"1.1.0-a1\"'","'PACKAGE_NAME=\"LibStructural\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA,/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/../include);
-				INSTALL_PATH = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/Release;
-				LIBRARY_SEARCH_PATHS = "";
-				LIBRARY_STYLE = DYNAMIC;
-				OTHER_CPLUSPLUSFLAGS = " -fPIC -fPIC  ";
-				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names  /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/lapack.lib /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/blas.lib /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/libf2c.lib";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = LibLA;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = Release;
-		};
-		2B1B3419BE3D4E599B3E3476 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .a;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",MACOSX,DARWIN,LINUX,"'PACKAGE_VERSION=\"1.1.0-a1\"'","'PACKAGE_NAME=\"LibStructural\"'",LPSOLVE_STATIC);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural,/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/../include);
-				INSTALL_PATH = "";
-				LIBRARY_STYLE = STATIC;
-				OTHER_CPLUSPLUSFLAGS = " -fPIC  ";
-				OTHER_LIBTOOLFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = "LibStructural-static";
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = Release;
-		};
-		461DC0D318324CEDACA0568E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .a;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",MACOSX,DARWIN,LINUX,"'PACKAGE_VERSION=\"1.1.0-a1\"'","'PACKAGE_NAME=\"LibStructural\"'",LPSOLVE_STATIC);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural,/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/../include);
-				INSTALL_PATH = "";
-				LIBRARY_STYLE = STATIC;
-				OTHER_CPLUSPLUSFLAGS = " -fPIC  ";
-				OTHER_LIBTOOLFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = "LibStructural-static";
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = Debug;
-		};
-		568D56C7B7564F2C98A72515 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .a;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",MACOSX,DARWIN,LINUX,"'PACKAGE_VERSION=\"1.1.0-a1\"'","'PACKAGE_NAME=\"LibStructural\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA,/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/../include);
-				INSTALL_PATH = "";
-				LIBRARY_STYLE = STATIC;
-				OTHER_CPLUSPLUSFLAGS = " -fPIC  ";
-				OTHER_LIBTOOLFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = "LibLA-static";
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = Debug;
-		};
-		57EFA3F511BF44D7868DBC7A /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DYLIB_COMPATIBILITY_VERSION = "";
-				DYLIB_CURRENT_VERSION = "";
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .dylib;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",LibLA_EXPORTS,MACOSX,DARWIN,LINUX,"'PACKAGE_VERSION=\"1.1.0-a1\"'","'PACKAGE_NAME=\"LibStructural\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA,/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/../include);
-				INSTALL_PATH = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/MinSizeRel;
-				LIBRARY_SEARCH_PATHS = "";
-				LIBRARY_STYLE = DYNAMIC;
-				OTHER_CPLUSPLUSFLAGS = " -fPIC -fPIC  ";
-				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names  /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/lapack.lib /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/blas.lib /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/libf2c.lib";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = LibLA;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		72C61D3A57334250A14D6445 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include");
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		744A01CA8629490FAFAFE179 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DYLIB_COMPATIBILITY_VERSION = "";
-				DYLIB_CURRENT_VERSION = "";
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .dylib;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",LibStructural_EXPORTS,MACOSX,DARWIN,LINUX,"'PACKAGE_VERSION=\"1.1.0-a1\"'","'PACKAGE_NAME=\"LibStructural\"'",LPSOLVE_STATIC);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural,/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/../include);
-				INSTALL_PATH = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural/MinSizeRel;
-				LIBRARY_SEARCH_PATHS = "";
-				LIBRARY_STYLE = DYNAMIC;
-				OTHER_CPLUSPLUSFLAGS = " -fPIC -fPIC  ";
-				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names  /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libsbml.lib /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/MinSizeRel/libLibLA-static.a /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/lapack.lib /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/blas.lib /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/libf2c.lib -llpsolve-static";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = LibStructural;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		76DAF4EF0A5147AEAC6E73E1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include");
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = Debug;
-		};
-		77A36D85387F4F26AA545E55 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include");
+				HEADER_SEARCH_PATHS = "/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include";
 				INSTALL_PATH = "";
 				OTHER_LDFLAGS = " ";
 				OTHER_REZFLAGS = "";
@@ -1099,162 +676,16 @@ exit 0";
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
 				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
 			};
 			name = MinSizeRel;
 		};
-		7CD4FCDD5B0A4236B4D92645 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include");
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = package;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = Debug;
-		};
-		85AC068F91624620B6998C42 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include");
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = Debug;
-		};
-		8622E915FC5F4C7788375567 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include");
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		890A8C75D0CA40A08DA493B9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				DYLIB_COMPATIBILITY_VERSION = "";
-				DYLIB_CURRENT_VERSION = "";
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .dylib;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",LibStructural_EXPORTS,MACOSX,DARWIN,LINUX,"'PACKAGE_VERSION=\"1.1.0-a1\"'","'PACKAGE_NAME=\"LibStructural\"'",LPSOLVE_STATIC);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural,/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/../include);
-				INSTALL_PATH = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural/Release;
-				LIBRARY_SEARCH_PATHS = "";
-				LIBRARY_STYLE = DYNAMIC;
-				OTHER_CPLUSPLUSFLAGS = " -fPIC -fPIC  ";
-				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names  /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libsbml.lib /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/Release/libLibLA-static.a /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/lapack.lib /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/blas.lib /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/libf2c.lib -llpsolve-static";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = LibStructural;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = Release;
-		};
-		8A5B0217F4E640F989FE4C9D /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include");
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		93EE314FA815479CB395FFF4 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = "";
-				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/build;
-			};
-			name = MinSizeRel;
-		};
-		A8B54106729443AD8F8A16BA /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = "";
-				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/build;
-			};
-			name = RelWithDebInfo;
-		};
-		AC82FCFCCBE846149AB1D888 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include");
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = package;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		ADE68744236445F59FA50C68 /* RelWithDebInfo */ = {
+		0F620402FBFE4FD288620B0D /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1262,24 +693,96 @@ exit 0";
 				EXECUTABLE_SUFFIX = .a;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",MACOSX,DARWIN,LINUX,"'PACKAGE_VERSION=\"1.1.0-a1\"'","'PACKAGE_NAME=\"LibStructural\"'",LPSOLVE_STATIC);
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					MACOSX,
+					DARWIN,
+					LINUX,
+					"'PACKAGE_VERSION=\"1.1.0-a1\"'",
+					"'PACKAGE_NAME=\"LibStructural\"'",
+					LPSOLVE_STATIC,
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural,/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/../include);
+				HEADER_SEARCH_PATHS = (
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural,
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/../include,
+				);
 				INSTALL_PATH = "";
 				LIBRARY_STYLE = STATIC;
-				OTHER_CPLUSPLUSFLAGS = " -fPIC  ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-fPIC",
+					"-DNDEBUG",
+				);
 				OTHER_LIBTOOLFLAGS = " ";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = "LibStructural-static";
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural;
 				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
 			};
-			name = RelWithDebInfo;
+			name = MinSizeRel;
 		};
-		AE788C7F83E94EC8A94340FB /* RelWithDebInfo */ = {
+		14068CEB1E7E479EBB7E0BD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include";
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		210DB2B33B674D33A060B05C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include";
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = package;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		21995E518A994CB69AB1C67D /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1287,188 +790,81 @@ exit 0";
 				DYLIB_CURRENT_VERSION = "";
 				EXECUTABLE_PREFIX = lib;
 				EXECUTABLE_SUFFIX = .dylib;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",LibLA_EXPORTS,MACOSX,DARWIN,LINUX,"'PACKAGE_VERSION=\"1.1.0-a1\"'","'PACKAGE_NAME=\"LibStructural\"'");
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					LibLA_EXPORTS,
+					MACOSX,
+					DARWIN,
+					LINUX,
+					"'PACKAGE_VERSION=\"1.1.0-a1\"'",
+					"'PACKAGE_NAME=\"LibStructural\"'",
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA,/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/../include);
+				HEADER_SEARCH_PATHS = (
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA,
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/../include,
+				);
 				INSTALL_PATH = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/RelWithDebInfo;
 				LIBRARY_SEARCH_PATHS = "";
 				LIBRARY_STYLE = DYNAMIC;
-				OTHER_CPLUSPLUSFLAGS = " -fPIC -fPIC  ";
-				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names  /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/lapack.lib /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/blas.lib /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/libf2c.lib";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-fPIC",
+					"-DNDEBUG",
+					"-fPIC",
+				);
+				OTHER_LDFLAGS = (
+					"-dynamiclib",
+					"-Wl,-headerpad_max_install_names",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/lapack.lib",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/blas.lib",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/libf2c.lib",
+				);
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = LibLA;
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA;
 				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
 			};
 			name = RelWithDebInfo;
 		};
-		B146E55099E54249A4BA36A1 /* RelWithDebInfo */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include");
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = install;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = RelWithDebInfo;
-		};
-		B358B78096304750AD3001F6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include");
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = Debug;
-		};
-		BC680312EEB042ABA87BCD58 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include");
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ZERO_CHECK;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = Release;
-		};
-		BCEC205201FE4A88B6B9ED02 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .a;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",MACOSX,DARWIN,LINUX,"'PACKAGE_VERSION=\"1.1.0-a1\"'","'PACKAGE_NAME=\"LibStructural\"'",LPSOLVE_STATIC);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural,/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/../include);
-				INSTALL_PATH = "";
-				LIBRARY_STYLE = STATIC;
-				OTHER_CPLUSPLUSFLAGS = " -fPIC  ";
-				OTHER_LIBTOOLFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = "LibStructural-static";
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		C570B19B583D4CEFBCB3E321 /* Debug */ = {
+		22AA62D0064A450AA7F670BC /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = "";
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/build;
+			};
+			name = RelWithDebInfo;
+		};
+		23E623DD166649C3944E3F7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
 				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/build;
 			};
 			name = Debug;
 		};
-		C8FD8BF5ABD84ADA922DE4FE /* Release */ = {
+		24CD4DB372674CBF8AC154D3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include");
-				INSTALL_PATH = "";
-				OTHER_LDFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = ALL_BUILD;
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = Release;
-		};
-		D368D390C4ED4D0B9BE7A5E0 /* MinSizeRel */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				EXECUTABLE_PREFIX = lib;
-				EXECUTABLE_SUFFIX = .a;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",MACOSX,DARWIN,LINUX,"'PACKAGE_VERSION=\"1.1.0-a1\"'","'PACKAGE_NAME=\"LibStructural\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA,/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/../include);
-				INSTALL_PATH = "";
-				LIBRARY_STYLE = STATIC;
-				OTHER_CPLUSPLUSFLAGS = " -fPIC  ";
-				OTHER_LIBTOOLFLAGS = " ";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = "LibLA-static";
-				SECTORDER_FLAGS = "";
-				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA;
-				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
-			};
-			name = MinSizeRel;
-		};
-		DF79B14A93AE43128ED81A37 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = "";
-				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/build;
-			};
-			name = Release;
-		};
-		E4EB6A9F9ADC436FB6D753CF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				COMBINE_HIDPI_IMAGES = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include");
+				HEADER_SEARCH_PATHS = "/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include";
 				INSTALL_PATH = "";
 				OTHER_LDFLAGS = " ";
 				OTHER_REZFLAGS = "";
@@ -1476,11 +872,127 @@ exit 0";
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
 				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
 			};
 			name = Release;
 		};
-		F258916A9D26445DB7C68B9C /* Debug */ = {
+		27C74C809ADC4B649E873CEF /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include";
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		413F17F202544460B1AECE2A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					MACOSX,
+					DARWIN,
+					LINUX,
+					"'PACKAGE_VERSION=\"1.1.0-a1\"'",
+					"'PACKAGE_NAME=\"LibStructural\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA,
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/../include,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = " -fPIC     ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "LibLA-static";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		492BBD2E7D7D449BB8919F15 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					MACOSX,
+					DARWIN,
+					LINUX,
+					"'PACKAGE_VERSION=\"1.1.0-a1\"'",
+					"'PACKAGE_NAME=\"LibStructural\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA,
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/../include,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-fPIC",
+					"-DNDEBUG",
+				);
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "LibLA-static";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		4A7279741C2A4CC18E75E1F4 /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1490,46 +1002,525 @@ exit 0";
 				EXECUTABLE_SUFFIX = .dylib;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",LibLA_EXPORTS,MACOSX,DARWIN,LINUX,"'PACKAGE_VERSION=\"1.1.0-a1\"'","'PACKAGE_NAME=\"LibStructural\"'");
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					LibLA_EXPORTS,
+					MACOSX,
+					DARWIN,
+					LINUX,
+					"'PACKAGE_VERSION=\"1.1.0-a1\"'",
+					"'PACKAGE_NAME=\"LibStructural\"'",
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA,/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/../include);
-				INSTALL_PATH = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/Debug;
+				HEADER_SEARCH_PATHS = (
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA,
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/../include,
+				);
+				INSTALL_PATH = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/MinSizeRel;
 				LIBRARY_SEARCH_PATHS = "";
 				LIBRARY_STYLE = DYNAMIC;
-				OTHER_CPLUSPLUSFLAGS = " -fPIC -fPIC  ";
-				OTHER_LDFLAGS = " -dynamiclib -Wl,-headerpad_max_install_names  /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/lapack.lib /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/blas.lib /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/libf2c.lib";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-fPIC",
+					"-DNDEBUG",
+					"-fPIC",
+				);
+				OTHER_LDFLAGS = (
+					"-dynamiclib",
+					"-Wl,-headerpad_max_install_names",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/lapack.lib",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/blas.lib",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/libf2c.lib",
+				);
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = LibLA;
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA;
 				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		4C91030F41634D128A4F59DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					MACOSX,
+					DARWIN,
+					LINUX,
+					"'PACKAGE_VERSION=\"1.1.0-a1\"'",
+					"'PACKAGE_NAME=\"LibStructural\"'",
+					LPSOLVE_STATIC,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural,
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/../include,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = " -fPIC     ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "LibStructural-static";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
 			};
 			name = Debug;
 		};
-		FBD1DE704FE54E7A804DCBE1 /* RelWithDebInfo */ = {
+		5A99DCAB4114450EB548A92C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include");
+				HEADER_SEARCH_PATHS = "/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include";
 				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/lapack.lib";
 				OTHER_LDFLAGS = " ";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = ALL_BUILD;
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
 				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		69DFECD75F1840EBA0C4FAD2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include";
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/lapack.lib";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		6C02BA2E4E7242CB8567E19C /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include";
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		778289779B974CD1A715EAE1 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					LibStructural_EXPORTS,
+					MACOSX,
+					DARWIN,
+					LINUX,
+					"'PACKAGE_VERSION=\"1.1.0-a1\"'",
+					"'PACKAGE_NAME=\"LibStructural\"'",
+					LPSOLVE_STATIC,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural,
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/../include,
+				);
+				INSTALL_PATH = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural/MinSizeRel;
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-fPIC",
+					"-DNDEBUG",
+					"-fPIC",
+				);
+				OTHER_LDFLAGS = (
+					"-dynamiclib",
+					"-Wl,-headerpad_max_install_names",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libsbml.lib",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/MinSizeRel/libLibLA-static.a",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libxml2.lib",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libbz2.lib",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/lapack.lib",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/blas.lib",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/libf2c.lib",
+					"-llpsolve-static",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = LibStructural;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
+		};
+		7E7107A8FEB74ECF9A8CF92F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include";
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		83D3A80D01AD41C59B641F87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include";
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		85028975B1C84CD0B92E1287 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					MACOSX,
+					DARWIN,
+					LINUX,
+					"'PACKAGE_VERSION=\"1.1.0-a1\"'",
+					"'PACKAGE_NAME=\"LibStructural\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA,
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/../include,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-fPIC",
+					"-DNDEBUG",
+				);
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "LibLA-static";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
 			};
 			name = RelWithDebInfo;
 		};
-		FE69FC4FC41A4FFFA1B5E318 /* Release */ = {
+		88AB8815A8B842559C600408 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					LibStructural_EXPORTS,
+					MACOSX,
+					DARWIN,
+					LINUX,
+					"'PACKAGE_VERSION=\"1.1.0-a1\"'",
+					"'PACKAGE_NAME=\"LibStructural\"'",
+					LPSOLVE_STATIC,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural,
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/../include,
+				);
+				INSTALL_PATH = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural/RelWithDebInfo;
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-fPIC",
+					"-DNDEBUG",
+					"-fPIC",
+				);
+				OTHER_LDFLAGS = (
+					"-dynamiclib",
+					"-Wl,-headerpad_max_install_names",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libsbml.lib",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/RelWithDebInfo/libLibLA-static.a",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libxml2.lib",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libbz2.lib",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/lapack.lib",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/blas.lib",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/libf2c.lib",
+					"-llpsolve-static",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = LibStructural;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		8E13D30FD55F41C6816D60BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include";
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		9871B5143F3F491FBCDBCA8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					LibLA_EXPORTS,
+					MACOSX,
+					DARWIN,
+					LINUX,
+					"'PACKAGE_VERSION=\"1.1.0-a1\"'",
+					"'PACKAGE_NAME=\"LibStructural\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA,
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/../include,
+				);
+				INSTALL_PATH = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/Debug;
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-fPIC",
+					"-fPIC",
+				);
+				OTHER_LDFLAGS = (
+					"-dynamiclib",
+					"-Wl,-headerpad_max_install_names",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/lapack.lib",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/blas.lib",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/libf2c.lib",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = LibLA;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		9C2B853972EE4BB790400820 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include";
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/lapack.lib";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		A01DFAC3F42C4CABAE276C02 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include";
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = package;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		A609102808FD4481B6C77B97 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1537,126 +1528,508 @@ exit 0";
 				EXECUTABLE_SUFFIX = .a;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",MACOSX,DARWIN,LINUX,"'PACKAGE_VERSION=\"1.1.0-a1\"'","'PACKAGE_NAME=\"LibStructural\"'");
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					MACOSX,
+					DARWIN,
+					LINUX,
+					"'PACKAGE_VERSION=\"1.1.0-a1\"'",
+					"'PACKAGE_NAME=\"LibStructural\"'",
+					LPSOLVE_STATIC,
+				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA,/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/../include);
+				HEADER_SEARCH_PATHS = (
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural,
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/../include,
+				);
 				INSTALL_PATH = "";
 				LIBRARY_STYLE = STATIC;
-				OTHER_CPLUSPLUSFLAGS = " -fPIC  ";
+				OTHER_CPLUSPLUSFLAGS = (
+					"-fPIC",
+					"-DNDEBUG",
+				);
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "LibStructural-static";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		B95F6E85F4EB4017A506F634 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include";
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		C19DD46CEB8B4802871684C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/build;
+			};
+			name = Release;
+		};
+		C42371DF2433483FBAED5278 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/build;
+			};
+			name = MinSizeRel;
+		};
+		C5D3CAC8898A40559EC45FF5 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					MACOSX,
+					DARWIN,
+					LINUX,
+					"'PACKAGE_VERSION=\"1.1.0-a1\"'",
+					"'PACKAGE_NAME=\"LibStructural\"'",
+					LPSOLVE_STATIC,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural,
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/../include,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-fPIC",
+					"-DNDEBUG",
+				);
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "LibStructural-static";
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		CED2494C55F2468FBA4BA9E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					MACOSX,
+					DARWIN,
+					LINUX,
+					"'PACKAGE_VERSION=\"1.1.0-a1\"'",
+					"'PACKAGE_NAME=\"LibStructural\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA,
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/../include,
+				);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-fPIC",
+					"-DNDEBUG",
+				);
 				OTHER_LIBTOOLFLAGS = " ";
 				OTHER_REZFLAGS = "";
 				PRODUCT_NAME = "LibLA-static";
 				SECTORDER_FLAGS = "";
 				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA;
 				USE_HEADERMAP = NO;
-				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
 			};
 			name = Release;
+		};
+		D069BE39739A4257BFB00AD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					LibStructural_EXPORTS,
+					MACOSX,
+					DARWIN,
+					LINUX,
+					"'PACKAGE_VERSION=\"1.1.0-a1\"'",
+					"'PACKAGE_NAME=\"LibStructural\"'",
+					LPSOLVE_STATIC,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural,
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/../include,
+				);
+				INSTALL_PATH = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural/Debug;
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-fPIC",
+					"-fPIC",
+				);
+				OTHER_LDFLAGS = (
+					"-dynamiclib",
+					"-Wl,-headerpad_max_install_names",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libsbml.lib",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/Debug/libLibLA-static.a",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libxml2.lib",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libbz2.lib",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/lapack.lib",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/blas.lib",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/libf2c.lib",
+					"-llpsolve-static",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = LibStructural;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Debug;
+		};
+		D5BF2CA844A84DF7871A3E50 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include";
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = RelWithDebInfo;
+		};
+		E9F36A59731E4D918AB01090 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					LibStructural_EXPORTS,
+					MACOSX,
+					DARWIN,
+					LINUX,
+					"'PACKAGE_VERSION=\"1.1.0-a1\"'",
+					"'PACKAGE_NAME=\"LibStructural\"'",
+					LPSOLVE_STATIC,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural,
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibStructural/../include,
+				);
+				INSTALL_PATH = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural/Release;
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-fPIC",
+					"-DNDEBUG",
+					"-fPIC",
+				);
+				OTHER_LDFLAGS = (
+					"-dynamiclib",
+					"-Wl,-headerpad_max_install_names",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libsbml.lib",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/Release/libLibLA-static.a",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libxml2.lib",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libbz2.lib",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/lapack.lib",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/blas.lib",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/libf2c.lib",
+					"-llpsolve-static",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = LibStructural;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		F388DEDBED6B4552BE35FAD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = "";
+				DYLIB_CURRENT_VERSION = "";
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .dylib;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",
+					LibLA_EXPORTS,
+					MACOSX,
+					DARWIN,
+					LINUX,
+					"'PACKAGE_VERSION=\"1.1.0-a1\"'",
+					"'PACKAGE_NAME=\"LibStructural\"'",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include",
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA,
+					/Users/yosefbedaso/Documents/GitHub/Libstructural/LibLA/../include,
+				);
+				INSTALL_PATH = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/Release;
+				LIBRARY_SEARCH_PATHS = "";
+				LIBRARY_STYLE = DYNAMIC;
+				OTHER_CPLUSPLUSFLAGS = (
+					"-fPIC",
+					"-DNDEBUG",
+					"-fPIC",
+				);
+				OTHER_LDFLAGS = (
+					"-dynamiclib",
+					"-Wl,-headerpad_max_install_names",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/lapack.lib",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/blas.lib",
+					"/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/libf2c.lib",
+				);
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = LibLA;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = Release;
+		};
+		F3FD2ECF513B4FD4A8DF9571 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'";
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = "/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/include";
+				INSTALL_PATH = "";
+				LIBRARY_SEARCH_PATHS = "/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/lapack.lib";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+					"$(inherited)",
+				);
+			};
+			name = MinSizeRel;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		254D52FAD2FF411DB9190EDB /* Build configuration list for PBXNativeTarget "LibLA" */ = {
+		0646CBF2DF9B4B73BF0DFEEE /* Build configuration list for PBXAggregateTarget "install" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F258916A9D26445DB7C68B9C /* Debug */,
-				2700717886A64783B33405B9 /* Release */,
-				57EFA3F511BF44D7868DBC7A /* MinSizeRel */,
-				AE788C7F83E94EC8A94340FB /* RelWithDebInfo */,
+				7E7107A8FEB74ECF9A8CF92F /* Debug */,
+				8E13D30FD55F41C6816D60BE /* Release */,
+				6C02BA2E4E7242CB8567E19C /* MinSizeRel */,
+				D5BF2CA844A84DF7871A3E50 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		27B4B992C5974746835E84B1 /* Build configuration list for PBXAggregateTarget "package" */ = {
+		26F78976E8B5417E9657D824 /* Build configuration list for PBXNativeTarget "LibLA" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7CD4FCDD5B0A4236B4D92645 /* Debug */,
-				E4EB6A9F9ADC436FB6D753CF /* Release */,
-				77A36D85387F4F26AA545E55 /* MinSizeRel */,
-				AC82FCFCCBE846149AB1D888 /* RelWithDebInfo */,
+				9871B5143F3F491FBCDBCA8F /* Debug */,
+				F388DEDBED6B4552BE35FAD0 /* Release */,
+				4A7279741C2A4CC18E75E1F4 /* MinSizeRel */,
+				21995E518A994CB69AB1C67D /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		6A9508B4C90D490480B820C0 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+		4D12155D6E974DDA90AF1768 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B358B78096304750AD3001F6 /* Debug */,
-				C8FD8BF5ABD84ADA922DE4FE /* Release */,
-				2640241A37A54493BB9575B9 /* MinSizeRel */,
-				FBD1DE704FE54E7A804DCBE1 /* RelWithDebInfo */,
+				69DFECD75F1840EBA0C4FAD2 /* Debug */,
+				5A99DCAB4114450EB548A92C /* Release */,
+				F3FD2ECF513B4FD4A8DF9571 /* MinSizeRel */,
+				9C2B853972EE4BB790400820 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		72E71B6ADE0A49AD82E2C524 /* Build configuration list for PBXAggregateTarget "install" */ = {
+		715B5B04238B473F980A0290 /* Build configuration list for PBXNativeTarget "LibLA-static" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				76DAF4EF0A5147AEAC6E73E1 /* Debug */,
-				1CAAD438816446AB8691688B /* Release */,
-				72C61D3A57334250A14D6445 /* MinSizeRel */,
-				B146E55099E54249A4BA36A1 /* RelWithDebInfo */,
+				413F17F202544460B1AECE2A /* Debug */,
+				CED2494C55F2468FBA4BA9E2 /* Release */,
+				492BBD2E7D7D449BB8919F15 /* MinSizeRel */,
+				85028975B1C84CD0B92E1287 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		8BD2A1C4F6C543F2ACB4023A /* Build configuration list for PBXProject "LibStructural" */ = {
+		9691E4E360C84251B30C261F /* Build configuration list for PBXProject "LibStructural" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C570B19B583D4CEFBCB3E321 /* Debug */,
-				DF79B14A93AE43128ED81A37 /* Release */,
-				93EE314FA815479CB395FFF4 /* MinSizeRel */,
-				A8B54106729443AD8F8A16BA /* RelWithDebInfo */,
+				23E623DD166649C3944E3F7F /* Debug */,
+				C19DD46CEB8B4802871684C7 /* Release */,
+				C42371DF2433483FBAED5278 /* MinSizeRel */,
+				22AA62D0064A450AA7F670BC /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		B20C08EE53D249E4A739B3BC /* Build configuration list for PBXNativeTarget "LibStructural-static" */ = {
+		9EFD29347D844E8C9E2DE883 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				461DC0D318324CEDACA0568E /* Debug */,
-				2B1B3419BE3D4E599B3E3476 /* Release */,
-				BCEC205201FE4A88B6B9ED02 /* MinSizeRel */,
-				ADE68744236445F59FA50C68 /* RelWithDebInfo */,
+				83D3A80D01AD41C59B641F87 /* Debug */,
+				14068CEB1E7E479EBB7E0BD0 /* Release */,
+				27C74C809ADC4B649E873CEF /* MinSizeRel */,
+				B95F6E85F4EB4017A506F634 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		E338F0FC894249E780A11A31 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+		A038F2A1B8FB4E53ACCF18B0 /* Build configuration list for PBXAggregateTarget "package" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				85AC068F91624620B6998C42 /* Debug */,
-				BC680312EEB042ABA87BCD58 /* Release */,
-				8A5B0217F4E640F989FE4C9D /* MinSizeRel */,
-				8622E915FC5F4C7788375567 /* RelWithDebInfo */,
+				210DB2B33B674D33A060B05C /* Debug */,
+				24CD4DB372674CBF8AC154D3 /* Release */,
+				0F2E1CBDCB1E4DC893B7C2DA /* MinSizeRel */,
+				A01DFAC3F42C4CABAE276C02 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		EAB757AE830B4A0B8B69CD32 /* Build configuration list for PBXNativeTarget "LibStructural" */ = {
+		BD751C4E9B144A0FA958E423 /* Build configuration list for PBXNativeTarget "LibStructural" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1E1174373D4A43A79AA15BA1 /* Debug */,
-				890A8C75D0CA40A08DA493B9 /* Release */,
-				744A01CA8629490FAFAFE179 /* MinSizeRel */,
-				15A88ACC90B84A2C9C0DE430 /* RelWithDebInfo */,
+				D069BE39739A4257BFB00AD5 /* Debug */,
+				E9F36A59731E4D918AB01090 /* Release */,
+				778289779B974CD1A715EAE1 /* MinSizeRel */,
+				88AB8815A8B842559C600408 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		EC63B5F9DBFC4A54A5B242D6 /* Build configuration list for PBXNativeTarget "LibLA-static" */ = {
+		F7961C7C5B664429AFC6081D /* Build configuration list for PBXNativeTarget "LibStructural-static" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				568D56C7B7564F2C98A72515 /* Debug */,
-				FE69FC4FC41A4FFFA1B5E318 /* Release */,
-				D368D390C4ED4D0B9BE7A5E0 /* MinSizeRel */,
-				0328965FC0EA498AA89D0165 /* RelWithDebInfo */,
+				4C91030F41634D128A4F59DB /* Debug */,
+				A609102808FD4481B6C77B97 /* Release */,
+				0F620402FBFE4FD288620B0D /* MinSizeRel */,
+				C5D3CAC8898A40559EC45FF5 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = C1B1A5E0789846AE8628DB4C /* Project object */;
+	rootObject = C49E854777CD44739260B018 /* Project object */;
 }

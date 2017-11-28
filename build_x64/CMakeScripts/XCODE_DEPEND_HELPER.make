@@ -25,6 +25,8 @@ PostBuild.LibLA-static.Debug: /Users/yosefbedaso/Documents/GitHub/Libstructural/
 /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural/Debug/libLibStructural.dylib:\
 	/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libsbml.lib\
 	/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/Debug/libLibLA-static.a\
+	/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libxml2.lib\
+	/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libbz2.lib\
 	/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/lapack.lib\
 	/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/blas.lib\
 	/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/libf2c.lib
@@ -54,6 +56,8 @@ PostBuild.LibLA-static.Release: /Users/yosefbedaso/Documents/GitHub/Libstructura
 /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural/Release/libLibStructural.dylib:\
 	/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libsbml.lib\
 	/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/Release/libLibLA-static.a\
+	/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libxml2.lib\
+	/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libbz2.lib\
 	/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/lapack.lib\
 	/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/blas.lib\
 	/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/libf2c.lib
@@ -83,6 +87,8 @@ PostBuild.LibLA-static.MinSizeRel: /Users/yosefbedaso/Documents/GitHub/Libstruct
 /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural/MinSizeRel/libLibStructural.dylib:\
 	/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libsbml.lib\
 	/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/MinSizeRel/libLibLA-static.a\
+	/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libxml2.lib\
+	/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libbz2.lib\
 	/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/lapack.lib\
 	/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/blas.lib\
 	/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/libf2c.lib
@@ -112,6 +118,8 @@ PostBuild.LibLA-static.RelWithDebInfo: /Users/yosefbedaso/Documents/GitHub/Libst
 /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural/RelWithDebInfo/libLibStructural.dylib:\
 	/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libsbml.lib\
 	/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/RelWithDebInfo/libLibLA-static.a\
+	/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libxml2.lib\
+	/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libbz2.lib\
 	/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/lapack.lib\
 	/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/blas.lib\
 	/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/libf2c.lib
@@ -130,7 +138,9 @@ PostBuild.LibStructural-static.RelWithDebInfo:
 /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/MinSizeRel/libLibLA-static.a:
 /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/RelWithDebInfo/libLibLA-static.a:
 /Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/Release/libLibLA-static.a:
+/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libbz2.lib:
 /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libsbml.lib:
+/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libxml2.lib:
 /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/blas.lib:
 /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/lapack.lib:
 /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/LIB/libf2c.lib:
