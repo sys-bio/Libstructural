@@ -1,0 +1,33 @@
+﻿     Creating library C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/LibStructural/Release/LibStructural.lib and object C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/LibStructural/Release/LibStructural.exp
+libsbml-static.lib(libsbml-version.obj) : error LNK2019: unresolved external symbol BZ2_bzlibVersion referenced in function getLibSBMLDependencyVersionOf
+libsbml-static.lib(LibXMLParser.obj) : error LNK2019: unresolved external symbol xmlGetLastError referenced in function "public: virtual bool __cdecl LibXMLParser::parseNext(void)" (?parseNext@LibXMLParser@@UEAA_NXZ)
+libsbml-static.lib(LibXMLParser.obj) : error LNK2019: unresolved external symbol xmlFreeParserCtxt referenced in function "public: virtual __cdecl LibXMLParser::~LibXMLParser(void)" (??1LibXMLParser@@UEAA@XZ)
+libsbml-static.lib(LibXMLParser.obj) : error LNK2019: unresolved external symbol xmlCreatePushParserCtxt referenced in function "public: __cdecl LibXMLParser::LibXMLParser(class XMLHandler &)" (??0LibXMLParser@@QEAA@AEAVXMLHandler@@@Z)
+libsbml-static.lib(LibXMLParser.obj) : error LNK2019: unresolved external symbol xmlParseChunk referenced in function "public: virtual bool __cdecl LibXMLParser::parseNext(void)" (?parseNext@LibXMLParser@@UEAA_NXZ)
+libsbml-static.lib(LibXMLParser.obj) : error LNK2019: unresolved external symbol xmlCtxtResetPush referenced in function "public: virtual void __cdecl LibXMLParser::parseReset(void)" (?parseReset@LibXMLParser@@UEAAXXZ)
+libsbml-static.lib(LibXMLHandler.obj) : error LNK2019: unresolved external symbol xmlGetPredefinedEntity referenced in function "struct _xmlEntity * __cdecl x_get_entity(void *,unsigned char const *)" (?x_get_entity@@YAPEAU_xmlEntity@@PEAXPEBE@Z)
+libsbml-static.lib(LibXMLHandler.obj) : error LNK2019: unresolved external symbol xmlSAX2GetLineNumber referenced in function "public: void __cdecl LibXMLHandler::endElement(unsigned char const *,unsigned char const *,unsigned char const *)" (?endElement@LibXMLHandler@@QEAAXPEBE00@Z)
+libsbml-static.lib(LibXMLHandler.obj) : error LNK2019: unresolved external symbol xmlSAX2GetColumnNumber referenced in function "public: void __cdecl LibXMLHandler::endElement(unsigned char const *,unsigned char const *,unsigned char const *)" (?endElement@LibXMLHandler@@QEAAXPEBE00@Z)
+libsbml-static.lib(zfstream.obj) : error LNK2019: unresolved external symbol gzopen referenced in function "public: class gzfilebuf * __cdecl gzfilebuf::open(char const *,int)" (?open@gzfilebuf@@QEAAPEAV1@PEBDH@Z)
+libsbml-static.lib(zfstream.obj) : error LNK2019: unresolved external symbol gzdopen referenced in function "public: class gzfilebuf * __cdecl gzfilebuf::attach(int,int)" (?attach@gzfilebuf@@QEAAPEAV1@HH@Z)
+libsbml-static.lib(zfstream.obj) : error LNK2019: unresolved external symbol gzsetparams referenced in function "public: int __cdecl gzfilebuf::setcompression(int,int)" (?setcompression@gzfilebuf@@QEAAHHH@Z)
+libsbml-static.lib(zfstream.obj) : error LNK2019: unresolved external symbol gzread referenced in function "protected: virtual int __cdecl gzfilebuf::underflow(void)" (?underflow@gzfilebuf@@MEAAHXZ)
+libsbml-static.lib(zfstream.obj) : error LNK2019: unresolved external symbol gzwrite referenced in function "protected: virtual int __cdecl gzfilebuf::overflow(int)" (?overflow@gzfilebuf@@MEAAHH@Z)
+libsbml-static.lib(zfstream.obj) : error LNK2019: unresolved external symbol gzclose referenced in function "public: class gzfilebuf * __cdecl gzfilebuf::close(void)" (?close@gzfilebuf@@QEAAPEAV1@XZ)
+libsbml-static.lib(bzfstream.obj) : error LNK2019: unresolved external symbol BZ2_bzopen referenced in function "public: class bzfilebuf * __cdecl bzfilebuf::open(char const *,int)" (?open@bzfilebuf@@QEAAPEAV1@PEBDH@Z)
+libsbml-static.lib(bzfstream.obj) : error LNK2019: unresolved external symbol BZ2_bzdopen referenced in function "public: class bzfilebuf * __cdecl bzfilebuf::attach(int,int)" (?attach@bzfilebuf@@QEAAPEAV1@HH@Z)
+libsbml-static.lib(bzfstream.obj) : error LNK2019: unresolved external symbol BZ2_bzread referenced in function "protected: virtual int __cdecl bzfilebuf::underflow(void)" (?underflow@bzfilebuf@@MEAAHXZ)
+libsbml-static.lib(bzfstream.obj) : error LNK2019: unresolved external symbol BZ2_bzwrite referenced in function "protected: virtual int __cdecl bzfilebuf::overflow(int)" (?overflow@bzfilebuf@@MEAAHH@Z)
+libsbml-static.lib(bzfstream.obj) : error LNK2019: unresolved external symbol BZ2_bzclose referenced in function "public: class bzfilebuf * __cdecl bzfilebuf::close(void)" (?close@bzfilebuf@@QEAAPEAV1@XZ)
+libsbml-static.lib(bzfstream.obj) : error LNK2019: unresolved external symbol BZ2_bzerror referenced in function "public: class bzfilebuf * __cdecl bzfilebuf::close(void)" (?close@bzfilebuf@@QEAAPEAV1@XZ)
+libsbml-static.lib(zip.obj) : error LNK2019: unresolved external symbol deflate referenced in function zipCloseFileInZipRaw64
+libsbml-static.lib(zip.obj) : error LNK2019: unresolved external symbol deflateEnd referenced in function zipCloseFileInZipRaw64
+libsbml-static.lib(zip.obj) : error LNK2019: unresolved external symbol crc32 referenced in function zipWriteInFileInZip
+libsbml-static.lib(unzip.obj) : error LNK2001: unresolved external symbol crc32
+libsbml-static.lib(zip.obj) : error LNK2019: unresolved external symbol deflateInit2_ referenced in function zipOpenNewFileInZip4_64
+libsbml-static.lib(zip.obj) : error LNK2019: unresolved external symbol get_crc_table referenced in function zipOpenNewFileInZip4_64
+libsbml-static.lib(unzip.obj) : error LNK2001: unresolved external symbol get_crc_table
+libsbml-static.lib(unzip.obj) : error LNK2019: unresolved external symbol inflate referenced in function unzReadCurrentFile
+libsbml-static.lib(unzip.obj) : error LNK2019: unresolved external symbol inflateEnd referenced in function unzCloseCurrentFile
+libsbml-static.lib(unzip.obj) : error LNK2019: unresolved external symbol inflateInit2_ referenced in function unzOpenCurrentFile3
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\LibStructural\Release\LibStructural.dll : fatal error LNK1120: 29 unresolved externals

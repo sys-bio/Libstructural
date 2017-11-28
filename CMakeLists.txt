@@ -236,5 +236,9 @@ endif(UNIX)
 add_subdirectory(LibLA)
 add_subdirectory(LibStructural)
 
+if(ENABLE_PYTHON_WRAPPER)
+	add_subdirectory(SWIG)
+endif()
+
 file(GLOB HEADER_FILES ${CMAKE_CURRENT_SOURCE_DIR}/include/*.h )
 install(FILES ${HEADER_FILES} DESTINATION include)
