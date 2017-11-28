@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 set(CMAKE_C_COMPILER "C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.11.25503/bin/HostX86/x64/cl.exe")
 set(CMAKE_C_COMPILER_ARG1 "")
 set(CMAKE_C_COMPILER_ID "MSVC")
@@ -19,6 +20,29 @@ set(CMAKE_C_COMPILER_AR "")
 set(CMAKE_RANLIB "")
 set(CMAKE_C_COMPILER_RANLIB "")
 set(CMAKE_LINKER "C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.11.25503/bin/HostX86/x64/link.exe")
+=======
+set(CMAKE_C_COMPILER "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang")
+set(CMAKE_C_COMPILER_ARG1 "")
+set(CMAKE_C_COMPILER_ID "AppleClang")
+set(CMAKE_C_COMPILER_VERSION "8.1.0.8020042")
+set(CMAKE_C_COMPILER_WRAPPER "")
+set(CMAKE_C_STANDARD_COMPUTED_DEFAULT "11")
+set(CMAKE_C_COMPILE_FEATURES "c_std_90;c_function_prototypes;c_std_99;c_restrict;c_variadic_macros;c_std_11;c_static_assert")
+set(CMAKE_C90_COMPILE_FEATURES "c_std_90;c_function_prototypes")
+set(CMAKE_C99_COMPILE_FEATURES "c_std_99;c_restrict;c_variadic_macros")
+set(CMAKE_C11_COMPILE_FEATURES "c_std_11;c_static_assert")
+
+set(CMAKE_C_PLATFORM_ID "Darwin")
+set(CMAKE_C_SIMULATE_ID "")
+set(CMAKE_C_SIMULATE_VERSION "")
+
+set(CMAKE_XCODE_CURRENT_ARCH x86_64)
+set(CMAKE_AR "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar")
+set(CMAKE_C_COMPILER_AR "")
+set(CMAKE_RANLIB "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib")
+set(CMAKE_C_COMPILER_RANLIB "")
+set(CMAKE_LINKER "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld")
+>>>>>>> 53c7d882468e5329d1e19ab5ccf8a648d9cd5699
 set(CMAKE_COMPILER_IS_GNUCC )
 set(CMAKE_C_COMPILER_LOADED 1)
 set(CMAKE_C_COMPILER_WORKS TRUE)
@@ -67,5 +91,10 @@ endif()
 
 
 set(CMAKE_C_IMPLICIT_LINK_LIBRARIES "")
+<<<<<<< HEAD
 set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "")
 set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")
+=======
+set(CMAKE_C_IMPLICIT_LINK_DIRECTORIES "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/usr/lib")
+set(CMAKE_C_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk/System/Library/Frameworks")
+>>>>>>> 53c7d882468e5329d1e19ab5ccf8a648d9cd5699

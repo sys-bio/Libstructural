@@ -1,3 +1,17 @@
+<<<<<<< HEAD
+/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/CMakeFiles/install.dir
+/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/CMakeFiles/package.dir
+/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/CMakeFiles/ALL_BUILD.dir
+/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/CMakeFiles/ZERO_CHECK.dir
+/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/CMakeFiles/install.dir
+/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/CMakeFiles/package.dir
+/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/CMakeFiles/LibLA-static.dir
+/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/CMakeFiles/LibLA.dir
+/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural/CMakeFiles/install.dir
+/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural/CMakeFiles/package.dir
+/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural/CMakeFiles/LibStructural-static.dir
+/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural/CMakeFiles/LibStructural.dir
+=======
 C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/PACKAGE.dir
 C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/INSTALL.dir
 C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/ALL_BUILD.dir
@@ -19,3 +33,4 @@ C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/SRC/CMa
 C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/INCLUDE/CMakeFiles/PACKAGE.dir
 C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/INCLUDE/CMakeFiles/INSTALL.dir
 C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/INCLUDE/CMakeFiles/ALL_BUILD.dir
+>>>>>>> b3ff48028543dcff1ca648b5fd1969dc21d38e46
