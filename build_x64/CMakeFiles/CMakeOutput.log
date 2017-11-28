@@ -9,7 +9,7 @@ The output was:
 Microsoft (R) Build Engine version 15.3.409.57025 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 11/27/2017 5:50:55 PM.
+Build started 11/28/2017 12:48:18 PM.
 Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\3.9.3\CompilerIdC\CompilerIdC.vcxproj" on node 1 (default targets).
 PrepareForBuild:
   Creating directory "Debug\".
@@ -35,7 +35,7 @@ Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.55
+Time Elapsed 00:00:01.29
 
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -43,6 +43,84 @@ Compilation of the C compiler identification source "CMakeCCompilerId.c" produce
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
 
 The C compiler identification is MSVC, found in "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/3.9.3/CompilerIdC/CompilerIdC.exe"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_05362.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.3.409.57025 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 11/28/2017 12:48:19 PM.
+Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_05362.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_05362.dir\Debug\".
+  Creating directory "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_05362.dir\Debug\cmTC_05362.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_05362.dir\Debug\cmTC_05362.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_05362.dir\Debug\\" /Fd"cmTC_05362.dir\Debug\vc141.pdb" /Gd /TC /errorReport:queue "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\testCCompiler.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.11.25507.1 for x64
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_05362.dir\Debug\\" /Fd"cmTC_05362.dir\Debug\vc141.pdb" /Gd /TC /errorReport:queue "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\testCCompiler.c"
+  
+  testCCompiler.c
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_05362.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_05362.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_05362.lib" /MACHINE:X64  /machine:x64 cmTC_05362.dir\Debug\testCCompiler.obj
+  cmTC_05362.vcxproj -> C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_05362.exe
+  cmTC_05362.vcxproj -> C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_05362.pdb (Full PDB)
+FinalizeBuildStatus:
+  Deleting file "cmTC_05362.dir\Debug\cmTC_05362.tlog\unsuccessfulbuild".
+  Touching "cmTC_05362.dir\Debug\cmTC_05362.tlog\cmTC_05362.lastbuildstate".
+Done Building Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_05362.vcxproj" (default targets).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.69
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_33b32.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Microsoft (R) Build Engine version 15.3.409.57025 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Build started 11/28/2017 12:48:21 PM.
+Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_33b32.vcxproj" on node 1 (default targets).
+PrepareForBuild:
+  Creating directory "cmTC_33b32.dir\Debug\".
+  Creating directory "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\".
+  Creating directory "cmTC_33b32.dir\Debug\cmTC_33b32.tlog\".
+InitializeBuildStatus:
+  Creating "cmTC_33b32.dir\Debug\cmTC_33b32.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+ClCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_33b32.dir\Debug\\" /Fd"cmTC_33b32.dir\Debug\vc141.pdb" /Gd /TC /errorReport:queue "C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCCompilerABI.c"
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.11.25507.1 for x64
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_33b32.dir\Debug\\" /Fd"cmTC_33b32.dir\Debug\vc141.pdb" /Gd /TC /errorReport:queue "C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCCompilerABI.c"
+  CMakeCCompilerABI.c
+  
+Link:
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_33b32.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_33b32.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_33b32.lib" /MACHINE:X64  /machine:x64 cmTC_33b32.dir\Debug\CMakeCCompilerABI.obj
+  cmTC_33b32.vcxproj -> C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_33b32.exe
+  cmTC_33b32.vcxproj -> C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_33b32.pdb (Full PDB)
+FinalizeBuildStatus:
+  Deleting file "cmTC_33b32.dir\Debug\cmTC_33b32.tlog\unsuccessfulbuild".
+  Touching "cmTC_33b32.dir\Debug\cmTC_33b32.tlog\cmTC_33b32.lastbuildstate".
+Done Building Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_33b32.vcxproj" (default targets).
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.55
+
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler:  
@@ -54,7 +132,7 @@ The output was:
 Microsoft (R) Build Engine version 15.3.409.57025 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 11/27/2017 5:50:57 PM.
+Build started 11/28/2017 12:48:23 PM.
 Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\3.9.3\CompilerIdCXX\CompilerIdCXX.vcxproj" on node 1 (default targets).
 PrepareForBuild:
   Creating directory "Debug\".
@@ -80,7 +158,7 @@ Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.51
+Time Elapsed 00:00:01.49
 
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -89,160 +167,82 @@ Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" p
 
 The CXX compiler identification is MSVC, found in "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/3.9.3/CompilerIdCXX/CompilerIdCXX.exe"
 
-Determining if the C compiler works passed with the following output:
-Change Dir: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp
-
-Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_c4366.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
-Microsoft (R) Build Engine version 15.3.409.57025 for .NET Framework
-Copyright (C) Microsoft Corporation. All rights reserved.
-
-Build started 11/27/2017 5:50:59 PM.
-Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_c4366.vcxproj" on node 1 (default targets).
-PrepareForBuild:
-  Creating directory "cmTC_c4366.dir\Debug\".
-  Creating directory "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\".
-  Creating directory "cmTC_c4366.dir\Debug\cmTC_c4366.tlog\".
-InitializeBuildStatus:
-  Creating "cmTC_c4366.dir\Debug\cmTC_c4366.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
-ClCompile:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c4366.dir\Debug\\" /Fd"cmTC_c4366.dir\Debug\vc141.pdb" /Gd /TC /errorReport:queue "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\testCCompiler.c"
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.11.25507.1 for x64
-  Copyright (C) Microsoft Corporation.  All rights reserved.
-  
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c4366.dir\Debug\\" /Fd"cmTC_c4366.dir\Debug\vc141.pdb" /Gd /TC /errorReport:queue "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\testCCompiler.c"
-  
-  testCCompiler.c
-Link:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_c4366.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_c4366.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_c4366.lib" /MACHINE:X64  /machine:x64 cmTC_c4366.dir\Debug\testCCompiler.obj
-  cmTC_c4366.vcxproj -> C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_c4366.exe
-  cmTC_c4366.vcxproj -> C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_c4366.pdb (Full PDB)
-FinalizeBuildStatus:
-  Deleting file "cmTC_c4366.dir\Debug\cmTC_c4366.tlog\unsuccessfulbuild".
-  Touching "cmTC_c4366.dir\Debug\cmTC_c4366.tlog\cmTC_c4366.lastbuildstate".
-Done Building Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_c4366.vcxproj" (default targets).
-
-Build succeeded.
-    0 Warning(s)
-    0 Error(s)
-
-Time Elapsed 00:00:02.13
-
-
-Detecting C compiler ABI info compiled with the following output:
-Change Dir: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp
-
-Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_797d7.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
-Microsoft (R) Build Engine version 15.3.409.57025 for .NET Framework
-Copyright (C) Microsoft Corporation. All rights reserved.
-
-Build started 11/27/2017 5:51:01 PM.
-Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_797d7.vcxproj" on node 1 (default targets).
-PrepareForBuild:
-  Creating directory "cmTC_797d7.dir\Debug\".
-  Creating directory "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\".
-  Creating directory "cmTC_797d7.dir\Debug\cmTC_797d7.tlog\".
-InitializeBuildStatus:
-  Creating "cmTC_797d7.dir\Debug\cmTC_797d7.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
-ClCompile:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_797d7.dir\Debug\\" /Fd"cmTC_797d7.dir\Debug\vc141.pdb" /Gd /TC /errorReport:queue "C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCCompilerABI.c"
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.11.25507.1 for x64
-  Copyright (C) Microsoft Corporation.  All rights reserved.
-  
-  CMakeCCompilerABI.c
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_797d7.dir\Debug\\" /Fd"cmTC_797d7.dir\Debug\vc141.pdb" /Gd /TC /errorReport:queue "C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCCompilerABI.c"
-  
-Link:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_797d7.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_797d7.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_797d7.lib" /MACHINE:X64  /machine:x64 cmTC_797d7.dir\Debug\CMakeCCompilerABI.obj
-  cmTC_797d7.vcxproj -> C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_797d7.exe
-  cmTC_797d7.vcxproj -> C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_797d7.pdb (Full PDB)
-FinalizeBuildStatus:
-  Deleting file "cmTC_797d7.dir\Debug\cmTC_797d7.tlog\unsuccessfulbuild".
-  Touching "cmTC_797d7.dir\Debug\cmTC_797d7.tlog\cmTC_797d7.lastbuildstate".
-Done Building Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_797d7.vcxproj" (default targets).
-
-Build succeeded.
-    0 Warning(s)
-    0 Error(s)
-
-Time Elapsed 00:00:01.78
-
-
 Determining if the CXX compiler works passed with the following output:
 Change Dir: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_25e41.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_612b6.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
 Microsoft (R) Build Engine version 15.3.409.57025 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 11/27/2017 5:51:04 PM.
-Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_25e41.vcxproj" on node 1 (default targets).
+Build started 11/28/2017 12:48:25 PM.
+Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_612b6.vcxproj" on node 1 (default targets).
 PrepareForBuild:
-  Creating directory "cmTC_25e41.dir\Debug\".
+  Creating directory "cmTC_612b6.dir\Debug\".
   Creating directory "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\".
-  Creating directory "cmTC_25e41.dir\Debug\cmTC_25e41.tlog\".
+  Creating directory "cmTC_612b6.dir\Debug\cmTC_612b6.tlog\".
 InitializeBuildStatus:
-  Creating "cmTC_25e41.dir\Debug\cmTC_25e41.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+  Creating "cmTC_612b6.dir\Debug\cmTC_612b6.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
 ClCompile:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_25e41.dir\Debug\\" /Fd"cmTC_25e41.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\testCXXCompiler.cxx"
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_612b6.dir\Debug\\" /Fd"cmTC_612b6.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\testCXXCompiler.cxx"
   Microsoft (R) C/C++ Optimizing Compiler Version 19.11.25507.1 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_25e41.dir\Debug\\" /Fd"cmTC_25e41.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\testCXXCompiler.cxx"
-  testCXXCompiler.cxx
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_612b6.dir\Debug\\" /Fd"cmTC_612b6.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\testCXXCompiler.cxx"
   
+  testCXXCompiler.cxx
 Link:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_25e41.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_25e41.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_25e41.lib" /MACHINE:X64  /machine:x64 cmTC_25e41.dir\Debug\testCXXCompiler.obj
-  cmTC_25e41.vcxproj -> C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_25e41.exe
-  cmTC_25e41.vcxproj -> C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_25e41.pdb (Full PDB)
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_612b6.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_612b6.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_612b6.lib" /MACHINE:X64  /machine:x64 cmTC_612b6.dir\Debug\testCXXCompiler.obj
+  cmTC_612b6.vcxproj -> C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_612b6.exe
+  cmTC_612b6.vcxproj -> C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_612b6.pdb (Full PDB)
 FinalizeBuildStatus:
-  Deleting file "cmTC_25e41.dir\Debug\cmTC_25e41.tlog\unsuccessfulbuild".
-  Touching "cmTC_25e41.dir\Debug\cmTC_25e41.tlog\cmTC_25e41.lastbuildstate".
-Done Building Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_25e41.vcxproj" (default targets).
+  Deleting file "cmTC_612b6.dir\Debug\cmTC_612b6.tlog\unsuccessfulbuild".
+  Touching "cmTC_612b6.dir\Debug\cmTC_612b6.tlog\cmTC_612b6.lastbuildstate".
+Done Building Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_612b6.vcxproj" (default targets).
 
 Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.78
+Time Elapsed 00:00:02.05
 
 
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_d35e3.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_89f6c.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
 Microsoft (R) Build Engine version 15.3.409.57025 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 11/27/2017 5:51:06 PM.
-Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_d35e3.vcxproj" on node 1 (default targets).
+Build started 11/28/2017 12:48:28 PM.
+Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_89f6c.vcxproj" on node 1 (default targets).
 PrepareForBuild:
-  Creating directory "cmTC_d35e3.dir\Debug\".
+  Creating directory "cmTC_89f6c.dir\Debug\".
   Creating directory "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\".
-  Creating directory "cmTC_d35e3.dir\Debug\cmTC_d35e3.tlog\".
+  Creating directory "cmTC_89f6c.dir\Debug\cmTC_89f6c.tlog\".
 InitializeBuildStatus:
-  Creating "cmTC_d35e3.dir\Debug\cmTC_d35e3.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+  Creating "cmTC_89f6c.dir\Debug\cmTC_89f6c.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
 ClCompile:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_d35e3.dir\Debug\\" /Fd"cmTC_d35e3.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCXXCompilerABI.cpp"
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_89f6c.dir\Debug\\" /Fd"cmTC_89f6c.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCXXCompilerABI.cpp"
   Microsoft (R) C/C++ Optimizing Compiler Version 19.11.25507.1 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_d35e3.dir\Debug\\" /Fd"cmTC_d35e3.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCXXCompilerABI.cpp"
   CMakeCXXCompilerABI.cpp
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_89f6c.dir\Debug\\" /Fd"cmTC_89f6c.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCXXCompilerABI.cpp"
   
 Link:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_d35e3.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_d35e3.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_d35e3.lib" /MACHINE:X64  /machine:x64 cmTC_d35e3.dir\Debug\CMakeCXXCompilerABI.obj
-  cmTC_d35e3.vcxproj -> C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_d35e3.exe
-  cmTC_d35e3.vcxproj -> C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_d35e3.pdb (Full PDB)
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_89f6c.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_89f6c.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_89f6c.lib" /MACHINE:X64  /machine:x64 cmTC_89f6c.dir\Debug\CMakeCXXCompilerABI.obj
+  cmTC_89f6c.vcxproj -> C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_89f6c.exe
+  cmTC_89f6c.vcxproj -> C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_89f6c.pdb (Full PDB)
 FinalizeBuildStatus:
-  Deleting file "cmTC_d35e3.dir\Debug\cmTC_d35e3.tlog\unsuccessfulbuild".
-  Touching "cmTC_d35e3.dir\Debug\cmTC_d35e3.tlog\cmTC_d35e3.lastbuildstate".
-Done Building Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_d35e3.vcxproj" (default targets).
+  Deleting file "cmTC_89f6c.dir\Debug\cmTC_89f6c.tlog\unsuccessfulbuild".
+  Touching "cmTC_89f6c.dir\Debug\cmTC_89f6c.tlog\cmTC_89f6c.lastbuildstate".
+Done Building Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_89f6c.vcxproj" (default targets).
 
 Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.86
+Time Elapsed 00:00:01.55
 
 
 
@@ -250,40 +250,40 @@ Time Elapsed 00:00:01.86
 Detecting CXX [] compiler features compiled with the following output:
 Change Dir: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_863ee.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_f9c3a.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
 Microsoft (R) Build Engine version 15.3.409.57025 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 11/27/2017 5:51:08 PM.
-Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_863ee.vcxproj" on node 1 (default targets).
+Build started 11/28/2017 12:48:30 PM.
+Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_f9c3a.vcxproj" on node 1 (default targets).
 PrepareForBuild:
-  Creating directory "cmTC_863ee.dir\Debug\".
+  Creating directory "cmTC_f9c3a.dir\Debug\".
   Creating directory "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\".
-  Creating directory "cmTC_863ee.dir\Debug\cmTC_863ee.tlog\".
+  Creating directory "cmTC_f9c3a.dir\Debug\cmTC_f9c3a.tlog\".
 InitializeBuildStatus:
-  Creating "cmTC_863ee.dir\Debug\cmTC_863ee.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+  Creating "cmTC_f9c3a.dir\Debug\cmTC_f9c3a.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
 ClCompile:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_863ee.dir\Debug\\" /Fd"cmTC_863ee.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\feature_tests.cxx"
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_f9c3a.dir\Debug\\" /Fd"cmTC_f9c3a.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\feature_tests.cxx"
   Microsoft (R) C/C++ Optimizing Compiler Version 19.11.25507.1 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_863ee.dir\Debug\\" /Fd"cmTC_863ee.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\feature_tests.cxx"
-  
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_f9c3a.dir\Debug\\" /Fd"cmTC_f9c3a.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\feature_tests.cxx"
   feature_tests.cxx
+  
 Link:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_863ee.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_863ee.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_863ee.lib" /MACHINE:X64  /machine:x64 cmTC_863ee.dir\Debug\feature_tests.obj
-  cmTC_863ee.vcxproj -> C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_863ee.exe
-  cmTC_863ee.vcxproj -> C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_863ee.pdb (Full PDB)
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_f9c3a.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_f9c3a.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_f9c3a.lib" /MACHINE:X64  /machine:x64 cmTC_f9c3a.dir\Debug\feature_tests.obj
+  cmTC_f9c3a.vcxproj -> C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_f9c3a.exe
+  cmTC_f9c3a.vcxproj -> C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_f9c3a.pdb (Full PDB)
 FinalizeBuildStatus:
-  Deleting file "cmTC_863ee.dir\Debug\cmTC_863ee.tlog\unsuccessfulbuild".
-  Touching "cmTC_863ee.dir\Debug\cmTC_863ee.tlog\cmTC_863ee.lastbuildstate".
-Done Building Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_863ee.vcxproj" (default targets).
+  Deleting file "cmTC_f9c3a.dir\Debug\cmTC_f9c3a.tlog\unsuccessfulbuild".
+  Touching "cmTC_f9c3a.dir\Debug\cmTC_f9c3a.tlog\cmTC_f9c3a.lastbuildstate".
+Done Building Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_f9c3a.vcxproj" (default targets).
 
 Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.94
+Time Elapsed 00:00:01.58
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -346,40 +346,40 @@ Time Elapsed 00:00:01.94
 Detecting CXX [] compiler features compiled with the following output:
 Change Dir: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_8f8d8.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_a2df2.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
 Microsoft (R) Build Engine version 15.3.409.57025 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 11/27/2017 5:51:11 PM.
-Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_8f8d8.vcxproj" on node 1 (default targets).
+Build started 11/28/2017 12:48:32 PM.
+Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_a2df2.vcxproj" on node 1 (default targets).
 PrepareForBuild:
-  Creating directory "cmTC_8f8d8.dir\Debug\".
+  Creating directory "cmTC_a2df2.dir\Debug\".
   Creating directory "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\".
-  Creating directory "cmTC_8f8d8.dir\Debug\cmTC_8f8d8.tlog\".
+  Creating directory "cmTC_a2df2.dir\Debug\cmTC_a2df2.tlog\".
 InitializeBuildStatus:
-  Creating "cmTC_8f8d8.dir\Debug\cmTC_8f8d8.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+  Creating "cmTC_a2df2.dir\Debug\cmTC_a2df2.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
 ClCompile:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_8f8d8.dir\Debug\\" /Fd"cmTC_8f8d8.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\feature_tests.cxx"
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_a2df2.dir\Debug\\" /Fd"cmTC_a2df2.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\feature_tests.cxx"
   Microsoft (R) C/C++ Optimizing Compiler Version 19.11.25507.1 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_8f8d8.dir\Debug\\" /Fd"cmTC_8f8d8.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\feature_tests.cxx"
   feature_tests.cxx
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_a2df2.dir\Debug\\" /Fd"cmTC_a2df2.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\feature_tests.cxx"
   
 Link:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_8f8d8.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_8f8d8.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_8f8d8.lib" /MACHINE:X64  /machine:x64 cmTC_8f8d8.dir\Debug\feature_tests.obj
-  cmTC_8f8d8.vcxproj -> C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_8f8d8.exe
-  cmTC_8f8d8.vcxproj -> C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_8f8d8.pdb (Full PDB)
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_a2df2.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_a2df2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_a2df2.lib" /MACHINE:X64  /machine:x64 cmTC_a2df2.dir\Debug\feature_tests.obj
+  cmTC_a2df2.vcxproj -> C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_a2df2.exe
+  cmTC_a2df2.vcxproj -> C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_a2df2.pdb (Full PDB)
 FinalizeBuildStatus:
-  Deleting file "cmTC_8f8d8.dir\Debug\cmTC_8f8d8.tlog\unsuccessfulbuild".
-  Touching "cmTC_8f8d8.dir\Debug\cmTC_8f8d8.tlog\cmTC_8f8d8.lastbuildstate".
-Done Building Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_8f8d8.vcxproj" (default targets).
+  Deleting file "cmTC_a2df2.dir\Debug\cmTC_a2df2.tlog\unsuccessfulbuild".
+  Touching "cmTC_a2df2.dir\Debug\cmTC_a2df2.tlog\cmTC_a2df2.lastbuildstate".
+Done Building Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_a2df2.vcxproj" (default targets).
 
 Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.85
+Time Elapsed 00:00:01.62
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -442,40 +442,40 @@ Time Elapsed 00:00:01.85
 Detecting CXX [] compiler features compiled with the following output:
 Change Dir: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_84249.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_100ca.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
 Microsoft (R) Build Engine version 15.3.409.57025 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 11/27/2017 5:51:13 PM.
-Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_84249.vcxproj" on node 1 (default targets).
+Build started 11/28/2017 12:48:34 PM.
+Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_100ca.vcxproj" on node 1 (default targets).
 PrepareForBuild:
-  Creating directory "cmTC_84249.dir\Debug\".
+  Creating directory "cmTC_100ca.dir\Debug\".
   Creating directory "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\".
-  Creating directory "cmTC_84249.dir\Debug\cmTC_84249.tlog\".
+  Creating directory "cmTC_100ca.dir\Debug\cmTC_100ca.tlog\".
 InitializeBuildStatus:
-  Creating "cmTC_84249.dir\Debug\cmTC_84249.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+  Creating "cmTC_100ca.dir\Debug\cmTC_100ca.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
 ClCompile:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_84249.dir\Debug\\" /Fd"cmTC_84249.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\feature_tests.cxx"
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_100ca.dir\Debug\\" /Fd"cmTC_100ca.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\feature_tests.cxx"
   Microsoft (R) C/C++ Optimizing Compiler Version 19.11.25507.1 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_84249.dir\Debug\\" /Fd"cmTC_84249.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\feature_tests.cxx"
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_100ca.dir\Debug\\" /Fd"cmTC_100ca.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\feature_tests.cxx"
   feature_tests.cxx
   
 Link:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_84249.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_84249.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_84249.lib" /MACHINE:X64  /machine:x64 cmTC_84249.dir\Debug\feature_tests.obj
-  cmTC_84249.vcxproj -> C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_84249.exe
-  cmTC_84249.vcxproj -> C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_84249.pdb (Full PDB)
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_100ca.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_100ca.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_100ca.lib" /MACHINE:X64  /machine:x64 cmTC_100ca.dir\Debug\feature_tests.obj
+  cmTC_100ca.vcxproj -> C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_100ca.exe
+  cmTC_100ca.vcxproj -> C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_100ca.pdb (Full PDB)
 FinalizeBuildStatus:
-  Deleting file "cmTC_84249.dir\Debug\cmTC_84249.tlog\unsuccessfulbuild".
-  Touching "cmTC_84249.dir\Debug\cmTC_84249.tlog\cmTC_84249.lastbuildstate".
-Done Building Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_84249.vcxproj" (default targets).
+  Deleting file "cmTC_100ca.dir\Debug\cmTC_100ca.tlog\unsuccessfulbuild".
+  Touching "cmTC_100ca.dir\Debug\cmTC_100ca.tlog\cmTC_100ca.lastbuildstate".
+Done Building Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_100ca.vcxproj" (default targets).
 
 Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.89
+Time Elapsed 00:00:01.65
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -538,40 +538,40 @@ Time Elapsed 00:00:01.89
 Detecting CXX [] compiler features compiled with the following output:
 Change Dir: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp
 
-Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_cf997.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
+Run Build Command:"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community/MSBuild/15.0/Bin/MSBuild.exe" "cmTC_9ad49.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=15.0"
 Microsoft (R) Build Engine version 15.3.409.57025 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 11/27/2017 5:51:16 PM.
-Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_cf997.vcxproj" on node 1 (default targets).
+Build started 11/28/2017 12:48:36 PM.
+Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_9ad49.vcxproj" on node 1 (default targets).
 PrepareForBuild:
-  Creating directory "cmTC_cf997.dir\Debug\".
+  Creating directory "cmTC_9ad49.dir\Debug\".
   Creating directory "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\".
-  Creating directory "cmTC_cf997.dir\Debug\cmTC_cf997.tlog\".
+  Creating directory "cmTC_9ad49.dir\Debug\cmTC_9ad49.tlog\".
 InitializeBuildStatus:
-  Creating "cmTC_cf997.dir\Debug\cmTC_cf997.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
+  Creating "cmTC_9ad49.dir\Debug\cmTC_9ad49.tlog\unsuccessfulbuild" because "AlwaysCreate" was specified.
 ClCompile:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_cf997.dir\Debug\\" /Fd"cmTC_cf997.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\feature_tests.cxx"
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\CL.exe /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_9ad49.dir\Debug\\" /Fd"cmTC_9ad49.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\feature_tests.cxx"
   Microsoft (R) C/C++ Optimizing Compiler Version 19.11.25507.1 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   
-  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_cf997.dir\Debug\\" /Fd"cmTC_cf997.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\feature_tests.cxx"
+  cl /c /Zi /W3 /WX- /diagnostics:classic /Od /Ob0 /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_9ad49.dir\Debug\\" /Fd"cmTC_9ad49.dir\Debug\vc141.pdb" /Gd /TP /errorReport:queue "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\feature_tests.cxx"
   
   feature_tests.cxx
 Link:
-  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_cf997.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_cf997.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_cf997.lib" /MACHINE:X64  /machine:x64 cmTC_cf997.dir\Debug\feature_tests.obj
-  cmTC_cf997.vcxproj -> C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_cf997.exe
-  cmTC_cf997.vcxproj -> C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_cf997.pdb (Full PDB)
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.11.25503\bin\HostX86\x64\link.exe /ERRORREPORT:QUEUE /OUT:"C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_9ad49.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_9ad49.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_9ad49.lib" /MACHINE:X64  /machine:x64 cmTC_9ad49.dir\Debug\feature_tests.obj
+  cmTC_9ad49.vcxproj -> C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\Debug\cmTC_9ad49.exe
+  cmTC_9ad49.vcxproj -> C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/CMakeFiles/CMakeTmp/Debug/cmTC_9ad49.pdb (Full PDB)
 FinalizeBuildStatus:
-  Deleting file "cmTC_cf997.dir\Debug\cmTC_cf997.tlog\unsuccessfulbuild".
-  Touching "cmTC_cf997.dir\Debug\cmTC_cf997.tlog\cmTC_cf997.lastbuildstate".
-Done Building Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_cf997.vcxproj" (default targets).
+  Deleting file "cmTC_9ad49.dir\Debug\cmTC_9ad49.tlog\unsuccessfulbuild".
+  Touching "cmTC_9ad49.dir\Debug\cmTC_9ad49.tlog\cmTC_9ad49.lastbuildstate".
+Done Building Project "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\CMakeTmp\cmTC_9ad49.vcxproj" (default targets).
 
 Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:01.80
+Time Elapsed 00:00:01.73
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -629,6 +629,3 @@ Time Elapsed 00:00:01.80
     Feature record: CXX_FEATURE:1cxx_variable_templates
     Feature record: CXX_FEATURE:1cxx_variadic_macros
     Feature record: CXX_FEATURE:1cxx_variadic_templates
-Determining if the C compiler works passed with the following output:
-
-

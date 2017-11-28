@@ -1,0 +1,206 @@
+﻿  Building Custom Rule C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/third-party/clapack/3.2.1/BLAS/SRC/CMakeLists.txt
+  CMake does not need to re-run because C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/BLAS/SRC/CMakeFiles/generate.stamp is up-to-date.
+  isamax.c
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\isamax.c(63): warning C4244: '=': conversion from 'doublereal' to 'real', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\isamax.c(71): warning C4244: '=': conversion from 'doublereal' to 'real', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\isamax.c(81): warning C4244: '=': conversion from 'doublereal' to 'real', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\isamax.c(88): warning C4244: '=': conversion from 'doublereal' to 'real', possible loss of data
+  sasum.c
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\sasum.c(64): warning C4244: '+=': conversion from 'doublereal' to 'real', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\sasum.c(82): warning C4244: '+=': conversion from 'doublereal' to 'real', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\sasum.c(95): warning C4244: '=': conversion from 'doublereal' to 'real', possible loss of data
+  saxpy.c
+  scopy.c
+  sdot.c
+  snrm2.c
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\snrm2.c(63): warning C4244: '=': conversion from 'doublereal' to 'real', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\snrm2.c(75): warning C4244: '=': conversion from 'doublereal' to 'real', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\snrm2.c(89): warning C4244: '=': conversion from 'double' to 'real', possible loss of data
+  srot.c
+  srotg.c
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\srotg.c(49): warning C4244: '=': conversion from 'doublereal' to 'real', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\srotg.c(63): warning C4244: '=': conversion from 'double' to 'real', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\srotg.c(64): warning C4244: '=': conversion from 'double' to 'real', possible loss of data
+  sscal.c
+  sswap.c
+  sdsdot.c
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\sdsdot.c(129): warning C4244: '=': conversion from 'doublereal' to 'real', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\sdsdot.c(142): warning C4244: '=': conversion from 'doublereal' to 'real', possible loss of data
+  srotmg.c
+  srotm.c
+  sgemv.c
+  sgbmv.c
+  ssymv.c
+  ssbmv.c
+  sspmv.c
+  strmv.c
+  stbmv.c
+  Generating Code...
+  Compiling...
+  stpmv.c
+  strsv.c
+  stbsv.c
+  stpsv.c
+  sger.c
+  ssyr.c
+  sspr.c
+  ssyr2.c
+  sspr2.c
+  sgemm.c
+  ssymm.c
+  ssyrk.c
+  ssyr2k.c
+  strmm.c
+  strsm.c
+  idamax.c
+  dasum.c
+  daxpy.c
+  dcopy.c
+  ddot.c
+  Generating Code...
+  Compiling...
+  dnrm2.c
+  drot.c
+  drotg.c
+  dscal.c
+  dsdot.c
+  dswap.c
+  drotmg.c
+  drotm.c
+  dgemv.c
+  dgbmv.c
+  dsymv.c
+  dsbmv.c
+  dspmv.c
+  dtrmv.c
+  dtbmv.c
+  dtpmv.c
+  dtrsv.c
+  dtbsv.c
+  dtpsv.c
+  dger.c
+  Generating Code...
+  Compiling...
+  dsyr.c
+  dspr.c
+  dsyr2.c
+  dspr2.c
+  dgemm.c
+  dsymm.c
+  dsyrk.c
+  dsyr2k.c
+  dtrmm.c
+  dtrsm.c
+  scabs1.c
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\scabs1.c(34): warning C4244: '=': conversion from 'double' to 'real', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\scabs1.c(34): warning C4244: '=': conversion from 'doublereal' to 'real', possible loss of data
+  scasum.c
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\scasum.c(69): warning C4244: '=': conversion from 'double' to 'real', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\scasum.c(69): warning C4244: '=': conversion from 'doublereal' to 'real', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\scasum.c(82): warning C4244: '=': conversion from 'double' to 'real', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\scasum.c(82): warning C4244: '=': conversion from 'doublereal' to 'real', possible loss of data
+  scnrm2.c
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\scnrm2.c(74): warning C4244: '=': conversion from 'doublereal' to 'real', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\scnrm2.c(87): warning C4244: '=': conversion from 'double' to 'real', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\scnrm2.c(87): warning C4244: '=': conversion from 'doublereal' to 'real', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\scnrm2.c(101): warning C4244: '=': conversion from 'double' to 'real', possible loss of data
+  icamax.c
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\icamax.c(63): warning C4244: '=': conversion from 'doublereal' to 'real', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\icamax.c(71): warning C4244: '=': conversion from 'doublereal' to 'real', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\icamax.c(81): warning C4244: '=': conversion from 'doublereal' to 'real', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\icamax.c(88): warning C4244: '=': conversion from 'doublereal' to 'real', possible loss of data
+  caxpy.c
+  ccopy.c
+  cdotc.c
+  cdotu.c
+  csscal.c
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\csscal.c(67): warning C4244: '=': conversion from 'double' to 'real', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\csscal.c(82): warning C4244: '=': conversion from 'double' to 'real', possible loss of data
+  crotg.c
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\crotg.c(51): warning C4244: '=': conversion from 'double' to 'real', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\crotg.c(54): warning C4244: '=': conversion from 'double' to 'real', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\crotg.c(57): warning C4244: '=': conversion from 'double' to 'real', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\crotg.c(58): warning C4244: '=': conversion from 'double' to 'real', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\crotg.c(59): warning C4244: '=': conversion from 'double' to 'real', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\BLAS\SRC\crotg.c(62): warning C4244: '=': conversion from 'double' to 'real', possible loss of data
+  Generating Code...
+  Compiling...
+  cscal.c
+  cswap.c
+  csrot.c
+  cgemv.c
+  cgbmv.c
+  chemv.c
+  chbmv.c
+  chpmv.c
+  ctrmv.c
+  ctbmv.c
+  ctpmv.c
+  ctrsv.c
+  ctbsv.c
+  ctpsv.c
+  cgerc.c
+  cgeru.c
+  cher.c
+  chpr.c
+  cher2.c
+  chpr2.c
+  Generating Code...
+  Compiling...
+  cgemm.c
+  csymm.c
+  csyrk.c
+  csyr2k.c
+  ctrmm.c
+  ctrsm.c
+  chemm.c
+  cherk.c
+  cher2k.c
+  dcabs1.c
+  dzasum.c
+  dznrm2.c
+  izamax.c
+  zaxpy.c
+  zcopy.c
+  zdotc.c
+  zdotu.c
+  zdscal.c
+  zrotg.c
+  zscal.c
+  Generating Code...
+  Compiling...
+  zswap.c
+  zdrot.c
+  zgemv.c
+  zgbmv.c
+  zhemv.c
+  zhbmv.c
+  zhpmv.c
+  ztrmv.c
+  ztbmv.c
+  ztpmv.c
+  ztrsv.c
+  ztbsv.c
+  ztpsv.c
+  zgerc.c
+  zgeru.c
+  zher.c
+  zhpr.c
+  zher2.c
+  zhpr2.c
+  zgemm.c
+  Generating Code...
+  Compiling...
+  zsymm.c
+  zsyrk.c
+  zsyr2k.c
+  ztrmm.c
+  ztrsm.c
+  zhemm.c
+  zherk.c
+  zher2k.c
+  lsame.c
+  xerbla.c
+  xerbla_array.c
+  Generating Code...
+  blas.vcxproj -> C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\BLAS\SRC\Debug\blas.lib

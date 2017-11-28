@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files/LibStructural")
+  set(CMAKE_INSTALL_PREFIX "C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
