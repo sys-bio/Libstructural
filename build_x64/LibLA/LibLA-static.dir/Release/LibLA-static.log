@@ -1,0 +1,12 @@
+﻿  Building Custom Rule C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/LibLA/CMakeLists.txt
+  CMake does not need to re-run because C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/LibLA/CMakeFiles/generate.stamp is up-to-date.
+  complex.cpp
+  libla.cpp
+  matrix.cpp
+  util.cpp
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibLA\util.cpp(712): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibLA\util.cpp(722): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibLA\util.cpp(735): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibLA\util.cpp(745): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+  LibLA-static.vcxproj -> C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\LibLA\Release\LibLA-static.lib

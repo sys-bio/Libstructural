@@ -1,0 +1,7 @@
+﻿  -- Install configuration: "Debug"
+  -- Installing: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/third-party/clapack/3.2.1/INSTALL/lib/libf2c.lib
+  -- Installing: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/third-party/clapack/3.2.1/INSTALL/lib/blas.lib
+  -- Installing: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/third-party/clapack/3.2.1/INSTALL/lib/lapack.lib
+  -- Installing: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/third-party/clapack/3.2.1/INSTALL/include/clapack/f2c.h
+  -- Installing: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/third-party/clapack/3.2.1/INSTALL/include/clapack/clapack.h
+  -- Installing: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/third-party/clapack/3.2.1/INSTALL/include/clapack/blaswrap.h

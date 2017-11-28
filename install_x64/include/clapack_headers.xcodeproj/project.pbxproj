@@ -1,0 +1,759 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		31FF5BC3D0514E808F962F5B /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = EBBCC52AB07447C98024B5F1 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				3909AD636F79464AA8DB59AF /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		7825DFD5BE8440F59B04E226 /* install */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 643805681E8547CDA924C2DB /* Build configuration list for PBXAggregateTarget "install" */;
+			buildPhases = (
+				BC972472B5364C9598CC0101 /* CMake PostBuild Rules */,
+			);
+			dependencies = (
+				22B09567C8324AA1BB67CE19 /* PBXTargetDependency */,
+			);
+			name = install;
+			productName = install;
+		};
+		8B8EC3440E8B4488A0C9D470 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 2DCBBDDBEFB74135AB112AC5 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				7F34ABC7FC784E47A8C8B857 /* CMake Rules */,
+			);
+			dependencies = (
+				A33ABDDD6D1D4394BEDAB77D /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+		F7B5BC7F87394498958E7380 /* package */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = CE53C049A5F948A78D931FB1 /* Build configuration list for PBXAggregateTarget "package" */;
+			buildPhases = (
+				873865EE74EE41AEA538B3DA /* CMake PostBuild Rules */,
+			);
+			dependencies = (
+				60AC4C1D27B24B2FBA628DF1 /* PBXTargetDependency */,
+			);
+			name = package;
+			productName = package;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildStyle section */
+		52E701DD799D495AB9F67C00 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		668AB26184154A10AF22E45D /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		A5CEA1EA90EA42319A411C97 /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		F042DB02C5D5476AB77F94B4 /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		2B053CC52CF04A329DDBE643 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D28BD2058AB457B9B2808C2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B8EC3440E8B4488A0C9D470;
+			remoteInfo = ALL_BUILD;
+		};
+		6F3BA0EC42FC4A1EB5AA6BB4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D28BD2058AB457B9B2808C2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 31FF5BC3D0514E808F962F5B;
+			remoteInfo = ZERO_CHECK;
+		};
+		EEB6245646A3467394B14F7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D28BD2058AB457B9B2808C2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8B8EC3440E8B4488A0C9D470;
+			remoteInfo = ALL_BUILD;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A08CB8678B6E4A828D4B7270 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/INCLUDE/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		EEBA4093D3714DCDA2DB385F /* /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/INCLUDE/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		3C6392C4EAD04E31BACCCEF5 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		65DCE27899F04562888517EF /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		6F0E0054ADA24E4F9604DB96 = {
+			isa = PBXGroup;
+			children = (
+				C386324FFBC4457FAFA6A6EF /* ALL_BUILD */,
+				71CC2BC68A4C4BDC95044D49 /* ZERO_CHECK */,
+				D38845C40B9C45AE841F3822 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		71CC2BC68A4C4BDC95044D49 /* ZERO_CHECK */ = {
+			isa = PBXGroup;
+			children = (
+				3C6392C4EAD04E31BACCCEF5 /* CMake Rules */,
+				A08CB8678B6E4A828D4B7270 /* /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/INCLUDE/CMakeLists.txt */,
+			);
+			name = ZERO_CHECK;
+			sourceTree = "<group>";
+		};
+		C386324FFBC4457FAFA6A6EF /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				65DCE27899F04562888517EF /* CMake Rules */,
+				EEBA4093D3714DCDA2DB385F /* /Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/INCLUDE/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		D38845C40B9C45AE841F3822 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		8D28BD2058AB457B9B2808C2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 0830;
+			};
+			buildConfigurationList = F0D74234FB324568ACE79C76 /* Build configuration list for PBXProject "clapack_headers" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				F042DB02C5D5476AB77F94B4 /* Debug */,
+				52E701DD799D495AB9F67C00 /* Release */,
+				A5CEA1EA90EA42319A411C97 /* MinSizeRel */,
+				668AB26184154A10AF22E45D /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = 6F0E0054ADA24E4F9604DB96;
+			projectDirPath = "/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/INCLUDE";
+			projectRoot = "";
+			targets = (
+				8B8EC3440E8B4488A0C9D470 /* ALL_BUILD */,
+				31FF5BC3D0514E808F962F5B /* ZERO_CHECK */,
+				7825DFD5BE8440F59B04E226 /* install */,
+				F7B5BC7F87394498958E7380 /* package */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		338763A8AE4C4849873F809E = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		3909AD636F79464AA8DB59AF /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE -f /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		483D3FE641724DCE8CF8B8F3 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		7F34ABC7FC784E47A8C8B857 /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE -f /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		873865EE74EE41AEA538B3DA /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE -f /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE/CMakeScripts/package_postBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		B2B2671277FD4D5BB5E906BB = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		BC972472B5364C9598CC0101 /* CMake PostBuild Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake PostBuild Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE -f /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE/CMakeScripts/install_postBuildPhase.make$CONFIGURATION all";
+			showEnvVarsInLog = 0;
+		};
+		DD7D52F425384E189EA55F18 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		22B09567C8324AA1BB67CE19 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B8EC3440E8B4488A0C9D470 /* ALL_BUILD */;
+			targetProxy = 2B053CC52CF04A329DDBE643 /* PBXContainerItemProxy */;
+		};
+		60AC4C1D27B24B2FBA628DF1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8B8EC3440E8B4488A0C9D470 /* ALL_BUILD */;
+			targetProxy = EEB6245646A3467394B14F7A /* PBXContainerItemProxy */;
+		};
+		A33ABDDD6D1D4394BEDAB77D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 31FF5BC3D0514E808F962F5B /* ZERO_CHECK */;
+			targetProxy = 6F3BA0EC42FC4A1EB5AA6BB4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		179EEDCF7DF34D988ACECED0 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/INCLUDE");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		21925ED2204D404CA8A398BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/INCLUDE");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		24C8E99ACC624CFDAC3F5C4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/INCLUDE");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		2BAE5C16A9DD423EBC2D7321 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/INCLUDE");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		2C49620358244CA7BF38419D /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/INCLUDE");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		326CB42DC87D4EE9A405428A /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/INCLUDE");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		33083B14C855432AA2A80AB0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/INCLUDE");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = package;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		45A667E617FA4E07924F1D7B /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/INCLUDE");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		545F562442DB47C393E32FFA /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE/build;
+			};
+			name = RelWithDebInfo;
+		};
+		5465E2C0D83049D48AF6FDC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE/build;
+			};
+			name = Debug;
+		};
+		59EEF5781857448FA4F4E017 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/INCLUDE");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = package;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		66F0413099C64743A76A5891 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/INCLUDE");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = install;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		6BAD3350A15D404EA080EAA4 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/INCLUDE");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		783D8954EE00460CBF2648EA /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE/build;
+			};
+			name = MinSizeRel;
+		};
+		8E46AC665AFB442EBC7DCC9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/INCLUDE");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		9E3A044F2F744722AD0D16C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/INCLUDE");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = package;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		BEA78A0F86644389A59F159B /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/INCLUDE");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = package;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		D04C1A27D0BB4D8F8CE44ADC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/INCLUDE");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		E8DEAAD1CD4A404C86DAFECB /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = ("/Users/yosefbedaso/Documents/GitHub/Libstructural/dependencies/third-party/clapack/3.2.1/INCLUDE");
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		EE040516EA344BB8BEFED27E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.12.sdk;
+				SYMROOT = /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE/build;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2DCBBDDBEFB74135AB112AC5 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D04C1A27D0BB4D8F8CE44ADC /* Debug */,
+				24C8E99ACC624CFDAC3F5C4F /* Release */,
+				179EEDCF7DF34D988ACECED0 /* MinSizeRel */,
+				E8DEAAD1CD4A404C86DAFECB /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		643805681E8547CDA924C2DB /* Build configuration list for PBXAggregateTarget "install" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BAE5C16A9DD423EBC2D7321 /* Debug */,
+				66F0413099C64743A76A5891 /* Release */,
+				45A667E617FA4E07924F1D7B /* MinSizeRel */,
+				326CB42DC87D4EE9A405428A /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		CE53C049A5F948A78D931FB1 /* Build configuration list for PBXAggregateTarget "package" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E3A044F2F744722AD0D16C2 /* Debug */,
+				33083B14C855432AA2A80AB0 /* Release */,
+				BEA78A0F86644389A59F159B /* MinSizeRel */,
+				59EEF5781857448FA4F4E017 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		EBBCC52AB07447C98024B5F1 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E46AC665AFB442EBC7DCC9E /* Debug */,
+				21925ED2204D404CA8A398BB /* Release */,
+				6BAD3350A15D404EA080EAA4 /* MinSizeRel */,
+				2C49620358244CA7BF38419D /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F0D74234FB324568ACE79C76 /* Build configuration list for PBXProject "clapack_headers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5465E2C0D83049D48AF6FDC3 /* Debug */,
+				EE040516EA344BB8BEFED27E /* Release */,
+				783D8954EE00460CBF2648EA /* MinSizeRel */,
+				545F562442DB47C393E32FFA /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8D28BD2058AB457B9B2808C2 /* Project object */;
+}

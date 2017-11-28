@@ -1,0 +1,4 @@
+﻿  Building Custom Rule C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/SWIG/CMakeLists.txt
+  CMake does not need to re-run because C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/SWIG/CMakeFiles/generate.stamp is up-to-date.
+  Swig source
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\libstructural.i(659): error : Unable to find '..\include\libstructural.h'

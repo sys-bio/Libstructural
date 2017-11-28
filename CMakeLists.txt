@@ -75,7 +75,7 @@ find_library(LIBSBML_LIBRARY
 		  ${SBML_DIR}/lib
 		  /usr/lib /usr/local/lib
 		  ${CMAKE_SOURCE_DIR}
-		  ${CMAKE_SOURCE_DIR}/lib
+		  ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib
     )
 
 	find_path(LIBSBML_INCLUDE
@@ -83,7 +83,7 @@ find_library(LIBSBML_LIBRARY
 		PATHS ${DEPENDENCY_DIR}/include
 			  ${SBML_DIR}/include
 			  /usr/include /usr/local/include
-			  ${CMAKE_SOURCE_DIR}/include
+			  ${CMAKE_SOURCE_DIR}//dependencies/libsbml-5.15.0-vs2017-release-64/include
 			  )
 
 	set(STRUCTURAL_LIBS ${STRUCTURAL_LIBS} ${LIBSBML_LIBRARY})
@@ -95,7 +95,7 @@ find_library(LIBSBML_LIBRARY
 	NAMES clapack.lib  clapack lapack
 	PATHS /usr/lib /usr/local/lib
 		  ${CMAKE_SOURCE_DIR}
-		  ${CMAKE_SOURCE_DIR}/dependencies/lib
+		  ${CMAKE_SOURCE_DIR}/dependencies/third-party/clapack/3.2.1/LIB
 		  ${CMAKE_SOURCE_DIR}/lib
     )
 
@@ -105,7 +105,7 @@ find_library(LIBSBML_LIBRARY
 		NAMES blas.lib blas
 		PATHS /usr/lib /usr/local/lib
 			${CMAKE_SOURCE_DIR}
-			${CMAKE_SOURCE_DIR}/dependencies/lib
+			${CMAKE_SOURCE_DIR}/dependencies/third-party/clapack/3.2.1/LIB
 			${CMAKE_SOURCE_DIR}/lib
     )
 
@@ -115,7 +115,7 @@ find_library(LIBSBML_LIBRARY
 		NAMES libf2c.lib f2c
 		PATHS /usr/lib /usr/local/lib
 			${CMAKE_SOURCE_DIR}
-			${CMAKE_SOURCE_DIR}/dependencies/lib
+			${CMAKE_SOURCE_DIR}/dependencies/third-party/clapack/3.2.1/LIB
 			${CMAKE_SOURCE_DIR}/lib
     )
 
@@ -235,6 +235,10 @@ endif(UNIX)
 
 add_subdirectory(LibLA)
 add_subdirectory(LibStructural)
+
+if(ENABLE_PYTHON_WRAPPER)
+	add_subdirectory(SWIG)
+endif()
 
 file(GLOB HEADER_FILES ${CMAKE_CURRENT_SOURCE_DIR}/include/*.h )
 install(FILES ${HEADER_FILES} DESTINATION include)

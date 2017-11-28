@@ -1,0 +1,6 @@
+C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/third-party/clapack/3.2.1/INSTALL/lib/libf2c.lib
+C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/third-party/clapack/3.2.1/INSTALL/lib/blas.lib
+C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/third-party/clapack/3.2.1/INSTALL/lib/lapack.lib
+C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/third-party/clapack/3.2.1/INSTALL/include/clapack/f2c.h
+C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/third-party/clapack/3.2.1/INSTALL/include/clapack/clapack.h
+C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/third-party/clapack/3.2.1/INSTALL/include/clapack/blaswrap.h

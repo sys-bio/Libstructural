@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 # Install script for directory: /Users/yosefbedaso/Documents/GitHub/Libstructural
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
   set(CMAKE_INSTALL_PREFIX "/usr/local")
+=======
+# Install script for directory: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/third-party/clapack/3.2.1
+
+# Set the install prefix
+if(NOT DEFINED CMAKE_INSTALL_PREFIX)
+  set(CMAKE_INSTALL_PREFIX "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/third-party/clapack/3.2.1/INSTALL")
+>>>>>>> b3ff48028543dcff1ca648b5fd1969dc21d38e46
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -27,6 +35,7 @@ if(NOT CMAKE_INSTALL_COMPONENT)
   endif()
 endif()
 
+<<<<<<< HEAD
 if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE FILE FILES
     "/Users/yosefbedaso/Documents/GitHub/Libstructural/include/blaswrap.h"
@@ -56,6 +65,14 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/cmake_install.cmake")
   include("/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural/cmake_install.cmake")
+=======
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for each subdirectory.
+  include("C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/F2CLIBS/cmake_install.cmake")
+  include("C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/BLAS/cmake_install.cmake")
+  include("C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/SRC/cmake_install.cmake")
+  include("C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/INCLUDE/cmake_install.cmake")
+>>>>>>> b3ff48028543dcff1ca648b5fd1969dc21d38e46
 
 endif()
 
@@ -67,5 +84,9 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
+<<<<<<< HEAD
 file(WRITE "/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/${CMAKE_INSTALL_MANIFEST}"
+=======
+file(WRITE "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/${CMAKE_INSTALL_MANIFEST}"
+>>>>>>> b3ff48028543dcff1ca648b5fd1969dc21d38e46
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

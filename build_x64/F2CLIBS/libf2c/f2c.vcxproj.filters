@@ -1,0 +1,492 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\f77vers.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\i77vers.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\s_rnge.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\abort_.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\exit_.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\getarg_.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\iargc_.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\getenv_.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\signal_.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\s_stop.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\s_paus.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\system_.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\cabs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\ctype.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\derf_.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\derfc_.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\erf_.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\erfc_.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\sig_die.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\pow_ci.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\pow_dd.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\pow_di.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\pow_hh.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\pow_ii.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\pow_ri.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\pow_zi.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\pow_zz.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\c_abs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\c_cos.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\c_div.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\c_exp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\c_log.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\c_sin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\c_sqrt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\z_abs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\z_cos.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\z_div.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\z_exp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\z_log.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\z_sin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\z_sqrt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\r_abs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\r_acos.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\r_asin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\r_atan.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\r_atn2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\r_cnjg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\r_cos.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\r_cosh.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\r_dim.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\r_exp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\r_imag.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\r_int.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\r_lg10.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\r_log.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\r_mod.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\r_nint.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\r_sign.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\r_sin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\r_sinh.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\r_sqrt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\r_tan.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\r_tanh.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\d_abs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\d_acos.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\d_asin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\d_atan.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\d_atn2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\d_cnjg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\d_cos.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\d_cosh.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\d_dim.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\d_exp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\d_imag.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\d_int.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\d_lg10.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\d_log.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\d_mod.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\d_nint.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\d_prod.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\d_sign.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\d_sin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\d_sinh.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\d_sqrt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\d_tan.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\d_tanh.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\i_abs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\i_dim.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\i_dnnt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\i_indx.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\i_len.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\i_len_trim.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\i_mod.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\i_nint.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\i_sign.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\lbitbits.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\lbitshft.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\i_ceiling.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\h_abs.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\h_dim.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\h_dnnt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\h_indx.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\h_len.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\h_mod.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\h_nint.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\h_sign.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\l_ge.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\l_gt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\l_le.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\l_lt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\hl_ge.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\hl_gt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\hl_le.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\hl_lt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\ef1asc_.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\ef1cmc_.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\f77_aloc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\s_cat.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\s_cmp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\s_copy.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\backspac.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\close.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\dfe.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\dolio.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\due.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\endfile.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\err.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\fmt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\fmtlib.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\ftell_.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\iio.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\ilnw.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\inquire.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\lread.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\lwrite.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\open.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\rdfmt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\rewind.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\rsfe.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\rsli.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\rsne.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\sfe.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\sue.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\typesize.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\uio.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\util.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\wref.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\wrtfmt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\wsfe.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\wsle.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\wsne.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\xwsne.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\dtime_.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\etime_.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\F2CLIBS\libf2c\arith.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\dependencies\third-party\clapack\3.2.1\F2CLIBS\libf2c\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\CMakeFiles\3a093b63b5bcf491df5d1395df904651\arith.h.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{799EE09E-2FCE-3FE6-A5B8-0634C7562700}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{1D8A6237-BCAC-32B4-BC23-4F0CFDC3FA92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{CDD0733A-35E3-3460-BC8E-A32FF2D34702}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

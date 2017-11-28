@@ -1,0 +1,46 @@
+﻿  CMake Warning (dev) at cmake_install.cmake:5 (set):
+    Syntax error in cmake code at
+  
+      C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/cmake_install.cmake:5
+  
+    when parsing string
+  
+      C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install
+  
+    Invalid escape sequence \U
+  
+    Policy CMP0010 is not set: Bad variable reference syntax is an error.  Run
+    "cmake --help-policy CMP0010" for policy details.  Use the cmake_policy
+    command to set the policy and suppress this warning.
+  This warning is for project developers.  Use -Wno-dev to suppress it.
+  
+  -- Install configuration: "Release"
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/bin/msvcp140.dll
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/bin/vcruntime140.dll
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/bin/concrt140.dll
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/include/blaswrap.h
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/include/clapack.h
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/include/complex.h
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/include/constraint.h
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/include/f2c.h
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/include/fluxbalance.h
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/include/libla.h
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/include/libutil.h
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/include/lp_Hash.h
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/include/lp_SOS.h
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/include/lp_lib.h
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/include/lp_matrix.h
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/include/lp_mipbb.h
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/include/lp_types.h
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/include/lp_utils.h
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/include/lpresult.h
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/include/matrix.h
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/include/objective.h
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/include/sbmlmodel.h
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/include/util.h
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/lib/LibLA.lib
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/bin/LibLA.dll
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/lib/LibLA-static.lib
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/lib/LibStructural.lib
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/bin/LibStructural.dll
+  -- Installing: C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\install/lib/LibStructural-static.lib
