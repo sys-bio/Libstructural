@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/install_x64/CMakeFiles/LibLA.dir
+C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/install_x64/CMakeFiles/LibLA-static.dir
+C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/install_x64/CMakeFiles/INSTALL.dir
+C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/install_x64/CMakeFiles/ALL_BUILD.dir
+C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/install_x64/CMakeFiles/ZERO_CHECK.dir
+=======
 /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/CMakeFiles/install.dir
 /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/CMakeFiles/package.dir
 /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/CMakeFiles/ALL_BUILD.dir
@@ -20,3 +27,4 @@
 /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE/CMakeFiles/package.dir
 /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE/CMakeFiles/ALL_BUILD.dir
 /Users/yosefbedaso/Documents/GitHub/Libstructural/install_x64/INCLUDE/CMakeFiles/ZERO_CHECK.dir
+>>>>>>> 53c7d882468e5329d1e19ab5ccf8a648d9cd5699
