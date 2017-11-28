@@ -66,7 +66,7 @@ set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Choose the type of build, options a
 # list of additional files to link against.
 #
 
-set(EXTRA_LIBS "" CACHE STRING "List of additional libraries to link against." )
+set(EXTRA_LIBS ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libbz2.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libxml2.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib/zdll.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libiconv.lib CACHE STRING "List of additional libraries to link against." )
 
 
 ####################################################################

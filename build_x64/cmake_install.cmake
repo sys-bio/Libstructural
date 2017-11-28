@@ -1,16 +1,8 @@
-<<<<<<< HEAD
-# Install script for directory: /Users/yosefbedaso/Documents/GitHub/Libstructural
+# Install script for directory: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/usr/local")
-=======
-# Install script for directory: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/third-party/clapack/3.2.1
-
-# Set the install prefix
-if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/third-party/clapack/3.2.1/INSTALL")
->>>>>>> b3ff48028543dcff1ca648b5fd1969dc21d38e46
+  set(CMAKE_INSTALL_PREFIX "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/install_x64")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -35,44 +27,43 @@ if(NOT CMAKE_INSTALL_COMPONENT)
   endif()
 endif()
 
-<<<<<<< HEAD
+if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE PROGRAM FILES
+    "C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Redist/MSVC/14.11.25325/x64/Microsoft.VC141.CRT/msvcp140.dll"
+    "C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Redist/MSVC/14.11.25325/x64/Microsoft.VC141.CRT/vcruntime140.dll"
+    "C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Redist/MSVC/14.11.25325/x64/Microsoft.VC141.CRT/concrt140.dll"
+    )
+endif()
+
 if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE FILE FILES
-    "/Users/yosefbedaso/Documents/GitHub/Libstructural/include/blaswrap.h"
-    "/Users/yosefbedaso/Documents/GitHub/Libstructural/include/clapack.h"
-    "/Users/yosefbedaso/Documents/GitHub/Libstructural/include/complex.h"
-    "/Users/yosefbedaso/Documents/GitHub/Libstructural/include/constraint.h"
-    "/Users/yosefbedaso/Documents/GitHub/Libstructural/include/f2c.h"
-    "/Users/yosefbedaso/Documents/GitHub/Libstructural/include/fluxbalance.h"
-    "/Users/yosefbedaso/Documents/GitHub/Libstructural/include/libla.h"
-    "/Users/yosefbedaso/Documents/GitHub/Libstructural/include/libutil.h"
-    "/Users/yosefbedaso/Documents/GitHub/Libstructural/include/lp_Hash.h"
-    "/Users/yosefbedaso/Documents/GitHub/Libstructural/include/lp_SOS.h"
-    "/Users/yosefbedaso/Documents/GitHub/Libstructural/include/lp_lib.h"
-    "/Users/yosefbedaso/Documents/GitHub/Libstructural/include/lp_matrix.h"
-    "/Users/yosefbedaso/Documents/GitHub/Libstructural/include/lp_mipbb.h"
-    "/Users/yosefbedaso/Documents/GitHub/Libstructural/include/lp_types.h"
-    "/Users/yosefbedaso/Documents/GitHub/Libstructural/include/lp_utils.h"
-    "/Users/yosefbedaso/Documents/GitHub/Libstructural/include/lpresult.h"
-    "/Users/yosefbedaso/Documents/GitHub/Libstructural/include/matrix.h"
-    "/Users/yosefbedaso/Documents/GitHub/Libstructural/include/objective.h"
-    "/Users/yosefbedaso/Documents/GitHub/Libstructural/include/sbmlmodel.h"
-    "/Users/yosefbedaso/Documents/GitHub/Libstructural/include/util.h"
+    "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/blaswrap.h"
+    "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/clapack.h"
+    "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/complex.h"
+    "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/constraint.h"
+    "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/f2c.h"
+    "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/fluxbalance.h"
+    "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/libla.h"
+    "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/libutil.h"
+    "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/lp_Hash.h"
+    "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/lp_SOS.h"
+    "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/lp_lib.h"
+    "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/lp_matrix.h"
+    "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/lp_mipbb.h"
+    "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/lp_types.h"
+    "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/lp_utils.h"
+    "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/lpresult.h"
+    "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/matrix.h"
+    "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/objective.h"
+    "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/sbmlmodel.h"
+    "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/util.h"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibLA/cmake_install.cmake")
-  include("/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/LibStructural/cmake_install.cmake")
-=======
-if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for each subdirectory.
-  include("C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/F2CLIBS/cmake_install.cmake")
-  include("C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/BLAS/cmake_install.cmake")
-  include("C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/SRC/cmake_install.cmake")
-  include("C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/INCLUDE/cmake_install.cmake")
->>>>>>> b3ff48028543dcff1ca648b5fd1969dc21d38e46
+  include("C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/LibLA/cmake_install.cmake")
+  include("C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/LibStructural/cmake_install.cmake")
 
 endif()
 
@@ -84,9 +75,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-<<<<<<< HEAD
-file(WRITE "/Users/yosefbedaso/Documents/GitHub/Libstructural/build_x64/${CMAKE_INSTALL_MANIFEST}"
-=======
 file(WRITE "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/${CMAKE_INSTALL_MANIFEST}"
->>>>>>> b3ff48028543dcff1ca648b5fd1969dc21d38e46
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
