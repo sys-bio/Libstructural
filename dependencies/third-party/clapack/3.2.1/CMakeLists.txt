@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 2.6)
 project(CLAPACK C)
+
+if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
+  set (CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/INSTALL" CACHE PATH "default install path" FORCE)
+endif()
 #enable_testing()
 #include(CTest)
 
