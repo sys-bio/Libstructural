@@ -13,7 +13,7 @@ To install libStructural using pip, run following line on console:
 
 ``pip install structural``
 
-If you are using Tellurium (tellurium.analogmachine.org) then you can install structural directoly from the Python console:
+If you are using Tellurium (tellurium.analogmachine.org) then you can install structural directly from the Python console:
 
 .. code:: python
 
