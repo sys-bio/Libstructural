@@ -39,11 +39,13 @@ Loading a model from a stoichiometric matrix
     ls = structural.LibStructural.getInstance()
     matrix = [[  1, -1, -1], [  0, -1,  1], [  0,  1, -1]] # matrix can be a numpy 2d array
     ls.loadStoichiometryMatrix(matrix)
-    ls.analyzeWithQR()
 .. end
 
-Loading a model using the antiomy model description language
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Loading the stoichiometry matrix will automatically call ls.analyzeWithQR(). The load command will also
+by default add reaction names of the form _Jx and species names of the form Sx. 
+
+Loading a model using the antimony model description language
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 If you use `tellurium <http://tellurium.analogmachine.org/>`_ you can load a model by converting the antimony model to SBML string or by using the Stoichiometry matrix of the antimony model.
