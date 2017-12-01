@@ -2,14 +2,13 @@
 
 // #pragma SWIG nowarn=516
 
-//%feature("autodoc", "1");
+%feature("autodoc", "1");
 %inline
 %{
 #include "libstructural.h"
 #include "util.h"
 #include "libla.h"
 %}
-
 
 %rename (_my_loadStoichiometryMatrix) loadStoichiometryMatrix;
 %rename (_my_rref) rref;
@@ -58,6 +57,7 @@
 %include "std_vector.i"
 %include "exception.i"
 %include "st_docstrings.i"
+%include "../include/matrix.h"
 
 %template(StringDouble) std::pair<std::string,double>;
 %template(StrDoubleVector) std::vector< std::pair<std::string,double> >;
@@ -65,8 +65,7 @@
 %template(DoubleVector) std::vector<double>;
 %template(StringVectorx2) std::pair< std::vector<std::string>, std::vector<std::string> >;
 
-%include "../include/matrix.h"
-
+//*
 %template(DoubleMatrixStringVector) std::pair<LIB_LA::DoubleMatrix*,  std::vector< std::string> >;
 
 // http://swig.10945.n7.nabble.com/replacing-a-real-class-method-with-SWIG-version-td11418.html
@@ -214,9 +213,9 @@
 	def getFullyReorderedNrMatrix(self):
 		"""
 		LibStructural.getFullyReorderedNrMatrix(self)
-		
+
 		The Nr matrix contains all the linearly independent rows of the stoichiometry matrix.
-		
+
 		:returns: the Nr Matrix.
 		"""
 		return self._my_getFullyReorderedNrMatrix().toNumpy()
@@ -233,8 +232,8 @@
 		"""
 		LibStructural.getGammaMatrix(self)
 		:returns: Gamma, the conservation law array.
-		Each row represents a single conservation law where the column indicates the participating molecular species. 
-		The number of rows is therefore equal to the number of conservation laws. Columns are ordered according to the 
+		Each row represents a single conservation law where the column indicates the participating molecular species.
+		The number of rows is therefore equal to the number of conservation laws. Columns are ordered according to the
 		rows in the reordered stoichiometry matrix, see ``LibStructural.getReorderedSpeciesId`` and ``LibStructural.getReorderedStoichiometryMatrix``.
 
 		"""
@@ -246,13 +245,13 @@
 
 		:param: the stoichiometry matrix that will be used to calculate gamma
 		:returns: Gamma, the conservation law array.
-		
+
 		Each row represents a single conservation law where the column indicate the participating molecular species. The number of rows is therefore equal to the number of conservation laws.
 		In this case the Gamma Matrix is recalculated for the given stoichiometry matrix. amma is calculated based on R = GaussJordan ( [ stoichiometry  I ] ), where R has the form
-		
+
 		R = [ R11 R12
 				0  GAMMA ]
-				
+
 		The RowLabels should be an increasing number, to enumerate the conservation law, the column label will be the same label as the stoichiometry matrix.
 		"""
 		import numpy as np
@@ -351,9 +350,7 @@
 
 		"""
 		return self._my_getReorderedStoichiometryMatrix().toNumpy()
-%}
 
-%pythoncode %{
 	def loadStoichiometryMatrix(self, data):
 			"""
 			LibStructural.loadStoichiometryMatrix(self, Matrix)
@@ -389,15 +386,13 @@
 					raise ValueError("Expecting 2 dimensional list or numpy array")
 			else:
 				raise ValueError("Expecting list or numpy array")
-%}
 
-%pythoncode %{
 	def rref(self, data, tolerance=1e-6):
 			"""
 			LibStructural.rref(self, matrix, tol)
 
       Computes the reduced row echelon of the given matrix. Tolerance is set to indicate the smallest number consider to be zero.
-      
+
 			:param: a matrix (numpy)
 			:param: Optional: tolerance (double), default is 1E-6
 			:returns: reduced row echelon form of the matrix
@@ -418,9 +413,7 @@
 					raise ValueError("Expecting 2 dimensional list or numpy array")
 			else:
   		        raise ValueError("Expecting list or numpy array")
-%}
 
-%pythoncode %{
 	def rref_FB(self, data, tolerance=1e-6):
 			"""
 			LibStructural.getEigenValues(self, matrix)
@@ -445,9 +438,7 @@
 					raise ValueError("Expecting 2 dimensional list or numpy array")
 			else:
   		        raise ValueError("Expecting list or numpy array")
-%}
 
-%pythoncode %{
 	def getEigenValues (self, oMatrix):
 			"""
 			LibStructural.getEigenValues(self, matrix)
@@ -472,9 +463,7 @@
 					raise ValueError("Expecting 2 dimensional list or numpy array")
 			else:
   		        raise ValueError("Expecting list or numpy array")
-%}
 
-%pythoncode %{
 	def getEigenVectors (self, oMatrix):
 			"""
 			LibStructural.getEigenVectors(self, matrix)
@@ -499,9 +488,7 @@
 					raise ValueError("Expecting 2 dimensional list or numpy array")
 			else:
   		        raise ValueError("Expecting list or numpy array")
-%}
 
-%pythoncode %{
 	def getConditionNumber (self, oMatrix):
 			'''
 			LibStructural.getConditionNumber(self, matrix)
@@ -525,9 +512,7 @@
 					raise ValueError("Expecting 2 dimensional list or numpy array")
 			else:
   		        raise ValueError("Expecting list or numpy array")
-%}
 
-%pythoncode %{
 	def getRConditionNumber (self, oMatrix):
 			'''
 			LibStructural.getRConditionNumber(self, matrix)
@@ -552,10 +537,7 @@
 					raise ValueError("Expecting 2 dimensional list or numpy array")
 			else:
   		        raise ValueError("Expecting list or numpy array")
-%}
 
-
-%pythoncode %{
 	def getLeftNullSpace (self, oMatrix):
 			"""
 			LibStructural.getConditionNumber(self, matrix)
@@ -581,9 +563,7 @@
 					raise ValueError("Expecting 2 dimensional list or numpy array")
 			else:
   		        raise ValueError("Expecting list or numpy array")
-%}
 
-%pythoncode %{
 	def getRightNullSpace (self, oMatrix):
 			"""
 			LibStructural.getRightNullSpace(self, matrix)
@@ -608,9 +588,7 @@
 					raise ValueError("Expecting 2 dimensional list or numpy array")
 			else:
   		        raise ValueError("Expecting list or numpy array")
-%}
 
-%pythoncode %{
 	def getRank (self, oMatrix):
 			"""
 			LibStructural.getRank(self, matrix)
@@ -701,7 +679,8 @@ using LIB_LA::Matrix;
 {
 	virtual double get(const unsigned int row, const unsigned int col)
   {
-		return *(self->_Array + row * self->_Cols + col);
+		return (*self)(row,col);
+		//return *(self->_Array + row * self->_Cols + col);
 	}
 
 	virtual void set(const unsigned int row, const unsigned int col, double value)

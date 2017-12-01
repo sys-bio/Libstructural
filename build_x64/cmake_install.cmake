@@ -50,9 +50,9 @@ if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMP
     "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/lp_lib.h"
     "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/lp_matrix.h"
     "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/lp_mipbb.h"
-    "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/lp_types.h"
     "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/lp_utils.h"
     "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/lpresult.h"
+    "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/matrix - Copy.h"
     "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/matrix.h"
     "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/objective.h"
     "C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/include/sbmlmodel.h"
@@ -64,6 +64,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/LibLA/cmake_install.cmake")
   include("C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/LibStructural/cmake_install.cmake")
+  include("C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/SWIG/cmake_install.cmake")
 
 endif()
 

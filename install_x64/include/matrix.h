@@ -27,7 +27,7 @@ namespace LIB_LA
 		/*! \brief the element type for this matrix, will be real, LIB_LA::Complex or integer. 
 		*/
 		typedef T _ElementType;
-	//protected:
+	protected:
 		unsigned int _Rows;
 		unsigned int _Cols;
 		T * _Array;

@@ -10,3 +10,6 @@ C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/LibStru
 C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/LibStructural/CMakeFiles/LibStructural-static.dir
 C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/LibStructural/CMakeFiles/PACKAGE.dir
 C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/LibStructural/CMakeFiles/INSTALL.dir
+C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/SWIG/CMakeFiles/_structural.dir
+C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/SWIG/CMakeFiles/PACKAGE.dir
+C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/SWIG/CMakeFiles/INSTALL.dir

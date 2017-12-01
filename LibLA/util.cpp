@@ -341,8 +341,6 @@ std::vector<int> Util::GaussJordan(DoubleMatrix &oMatrix, double dTolerance)
 	Util::RoundMatrixToTolerance(oMatrix, dTolerance);
 	return oPivots;
 }
-
-
 void Util::gaussJordan(DoubleMatrix &oMatrix,double dTolerance)
 {
 	//GaussJordan(oMatrix, dTolerance);
@@ -456,8 +454,6 @@ void Util::print(IntMatrix& A)
 	}
 	cout << "]" << endl << endl;
 }
-
-
 void Util::print(DoubleMatrix& A) 
 {
 	cout << "[";
@@ -472,8 +468,6 @@ void Util::print(DoubleMatrix& A)
 	}
 	cout << "]" << endl << endl;
 }
-
-
 void Util::print(ComplexMatrix& A) 
 {
 	cout << "[";
@@ -488,8 +482,6 @@ void Util::print(ComplexMatrix& A)
 	}
 	cout << "]" << endl << endl;
 }
-
-
 void Util::print(int mr, int nc, int** A) 
 {
 	cout << "[";

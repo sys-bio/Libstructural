@@ -27,7 +27,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../include)
 #
 
 add_library (LibStructural SHARED ${LA_SOURCES} ${LS_SOURCES}  )
-target_link_libraries(LibStructural ${LIBSBML_LIBRARY} ${EXTRA_LIBS} ${LA_LIBS} ${CLAPACK_LIBS} Ws2_32.lib)
+target_link_libraries(LibStructural ${LIBSBML_LIBRARY} ${EXTRA_LIBS} ${LA_LIBS} ${CLAPACK_LIBS} Ws2_32.lib )
 
 add_library (LibStructural-static STATIC ${LA_SOURCES} ${LS_SOURCES} )
 if (WIN32 AND NOT CYGWIN)

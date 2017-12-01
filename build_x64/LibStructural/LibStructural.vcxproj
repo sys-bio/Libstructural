@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|x64">
@@ -119,8 +119,7 @@
       <ImportLibrary>C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/LibStructural/Debug/LibStructural.lib</ImportLibrary>
       <ProgramDataBaseFile>C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/LibStructural/Debug/LibStructural.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
-      <Version>
-      </Version>
+      <Version></Version>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -140,8 +139,7 @@
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;LIB_EXPORTS;LIBLAX_EXPORTS;LIBSBML_STATIC;LIBLAX_STATIC;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="Release";LibStructural_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
-      <DebugInformationFormat>
-      </DebugInformationFormat>
+      <DebugInformationFormat></DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;LIB_EXPORTS;LIBLAX_EXPORTS;LIBSBML_STATIC;LIBLAX_STATIC;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Release\";LibStructural_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -164,8 +162,7 @@
       <ImportLibrary>C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/LibStructural/Release/LibStructural.lib</ImportLibrary>
       <ProgramDataBaseFile>C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/LibStructural/Release/LibStructural.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
-      <Version>
-      </Version>
+      <Version></Version>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -185,8 +182,7 @@
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;LIB_EXPORTS;LIBLAX_EXPORTS;LIBSBML_STATIC;LIBLAX_STATIC;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="MinSizeRel";LibStructural_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
-      <DebugInformationFormat>
-      </DebugInformationFormat>
+      <DebugInformationFormat></DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;LIB_EXPORTS;LIBLAX_EXPORTS;LIBSBML_STATIC;LIBLAX_STATIC;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"MinSizeRel\";LibStructural_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -209,8 +205,7 @@
       <ImportLibrary>C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/LibStructural/MinSizeRel/LibStructural.lib</ImportLibrary>
       <ProgramDataBaseFile>C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/LibStructural/MinSizeRel/LibStructural.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
-      <Version>
-      </Version>
+      <Version></Version>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -253,8 +248,7 @@
       <ImportLibrary>C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/LibStructural/RelWithDebInfo/LibStructural.lib</ImportLibrary>
       <ProgramDataBaseFile>C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/LibStructural/RelWithDebInfo/LibStructural.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
-      <Version>
-      </Version>
+      <Version></Version>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
@@ -317,14 +311,14 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibLA\complex.cpp" />
-    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibLA\libla.cpp" />
-    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibLA\matrix.cpp" />
-    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibLA\util.cpp" />
-    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibStructural\constraint.cpp" />
-    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibStructural\libstructural.cpp" />
-    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibStructural\objective.cpp" />
-    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibStructural\sbmlmodel.cpp" />
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibLA\complex.cpp"  />
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibLA\libla.cpp"  />
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibLA\matrix.cpp"  />
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibLA\util.cpp"  />
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibStructural\constraint.cpp"  />
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibStructural\libstructural.cpp"  />
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibStructural\objective.cpp"  />
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\LibStructural\sbmlmodel.cpp"  />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\ZERO_CHECK.vcxproj">

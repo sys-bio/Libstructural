@@ -22,7 +22,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../LibStructural/include)
 #
 
 add_library (LibLA SHARED ${LA_SOURCES} )
-target_link_libraries(LibLA ${LA_LIBS} ${CLAPACK_LIBS} Ws2_32.lib)
+target_link_libraries(LibLA ${LA_LIBS} ${CLAPACK_LIBS} )
 
 add_library (LibLA-static STATIC ${LA_SOURCES} )
 if (WIN32 AND NOT CYGWIN)
@@ -31,7 +31,7 @@ if (WIN32 AND NOT CYGWIN)
 	SET_TARGET_PROPERTIES(LibLA-static PROPERTIES COMPILE_DEFINITIONS "STATIC_LIB=1")
 
 endif(WIN32 AND NOT CYGWIN)
-target_link_libraries(LibLA-static ${LA_LIBS} ${CLAPACK_LIBS} Ws2_32.lib)
+target_link_libraries(LibLA-static ${LA_LIBS} ${CLAPACK_LIBS} )
 
 INSTALL(TARGETS LibLA LibLA-static
 	RUNTIME DESTINATION bin

@@ -1,0 +1,379 @@
+﻿  Building Custom Rule C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/SWIG/CMakeLists.txt
+  CMake does not need to re-run because C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/SWIG/CMakeFiles/generate.stamp is up-to-date.
+  Swig source
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\..\include\matrix.h(217): warning 362: operator= ignored
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\..\include\matrix.h(228): warning 362: operator= ignored
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\..\include\matrix.h(252): warning 389: operator[] ignored (consider using %extend)
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\..\include\matrix.h(258): warning 389: operator[] ignored (consider using %extend)
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\libstructural.i(615): warning 740: Whitespace indentation is inconsistent compared to earlier lines (line 2 of %pythoncode or %insert("python") block)
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\libstructural.i(615): warning 740: Whitespace indentation is inconsistent compared to earlier lines (line 3 of %pythoncode or %insert("python") block)
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\libstructural.i(615): warning 740: Whitespace indentation is inconsistent compared to earlier lines (line 4 of %pythoncode or %insert("python") block)
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\libstructural.i(615): warning 740: Whitespace indentation is inconsistent compared to earlier lines (line 5 of %pythoncode or %insert("python") block)
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\libstructural.i(615): warning 740: Whitespace indentation is inconsistent compared to earlier lines (line 6 of %pythoncode or %insert("python") block)
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\libstructural.i(615): warning 740: Whitespace indentation is inconsistent compared to earlier lines (line 7 of %pythoncode or %insert("python") block)
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\libstructural.i(615): warning 740: Whitespace indentation is inconsistent compared to earlier lines (line 8 of %pythoncode or %insert("python") block)
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\libstructural.i(615): warning 740: Whitespace indentation is inconsistent compared to earlier lines (line 9 of %pythoncode or %insert("python") block)
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\libstructural.i(615): warning 740: Whitespace indentation is inconsistent compared to earlier lines (line 10 of %pythoncode or %insert("python") block)
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\libstructural.i(615): warning 740: Whitespace indentation is inconsistent compared to earlier lines (line 11 of %pythoncode or %insert("python") block)
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\libstructural.i(615): warning 740: Whitespace indentation is inconsistent compared to earlier lines (line 212 of %pythoncode or %insert("python") block)
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\libstructural.i(615): warning 740: Whitespace indentation is inconsistent compared to earlier lines (line 233 of %pythoncode or %insert("python") block)
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\libstructural.i(615): warning 740: Whitespace indentation is inconsistent compared to earlier lines (line 258 of %pythoncode or %insert("python") block)
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\libstructural.i(615): warning 740: Whitespace indentation is inconsistent compared to earlier lines (line 283 of %pythoncode or %insert("python") block)
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\libstructural.i(615): warning 740: Whitespace indentation is inconsistent compared to earlier lines (line 308 of %pythoncode or %insert("python") block)
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\libstructural.i(615): warning 740: Whitespace indentation is inconsistent compared to earlier lines (line 332 of %pythoncode or %insert("python") block)
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\libstructural.i(615): warning 740: Whitespace indentation is inconsistent compared to earlier lines (line 357 of %pythoncode or %insert("python") block)
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\libstructural.i(615): warning 740: Whitespace indentation is inconsistent compared to earlier lines (line 383 of %pythoncode or %insert("python") block)
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\libstructural.i(615): warning 740: Whitespace indentation is inconsistent compared to earlier lines (line 408 of %pythoncode or %insert("python") block)
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\libstructural.i(615): warning 740: Whitespace indentation is inconsistent compared to earlier lines (line 432 of %pythoncode or %insert("python") block)
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\..\include\matrix.h(109): warning 509: Overloaded method LIB_LA::Matrix< double >::Matrix(double const **,int,int) effectively ignored,
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\..\include\matrix.h(86): warning 509: as it is shadowed by LIB_LA::Matrix< double >::Matrix(double *&,int,int).
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\..\include\matrix.h(109): warning 509: Overloaded method LIB_LA::Matrix< int >::Matrix(int const **,int,int) effectively ignored,
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\..\include\matrix.h(86): warning 509: as it is shadowed by LIB_LA::Matrix< int >::Matrix(int *&,int,int).
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\..\include\matrix.h(109): warning 509: Overloaded method LIB_LA::Matrix< LIB_LA::Complex >::Matrix(LIB_LA::Complex const **,int,int) effectively ignored,
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\SWIG\..\include\matrix.h(86): warning 509: as it is shadowed by LIB_LA::Matrix< LIB_LA::Complex >::Matrix(LIB_LA::Complex *&,int,int).
+  libstructuralPYTHON_wrap.cxx
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(5858): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(5904): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(5959): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(6005): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(6106): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(6152): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(6252): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(6306): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(6342): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(6388): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(6434): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(6480): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(6535): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(6583): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(6631): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(6686): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(6741): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(6796): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(6851): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(6899): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(6980): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(7027): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(7068): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(7264): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(7309): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(7345): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(7381): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(7417): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(7480): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(7542): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(7618): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(7748): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(7801): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(7854): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(7920): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(7974): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(8026): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(8126): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(8239): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(8354): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(8403): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(8432): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(8473): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(8511): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(8547): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(8594): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(8630): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(8667): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(8704): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(8741): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(8777): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(8813): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(8849): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(8884): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(8928): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(8979): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(9046): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(9150): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(9260): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(9298): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(9334): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(9392): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(9452): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(9573): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(9649): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(9757): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(9793): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(9828): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(9873): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(9909): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(9945): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(9981): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(10044): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(10106): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(10182): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(10312): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(10365): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(10418): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(10484): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(10538): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(10590): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(10690): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(10803): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(10918): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(10967): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(10996): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(11037): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(11075): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(11111): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(11158): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(11194): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(11231): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(11268): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(11305): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(11341): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(11377): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(11413): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(11448): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(11492): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(11543): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(11610): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(11714): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(11824): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(11862): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(11898): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(11956): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(12016): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(12137): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(12213): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(12321): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(12357): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(12392): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(12437): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(12473): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(12509): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(12545): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(12608): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(12670): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(12746): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(12876): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(12929): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(12982): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(13048): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(13102): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(13154): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(13254): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(13364): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(13479): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(13525): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(13552): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(13593): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(13631): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(13667): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(13714): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(13750): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(13787): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(13824): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(13861): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(13897): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(13933): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(13969): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(14004): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(14048): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(14099): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(14166): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(14267): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(14374): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(14410): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(14446): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(14501): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(14556): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(14674): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(14745): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(14855): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(14891): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(14926): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(14960): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(15009): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(15050): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(15237): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(15271): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(15318): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(15359): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(15547): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(15581): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(15628): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(15687): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(15734): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(15791): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(15848): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(15895): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(15942): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(15989): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(16025): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(16061): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(16097): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(16133): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(16169): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(16205): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(16241): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(16277): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(16313): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(16349): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(16385): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(16421): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(16457): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(16493): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(16529): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(16565): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(16613): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(16649): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(16685): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(16721): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(16757): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(16793): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(16829): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(16865): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(16901): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(16937): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(16973): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(17009): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(17045): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(17081): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(17117): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(17153): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(17189): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(17225): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(17261): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(17297): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(17333): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(17369): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(17405): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(17441): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(17477): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(17513): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(17549): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(17585): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(17621): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(17657): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(17705): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(17753): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(17801): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(17849): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(17897): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(17945): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(18038): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(18082): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(18118): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(18145): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(18172): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(18208): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(18254): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(18360): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(18454): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(18490): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(18526): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(18562): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(18598): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(18634): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(18670): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(18706): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(18742): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(18778): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(18814): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(18850): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(18885): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(18928): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(18963): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(19008): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(19069): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(19105): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(19141): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(19184): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(19219): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(19264): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(19317): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(19353): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(19389): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(19432): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(19467): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(19512): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(19565): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(19601): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(19637): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(19689): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(19725): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(19752): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(19791): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(19857): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(19914): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(19971): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(20025): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(20216): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(20261): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(20297): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(20408): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(20470): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(20505): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(20565): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(20618): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(20671): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(20724): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(20760): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(20796): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(20832): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(20868): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(20926): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(20984): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(21102): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(21164): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(21216): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(21252): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(21279): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(21318): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(21384): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(21441): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(21498): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(21552): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(21743): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(21788): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(21824): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(21935): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(21997): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(22032): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(22092): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(22145): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(22198): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(22251): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(22287): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(22323): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(22359): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(22395): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(22453): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(22511): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(22629): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(22691): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(22743): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(22779): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(22806): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(22845): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(22911): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(22968): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(23025): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(23079): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(23270): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(23315): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(23351): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(23462): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(23524): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(23559): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(23619): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(23672): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(23725): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(23778): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(23814): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(23850): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(23886): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(23922): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(23980): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(24038): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(24156): warning C4101: 'e': unreferenced local variable
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\libstructuralPYTHON_wrap.cxx(24226): warning C4101: 'e': unreferenced local variable
+     Creating library C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/SWIG/Release/_structural.lib and object C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/SWIG/Release/_structural.exp
+MSVCRT.lib(initializers.obj) : warning LNK4098: defaultlib 'libcmt.lib' conflicts with use of other libs; use /NODEFAULTLIB:library
+  _structural.vcxproj -> C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\SWIG\Release\_structural.pyd

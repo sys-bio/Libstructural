@@ -1,5 +1,0 @@
-﻿  Building Custom Rule C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/dependencies/third-party/clapack/3.2.1/F2CLIBS/libf2c/CMakeLists.txt
-  CMake does not need to re-run because C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/F2CLIBS/libf2c/CMakeFiles/generate.stamp is up-to-date.
-  arithchk.c
-  arithchk.vcxproj -> C:\Users\yosef\Documents\Visual Studio 2017\Projects\libstruct\build_x64\F2CLIBS\libf2c\Debug\arithchk.exe
-  arithchk.vcxproj -> C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/build_x64/F2CLIBS/libf2c/Debug/arithchk.pdb (Full PDB)

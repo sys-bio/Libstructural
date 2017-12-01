@@ -5491,13 +5491,6 @@ SWIG_AsVal_unsigned_SS_int (PyObject * obj, unsigned int *val)
 }
 
 
-SWIGINTERNINLINE PyObject*
-  SWIG_From_unsigned_SS_int  (unsigned int value)
-{
-  return PyInt_FromSize_t((size_t) value);
-}
-
-
 SWIGINTERN int
 SWIG_AsVal_bool (PyObject *obj, bool *val)
 {
@@ -5508,8 +5501,16 @@ SWIG_AsVal_bool (PyObject *obj, bool *val)
   return SWIG_OK;
 }
 
+
+SWIGINTERNINLINE PyObject*
+  SWIG_From_unsigned_SS_int  (unsigned int value)
+{
+  return PyInt_FromSize_t((size_t) value);
+}
+
 SWIGINTERN double LIB_LA_Matrix_Sl_double_Sg__get(LIB_LA::Matrix< double > *self,unsigned int const row,unsigned int const col){
-		return *(self->_Array + row * self->_Cols + col);
+		return (*self)(row,col);
+		//return *(self->_Array + row * self->_Cols + col);
 	}
 SWIGINTERN void LIB_LA_Matrix_Sl_double_Sg__set(LIB_LA::Matrix< double > *self,unsigned int const row,unsigned int const col,double value){
 		(*self)(row,col) = value;
@@ -19275,162 +19276,6 @@ SWIGINTERN PyObject *intArray_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObj
   return SWIG_Py_Void();
 }
 
-SWIGINTERN PyObject *_wrap_DoubleMatrix__Rows_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LIB_LA::Matrix< double > *arg1 = (LIB_LA::Matrix< double > *) 0 ;
-  unsigned int arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  unsigned int val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:DoubleMatrix__Rows_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LIB_LA__MatrixT_double_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DoubleMatrix__Rows_set" "', argument " "1"" of type '" "LIB_LA::Matrix< double > *""'"); 
-  }
-  arg1 = reinterpret_cast< LIB_LA::Matrix< double > * >(argp1);
-  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "DoubleMatrix__Rows_set" "', argument " "2"" of type '" "unsigned int""'");
-  } 
-  arg2 = static_cast< unsigned int >(val2);
-  if (arg1) (arg1)->_Rows = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_DoubleMatrix__Rows_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LIB_LA::Matrix< double > *arg1 = (LIB_LA::Matrix< double > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  unsigned int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:DoubleMatrix__Rows_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LIB_LA__MatrixT_double_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DoubleMatrix__Rows_get" "', argument " "1"" of type '" "LIB_LA::Matrix< double > *""'"); 
-  }
-  arg1 = reinterpret_cast< LIB_LA::Matrix< double > * >(argp1);
-  result = (unsigned int) ((arg1)->_Rows);
-  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_DoubleMatrix__Cols_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LIB_LA::Matrix< double > *arg1 = (LIB_LA::Matrix< double > *) 0 ;
-  unsigned int arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  unsigned int val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:DoubleMatrix__Cols_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LIB_LA__MatrixT_double_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DoubleMatrix__Cols_set" "', argument " "1"" of type '" "LIB_LA::Matrix< double > *""'"); 
-  }
-  arg1 = reinterpret_cast< LIB_LA::Matrix< double > * >(argp1);
-  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "DoubleMatrix__Cols_set" "', argument " "2"" of type '" "unsigned int""'");
-  } 
-  arg2 = static_cast< unsigned int >(val2);
-  if (arg1) (arg1)->_Cols = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_DoubleMatrix__Cols_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LIB_LA::Matrix< double > *arg1 = (LIB_LA::Matrix< double > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  unsigned int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:DoubleMatrix__Cols_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LIB_LA__MatrixT_double_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DoubleMatrix__Cols_get" "', argument " "1"" of type '" "LIB_LA::Matrix< double > *""'"); 
-  }
-  arg1 = reinterpret_cast< LIB_LA::Matrix< double > * >(argp1);
-  result = (unsigned int) ((arg1)->_Cols);
-  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_DoubleMatrix__Array_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LIB_LA::Matrix< double > *arg1 = (LIB_LA::Matrix< double > *) 0 ;
-  double *arg2 = (double *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:DoubleMatrix__Array_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LIB_LA__MatrixT_double_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DoubleMatrix__Array_set" "', argument " "1"" of type '" "LIB_LA::Matrix< double > *""'"); 
-  }
-  arg1 = reinterpret_cast< LIB_LA::Matrix< double > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_double, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "DoubleMatrix__Array_set" "', argument " "2"" of type '" "double *""'"); 
-  }
-  arg2 = reinterpret_cast< double * >(argp2);
-  if (arg1) (arg1)->_Array = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_DoubleMatrix__Array_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LIB_LA::Matrix< double > *arg1 = (LIB_LA::Matrix< double > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  double *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:DoubleMatrix__Array_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LIB_LA__MatrixT_double_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DoubleMatrix__Array_get" "', argument " "1"" of type '" "LIB_LA::Matrix< double > *""'"); 
-  }
-  arg1 = reinterpret_cast< LIB_LA::Matrix< double > * >(argp1);
-  result = (double *) ((arg1)->_Array);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_double, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
 SWIGINTERN PyObject *_wrap_new_DoubleMatrix__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   unsigned int arg1 ;
@@ -20952,162 +20797,6 @@ SWIGINTERN PyObject *DoubleMatrix_swigregister(PyObject *SWIGUNUSEDPARM(self), P
   return SWIG_Py_Void();
 }
 
-SWIGINTERN PyObject *_wrap_IntMatrix__Rows_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LIB_LA::Matrix< int > *arg1 = (LIB_LA::Matrix< int > *) 0 ;
-  unsigned int arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  unsigned int val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:IntMatrix__Rows_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LIB_LA__MatrixT_int_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "IntMatrix__Rows_set" "', argument " "1"" of type '" "LIB_LA::Matrix< int > *""'"); 
-  }
-  arg1 = reinterpret_cast< LIB_LA::Matrix< int > * >(argp1);
-  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "IntMatrix__Rows_set" "', argument " "2"" of type '" "unsigned int""'");
-  } 
-  arg2 = static_cast< unsigned int >(val2);
-  if (arg1) (arg1)->_Rows = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_IntMatrix__Rows_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LIB_LA::Matrix< int > *arg1 = (LIB_LA::Matrix< int > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  unsigned int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:IntMatrix__Rows_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LIB_LA__MatrixT_int_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "IntMatrix__Rows_get" "', argument " "1"" of type '" "LIB_LA::Matrix< int > *""'"); 
-  }
-  arg1 = reinterpret_cast< LIB_LA::Matrix< int > * >(argp1);
-  result = (unsigned int) ((arg1)->_Rows);
-  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_IntMatrix__Cols_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LIB_LA::Matrix< int > *arg1 = (LIB_LA::Matrix< int > *) 0 ;
-  unsigned int arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  unsigned int val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:IntMatrix__Cols_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LIB_LA__MatrixT_int_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "IntMatrix__Cols_set" "', argument " "1"" of type '" "LIB_LA::Matrix< int > *""'"); 
-  }
-  arg1 = reinterpret_cast< LIB_LA::Matrix< int > * >(argp1);
-  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "IntMatrix__Cols_set" "', argument " "2"" of type '" "unsigned int""'");
-  } 
-  arg2 = static_cast< unsigned int >(val2);
-  if (arg1) (arg1)->_Cols = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_IntMatrix__Cols_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LIB_LA::Matrix< int > *arg1 = (LIB_LA::Matrix< int > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  unsigned int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:IntMatrix__Cols_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LIB_LA__MatrixT_int_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "IntMatrix__Cols_get" "', argument " "1"" of type '" "LIB_LA::Matrix< int > *""'"); 
-  }
-  arg1 = reinterpret_cast< LIB_LA::Matrix< int > * >(argp1);
-  result = (unsigned int) ((arg1)->_Cols);
-  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_IntMatrix__Array_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LIB_LA::Matrix< int > *arg1 = (LIB_LA::Matrix< int > *) 0 ;
-  int *arg2 = (int *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:IntMatrix__Array_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LIB_LA__MatrixT_int_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "IntMatrix__Array_set" "', argument " "1"" of type '" "LIB_LA::Matrix< int > *""'"); 
-  }
-  arg1 = reinterpret_cast< LIB_LA::Matrix< int > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_int, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "IntMatrix__Array_set" "', argument " "2"" of type '" "int *""'"); 
-  }
-  arg2 = reinterpret_cast< int * >(argp2);
-  if (arg1) (arg1)->_Array = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_IntMatrix__Array_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LIB_LA::Matrix< int > *arg1 = (LIB_LA::Matrix< int > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  int *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:IntMatrix__Array_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LIB_LA__MatrixT_int_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "IntMatrix__Array_get" "', argument " "1"" of type '" "LIB_LA::Matrix< int > *""'"); 
-  }
-  arg1 = reinterpret_cast< LIB_LA::Matrix< int > * >(argp1);
-  result = (int *) ((arg1)->_Array);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_int, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
 SWIGINTERN PyObject *_wrap_new_IntMatrix__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   unsigned int arg1 ;
@@ -22628,162 +22317,6 @@ SWIGINTERN PyObject *IntMatrix_swigregister(PyObject *SWIGUNUSEDPARM(self), PyOb
   SWIG_TypeNewClientData(SWIGTYPE_p_LIB_LA__MatrixT_int_t, SWIG_NewClientData(obj));
   return SWIG_Py_Void();
 }
-
-SWIGINTERN PyObject *_wrap_ComplexMatrix__Rows_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LIB_LA::Matrix< LIB_LA::Complex > *arg1 = (LIB_LA::Matrix< LIB_LA::Complex > *) 0 ;
-  unsigned int arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  unsigned int val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:ComplexMatrix__Rows_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LIB_LA__MatrixT_LIB_LA__Complex_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ComplexMatrix__Rows_set" "', argument " "1"" of type '" "LIB_LA::Matrix< LIB_LA::Complex > *""'"); 
-  }
-  arg1 = reinterpret_cast< LIB_LA::Matrix< LIB_LA::Complex > * >(argp1);
-  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "ComplexMatrix__Rows_set" "', argument " "2"" of type '" "unsigned int""'");
-  } 
-  arg2 = static_cast< unsigned int >(val2);
-  if (arg1) (arg1)->_Rows = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ComplexMatrix__Rows_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LIB_LA::Matrix< LIB_LA::Complex > *arg1 = (LIB_LA::Matrix< LIB_LA::Complex > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  unsigned int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:ComplexMatrix__Rows_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LIB_LA__MatrixT_LIB_LA__Complex_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ComplexMatrix__Rows_get" "', argument " "1"" of type '" "LIB_LA::Matrix< LIB_LA::Complex > *""'"); 
-  }
-  arg1 = reinterpret_cast< LIB_LA::Matrix< LIB_LA::Complex > * >(argp1);
-  result = (unsigned int) ((arg1)->_Rows);
-  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ComplexMatrix__Cols_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LIB_LA::Matrix< LIB_LA::Complex > *arg1 = (LIB_LA::Matrix< LIB_LA::Complex > *) 0 ;
-  unsigned int arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  unsigned int val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:ComplexMatrix__Cols_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LIB_LA__MatrixT_LIB_LA__Complex_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ComplexMatrix__Cols_set" "', argument " "1"" of type '" "LIB_LA::Matrix< LIB_LA::Complex > *""'"); 
-  }
-  arg1 = reinterpret_cast< LIB_LA::Matrix< LIB_LA::Complex > * >(argp1);
-  ecode2 = SWIG_AsVal_unsigned_SS_int(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "ComplexMatrix__Cols_set" "', argument " "2"" of type '" "unsigned int""'");
-  } 
-  arg2 = static_cast< unsigned int >(val2);
-  if (arg1) (arg1)->_Cols = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ComplexMatrix__Cols_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LIB_LA::Matrix< LIB_LA::Complex > *arg1 = (LIB_LA::Matrix< LIB_LA::Complex > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  unsigned int result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:ComplexMatrix__Cols_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LIB_LA__MatrixT_LIB_LA__Complex_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ComplexMatrix__Cols_get" "', argument " "1"" of type '" "LIB_LA::Matrix< LIB_LA::Complex > *""'"); 
-  }
-  arg1 = reinterpret_cast< LIB_LA::Matrix< LIB_LA::Complex > * >(argp1);
-  result = (unsigned int) ((arg1)->_Cols);
-  resultobj = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ComplexMatrix__Array_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LIB_LA::Matrix< LIB_LA::Complex > *arg1 = (LIB_LA::Matrix< LIB_LA::Complex > *) 0 ;
-  LIB_LA::Complex *arg2 = (LIB_LA::Complex *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:ComplexMatrix__Array_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LIB_LA__MatrixT_LIB_LA__Complex_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ComplexMatrix__Array_set" "', argument " "1"" of type '" "LIB_LA::Matrix< LIB_LA::Complex > *""'"); 
-  }
-  arg1 = reinterpret_cast< LIB_LA::Matrix< LIB_LA::Complex > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_LIB_LA__Complex, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "ComplexMatrix__Array_set" "', argument " "2"" of type '" "LIB_LA::Complex *""'"); 
-  }
-  arg2 = reinterpret_cast< LIB_LA::Complex * >(argp2);
-  if (arg1) (arg1)->_Array = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_ComplexMatrix__Array_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  LIB_LA::Matrix< LIB_LA::Complex > *arg1 = (LIB_LA::Matrix< LIB_LA::Complex > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  LIB_LA::Complex *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:ComplexMatrix__Array_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_LIB_LA__MatrixT_LIB_LA__Complex_t, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "ComplexMatrix__Array_get" "', argument " "1"" of type '" "LIB_LA::Matrix< LIB_LA::Complex > *""'"); 
-  }
-  arg1 = reinterpret_cast< LIB_LA::Matrix< LIB_LA::Complex > * >(argp1);
-  result = (LIB_LA::Complex *) ((arg1)->_Array);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_LIB_LA__Complex, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
 
 SWIGINTERN PyObject *_wrap_new_ComplexMatrix__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
@@ -24316,152 +23849,275 @@ SWIGINTERN PyObject *ComplexMatrix_swigregister(PyObject *SWIGUNUSEDPARM(self), 
 
 static PyMethodDef SwigMethods[] = {
 	 { (char *)"SWIG_PyInstanceMethod_New", (PyCFunction)SWIG_PyInstanceMethod_New, METH_O, NULL},
-	 { (char *)"delete_SwigPyIterator", _wrap_delete_SwigPyIterator, METH_VARARGS, NULL},
-	 { (char *)"SwigPyIterator_value", _wrap_SwigPyIterator_value, METH_VARARGS, NULL},
-	 { (char *)"SwigPyIterator_incr", _wrap_SwigPyIterator_incr, METH_VARARGS, NULL},
-	 { (char *)"SwigPyIterator_decr", _wrap_SwigPyIterator_decr, METH_VARARGS, NULL},
-	 { (char *)"SwigPyIterator_distance", _wrap_SwigPyIterator_distance, METH_VARARGS, NULL},
-	 { (char *)"SwigPyIterator_equal", _wrap_SwigPyIterator_equal, METH_VARARGS, NULL},
-	 { (char *)"SwigPyIterator_copy", _wrap_SwigPyIterator_copy, METH_VARARGS, NULL},
-	 { (char *)"SwigPyIterator_next", _wrap_SwigPyIterator_next, METH_VARARGS, NULL},
-	 { (char *)"SwigPyIterator___next__", _wrap_SwigPyIterator___next__, METH_VARARGS, NULL},
-	 { (char *)"SwigPyIterator_previous", _wrap_SwigPyIterator_previous, METH_VARARGS, NULL},
-	 { (char *)"SwigPyIterator_advance", _wrap_SwigPyIterator_advance, METH_VARARGS, NULL},
-	 { (char *)"SwigPyIterator___eq__", _wrap_SwigPyIterator___eq__, METH_VARARGS, NULL},
-	 { (char *)"SwigPyIterator___ne__", _wrap_SwigPyIterator___ne__, METH_VARARGS, NULL},
-	 { (char *)"SwigPyIterator___iadd__", _wrap_SwigPyIterator___iadd__, METH_VARARGS, NULL},
-	 { (char *)"SwigPyIterator___isub__", _wrap_SwigPyIterator___isub__, METH_VARARGS, NULL},
-	 { (char *)"SwigPyIterator___add__", _wrap_SwigPyIterator___add__, METH_VARARGS, NULL},
-	 { (char *)"SwigPyIterator___sub__", _wrap_SwigPyIterator___sub__, METH_VARARGS, NULL},
+	 { (char *)"delete_SwigPyIterator", _wrap_delete_SwigPyIterator, METH_VARARGS, (char *)"delete_SwigPyIterator(SwigPyIterator self)"},
+	 { (char *)"SwigPyIterator_value", _wrap_SwigPyIterator_value, METH_VARARGS, (char *)"SwigPyIterator_value(SwigPyIterator self) -> PyObject *"},
+	 { (char *)"SwigPyIterator_incr", _wrap_SwigPyIterator_incr, METH_VARARGS, (char *)"\n"
+		"incr(size_t n=1) -> SwigPyIterator\n"
+		"SwigPyIterator_incr(SwigPyIterator self) -> SwigPyIterator\n"
+		""},
+	 { (char *)"SwigPyIterator_decr", _wrap_SwigPyIterator_decr, METH_VARARGS, (char *)"\n"
+		"decr(size_t n=1) -> SwigPyIterator\n"
+		"SwigPyIterator_decr(SwigPyIterator self) -> SwigPyIterator\n"
+		""},
+	 { (char *)"SwigPyIterator_distance", _wrap_SwigPyIterator_distance, METH_VARARGS, (char *)"SwigPyIterator_distance(SwigPyIterator self, SwigPyIterator x) -> ptrdiff_t"},
+	 { (char *)"SwigPyIterator_equal", _wrap_SwigPyIterator_equal, METH_VARARGS, (char *)"SwigPyIterator_equal(SwigPyIterator self, SwigPyIterator x) -> bool"},
+	 { (char *)"SwigPyIterator_copy", _wrap_SwigPyIterator_copy, METH_VARARGS, (char *)"SwigPyIterator_copy(SwigPyIterator self) -> SwigPyIterator"},
+	 { (char *)"SwigPyIterator_next", _wrap_SwigPyIterator_next, METH_VARARGS, (char *)"SwigPyIterator_next(SwigPyIterator self) -> PyObject *"},
+	 { (char *)"SwigPyIterator___next__", _wrap_SwigPyIterator___next__, METH_VARARGS, (char *)"SwigPyIterator___next__(SwigPyIterator self) -> PyObject *"},
+	 { (char *)"SwigPyIterator_previous", _wrap_SwigPyIterator_previous, METH_VARARGS, (char *)"SwigPyIterator_previous(SwigPyIterator self) -> PyObject *"},
+	 { (char *)"SwigPyIterator_advance", _wrap_SwigPyIterator_advance, METH_VARARGS, (char *)"SwigPyIterator_advance(SwigPyIterator self, ptrdiff_t n) -> SwigPyIterator"},
+	 { (char *)"SwigPyIterator___eq__", _wrap_SwigPyIterator___eq__, METH_VARARGS, (char *)"SwigPyIterator___eq__(SwigPyIterator self, SwigPyIterator x) -> bool"},
+	 { (char *)"SwigPyIterator___ne__", _wrap_SwigPyIterator___ne__, METH_VARARGS, (char *)"SwigPyIterator___ne__(SwigPyIterator self, SwigPyIterator x) -> bool"},
+	 { (char *)"SwigPyIterator___iadd__", _wrap_SwigPyIterator___iadd__, METH_VARARGS, (char *)"SwigPyIterator___iadd__(SwigPyIterator self, ptrdiff_t n) -> SwigPyIterator"},
+	 { (char *)"SwigPyIterator___isub__", _wrap_SwigPyIterator___isub__, METH_VARARGS, (char *)"SwigPyIterator___isub__(SwigPyIterator self, ptrdiff_t n) -> SwigPyIterator"},
+	 { (char *)"SwigPyIterator___add__", _wrap_SwigPyIterator___add__, METH_VARARGS, (char *)"SwigPyIterator___add__(SwigPyIterator self, ptrdiff_t n) -> SwigPyIterator"},
+	 { (char *)"SwigPyIterator___sub__", _wrap_SwigPyIterator___sub__, METH_VARARGS, (char *)"\n"
+		"__sub__(ptrdiff_t n) -> SwigPyIterator\n"
+		"SwigPyIterator___sub__(SwigPyIterator self, SwigPyIterator x) -> ptrdiff_t\n"
+		""},
 	 { (char *)"SwigPyIterator_swigregister", SwigPyIterator_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_StringDouble", _wrap_new_StringDouble, METH_VARARGS, NULL},
-	 { (char *)"StringDouble_first_set", _wrap_StringDouble_first_set, METH_VARARGS, NULL},
-	 { (char *)"StringDouble_first_get", _wrap_StringDouble_first_get, METH_VARARGS, NULL},
-	 { (char *)"StringDouble_second_set", _wrap_StringDouble_second_set, METH_VARARGS, NULL},
-	 { (char *)"StringDouble_second_get", _wrap_StringDouble_second_get, METH_VARARGS, NULL},
-	 { (char *)"delete_StringDouble", _wrap_delete_StringDouble, METH_VARARGS, NULL},
+	 { (char *)"new_StringDouble", _wrap_new_StringDouble, METH_VARARGS, (char *)"\n"
+		"StringDouble()\n"
+		"StringDouble(std::string first, double second)\n"
+		"new_StringDouble(StringDouble p) -> StringDouble\n"
+		""},
+	 { (char *)"StringDouble_first_set", _wrap_StringDouble_first_set, METH_VARARGS, (char *)"StringDouble_first_set(StringDouble self, std::string const & first)"},
+	 { (char *)"StringDouble_first_get", _wrap_StringDouble_first_get, METH_VARARGS, (char *)"StringDouble_first_get(StringDouble self) -> std::string const &"},
+	 { (char *)"StringDouble_second_set", _wrap_StringDouble_second_set, METH_VARARGS, (char *)"StringDouble_second_set(StringDouble self, double second)"},
+	 { (char *)"StringDouble_second_get", _wrap_StringDouble_second_get, METH_VARARGS, (char *)"StringDouble_second_get(StringDouble self) -> double"},
+	 { (char *)"delete_StringDouble", _wrap_delete_StringDouble, METH_VARARGS, (char *)"delete_StringDouble(StringDouble self)"},
 	 { (char *)"StringDouble_swigregister", StringDouble_swigregister, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector_iterator", _wrap_StrDoubleVector_iterator, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector___nonzero__", _wrap_StrDoubleVector___nonzero__, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector___bool__", _wrap_StrDoubleVector___bool__, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector___len__", _wrap_StrDoubleVector___len__, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector_pop", _wrap_StrDoubleVector_pop, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector___getslice__", _wrap_StrDoubleVector___getslice__, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector___setslice__", _wrap_StrDoubleVector___setslice__, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector___delslice__", _wrap_StrDoubleVector___delslice__, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector___delitem__", _wrap_StrDoubleVector___delitem__, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector___getitem__", _wrap_StrDoubleVector___getitem__, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector___setitem__", _wrap_StrDoubleVector___setitem__, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector_append", _wrap_StrDoubleVector_append, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector_empty", _wrap_StrDoubleVector_empty, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector_size", _wrap_StrDoubleVector_size, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector_clear", _wrap_StrDoubleVector_clear, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector_swap", _wrap_StrDoubleVector_swap, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector_get_allocator", _wrap_StrDoubleVector_get_allocator, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector_begin", _wrap_StrDoubleVector_begin, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector_end", _wrap_StrDoubleVector_end, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector_rbegin", _wrap_StrDoubleVector_rbegin, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector_rend", _wrap_StrDoubleVector_rend, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector_pop_back", _wrap_StrDoubleVector_pop_back, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector_erase", _wrap_StrDoubleVector_erase, METH_VARARGS, NULL},
-	 { (char *)"new_StrDoubleVector", _wrap_new_StrDoubleVector, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector_push_back", _wrap_StrDoubleVector_push_back, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector_front", _wrap_StrDoubleVector_front, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector_back", _wrap_StrDoubleVector_back, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector_assign", _wrap_StrDoubleVector_assign, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector_resize", _wrap_StrDoubleVector_resize, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector_insert", _wrap_StrDoubleVector_insert, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector_reserve", _wrap_StrDoubleVector_reserve, METH_VARARGS, NULL},
-	 { (char *)"StrDoubleVector_capacity", _wrap_StrDoubleVector_capacity, METH_VARARGS, NULL},
-	 { (char *)"delete_StrDoubleVector", _wrap_delete_StrDoubleVector, METH_VARARGS, NULL},
+	 { (char *)"StrDoubleVector_iterator", _wrap_StrDoubleVector_iterator, METH_VARARGS, (char *)"StrDoubleVector_iterator(StrDoubleVector self) -> SwigPyIterator"},
+	 { (char *)"StrDoubleVector___nonzero__", _wrap_StrDoubleVector___nonzero__, METH_VARARGS, (char *)"StrDoubleVector___nonzero__(StrDoubleVector self) -> bool"},
+	 { (char *)"StrDoubleVector___bool__", _wrap_StrDoubleVector___bool__, METH_VARARGS, (char *)"StrDoubleVector___bool__(StrDoubleVector self) -> bool"},
+	 { (char *)"StrDoubleVector___len__", _wrap_StrDoubleVector___len__, METH_VARARGS, (char *)"StrDoubleVector___len__(StrDoubleVector self) -> std::vector< std::pair< std::string,double > >::size_type"},
+	 { (char *)"StrDoubleVector_pop", _wrap_StrDoubleVector_pop, METH_VARARGS, (char *)"StrDoubleVector_pop(StrDoubleVector self) -> StringDouble"},
+	 { (char *)"StrDoubleVector___getslice__", _wrap_StrDoubleVector___getslice__, METH_VARARGS, (char *)"\n"
+		"StrDoubleVector___getslice__(StrDoubleVector self, std::vector< std::pair< std::string,double > >::difference_type i, \n"
+		"    std::vector< std::pair< std::string,double > >::difference_type j) -> StrDoubleVector\n"
+		""},
+	 { (char *)"StrDoubleVector___setslice__", _wrap_StrDoubleVector___setslice__, METH_VARARGS, (char *)"\n"
+		"__setslice__(std::vector< std::pair< std::string,double > >::difference_type i, std::vector< std::pair< std::string,double > >::difference_type j, \n"
+		"    StrDoubleVector v=std::vector< std::pair< std::string,double >,std::allocator< std::pair< std::string,double > > >())\n"
+		"StrDoubleVector___setslice__(StrDoubleVector self, std::vector< std::pair< std::string,double > >::difference_type i, \n"
+		"    std::vector< std::pair< std::string,double > >::difference_type j)\n"
+		""},
+	 { (char *)"StrDoubleVector___delslice__", _wrap_StrDoubleVector___delslice__, METH_VARARGS, (char *)"\n"
+		"StrDoubleVector___delslice__(StrDoubleVector self, std::vector< std::pair< std::string,double > >::difference_type i, \n"
+		"    std::vector< std::pair< std::string,double > >::difference_type j)\n"
+		""},
+	 { (char *)"StrDoubleVector___delitem__", _wrap_StrDoubleVector___delitem__, METH_VARARGS, (char *)"\n"
+		"__delitem__(std::vector< std::pair< std::string,double > >::difference_type i)\n"
+		"StrDoubleVector___delitem__(StrDoubleVector self, PySliceObject * slice)\n"
+		""},
+	 { (char *)"StrDoubleVector___getitem__", _wrap_StrDoubleVector___getitem__, METH_VARARGS, (char *)"\n"
+		"__getitem__(PySliceObject * slice) -> StrDoubleVector\n"
+		"StrDoubleVector___getitem__(StrDoubleVector self, std::vector< std::pair< std::string,double > >::difference_type i) -> StringDouble\n"
+		""},
+	 { (char *)"StrDoubleVector___setitem__", _wrap_StrDoubleVector___setitem__, METH_VARARGS, (char *)"\n"
+		"__setitem__(PySliceObject * slice, StrDoubleVector v)\n"
+		"__setitem__(PySliceObject * slice)\n"
+		"StrDoubleVector___setitem__(StrDoubleVector self, std::vector< std::pair< std::string,double > >::difference_type i, \n"
+		"    StringDouble x)\n"
+		""},
+	 { (char *)"StrDoubleVector_append", _wrap_StrDoubleVector_append, METH_VARARGS, (char *)"StrDoubleVector_append(StrDoubleVector self, StringDouble x)"},
+	 { (char *)"StrDoubleVector_empty", _wrap_StrDoubleVector_empty, METH_VARARGS, (char *)"StrDoubleVector_empty(StrDoubleVector self) -> bool"},
+	 { (char *)"StrDoubleVector_size", _wrap_StrDoubleVector_size, METH_VARARGS, (char *)"StrDoubleVector_size(StrDoubleVector self) -> std::vector< std::pair< std::string,double > >::size_type"},
+	 { (char *)"StrDoubleVector_clear", _wrap_StrDoubleVector_clear, METH_VARARGS, (char *)"StrDoubleVector_clear(StrDoubleVector self)"},
+	 { (char *)"StrDoubleVector_swap", _wrap_StrDoubleVector_swap, METH_VARARGS, (char *)"StrDoubleVector_swap(StrDoubleVector self, StrDoubleVector v)"},
+	 { (char *)"StrDoubleVector_get_allocator", _wrap_StrDoubleVector_get_allocator, METH_VARARGS, (char *)"StrDoubleVector_get_allocator(StrDoubleVector self) -> std::vector< std::pair< std::string,double > >::allocator_type"},
+	 { (char *)"StrDoubleVector_begin", _wrap_StrDoubleVector_begin, METH_VARARGS, (char *)"StrDoubleVector_begin(StrDoubleVector self) -> std::vector< std::pair< std::string,double > >::iterator"},
+	 { (char *)"StrDoubleVector_end", _wrap_StrDoubleVector_end, METH_VARARGS, (char *)"StrDoubleVector_end(StrDoubleVector self) -> std::vector< std::pair< std::string,double > >::iterator"},
+	 { (char *)"StrDoubleVector_rbegin", _wrap_StrDoubleVector_rbegin, METH_VARARGS, (char *)"StrDoubleVector_rbegin(StrDoubleVector self) -> std::vector< std::pair< std::string,double > >::reverse_iterator"},
+	 { (char *)"StrDoubleVector_rend", _wrap_StrDoubleVector_rend, METH_VARARGS, (char *)"StrDoubleVector_rend(StrDoubleVector self) -> std::vector< std::pair< std::string,double > >::reverse_iterator"},
+	 { (char *)"StrDoubleVector_pop_back", _wrap_StrDoubleVector_pop_back, METH_VARARGS, (char *)"StrDoubleVector_pop_back(StrDoubleVector self)"},
+	 { (char *)"StrDoubleVector_erase", _wrap_StrDoubleVector_erase, METH_VARARGS, (char *)"\n"
+		"erase(std::vector< std::pair< std::string,double > >::iterator pos) -> std::vector< std::pair< std::string,double > >::iterator\n"
+		"StrDoubleVector_erase(StrDoubleVector self, std::vector< std::pair< std::string,double > >::iterator first, \n"
+		"    std::vector< std::pair< std::string,double > >::iterator last) -> std::vector< std::pair< std::string,double > >::iterator\n"
+		""},
+	 { (char *)"new_StrDoubleVector", _wrap_new_StrDoubleVector, METH_VARARGS, (char *)"\n"
+		"StrDoubleVector()\n"
+		"StrDoubleVector(StrDoubleVector arg2)\n"
+		"StrDoubleVector(std::vector< std::pair< std::string,double > >::size_type size)\n"
+		"new_StrDoubleVector(std::vector< std::pair< std::string,double > >::size_type size, StringDouble value) -> StrDoubleVector\n"
+		""},
+	 { (char *)"StrDoubleVector_push_back", _wrap_StrDoubleVector_push_back, METH_VARARGS, (char *)"StrDoubleVector_push_back(StrDoubleVector self, StringDouble x)"},
+	 { (char *)"StrDoubleVector_front", _wrap_StrDoubleVector_front, METH_VARARGS, (char *)"StrDoubleVector_front(StrDoubleVector self) -> StringDouble"},
+	 { (char *)"StrDoubleVector_back", _wrap_StrDoubleVector_back, METH_VARARGS, (char *)"StrDoubleVector_back(StrDoubleVector self) -> StringDouble"},
+	 { (char *)"StrDoubleVector_assign", _wrap_StrDoubleVector_assign, METH_VARARGS, (char *)"\n"
+		"StrDoubleVector_assign(StrDoubleVector self, std::vector< std::pair< std::string,double > >::size_type n, \n"
+		"    StringDouble x)\n"
+		""},
+	 { (char *)"StrDoubleVector_resize", _wrap_StrDoubleVector_resize, METH_VARARGS, (char *)"\n"
+		"resize(std::vector< std::pair< std::string,double > >::size_type new_size)\n"
+		"StrDoubleVector_resize(StrDoubleVector self, std::vector< std::pair< std::string,double > >::size_type new_size, \n"
+		"    StringDouble x)\n"
+		""},
+	 { (char *)"StrDoubleVector_insert", _wrap_StrDoubleVector_insert, METH_VARARGS, (char *)"\n"
+		"insert(std::vector< std::pair< std::string,double > >::iterator pos, StringDouble x) -> std::vector< std::pair< std::string,double > >::iterator\n"
+		"StrDoubleVector_insert(StrDoubleVector self, std::vector< std::pair< std::string,double > >::iterator pos, \n"
+		"    std::vector< std::pair< std::string,double > >::size_type n, StringDouble x)\n"
+		""},
+	 { (char *)"StrDoubleVector_reserve", _wrap_StrDoubleVector_reserve, METH_VARARGS, (char *)"StrDoubleVector_reserve(StrDoubleVector self, std::vector< std::pair< std::string,double > >::size_type n)"},
+	 { (char *)"StrDoubleVector_capacity", _wrap_StrDoubleVector_capacity, METH_VARARGS, (char *)"StrDoubleVector_capacity(StrDoubleVector self) -> std::vector< std::pair< std::string,double > >::size_type"},
+	 { (char *)"delete_StrDoubleVector", _wrap_delete_StrDoubleVector, METH_VARARGS, (char *)"delete_StrDoubleVector(StrDoubleVector self)"},
 	 { (char *)"StrDoubleVector_swigregister", StrDoubleVector_swigregister, METH_VARARGS, NULL},
-	 { (char *)"StringVector_iterator", _wrap_StringVector_iterator, METH_VARARGS, NULL},
-	 { (char *)"StringVector___nonzero__", _wrap_StringVector___nonzero__, METH_VARARGS, NULL},
-	 { (char *)"StringVector___bool__", _wrap_StringVector___bool__, METH_VARARGS, NULL},
-	 { (char *)"StringVector___len__", _wrap_StringVector___len__, METH_VARARGS, NULL},
-	 { (char *)"StringVector_pop", _wrap_StringVector_pop, METH_VARARGS, NULL},
-	 { (char *)"StringVector___getslice__", _wrap_StringVector___getslice__, METH_VARARGS, NULL},
-	 { (char *)"StringVector___setslice__", _wrap_StringVector___setslice__, METH_VARARGS, NULL},
-	 { (char *)"StringVector___delslice__", _wrap_StringVector___delslice__, METH_VARARGS, NULL},
-	 { (char *)"StringVector___delitem__", _wrap_StringVector___delitem__, METH_VARARGS, NULL},
-	 { (char *)"StringVector___getitem__", _wrap_StringVector___getitem__, METH_VARARGS, NULL},
-	 { (char *)"StringVector___setitem__", _wrap_StringVector___setitem__, METH_VARARGS, NULL},
-	 { (char *)"StringVector_append", _wrap_StringVector_append, METH_VARARGS, NULL},
-	 { (char *)"StringVector_empty", _wrap_StringVector_empty, METH_VARARGS, NULL},
-	 { (char *)"StringVector_size", _wrap_StringVector_size, METH_VARARGS, NULL},
-	 { (char *)"StringVector_clear", _wrap_StringVector_clear, METH_VARARGS, NULL},
-	 { (char *)"StringVector_swap", _wrap_StringVector_swap, METH_VARARGS, NULL},
-	 { (char *)"StringVector_get_allocator", _wrap_StringVector_get_allocator, METH_VARARGS, NULL},
-	 { (char *)"StringVector_begin", _wrap_StringVector_begin, METH_VARARGS, NULL},
-	 { (char *)"StringVector_end", _wrap_StringVector_end, METH_VARARGS, NULL},
-	 { (char *)"StringVector_rbegin", _wrap_StringVector_rbegin, METH_VARARGS, NULL},
-	 { (char *)"StringVector_rend", _wrap_StringVector_rend, METH_VARARGS, NULL},
-	 { (char *)"StringVector_pop_back", _wrap_StringVector_pop_back, METH_VARARGS, NULL},
-	 { (char *)"StringVector_erase", _wrap_StringVector_erase, METH_VARARGS, NULL},
-	 { (char *)"new_StringVector", _wrap_new_StringVector, METH_VARARGS, NULL},
-	 { (char *)"StringVector_push_back", _wrap_StringVector_push_back, METH_VARARGS, NULL},
-	 { (char *)"StringVector_front", _wrap_StringVector_front, METH_VARARGS, NULL},
-	 { (char *)"StringVector_back", _wrap_StringVector_back, METH_VARARGS, NULL},
-	 { (char *)"StringVector_assign", _wrap_StringVector_assign, METH_VARARGS, NULL},
-	 { (char *)"StringVector_resize", _wrap_StringVector_resize, METH_VARARGS, NULL},
-	 { (char *)"StringVector_insert", _wrap_StringVector_insert, METH_VARARGS, NULL},
-	 { (char *)"StringVector_reserve", _wrap_StringVector_reserve, METH_VARARGS, NULL},
-	 { (char *)"StringVector_capacity", _wrap_StringVector_capacity, METH_VARARGS, NULL},
-	 { (char *)"delete_StringVector", _wrap_delete_StringVector, METH_VARARGS, NULL},
+	 { (char *)"StringVector_iterator", _wrap_StringVector_iterator, METH_VARARGS, (char *)"StringVector_iterator(StringVector self) -> SwigPyIterator"},
+	 { (char *)"StringVector___nonzero__", _wrap_StringVector___nonzero__, METH_VARARGS, (char *)"StringVector___nonzero__(StringVector self) -> bool"},
+	 { (char *)"StringVector___bool__", _wrap_StringVector___bool__, METH_VARARGS, (char *)"StringVector___bool__(StringVector self) -> bool"},
+	 { (char *)"StringVector___len__", _wrap_StringVector___len__, METH_VARARGS, (char *)"StringVector___len__(StringVector self) -> std::vector< std::string >::size_type"},
+	 { (char *)"StringVector_pop", _wrap_StringVector_pop, METH_VARARGS, (char *)"StringVector_pop(StringVector self) -> std::vector< std::string >::value_type"},
+	 { (char *)"StringVector___getslice__", _wrap_StringVector___getslice__, METH_VARARGS, (char *)"StringVector___getslice__(StringVector self, std::vector< std::string >::difference_type i, std::vector< std::string >::difference_type j) -> StringVector"},
+	 { (char *)"StringVector___setslice__", _wrap_StringVector___setslice__, METH_VARARGS, (char *)"\n"
+		"__setslice__(std::vector< std::string >::difference_type i, std::vector< std::string >::difference_type j, \n"
+		"    StringVector v=std::vector< std::string,std::allocator< std::string > >())\n"
+		"StringVector___setslice__(StringVector self, std::vector< std::string >::difference_type i, std::vector< std::string >::difference_type j)\n"
+		""},
+	 { (char *)"StringVector___delslice__", _wrap_StringVector___delslice__, METH_VARARGS, (char *)"StringVector___delslice__(StringVector self, std::vector< std::string >::difference_type i, std::vector< std::string >::difference_type j)"},
+	 { (char *)"StringVector___delitem__", _wrap_StringVector___delitem__, METH_VARARGS, (char *)"\n"
+		"__delitem__(std::vector< std::string >::difference_type i)\n"
+		"StringVector___delitem__(StringVector self, PySliceObject * slice)\n"
+		""},
+	 { (char *)"StringVector___getitem__", _wrap_StringVector___getitem__, METH_VARARGS, (char *)"\n"
+		"__getitem__(PySliceObject * slice) -> StringVector\n"
+		"StringVector___getitem__(StringVector self, std::vector< std::string >::difference_type i) -> std::vector< std::string >::value_type const &\n"
+		""},
+	 { (char *)"StringVector___setitem__", _wrap_StringVector___setitem__, METH_VARARGS, (char *)"\n"
+		"__setitem__(PySliceObject * slice, StringVector v)\n"
+		"__setitem__(PySliceObject * slice)\n"
+		"StringVector___setitem__(StringVector self, std::vector< std::string >::difference_type i, std::vector< std::string >::value_type const & x)\n"
+		""},
+	 { (char *)"StringVector_append", _wrap_StringVector_append, METH_VARARGS, (char *)"StringVector_append(StringVector self, std::vector< std::string >::value_type const & x)"},
+	 { (char *)"StringVector_empty", _wrap_StringVector_empty, METH_VARARGS, (char *)"StringVector_empty(StringVector self) -> bool"},
+	 { (char *)"StringVector_size", _wrap_StringVector_size, METH_VARARGS, (char *)"StringVector_size(StringVector self) -> std::vector< std::string >::size_type"},
+	 { (char *)"StringVector_clear", _wrap_StringVector_clear, METH_VARARGS, (char *)"StringVector_clear(StringVector self)"},
+	 { (char *)"StringVector_swap", _wrap_StringVector_swap, METH_VARARGS, (char *)"StringVector_swap(StringVector self, StringVector v)"},
+	 { (char *)"StringVector_get_allocator", _wrap_StringVector_get_allocator, METH_VARARGS, (char *)"StringVector_get_allocator(StringVector self) -> std::vector< std::string >::allocator_type"},
+	 { (char *)"StringVector_begin", _wrap_StringVector_begin, METH_VARARGS, (char *)"StringVector_begin(StringVector self) -> std::vector< std::string >::iterator"},
+	 { (char *)"StringVector_end", _wrap_StringVector_end, METH_VARARGS, (char *)"StringVector_end(StringVector self) -> std::vector< std::string >::iterator"},
+	 { (char *)"StringVector_rbegin", _wrap_StringVector_rbegin, METH_VARARGS, (char *)"StringVector_rbegin(StringVector self) -> std::vector< std::string >::reverse_iterator"},
+	 { (char *)"StringVector_rend", _wrap_StringVector_rend, METH_VARARGS, (char *)"StringVector_rend(StringVector self) -> std::vector< std::string >::reverse_iterator"},
+	 { (char *)"StringVector_pop_back", _wrap_StringVector_pop_back, METH_VARARGS, (char *)"StringVector_pop_back(StringVector self)"},
+	 { (char *)"StringVector_erase", _wrap_StringVector_erase, METH_VARARGS, (char *)"\n"
+		"erase(std::vector< std::string >::iterator pos) -> std::vector< std::string >::iterator\n"
+		"StringVector_erase(StringVector self, std::vector< std::string >::iterator first, std::vector< std::string >::iterator last) -> std::vector< std::string >::iterator\n"
+		""},
+	 { (char *)"new_StringVector", _wrap_new_StringVector, METH_VARARGS, (char *)"\n"
+		"StringVector()\n"
+		"StringVector(StringVector arg2)\n"
+		"StringVector(std::vector< std::string >::size_type size)\n"
+		"new_StringVector(std::vector< std::string >::size_type size, std::vector< std::string >::value_type const & value) -> StringVector\n"
+		""},
+	 { (char *)"StringVector_push_back", _wrap_StringVector_push_back, METH_VARARGS, (char *)"StringVector_push_back(StringVector self, std::vector< std::string >::value_type const & x)"},
+	 { (char *)"StringVector_front", _wrap_StringVector_front, METH_VARARGS, (char *)"StringVector_front(StringVector self) -> std::vector< std::string >::value_type const &"},
+	 { (char *)"StringVector_back", _wrap_StringVector_back, METH_VARARGS, (char *)"StringVector_back(StringVector self) -> std::vector< std::string >::value_type const &"},
+	 { (char *)"StringVector_assign", _wrap_StringVector_assign, METH_VARARGS, (char *)"StringVector_assign(StringVector self, std::vector< std::string >::size_type n, std::vector< std::string >::value_type const & x)"},
+	 { (char *)"StringVector_resize", _wrap_StringVector_resize, METH_VARARGS, (char *)"\n"
+		"resize(std::vector< std::string >::size_type new_size)\n"
+		"StringVector_resize(StringVector self, std::vector< std::string >::size_type new_size, std::vector< std::string >::value_type const & x)\n"
+		""},
+	 { (char *)"StringVector_insert", _wrap_StringVector_insert, METH_VARARGS, (char *)"\n"
+		"insert(std::vector< std::string >::iterator pos, std::vector< std::string >::value_type const & x) -> std::vector< std::string >::iterator\n"
+		"StringVector_insert(StringVector self, std::vector< std::string >::iterator pos, std::vector< std::string >::size_type n, \n"
+		"    std::vector< std::string >::value_type const & x)\n"
+		""},
+	 { (char *)"StringVector_reserve", _wrap_StringVector_reserve, METH_VARARGS, (char *)"StringVector_reserve(StringVector self, std::vector< std::string >::size_type n)"},
+	 { (char *)"StringVector_capacity", _wrap_StringVector_capacity, METH_VARARGS, (char *)"StringVector_capacity(StringVector self) -> std::vector< std::string >::size_type"},
+	 { (char *)"delete_StringVector", _wrap_delete_StringVector, METH_VARARGS, (char *)"delete_StringVector(StringVector self)"},
 	 { (char *)"StringVector_swigregister", StringVector_swigregister, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector_iterator", _wrap_DoubleVector_iterator, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector___nonzero__", _wrap_DoubleVector___nonzero__, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector___bool__", _wrap_DoubleVector___bool__, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector___len__", _wrap_DoubleVector___len__, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector_pop", _wrap_DoubleVector_pop, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector___getslice__", _wrap_DoubleVector___getslice__, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector___setslice__", _wrap_DoubleVector___setslice__, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector___delslice__", _wrap_DoubleVector___delslice__, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector___delitem__", _wrap_DoubleVector___delitem__, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector___getitem__", _wrap_DoubleVector___getitem__, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector___setitem__", _wrap_DoubleVector___setitem__, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector_append", _wrap_DoubleVector_append, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector_empty", _wrap_DoubleVector_empty, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector_size", _wrap_DoubleVector_size, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector_clear", _wrap_DoubleVector_clear, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector_swap", _wrap_DoubleVector_swap, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector_get_allocator", _wrap_DoubleVector_get_allocator, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector_begin", _wrap_DoubleVector_begin, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector_end", _wrap_DoubleVector_end, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector_rbegin", _wrap_DoubleVector_rbegin, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector_rend", _wrap_DoubleVector_rend, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector_pop_back", _wrap_DoubleVector_pop_back, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector_erase", _wrap_DoubleVector_erase, METH_VARARGS, NULL},
-	 { (char *)"new_DoubleVector", _wrap_new_DoubleVector, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector_push_back", _wrap_DoubleVector_push_back, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector_front", _wrap_DoubleVector_front, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector_back", _wrap_DoubleVector_back, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector_assign", _wrap_DoubleVector_assign, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector_resize", _wrap_DoubleVector_resize, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector_insert", _wrap_DoubleVector_insert, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector_reserve", _wrap_DoubleVector_reserve, METH_VARARGS, NULL},
-	 { (char *)"DoubleVector_capacity", _wrap_DoubleVector_capacity, METH_VARARGS, NULL},
-	 { (char *)"delete_DoubleVector", _wrap_delete_DoubleVector, METH_VARARGS, NULL},
+	 { (char *)"DoubleVector_iterator", _wrap_DoubleVector_iterator, METH_VARARGS, (char *)"DoubleVector_iterator(DoubleVector self) -> SwigPyIterator"},
+	 { (char *)"DoubleVector___nonzero__", _wrap_DoubleVector___nonzero__, METH_VARARGS, (char *)"DoubleVector___nonzero__(DoubleVector self) -> bool"},
+	 { (char *)"DoubleVector___bool__", _wrap_DoubleVector___bool__, METH_VARARGS, (char *)"DoubleVector___bool__(DoubleVector self) -> bool"},
+	 { (char *)"DoubleVector___len__", _wrap_DoubleVector___len__, METH_VARARGS, (char *)"DoubleVector___len__(DoubleVector self) -> std::vector< double >::size_type"},
+	 { (char *)"DoubleVector_pop", _wrap_DoubleVector_pop, METH_VARARGS, (char *)"DoubleVector_pop(DoubleVector self) -> std::vector< double >::value_type"},
+	 { (char *)"DoubleVector___getslice__", _wrap_DoubleVector___getslice__, METH_VARARGS, (char *)"DoubleVector___getslice__(DoubleVector self, std::vector< double >::difference_type i, std::vector< double >::difference_type j) -> DoubleVector"},
+	 { (char *)"DoubleVector___setslice__", _wrap_DoubleVector___setslice__, METH_VARARGS, (char *)"\n"
+		"__setslice__(std::vector< double >::difference_type i, std::vector< double >::difference_type j, \n"
+		"    DoubleVector v=std::vector< double,std::allocator< double > >())\n"
+		"DoubleVector___setslice__(DoubleVector self, std::vector< double >::difference_type i, std::vector< double >::difference_type j)\n"
+		""},
+	 { (char *)"DoubleVector___delslice__", _wrap_DoubleVector___delslice__, METH_VARARGS, (char *)"DoubleVector___delslice__(DoubleVector self, std::vector< double >::difference_type i, std::vector< double >::difference_type j)"},
+	 { (char *)"DoubleVector___delitem__", _wrap_DoubleVector___delitem__, METH_VARARGS, (char *)"\n"
+		"__delitem__(std::vector< double >::difference_type i)\n"
+		"DoubleVector___delitem__(DoubleVector self, PySliceObject * slice)\n"
+		""},
+	 { (char *)"DoubleVector___getitem__", _wrap_DoubleVector___getitem__, METH_VARARGS, (char *)"\n"
+		"__getitem__(PySliceObject * slice) -> DoubleVector\n"
+		"DoubleVector___getitem__(DoubleVector self, std::vector< double >::difference_type i) -> std::vector< double >::value_type const &\n"
+		""},
+	 { (char *)"DoubleVector___setitem__", _wrap_DoubleVector___setitem__, METH_VARARGS, (char *)"\n"
+		"__setitem__(PySliceObject * slice, DoubleVector v)\n"
+		"__setitem__(PySliceObject * slice)\n"
+		"DoubleVector___setitem__(DoubleVector self, std::vector< double >::difference_type i, std::vector< double >::value_type const & x)\n"
+		""},
+	 { (char *)"DoubleVector_append", _wrap_DoubleVector_append, METH_VARARGS, (char *)"DoubleVector_append(DoubleVector self, std::vector< double >::value_type const & x)"},
+	 { (char *)"DoubleVector_empty", _wrap_DoubleVector_empty, METH_VARARGS, (char *)"DoubleVector_empty(DoubleVector self) -> bool"},
+	 { (char *)"DoubleVector_size", _wrap_DoubleVector_size, METH_VARARGS, (char *)"DoubleVector_size(DoubleVector self) -> std::vector< double >::size_type"},
+	 { (char *)"DoubleVector_clear", _wrap_DoubleVector_clear, METH_VARARGS, (char *)"DoubleVector_clear(DoubleVector self)"},
+	 { (char *)"DoubleVector_swap", _wrap_DoubleVector_swap, METH_VARARGS, (char *)"DoubleVector_swap(DoubleVector self, DoubleVector v)"},
+	 { (char *)"DoubleVector_get_allocator", _wrap_DoubleVector_get_allocator, METH_VARARGS, (char *)"DoubleVector_get_allocator(DoubleVector self) -> std::vector< double >::allocator_type"},
+	 { (char *)"DoubleVector_begin", _wrap_DoubleVector_begin, METH_VARARGS, (char *)"DoubleVector_begin(DoubleVector self) -> std::vector< double >::iterator"},
+	 { (char *)"DoubleVector_end", _wrap_DoubleVector_end, METH_VARARGS, (char *)"DoubleVector_end(DoubleVector self) -> std::vector< double >::iterator"},
+	 { (char *)"DoubleVector_rbegin", _wrap_DoubleVector_rbegin, METH_VARARGS, (char *)"DoubleVector_rbegin(DoubleVector self) -> std::vector< double >::reverse_iterator"},
+	 { (char *)"DoubleVector_rend", _wrap_DoubleVector_rend, METH_VARARGS, (char *)"DoubleVector_rend(DoubleVector self) -> std::vector< double >::reverse_iterator"},
+	 { (char *)"DoubleVector_pop_back", _wrap_DoubleVector_pop_back, METH_VARARGS, (char *)"DoubleVector_pop_back(DoubleVector self)"},
+	 { (char *)"DoubleVector_erase", _wrap_DoubleVector_erase, METH_VARARGS, (char *)"\n"
+		"erase(std::vector< double >::iterator pos) -> std::vector< double >::iterator\n"
+		"DoubleVector_erase(DoubleVector self, std::vector< double >::iterator first, std::vector< double >::iterator last) -> std::vector< double >::iterator\n"
+		""},
+	 { (char *)"new_DoubleVector", _wrap_new_DoubleVector, METH_VARARGS, (char *)"\n"
+		"DoubleVector()\n"
+		"DoubleVector(DoubleVector arg2)\n"
+		"DoubleVector(std::vector< double >::size_type size)\n"
+		"new_DoubleVector(std::vector< double >::size_type size, std::vector< double >::value_type const & value) -> DoubleVector\n"
+		""},
+	 { (char *)"DoubleVector_push_back", _wrap_DoubleVector_push_back, METH_VARARGS, (char *)"DoubleVector_push_back(DoubleVector self, std::vector< double >::value_type const & x)"},
+	 { (char *)"DoubleVector_front", _wrap_DoubleVector_front, METH_VARARGS, (char *)"DoubleVector_front(DoubleVector self) -> std::vector< double >::value_type const &"},
+	 { (char *)"DoubleVector_back", _wrap_DoubleVector_back, METH_VARARGS, (char *)"DoubleVector_back(DoubleVector self) -> std::vector< double >::value_type const &"},
+	 { (char *)"DoubleVector_assign", _wrap_DoubleVector_assign, METH_VARARGS, (char *)"DoubleVector_assign(DoubleVector self, std::vector< double >::size_type n, std::vector< double >::value_type const & x)"},
+	 { (char *)"DoubleVector_resize", _wrap_DoubleVector_resize, METH_VARARGS, (char *)"\n"
+		"resize(std::vector< double >::size_type new_size)\n"
+		"DoubleVector_resize(DoubleVector self, std::vector< double >::size_type new_size, std::vector< double >::value_type const & x)\n"
+		""},
+	 { (char *)"DoubleVector_insert", _wrap_DoubleVector_insert, METH_VARARGS, (char *)"\n"
+		"insert(std::vector< double >::iterator pos, std::vector< double >::value_type const & x) -> std::vector< double >::iterator\n"
+		"DoubleVector_insert(DoubleVector self, std::vector< double >::iterator pos, std::vector< double >::size_type n, \n"
+		"    std::vector< double >::value_type const & x)\n"
+		""},
+	 { (char *)"DoubleVector_reserve", _wrap_DoubleVector_reserve, METH_VARARGS, (char *)"DoubleVector_reserve(DoubleVector self, std::vector< double >::size_type n)"},
+	 { (char *)"DoubleVector_capacity", _wrap_DoubleVector_capacity, METH_VARARGS, (char *)"DoubleVector_capacity(DoubleVector self) -> std::vector< double >::size_type"},
+	 { (char *)"delete_DoubleVector", _wrap_delete_DoubleVector, METH_VARARGS, (char *)"delete_DoubleVector(DoubleVector self)"},
 	 { (char *)"DoubleVector_swigregister", DoubleVector_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_StringVectorx2", _wrap_new_StringVectorx2, METH_VARARGS, NULL},
-	 { (char *)"StringVectorx2_first_set", _wrap_StringVectorx2_first_set, METH_VARARGS, NULL},
-	 { (char *)"StringVectorx2_first_get", _wrap_StringVectorx2_first_get, METH_VARARGS, NULL},
-	 { (char *)"StringVectorx2_second_set", _wrap_StringVectorx2_second_set, METH_VARARGS, NULL},
-	 { (char *)"StringVectorx2_second_get", _wrap_StringVectorx2_second_get, METH_VARARGS, NULL},
-	 { (char *)"delete_StringVectorx2", _wrap_delete_StringVectorx2, METH_VARARGS, NULL},
+	 { (char *)"new_StringVectorx2", _wrap_new_StringVectorx2, METH_VARARGS, (char *)"\n"
+		"StringVectorx2()\n"
+		"StringVectorx2(StringVector first, StringVector second)\n"
+		"new_StringVectorx2(StringVectorx2 p) -> StringVectorx2\n"
+		""},
+	 { (char *)"StringVectorx2_first_set", _wrap_StringVectorx2_first_set, METH_VARARGS, (char *)"StringVectorx2_first_set(StringVectorx2 self, StringVector first)"},
+	 { (char *)"StringVectorx2_first_get", _wrap_StringVectorx2_first_get, METH_VARARGS, (char *)"StringVectorx2_first_get(StringVectorx2 self) -> StringVector"},
+	 { (char *)"StringVectorx2_second_set", _wrap_StringVectorx2_second_set, METH_VARARGS, (char *)"StringVectorx2_second_set(StringVectorx2 self, StringVector second)"},
+	 { (char *)"StringVectorx2_second_get", _wrap_StringVectorx2_second_get, METH_VARARGS, (char *)"StringVectorx2_second_get(StringVectorx2 self) -> StringVector"},
+	 { (char *)"delete_StringVectorx2", _wrap_delete_StringVectorx2, METH_VARARGS, (char *)"delete_StringVectorx2(StringVectorx2 self)"},
 	 { (char *)"StringVectorx2_swigregister", StringVectorx2_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_DoubleMatrixStringVector", _wrap_new_DoubleMatrixStringVector, METH_VARARGS, NULL},
-	 { (char *)"DoubleMatrixStringVector_first_set", _wrap_DoubleMatrixStringVector_first_set, METH_VARARGS, NULL},
-	 { (char *)"DoubleMatrixStringVector_first_get", _wrap_DoubleMatrixStringVector_first_get, METH_VARARGS, NULL},
-	 { (char *)"DoubleMatrixStringVector_second_set", _wrap_DoubleMatrixStringVector_second_set, METH_VARARGS, NULL},
-	 { (char *)"DoubleMatrixStringVector_second_get", _wrap_DoubleMatrixStringVector_second_get, METH_VARARGS, NULL},
-	 { (char *)"delete_DoubleMatrixStringVector", _wrap_delete_DoubleMatrixStringVector, METH_VARARGS, NULL},
+	 { (char *)"new_DoubleMatrixStringVector", _wrap_new_DoubleMatrixStringVector, METH_VARARGS, (char *)"\n"
+		"DoubleMatrixStringVector()\n"
+		"DoubleMatrixStringVector(DoubleMatrix __a, StringVector __b)\n"
+		"new_DoubleMatrixStringVector(DoubleMatrixStringVector __p) -> DoubleMatrixStringVector\n"
+		""},
+	 { (char *)"DoubleMatrixStringVector_first_set", _wrap_DoubleMatrixStringVector_first_set, METH_VARARGS, (char *)"DoubleMatrixStringVector_first_set(DoubleMatrixStringVector self, DoubleMatrix first)"},
+	 { (char *)"DoubleMatrixStringVector_first_get", _wrap_DoubleMatrixStringVector_first_get, METH_VARARGS, (char *)"DoubleMatrixStringVector_first_get(DoubleMatrixStringVector self) -> DoubleMatrix"},
+	 { (char *)"DoubleMatrixStringVector_second_set", _wrap_DoubleMatrixStringVector_second_set, METH_VARARGS, (char *)"DoubleMatrixStringVector_second_set(DoubleMatrixStringVector self, StringVector second)"},
+	 { (char *)"DoubleMatrixStringVector_second_get", _wrap_DoubleMatrixStringVector_second_get, METH_VARARGS, (char *)"DoubleMatrixStringVector_second_get(DoubleMatrixStringVector self) -> StringVector"},
+	 { (char *)"delete_DoubleMatrixStringVector", _wrap_delete_DoubleMatrixStringVector, METH_VARARGS, (char *)"delete_DoubleMatrixStringVector(DoubleMatrixStringVector self)"},
 	 { (char *)"DoubleMatrixStringVector_swigregister", DoubleMatrixStringVector_swigregister, METH_VARARGS, NULL},
-	 { (char *)"getVersion", _wrap_getVersion, METH_VARARGS, NULL},
-	 { (char *)"LibStructural__my_loadStoichiometryMatrix", _wrap_LibStructural__my_loadStoichiometryMatrix, METH_VARARGS, NULL},
-	 { (char *)"LibStructural__my_rref", _wrap_LibStructural__my_rref, METH_VARARGS, NULL},
-	 { (char *)"LibStructural__my_rref_FB", _wrap_LibStructural__my_rref_FB, METH_VARARGS, NULL},
+	 { (char *)"getVersion", _wrap_getVersion, METH_VARARGS, (char *)"getVersion() -> char *"},
+	 { (char *)"LibStructural__my_loadStoichiometryMatrix", _wrap_LibStructural__my_loadStoichiometryMatrix, METH_VARARGS, (char *)"LibStructural__my_loadStoichiometryMatrix(LibStructural self, DoubleMatrix oMatrix)"},
+	 { (char *)"LibStructural__my_rref", _wrap_LibStructural__my_rref, METH_VARARGS, (char *)"LibStructural__my_rref(LibStructural self, DoubleMatrix oMatrix, double tolerance) -> DoubleMatrix"},
+	 { (char *)"LibStructural__my_rref_FB", _wrap_LibStructural__my_rref_FB, METH_VARARGS, (char *)"LibStructural__my_rref_FB(LibStructural self, DoubleMatrix oMatrix, double tolerance) -> DoubleMatrix"},
 	 { (char *)"LibStructural_loadSBMLFromString", _wrap_LibStructural_loadSBMLFromString, METH_VARARGS, (char *)"\n"
+		"LibStructural_loadSBMLFromString(LibStructural self, std::string sSBML) -> std::string\n"
+		"\n"
 		"LibStructural.loadSBMLFromString(self, *args)\n"
 		"\n"
 		":param: SBML string to load\n"
@@ -24472,6 +24128,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_loadSBMLFromFile", _wrap_LibStructural_loadSBMLFromFile, METH_VARARGS, (char *)"\n"
+		"LibStructural_loadSBMLFromFile(LibStructural self, std::string sFileName) -> std::string\n"
+		"\n"
 		"LibStructural.loadSBMLFromFile(self, *args)\n"
 		"\n"
 		":param: sFileName a file name to a SBML file to load\n"
@@ -24482,6 +24140,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_loadSBMLwithTests", _wrap_LibStructural_loadSBMLwithTests, METH_VARARGS, (char *)"\n"
+		"LibStructural_loadSBMLwithTests(LibStructural self, std::string sSBML) -> std::string\n"
+		"\n"
 		"LibStructural.loadSBMLwithTests(self, *args)\n"
 		"\n"
 		":param: a file name to an SBML model to load.\n"
@@ -24492,6 +24152,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_analyzeWithQR", _wrap_LibStructural_analyzeWithQR, METH_VARARGS, (char *)"\n"
+		"LibStructural_analyzeWithQR(LibStructural self) -> std::string\n"
+		"\n"
 		"LibStructural.analyzeWithQR(self)\n"
 		"\n"
 		"Uses QR factorization for structural analysis. This method performs the actual analysis of the stoichiometry matrix loaded \n"
@@ -24516,6 +24178,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_analyzeWithLU", _wrap_LibStructural_analyzeWithLU, METH_VARARGS, (char *)"\n"
+		"LibStructural_analyzeWithLU(LibStructural self) -> std::string\n"
+		"\n"
 		"LibStructural.analyzeWithLU(self)\n"
 		"Uses LU Decomposition for Conservation analysis. This method performs the actual analysis of the stoichiometry matrix (loaded either \n"
 		"via \n"
@@ -24535,6 +24199,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_analyzeWithLUandRunTests", _wrap_LibStructural_analyzeWithLUandRunTests, METH_VARARGS, (char *)"\n"
+		"LibStructural_analyzeWithLUandRunTests(LibStructural self) -> std::string\n"
+		"\n"
 		"LibStructural.analyzeWithLUandRunTests(self)\n"
 		"Uses LU Decomposition for Conservation analysis. This method performs the actual analysis of the stoichiometry matrix loaded either \n"
 		"via \n"
@@ -24556,6 +24222,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_analyzeWithFullyPivotedLU", _wrap_LibStructural_analyzeWithFullyPivotedLU, METH_VARARGS, (char *)"\n"
+		"LibStructural_analyzeWithFullyPivotedLU(LibStructural self) -> std::string\n"
+		"\n"
 		"LibStructural.analyzeWithFullyPivotedLU(self)\n"
 		"Uses fully pivoted LU Decomposition for Conservation analysis.This method performs the actual analysis of the stoichiometry matrix loaded either \n"
 		"via \n"
@@ -24575,6 +24243,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_analyzeWithFullyPivotedLUwithTests", _wrap_LibStructural_analyzeWithFullyPivotedLUwithTests, METH_VARARGS, (char *)"\n"
+		"LibStructural_analyzeWithFullyPivotedLUwithTests(LibStructural self) -> std::string\n"
+		"\n"
 		"LibStructural.analyzeWithFullyPivotedLUwithTests(self)\n"
 		"Uses fully pivoted LU Decomposition for Conservation analysis. This method performs the actual analysis of the stoichiometry matrix loaded \n"
 		"either via \n"
@@ -24595,22 +24265,24 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		"\n"
 		""},
-	 { (char *)"LibStructural__my_getL0Matrix", _wrap_LibStructural__my_getL0Matrix, METH_VARARGS, NULL},
-	 { (char *)"LibStructural__my_getNrMatrix", _wrap_LibStructural__my_getNrMatrix, METH_VARARGS, NULL},
-	 { (char *)"LibStructural__my_getFullyReorderedNrMatrix", _wrap_LibStructural__my_getFullyReorderedNrMatrix, METH_VARARGS, NULL},
-	 { (char *)"LibStructural__my_getFullyReorderedN0StoichiometryMatrix", _wrap_LibStructural__my_getFullyReorderedN0StoichiometryMatrix, METH_VARARGS, NULL},
-	 { (char *)"LibStructural__my_getColumnReorderedNrMatrix", _wrap_LibStructural__my_getColumnReorderedNrMatrix, METH_VARARGS, NULL},
-	 { (char *)"LibStructural__my_getNICMatrix", _wrap_LibStructural__my_getNICMatrix, METH_VARARGS, NULL},
-	 { (char *)"LibStructural__my_getNDCMatrix", _wrap_LibStructural__my_getNDCMatrix, METH_VARARGS, NULL},
-	 { (char *)"LibStructural__my_getN0Matrix", _wrap_LibStructural__my_getN0Matrix, METH_VARARGS, NULL},
-	 { (char *)"LibStructural__my_getK0Matrix", _wrap_LibStructural__my_getK0Matrix, METH_VARARGS, NULL},
-	 { (char *)"LibStructural__my_getKMatrix", _wrap_LibStructural__my_getKMatrix, METH_VARARGS, NULL},
-	 { (char *)"LibStructural__my_getGammaMatrix", _wrap_LibStructural__my_getGammaMatrix, METH_VARARGS, NULL},
-	 { (char *)"LibStructural__my_getGammaMatrixGJ", _wrap_LibStructural__my_getGammaMatrixGJ, METH_VARARGS, NULL},
-	 { (char *)"LibStructural__my_getStoichiometryMatrix", _wrap_LibStructural__my_getStoichiometryMatrix, METH_VARARGS, NULL},
-	 { (char *)"LibStructural__my_getReorderedStoichiometryMatrix", _wrap_LibStructural__my_getReorderedStoichiometryMatrix, METH_VARARGS, NULL},
-	 { (char *)"LibStructural__my_getFullyReorderedStoichiometryMatrix", _wrap_LibStructural__my_getFullyReorderedStoichiometryMatrix, METH_VARARGS, NULL},
+	 { (char *)"LibStructural__my_getL0Matrix", _wrap_LibStructural__my_getL0Matrix, METH_VARARGS, (char *)"LibStructural__my_getL0Matrix(LibStructural self) -> DoubleMatrix"},
+	 { (char *)"LibStructural__my_getNrMatrix", _wrap_LibStructural__my_getNrMatrix, METH_VARARGS, (char *)"LibStructural__my_getNrMatrix(LibStructural self) -> DoubleMatrix"},
+	 { (char *)"LibStructural__my_getFullyReorderedNrMatrix", _wrap_LibStructural__my_getFullyReorderedNrMatrix, METH_VARARGS, (char *)"LibStructural__my_getFullyReorderedNrMatrix(LibStructural self) -> DoubleMatrix"},
+	 { (char *)"LibStructural__my_getFullyReorderedN0StoichiometryMatrix", _wrap_LibStructural__my_getFullyReorderedN0StoichiometryMatrix, METH_VARARGS, (char *)"LibStructural__my_getFullyReorderedN0StoichiometryMatrix(LibStructural self) -> DoubleMatrix"},
+	 { (char *)"LibStructural__my_getColumnReorderedNrMatrix", _wrap_LibStructural__my_getColumnReorderedNrMatrix, METH_VARARGS, (char *)"LibStructural__my_getColumnReorderedNrMatrix(LibStructural self) -> DoubleMatrix"},
+	 { (char *)"LibStructural__my_getNICMatrix", _wrap_LibStructural__my_getNICMatrix, METH_VARARGS, (char *)"LibStructural__my_getNICMatrix(LibStructural self) -> DoubleMatrix"},
+	 { (char *)"LibStructural__my_getNDCMatrix", _wrap_LibStructural__my_getNDCMatrix, METH_VARARGS, (char *)"LibStructural__my_getNDCMatrix(LibStructural self) -> DoubleMatrix"},
+	 { (char *)"LibStructural__my_getN0Matrix", _wrap_LibStructural__my_getN0Matrix, METH_VARARGS, (char *)"LibStructural__my_getN0Matrix(LibStructural self) -> DoubleMatrix"},
+	 { (char *)"LibStructural__my_getK0Matrix", _wrap_LibStructural__my_getK0Matrix, METH_VARARGS, (char *)"LibStructural__my_getK0Matrix(LibStructural self) -> DoubleMatrix"},
+	 { (char *)"LibStructural__my_getKMatrix", _wrap_LibStructural__my_getKMatrix, METH_VARARGS, (char *)"LibStructural__my_getKMatrix(LibStructural self) -> DoubleMatrix"},
+	 { (char *)"LibStructural__my_getGammaMatrix", _wrap_LibStructural__my_getGammaMatrix, METH_VARARGS, (char *)"LibStructural__my_getGammaMatrix(LibStructural self) -> DoubleMatrix"},
+	 { (char *)"LibStructural__my_getGammaMatrixGJ", _wrap_LibStructural__my_getGammaMatrixGJ, METH_VARARGS, (char *)"LibStructural__my_getGammaMatrixGJ(LibStructural self, DoubleMatrix stoichiometry) -> DoubleMatrix"},
+	 { (char *)"LibStructural__my_getStoichiometryMatrix", _wrap_LibStructural__my_getStoichiometryMatrix, METH_VARARGS, (char *)"LibStructural__my_getStoichiometryMatrix(LibStructural self) -> DoubleMatrix"},
+	 { (char *)"LibStructural__my_getReorderedStoichiometryMatrix", _wrap_LibStructural__my_getReorderedStoichiometryMatrix, METH_VARARGS, (char *)"LibStructural__my_getReorderedStoichiometryMatrix(LibStructural self) -> DoubleMatrix"},
+	 { (char *)"LibStructural__my_getFullyReorderedStoichiometryMatrix", _wrap_LibStructural__my_getFullyReorderedStoichiometryMatrix, METH_VARARGS, (char *)"LibStructural__my_getFullyReorderedStoichiometryMatrix(LibStructural self) -> DoubleMatrix"},
 	 { (char *)"LibStructural_getReorderedSpecies", _wrap_LibStructural_getReorderedSpecies, METH_VARARGS, (char *)"\n"
+		"LibStructural_getReorderedSpecies(LibStructural self) -> StringVector\n"
+		"\n"
 		"LibStructural.getReorderedSpecies(self)\n"
 		"\n"
 		":returns: the reordered list of molecular species (choosing the SBML Id if possible).\n"
@@ -24618,6 +24290,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getSpecies", _wrap_LibStructural_getSpecies, METH_VARARGS, (char *)"\n"
+		"LibStructural_getSpecies(LibStructural self) -> StringVector\n"
+		"\n"
 		"LibStructural.getSpecies(self)\n"
 		"\n"
 		":returns: the unordered list of species Ids.\n"
@@ -24625,6 +24299,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getReorderedSpeciesNamesList", _wrap_LibStructural_getReorderedSpeciesNamesList, METH_VARARGS, (char *)"\n"
+		"LibStructural_getReorderedSpeciesNamesList(LibStructural self) -> StringVector\n"
+		"\n"
 		"LibStructural.getReorderedSpeciesNamesList(self)\n"
 		"\n"
 		":returns: the reordered list of molecular species (choosing the SBML Name if possible).\n"
@@ -24632,6 +24308,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getIndependentSpecies", _wrap_LibStructural_getIndependentSpecies, METH_VARARGS, (char *)"\n"
+		"LibStructural_getIndependentSpecies(LibStructural self) -> StringVector\n"
+		"\n"
 		"LibStructural.getIndependentSpecies(self)\n"
 		"\n"
 		":returns: the list of Ids for the independent species.\n"
@@ -24639,6 +24317,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getIndependentSpeciesNamesList", _wrap_LibStructural_getIndependentSpeciesNamesList, METH_VARARGS, (char *)"\n"
+		"LibStructural_getIndependentSpeciesNamesList(LibStructural self) -> StringVector\n"
+		"\n"
 		"LibStructural.getIndependentSpeciesNamesList(self)\n"
 		"\n"
 		":returns: the actual names of the independent species.\n"
@@ -24646,6 +24326,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getDependentSpecies", _wrap_LibStructural_getDependentSpecies, METH_VARARGS, (char *)"\n"
+		"LibStructural_getDependentSpecies(LibStructural self) -> StringVector\n"
+		"\n"
 		"LibStructural.getDependentSpecies(self)\n"
 		"\n"
 		":returns: the list of Ids for the dependent species.\n"
@@ -24653,6 +24335,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getDependentSpeciesNamesList", _wrap_LibStructural_getDependentSpeciesNamesList, METH_VARARGS, (char *)"\n"
+		"LibStructural_getDependentSpeciesNamesList(LibStructural self) -> StringVector\n"
+		"\n"
 		"LibStructural.getDependentSpeciesNamesList(self)\n"
 		"\n"
 		":returns: the display names of the dependent species.\n"
@@ -24660,6 +24344,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getReactions", _wrap_LibStructural_getReactions, METH_VARARGS, (char *)"\n"
+		"LibStructural_getReactions(LibStructural self) -> StringVector\n"
+		"\n"
 		"LibStructural.getReactions(self)\n"
 		"\n"
 		":returns: the list of Reactions.\n"
@@ -24667,6 +24353,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getIndependentReactionIds", _wrap_LibStructural_getIndependentReactionIds, METH_VARARGS, (char *)"\n"
+		"LibStructural_getIndependentReactionIds(LibStructural self) -> StringVector\n"
+		"\n"
 		"LibStructural.getIndependentReactionIds(self)\n"
 		"\n"
 		":returns: the list of Ids for the independent reactions.\n"
@@ -24674,6 +24362,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getDependentReactionIds", _wrap_LibStructural_getDependentReactionIds, METH_VARARGS, (char *)"\n"
+		"LibStructural_getDependentReactionIds(LibStructural self) -> StringVector\n"
+		"\n"
 		"LibStructural.getDependentReactionIds(self)\n"
 		"\n"
 		":returns: the list of Ids for the dependent reactions.\n"
@@ -24682,6 +24372,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getReactionsNamesList", _wrap_LibStructural_getReactionsNamesList, METH_VARARGS, (char *)"\n"
+		"LibStructural_getReactionsNamesList(LibStructural self) -> StringVector\n"
+		"\n"
 		"LibStructural.getReactionsNamesList(self)\n"
 		"\n"
 		":returns: display names of the reactions.\n"
@@ -24689,6 +24381,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getReorderedReactions", _wrap_LibStructural_getReorderedReactions, METH_VARARGS, (char *)"\n"
+		"LibStructural_getReorderedReactions(LibStructural self) -> StringVector\n"
+		"\n"
 		"LibStructural.getReorderedReactions(self)\n"
 		"\n"
 		":returns: the reordered Id list of reactions.\n"
@@ -24696,6 +24390,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getConservedLaws", _wrap_LibStructural_getConservedLaws, METH_VARARGS, (char *)"\n"
+		"LibStructural_getConservedLaws(LibStructural self) -> StringVector\n"
+		"\n"
 		"LibStructural.getConservedLaws(self)\n"
 		"\n"
 		":returns: algebraic expressions for the conserved cycles. Returns empty if none.\n"
@@ -24703,6 +24399,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getConservedSums", _wrap_LibStructural_getConservedSums, METH_VARARGS, (char *)"\n"
+		"LibStructural_getConservedSums(LibStructural self) -> DoubleVector\n"
+		"\n"
 		"LibStructural.getConservedSums(self)\n"
 		"\n"
 		":returns: Total mass for each conserved cycle in the model. The sum is based on the current initial conditions.\n"
@@ -24710,6 +24408,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getInitialConditions", _wrap_LibStructural_getInitialConditions, METH_VARARGS, (char *)"\n"
+		"LibStructural_getInitialConditions(LibStructural self) -> StrDoubleVector\n"
+		"\n"
 		"LibStructural.getInitialConditions(self)\n"
 		"\n"
 		":returns: Initial Conditions used in the model.\n"
@@ -24717,6 +24417,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_validateStructuralMatrices", _wrap_LibStructural_validateStructuralMatrices, METH_VARARGS, (char *)"\n"
+		"LibStructural_validateStructuralMatrices(LibStructural self) -> StringVector\n"
+		"\n"
 		"LibStructural.validateStructuralMatrices(self)\n"
 		"\n"
 		"Validates structural matrices. Calling this method will run the internal test suite against the structural\n"
@@ -24731,6 +24433,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getTestDetails", _wrap_LibStructural_getTestDetails, METH_VARARGS, (char *)"\n"
+		"LibStructural_getTestDetails(LibStructural self) -> std::string\n"
+		"\n"
 		"LibStructural.getTestDetails(self)\n"
 		"\n"
 		":returns: Details about the validation tests.\n"
@@ -24738,6 +24442,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getModelName", _wrap_LibStructural_getModelName, METH_VARARGS, (char *)"\n"
+		"LibStructural_getModelName(LibStructural self) -> std::string\n"
+		"\n"
 		"LibStructural.getModelName(self)\n"
 		"\n"
 		":returns: the name of the model if SBML model has Name-tag, otherwise it returns the SBML id. If only a stoichiometry matrix was loaded 'untitled' will be returned.\n"
@@ -24745,6 +24451,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getNumSpecies", _wrap_LibStructural_getNumSpecies, METH_VARARGS, (char *)"\n"
+		"LibStructural_getNumSpecies(LibStructural self) -> int\n"
+		"\n"
 		"LibStructural.getNumSpecies(self)\n"
 		"\n"
 		":returns: the total number of species\n"
@@ -24752,6 +24460,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getNumIndSpecies", _wrap_LibStructural_getNumIndSpecies, METH_VARARGS, (char *)"\n"
+		"LibStructural_getNumIndSpecies(LibStructural self) -> int\n"
+		"\n"
 		"LibStructural.getNumIndSpecies(self)\n"
 		"\n"
 		":returns: the number of independent species.\n"
@@ -24759,6 +24469,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getNumDepSpecies", _wrap_LibStructural_getNumDepSpecies, METH_VARARGS, (char *)"\n"
+		"LibStructural_getNumDepSpecies(LibStructural self) -> int\n"
+		"\n"
 		"LibStructural.getNumDepSpecies(self)\n"
 		"\n"
 		":returns: the number of dependent species.\n"
@@ -24766,6 +24478,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getNumReactions", _wrap_LibStructural_getNumReactions, METH_VARARGS, (char *)"\n"
+		"LibStructural_getNumReactions(LibStructural self) -> int\n"
+		"\n"
 		"LibStructural.getNumReactions(self)\n"
 		"\n"
 		":returns: the total number of reactions.\n"
@@ -24773,6 +24487,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getNumIndReactions", _wrap_LibStructural_getNumIndReactions, METH_VARARGS, (char *)"\n"
+		"LibStructural_getNumIndReactions(LibStructural self) -> int\n"
+		"\n"
 		"LibStructural.getNumIndReactions(self)\n"
 		"\n"
 		":returns: the number of independent reactions\n"
@@ -24780,6 +24496,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getNumDepReactions", _wrap_LibStructural_getNumDepReactions, METH_VARARGS, (char *)"\n"
+		"LibStructural_getNumDepReactions(LibStructural self) -> int\n"
+		"\n"
 		"LibStructural.getNumDepReactions(self)\n"
 		"\n"
 		":returns: the number of dependent reactions\n"
@@ -24787,18 +24505,23 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getNmatrixSparsity", _wrap_LibStructural_getNmatrixSparsity, METH_VARARGS, (char *)"\n"
+		"LibStructural_getNmatrixSparsity(LibStructural self) -> double\n"
+		"\n"
 		"LibStructural.getNmatrixSparsity(self)\n"
 		"\n"
 		":returns: the number of nonzero values in Stoichiometry matrix\n"
 		"\n"
 		"\n"
 		""},
-	 { (char *)"LibStructural__my_getEigenValues", _wrap_LibStructural__my_getEigenValues, METH_VARARGS, NULL},
-	 { (char *)"LibStructural__my_getEigenVectors", _wrap_LibStructural__my_getEigenVectors, METH_VARARGS, NULL},
-	 { (char *)"LibStructural__my_getConditionNumber", _wrap_LibStructural__my_getConditionNumber, METH_VARARGS, NULL},
-	 { (char *)"LibStructural__my_getLeftNullSpace", _wrap_LibStructural__my_getLeftNullSpace, METH_VARARGS, NULL},
-	 { (char *)"LibStructural__my_getRightNullSpace", _wrap_LibStructural__my_getRightNullSpace, METH_VARARGS, NULL},
+	 { (char *)"LibStructural__my_getEigenValues", _wrap_LibStructural__my_getEigenValues, METH_VARARGS, (char *)"LibStructural__my_getEigenValues(LibStructural self, DoubleMatrix oMatrix) -> DoubleMatrix"},
+	 { (char *)"LibStructural__my_getEigenVectors", _wrap_LibStructural__my_getEigenVectors, METH_VARARGS, (char *)"LibStructural__my_getEigenVectors(LibStructural self, DoubleMatrix oMatrix) -> DoubleMatrix"},
+	 { (char *)"LibStructural__my_getConditionNumber", _wrap_LibStructural__my_getConditionNumber, METH_VARARGS, (char *)"LibStructural__my_getConditionNumber(LibStructural self, DoubleMatrix oMatrix) -> double"},
+	 { (char *)"LibStructural__my_getLeftNullSpace", _wrap_LibStructural__my_getLeftNullSpace, METH_VARARGS, (char *)"LibStructural__my_getLeftNullSpace(LibStructural self, DoubleMatrix oMatrix) -> DoubleMatrix"},
+	 { (char *)"LibStructural__my_getRightNullSpace", _wrap_LibStructural__my_getRightNullSpace, METH_VARARGS, (char *)"LibStructural__my_getRightNullSpace(LibStructural self, DoubleMatrix oMatrix) -> DoubleMatrix"},
 	 { (char *)"LibStructural__my_getRank", _wrap_LibStructural__my_getRank, METH_VARARGS, (char *)"\n"
+		"_my_getRank() -> int\n"
+		"LibStructural__my_getRank(LibStructural self, DoubleMatrix oMatrix) -> int\n"
+		"\n"
 		"LibStructural.getRank(self);\n"
 		"\n"
 		":param: Matrix to find the rank of.\n"
@@ -24808,12 +24531,16 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getRCond", _wrap_LibStructural_getRCond, METH_VARARGS, (char *)"\n"
+		"LibStructural_getRCond(LibStructural self, DoubleMatrix oMatrix) -> double\n"
+		"\n"
 		"LibStructural.getRCond(self, *args)\n"
 		"\n"
 		"\n"
 		"\n"
 		""},
 	 { (char *)"LibStructural_setTolerance", _wrap_LibStructural_setTolerance, METH_VARARGS, (char *)"\n"
+		"LibStructural_setTolerance(LibStructural self, double dTolerance)\n"
+		"\n"
 		"LibStructural.setTolerance(self, *args)\n"
 		"\n"
 		":param:  an integer or float\n"
@@ -24823,6 +24550,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getTolerance", _wrap_LibStructural_getTolerance, METH_VARARGS, (char *)"\n"
+		"LibStructural_getTolerance(LibStructural self) -> double\n"
+		"\n"
 		"LibStructural.getTolerance(self)\n"
 		"\n"
 		":returns: the currently used tolerance for decided whether a small number is considered zero or not. \n"
@@ -24833,8 +24562,10 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		"\n"
 		""},
-	 { (char *)"new_LibStructural", _wrap_new_LibStructural, METH_VARARGS, NULL},
+	 { (char *)"new_LibStructural", _wrap_new_LibStructural, METH_VARARGS, (char *)"new_LibStructural() -> LibStructural"},
 	 { (char *)"LibStructural_getInstance", _wrap_LibStructural_getInstance, METH_VARARGS, (char *)"\n"
+		"LibStructural_getInstance() -> LibStructural\n"
+		"\n"
 		"LibStructural.getInstance(self)\n"
 		"\n"
 		"static method to get an instance of LibStructural (allows use as singleton)\n"
@@ -24844,6 +24575,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getColumnReorderedNrMatrixLabels", _wrap_LibStructural_getColumnReorderedNrMatrixLabels, METH_VARARGS, (char *)"\n"
+		"LibStructural_getColumnReorderedNrMatrixLabels(LibStructural self) -> StringVectorx2\n"
+		"\n"
 		"LibStructural.getColumnReorderedNrMatrixLabels(self)\n"
 		"\n"
 		":returns: the Nr Matrix row and column labels (repartitioned into NIC and NDC).\n"
@@ -24851,6 +24584,9 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_loadReactionNames", _wrap_LibStructural_loadReactionNames, METH_VARARGS, (char *)"\n"
+		"loadReactionNames(StringVector reactionNames)\n"
+		"LibStructural_loadReactionNames(LibStructural self, StringVector reactionNames)\n"
+		"\n"
 		"LibStructural.loadReactionNames(self, *args):\n"
 		"\n"
 		":param: a vector of reaction names (ids)\n"
@@ -24862,6 +24598,9 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_loadSpecies", _wrap_LibStructural_loadSpecies, METH_VARARGS, (char *)"\n"
+		"loadSpecies(StringVector speciesNames, DoubleVector speciesValues)\n"
+		"LibStructural_loadSpecies(LibStructural self, StringVector speciesNames, DoubleVector speciesValues)\n"
+		"\n"
 		"LibStructural.loadSpecies(self, *args):\n"
 		"\n"
 		":param: speciesNames a vector of species names (ids) to load\n"
@@ -24874,12 +24613,16 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getGammaMatrixLabels", _wrap_LibStructural_getGammaMatrixLabels, METH_VARARGS, (char *)"\n"
+		"LibStructural_getGammaMatrixLabels(LibStructural self) -> StringVectorx2\n"
+		"\n"
 		"LibStructural.getGammaMatrixLabels(self)\n"
 		"\n"
 		":returns: the row and column labels for Gamma, the conservation law array.\n"
 		"\n"
 		""},
 	 { (char *)"LibStructural_getK0MatrixLabels", _wrap_LibStructural_getK0MatrixLabels, METH_VARARGS, (char *)"\n"
+		"LibStructural_getK0MatrixLabels(LibStructural self) -> StringVectorx2\n"
+		"\n"
 		"LibStructural.getK0MatrixLabels(self)\n"
 		"\n"
 		":returns: the K0 Matrix row and column labels.\n"
@@ -24887,6 +24630,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getKMatrixLabels", _wrap_LibStructural_getKMatrixLabels, METH_VARARGS, (char *)"\n"
+		"LibStructural_getKMatrixLabels(LibStructural self) -> StringVectorx2\n"
+		"\n"
 		"LibStructural.getKMatrixLabels(self)\n"
 		"\n"
 		":returns: the K matrix row and column labels.\n"
@@ -24894,6 +24639,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getL0MatrixLabels", _wrap_LibStructural_getL0MatrixLabels, METH_VARARGS, (char *)"\n"
+		"LibStructural_getL0MatrixLabels(LibStructural self) -> StringVectorx2\n"
+		"\n"
 		"LibStructural.getL0MatrixLabels(self)\n"
 		"\n"
 		":returns: the L0 Matrix row and column labels.\n"
@@ -24901,6 +24648,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getLinkMatrixLabels", _wrap_LibStructural_getLinkMatrixLabels, METH_VARARGS, (char *)"\n"
+		"LibStructural_getLinkMatrixLabels(LibStructural self) -> StringVectorx2\n"
+		"\n"
 		"LibStructural.getLinkMatrixLabels(self)\n"
 		"\n"
 		":returns: the row and column labels for the Link Matrix, L\n"
@@ -24908,6 +24657,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getN0MatrixLabels", _wrap_LibStructural_getN0MatrixLabels, METH_VARARGS, (char *)"\n"
+		"LibStructural_getN0MatrixLabels(LibStructural self) -> StringVectorx2\n"
+		"\n"
 		"LibStructural.getN0MatrixLabels(self)\n"
 		"\n"
 		":returns: the N0 Matrix row and column labels.\n"
@@ -24915,6 +24666,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getNDCMatrixLabels", _wrap_LibStructural_getNDCMatrixLabels, METH_VARARGS, (char *)"\n"
+		"LibStructural_getNDCMatrixLabels(LibStructural self) -> StringVectorx2\n"
+		"\n"
 		"LibStructural.getNDCMatrixLabels(self)\n"
 		"\n"
 		":returns: the NDC Matrix row and column labels.\n"
@@ -24922,6 +24675,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getNICMatrixLabels", _wrap_LibStructural_getNICMatrixLabels, METH_VARARGS, (char *)"\n"
+		"LibStructural_getNICMatrixLabels(LibStructural self) -> StringVectorx2\n"
+		"\n"
 		"LibStructural.getNICMatrixLabels(self)\n"
 		"\n"
 		":returns: the NIC Matrix row and column labels.\n"
@@ -24929,6 +24684,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getNrMatrixLabels", _wrap_LibStructural_getNrMatrixLabels, METH_VARARGS, (char *)"\n"
+		"LibStructural_getNrMatrixLabels(LibStructural self) -> StringVectorx2\n"
+		"\n"
 		"LibStructural.getNrMatrixLabels(self)\n"
 		"\n"
 		":returns: the Nr Matrix row and column labels.\n"
@@ -24936,6 +24693,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getStoichiometryMatrixLabels", _wrap_LibStructural_getStoichiometryMatrixLabels, METH_VARARGS, (char *)"\n"
+		"LibStructural_getStoichiometryMatrixLabels(LibStructural self) -> StringVectorx2\n"
+		"\n"
 		"LibStructural.getStoichiometryMatrixLabels(self)\n"
 		"\n"
 		":returns: the row and column labels for the original and unaltered stoichiometry matrix.\n"
@@ -24943,6 +24702,8 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getFullyReorderedStoichiometryMatrixLabels", _wrap_LibStructural_getFullyReorderedStoichiometryMatrixLabels, METH_VARARGS, (char *)"\n"
+		"LibStructural_getFullyReorderedStoichiometryMatrixLabels(LibStructural self) -> StringVectorx2\n"
+		"\n"
 		"LibStructural.getFullyReorderedStoichiometryMatrixLabels(self)\n"
 		"\n"
 		":returns: the row and column labels for the reordered stoichiometry matrix (row reordered stoichiometry matrix)\n"
@@ -24950,106 +24711,135 @@ static PyMethodDef SwigMethods[] = {
 		"\n"
 		""},
 	 { (char *)"LibStructural_getReorderedStoichiometryMatrixLabels", _wrap_LibStructural_getReorderedStoichiometryMatrixLabels, METH_VARARGS, (char *)"\n"
+		"LibStructural_getReorderedStoichiometryMatrixLabels(LibStructural self) -> StringVectorx2\n"
+		"\n"
 		"LibStructural.getReorderedStoichiometryMatrixLabels(self)\n"
 		"\n"
 		":returns: the row and column labels for the reordered stoichiometry matrix (row reordered stoichiometry matrix)\n"
 		"\n"
 		"\n"
 		""},
-	 { (char *)"delete_LibStructural", _wrap_delete_LibStructural, METH_VARARGS, NULL},
+	 { (char *)"delete_LibStructural", _wrap_delete_LibStructural, METH_VARARGS, (char *)"delete_LibStructural(LibStructural self)"},
 	 { (char *)"LibStructural_swigregister", LibStructural_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_complexArray", _wrap_new_complexArray, METH_VARARGS, NULL},
-	 { (char *)"delete_complexArray", _wrap_delete_complexArray, METH_VARARGS, NULL},
-	 { (char *)"complexArray___getitem__", _wrap_complexArray___getitem__, METH_VARARGS, NULL},
-	 { (char *)"complexArray___setitem__", _wrap_complexArray___setitem__, METH_VARARGS, NULL},
-	 { (char *)"complexArray_cast", _wrap_complexArray_cast, METH_VARARGS, NULL},
-	 { (char *)"complexArray_frompointer", _wrap_complexArray_frompointer, METH_VARARGS, NULL},
+	 { (char *)"new_complexArray", _wrap_new_complexArray, METH_VARARGS, (char *)"new_complexArray(size_t nelements) -> complexArray"},
+	 { (char *)"delete_complexArray", _wrap_delete_complexArray, METH_VARARGS, (char *)"delete_complexArray(complexArray self)"},
+	 { (char *)"complexArray___getitem__", _wrap_complexArray___getitem__, METH_VARARGS, (char *)"complexArray___getitem__(complexArray self, size_t index) -> LIB_LA::Complex"},
+	 { (char *)"complexArray___setitem__", _wrap_complexArray___setitem__, METH_VARARGS, (char *)"complexArray___setitem__(complexArray self, size_t index, LIB_LA::Complex value)"},
+	 { (char *)"complexArray_cast", _wrap_complexArray_cast, METH_VARARGS, (char *)"complexArray_cast(complexArray self) -> LIB_LA::Complex *"},
+	 { (char *)"complexArray_frompointer", _wrap_complexArray_frompointer, METH_VARARGS, (char *)"complexArray_frompointer(LIB_LA::Complex * t) -> complexArray"},
 	 { (char *)"complexArray_swigregister", complexArray_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_doubleArray", _wrap_new_doubleArray, METH_VARARGS, NULL},
-	 { (char *)"delete_doubleArray", _wrap_delete_doubleArray, METH_VARARGS, NULL},
-	 { (char *)"doubleArray___getitem__", _wrap_doubleArray___getitem__, METH_VARARGS, NULL},
-	 { (char *)"doubleArray___setitem__", _wrap_doubleArray___setitem__, METH_VARARGS, NULL},
-	 { (char *)"doubleArray_cast", _wrap_doubleArray_cast, METH_VARARGS, NULL},
-	 { (char *)"doubleArray_frompointer", _wrap_doubleArray_frompointer, METH_VARARGS, NULL},
+	 { (char *)"new_doubleArray", _wrap_new_doubleArray, METH_VARARGS, (char *)"new_doubleArray(size_t nelements) -> doubleArray"},
+	 { (char *)"delete_doubleArray", _wrap_delete_doubleArray, METH_VARARGS, (char *)"delete_doubleArray(doubleArray self)"},
+	 { (char *)"doubleArray___getitem__", _wrap_doubleArray___getitem__, METH_VARARGS, (char *)"doubleArray___getitem__(doubleArray self, size_t index) -> double"},
+	 { (char *)"doubleArray___setitem__", _wrap_doubleArray___setitem__, METH_VARARGS, (char *)"doubleArray___setitem__(doubleArray self, size_t index, double value)"},
+	 { (char *)"doubleArray_cast", _wrap_doubleArray_cast, METH_VARARGS, (char *)"doubleArray_cast(doubleArray self) -> double *"},
+	 { (char *)"doubleArray_frompointer", _wrap_doubleArray_frompointer, METH_VARARGS, (char *)"doubleArray_frompointer(double * t) -> doubleArray"},
 	 { (char *)"doubleArray_swigregister", doubleArray_swigregister, METH_VARARGS, NULL},
-	 { (char *)"new_intArray", _wrap_new_intArray, METH_VARARGS, NULL},
-	 { (char *)"delete_intArray", _wrap_delete_intArray, METH_VARARGS, NULL},
-	 { (char *)"intArray___getitem__", _wrap_intArray___getitem__, METH_VARARGS, NULL},
-	 { (char *)"intArray___setitem__", _wrap_intArray___setitem__, METH_VARARGS, NULL},
-	 { (char *)"intArray_cast", _wrap_intArray_cast, METH_VARARGS, NULL},
-	 { (char *)"intArray_frompointer", _wrap_intArray_frompointer, METH_VARARGS, NULL},
+	 { (char *)"new_intArray", _wrap_new_intArray, METH_VARARGS, (char *)"new_intArray(size_t nelements) -> intArray"},
+	 { (char *)"delete_intArray", _wrap_delete_intArray, METH_VARARGS, (char *)"delete_intArray(intArray self)"},
+	 { (char *)"intArray___getitem__", _wrap_intArray___getitem__, METH_VARARGS, (char *)"intArray___getitem__(intArray self, size_t index) -> int"},
+	 { (char *)"intArray___setitem__", _wrap_intArray___setitem__, METH_VARARGS, (char *)"intArray___setitem__(intArray self, size_t index, int value)"},
+	 { (char *)"intArray_cast", _wrap_intArray_cast, METH_VARARGS, (char *)"intArray_cast(intArray self) -> int *"},
+	 { (char *)"intArray_frompointer", _wrap_intArray_frompointer, METH_VARARGS, (char *)"intArray_frompointer(int * t) -> intArray"},
 	 { (char *)"intArray_swigregister", intArray_swigregister, METH_VARARGS, NULL},
-	 { (char *)"DoubleMatrix__Rows_set", _wrap_DoubleMatrix__Rows_set, METH_VARARGS, NULL},
-	 { (char *)"DoubleMatrix__Rows_get", _wrap_DoubleMatrix__Rows_get, METH_VARARGS, NULL},
-	 { (char *)"DoubleMatrix__Cols_set", _wrap_DoubleMatrix__Cols_set, METH_VARARGS, NULL},
-	 { (char *)"DoubleMatrix__Cols_get", _wrap_DoubleMatrix__Cols_get, METH_VARARGS, NULL},
-	 { (char *)"DoubleMatrix__Array_set", _wrap_DoubleMatrix__Array_set, METH_VARARGS, NULL},
-	 { (char *)"DoubleMatrix__Array_get", _wrap_DoubleMatrix__Array_get, METH_VARARGS, NULL},
-	 { (char *)"new_DoubleMatrix", _wrap_new_DoubleMatrix, METH_VARARGS, NULL},
-	 { (char *)"DoubleMatrix_getArray", _wrap_DoubleMatrix_getArray, METH_VARARGS, NULL},
-	 { (char *)"DoubleMatrix_getCopy", _wrap_DoubleMatrix_getCopy, METH_VARARGS, NULL},
-	 { (char *)"DoubleMatrix_initializeFrom2DMatrix", _wrap_DoubleMatrix_initializeFrom2DMatrix, METH_VARARGS, NULL},
-	 { (char *)"DoubleMatrix_initializeFromConst2DMatrix", _wrap_DoubleMatrix_initializeFromConst2DMatrix, METH_VARARGS, NULL},
-	 { (char *)"delete_DoubleMatrix", _wrap_delete_DoubleMatrix, METH_VARARGS, NULL},
-	 { (char *)"DoubleMatrix_get2DMatrix", _wrap_DoubleMatrix_get2DMatrix, METH_VARARGS, NULL},
-	 { (char *)"DoubleMatrix_swapRows", _wrap_DoubleMatrix_swapRows, METH_VARARGS, NULL},
-	 { (char *)"DoubleMatrix_swapCols", _wrap_DoubleMatrix_swapCols, METH_VARARGS, NULL},
-	 { (char *)"DoubleMatrix_resize", _wrap_DoubleMatrix_resize, METH_VARARGS, NULL},
-	 { (char *)"DoubleMatrix_getTranspose", _wrap_DoubleMatrix_getTranspose, METH_VARARGS, NULL},
-	 { (char *)"DoubleMatrix_size", _wrap_DoubleMatrix_size, METH_VARARGS, NULL},
-	 { (char *)"DoubleMatrix_numRows", _wrap_DoubleMatrix_numRows, METH_VARARGS, NULL},
-	 { (char *)"DoubleMatrix_numCols", _wrap_DoubleMatrix_numCols, METH_VARARGS, NULL},
-	 { (char *)"DoubleMatrix___call__", _wrap_DoubleMatrix___call__, METH_VARARGS, NULL},
-	 { (char *)"DoubleMatrix_get", _wrap_DoubleMatrix_get, METH_VARARGS, NULL},
-	 { (char *)"DoubleMatrix_set", _wrap_DoubleMatrix_set, METH_VARARGS, NULL},
+	 { (char *)"new_DoubleMatrix", _wrap_new_DoubleMatrix, METH_VARARGS, (char *)"\n"
+		"DoubleMatrix(unsigned int rows=0, unsigned int cols=0)\n"
+		"DoubleMatrix(unsigned int rows=0)\n"
+		"DoubleMatrix()\n"
+		"DoubleMatrix(DoubleMatrix src)\n"
+		"DoubleMatrix(double *& oRawData, int nRows, int nCols, bool transpose=True)\n"
+		"DoubleMatrix(double *& oRawData, int nRows, int nCols)\n"
+		"DoubleMatrix(double **& oRawData, int nRows, int nCols)\n"
+		"new_DoubleMatrix(double const ** oRawData, int nRows, int nCols) -> DoubleMatrix\n"
+		""},
+	 { (char *)"DoubleMatrix_getArray", _wrap_DoubleMatrix_getArray, METH_VARARGS, (char *)"DoubleMatrix_getArray(DoubleMatrix self) -> double *"},
+	 { (char *)"DoubleMatrix_getCopy", _wrap_DoubleMatrix_getCopy, METH_VARARGS, (char *)"\n"
+		"getCopy(bool transpose=False) -> double\n"
+		"DoubleMatrix_getCopy(DoubleMatrix self) -> double *\n"
+		""},
+	 { (char *)"DoubleMatrix_initializeFrom2DMatrix", _wrap_DoubleMatrix_initializeFrom2DMatrix, METH_VARARGS, (char *)"DoubleMatrix_initializeFrom2DMatrix(DoubleMatrix self, double **& oRawData, int nRows, int nCols)"},
+	 { (char *)"DoubleMatrix_initializeFromConst2DMatrix", _wrap_DoubleMatrix_initializeFromConst2DMatrix, METH_VARARGS, (char *)"DoubleMatrix_initializeFromConst2DMatrix(DoubleMatrix self, double const ** oRawData, int nRows, int nCols)"},
+	 { (char *)"delete_DoubleMatrix", _wrap_delete_DoubleMatrix, METH_VARARGS, (char *)"delete_DoubleMatrix(DoubleMatrix self)"},
+	 { (char *)"DoubleMatrix_get2DMatrix", _wrap_DoubleMatrix_get2DMatrix, METH_VARARGS, (char *)"DoubleMatrix_get2DMatrix(DoubleMatrix self, int & nRows, int & nCols) -> double **"},
+	 { (char *)"DoubleMatrix_swapRows", _wrap_DoubleMatrix_swapRows, METH_VARARGS, (char *)"DoubleMatrix_swapRows(DoubleMatrix self, unsigned int row1, unsigned int row2)"},
+	 { (char *)"DoubleMatrix_swapCols", _wrap_DoubleMatrix_swapCols, METH_VARARGS, (char *)"DoubleMatrix_swapCols(DoubleMatrix self, unsigned int col1, unsigned int col2)"},
+	 { (char *)"DoubleMatrix_resize", _wrap_DoubleMatrix_resize, METH_VARARGS, (char *)"DoubleMatrix_resize(DoubleMatrix self, unsigned int rows, unsigned int cols)"},
+	 { (char *)"DoubleMatrix_getTranspose", _wrap_DoubleMatrix_getTranspose, METH_VARARGS, (char *)"DoubleMatrix_getTranspose(DoubleMatrix self) -> DoubleMatrix"},
+	 { (char *)"DoubleMatrix_size", _wrap_DoubleMatrix_size, METH_VARARGS, (char *)"DoubleMatrix_size(DoubleMatrix self) -> unsigned int"},
+	 { (char *)"DoubleMatrix_numRows", _wrap_DoubleMatrix_numRows, METH_VARARGS, (char *)"DoubleMatrix_numRows(DoubleMatrix self) -> unsigned int"},
+	 { (char *)"DoubleMatrix_numCols", _wrap_DoubleMatrix_numCols, METH_VARARGS, (char *)"DoubleMatrix_numCols(DoubleMatrix self) -> unsigned int"},
+	 { (char *)"DoubleMatrix___call__", _wrap_DoubleMatrix___call__, METH_VARARGS, (char *)"\n"
+		"__call__(unsigned int const & row, unsigned int const & col) -> LIB_LA::Matrix< double >::_ElementType\n"
+		"DoubleMatrix___call__(DoubleMatrix self, unsigned int const & row, unsigned int const & col) -> LIB_LA::Matrix< double >::_ElementType const &\n"
+		""},
+	 { (char *)"DoubleMatrix_get", _wrap_DoubleMatrix_get, METH_VARARGS, (char *)"DoubleMatrix_get(DoubleMatrix self, unsigned int const row, unsigned int const col) -> double"},
+	 { (char *)"DoubleMatrix_set", _wrap_DoubleMatrix_set, METH_VARARGS, (char *)"DoubleMatrix_set(DoubleMatrix self, unsigned int const row, unsigned int const col, double value)"},
 	 { (char *)"DoubleMatrix_swigregister", DoubleMatrix_swigregister, METH_VARARGS, NULL},
-	 { (char *)"IntMatrix__Rows_set", _wrap_IntMatrix__Rows_set, METH_VARARGS, NULL},
-	 { (char *)"IntMatrix__Rows_get", _wrap_IntMatrix__Rows_get, METH_VARARGS, NULL},
-	 { (char *)"IntMatrix__Cols_set", _wrap_IntMatrix__Cols_set, METH_VARARGS, NULL},
-	 { (char *)"IntMatrix__Cols_get", _wrap_IntMatrix__Cols_get, METH_VARARGS, NULL},
-	 { (char *)"IntMatrix__Array_set", _wrap_IntMatrix__Array_set, METH_VARARGS, NULL},
-	 { (char *)"IntMatrix__Array_get", _wrap_IntMatrix__Array_get, METH_VARARGS, NULL},
-	 { (char *)"new_IntMatrix", _wrap_new_IntMatrix, METH_VARARGS, NULL},
-	 { (char *)"IntMatrix_getArray", _wrap_IntMatrix_getArray, METH_VARARGS, NULL},
-	 { (char *)"IntMatrix_getCopy", _wrap_IntMatrix_getCopy, METH_VARARGS, NULL},
-	 { (char *)"IntMatrix_initializeFrom2DMatrix", _wrap_IntMatrix_initializeFrom2DMatrix, METH_VARARGS, NULL},
-	 { (char *)"IntMatrix_initializeFromConst2DMatrix", _wrap_IntMatrix_initializeFromConst2DMatrix, METH_VARARGS, NULL},
-	 { (char *)"delete_IntMatrix", _wrap_delete_IntMatrix, METH_VARARGS, NULL},
-	 { (char *)"IntMatrix_get2DMatrix", _wrap_IntMatrix_get2DMatrix, METH_VARARGS, NULL},
-	 { (char *)"IntMatrix_swapRows", _wrap_IntMatrix_swapRows, METH_VARARGS, NULL},
-	 { (char *)"IntMatrix_swapCols", _wrap_IntMatrix_swapCols, METH_VARARGS, NULL},
-	 { (char *)"IntMatrix_resize", _wrap_IntMatrix_resize, METH_VARARGS, NULL},
-	 { (char *)"IntMatrix_getTranspose", _wrap_IntMatrix_getTranspose, METH_VARARGS, NULL},
-	 { (char *)"IntMatrix_size", _wrap_IntMatrix_size, METH_VARARGS, NULL},
-	 { (char *)"IntMatrix_numRows", _wrap_IntMatrix_numRows, METH_VARARGS, NULL},
-	 { (char *)"IntMatrix_numCols", _wrap_IntMatrix_numCols, METH_VARARGS, NULL},
-	 { (char *)"IntMatrix___call__", _wrap_IntMatrix___call__, METH_VARARGS, NULL},
-	 { (char *)"IntMatrix_get", _wrap_IntMatrix_get, METH_VARARGS, NULL},
-	 { (char *)"IntMatrix_set", _wrap_IntMatrix_set, METH_VARARGS, NULL},
+	 { (char *)"new_IntMatrix", _wrap_new_IntMatrix, METH_VARARGS, (char *)"\n"
+		"IntMatrix(unsigned int rows=0, unsigned int cols=0)\n"
+		"IntMatrix(unsigned int rows=0)\n"
+		"IntMatrix()\n"
+		"IntMatrix(IntMatrix src)\n"
+		"IntMatrix(int *& oRawData, int nRows, int nCols, bool transpose=True)\n"
+		"IntMatrix(int *& oRawData, int nRows, int nCols)\n"
+		"IntMatrix(int **& oRawData, int nRows, int nCols)\n"
+		"new_IntMatrix(int const ** oRawData, int nRows, int nCols) -> IntMatrix\n"
+		""},
+	 { (char *)"IntMatrix_getArray", _wrap_IntMatrix_getArray, METH_VARARGS, (char *)"IntMatrix_getArray(IntMatrix self) -> int *"},
+	 { (char *)"IntMatrix_getCopy", _wrap_IntMatrix_getCopy, METH_VARARGS, (char *)"\n"
+		"getCopy(bool transpose=False) -> int\n"
+		"IntMatrix_getCopy(IntMatrix self) -> int *\n"
+		""},
+	 { (char *)"IntMatrix_initializeFrom2DMatrix", _wrap_IntMatrix_initializeFrom2DMatrix, METH_VARARGS, (char *)"IntMatrix_initializeFrom2DMatrix(IntMatrix self, int **& oRawData, int nRows, int nCols)"},
+	 { (char *)"IntMatrix_initializeFromConst2DMatrix", _wrap_IntMatrix_initializeFromConst2DMatrix, METH_VARARGS, (char *)"IntMatrix_initializeFromConst2DMatrix(IntMatrix self, int const ** oRawData, int nRows, int nCols)"},
+	 { (char *)"delete_IntMatrix", _wrap_delete_IntMatrix, METH_VARARGS, (char *)"delete_IntMatrix(IntMatrix self)"},
+	 { (char *)"IntMatrix_get2DMatrix", _wrap_IntMatrix_get2DMatrix, METH_VARARGS, (char *)"IntMatrix_get2DMatrix(IntMatrix self, int & nRows, int & nCols) -> int **"},
+	 { (char *)"IntMatrix_swapRows", _wrap_IntMatrix_swapRows, METH_VARARGS, (char *)"IntMatrix_swapRows(IntMatrix self, unsigned int row1, unsigned int row2)"},
+	 { (char *)"IntMatrix_swapCols", _wrap_IntMatrix_swapCols, METH_VARARGS, (char *)"IntMatrix_swapCols(IntMatrix self, unsigned int col1, unsigned int col2)"},
+	 { (char *)"IntMatrix_resize", _wrap_IntMatrix_resize, METH_VARARGS, (char *)"IntMatrix_resize(IntMatrix self, unsigned int rows, unsigned int cols)"},
+	 { (char *)"IntMatrix_getTranspose", _wrap_IntMatrix_getTranspose, METH_VARARGS, (char *)"IntMatrix_getTranspose(IntMatrix self) -> IntMatrix"},
+	 { (char *)"IntMatrix_size", _wrap_IntMatrix_size, METH_VARARGS, (char *)"IntMatrix_size(IntMatrix self) -> unsigned int"},
+	 { (char *)"IntMatrix_numRows", _wrap_IntMatrix_numRows, METH_VARARGS, (char *)"IntMatrix_numRows(IntMatrix self) -> unsigned int"},
+	 { (char *)"IntMatrix_numCols", _wrap_IntMatrix_numCols, METH_VARARGS, (char *)"IntMatrix_numCols(IntMatrix self) -> unsigned int"},
+	 { (char *)"IntMatrix___call__", _wrap_IntMatrix___call__, METH_VARARGS, (char *)"\n"
+		"__call__(unsigned int const & row, unsigned int const & col) -> LIB_LA::Matrix< int >::_ElementType\n"
+		"IntMatrix___call__(IntMatrix self, unsigned int const & row, unsigned int const & col) -> LIB_LA::Matrix< int >::_ElementType const &\n"
+		""},
+	 { (char *)"IntMatrix_get", _wrap_IntMatrix_get, METH_VARARGS, (char *)"IntMatrix_get(IntMatrix self, unsigned int const row, unsigned int const col) -> int"},
+	 { (char *)"IntMatrix_set", _wrap_IntMatrix_set, METH_VARARGS, (char *)"IntMatrix_set(IntMatrix self, unsigned int const row, unsigned int const col, int value)"},
 	 { (char *)"IntMatrix_swigregister", IntMatrix_swigregister, METH_VARARGS, NULL},
-	 { (char *)"ComplexMatrix__Rows_set", _wrap_ComplexMatrix__Rows_set, METH_VARARGS, NULL},
-	 { (char *)"ComplexMatrix__Rows_get", _wrap_ComplexMatrix__Rows_get, METH_VARARGS, NULL},
-	 { (char *)"ComplexMatrix__Cols_set", _wrap_ComplexMatrix__Cols_set, METH_VARARGS, NULL},
-	 { (char *)"ComplexMatrix__Cols_get", _wrap_ComplexMatrix__Cols_get, METH_VARARGS, NULL},
-	 { (char *)"ComplexMatrix__Array_set", _wrap_ComplexMatrix__Array_set, METH_VARARGS, NULL},
-	 { (char *)"ComplexMatrix__Array_get", _wrap_ComplexMatrix__Array_get, METH_VARARGS, NULL},
-	 { (char *)"new_ComplexMatrix", _wrap_new_ComplexMatrix, METH_VARARGS, NULL},
-	 { (char *)"ComplexMatrix_getArray", _wrap_ComplexMatrix_getArray, METH_VARARGS, NULL},
-	 { (char *)"ComplexMatrix_getCopy", _wrap_ComplexMatrix_getCopy, METH_VARARGS, NULL},
-	 { (char *)"ComplexMatrix_initializeFrom2DMatrix", _wrap_ComplexMatrix_initializeFrom2DMatrix, METH_VARARGS, NULL},
-	 { (char *)"ComplexMatrix_initializeFromConst2DMatrix", _wrap_ComplexMatrix_initializeFromConst2DMatrix, METH_VARARGS, NULL},
-	 { (char *)"delete_ComplexMatrix", _wrap_delete_ComplexMatrix, METH_VARARGS, NULL},
-	 { (char *)"ComplexMatrix_get2DMatrix", _wrap_ComplexMatrix_get2DMatrix, METH_VARARGS, NULL},
-	 { (char *)"ComplexMatrix_swapRows", _wrap_ComplexMatrix_swapRows, METH_VARARGS, NULL},
-	 { (char *)"ComplexMatrix_swapCols", _wrap_ComplexMatrix_swapCols, METH_VARARGS, NULL},
-	 { (char *)"ComplexMatrix_resize", _wrap_ComplexMatrix_resize, METH_VARARGS, NULL},
-	 { (char *)"ComplexMatrix_getTranspose", _wrap_ComplexMatrix_getTranspose, METH_VARARGS, NULL},
-	 { (char *)"ComplexMatrix_size", _wrap_ComplexMatrix_size, METH_VARARGS, NULL},
-	 { (char *)"ComplexMatrix_numRows", _wrap_ComplexMatrix_numRows, METH_VARARGS, NULL},
-	 { (char *)"ComplexMatrix_numCols", _wrap_ComplexMatrix_numCols, METH_VARARGS, NULL},
-	 { (char *)"ComplexMatrix___call__", _wrap_ComplexMatrix___call__, METH_VARARGS, NULL},
-	 { (char *)"ComplexMatrix_get", _wrap_ComplexMatrix_get, METH_VARARGS, NULL},
-	 { (char *)"ComplexMatrix_set", _wrap_ComplexMatrix_set, METH_VARARGS, NULL},
+	 { (char *)"new_ComplexMatrix", _wrap_new_ComplexMatrix, METH_VARARGS, (char *)"\n"
+		"ComplexMatrix(unsigned int rows=0, unsigned int cols=0)\n"
+		"ComplexMatrix(unsigned int rows=0)\n"
+		"ComplexMatrix()\n"
+		"ComplexMatrix(ComplexMatrix src)\n"
+		"ComplexMatrix(LIB_LA::Complex *& oRawData, int nRows, int nCols, bool transpose=True)\n"
+		"ComplexMatrix(LIB_LA::Complex *& oRawData, int nRows, int nCols)\n"
+		"ComplexMatrix(LIB_LA::Complex **& oRawData, int nRows, int nCols)\n"
+		"new_ComplexMatrix(LIB_LA::Complex const ** oRawData, int nRows, int nCols) -> ComplexMatrix\n"
+		""},
+	 { (char *)"ComplexMatrix_getArray", _wrap_ComplexMatrix_getArray, METH_VARARGS, (char *)"ComplexMatrix_getArray(ComplexMatrix self) -> LIB_LA::Complex *"},
+	 { (char *)"ComplexMatrix_getCopy", _wrap_ComplexMatrix_getCopy, METH_VARARGS, (char *)"\n"
+		"getCopy(bool transpose=False) -> LIB_LA::Complex\n"
+		"ComplexMatrix_getCopy(ComplexMatrix self) -> LIB_LA::Complex *\n"
+		""},
+	 { (char *)"ComplexMatrix_initializeFrom2DMatrix", _wrap_ComplexMatrix_initializeFrom2DMatrix, METH_VARARGS, (char *)"ComplexMatrix_initializeFrom2DMatrix(ComplexMatrix self, LIB_LA::Complex **& oRawData, int nRows, int nCols)"},
+	 { (char *)"ComplexMatrix_initializeFromConst2DMatrix", _wrap_ComplexMatrix_initializeFromConst2DMatrix, METH_VARARGS, (char *)"ComplexMatrix_initializeFromConst2DMatrix(ComplexMatrix self, LIB_LA::Complex const ** oRawData, int nRows, int nCols)"},
+	 { (char *)"delete_ComplexMatrix", _wrap_delete_ComplexMatrix, METH_VARARGS, (char *)"delete_ComplexMatrix(ComplexMatrix self)"},
+	 { (char *)"ComplexMatrix_get2DMatrix", _wrap_ComplexMatrix_get2DMatrix, METH_VARARGS, (char *)"ComplexMatrix_get2DMatrix(ComplexMatrix self, int & nRows, int & nCols) -> LIB_LA::Complex **"},
+	 { (char *)"ComplexMatrix_swapRows", _wrap_ComplexMatrix_swapRows, METH_VARARGS, (char *)"ComplexMatrix_swapRows(ComplexMatrix self, unsigned int row1, unsigned int row2)"},
+	 { (char *)"ComplexMatrix_swapCols", _wrap_ComplexMatrix_swapCols, METH_VARARGS, (char *)"ComplexMatrix_swapCols(ComplexMatrix self, unsigned int col1, unsigned int col2)"},
+	 { (char *)"ComplexMatrix_resize", _wrap_ComplexMatrix_resize, METH_VARARGS, (char *)"ComplexMatrix_resize(ComplexMatrix self, unsigned int rows, unsigned int cols)"},
+	 { (char *)"ComplexMatrix_getTranspose", _wrap_ComplexMatrix_getTranspose, METH_VARARGS, (char *)"ComplexMatrix_getTranspose(ComplexMatrix self) -> ComplexMatrix"},
+	 { (char *)"ComplexMatrix_size", _wrap_ComplexMatrix_size, METH_VARARGS, (char *)"ComplexMatrix_size(ComplexMatrix self) -> unsigned int"},
+	 { (char *)"ComplexMatrix_numRows", _wrap_ComplexMatrix_numRows, METH_VARARGS, (char *)"ComplexMatrix_numRows(ComplexMatrix self) -> unsigned int"},
+	 { (char *)"ComplexMatrix_numCols", _wrap_ComplexMatrix_numCols, METH_VARARGS, (char *)"ComplexMatrix_numCols(ComplexMatrix self) -> unsigned int"},
+	 { (char *)"ComplexMatrix___call__", _wrap_ComplexMatrix___call__, METH_VARARGS, (char *)"\n"
+		"__call__(unsigned int const & row, unsigned int const & col) -> LIB_LA::Matrix< LIB_LA::Complex >::_ElementType\n"
+		"ComplexMatrix___call__(ComplexMatrix self, unsigned int const & row, unsigned int const & col) -> LIB_LA::Matrix< LIB_LA::Complex >::_ElementType const &\n"
+		""},
+	 { (char *)"ComplexMatrix_get", _wrap_ComplexMatrix_get, METH_VARARGS, (char *)"ComplexMatrix_get(ComplexMatrix self, unsigned int const row, unsigned int const col) -> LIB_LA::Complex"},
+	 { (char *)"ComplexMatrix_set", _wrap_ComplexMatrix_set, METH_VARARGS, (char *)"ComplexMatrix_set(ComplexMatrix self, unsigned int const row, unsigned int const col, LIB_LA::Complex value)"},
 	 { (char *)"ComplexMatrix_swigregister", ComplexMatrix_swigregister, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };
