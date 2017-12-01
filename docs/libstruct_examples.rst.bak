@@ -17,10 +17,7 @@ To load a model in to LibStructural, an instance variable must be created.
 
 .. end
 
-Loading a Model from a String
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Its possible to load a model using a SBML string:
+For loading a model in 2D array format or SBML string format:
 
 .. code:: python
 
@@ -28,23 +25,14 @@ Its possible to load a model using a SBML string:
 
     ls = structural.LibStructural.getInstance()
     ls.loadSBMLFromString("example_SBMLstring")
-.. end
 
- 
-Loading a Model from a Stoichiometric Matrix
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code:: python
+    # or
 
     ls = structural.LibStructural.getInstance()
     matrix = [[  1, -1, -1], [  0, -1,  1], [  0,  1, -1]] # matrix can be a numpy 2d array
     ls.loadStoichiometryMatrix(matrix)
     ls.analyzeWithQR()
 .. end
-
-Loading a Model using Antiomy Model Description Language
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 If you use `tellurium <http://tellurium.analogmachine.org/>`_ you can load a model by converting the antimony model to SBML string or by using the Stoichiometry matrix of the antimony model.
 Note: loading a stoichiometry matrix from antimony will result in losing some information such as, species and reaction names.
