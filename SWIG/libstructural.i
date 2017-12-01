@@ -185,12 +185,8 @@
     LibStructural.getStoichiometryMatrix(self)
     :returns: Unaltered stoichiometry matrix.
     """
-    m = self._my_getStoichiometryMatrix();
-    import numpy as np
-    if type (m) == 'numpy.ndarray':
-       return m.toNumpy()
-    else:
-       return m
+    return self._my_getStoichiometryMatrix().toNumpy();
+
 
 	def getColumnReorderedNrMatrix(self):
 		"""

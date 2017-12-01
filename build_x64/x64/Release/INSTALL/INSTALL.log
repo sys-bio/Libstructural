@@ -22,10 +22,10 @@
   -- Up-to-date: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/install_x64/include/objective.h
   -- Up-to-date: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/install_x64/include/sbmlmodel.h
   -- Up-to-date: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/install_x64/include/util.h
-  -- Up-to-date: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/install_x64/lib/LibLA.lib
-  -- Up-to-date: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/install_x64/bin/LibLA.dll
-  -- Up-to-date: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/install_x64/lib/LibLA-static.lib
-  -- Up-to-date: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/install_x64/lib/LibStructural.lib
-  -- Up-to-date: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/install_x64/bin/LibStructural.dll
-  -- Up-to-date: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/install_x64/lib/LibStructural-static.lib
-  -- Up-to-date: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/install_x64/lib/_structural.pyd
+  -- Installing: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/install_x64/lib/LibLA.lib
+  -- Installing: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/install_x64/bin/LibLA.dll
+  -- Installing: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/install_x64/lib/LibLA-static.lib
+  -- Installing: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/install_x64/lib/LibStructural.lib
+  -- Installing: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/install_x64/bin/LibStructural.dll
+  -- Installing: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/install_x64/lib/LibStructural-static.lib
+  -- Installing: C:/Users/yosef/Documents/Visual Studio 2017/Projects/libstruct/install_x64/lib/_structural.pyd
