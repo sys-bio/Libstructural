@@ -12,3 +12,8 @@ libStructural is available via PyPI, which is the simplest method to obtain libS
 To install libStructural using pip, run following line on console:
 
 ``pip install structural``
+
+If you are using Tellurium (tellurium.analogmachine.org) then you can install structural directoly from the Python console:
+
+''import tellurium as te''
+''te.installPackage ('structural')''
