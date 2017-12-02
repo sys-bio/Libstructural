@@ -9,6 +9,7 @@
 #
 # Find all sources
 #
+set(CMAKE_MACOSX_RPATH 1)
 
 file(GLOB LA_SOURCES
 	${CMAKE_CURRENT_SOURCE_DIR}/../LibLA/*.cpp
@@ -17,6 +18,10 @@ file(GLOB LA_SOURCES
 file(GLOB LS_SOURCES *.cpp )
 
 
+include_directories(${LIBZ_INCLUDE})
+include_directories(${LIBICONV_INCLUDE})
+include_directories(${BZ2_INCLUDE})
+include_directories(${LIBXML2_INCLUDE})
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../include)
@@ -27,7 +32,11 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../include)
 #
 
 add_library (LibStructural SHARED ${LA_SOURCES} ${LS_SOURCES}  )
-target_link_libraries(LibStructural ${LIBSBML_LIBRARY} ${EXTRA_LIBS} ${LA_LIBS} ${CLAPACK_LIBS} Ws2_32.lib )
+
+target_link_libraries(LibStructural ${LIBSBML_LIBRARY} ${LIBXML2_LIBRARY} ${BZ2_LIBRARY} ${LIBZ_LIBRARY} ${LIBICONV_LIBRARY} ${LA_LIBS} ${CLAPACK_LIBS} )
+
+#target_link_libraries(LibStructural ${LIBSBML_LIBRARY} ${LIBXML2_LIBRARY} ${BZ2_LIBRARY} ${LIBZ_LIBRARY} ${LIBICONV_LIBRARY} ${LA_LIBS} ${CLAPACK_LIBS} Ws2_32.lib )
+
 
 add_library (LibStructural-static STATIC ${LA_SOURCES} ${LS_SOURCES} )
 if (WIN32 AND NOT CYGWIN)
@@ -37,7 +46,7 @@ if (WIN32 AND NOT CYGWIN)
 
 endif(WIN32 AND NOT CYGWIN)
 
-target_link_libraries(LibStructural-static ${LA_LIBS} ${LIBSBML_LIBRARY} LibLA-static ${EXTRA_LIBS} ${CLAPACK_LIBS} Ws2_32.lib)
+target_link_libraries(LibStructural-static ${LA_LIBS} ${LIBSBML_LIBRARY} LibLA-static ${LIBXML2_LIBRARY} ${BZ2_LIBRARY} ${LIBZ_LIBRARY} ${LIBICONV_LIBRARY} ${CLAPACK_LIBS} )
 
 INSTALL(TARGETS LibStructural LibStructural-static
 	RUNTIME DESTINATION bin

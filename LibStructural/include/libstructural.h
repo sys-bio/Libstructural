@@ -264,7 +264,7 @@ namespace LIB_STRUCTURAL
 
 		LIB_EXTERN DoubleMatrix* rref(DoubleMatrix& oMatrix, double tolerance);
 		
-		LibStructural::DoubleMatrix* LibStructural::rref_FB(DoubleMatrix &oMatrix, double tolerance);
+		LibStructural::DoubleMatrix* rref_FB(DoubleMatrix &oMatrix, double tolerance);
 	
 #ifndef NO_SBML
 
@@ -684,7 +684,7 @@ namespace LIB_STRUCTURAL
 
 		\result Returns in an array where each columns is an eigenvector
 		*/
-		LIB_EXTERN LibStructural::DoubleMatrix* LibStructural::getEigenVectors(DoubleMatrix &oMatrix);
+		LIB_EXTERN LibStructural::DoubleMatrix* getEigenVectors(DoubleMatrix &oMatrix);
 
 
 		/*! \brief Get the condition number for a matrix
@@ -693,7 +693,7 @@ namespace LIB_STRUCTURAL
 
 		\result Returns the condition number
 		*/
-		LIB_EXTERN double LibStructural::getConditionNumber(DoubleMatrix &oMatrix);
+		LIB_EXTERN double getConditionNumber(DoubleMatrix &oMatrix);
 
 
 		/*! \brief Returns the Left Nullspace of the matric argument
@@ -702,7 +702,7 @@ namespace LIB_STRUCTURAL
 
 		\result Returns the left null space
 		*/
-		LIB_EXTERN LibStructural::DoubleMatrix* LibStructural::getLeftNullSpace(DoubleMatrix &oMatrix);
+		LIB_EXTERN LibStructural::DoubleMatrix* getLeftNullSpace(DoubleMatrix &oMatrix);
 
 		/*! \brief Returns the Right Nullspace of the matric argument
 
@@ -710,7 +710,7 @@ namespace LIB_STRUCTURAL
 
 		\result Returns the right null space
 		*/
-		LIB_EXTERN LibStructural::DoubleMatrix* LibStructural::getRightNullSpace(DoubleMatrix &oMatrix);
+		LIB_EXTERN LibStructural::DoubleMatrix* getRightNullSpace(DoubleMatrix &oMatrix);
 
 
 		/*! \brief Returns the rank of the matrix argument
@@ -719,9 +719,9 @@ namespace LIB_STRUCTURAL
 
 		\result Returns the rank as an integer
 		*/
-		LIB_EXTERN int LibStructural::getRank(DoubleMatrix &oMatrix);
+		LIB_EXTERN int getRank(DoubleMatrix &oMatrix);
 
-		LIB_EXTERN double LibStructural::getRCond(DoubleMatrix &oMatrix);
+		LIB_EXTERN double getRCond(DoubleMatrix &oMatrix);
 
 
 		/*! \brief Set user specified tolerance
