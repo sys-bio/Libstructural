@@ -650,7 +650,7 @@
 
 %inline
 %{
-#include "..\include\complex.h"
+#include "complex.h"
 %}
 
 %array_class(LIB_LA::Complex, complexArray);
