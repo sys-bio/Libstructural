@@ -24,10 +24,10 @@ include (CheckTypeSize)
 
 
 ####################################################################
-#
+
 # Set up version information, it might be better to just write it here
 # rather than parsing VERSION.txt
-#
+
 SET(STRUCTURAL_VERSION_MAJOR 1)
 SET(STRUCTURAL_VERSION_MINOR 1)
 SET(STRUCTURAL_VERSION_PATCH 0)
@@ -66,15 +66,12 @@ set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Choose the type of build, options a
 # list of additional files to link against.
 #
 
-set(EXTRA_LIBS ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libbz2.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libxml2.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib/zdll.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libiconv.lib CACHE STRING "List of additional libraries to link against." )
-
-
 ####################################################################
 #
 # Locate Libxml2 if needed
 #
 find_library(LIBSBML_LIBRARY
-	NAMES libsbml-static.lib libsbml.lib sbml
+	NAMES libsbml-static.a libsbml-static.lib libsbml.lib sbml
 	PATHS ${DEPENDENCY_DIR}/lib
 		  ${SBML_DIR}/lib
 		  /usr/lib /usr/local/lib
@@ -82,48 +79,88 @@ find_library(LIBSBML_LIBRARY
 		  ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib
     )
 
-	find_path(LIBSBML_INCLUDE
-		NAMES sbml/SBase.h
-		PATHS ${DEPENDENCY_DIR}/include
-			  ${SBML_DIR}/include
-			  /usr/include /usr/local/include
-			  ${CMAKE_SOURCE_DIR}//dependencies/libsbml-5.15.0-vs2017-release-64/include
-			  )
+find_path(LIBSBML_INCLUDE
+	NAMES sbml/SBase.h
+	PATHS ${DEPENDENCY_DIR}/include
+		  ${SBML_DIR}/include
+		  /usr/include /usr/local/include
+		  ${CMAKE_SOURCE_DIR}//dependencies/libsbml-5.15.0-vs2017-release-64/include
+		  )
 
-	set(STRUCTURAL_LIBS ${STRUCTURAL_LIBS} ${LIBSBML_LIBRARY})
-	include_directories(${LIBSBML_INCLUDE})
+set(STRUCTURAL_LIBS ${STRUCTURAL_LIBS} ${LIBSBML_LIBRARY})
+include_directories(${LIBSBML_INCLUDE})
 
-	set(STRUCTURAL_LIBS ${STRUCTURAL_LIBS} ${LIBSBML_LIBRARY})
+set(STRUCTURAL_LIBS ${STRUCTURAL_LIBS} ${LIBSBML_LIBRARY})
 
-	find_library(CLAPACK_LIBRARY
-	NAMES clapack.lib  clapack lapack
+find_library(CLAPACK_LIBRARY
+NAMES liblapack.a clapack.lib  clapack lapack
+PATHS /usr/lib /usr/local/lib
+	  ${CMAKE_SOURCE_DIR}
+	  ${CMAKE_SOURCE_DIR}/dependencies/third-party/clapack/3.2.1/LIB
+	  ${CMAKE_SOURCE_DIR}/lib
+  )
+
+set(CLAPACK_LIBS ${CLAPACK_LIBRARY})
+
+find_library(CLAPACK_BLAS_LIBRARY
+	NAMES libblas.a blas.lib blas
 	PATHS /usr/lib /usr/local/lib
+		${CMAKE_SOURCE_DIR}
+		${CMAKE_SOURCE_DIR}/dependencies/third-party/clapack/3.2.1/LIB
+		${CMAKE_SOURCE_DIR}/lib
+  )
+
+set(CLAPACK_LIBS ${CLAPACK_LIBS} ${CLAPACK_BLAS_LIBRARY})
+
+find_library(CLAPACK_F2C_LIBRARY
+	NAMES libf2c.a libf2c.lib f2c
+	PATHS /usr/lib /usr/local/lib
+		${CMAKE_SOURCE_DIR}
+		${CMAKE_SOURCE_DIR}/dependencies/third-party/clapack/3.2.1/LIB
+		${CMAKE_SOURCE_DIR}/lib
+  )
+
+set(CLAPACK_LIBS ${CLAPACK_LIBS} ${CLAPACK_F2C_LIBRARY})
+
+find_library(LIBXML2_LIBRARY
+	NAMES libxml2.a libxml2.so libxml2.dylib
+	PATHS ${DEPENDENCY_DIR}/lib
+		  ${SBML_DIR}/lib
+		  /usr/lib /usr/local/lib
 		  ${CMAKE_SOURCE_DIR}
-		  ${CMAKE_SOURCE_DIR}/dependencies/third-party/clapack/3.2.1/LIB
-		  ${CMAKE_SOURCE_DIR}/lib
     )
 
-	set(CLAPACK_LIBS ${CLAPACK_LIBRARY})
+include_directories(${LIBXML2_INCLUDE})
 
-	find_library(CLAPACK_BLAS_LIBRARY
-		NAMES blas.lib blas
-		PATHS /usr/lib /usr/local/lib
-			${CMAKE_SOURCE_DIR}
-			${CMAKE_SOURCE_DIR}/dependencies/third-party/clapack/3.2.1/LIB
-			${CMAKE_SOURCE_DIR}/lib
+find_library(BZ2_LIBRARY
+  NAMES libbz2.a libbz2.so libbz2.dylib
+  PATHS ${DEPENDENCY_DIR}/lib
+    	${SBML_DIR}/lib
+    	/usr/lib /usr/local/lib
+    	${CMAKE_SOURCE_DIR}
     )
 
-	set(CLAPACK_LIBS ${CLAPACK_LIBS} ${CLAPACK_BLAS_LIBRARY})
+include_directories(${BZ2_INCLUDE})
 
-	find_library(CLAPACK_F2C_LIBRARY
-		NAMES libf2c.lib f2c
-		PATHS /usr/lib /usr/local/lib
-			${CMAKE_SOURCE_DIR}
-			${CMAKE_SOURCE_DIR}/dependencies/third-party/clapack/3.2.1/LIB
-			${CMAKE_SOURCE_DIR}/lib
+find_library(LIBZ_LIBRARY
+  NAMES libz.a libz.so libz.dylib
+  PATHS ${DEPENDENCY_DIR}/lib
+      ${SBML_DIR}/lib
+      /usr/lib /usr/local/lib
+      ${CMAKE_SOURCE_DIR}
     )
 
-	set(CLAPACK_LIBS ${CLAPACK_LIBS} ${CLAPACK_F2C_LIBRARY})
+include_directories(${LIBZ_INCLUDE})
+
+  find_library(LIBICONV_LIBRARY
+    NAMES libiconv.a libiconv.so libiconv.dylib
+    PATHS ${DEPENDENCY_DIR}/lib
+        ${SBML_DIR}/lib
+        /usr/lib /usr/local/lib
+        ${CMAKE_SOURCE_DIR}
+      )
+
+include_directories(${LIBICONV_INCLUDE})
 
 ####################################################################
 #
@@ -190,7 +227,7 @@ else(UNIX)
       set(USING_INTEL TRUE)
     endif ()
 
-	set(STRUCTURAL_LIBS ${STRUCTURAL_LIBS} ws2_32.lib)
+	set(STRUCTURAL_LIBS ${STRUCTURAL_LIBS} )
  	add_definitions(-DWIN32 -DLIB_EXPORTS -DLIBLAX_EXPORTS)
  	set(BUILD_DEFINITIONS "${BUILD_DEFINITIONS} -DWIN32 -DLIB_EXPORTS -DLIBLAX_EXPORTS")
 	if (LIBSBML_STATIC_LIB)
