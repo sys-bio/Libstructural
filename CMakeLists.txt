@@ -71,7 +71,7 @@ set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Choose the type of build, options a
 # Locate Libxml2 if needed
 #
 find_library(LIBSBML_LIBRARY
-	NAMES libsbml-static.a libsbml-static.lib libsbml.lib sbml
+	NAMES libsbml-static.a libsbml.lib libsbml-static.lib sbml
 	PATHS ${DEPENDENCY_DIR}/lib
 		  ${SBML_DIR}/lib
 		  /usr/lib /usr/local/lib
@@ -84,7 +84,7 @@ find_path(LIBSBML_INCLUDE
 	PATHS ${DEPENDENCY_DIR}/include
 		  ${SBML_DIR}/include
 		  /usr/include /usr/local/include
-		  ${CMAKE_SOURCE_DIR}//dependencies/libsbml-5.15.0-vs2017-release-64/include
+		  ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/include
 		  )
 
 set(STRUCTURAL_LIBS ${STRUCTURAL_LIBS} ${LIBSBML_LIBRARY})
@@ -123,25 +123,29 @@ find_library(CLAPACK_F2C_LIBRARY
 set(CLAPACK_LIBS ${CLAPACK_LIBS} ${CLAPACK_F2C_LIBRARY})
 
 find_library(LIBXML2_LIBRARY
-	NAMES libxml2.a libxml2.so libxml2.dylib
+	NAMES libxml2.a libxml2.so libxml2.dylib libxml2.lib
 	PATHS ${DEPENDENCY_DIR}/lib
 		  ${SBML_DIR}/lib
 		  /usr/lib /usr/local/lib
 		  ${CMAKE_SOURCE_DIR}
+      ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib
     )
 
 include_directories(${LIBXML2_INCLUDE})
 
 find_library(BZ2_LIBRARY
-  NAMES libbz2.a libbz2.so libbz2.dylib
+  NAMES libbz2.a libbz2.so libbz2.dylib libbz2.lib
   PATHS ${DEPENDENCY_DIR}/lib
     	${SBML_DIR}/lib
     	/usr/lib /usr/local/lib
     	${CMAKE_SOURCE_DIR}
+      ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib
     )
+
 
 include_directories(${BZ2_INCLUDE})
 
+if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 find_library(LIBZ_LIBRARY
   NAMES libz.a libz.so libz.dylib
   PATHS ${DEPENDENCY_DIR}/lib
@@ -149,16 +153,18 @@ find_library(LIBZ_LIBRARY
       /usr/lib /usr/local/lib
       ${CMAKE_SOURCE_DIR}
     )
-
 include_directories(${LIBZ_INCLUDE})
+endif()
 
-  find_library(LIBICONV_LIBRARY
-    NAMES libiconv.a libiconv.so libiconv.dylib
-    PATHS ${DEPENDENCY_DIR}/lib
-        ${SBML_DIR}/lib
-        /usr/lib /usr/local/lib
-        ${CMAKE_SOURCE_DIR}
-      )
+
+find_library(LIBICONV_LIBRARY
+  NAMES libiconv.a libiconv.so libiconv.dylib, libiconv.lib
+  PATHS ${DEPENDENCY_DIR}/lib
+      ${SBML_DIR}/lib
+      /usr/lib /usr/local/lib
+      ${CMAKE_SOURCE_DIR}
+      ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib
+    )
 
 include_directories(${LIBICONV_INCLUDE})
 
