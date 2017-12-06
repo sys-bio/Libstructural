@@ -1,0 +1,21 @@
+Metadata-Version: 1.1
+Name: structural
+Version: 1.0.0
+Summary: A module for a wide variety of methods that permit access to the constraint information in the stoichiometry matrix.
+Home-page: https://github.com/yosefmaru/Libstructural
+Author: Herbert M. Sauro and Frank T. Bergmann 
+Author-email: hsauro@uw.edu
+License: Apache-2
+Description: libStructural
+        =======================
+        
+        **libStructural** API provides a wide variety of methods that permit access to the constraint information in the stoichiometry matrix. 
+        
+Keywords: systems biology
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
