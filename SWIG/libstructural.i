@@ -608,6 +608,19 @@
 					raise ValueError("Expecting 2 dimensional list or numpy array")
 			else:
   		        raise ValueError("Expecting list or numpy array")
+
+	def test (self):
+		import pkg_resources
+
+		print('****** Testing model 1... ******\n')
+
+		model_path = pkg_resources.resource_filename('structural','test_models/BMID000000101155.xml')
+
+		print(self.loadSBMLFromFile(model_path))
+		print('\nValidating structural matrices...\n')
+		print(self.getTestDetails())
+		print(self.validateStructuralMatrices())
+
 %}
 
 }

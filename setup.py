@@ -57,15 +57,13 @@ if config[0] == 'Win':
 elif config[0] == 'Mac':
     chdir(path.join(here,package_dir))
     package_data={
-      'sbol': ['examples/*'],
-      'sbol.test': ['*.*', 'SBOL2/*.*'],
-      'sbol': ['_libsbol.so', 'libsbol.py']
+    'structural': ['_structural.so','structural.py', 'test_models/BMID000000101155.xml']
+    # 'test_models': ['BMID000000101155.xml']
     }
 else:
+    chdir(path.join(here,package_dir))
     package_data={
-      'sbol': ['examples/*'],
-      'sbol.test': ['*.*', 'SBOL2/*.*'],
-      'sbol': ['_libsbol.so', 'libsbol.py']
+    'structural': ['_structural.so','structural.py']
     }
 
 setup(
@@ -74,7 +72,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.0.1',
+    version='1.0.0',
 
     description='A module for a wide variety of methods that permit access to the constraint information in the stoichiometry matrix.',
     long_description=long_description,
@@ -153,6 +151,6 @@ setup(
     #        'sample=sample:main',
     #    ],
    # },
-      zip_safe = False,
-      #include_package_data = True
+    zip_safe = False,
+    include_package_data = True
 )

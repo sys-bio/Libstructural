@@ -156,9 +156,8 @@ find_library(LIBZ_LIBRARY
 include_directories(${LIBZ_INCLUDE})
 endif()
 
-
 find_library(LIBICONV_LIBRARY
-  NAMES libiconv.a libiconv.so libiconv.dylib, libiconv.lib
+  NAMES libiconv.a libiconv.so libiconv.dylib libiconv.lib
   PATHS ${DEPENDENCY_DIR}/lib
       ${SBML_DIR}/lib
       /usr/lib /usr/local/lib
