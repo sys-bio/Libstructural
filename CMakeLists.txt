@@ -66,12 +66,14 @@ set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Choose the type of build, options a
 # list of additional files to link against.
 #
 
+set(EXTRA_LIBS ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libbz2.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libxml2.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib/zdll.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libiconv.lib CACHE STRING "List of additional libraries to link against." )
+
 ####################################################################
 #
 # Locate Libxml2 if needed
 #
 find_library(LIBSBML_LIBRARY
-	NAMES libsbml-static.a libsbml.lib libsbml-static.lib sbml
+	NAMES libsbml-static.a libsbml-static.lib libsbml.lib sbml
 	PATHS ${DEPENDENCY_DIR}/lib
 		  ${SBML_DIR}/lib
 		  /usr/lib /usr/local/lib
@@ -130,42 +132,53 @@ find_library(LIBXML2_LIBRARY
 		  ${CMAKE_SOURCE_DIR}
       ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib
     )
-
-include_directories(${LIBXML2_INCLUDE})
-
-find_library(BZ2_LIBRARY
-  NAMES libbz2.a libbz2.so libbz2.dylib libbz2.lib
-  PATHS ${DEPENDENCY_DIR}/lib
-    	${SBML_DIR}/lib
-    	/usr/lib /usr/local/lib
-    	${CMAKE_SOURCE_DIR}
-      ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib
-    )
-
-
-include_directories(${BZ2_INCLUDE})
-
-if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-find_library(LIBZ_LIBRARY
-  NAMES libz.a libz.so libz.dylib
-  PATHS ${DEPENDENCY_DIR}/lib
-      ${SBML_DIR}/lib
-      /usr/lib /usr/local/lib
-      ${CMAKE_SOURCE_DIR}
-    )
-include_directories(${LIBZ_INCLUDE})
-endif()
-
-find_library(LIBICONV_LIBRARY
-  NAMES libiconv.a libiconv.so libiconv.dylib libiconv.lib
-  PATHS ${DEPENDENCY_DIR}/lib
-      ${SBML_DIR}/lib
-      /usr/lib /usr/local/lib
-      ${CMAKE_SOURCE_DIR}
-      ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib
-    )
-
-include_directories(${LIBICONV_INCLUDE})
+#
+# include_directories(${LIBXML2_INCLUDE})
+#
+# find_library(BZ2_LIBRARY
+#   NAMES libbz2.a libbz2.so libbz2.dylib libbz2.lib
+#   PATHS ${DEPENDENCY_DIR}/lib
+#     	${SBML_DIR}/lib
+#     	/usr/lib /usr/local/lib
+#     	${CMAKE_SOURCE_DIR}
+#       ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib
+#     )
+#
+#
+# include_directories(${BZ2_INCLUDE})
+#
+# if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+# find_library(LIBZ_LIBRARY
+#   NAMES libz.a libz.so libz.dylib
+#   PATHS ${DEPENDENCY_DIR}/lib
+#       ${SBML_DIR}/lib
+#       /usr/lib /usr/local/lib
+#       ${CMAKE_SOURCE_DIR}
+#     )
+# include_directories(${LIBZ_INCLUDE})
+# endif()
+#
+# find_library(LIBICONV_LIBRARY
+#   NAMES libiconv.a libiconv.so libiconv.dylib libiconv.lib
+#   PATHS ${DEPENDENCY_DIR}/lib
+#       ${SBML_DIR}/lib
+#       /usr/lib /usr/local/lib
+#       ${CMAKE_SOURCE_DIR}
+#       ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib
+#     )
+#
+# include_directories(${LIBICONV_INCLUDE})
+#
+# find_library(ZDLL_LIBRARY
+#   NAMES zdll.a zdll.so zdll.dylib zdll.lib
+#   PATHS ${DEPENDENCY_DIR}/lib
+#       ${SBML_DIR}/lib
+#       /usr/lib /usr/local/lib
+#       ${CMAKE_SOURCE_DIR}
+#       ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib
+#     )
+#
+# include_directories(${ZDLL_INCLUDE})
 
 ####################################################################
 #
