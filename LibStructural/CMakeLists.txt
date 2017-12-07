@@ -17,7 +17,6 @@ file(GLOB LA_SOURCES
 
 file(GLOB LS_SOURCES *.cpp )
 
-
 include_directories(${LIBZ_INCLUDE})
 include_directories(${LIBICONV_INCLUDE})
 include_directories(${BZ2_INCLUDE})
@@ -36,7 +35,7 @@ add_library (LibStructural SHARED ${LA_SOURCES} ${LS_SOURCES}  )
 if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 target_link_libraries(LibStructural ${LIBSBML_LIBRARY} ${LIBXML2_LIBRARY} ${BZ2_LIBRARY} ${LIBZ_LIBRARY} ${LIBICONV_LIBRARY} ${LA_LIBS} ${CLAPACK_LIBS} )
 else ()
-target_link_libraries(LibStructural ${LIBSBML_LIBRARY} ${LIBXML2_LIBRARY} ${BZ2_LIBRARY} ${LIBZ_LIBRARY} ${LIBICONV_LIBRARY} ${LA_LIBS} ${CLAPACK_LIBS} Ws2_32.lib )
+target_link_libraries(LibStructural ${LIBSBML_LIBRARY} ${LIBXML2_LIBRARY} ${BZ2_LIBRARY} ${LIBZ_LIBRARY} ${LIBICONV_LIBRARY} ${LA_LIBS} ${CLAPACK_LIBS} ${EXTRA_LIBS} Ws2_32.lib )
 endif()
 
 add_library (LibStructural-static STATIC ${LA_SOURCES} ${LS_SOURCES} )
@@ -47,7 +46,7 @@ if (WIN32 AND NOT CYGWIN)
 
 endif(WIN32 AND NOT CYGWIN)
 
-target_link_libraries(LibStructural-static ${LA_LIBS} ${LIBSBML_LIBRARY} LibLA-static ${LIBXML2_LIBRARY} ${BZ2_LIBRARY} ${LIBZ_LIBRARY} ${LIBICONV_LIBRARY} ${CLAPACK_LIBS} )
+target_link_libraries(LibStructural-static ${LA_LIBS} ${LIBSBML_LIBRARY} LibLA-static ${EXTRA_LIBS} ${CLAPACK_LIBS} Ws2_32.lib)
 
 INSTALL(TARGETS LibStructural LibStructural-static
 	RUNTIME DESTINATION bin
