@@ -46,7 +46,7 @@ if (WIN32 AND NOT CYGWIN)
 
 endif(WIN32 AND NOT CYGWIN)
 
-target_link_libraries(LibStructural-static ${LA_LIBS} ${LIBSBML_LIBRARY} LibLA-static ${EXTRA_LIBS} ${CLAPACK_LIBS} Ws2_32.lib)
+target_link_libraries(LibStructural-static ${LA_LIBS} ${LIBSBML_LIBRARY} LibLA-static ${EXTRA_LIBS} ${CLAPACK_LIBS} )
 
 INSTALL(TARGETS LibStructural LibStructural-static
 	RUNTIME DESTINATION bin
