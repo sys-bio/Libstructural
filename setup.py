@@ -52,7 +52,7 @@ print(package_dir)
 if config[0] == 'Win':
     chdir(path.join(here,package_dir))
     package_data={
-    'structural': ['_structural.pyd','structural.py']
+    'structural': ['_structural.pyd','structural.py', 'test_models/BMID000000101155.xml']
     }
 elif config[0] == 'Mac':
     chdir(path.join(here,package_dir))
@@ -152,5 +152,5 @@ setup(
     #    ],
    # },
     zip_safe = False,
-    include_package_data = True
+    # include_package_data = True
 )
