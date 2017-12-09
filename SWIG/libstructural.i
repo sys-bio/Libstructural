@@ -34,6 +34,8 @@
 %rename (_my_getNICMatrix) getNICMatrix;
 %rename (_my_getNrMatrix) getNrMatrix;
 %rename (_my_getReorderedStoichiometryMatrix) getReorderedStoichiometryMatrix;
+%rename (_my_getLinkMatrix) getLinkMatrix;
+%rename (_my_getRCond) getRCond;
 
 %exception {
 	 try {
@@ -71,111 +73,117 @@
 // http://swig.10945.n7.nabble.com/replacing-a-real-class-method-with-SWIG-version-td11418.html
 %extend LIB_STRUCTURAL::LibStructural {
 
-	std::pair< std::vector<std::string>, std::vector<std::string> > getColumnReorderedNrMatrixLabels() {
+	std::pair< std::vector<std::string>, std::vector<std::string> > getColumnReorderedNrMatrixIds() {
 		std::vector<std::string> rows;
 		std::vector<std::string> cols;
-		self->getColumnReorderedNrMatrixLabels(rows, cols);
+		self->getColumnReorderedNrMatrixIds(rows, cols);
 		return std::make_pair(rows, cols);
 	}
 
-	void loadReactionNames (std::vector<std::string> reactionNames) {
-		self->loadReactionNames(reactionNames);
+	void loadReactionIds (std::vector<std::string> reactionIds) {
+		self->loadReactionIds(reactionIds);
 	}
 
-	void loadSpecies (std::vector<std::string> speciesNames, std::vector<double> speciesValues) {
-		self->loadSpecies(speciesNames, speciesValues);
+	void loadReactionIdsWithValues (std::vector<std::string> reactionIds, std::vector<double> reactionValues) {
+		self->loadReactionIdsWithValues(reactionIds, reactionValues);
 	}
 
+	void loadSpeciesIdsWithValues (std::vector<std::string> speciesIds, std::vector<double> speciesValues) {
+		self->loadSpeciesIdsWithValues(speciesIds, speciesValues);
+	}
 
+	/*void loadSpeciesIds (std::vector<std::string> speciesIds) {
+		self->loadSpeciesIds(speciesIds);
+	}*/
 
-	std::pair< std::vector<std::string>, std::vector<std::string> > getGammaMatrixLabels() {
+	std::pair< std::vector<std::string>, std::vector<std::string> > getGammaMatrixIds() {
 		std::vector<std::string> rows;
 		std::vector<std::string> cols;
-		self->getGammaMatrixLabels(rows, cols);
+		self->getGammaMatrixIds(rows, cols);
 		return std::make_pair(rows, cols);
 	}
 
-	std::pair< std::vector<std::string>, std::vector<std::string> > getK0MatrixLabels() {
+	std::pair< std::vector<std::string>, std::vector<std::string> > getK0MatrixIds() {
 		std::vector<std::string> rows;
 		std::vector<std::string> cols;
-		self->getK0MatrixLabels(rows, cols);
+		self->getK0MatrixIds(rows, cols);
 		return std::make_pair(rows, cols);
 	}
 
-	std::pair< std::vector<std::string>, std::vector<std::string> > getKMatrixLabels() {
+	std::pair< std::vector<std::string>, std::vector<std::string> > getKMatrixIds() {
 		std::vector<std::string> rows;
 		std::vector<std::string> cols;
-		self->getKMatrixLabels(rows, cols);
+		self->getKMatrixIds(rows, cols);
 		return std::make_pair(rows, cols);
 	}
 
-	std::pair< std::vector<std::string>, std::vector<std::string> > getL0MatrixLabels() {
+	std::pair< std::vector<std::string>, std::vector<std::string> > getL0MatrixIds() {
 		std::vector<std::string> rows;
 		std::vector<std::string> cols;
-		self->getL0MatrixLabels(rows, cols);
+		self->getL0MatrixIds(rows, cols);
 		return std::make_pair(rows, cols);
 	}
 
-	std::pair< std::vector<std::string>, std::vector<std::string> > getLinkMatrixLabels() {
+	std::pair< std::vector<std::string>, std::vector<std::string> > getLinkMatrixIds() {
 		std::vector<std::string> rows;
 		std::vector<std::string> cols;
-		self->getLinkMatrixLabels(rows, cols);
+		self->getLinkMatrixIds(rows, cols);
 		return std::make_pair(rows, cols);
 	}
 
-	std::pair< std::vector<std::string>, std::vector<std::string> > getLinkMatrixLabels() {
+	std::pair< std::vector<std::string>, std::vector<std::string> > getLinkMatrixIds() {
 		std::vector<std::string> rows;
 		std::vector<std::string> cols;
-		self->getLinkMatrixLabels(rows, cols);
+		self->getLinkMatrixIds(rows, cols);
 		return std::make_pair(rows, cols);
 	}
 
-	std::pair< std::vector<std::string>, std::vector<std::string> > getN0MatrixLabels() {
+	std::pair< std::vector<std::string>, std::vector<std::string> > getN0MatrixIds() {
 		std::vector<std::string> rows;
 		std::vector<std::string> cols;
-		self->getN0MatrixLabels(rows, cols);
+		self->getN0MatrixIds(rows, cols);
 		return std::make_pair(rows, cols);
 	}
 
-	std::pair< std::vector<std::string>, std::vector<std::string> > getNDCMatrixLabels() {
+	std::pair< std::vector<std::string>, std::vector<std::string> > getNDCMatrixIds() {
 		std::vector<std::string> rows;
 		std::vector<std::string> cols;
-		self->getNDCMatrixLabels(rows, cols);
+		self->getNDCMatrixIds(rows, cols);
 		return std::make_pair(rows, cols);
 	}
 
-	std::pair< std::vector<std::string>, std::vector<std::string> > getNICMatrixLabels() {
+	std::pair< std::vector<std::string>, std::vector<std::string> > getNICMatrixIds() {
 		std::vector<std::string> rows;
 		std::vector<std::string> cols;
-		self->getNICMatrixLabels(rows, cols);
+		self->getNICMatrixIds(rows, cols);
 		return std::make_pair(rows, cols);
 	}
 
-	std::pair< std::vector<std::string>, std::vector<std::string> > getNrMatrixLabels() {
+	std::pair< std::vector<std::string>, std::vector<std::string> > getNrMatrixIds() {
 		std::vector<std::string> rows;
 		std::vector<std::string> cols;
-		self->getNrMatrixLabels(rows, cols);
+		self->getNrMatrixIds(rows, cols);
 		return std::make_pair(rows, cols);
 	}
 
-	std::pair< std::vector<std::string>, std::vector<std::string> > getStoichiometryMatrixLabels() {
+	std::pair< std::vector<std::string>, std::vector<std::string> > getStoichiometryMatrixIds() {
 		std::vector<std::string> rows;
 		std::vector<std::string> cols;
-		self->getStoichiometryMatrixLabels(rows, cols);
+		self->getStoichiometryMatrixIds(rows, cols);
 		return std::make_pair(rows, cols);
 	}
 
-	std::pair< std::vector<std::string>, std::vector<std::string> > getFullyReorderedStoichiometryMatrixLabels() {
+	std::pair< std::vector<std::string>, std::vector<std::string> > getFullyReorderedStoichiometryMatrixIds() {
 		std::vector<std::string> rows;
 		std::vector<std::string> cols;
-		self->getFullyReorderedStoichiometryMatrixLabels(rows, cols);
+		self->getFullyReorderedStoichiometryMatrixIds(rows, cols);
 		return std::make_pair(rows, cols);
 	}
 
-	std::pair< std::vector<std::string>, std::vector<std::string> > getReorderedStoichiometryMatrixLabels() {
+	std::pair< std::vector<std::string>, std::vector<std::string> > getReorderedStoichiometryMatrixIds() {
 		std::vector<std::string> rows;
 		std::vector<std::string> cols;
-		self->getReorderedStoichiometryMatrixLabels(rows, cols);
+		self->getReorderedStoichiometryMatrixIds(rows, cols);
 		return std::make_pair(rows, cols);
 	}
 
@@ -248,7 +256,7 @@
 		R = [ R11 R12
 				0  GAMMA ]
 
-		The RowLabels should be an increasing number, to enumerate the conservation law, the column label will be the same label as the stoichiometry matrix.
+		The RowIds should be an increasing number, to enumerate the conservation law, the column label will be the same label as the stoichiometry matrix.
 		"""
 		import numpy as np
 
@@ -303,7 +311,7 @@
 
 		L will have the structure, [I L0]', such that L*Nr = N
 		"""
-		return self.getLinkMatrix().toNumpy()
+		return self._my_getLinkMatrix().toNumpy()
 
 	def getN0Matrix(self):
 		"""
@@ -362,8 +370,8 @@
 			| ``LibStructural.analyzeWithFullyPivotedLU``,
 			| ``LibStructural.analyzeWithFullyPivotedLUwithTests``,
 
-			Remarks: if matrix labels are needed it is recommended to call LibStructural.loadSpecies
-			and ``LibStructural.loadReactionNames``after a call to this method.
+			Remarks: if matrix ids are needed it is recommended to call LibStructural.loadSpeciesIds
+			and ``LibStructural.loadReactionIds``after a call to this method.
 
 			"""
 			import numpy as np
@@ -528,7 +536,7 @@
 					for i in range(rows):
 						for j in range (cols):
 							m.set (i, j, oMatrix[i][j])
-					return self.getRCond(m)
+					return self._my_getRCond(m)
 				else:
 					raise ValueError("Expecting 2 dimensional list or numpy array")
 			else:
@@ -626,21 +634,19 @@
 }
 
 %ignore LIB_STRUCTURAL::LibStructural::findPositiveGammaMatrix;
-%ignore LIB_STRUCTURAL::LibStructural::getColumnReorderedNrMatrixLabels;
-%ignore LIB_STRUCTURAL::LibStructural::getGammaMatrixLabels;
-%ignore LIB_STRUCTURAL::LibStructural::getK0MatrixLabels;
-%ignore LIB_STRUCTURAL::LibStructural::getKMatrixLabels;
-%ignore LIB_STRUCTURAL::LibStructural::getL0MatrixLabels;
-%ignore LIB_STRUCTURAL::LibStructural::getLinkMatrixLabels;
-%ignore LIB_STRUCTURAL::LibStructural::getN0MatrixLabels;
-%ignore LIB_STRUCTURAL::LibStructural::getNDCMatrixLabels;
-%ignore LIB_STRUCTURAL::LibStructural::getNICMatrixLabels;
-%ignore LIB_STRUCTURAL::LibStructural::getNrMatrixLabels;
-%ignore LIB_STRUCTURAL::LibStructural::getStoichiometryMatrixLabels;
-%ignore LIB_STRUCTURAL::LibStructural::getFullyReorderedStoichiometryMatrixLabels;
-%ignore LIB_STRUCTURAL::LibStructural::getReorderedStoichiometryMatrixLabels;
-%ignore LIB_STRUCTURAL::LibStructural::getLinkMatrix;
-
+%ignore LIB_STRUCTURAL::LibStructural::getColumnReorderedNrMatrixIds;
+%ignore LIB_STRUCTURAL::LibStructural::getGammaMatrixIds;
+%ignore LIB_STRUCTURAL::LibStructural::getK0MatrixIds;
+%ignore LIB_STRUCTURAL::LibStructural::getKMatrixIds;
+%ignore LIB_STRUCTURAL::LibStructural::getL0MatrixIds;
+%ignore LIB_STRUCTURAL::LibStructural::getLinkMatrixIds;
+%ignore LIB_STRUCTURAL::LibStructural::getN0MatrixIds;
+%ignore LIB_STRUCTURAL::LibStructural::getNDCMatrixIds;
+%ignore LIB_STRUCTURAL::LibStructural::getNICMatrixIds;
+%ignore LIB_STRUCTURAL::LibStructural::getNrMatrixIds;
+%ignore LIB_STRUCTURAL::LibStructural::getStoichiometryMatrixIds;
+%ignore LIB_STRUCTURAL::LibStructural::getFullyReorderedStoichiometryMatrixIds;
+%ignore LIB_STRUCTURAL::LibStructural::getReorderedStoichiometryMatrixIds;
 
 
 %include "../include/libstructural.h"
