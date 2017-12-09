@@ -31,10 +31,10 @@ Loads an SBML model into the library and carries out tests using the internal te
 %feature("docstring") LIB_STRUCTURAL::LibStructural::analyzeWithQR "
 LibStructural.analyzeWithQR(self)
 
-Uses QR factorization for structural analysis. This method performs the actual analysis of the stoichiometry matrix loaded 
-either via 
+Uses QR factorization for structural analysis. This method performs the actual analysis of the stoichiometry matrix loaded
+either via
 
-``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``. 
+``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``.
 
 Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
 
@@ -54,10 +54,10 @@ Remarks: This is the prefered method for structural analysis.
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::analyzeWithLU "
 LibStructural.analyzeWithLU(self)
-Uses LU Decomposition for Conservation analysis. This method performs the actual analysis of the stoichiometry matrix (loaded either 
-via 
+Uses LU Decomposition for Conservation analysis. This method performs the actual analysis of the stoichiometry matrix (loaded either
+via
 
-``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``. 
+``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``.
 
 Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
 
@@ -73,10 +73,10 @@ Only after one of the analysis methods below has been called are the structural 
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::analyzeWithLUandRunTests "
 LibStructural.analyzeWithLUandRunTests(self)
-Uses LU Decomposition for Conservation analysis. This method performs the actual analysis of the stoichiometry matrix loaded either 
-via 
+Uses LU Decomposition for Conservation analysis. This method performs the actual analysis of the stoichiometry matrix loaded either
+via
 
-``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``. 
+``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``.
 
 Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
 
@@ -94,10 +94,10 @@ This method additionally performs the integrated test suite and returns	those re
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::analyzeWithFullyPivotedLU "
 LibStructural.analyzeWithFullyPivotedLU(self)
-Uses fully pivoted LU Decomposition for Conservation analysis.This method performs the actual analysis of the stoichiometry matrix loaded either 
-via 
+Uses fully pivoted LU Decomposition for Conservation analysis.This method performs the actual analysis of the stoichiometry matrix loaded either
+via
 
-``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``. 
+``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``.
 
 Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
 
@@ -113,10 +113,10 @@ Only after one of the analysis methods below has been called are the structural 
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::analyzeWithFullyPivotedLUwithTests "
 LibStructural.analyzeWithFullyPivotedLUwithTests(self)
-Uses fully pivoted LU Decomposition for Conservation analysis. This method performs the actual analysis of the stoichiometry matrix loaded 
-either via 
+Uses fully pivoted LU Decomposition for Conservation analysis. This method performs the actual analysis of the stoichiometry matrix loaded
+either via
 
-``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``. 
+``LibStructural.loadStoichiometryMatrix`` or ``LibStructural.loadSBMLFromString``.
 
 Only after one of the analysis methods below has been called are the structural matrices (L0, K0...) available.
 
@@ -146,12 +146,12 @@ LibStructural.getSpecies(self)
 
 ";
 
-%feature("docstring") LIB_STRUCTURAL::LibStructural::getReorderedSpeciesNamesList "
+/*%feature("docstring") LIB_STRUCTURAL::LibStructural::getReorderedSpeciesNamesList "
 LibStructural.getReorderedSpeciesNamesList(self)
 
 :returns: the reordered list of molecular species (choosing the SBML Name if possible).
 
-";
+";*/
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getIndependentSpecies "
 LibStructural.getIndependentSpecies(self)
@@ -160,12 +160,12 @@ LibStructural.getIndependentSpecies(self)
 
 ";
 
-%feature("docstring") LIB_STRUCTURAL::LibStructural::getIndependentSpeciesNamesList "
+/*%feature("docstring") LIB_STRUCTURAL::LibStructural::getIndependentSpeciesNamesList "
 LibStructural.getIndependentSpeciesNamesList(self)
 
 :returns: the actual names of the independent species.
 
-";
+";*/
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getDependentSpecies "
 LibStructural.getDependentSpecies(self)
@@ -174,12 +174,12 @@ LibStructural.getDependentSpecies(self)
 
 ";
 
-%feature("docstring") LIB_STRUCTURAL::LibStructural::getDependentSpeciesNamesList "
+/*%feature("docstring") LIB_STRUCTURAL::LibStructural::getDependentSpeciesNamesList "
 LibStructural.getDependentSpeciesNamesList(self)
 
 :returns: the display names of the dependent species.
 
-";
+";*/
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getReactions "
 LibStructural.getReactions(self)
@@ -203,12 +203,12 @@ LibStructural.getDependentReactionIds(self)
 
 ";
 
-%feature("docstring") LIB_STRUCTURAL::LibStructural::getReactionsNamesList "
+/*%feature("docstring") LIB_STRUCTURAL::LibStructural::getReactionsNamesList "
 LibStructural.getReactionsNamesList(self)
 
 :returns: display names of the reactions.
 
-";
+";*/
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getReorderedReactions "
 LibStructural.getReorderedReactions(self)
@@ -342,7 +342,7 @@ Sets user specified tolerance. This function sets the tolerance used by the libr
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getTolerance "
 LibStructural.getTolerance(self)
 
-:returns: the currently used tolerance for decided whether a small number is considered zero or not. 
+:returns: the currently used tolerance for decided whether a small number is considered zero or not.
 
 This function returns the tolerance currently used by the library to determine what value
 is considered as zero. Any value with absolute value smaller than this tolerance is considered zero
@@ -355,7 +355,7 @@ LibStructural.getInstance(self)
 
 static method to get an instance of LibStructural (allows use as singleton)
 
- import structural 
+ import structural
  ls = structural.LibStructural.getInstance()
 ";
 
@@ -366,7 +366,7 @@ LibStructural.getColumnReorderedNrMatrixLabels(self)
 
 ";
 
-%feature("docstring") LIB_STRUCTURAL::LibStructural::loadReactionNames "
+/*%feature("docstring") LIB_STRUCTURAL::LibStructural::loadReactionNames "
 LibStructural.loadReactionNames(self, *args):
 
 :param: a vector of reaction names (ids)
@@ -375,7 +375,7 @@ Loads reaction names. This function should be used whenever labeled matrices are
 
 Remarks: This method should only be called after ``LibStructural.loadStoichiometryMatrix``
 
-";
+";*/
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::loadSpecies "
 LibStructural.loadSpecies(self, *args):
