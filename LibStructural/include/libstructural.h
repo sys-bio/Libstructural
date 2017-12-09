@@ -230,7 +230,7 @@ namespace LIB_STRUCTURAL
 			\li ::LibStructural_analyzeWithFullyPivotedLU or
 			\li ::LibStructural_analyzeWithFullyPivotedLUwithTests
 
-			\remarks if matrix labels are needed it is recommended to call LIB_STRUCTURAL::LibStructural::loadSpeciesIds
+			\remarks if matrix labels are needed it is recommended to call LIB_STRUCTURAL::LibStructural::loadSpeciesIdsWithValues
 			and LIB_STRUCTURAL::LibStructural::loadReactionNames after a call to this method.
 
 			\param oMatrix the stoichiometry matrix to load
