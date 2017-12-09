@@ -359,8 +359,8 @@ static method to get an instance of LibStructural (allows use as singleton)
  ls = structural.LibStructural.getInstance()
 ";
 
-%feature("docstring") LIB_STRUCTURAL::LibStructural::getColumnReorderedNrMatrixLabels "
-LibStructural.getColumnReorderedNrMatrixLabels(self)
+%feature("docstring") LIB_STRUCTURAL::LibStructural::getColumnReorderedNrMatrixIds "
+LibStructural.getColumnReorderedNrMatrixIds(self)
 
 :returns: the Nr Matrix row and column labels (repartitioned into NIC and NDC).
 
@@ -377,96 +377,108 @@ Remarks: This method should only be called after ``LibStructural.loadStoichiomet
 
 ";*/
 
-%feature("docstring") LIB_STRUCTURAL::LibStructural::loadSpecies "
-LibStructural.loadSpecies(self, *args):
+%feature("docstring") LIB_STRUCTURAL::LibStructural::loadSpeciesIdsWithValues "
+LibStructural.loadSpeciesIdsWithValues(self, *args):
 
-:param: speciesNames a vector of species names (ids) to load
+:param: speciesIds a vector of species ids to load
 :param: speciesValues a vector of initial concentrations
 
-Loads species names and initial values. This function should be used whenever labeled matrices are important as these labels will be used in labeling the structural matrices. This function sets the species names (ids). It is also possible to provide an initial condition for each of the species. This will be used when calculating the conserved sums.
+Loads species names and initial values. This function should be used whenever labeled matrices are important as these labels will be used in labeling the structural matrices. This function sets the species ids. It is also possible to provide an initial condition for each of the species. This will be used when calculating the conserved sums.
 
-Remarks: This method should only be called after ``LibStructural.loadStoichiometryMatrix``
+Remarks: This method should only be called after ``LibStructural.loadStoichiometryMatrix``. ``LibStructural.analyzeWithQR`` should be called for the function to take effect.
 
 ";
 
-%feature("docstring") LIB_STRUCTURAL::LibStructural::getGammaMatrixLabels "
-LibStructural.getGammaMatrixLabels(self)
+%feature("docstring") LIB_STRUCTURAL::LibStructural::loadReactionIdsWithValues "
+LibStructural.loadReactionIdsWithValues(self, *args):
+
+:param: reactionIds a vector of reaction ids to load
+:param: reactionValues a vector of reaction rates
+
+This function should be used whenever labeled matrices are important as these labels will be used in labeling the structural matrices. This function sets the reaction ids. It is also possible to provide reaction rate values. This will be used when calculating the conserved sums.
+
+Remarks: This method should only be called after ``LibStructural.loadStoichiometryMatrix``. ``LibStructural.analyzeWithQR`` should be called for the function to take effect.
+
+";
+
+%feature("docstring") LIB_STRUCTURAL::LibStructural::getGammaMatrixIds "
+LibStructural.getGammaMatrixIds(self)
 
 :returns: the row and column labels for Gamma, the conservation law array.
 ";
 
-%feature("docstring") LIB_STRUCTURAL::LibStructural::getK0MatrixLabels "
-LibStructural.getK0MatrixLabels(self)
+%feature("docstring") LIB_STRUCTURAL::LibStructural::getK0MatrixIds "
+LibStructural.getK0MatrixIds(self)
 
 :returns: the K0 Matrix row and column labels.
 
 ";
 
-%feature("docstring") LIB_STRUCTURAL::LibStructural::getKMatrixLabels "
-LibStructural.getKMatrixLabels(self)
+%feature("docstring") LIB_STRUCTURAL::LibStructural::getKMatrixIds "
+LibStructural.getKMatrixIds(self)
 
 :returns: the K matrix row and column labels.
 
 ";
 
-%feature("docstring") LIB_STRUCTURAL::LibStructural::getL0MatrixLabels "
-LibStructural.getL0MatrixLabels(self)
+%feature("docstring") LIB_STRUCTURAL::LibStructural::getL0MatrixIds "
+LibStructural.getL0MatrixIds(self)
 
 :returns: the L0 Matrix row and column labels.
 
 ";
 
-%feature("docstring") LIB_STRUCTURAL::LibStructural::getLinkMatrixLabels "
-LibStructural.getLinkMatrixLabels(self)
+%feature("docstring") LIB_STRUCTURAL::LibStructural::getLinkMatrixIds "
+LibStructural.getLinkMatrixIds(self)
 
 :returns: the row and column labels for the Link Matrix, L
 
 ";
 
-%feature("docstring") LIB_STRUCTURAL::LibStructural::getN0MatrixLabels "
-LibStructural.getN0MatrixLabels(self)
+%feature("docstring") LIB_STRUCTURAL::LibStructural::getN0MatrixIds "
+LibStructural.getN0MatrixIds(self)
 
 :returns: the N0 Matrix row and column labels.
 
 ";
 
-%feature("docstring") LIB_STRUCTURAL::LibStructural::getNDCMatrixLabels "
-LibStructural.getNDCMatrixLabels(self)
+%feature("docstring") LIB_STRUCTURAL::LibStructural::getNDCMatrixIds "
+LibStructural.getNDCMatrixIds(self)
 
 :returns: the NDC Matrix row and column labels.
 
 ";
 
-%feature("docstring") LIB_STRUCTURAL::LibStructural::getNICMatrixLabels "
-LibStructural.getNICMatrixLabels(self)
+%feature("docstring") LIB_STRUCTURAL::LibStructural::getNICMatrixIds "
+LibStructural.getNICMatrixIds(self)
 
 :returns: the NIC Matrix row and column labels.
 
 ";
 
-%feature("docstring") LIB_STRUCTURAL::LibStructural::getNrMatrixLabels "
-LibStructural.getNrMatrixLabels(self)
+%feature("docstring") LIB_STRUCTURAL::LibStructural::getNrMatrixIds "
+LibStructural.getNrMatrixIds(self)
 
 :returns: the Nr Matrix row and column labels.
 
 ";
 
-%feature("docstring") LIB_STRUCTURAL::LibStructural::getStoichiometryMatrixLabels "
-LibStructural.getStoichiometryMatrixLabels(self)
+%feature("docstring") LIB_STRUCTURAL::LibStructural::getStoichiometryMatrixIds "
+LibStructural.getStoichiometryMatrixIds(self)
 
 :returns: the row and column labels for the original and unaltered stoichiometry matrix.
 
 ";
 
-%feature("docstring") LIB_STRUCTURAL::LibStructural::getFullyReorderedStoichiometryMatrixLabels "
-LibStructural.getFullyReorderedStoichiometryMatrixLabels(self)
+%feature("docstring") LIB_STRUCTURAL::LibStructural::getFullyReorderedStoichiometryMatrixIds "
+LibStructural.getFullyReorderedStoichiometryMatrixIds(self)
 
 :returns: the row and column labels for the reordered stoichiometry matrix (row reordered stoichiometry matrix)
 
 ";
 
-%feature("docstring") LIB_STRUCTURAL::LibStructural::getReorderedStoichiometryMatrixLabels "
-LibStructural.getReorderedStoichiometryMatrixLabels(self)
+%feature("docstring") LIB_STRUCTURAL::LibStructural::getReorderedStoichiometryMatrixIds "
+LibStructural.getReorderedStoichiometryMatrixIds(self)
 
 :returns: the row and column labels for the reordered stoichiometry matrix (row reordered stoichiometry matrix)
 
