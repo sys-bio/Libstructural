@@ -1,4 +1,4 @@
-# libStructural 0.0.1
+# libStructural 1.0.0
 
 **libStructural** is an API that provides a wide variety of methods that permit access to the constraint information in the stoichiometry matrix of a biochemical reaction network. 
 
@@ -8,4 +8,4 @@ Full documentation for libStructural is available [here](https://libstructural.r
 
 ## ACKNOWLEDGEMENTS
 
-libStructural is brought to you by Herbert Sauro, Frank T. Bergmann, and Yosef Bedaso.
+libStructural is brought to you by Herbert Sauro, Frank T. Bergmann, Kiri Choi, and Yosef Bedaso.
