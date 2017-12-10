@@ -1,0 +1,15 @@
+C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/BUILD/CMakeFiles/PACKAGE.dir
+C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/BUILD/CMakeFiles/INSTALL.dir
+C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/BUILD/CMakeFiles/ALL_BUILD.dir
+C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/BUILD/CMakeFiles/ZERO_CHECK.dir
+C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/BUILD/LibLA/CMakeFiles/PACKAGE.dir
+C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/BUILD/LibLA/CMakeFiles/LibLA.dir
+C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/BUILD/LibLA/CMakeFiles/INSTALL.dir
+C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/BUILD/LibLA/CMakeFiles/LibLA-static.dir
+C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/BUILD/LibStructural/CMakeFiles/PACKAGE.dir
+C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/BUILD/LibStructural/CMakeFiles/LibStructural.dir
+C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/BUILD/LibStructural/CMakeFiles/INSTALL.dir
+C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/BUILD/LibStructural/CMakeFiles/LibStructural-static.dir
+C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/BUILD/SWIG/CMakeFiles/_structural.dir
+C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/BUILD/SWIG/CMakeFiles/PACKAGE.dir
+C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/BUILD/SWIG/CMakeFiles/INSTALL.dir

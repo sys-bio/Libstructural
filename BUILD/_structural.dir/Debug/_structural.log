@@ -1,0 +1,766 @@
+﻿  Building Custom Rule C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/SWIG/CMakeLists.txt
+  CMake does not need to re-run because C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/BUILD/SWIG/CMakeFiles/generate.stamp is up-to-date.
+  Swig source
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\SWIG\..\include\matrix.h(217): warning 362: operator= ignored
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\SWIG\..\include\matrix.h(228): warning 362: operator= ignored
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\SWIG\..\include\matrix.h(252): warning 389: operator[] ignored (consider using %extend)
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\SWIG\..\include\matrix.h(258): warning 389: operator[] ignored (consider using %extend)
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\SWIG\..\include\matrix.h(109): warning 509: Overloaded method LIB_LA::Matrix< double >::Matrix(double const **,int,int) effectively ignored,
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\SWIG\..\include\matrix.h(86): warning 509: as it is shadowed by LIB_LA::Matrix< double >::Matrix(double *&,int,int).
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\SWIG\..\include\matrix.h(109): warning 509: Overloaded method LIB_LA::Matrix< int >::Matrix(int const **,int,int) effectively ignored,
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\SWIG\..\include\matrix.h(86): warning 509: as it is shadowed by LIB_LA::Matrix< int >::Matrix(int *&,int,int).
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\SWIG\..\include\matrix.h(109): warning 509: Overloaded method LIB_LA::Matrix< LIB_LA::Complex >::Matrix(LIB_LA::Complex const **,int,int) effectively ignored,
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\SWIG\..\include\matrix.h(86): warning 509: as it is shadowed by LIB_LA::Matrix< LIB_LA::Complex >::Matrix(LIB_LA::Complex *&,int,int).
+  libstructuralPYTHON_wrap.cxx
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(5552): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(5598): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(5653): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(5699): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(5798): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(5844): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(5942): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(5996): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(6032): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(6078): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(6124): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(6170): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(6225): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(6273): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(6321): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(6376): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(6431): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(6486): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(6541): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(6589): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(6668): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(6715): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(6756): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(6950): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(6995): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(7031): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(7067): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(7103): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(7145): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(7208): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(7284): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(7348): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(7474): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(7524): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(7577): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(7643): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(7697): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(7749): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(7847): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(7958): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(8078): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(8107): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(8148): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(8186): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(8222): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(8257): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(8304): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(8340): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(8376): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(8413): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(8450): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(8487): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(8524): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(8559): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(8603): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(8654): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(8721): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(8823): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(8931): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(8969): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(9005): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(9063): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(9123): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(9242): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(9318): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(9424): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(9460): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(9495): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(9540): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(9576): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(9612): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(9648): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(9690): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(9753): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(9829): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(9893): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(10019): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(10069): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(10122): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(10188): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(10242): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(10294): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(10392): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(10503): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(10623): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(10652): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(10693): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(10731): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(10767): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(10802): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(10849): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(10885): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(10921): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(10958): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(10995): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(11032): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(11069): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(11104): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(11148): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(11199): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(11266): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(11368): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(11476): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(11514): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(11550): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(11608): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(11668): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(11787): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(11863): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(11969): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(12005): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(12040): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(12085): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(12121): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(12157): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(12193): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(12235): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(12298): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(12374): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(12438): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(12564): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(12614): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(12667): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(12733): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(12787): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(12839): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(12937): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(13045): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(13162): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(13189): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(13230): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(13268): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(13304): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(13339): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(13386): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(13422): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(13458): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(13495): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(13532): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(13569): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(13606): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(13641): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(13685): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(13736): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(13803): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(13902): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(14007): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(14043): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(14079): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(14134): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(14189): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(14305): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(14376): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(14484): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(14520): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(14555): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(14589): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(14638): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(14679): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(14864): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(14898): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(14945): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(14986): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(15172): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(15206): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(15253): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(15312): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(15371): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(15418): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(15475): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(15532): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(15579): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(15626): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(15673): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(15709): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(15745): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(15781): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(15817): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(15853): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(15889): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(15925): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(15961): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(15997): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(16033): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(16069): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(16105): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(16141): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(16177): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(16213): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(16249): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(16285): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(16333): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(16369): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(16405): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(16441): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(16477): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(16513): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(16549): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(16585): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(16621): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(16657): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(16693): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(16729): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(16765): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(16801): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(16837): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(16873): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(16909): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(16945): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(16981): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(17017): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(17053): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(17089): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(17125): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(17161): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(17197): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(17233): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(17281): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(17329): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(17377): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(17425): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(17473): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(17521): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(17612): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(17656): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(17692): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(17719): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(17746): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(17782): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(17828): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(17932): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(18045): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(18137): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(18173): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(18209): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(18245): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(18281): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(18317): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(18353): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(18389): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(18425): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(18461): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(18497): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(18533): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(18568): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(18611): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(18646): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(18691): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(18752): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(18788): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(18824): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(18867): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(18902): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(18947): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(19000): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(19036): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(19072): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(19115): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(19150): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(19195): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(19248): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(19284): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(19320): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(19372): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(19408): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(19435): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(19474): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(19540): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(19597): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(19654): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(19708): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(19897): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(19942): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(19978): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(20087): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(20149): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(20184): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(20244): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(20297): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(20350): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(20403): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(20439): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(20475): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(20511): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(20547): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(20605): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(20663): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(20779): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(20841): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(20893): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(20929): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(20956): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(20995): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(21061): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(21118): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(21175): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(21229): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(21418): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(21463): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(21499): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(21608): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(21670): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(21705): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(21765): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(21818): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(21871): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(21924): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(21960): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(21996): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(22032): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(22068): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(22126): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(22184): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(22300): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(22362): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(22414): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(22450): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(22477): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(22516): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(22582): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(22639): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(22696): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(22750): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(22939): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(22984): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(23020): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(23129): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(23191): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(23226): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(23286): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(23339): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(23392): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(23445): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(23481): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(23517): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(23553): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(23589): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(23647): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(23705): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(23821): warning C4101: 'e': unreferenced local variable
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx(23891): warning C4101: 'e': unreferenced local variable
+libsbml-static.lib(Species.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(Species.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SimpleSpeciesReference.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SimpleSpeciesReference.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SpeciesReference.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SpeciesReference.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(Reaction.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(Reaction.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(Model.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(Model.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLReader.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLReader.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLDocument.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLDocument.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(XMLAttributes.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(XMLAttributes.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(XMLOutputStream.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(XMLOutputStream.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(XMLToken.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(XMLToken.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLNamespaces.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLNamespaces.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(XMLInputStream.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(XMLInputStream.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SyntaxChecker.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SyntaxChecker.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLConstructorException.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLConstructorException.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBase.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBase.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ListOf.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ListOf.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(Compartment.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(Compartment.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(FormulaUnitsData.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(FormulaUnitsData.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBO.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBO.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBasePlugin.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBasePlugin.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(XMLNode.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(XMLNode.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(List.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(List.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ModelHistory.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ModelHistory.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(RDFAnnotationParser.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(RDFAnnotationParser.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTNode.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTNode.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(CVTerm.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(CVTerm.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(StoichiometryMath.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(StoichiometryMath.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ModifierSpeciesReference.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ModifierSpeciesReference.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(MathML.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(MathML.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(KineticLaw.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(KineticLaw.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(util.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(util.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(FunctionDefinition.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(FunctionDefinition.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(InitialAssignment.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(InitialAssignment.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(Unit.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(Unit.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UnitDefinition.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UnitDefinition.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(CompartmentType.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(CompartmentType.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SpeciesType.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SpeciesType.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(Parameter.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(Parameter.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(Rule.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(Rule.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(AlgebraicRule.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(AlgebraicRule.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(AssignmentRule.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(AssignmentRule.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(RateRule.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(RateRule.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(Constraint.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(Constraint.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(EventAssignment.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(EventAssignment.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(Event.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(Event.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UnitFormulaFormatter.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UnitFormulaFormatter.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(IdList.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(IdList.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(IdFilter.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(IdFilter.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(MetaIdFilter.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(MetaIdFilter.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(XMLError.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(XMLError.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLErrorLog.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLErrorLog.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(CompressCommon.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(CompressCommon.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(XMLNamespaces.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(XMLNamespaces.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLError.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLError.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(XMLErrorLog.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(XMLErrorLog.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLValidator.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLValidator.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLInternalValidator.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLInternalValidator.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(Validator.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(Validator.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(StrictUnitConsistencyValidator.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(StrictUnitConsistencyValidator.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UnitConsistencyValidator.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UnitConsistencyValidator.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBaseExtensionPoint.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBaseExtensionPoint.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLExtension.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLExtension.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLExtensionRegistry.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLExtensionRegistry.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ConversionProperties.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ConversionProperties.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLConverterRegistry.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLConverterRegistry.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(XMLTriple.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(XMLTriple.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLExtensionException.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLExtensionException.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(XMLParser.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(XMLParser.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(XMLTokenizer.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(XMLTokenizer.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLTypeCodes.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLTypeCodes.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(Date.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(Date.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ModelCreator.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ModelCreator.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTTypes.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTTypes.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTBase.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTBase.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTPiecewiseFunctionNode.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTPiecewiseFunctionNode.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTFunction.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTFunction.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTNumber.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTNumber.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(LocalParameter.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(LocalParameter.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UnitKindList.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UnitKindList.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(Delay.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(Delay.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(Priority.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(Priority.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(Trigger.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(Trigger.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLTransforms.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLTransforms.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ElementFilter.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ElementFilter.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLWriter.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLWriter.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ConsistencyValidator.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ConsistencyValidator.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(IdentifierConsistencyValidator.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(IdentifierConsistencyValidator.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(MathMLConsistencyValidator.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(MathMLConsistencyValidator.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBOConsistencyValidator.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBOConsistencyValidator.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(OverdeterminedValidator.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(OverdeterminedValidator.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ModelingPracticeValidator.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ModelingPracticeValidator.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(L1CompatibilityValidator.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(L1CompatibilityValidator.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(L2v1CompatibilityValidator.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(L2v1CompatibilityValidator.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(L2v2CompatibilityValidator.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(L2v2CompatibilityValidator.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(L2v3CompatibilityValidator.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(L2v3CompatibilityValidator.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(L2v4CompatibilityValidator.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(L2v4CompatibilityValidator.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(L3v1CompatibilityValidator.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(L3v1CompatibilityValidator.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(L3v2CompatibilityValidator.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(L3v2CompatibilityValidator.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(InternalConsistencyValidator.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(InternalConsistencyValidator.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLVisitor.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLVisitor.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(VConstraint.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(VConstraint.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(PowerUnitsCheck.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(PowerUnitsCheck.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ExponentUnitsCheck.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ExponentUnitsCheck.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ArgumentsUnitsCheck.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ArgumentsUnitsCheck.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ArgumentsUnitsCheckWarnings.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ArgumentsUnitsCheckWarnings.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(KineticLawUnitsCheck.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(KineticLawUnitsCheck.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTBasePlugin.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTBasePlugin.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBasePluginCreatorBase.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBasePluginCreatorBase.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ConversionOption.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ConversionOption.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLFunctionDefinitionConverter.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLFunctionDefinitionConverter.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLInitialAssignmentConverter.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLInitialAssignmentConverter.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLLevelVersionConverter.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLLevelVersionConverter.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLStripPackageConverter.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLStripPackageConverter.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLUnitsConverter.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLUnitsConverter.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLRuleConverter.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLRuleConverter.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLIdConverter.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLIdConverter.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLInferUnitsConverter.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLInferUnitsConverter.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLLocalParameterConverter.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLLocalParameterConverter.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLReactionConverter.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLReactionConverter.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLLevel1Version1Converter.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLLevel1Version1Converter.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLRateOfConverter.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLRateOfConverter.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(LibXMLParser.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(LibXMLParser.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(XMLHandler.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(XMLHandler.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTFunctionBase.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTFunctionBase.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTNaryFunctionNode.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTNaryFunctionNode.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTCSymbol.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTCSymbol.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTUnaryFunctionNode.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTUnaryFunctionNode.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTBinaryFunctionNode.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTBinaryFunctionNode.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTCiFunctionNode.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTCiFunctionNode.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTLambdaFunctionNode.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTLambdaFunctionNode.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTQualifierNode.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTQualifierNode.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTSemanticsNode.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTSemanticsNode.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTCnBase.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTCnBase.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTCnIntegerNode.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTCnIntegerNode.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTCnRationalNode.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTCnRationalNode.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTCnRealNode.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTCnRealNode.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTCnExponentialNode.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTCnExponentialNode.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTCiNumberNode.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTCiNumberNode.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTConstantNumberNode.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTConstantNumberNode.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(OutputCompressor.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(OutputCompressor.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(CompartmentOutsideCycles.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(CompartmentOutsideCycles.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(FunctionDefinitionVars.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(FunctionDefinitionVars.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(FunctionReferredToExists.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(FunctionReferredToExists.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SpeciesReactionOrRule.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SpeciesReactionOrRule.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UniqueSpeciesTypesInCompartment.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UniqueSpeciesTypesInCompartment.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UniqueSymbolsInInitialAssignments.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UniqueSymbolsInInitialAssignments.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UniqueVarsInInitialAssignmentsAndRules.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UniqueVarsInInitialAssignmentsAndRules.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(StoichiometryMathVars.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(StoichiometryMathVars.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(KineticLawVars.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(KineticLawVars.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(AssignmentCycles.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(AssignmentCycles.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(AssignmentRuleOrdering.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(AssignmentRuleOrdering.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(FunctionApplyMathCheck.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(FunctionApplyMathCheck.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(FunctionDefinitionRecursion.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(FunctionDefinitionRecursion.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(RateOfCycles.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(RateOfCycles.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UniqueIdsForUnitDefinitions.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UniqueIdsForUnitDefinitions.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UniqueIdsInKineticLaw.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UniqueIdsInKineticLaw.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UniqueIdsInModel.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UniqueIdsInModel.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UniqueVarsInEventAssignments.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UniqueVarsInEventAssignments.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UniqueVarsInRules.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UniqueVarsInRules.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UniqueVarsInEventsAndRules.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UniqueVarsInEventsAndRules.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UniqueMetaId.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UniqueMetaId.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ModelUnitsDangling.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ModelUnitsDangling.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(LogicalArgsMathCheck.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(LogicalArgsMathCheck.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(NumericArgsMathCheck.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(NumericArgsMathCheck.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(PieceBooleanMathCheck.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(PieceBooleanMathCheck.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(PiecewiseValueMathCheck.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(PiecewiseValueMathCheck.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(EqualityArgsMathCheck.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(EqualityArgsMathCheck.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(CiElementMathCheck.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(CiElementMathCheck.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(LambdaMathCheck.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(LambdaMathCheck.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(NumericReturnMathCheck.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(NumericReturnMathCheck.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(LocalParameterMathCheck.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(LocalParameterMathCheck.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(NumberArgsMathCheck.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(NumberArgsMathCheck.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(FunctionNoArgsMathCheck.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(FunctionNoArgsMathCheck.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ValidCnUnitsValue.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ValidCnUnitsValue.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(CiElementNot0DComp.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(CiElementNot0DComp.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(RateOfCiTargetMathCheck.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(RateOfCiTargetMathCheck.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(RateOfAssignmentMathCheck.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(RateOfAssignmentMathCheck.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(RateOfCompartmentMathCheck.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(RateOfCompartmentMathCheck.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(OverDeterminedCheck.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(OverDeterminedCheck.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(LocalParameterShadowsIdInModel.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(LocalParameterShadowsIdInModel.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ReportEmptyListOf.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ReportEmptyListOf.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(IdNameNewOnSBase.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(IdNameNewOnSBase.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(DuplicateTopLevelAnnotation.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(DuplicateTopLevelAnnotation.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UnitsBase.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UnitsBase.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLConverter.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLConverter.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLConvert.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(SBMLConvert.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(L3Parser.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(L3Parser.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(XMLFileBuffer.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(XMLFileBuffer.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(XMLMemoryBuffer.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(XMLMemoryBuffer.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(LibXMLHandler.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(LibXMLHandler.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTCSymbolTimeNode.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTCSymbolTimeNode.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTCSymbolDelayNode.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTCSymbolDelayNode.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTCSymbolAvogadroNode.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTCSymbolAvogadroNode.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTCSymbolRateOfNode.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(ASTCSymbolRateOfNode.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(zfstream.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(zfstream.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(zipfstream.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(zipfstream.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(bzfstream.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(bzfstream.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(IdBase.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(IdBase.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UniqueIdBase.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(UniqueIdBase.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(MathMLBase.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(MathMLBase.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(L3ParserSettings.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(L3ParserSettings.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(InputDecompressor.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(InputDecompressor.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(LibXMLAttributes.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(LibXMLAttributes.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(LibXMLNamespaces.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(LibXMLNamespaces.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(LibXMLTranscode.obj) : error LNK2038: mismatch detected for '_ITERATOR_DEBUG_LEVEL': value '0' doesn't match value '2' in libstructuralPYTHON_wrap.obj
+libsbml-static.lib(LibXMLTranscode.obj) : error LNK2038: mismatch detected for 'RuntimeLibrary': value 'MD_DynamicRelease' doesn't match value 'MDd_DynamicDebug' in libstructuralPYTHON_wrap.obj
+LINK : fatal error LNK1104: cannot open file 'python27_d.lib'

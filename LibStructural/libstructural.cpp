@@ -48,14 +48,16 @@ string LibStructural::loadSBMLFromString(string sSBML)
 {
     DELETE_IF_NON_NULL(_Model);
     _Model = new SBMLmodel(sSBML);
-    return analyzeWithQR();
+    analyzeWithQR();
+	return _sResultStream.str();
 }
 
 string LibStructural::loadSBMLFromFile(string sFileName)
 {
 	DELETE_IF_NON_NULL(_Model);
 	_Model = SBMLmodel::FromFile(sFileName);
-	return analyzeWithQR();
+	analyzeWithQR();
+	return _sResultStream.str();
 }
 
 //Initialization method, takes SBML as input
@@ -63,14 +65,11 @@ string LibStructural::loadSBMLwithTests(string sSBML)
 {
 	DELETE_IF_NON_NULL(_Model);		_Model = new SBMLmodel(sSBML);
 
-	stringstream oResult;
+	analyzeWithQR();
+	_sResultStream << endl << endl;
+	_sResultStream << getTestDetails();
 
-	oResult << analyzeWithQR();
-	oResult << endl << endl;
-	oResult << getTestDetails();
-
-	return oResult.str();
-
+	return _sResultStream.str();
 }
 
 
@@ -251,6 +250,15 @@ string LibStructural::GenerateResultString()
 		<< LINE << endl << LINE << endl << endl;
 
 	return oBuffer.str();
+}
+
+string LibStructural::getResultString () {
+	return _sResultStream.str ();
+}
+
+
+string LibStructural::getSummary () {
+	return _sResultStream.str ();
 }
 
 
@@ -454,20 +462,18 @@ void  LibStructural::BuildStoichiometryMatrixFromModel(LIB_STRUCTURAL::SBMLmodel
 #endif
 
 
-//Uses QR Decomposition for Conservation analysis
-string LibStructural::analyzeWithQR()
+// Uses QR Decomposition for Conservation analysis
+void LibStructural::analyzeWithQR()
 {
-	stringstream oResult;
-
 	Initialize();
 
 	if (_NumRows == 0)
 	{
-		oResult << "Model has no floating species.";
+		_sResultStream << "Model has no floating species.";
 	}
 	else if (_NumCols == 0)
 	{
-		oResult << "Model has no Reactions.";
+		_sResultStream << "Model has no Reactions.";
 	}
 	else
 	{
@@ -530,10 +536,9 @@ string LibStructural::analyzeWithQR()
 
 		DELETE_IF_NON_NULL(Q); DELETE_IF_NON_NULL(R); DELETE_IF_NON_NULL(P);
 
-		oResult << GenerateResultString();
+		_sResultStream << GenerateResultString();
 	}
 
-	return oResult.str();
 }
 
 
@@ -767,10 +772,10 @@ void LibStructural::computeK0andKMatrices()
 }
 
 
+
 //Uses LU Decomposition for Conservation analysis
-string LibStructural::analyzeWithLU()
+void LibStructural::analyzeWithLU()
 {
-	stringstream oResult;
 
 	LU_Result * oLUResult = NULL;
 
@@ -778,11 +783,11 @@ string LibStructural::analyzeWithLU()
 
 	if (_NumRows == 0)
 	{
-		oResult << "Model has no floating species.";
+		_sResultStream << "Model has no floating species.";
 	}
 	else if (_NumCols == 0)
 	{
-		oResult << "Model has no Reactions.";
+		_sResultStream << "Model has no Reactions.";
 	}
 	else
 	{
@@ -881,48 +886,41 @@ string LibStructural::analyzeWithLU()
 		computeConservedEntities();
 		computeK0andKMatrices();
 
-		oResult << GenerateResultString();
+		_sResultStream << GenerateResultString();
 	}
 
 	DELETE_IF_NON_NULL(oLUResult);
-
-	return oResult.str();
 }
 
 //Uses LU Decomposition for Conservation analysis
-string LibStructural::analyzeWithLUandRunTests()
+void LibStructural::analyzeWithLUandRunTests()
 {
-	stringstream oResult;
-
-	oResult << analyzeWithLU();
-	oResult << endl << endl;
-	oResult << getTestDetails();
-
-	return oResult.str();
-
+	analyzeWithLU();
+	_sResultStream << endl << endl;
+	_sResultStream << getTestDetails();
 }
 
+
 //Uses fully pivoted LU Decomposition for Conservation analysis
-string LibStructural::analyzeWithFullyPivotedLU()
+void LibStructural::analyzeWithFullyPivotedLU()
 {
-	stringstream oResult;
 	LU_Result * oLUResult = NULL;
 
 	Initialize();
 
 	if (_NumRows == 0)
 	{
-		oResult << "Model has no floating species.";
+		_sResultStream << "Model has no floating species.";
 	}
 	else if (_NumCols == 0)
 	{
-		oResult << "Model has no Reactions.";
+		_sResultStream << "Model has no Reactions.";
 	}
 	else
 	{
 		if (zero_nmat)
 		{
-			oResult << "Model has empty stoiciometry matrix.";
+			_sResultStream << "Model has empty stoiciometry matrix.";
 		}
 		else
 		{
@@ -1037,23 +1035,37 @@ string LibStructural::analyzeWithFullyPivotedLU()
 
 		DELETE_IF_NON_NULL(oLUResult);
 
-		oResult << GenerateResultString();
+		_sResultStream << GenerateResultString();
 	}
-
-	return oResult.str();
 }
+
 
 //Uses fully pivoted LU Decomposition for Conservation analysis
-string LibStructural::analyzeWithFullyPivotedLUwithTests()
+void LibStructural::analyzeWithFullyPivotedLUwithTests()
 {
-	stringstream oResult;
+	_sResultStream << endl << endl;
+	_sResultStream << getTestDetails();
 
-	oResult << analyzeWithFullyPivotedLU();
-	oResult << endl << endl;
-	oResult << getTestDetails();
-
-	return oResult.str();
 }
+
+
+#
+int LibStructural_getSummary (char* *outMessage, int *nLength)
+{
+
+	try
+	{
+		*outMessage = strdup (LibStructural::getInstance()->getResultString().c_str ());
+		*nLength = strlen (*outMessage);
+		return 0;
+	}
+	catch (...)
+	{
+		return -1;
+	}
+
+}
+
 
 //Returns L0 Matrix
 LibStructural::DoubleMatrix* LibStructural::getL0Matrix()
@@ -2431,7 +2443,8 @@ LIB_EXTERN  int LibStructural_loadSBMLwithTests(const char* sSBML, char* *oResul
 //Uses QR factorization for Conservation analysis
 LIB_EXTERN  int LibStructural_analyzeWithQR(char* *outMessage, int *nLength)
 {
-	*outMessage = strdup(LibStructural::getInstance()->analyzeWithQR().c_str());
+	LibStructural::getInstance ()->analyzeWithQR ();
+	*outMessage = strdup (LibStructural::getInstance ()->getResultString().c_str ());
 	*nLength = strlen(*outMessage);
 	return 0;
 }
@@ -2439,7 +2452,8 @@ LIB_EXTERN  int LibStructural_analyzeWithQR(char* *outMessage, int *nLength)
 //Uses LU Decomposition for Conservation analysis
 LIB_EXTERN  int LibStructural_analyzeWithLU(char* *outMessage, int *nLength)
 {
-	*outMessage = strdup(LibStructural::getInstance()->analyzeWithLU().c_str());
+	LibStructural::getInstance ()->analyzeWithLU ();
+	*outMessage = strdup(LibStructural::getInstance ()->getResultString ().c_str ());
 	*nLength = strlen(*outMessage);
 	return 0;
 }
@@ -2447,7 +2461,8 @@ LIB_EXTERN  int LibStructural_analyzeWithLU(char* *outMessage, int *nLength)
 //Uses LU Decomposition for Conservation analysis
 LIB_EXTERN  int LibStructural_analyzeWithLUandRunTests(char* *outMessage, int *nLength)
 {
-	*outMessage = strdup(LibStructural::getInstance()->analyzeWithLUandRunTests().c_str());
+	LibStructural::getInstance ()->analyzeWithLUandRunTests ();
+	*outMessage = strdup(LibStructural::getInstance ()->getResultString ().c_str ());
 	*nLength = strlen(*outMessage);
 	return 0;
 }
@@ -2455,7 +2470,8 @@ LIB_EXTERN  int LibStructural_analyzeWithLUandRunTests(char* *outMessage, int *n
 //Uses fully pivoted LU Decomposition for Conservation analysis
 LIB_EXTERN  int LibStructural_analyzeWithFullyPivotedLU(char* *outMessage, int *nLength)
 {
-	*outMessage = strdup(LibStructural::getInstance()->analyzeWithFullyPivotedLU().c_str());
+	LibStructural::getInstance ()->analyzeWithFullyPivotedLU ();
+	*outMessage = strdup(LibStructural::getInstance ()->getResultString ().c_str ());
 	*nLength = strlen(*outMessage);
 	return 0;
 }
@@ -2463,7 +2479,8 @@ LIB_EXTERN  int LibStructural_analyzeWithFullyPivotedLU(char* *outMessage, int *
 //Uses fully pivoted LU Decomposition for Conservation analysis
 LIB_EXTERN  int LibStructural_analyzeWithFullyPivotedLUwithTests(char* *outMessage, int *nLength)
 {
-	*outMessage = strdup(LibStructural::getInstance()->analyzeWithFullyPivotedLUwithTests().c_str());
+	LibStructural::getInstance ()->analyzeWithFullyPivotedLUwithTests ();
+	*outMessage = strdup(LibStructural::getInstance ()->getResultString ().c_str ());
 	*nLength = strlen(*outMessage);
 	return 0;
 }

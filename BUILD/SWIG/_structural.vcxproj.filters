@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\SWIG\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\SWIG\libstructural.i" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\structural.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{0E927FDC-B3C9-395E-A1DF-1DDB63206571}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
