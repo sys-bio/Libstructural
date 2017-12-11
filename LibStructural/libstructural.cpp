@@ -2086,6 +2086,13 @@ double LibStructural::getNmatrixSparsity()
 	return _Sparsity;
 }
 
+
+// Returns a matrix of elementary modes
+LIB_EXTERN LibStructural::DoubleMatrix* getElementaryModes () {
+	return NULL;
+}
+
+
 //Set user specified tolerance
 void LibStructural::setTolerance(double dTolerance)
 {

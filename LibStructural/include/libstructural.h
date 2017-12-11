@@ -716,6 +716,12 @@ namespace LIB_STRUCTURAL
 		//! Returns the number of nonzero values in Stoichiometry matrix
 		LIB_EXTERN double getNmatrixSparsity();
 
+		/*! \brief Get elementary modes for a model
+
+		\result Returns in an array where each columns is an elementary mode
+		*/
+		LIB_EXTERN  DoubleMatrix* getElementaryModes ();
+
 		/*! \brief Get Eigenvalues for a matrix
 
 		\param oMatrix Matrix to find the eigenvalues for

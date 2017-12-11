@@ -1,35 +1,21 @@
-﻿  Building Custom Rule C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/LibStructural/CMakeLists.txt
-  CMake does not need to re-run because C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/BUILD/LibStructural/CMakeFiles/generate.stamp is up-to-date.
-  complex.cpp
-  libla.cpp
-  matrix.cpp
-  util.cpp
-C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibLA\util.cpp(704): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibLA\util.cpp(714): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibLA\util.cpp(727): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibLA\util.cpp(737): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-  constraint.cpp
-  libstructural.cpp
-C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(322): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+﻿  libstructural.cpp
 C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(323): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(1059): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2104): warning C4018: '<': signed/unsigned mismatch
-C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2110): warning C4018: '<': signed/unsigned mismatch
-C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2274): warning C4018: '<': signed/unsigned mismatch
-C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2275): warning C4018: '<': signed/unsigned mismatch
-C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2400): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2414): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2432): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2448): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2457): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2466): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2475): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2484): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2673): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2686): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2695): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2842): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-  objective.cpp
-  sbmlmodel.cpp
-  Generating Code...
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(324): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(1060): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2124): warning C4018: '<': signed/unsigned mismatch
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2130): warning C4018: '<': signed/unsigned mismatch
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2295): warning C4018: '<': signed/unsigned mismatch
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2296): warning C4018: '<': signed/unsigned mismatch
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2421): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2435): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2453): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2469): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2478): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2487): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2496): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2505): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2696): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2709): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2718): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2865): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
   LibStructural-static.vcxproj -> C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\BUILD\LibStructural\Release\LibStructural-static.lib
