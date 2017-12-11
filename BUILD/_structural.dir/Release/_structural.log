@@ -1,3 +1,0 @@
-﻿     Creating library C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/BUILD/SWIG/Release/_structural.lib and object C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/BUILD/SWIG/Release/_structural.exp
-LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
-  _structural.vcxproj -> C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\BUILD\SWIG\Release\_structural.pyd
