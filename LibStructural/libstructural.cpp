@@ -60,7 +60,7 @@ string LibStructural::loadSBMLFromFile(string sFileName)
 	return _sResultStream.str();
 }
 
-//Initialization method, takes SBML as input
+// Initialization method, takes SBML as input
 string LibStructural::loadSBMLwithTests(string sSBML)
 {
 	DELETE_IF_NON_NULL(_Model);		_Model = new SBMLmodel(sSBML);
@@ -243,10 +243,11 @@ string LibStructural::GenerateResultString()
 	}
 
 	oBuffer << LINE << endl << LINE << endl
-		<< "Developed by the Computational Systems Biology Group at Keck Graduate Institute " << endl
-		<< "and the Saurolab at the Bioengineering Departmant at  University of Washington." << endl
-		<< "Contact : Frank T. Bergmann (fbergman@u.washington.edu) or Herbert M. Sauro.   " << endl << endl
-		<< "          (previous authors) Ravishankar Rao Vallabhajosyula                   " << endl
+		<< "Originally ddeveloped by the Computational Systems Biology Group at Keck Graduate Institute " << endl
+		<< "and the Saurolab at the Bioengineering Departmant at University of Washington." << endl
+		<< "Contact : Herbert M Sauro (hsauro@u.washington.edu).   " << endl << endl
+		<< "Current Authors: Yosef Bedaso and Kiri Choi" << endl << endl
+		<< "(previous authors) Ravishankar Rao Vallabhajosyula" << endl
 		<< LINE << endl << LINE << endl << endl;
 
 	return oBuffer.str();
@@ -892,7 +893,7 @@ void LibStructural::analyzeWithLU()
 	DELETE_IF_NON_NULL(oLUResult);
 }
 
-//Uses LU Decomposition for Conservation analysis
+// Uses LU Decomposition for Conservation analysis
 void LibStructural::analyzeWithLUandRunTests()
 {
 	analyzeWithLU();
@@ -901,7 +902,7 @@ void LibStructural::analyzeWithLUandRunTests()
 }
 
 
-//Uses fully pivoted LU Decomposition for Conservation analysis
+// Uses fully pivoted LU Decomposition for Conservation analysis
 void LibStructural::analyzeWithFullyPivotedLU()
 {
 	LU_Result * oLUResult = NULL;
@@ -1040,7 +1041,7 @@ void LibStructural::analyzeWithFullyPivotedLU()
 }
 
 
-//Uses fully pivoted LU Decomposition for Conservation analysis
+// Uses fully pivoted LU Decomposition for Conservation analysis
 void LibStructural::analyzeWithFullyPivotedLUwithTests()
 {
 	_sResultStream << endl << endl;
@@ -1067,7 +1068,7 @@ int LibStructural_getSummary (char* *outMessage, int *nLength)
 }
 
 
-//Returns L0 Matrix
+// Returns L0 Matrix
 LibStructural::DoubleMatrix* LibStructural::getL0Matrix()
 {
 	if ( (_NumRows == _NumIndependent) || (_NumRows == 0) || _L0 == NULL)
@@ -1092,13 +1093,14 @@ LibStructural::DoubleMatrix* LibStructural::getL0Matrix()
 	}
 }
 
+
 void LibStructural::getL0MatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
 	oRows = getDependentSpeciesIds();
 	oCols = getIndependentSpeciesIds();
 }
 
-//Returns Nr Matrix
+// Returns Nr Matrix
 LibStructural::DoubleMatrix* LibStructural::getNrMatrix()
 {
 	return _Nr;
@@ -1150,7 +1152,9 @@ void LibStructural::getNrMatrixIds(vector< string > &oRows, vector< string > &oC
 	oRows = getIndependentSpeciesIds();
 	oCols = getReactionsIds();
 }
-//Returns N0 Matrix
+
+
+// Returns N0 Matrix
 LibStructural::DoubleMatrix* LibStructural::getN0Matrix()
 {
 	return _N0;
@@ -1162,7 +1166,7 @@ void LibStructural::getN0MatrixIds(vector< string > &oRows, vector< string > &oC
 	oCols = getReactionsIds();
 }
 
-//Returns L, the Link Matrix
+// Returns L, the Link Matrix
 LibStructural::DoubleMatrix* LibStructural::getLinkMatrix()
 {
 	return _L;
@@ -1174,7 +1178,7 @@ void LibStructural::getLinkMatrixIds(vector< string > &oRows, vector< string > &
 	oCols = getIndependentSpeciesIds();
 }
 
-//Returns K0
+// Returns K0
 LibStructural::DoubleMatrix* LibStructural::getK0Matrix()
 {
 	return _K0;
@@ -1202,7 +1206,7 @@ void LibStructural::getK0MatrixIds(vector< string > &oRows, vector< string > &oC
 
 }
 
-//Returns Nullspace
+// Returns Nullspace of NK = 0
 LibStructural::DoubleMatrix* LibStructural::getKMatrix()
 {
 	return _K;
@@ -1240,6 +1244,8 @@ vector< string > LibStructural::getReorderedReactionsIds()
 	}
 	return oResult;
 }
+
+
 //Returns the reordered list of species
 vector< string > LibStructural::getReorderedSpeciesIds()
 {
@@ -1273,7 +1279,7 @@ vector< string > LibStructural::getReorderedSpeciesIds()
 // 	return oResult;
 // }
 
-//Returns the list of independent species
+// Returns the list of independent species
 vector< string > LibStructural::getIndependentSpeciesIds()
 {
 	vector< string >	oResult;
@@ -1294,6 +1300,8 @@ vector< string > LibStructural::getIndependentSpeciesIds()
 
 	return oResult;
 }
+
+
 //! Returns the list of independent reactions
 vector< string > LibStructural::getIndependentReactionIds()
 {
@@ -1308,6 +1316,8 @@ vector< string > LibStructural::getIndependentReactionIds()
 	return result;
 
 }
+
+
 //! Returns the list of dependent reactions
 vector< string > LibStructural::getDependentReactionIds()
 {
@@ -1344,7 +1354,8 @@ vector< string > LibStructural::getDependentReactionIds()
 // 	return oResult;
 // }
 
-//Returns the list of dependent species
+
+// Returns the list of dependent species
 vector< string > LibStructural::getDependentSpeciesIds()
 {
 	vector< string >	oResult;
@@ -1378,7 +1389,7 @@ vector< string > LibStructural::getDependentSpeciesIds()
 // 	return oResult;
 // }
 
-//Returns Initial Conditions used in the model
+// Returns Initial Conditions used in the model
 vector< pair <string, double> > LibStructural::getInitialConditions()
 {
 	vector< pair <string, double> > oResult;
@@ -1389,7 +1400,7 @@ vector< pair <string, double> > LibStructural::getInitialConditions()
 	return oResult;
 }
 
-//Returns the list of Reactions
+// Returns the list of Reactions
 vector< string > LibStructural::getReactionsIds()
 {
 	vector< string > oResult;
@@ -1411,7 +1422,7 @@ vector< string > LibStructural::getReactionsIds()
 // 	return oResult;
 // }
 
-//Returns the list of Species
+// Returns the list of Species
 vector< string > LibStructural::getSpeciesIds()
 {
 	vector< string > oResult;
@@ -1433,11 +1444,13 @@ vector< string > LibStructural::getSpeciesIds()
 // 	return oResult;
 // }
 
-//Returns Gamma, the conservation law array
+// Returns Gamma, the conservation law array
 LibStructural::DoubleMatrix* LibStructural::getGammaMatrix()
 {
 	return _G;
 }
+
+
 LibStructural::DoubleMatrix* LibStructural::findPositiveGammaMatrix(DoubleMatrix &stoichiometry,
 																	std::vector< std::string> &rowLabels)
 {
@@ -1556,7 +1569,7 @@ void LibStructural::getGammaMatrixIds(vector< string > &oRows, vector< string > 
 
 }
 
-//Returns algebraic expressions for conserved cycles
+//  Returns algebraic expressions for conserved cycles
 vector< string > LibStructural::getConservedLaws()
 {
 	vector <string > oResult;
@@ -1581,7 +1594,7 @@ vector< string > LibStructural::getConservedLaws()
 	return oResult;
 }
 
-//Returns values for conserved cycles using Initial conditions
+// Returns values for conserved cycles using Initial conditions
 vector< double > LibStructural::getConservedSums()
 {
 
@@ -1608,7 +1621,7 @@ vector< double > LibStructural::getConservedSums()
 }
 
 
-//Returns the original stoichiometry matrix
+// Returns the original stoichiometry matrix
 LibStructural::DoubleMatrix* LibStructural::getStoichiometryMatrix()
 {
 	return _Nmat_orig;
@@ -1621,7 +1634,7 @@ void LibStructural::getStoichiometryMatrixIds(vector< string > &oRows, vector< s
 }
 
 
-//Returns reordered stoichiometry matrix
+// Returns reordered stoichiometry matrix
 LibStructural::DoubleMatrix* LibStructural::getReorderedStoichiometryMatrix()
 {
 	return _Nmat;
@@ -1950,7 +1963,7 @@ bool LibStructural::testConservationLaw_6()
 	return bTest1;
 }
 
-//Tests if conservation laws are correct
+// Tests if conservation laws are correct
 vector< string > LibStructural::validateStructuralMatrices()
 {
 	vector < string > oResult;
@@ -1977,7 +1990,7 @@ vector< string > LibStructural::validateStructuralMatrices()
 
 }
 
-//Return Details about conservation tests
+// Return Details about conservation tests
 string LibStructural::getTestDetails()
 {
 	stringstream oBuffer;
@@ -2018,55 +2031,55 @@ string LibStructural::getTestDetails()
 	return oBuffer.str();
 }
 
-//Returns the name of the model
+// Returns the name of the model
 string LibStructural::getModelName()
 {
 	return _sModelName;
 }
 
-//Returns the total number of species
+// Returns the total number of species
 int LibStructural::getNumSpecies()
 {
 	return numFloating;
 }
 
-//Returns the number of independent species
+// Returns the number of independent species
 int LibStructural::getNumIndSpecies()
 {
 	return _NumIndependent;
 }
 
-//Returns the number of dependent species
+// Returns the number of dependent species
 int LibStructural::getNumDepSpecies()
 {
 	return _NumDependent;
 }
 
-//Returns the total number of reactions
+// Returns the total number of reactions
 int LibStructural::getNumReactions()
 {
 	return numReactions;
 }
 
-//Returns the number of independent reactions
+// Returns the number of independent reactions
 int LibStructural::getNumIndReactions()
 {
 	return _Nr->numCols() - _K0->numCols();
 }
 
-//Returns the number of dependent reactions
+// Returns the number of dependent reactions
 int LibStructural::getNumDepReactions()
 {
 	return _K0->numCols();
 }
 
-//Returns rank of stoichiometry matrix
+// Returns rank of stoichiometry matrix
 int LibStructural::getRank()
 {
 	return _NumIndependent;
 }
 
-//Returns the number of nonzero values in Stoichiometry matrix
+// Returns the number of nonzero values in Stoichiometry matrix
 double LibStructural::getNmatrixSparsity()
 {
 	if ( (_NumRows == 0 ) || (_NumCols == 0) ) _Sparsity = 0.0;
@@ -2148,9 +2161,10 @@ void LibStructural::loadReactionIds ( vector< string > &reactionNames)
 //	_inputSpeciesNames.assign(speciesNames.begin(), speciesNames.end());
 //}
 
-/*   Other Miscellaneous functions   */
-///////////////////////////////////////
 
+
+/*   Other Miscellaneous functions   */
+// -----------------------------------------------------------------------
 
 LibStructural::DoubleMatrix* LibStructural::rref_FB(DoubleMatrix &oMatrix, double tolerance)
 {
@@ -2364,7 +2378,7 @@ LIB_EXTERN  int LibStructural_loadSpeciesIdsWithValues ( const char** speciesIds
 	return 0;
 }
 
-// load reaction names
+// Load reaction names
 LIB_EXTERN  int LibStructural_loadReactionIds ( const char** reactionIds, const int nLength)
 {
 	vector< string > oNames;
@@ -2421,7 +2435,7 @@ LIB_EXTERN  int LibStructural_loadSBMLFromFile(const char* sFileName, char* *out
 }
 
 
-//Initialization method, takes SBML as input
+// Initialization method, takes SBML as input
 LIB_EXTERN  int LibStructural_loadSBMLwithTests(const char* sSBML, char* *oResult, int *nLength)
 {
 	try
@@ -2440,7 +2454,7 @@ LIB_EXTERN  int LibStructural_loadSBMLwithTests(const char* sSBML, char* *oResul
 
 #endif
 
-//Uses QR factorization for Conservation analysis
+// Uses QR factorization for Conservation analysis
 LIB_EXTERN  int LibStructural_analyzeWithQR(char* *outMessage, int *nLength)
 {
 	LibStructural::getInstance ()->analyzeWithQR ();
@@ -2449,7 +2463,7 @@ LIB_EXTERN  int LibStructural_analyzeWithQR(char* *outMessage, int *nLength)
 	return 0;
 }
 
-//Uses LU Decomposition for Conservation analysis
+// Uses LU Decomposition for Conservation analysis
 LIB_EXTERN  int LibStructural_analyzeWithLU(char* *outMessage, int *nLength)
 {
 	LibStructural::getInstance ()->analyzeWithLU ();
@@ -2458,7 +2472,7 @@ LIB_EXTERN  int LibStructural_analyzeWithLU(char* *outMessage, int *nLength)
 	return 0;
 }
 
-//Uses LU Decomposition for Conservation analysis
+// Uses LU Decomposition for Conservation analysis
 LIB_EXTERN  int LibStructural_analyzeWithLUandRunTests(char* *outMessage, int *nLength)
 {
 	LibStructural::getInstance ()->analyzeWithLUandRunTests ();
@@ -2467,7 +2481,7 @@ LIB_EXTERN  int LibStructural_analyzeWithLUandRunTests(char* *outMessage, int *n
 	return 0;
 }
 
-//Uses fully pivoted LU Decomposition for Conservation analysis
+// Uses fully pivoted LU Decomposition for Conservation analysis
 LIB_EXTERN  int LibStructural_analyzeWithFullyPivotedLU(char* *outMessage, int *nLength)
 {
 	LibStructural::getInstance ()->analyzeWithFullyPivotedLU ();
@@ -2476,7 +2490,7 @@ LIB_EXTERN  int LibStructural_analyzeWithFullyPivotedLU(char* *outMessage, int *
 	return 0;
 }
 
-//Uses fully pivoted LU Decomposition for Conservation analysis
+// Uses fully pivoted LU Decomposition for Conservation analysis
 LIB_EXTERN  int LibStructural_analyzeWithFullyPivotedLUwithTests(char* *outMessage, int *nLength)
 {
 	LibStructural::getInstance ()->analyzeWithFullyPivotedLUwithTests ();
@@ -2485,7 +2499,7 @@ LIB_EXTERN  int LibStructural_analyzeWithFullyPivotedLUwithTests(char* *outMessa
 	return 0;
 }
 
-//Returns L0 Matrix
+// Returns L0 Matrix
 LIB_EXTERN  int LibStructural_getL0Matrix(double** *outMatrix, int* outRows, int *outCols)
 {
 	DoubleMatrix *oTemp = LibStructural::getInstance()->getL0Matrix();
@@ -2494,7 +2508,7 @@ LIB_EXTERN  int LibStructural_getL0Matrix(double** *outMatrix, int* outRows, int
 	return 0;
 }
 
-//Returns Nr Matrix
+// Returns Nr Matrix
 LIB_EXTERN  int LibStructural_getNrMatrix(double** *outMatrix, int* outRows, int *outCols)
 {
 	DoubleMatrix* oMatrix = LibStructural::getInstance()->getNrMatrix();
@@ -2505,7 +2519,7 @@ LIB_EXTERN  int LibStructural_getNrMatrix(double** *outMatrix, int* outRows, int
 }
 
 
-//Returns N0 Matrix
+// Returns N0 Matrix
 LIB_EXTERN  int LibStructural_getN0Matrix(double** *outMatrix, int* outRows, int *outCols)
 {
 	DoubleMatrix* oMatrix = LibStructural::getInstance()->getN0Matrix();
@@ -2515,7 +2529,7 @@ LIB_EXTERN  int LibStructural_getN0Matrix(double** *outMatrix, int* outRows, int
 	return 0;
 }
 
-//Returns L, the Link Matrix
+// Returns L, the Link Matrix
 LIB_EXTERN  int LibStructural_getLinkMatrix(double** *outMatrix, int* outRows, int *outCols)
 {
 	DoubleMatrix* oMatrix = LibStructural::getInstance()->getLinkMatrix();
@@ -2525,7 +2539,7 @@ LIB_EXTERN  int LibStructural_getLinkMatrix(double** *outMatrix, int* outRows, i
 	return 0;
 }
 
-//Returns K0
+// Returns K0
 LIB_EXTERN  int LibStructural_getK0Matrix(double** *outMatrix, int* outRows, int *outCols)
 {
 	DoubleMatrix* oMatrix = LibStructural::getInstance()->getK0Matrix();
@@ -2535,7 +2549,7 @@ LIB_EXTERN  int LibStructural_getK0Matrix(double** *outMatrix, int* outRows, int
 	return 0;
 }
 
-//Returns K Matrix
+// Returns K Matrix
 LIB_EXTERN  int LibStructural_getKMatrix(double** *outMatrix, int* outRows, int *outCols)
 {
 	DoubleMatrix* oMatrix = LibStructural::getInstance()->getKMatrix();
@@ -2578,7 +2592,7 @@ LIB_EXTERN  int LibStructural_getKMatrix(double** *outMatrix, int* outRows, int 
 //}
 
 
-//Returns Gamma, the conservation law array
+// Returns Gamma, the conservation law array
 LIB_EXTERN  int LibStructural_getGammaMatrix(double** *outMatrix, int* outRows, int *outCols)
 {
 	DoubleMatrix* oMatrix = LibStructural::getInstance()->getGammaMatrix();
@@ -2623,7 +2637,7 @@ LIB_EXTERN int LibStructural_findPositiveGammaMatrix(double** inMatrix, int numR
 }
 
 
-////Returns algebraic expressions for conserved cycles
+//// Returns algebraic expressions for conserved cycles
 //LIB_EXTERN  int LibStructural_getNthConservedEntity(int n,char* *outMessage, int *nLength)
 //{
 //	outMessage = strdup(LibStructural::getInstance()->getConservedLaws()[n].c_str());
@@ -2631,20 +2645,22 @@ LIB_EXTERN int LibStructural_findPositiveGammaMatrix(double** inMatrix, int numR
 //	return nLength;
 //}
 
-//Returns values for conserved cycles using Initial conditions
+// Returns values for conserved cycles using Initial conditions
 LIB_EXTERN  int LibStructural_getNumConservedSums()
 {
 	return (int) LibStructural::getInstance()->getConservedSums().size();
 }
+
+
 //LIB_EXTERN double LibStructural_getNthConservedSum(int n)
 //{
 //	return LibStructural::getInstance()->getConservedSums()[n];
 //}
 
-//Returns Initial Conditions used in the model
+// Returns Initial Conditions used in the model
 ///LIB_EXTERN  int vector< pair <string, double> > LibStructural_getInitialConditions();
 
-//Returns the original stoichiometry matrix
+// Returns the original stoichiometry matrix
 LIB_EXTERN  int LibStructural_getStoichiometryMatrix(double** *outMatrix, int* outRows, int *outCols)
 {
 	DoubleMatrix* oMatrix = LibStructural::getInstance()->getStoichiometryMatrix();
@@ -2654,7 +2670,7 @@ LIB_EXTERN  int LibStructural_getStoichiometryMatrix(double** *outMatrix, int* o
 	return 0;
 }
 
-//Returns reordered stoichiometry matrix
+// Returns reordered stoichiometry matrix
 LIB_EXTERN  int LibStructural_getReorderedStoichiometryMatrix(double** *outMatrix, int* outRows, int *outCols)
 {
 	DoubleMatrix* oMatrix = LibStructural::getInstance()->getReorderedStoichiometryMatrix();
@@ -2664,7 +2680,7 @@ LIB_EXTERN  int LibStructural_getReorderedStoichiometryMatrix(double** *outMatri
 	return 0;
 }
 
-//Tests if conservation laws are correct
+// Tests if conservation laws are correct
 LIB_EXTERN  int  LibStructural_validateStructuralMatrices(int* *outResults, int* outLength)
 {
 	vector< string > oResult = LibStructural::getInstance()->validateStructuralMatrices();
@@ -2679,7 +2695,7 @@ LIB_EXTERN  int  LibStructural_validateStructuralMatrices(int* *outResults, int*
 	return 0;
 }
 
-//Return Details about conservation tests
+// Return Details about conservation tests
 LIB_EXTERN  int LibStructural_getTestDetails(char* *outMessage, int *nLength)
 {
 	*outMessage = strdup(LibStructural::getInstance()->getTestDetails().c_str());
@@ -2697,36 +2713,36 @@ LIB_EXTERN  int LibStructural_getModelName(char* *outMessage, int *nLength)
 
 }
 
-//Returns the total number of species
+// Returns the total number of species
 LIB_EXTERN  int LibStructural_getNumSpecies()
 {
 	return LibStructural::getInstance()->getNumSpecies();
 }
 
-//Returns the number of independent species
+// Returns the number of independent species
 LIB_EXTERN  int LibStructural_getNumIndSpecies()
 {
 	return LibStructural::getInstance()->getNumIndSpecies();
 }
 
-//Returns the number of dependent species
+// Returns the number of dependent species
 LIB_EXTERN  int LibStructural_getNumDepSpecies()
 {
 	return LibStructural::getInstance()->getNumDepSpecies();
 }
 
-//Returns the total number of reactions
+// Returns the total number of reactions
 LIB_EXTERN  int LibStructural_getNumReactions()
 {
 	return LibStructural::getInstance()->getNumReactions();
 }
 
-//Returns the number of independent reactions
+// Returns the number of independent reactions
 LIB_EXTERN  int LibStructural_getNumIndReactions()
 {
 	return LibStructural::getInstance()->getNumIndReactions();
 }
-//Returns the number of dependent reactions
+// Returns the number of dependent reactions
 LIB_EXTERN  int LibStructural_getNumDepReactions()
 {
 	return LibStructural::getInstance()->getNumDepReactions();
@@ -2734,19 +2750,19 @@ LIB_EXTERN  int LibStructural_getNumDepReactions()
 
 
 
-//Returns rank of stoichiometry matrix
+// Returns rank of stoichiometry matrix
 LIB_EXTERN  int LibStructural_getRank()
 {
 	return LibStructural::getInstance()->getRank();
 }
 
-//Returns the number of nonzero values in Stoichiometry matrix
+// Returns the number of nonzero values in Stoichiometry matrix
 LIB_EXTERN  double LibStructural_getNmatrixSparsity()
 {
 	return LibStructural::getInstance()->getNmatrixSparsity();
 }
 
-//Set user specified tolerance
+// Set user specified tolerance
 LIB_EXTERN  void LibStructural_setTolerance(double dTolerance)
 {
 	LibStructural::getInstance()->setTolerance(dTolerance);
@@ -3073,10 +3089,6 @@ LIB_EXTERN  int LibStructural_getFullyReorderedStoichiometryMatrix(double** *out
 	}
 	return 0;
 }
-
-
-
-
 
 
 LIB_EXTERN  double LibStructural_getTolerance()

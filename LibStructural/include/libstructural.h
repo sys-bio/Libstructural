@@ -13,6 +13,7 @@
 	\author  Frank T. Bergmann (fbergman@u.washington.edu)
 	\author	 Herbert M. Sauro
 	\author	 Ravishankar Rao Vallabhajosyula (developed a previous version of the sructural analysis code)
+	\uathor  Current maintainers (2017): Yosef Badaso and Kiri Choi
 
 */
 
