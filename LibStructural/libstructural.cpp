@@ -1050,10 +1050,8 @@ void LibStructural::analyzeWithFullyPivotedLUwithTests()
 }
 
 
-#
 int LibStructural_getSummary (char* *outMessage, int *nLength)
 {
-
 	try
 	{
 		*outMessage = strdup (LibStructural::getInstance()->getResultString().c_str ());
@@ -1064,7 +1062,6 @@ int LibStructural_getSummary (char* *outMessage, int *nLength)
 	{
 		return -1;
 	}
-
 }
 
 
@@ -2088,7 +2085,7 @@ double LibStructural::getNmatrixSparsity()
 
 
 // Returns a matrix of elementary modes
-LIB_EXTERN LibStructural::DoubleMatrix* getElementaryModes () {
+DoubleMatrix* LibStructural::getElementaryModes () {
 	return NULL;
 }
 
@@ -2767,6 +2764,20 @@ LIB_EXTERN  int LibStructural_getRank()
 LIB_EXTERN  double LibStructural_getNmatrixSparsity()
 {
 	return LibStructural::getInstance()->getNmatrixSparsity();
+}
+
+
+LIB_EXTERN  int LibStructural_getElementaryModes (double** *outMatrix, int* outRows, int *outCols) {
+	try
+	{
+		//*outMessage = strdup (LibStructural::getInstance ()->getResultString ().c_str ());
+		//*nLength = strlen (*outMessage);
+		return 0;
+	}
+	catch (...)
+	{
+		return -1;
+	}
 }
 
 // Set user specified tolerance

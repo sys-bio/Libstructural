@@ -1790,6 +1790,14 @@ LIB_EXTERN  int LibStructural_getRank();
 //! Returns the percentage of nonzero values in the stoichiometry matrix
 LIB_EXTERN  double LibStructural_getNmatrixSparsity();
 
+#
+/*! \brief Get elementary modes for a model
+
+\result Returns 0 is ok, -1 if it failed.
+*/
+LIB_EXTERN  int LibStructural_getElementaryModes (double** *outMatrix, int* outRows, int *outCols);
+
+
 /*! \brief Set user specified tolerance
 
 This function sets the tolerance used by the library to determine what value
