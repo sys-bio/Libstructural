@@ -26,5 +26,6 @@ Thumbs.db
 # FOLDERS TO IGNORE #
 BUILD/
 INSTALL_x64/
+BUILD_x64/
 # OTHERS #
 *.bak
