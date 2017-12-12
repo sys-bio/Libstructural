@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A95FB454-D08A-3B7B-A038-6927ABA140D0}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>x64</Platform>
+    <ProjectName>LibStructural</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\build_x64\LibStructural\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">LibStructural.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">LibStructural</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\build_x64\LibStructural\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">LibStructural.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">LibStructural</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\build_x64\LibStructural\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">LibStructural.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">LibStructural</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\build_x64\LibStructural\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">LibStructural.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">LibStructural</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.dll</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\libsbml-vs2017-release-64\include;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\include;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;LIB_EXPORTS;LIBLAX_EXPORTS;LIBSBML_STATIC;LIBLAX_STATIC;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="Debug";LibStructural_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;LIB_EXPORTS;LIBLAX_EXPORTS;LIBSBML_STATIC;LIBLAX_STATIC;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Debug\";LibStructural_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\libsbml-vs2017-release-64\include;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\include;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\libsbml-vs2017-release-64\include;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\include;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\..\dependencies\libsbml-vs2017-release-64\lib\libsbml-static.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\libxml2.lib;..\..\dependencies\third-party\clapack\3.2.1\LIB\lapack.lib;..\..\dependencies\third-party\clapack\3.2.1\LIB\blas.lib;..\..\dependencies\third-party\clapack\3.2.1\LIB\libf2c.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\libbz2.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\libxml2.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\zdll.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\libiconv.lib;Ws2_32.lib;..\..\dependencies\third-party\clapack\3.2.1\LIB\lapack.lib;..\..\dependencies\third-party\clapack\3.2.1\LIB\blas.lib;..\..\dependencies\third-party\clapack\3.2.1\LIB\libf2c.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\libbz2.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\zdll.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\libiconv.lib;Ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64/LibStructural/Debug/LibStructural.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64/LibStructural/Debug/LibStructural.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\libsbml-vs2017-release-64\include;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\include;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;LIB_EXPORTS;LIBLAX_EXPORTS;LIBSBML_STATIC;LIBLAX_STATIC;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="Release";LibStructural_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;LIB_EXPORTS;LIBLAX_EXPORTS;LIBSBML_STATIC;LIBLAX_STATIC;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"Release\";LibStructural_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\libsbml-vs2017-release-64\include;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\include;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\libsbml-vs2017-release-64\include;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\include;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\..\dependencies\libsbml-vs2017-release-64\lib\libsbml-static.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\libxml2.lib;..\..\dependencies\third-party\clapack\3.2.1\LIB\lapack.lib;..\..\dependencies\third-party\clapack\3.2.1\LIB\blas.lib;..\..\dependencies\third-party\clapack\3.2.1\LIB\libf2c.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\libbz2.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\libxml2.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\zdll.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\libiconv.lib;Ws2_32.lib;..\..\dependencies\third-party\clapack\3.2.1\LIB\lapack.lib;..\..\dependencies\third-party\clapack\3.2.1\LIB\blas.lib;..\..\dependencies\third-party\clapack\3.2.1\LIB\libf2c.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\libbz2.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\zdll.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\libiconv.lib;Ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64/LibStructural/Release/LibStructural.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64/LibStructural/Release/LibStructural.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\libsbml-vs2017-release-64\include;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\include;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;LIB_EXPORTS;LIBLAX_EXPORTS;LIBSBML_STATIC;LIBLAX_STATIC;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="MinSizeRel";LibStructural_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat></DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;LIB_EXPORTS;LIBLAX_EXPORTS;LIBSBML_STATIC;LIBLAX_STATIC;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"MinSizeRel\";LibStructural_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\libsbml-vs2017-release-64\include;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\include;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\libsbml-vs2017-release-64\include;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\include;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\..\dependencies\libsbml-vs2017-release-64\lib\libsbml-static.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\libxml2.lib;..\..\dependencies\third-party\clapack\3.2.1\LIB\lapack.lib;..\..\dependencies\third-party\clapack\3.2.1\LIB\blas.lib;..\..\dependencies\third-party\clapack\3.2.1\LIB\libf2c.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\libbz2.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\libxml2.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\zdll.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\libiconv.lib;Ws2_32.lib;..\..\dependencies\third-party\clapack\3.2.1\LIB\lapack.lib;..\..\dependencies\third-party\clapack\3.2.1\LIB\blas.lib;..\..\dependencies\third-party\clapack\3.2.1\LIB\libf2c.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\libbz2.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\zdll.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\libiconv.lib;Ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64/LibStructural/MinSizeRel/LibStructural.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64/LibStructural/MinSizeRel/LibStructural.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\libsbml-vs2017-release-64\include;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\include;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;LIB_EXPORTS;LIBLAX_EXPORTS;LIBSBML_STATIC;LIBLAX_STATIC;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR="RelWithDebInfo";LibStructural_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;LIB_EXPORTS;LIBLAX_EXPORTS;LIBSBML_STATIC;LIBLAX_STATIC;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;CMAKE_INTDIR=\"RelWithDebInfo\";LibStructural_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\libsbml-vs2017-release-64\include;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\include;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\libsbml-vs2017-release-64\include;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\include;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\..\dependencies\libsbml-vs2017-release-64\lib\libsbml-static.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\libxml2.lib;..\..\dependencies\third-party\clapack\3.2.1\LIB\lapack.lib;..\..\dependencies\third-party\clapack\3.2.1\LIB\blas.lib;..\..\dependencies\third-party\clapack\3.2.1\LIB\libf2c.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\libbz2.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\libxml2.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\zdll.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\libiconv.lib;Ws2_32.lib;..\..\dependencies\third-party\clapack\3.2.1\LIB\lapack.lib;..\..\dependencies\third-party\clapack\3.2.1\LIB\blas.lib;..\..\dependencies\third-party\clapack\3.2.1\LIB\libf2c.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\libbz2.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\zdll.lib;..\..\dependencies\libsbml-vs2017-release-64\lib\libiconv.lib;Ws2_32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64/LibStructural/RelWithDebInfo/LibStructural.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64/LibStructural/RelWithDebInfo/LibStructural.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version></Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/LibStructural/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-HC:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural" "-BC:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64" --check-stamp-file "C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64/LibStructural/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/LibStructural/CMakeLists.txt;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\CMakeLists.txt;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\build_x64\LibStructural\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/LibStructural/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-HC:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural" "-BC:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64" --check-stamp-file "C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64/LibStructural/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/LibStructural/CMakeLists.txt;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\CMakeLists.txt;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\build_x64\LibStructural\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/LibStructural/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-HC:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural" "-BC:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64" --check-stamp-file "C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64/LibStructural/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/LibStructural/CMakeLists.txt;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\CMakeLists.txt;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\build_x64\LibStructural\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/LibStructural/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-HC:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural" "-BC:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64" --check-stamp-file "C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64/LibStructural/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/LibStructural/CMakeLists.txt;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\CMakeLists.txt;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\build_x64\LibStructural\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibLA\complex.cpp"  />
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibLA\libla.cpp"  />
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibLA\matrix.cpp"  />
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibLA\util.cpp"  />
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\constraint.cpp"  />
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp"  />
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\objective.cpp"  />
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\sbmlmodel.cpp"  />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\build_x64\ZERO_CHECK.vcxproj">
+      <Project>{725BABB2-6562-3E15-9D98-CD5097AD5BAE}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

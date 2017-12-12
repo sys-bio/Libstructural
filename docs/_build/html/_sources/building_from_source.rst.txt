@@ -1,0 +1,34 @@
+Building From Source
+=====================
+
+The LibStructural API library can be built on your machine from the source code found on `github <https://github.com/yosefmaru/Libstructural>`_. To build libStructural, you will need:
+
+* Source code and dependencies from github (you will need `git <https://git-scm.com/>`_ to clone/download the repo)
+* libSBML dependency `library <https://sourceforge.net/projects/sbml/files/libsbml/win-dependencies/>`_. Make sure to get the `vs15_release_x64 version <https://sourceforge.net/projects/sbml/files/libsbml/win-dependencies/libSBML_dependencies_vs15_release_x64.zip/download>`_.
+* `CMake version 3.9.3 <https://cmake.org/files/v3.9/>`_ for generating solution files.
+* Visual Studio 2017 for Windows or Xcode for MacOS
+* `SWIG <http://www.swig.org/>`_ for generating python wrappers (optional).
+
+-------
+Windows
+-------
+
+1. Clone the source code from the `github repo <https://github.com/yosefmaru/Libstructural>`_ by running the following command from the command line or git software: ``git clone https://github.com/yosefmaru/Libstructural``
+
+2. Download libSBML dependency `library <https://sourceforge.net/projects/sbml/files/libsbml/win-dependencies/>`_. Extract the folder in to LibStructural/dependencies folder and rename the folder to "libsbml-vs2017-release-64". This step is very important since the CMakeLists file that is used to generate the solution object looks for libSBML libraries inside a folder named "libsbml-vs2017-release-64"
+
+3. Open CMake-gui. Copy or Browse to the directory where LibStructural is located at for the "Where is the source code" inquiry. For the "Where to build the binaries" inquiry, use the same directory, and add /build_x64.
+
+4. On the CMake-gui click on Configure. A prompt will ask you to create a "build_x64" folder inside LibStructural. Click on yes. Next, it will ask you to specify a generator for the project and a what compiler to use as shown below. For the generator, select "Visual Studio 15 2017 Win64". Then, mark the "Use default native compilers" option and click on Finish.
+
+.. figure:: cmake_2.jpg
+    :align: center
+    :figclass: align-center
+
+5. If you wish to generate a python wrapper, you will have to checkmark "ENABLE_PYTHON_WRAPPER" option. Click on Configure again and an error will appear in red on the top, asking for the location of a SWIG executable file. Click on the "SWIG_EXECUTABLE-NOTFOUND" and copy the swig.exe directory. The swig.exe is found in the `SWIG <http://www.swig.org/>`_ you downloaded. Click on Generate, and a LibStructural.sln file will be created in the build_x64 folder. NOTE: If you don't want to generate a python wrapper, simply click configure and then generate after step 4.
+
+.. figure:: cmake_SWIG_exe.JPG
+    :align: center
+    :figclass: align-center
+
+6. To build the libraries, open the solution file located in build_x64 using Visual Studio 2017. Right click on the INSTALL project and click on Build. The build out will be stored in build_x64/LibStructural/Release directory. Make sure your build target is set to "Release" instead of "Debug" with "x64" configuration.
