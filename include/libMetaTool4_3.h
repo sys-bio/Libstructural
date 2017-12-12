@@ -33,13 +33,13 @@ struct mt_encoding { int rev; int key; int consumed; int built; int reactions; c
 
 struct mt_vector { 
 	  int row; 
-	  int *head; 
+	  long *head; 
 };
 
 extern mt_vector *lib_speciesStatus;
 extern mt_vector *lib_reversibilityInformation;
 
-struct mt_mat { int row; int col; int **head; };
+struct mt_mat { int row; int col; long **head; };
 
 struct mt_stringArray { int len; char **strArray; };
 
@@ -49,13 +49,13 @@ extern void mt_freeStringArray (struct mt_stringArray *ar);
 
 extern struct mt_vector *mt_createVector (int r);
 extern int mt_freeVector (struct mt_vector *v);
-extern int mt_getMatrixItem (struct mt_mat *m, int row, int col, int *value);
-extern void mt_setVectorItem (struct mt_vector *vector, int index, int value);
+extern void mt_setVectorItem (struct mt_vector *vector, int index, long value);
 extern int mt_vectorOutput (struct mt_vector *v, FILE *savefile);
 
 extern struct mt_mat *mt_createMatrix (int r, int c);
 extern int mt_freeMatrix (struct mt_mat *m);
-extern void mt_setMatrixItem (struct mt_mat *m, int row, int col, int value);
+extern int mt_getMatrixItem (struct mt_mat *m, int row, int col, long *value);
+extern void mt_setMatrixItem (struct mt_mat *m, int row, int col, long value);
 extern int mt_matrixOutput (FILE *saveFile, struct mt_mat *m);
 
 extern struct mt_mat *mt_transpose (struct mt_mat *m);
@@ -83,7 +83,7 @@ extern void mt_fout_branches (FILE *fout, struct mt_encoding *metlist);
 extern void crel_equation_output (FILE* fout, struct mt_mat* crel, struct mt_encoding *metlist);
 extern struct mt_vector *mt_branch;
 
-extern void mt_initialize (mt_mat *stoichiometryMatrix, /*struct mt_encoding *metlist, struct mt_encoding *enzlist,*/ mt_vector *rev);
+extern void mt_initialize (mt_mat *stoichiometryMatrix, mt_vector *reversiblilityList);
 extern void mt_destroy ();
 extern struct mt_mat *mt_elementaryModes ();
 

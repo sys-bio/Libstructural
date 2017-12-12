@@ -17,7 +17,7 @@
 /* COMPILE WITH GCC, Microsoft C 6.0 or Borland C 5.0 ********************************* */
 /* 5/2000 **************************************************************************** */
 
-
+/* This version uses long integers for all computations. On a 64-bit machine this is 64 bits in size */
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -86,11 +86,11 @@ struct mt_vector *mt_createVector (int r) {
 
 	v = (struct mt_vector*) malloc (sizeof(struct mt_vector));
 	v->row = r;
-	v->head = (int*) malloc (v->row*sizeof(int));
+	v->head = (long*) malloc (v->row*sizeof(long));
 	return v;
 }
 
-void mt_setVectorItem (struct mt_vector *vector, int index, int value) {
+void mt_setVectorItem (struct mt_vector *vector, int index, long value) {
 	vector->head[index] = value;
 }
 
@@ -124,19 +124,19 @@ struct mt_mat *mt_createMatrix (int r, int c) {
 	m->row = r;
 	m->col = c;
 
-	m->head = (int**) calloc (m->row, sizeof(int*));
+	m->head = (long**) calloc (m->row, sizeof(long*));
 	for (i = 0; i < m->row; i++)
-		m->head[i] = (int*) calloc (m->col, sizeof(int));
+		m->head[i] = (long*) calloc (m->col, sizeof(long));
 	return m;
 }
 
 
-void mt_setMatrixItem (struct mt_mat *m, int row, int col, int value) {
+void mt_setMatrixItem (struct mt_mat *m, int row, int col, long value) {
 	m->head[row][col] = value;
 }
 
 
-int mt_getMatrixItem (struct mt_mat *m, int row, int col, int *value) {
+int mt_getMatrixItem (struct mt_mat *m, int row, int col, long *value) {
 	if ((row < 0) || (row >= m->row) || (col < 0) || (col >= m->col)) {
 		return -1;
     }
@@ -186,16 +186,19 @@ int mt_freeMatrix (struct mt_mat *m)
 
 // Matrix multiply
 struct mt_mat *mt_mult (struct mt_mat *m1, struct mt_mat *m2) {
-	struct mt_mat *mm; int i, j, k, sum;
+	struct mt_mat *mm; 
+	int i, j, k; 
+	long sum;
+
 	if (m1->col != m2->row)
-		printf ("error in mult: mat dimensions are inkompatible");
+		printf ("error in mult: mat dimensions are incompatible");
 
 	mm = (struct mt_mat*) calloc (1, sizeof(struct mt_mat));  //addressed (mm, "mm not allocated");
 	mm->row = m1->row; mm->col = m2->col;
-	mm->head = (int**)calloc (mm->row, sizeof(int*));  //addressed (mm->head, "mm->head not allocated");
+	mm->head = (long**)calloc (mm->row, sizeof(long*));  //addressed (mm->head, "mm->head not allocated");
 	for (i = 0; i < mm->row; i++)
 	{
-		mm->head[i] = (int*)calloc (mm->col, sizeof(int));  //addressed (*(mm->head + i), "*(mm->head+i) not allocated");
+		mm->head[i] = (long*) calloc (mm->col, sizeof(long));  //addressed (*(mm->head + i), "*(mm->head+i) not allocated");
 		for (k = 0; k < mm->col; k++)
 		{
 			sum = 0;
@@ -210,13 +213,15 @@ struct mt_mat *mt_mult (struct mt_mat *m1, struct mt_mat *m2) {
 
 struct mt_mat *mt_transpose (struct mt_mat *m)
 {
-	struct mt_mat *tm; int i, ii;
+	struct mt_mat *tm; 
+	int i, ii;
+
 	tm = (struct mt_mat*) calloc (1, sizeof(struct mt_mat));  //addressed (tm, "tm not allocated");
 	tm->row = m->col; tm->col = (m->row);
-	tm->head = (int**)calloc (tm->row, sizeof(int*)); //addressed (tm->head, "tm->head not allocated");
+	tm->head = (long**)calloc (tm->row, sizeof(long*)); //addressed (tm->head, "tm->head not allocated");
 	for (i = 0; i < m->col; i++)
 	{
-		tm->head[i] = (int*) calloc (tm->col, sizeof(int)); //addressed (*(tm->head + i), "*(tm->head+i) not allocated");
+		tm->head[i] = (long*) calloc (tm->col, sizeof(long)); //addressed (*(tm->head + i), "*(tm->head+i) not allocated");
 		for (ii = 0; ii < m->row; ii++)
 			tm->head[i][ii] = m->head[ii][i];
 	}
@@ -230,10 +235,10 @@ struct mt_mat *mt_addi (struct mt_mat *m)
 
 	mi = (struct mt_mat*) calloc (1, sizeof(struct mt_mat)); //addressed (mi, "mi not allocated");
 	mi->row = m->row; mi->col = m->col + m->row;
-	mi->head = (int**) calloc (mi->row, sizeof(int*)); //addressed (mi->head, "mi->head not allocated");
+	mi->head = (long**) calloc (mi->row, sizeof(long*)); //addressed (mi->head, "mi->head not allocated");
 	for (i = 0; i < m->row; i++)
 	{
-		mi->head[i] = (int*) calloc (mi->col, sizeof(int)); //addressed (*(mi->head + i), "*(mi->head+i) not allocated");
+		mi->head[i] = (long*) calloc (mi->col, sizeof(long)); //addressed (*(mi->head + i), "*(mi->head+i) not allocated");
 		for (ii = 0; ii < mi->col; ii++)
 		{
 			if (ii < m->col)
@@ -444,11 +449,13 @@ int mt_control_modi (struct mt_mat *m, FILE *savefile, struct mt_encoding *enzli
 
 struct mt_mat *mt_cutcol (struct mt_mat *m, int cc)
 {
-	struct mt_mat *mc; int i, ii;
+	struct mt_mat *mc; 
+	int i, ii;
 
 	mc = (struct mt_mat*)calloc (1, sizeof(struct mt_mat)); //addressed (mc, "mc not allocated");
 	mc->row = m->row; mc->col = m->col - cc;
-	mc->head = (int**)calloc (mc->row, sizeof(int*)); //addressed (mc->head, "mc->head not allocated");
+	mc->head = (long **) calloc (mc->row, sizeof(long*)); //addressed (mc->head, "mc->head not allocated");
+	
 	if (cc > m->col) {
 		printf ("ERROR IN FUNCTION CUTCOL: CC>M->ROW!\n");
 		getchar ();
@@ -456,7 +463,7 @@ struct mt_mat *mt_cutcol (struct mt_mat *m, int cc)
 	}
 	for (i = 0; i < mc->row; i++)
 	{
-		mc->head[i] = (int*)calloc (mc->col, sizeof(int)); //addressed (*(mc->head + i), "*(mc->head+i) not allocated");
+		mc->head[i] = (long *) calloc (mc->col, sizeof(long)); //addressed (*(mc->head + i), "*(mc->head+i) not allocated");
 		for (ii = 0; ii < mc->col; ii++)
 			mc->head[i][ii] = m->head[i][ii + cc];
 	}
@@ -593,7 +600,7 @@ int stack_down (struct mt_mat *m, int r1)
 } // stack_down
 
 
-int stack_down_rev (int *rev1, int r1, int row)
+int stack_down_rev (long *rev1, int r1, int row)
 {
 	// vector rev1 stack_down
 	int i, j;
@@ -608,7 +615,7 @@ int stack_down_rev (int *rev1, int r1, int row)
 } // stack_down_rev
 
 
-int mt_control_condition7 (struct mt_mat *m, int ii, int *rev1, int *r01) // Version 4.3 02.10.02
+int mt_control_condition7 (struct mt_mat *m, int ii, long *rev1, int *r01) // Version 4.3 02.10.02
 {
 	int r1, r2, c, zero_r1, same12, z = 0;
 	// struct vector hv; 
@@ -650,8 +657,9 @@ struct mt_vector *mt_subrev (struct mt_mat *m, struct mt_vector *v)
 {
 	int i, ii;
 	struct mt_vector *r;
+
 	r = (struct mt_vector*)calloc (1, sizeof(struct mt_vector));  //addressed (r, "r not allocated", 1);
-	r->row = m->row; r->head = (int*)calloc (r->row, sizeof(int));  //addressed (r->head, "r->head not allocated", r->row);
+	r->row = m->row; r->head = (long*)calloc (r->row, sizeof(long));  //addressed (r->head, "r->head not allocated", r->row);
 	for (i = 0; i<m->row; i++)
 	{
 		*(r->head + i) = 0;
@@ -676,7 +684,7 @@ struct mt_mat *getStoichiometryMatrix (struct mt_mat *nex, struct mt_vector *met
 	else;
 	if (m->row > 0)
 	{
-		m->head = (int**) calloc (m->row, sizeof(int*)); 
+		m->head = (long**) calloc (m->row, sizeof(long*)); 
 	}
 	else
 	{
@@ -689,7 +697,7 @@ struct mt_mat *getStoichiometryMatrix (struct mt_mat *nex, struct mt_vector *met
 	  {
 		/* allocated by FM */
 		//*(m->head + k) = (int*) calloc (m->col, sizeof(int));  //addressed (*(m->head + i), "*(m->head+i) not allocated");
-		  int *x = (int*) calloc (m->col, sizeof(int));
+		  long *x = (long*) calloc (m->col, sizeof(long));
 		  m->head[k] = x; //addressed (*(m->head + i), "*(m->head+i) not allocated");
 	      for (j = 0; j < m->col; j++)
 			*(*(m->head + k) + j) = *(*(nex->head + i) + j);
@@ -706,7 +714,7 @@ struct mt_mat *mt_simplify (struct mt_mat *m)
 	int i, ii, k;
 
 	vf = (struct mt_vector*)calloc (1, sizeof(struct mt_vector)); //addressed (vf, "vf not allocated", 1);
-	vf->row = m->row; vf->head = (int*)calloc (vf->row, sizeof(int)); //addressed (vf->head, "vf->head not allocated", vf->row);
+	vf->row = m->row; vf->head = (long*)calloc (vf->row, sizeof(long)); //addressed (vf->head, "vf->head not allocated", vf->row);
 
 	mc = (struct mt_mat*)calloc (1, sizeof(struct mt_mat)); //addressed (mc, "mc not allocated", 1);
 	mc->row = m->row; mc->col = m->col;
@@ -715,7 +723,7 @@ struct mt_mat *mt_simplify (struct mt_mat *m)
 		if (mt_branch)
 		{
 			mt_branch = (struct mt_vector*)calloc (1, sizeof(struct mt_vector)); //addressed (branch, "branch not allocated", 1);
-			mt_branch->row = m->row; mt_branch->head = (int*)calloc (mt_branch->row, sizeof(int)); //addressed (branch->head, "branch->head not allocated", branch->row);
+			mt_branch->row = m->row; mt_branch->head = (long*)calloc (mt_branch->row, sizeof(long)); //addressed (branch->head, "branch->head not allocated", branch->row);
 			for (i = 0; i<mt_branch->row; i++) *(mt_branch->head + i) = 1;
 		}
 	}
@@ -739,11 +747,11 @@ struct mt_mat *mt_simplify (struct mt_mat *m)
 	if (!mc->row) // Microsoft C++ 6.0 allocates any pointer if(mc->row==0 but no correct one)
 	{
 		printf ("there is no simplification ...\n");
-		mc->head = (int**)calloc (m->row, sizeof(int*)); //addressed (mc->head, "mc->head not allocated (1)", m->row);
+		mc->head = (long**)calloc (m->row, sizeof(long*)); //addressed (mc->head, "mc->head not allocated (1)", m->row);
 		// return a copy of *m
 		for (i = 0; i<m->row; i++)
 		{
-			*(mc->head + i) = (int*)calloc (m->col, sizeof(int)); //addressed (*(mc->head + i), "*(mc->head+i) not allocated", m->col);
+			*(mc->head + i) = (long*)calloc (m->col, sizeof(long)); //addressed (*(mc->head + i), "*(mc->head+i) not allocated", m->col);
 			for (ii = 0; ii<m->col; ii++)
 				*(*(mc->head + i) + ii) = *(*(m->head + i) + ii);
 		}
@@ -751,11 +759,11 @@ struct mt_mat *mt_simplify (struct mt_mat *m)
 	}
 	else
 	{
-		mc->head = (int**)calloc (mc->row, sizeof(int*)); //addressed (mc->head, "mc->head not allocated (2)", mc->row); 
+		mc->head = (long**)calloc (mc->row, sizeof(long*)); //addressed (mc->head, "mc->head not allocated (2)", mc->row); 
 		k = 0;
 		for (i = 0; i<vf->row; i++) if (*(vf->head + i) != 0)
 		{
-			*(mc->head + k) = (int*)calloc (mc->col, sizeof(int)); //addressed (*(mc->head + k), "*(mc->head+k) not allocated", mc->col);
+			*(mc->head + k) = (long*)calloc (mc->col, sizeof(long)); //addressed (*(mc->head + k), "*(mc->head+k) not allocated", mc->col);
 			for (ii = 0; ii<mc->col; ii++)
 				*(*(mc->head + k) + ii) = *(*(m->head + i) + ii) / (*(vf->head + i));
 			k++;
@@ -853,22 +861,22 @@ struct mt_mat *mt_subset (struct mt_mat *m, struct mt_vector *v, int *wrong_subs
 struct mt_mat *mt_basis (struct mt_mat *m, struct mt_vector *v)
 {
 	struct mt_mat *help, *k;
-	int **h1, **h2 = NULL, abs_hi, abs_hu, ggt_Erg;
-	int *rev1 = NULL, *rev2 = NULL;
+	long **h1, **h2 = NULL, abs_hi, abs_hu, ggt_Erg;
+	long *rev1 = NULL, *rev2 = NULL;
 	int i, u, tu, ii, uu, test1;
 	int r1, r2, c, counter;
 	int f1, k1, k2;
 
 	k = mt_transpose (m); help = mt_addi (k); mt_freeMatrix (k);
 	r1 = (help->row); c = help->col; counter = m->row;
-	rev1 = (int*)calloc (v->row, sizeof(int));  //addressed (rev1, "rev1 not allocated", v->row);
+	rev1 = (long*)calloc (v->row, sizeof(long));  //addressed (rev1, "rev1 not allocated", v->row);
 	for (i = 0; i<v->row; i++) *(rev1 + i) = *(v->head + i);
 
 	h1 = help->head;
 	for (ii = 0; ii<counter; ii++)
 	{
-		h2 = (int**)calloc (1, sizeof(int*));  //addressed (h2, "h2 not allocated (01)", 1);
-		rev2 = (int*)calloc (1, sizeof(int));  //addressed (rev2, "rev2 not allocated (02)", 1);
+		h2 = (long**) calloc (1, sizeof(long*));  //addressed (h2, "h2 not allocated (01)", 1);
+		rev2 = (long*) calloc (1, sizeof(long));  //addressed (rev2, "rev2 not allocated (02)", 1);
 		r2 = 0;
 		f1 = 0;
 		for (i = 0; i<r1; i++)
@@ -880,10 +888,10 @@ struct mt_mat *mt_basis (struct mt_mat *m, struct mt_vector *v)
 		if (f1) /* reversible row */
 		{
 			// r2=0;
-			h2 = (int**)realloc (h2, (r2 + 1)*sizeof(int*)); //addressed (h2, "h2 realloc (1)", r2 + 1);
-			{*(h2 + r2) = (int*)calloc (c, sizeof(int));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
+			h2 = (long**)realloc (h2, (r2 + 1)*sizeof(long*)); //addressed (h2, "h2 realloc (1)", r2 + 1);
+			{*(h2 + r2) = (long*)calloc (c, sizeof(long));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
 			}
-			rev2 = (int*)realloc (rev2, (r2 + 1)*sizeof(int)); //addressed (rev2, "rev2 realloc (2)", (r2 + 1));
+			rev2 = (long*)realloc (rev2, (r2 + 1)*sizeof(long)); //addressed (rev2, "rev2 realloc (2)", (r2 + 1));
 			for (u = 0; u<r1; u++)
 			{
 				if (*(*(h1 + u) + ii) == 0)   // transfer "zero line"
@@ -891,10 +899,10 @@ struct mt_mat *mt_basis (struct mt_mat *m, struct mt_vector *v)
 					*(rev2 + r2) = *(rev1 + u);
 					for (uu = 0; uu<c; uu++) *(*(h2 + r2) + uu) = *(*(h1 + u) + uu);
 					r2++;
-					h2 = (int**)realloc (h2, (r2 + 1)*sizeof(int*)); //addressed (h2, "h2 realloc (1)", r2 + 1);
-					{*(h2 + r2) = (int*)calloc (c, sizeof(int));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
+					h2 = (long**) realloc (h2, (r2 + 1)*sizeof(long*)); //addressed (h2, "h2 realloc (1)", r2 + 1);
+					{*(h2 + r2) = (long*)calloc (c, sizeof(long));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
 					}
-					rev2 = (int*)realloc (rev2, (r2 + 1)*sizeof(int)); //addressed (rev2, "rev2 realloc (2)", (r2 + 1));
+					rev2 = (long*)realloc (rev2, (r2 + 1)*sizeof(long)); //addressed (rev2, "rev2 realloc (2)", (r2 + 1));
 					// if(r2>r02) {printf("error1"); getch(); exit(1);} 
 				}
 			}
@@ -913,10 +921,10 @@ struct mt_mat *mt_basis (struct mt_mat *m, struct mt_vector *v)
 						*(*(h2 + r2) + uu) = k2**(*(h1 + i) + uu) - k1**(*(h1 + u) + uu);
 					}
 					r2++;
-					h2 = (int**)realloc (h2, (r2 + 1)*sizeof(int*)); //addressed (h2, "h2 realloc (1)", r2 + 1);
-					{*(h2 + r2) = (int*)calloc (c, sizeof(int));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
+					h2 = (long**)realloc (h2, (r2 + 1)*sizeof(long*)); //addressed (h2, "h2 realloc (1)", r2 + 1);
+					{*(h2 + r2) = (long*)calloc (c, sizeof(long));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
 					}
-					rev2 = (int*)realloc (rev2, (r2 + 1)*sizeof(int)); //addressed (rev2, "rev2 realloc (2)", (r2 + 1));
+					rev2 = (long*)realloc (rev2, (r2 + 1)*sizeof(long)); //addressed (rev2, "rev2 realloc (2)", (r2 + 1));
 					// if(r2>r02) {printf("error2"); getch(); exit(1);} 
 				}
 			}
@@ -942,20 +950,20 @@ struct mt_mat *mt_basis (struct mt_mat *m, struct mt_vector *v)
 						*(*(h2 + r2) + uu) = -abs (k2)**(*(h1 + i) + uu) + abs (k1)**(*(h1 + u) + uu);
 					}
 					r2++;
-					h2 = (int**)realloc (h2, (r2 + 1)*sizeof(int*)); //addressed (h2, "h2 realloc (1)", r2 + 1);
-					{*(h2 + r2) = (int*)calloc (c, sizeof(int));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
+					h2 = (long**)realloc (h2, (r2 + 1)*sizeof(long*)); //addressed (h2, "h2 realloc (1)", r2 + 1);
+					{*(h2 + r2) = (long*)calloc (c, sizeof(long));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
 					}
-					rev2 = (int*)realloc (rev2, (r2 + 1)*sizeof(int)); //addressed (rev2, "rev2 realloc (2)", (r2 + 1));
+					rev2 = (long*)realloc (rev2, (r2 + 1)*sizeof(long)); //addressed (rev2, "rev2 realloc (2)", (r2 + 1));
 					// if(r2>r02) {printf("error3"); getch(); exit(1); } 
 				}
 			}
 		}
 		else /* no reversible row */
 		{
-			h2 = (int**)realloc (h2, (r2 + 1)*sizeof(int*)); //addressed (h2, "h2 realloc (1)", r2 + 1);
-			{*(h2 + r2) = (int*)calloc (c, sizeof(int));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
+			h2 = (long**)realloc (h2, (r2 + 1)*sizeof(long*)); //addressed (h2, "h2 realloc (1)", r2 + 1);
+			{*(h2 + r2) = (long*)calloc (c, sizeof(long));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
 			}
-			rev2 = (int*)realloc (rev2, (r2 + 1)*sizeof(int)); //addressed (rev2, "rev2 realloc (2)", (r2 + 1));
+			rev2 = (long*)realloc (rev2, (r2 + 1)*sizeof(long)); //addressed (rev2, "rev2 realloc (2)", (r2 + 1));
 
 			// r2=0;
 			for (u = 0; u<r1; u++)
@@ -965,10 +973,10 @@ struct mt_mat *mt_basis (struct mt_mat *m, struct mt_vector *v)
 					*(rev2 + r2) = *(rev1 + u);
 					for (uu = 0; uu<c; uu++) *(*(h2 + r2) + uu) = *(*(h1 + u) + uu);
 					r2++;
-					h2 = (int**)realloc (h2, (r2 + 1)*sizeof(int*)); //addressed (h2, "h2 realloc (1)", r2 + 1);
-					{*(h2 + r2) = (int*)calloc (c, sizeof(int));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
+					h2 = (long**)realloc (h2, (r2 + 1)*sizeof(long*)); //addressed (h2, "h2 realloc (1)", r2 + 1);
+					{*(h2 + r2) = (long*)calloc (c, sizeof(long));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
 					}
-					rev2 = (int*)realloc (rev2, (r2 + 1)*sizeof(int)); //addressed (rev2, "rev2 realloc (2)", (r2 + 1));
+					rev2 = (long*)realloc (rev2, (r2 + 1)*sizeof(long)); //addressed (rev2, "rev2 realloc (2)", (r2 + 1));
 					// if(r2>r02) {printf("error4"); getch(); exit(1); }
 				}
 			}
@@ -1003,10 +1011,10 @@ struct mt_mat *mt_basis (struct mt_mat *m, struct mt_vector *v)
 							if (test1 == 1)
 							{
 								r2++;
-								h2 = (int**)realloc (h2, (r2 + 1)*sizeof(int*)); //addressed (h2, "h2 realloc (1)", r2 + 1);
-								{*(h2 + r2) = (int*)calloc (c, sizeof(int));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c); 
+								h2 = (long**)realloc (h2, (r2 + 1)*sizeof(long*)); //addressed (h2, "h2 realloc (1)", r2 + 1);
+								{*(h2 + r2) = (long*)calloc (c, sizeof(long));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c); 
 								}
-								rev2 = (int*)realloc (rev2, (r2 + 1)*sizeof(int)); //addressed (rev2, "rev2 realloc (2)", (r2 + 1));
+								rev2 = (long*)realloc (rev2, (r2 + 1)*sizeof(long)); //addressed (rev2, "rev2 realloc (2)", (r2 + 1));
 								// if(r2>r02) {printf("error5"); getch(); exit(1);} 
 							}
 						} // for u
@@ -1045,8 +1053,8 @@ struct mt_mat *mt_basis (struct mt_mat *m, struct mt_vector *v)
 struct mt_mat *mt_modes (struct mt_mat *m, struct mt_vector *v)
 {
 	struct mt_mat *help, *k;                       /* help matrices */
-	int **h1, **h2, abs_hi, abs_hu, ggt_Erg;    /* pointer to current and nex tab */
-	int *rev1, *rev2 = NULL;                           /* corresponding revesibilities */
+	long **h1, **h2, abs_hi, abs_hu, ggt_Erg;    /* pointer to current and nex tab */
+	long *rev1, *rev2 = NULL;                           /* corresponding revesibilities */
 	int i, u, ii, uu, tu;                           /* counter */
 	int r1, r2, c, counter, k1, k2, test1, r01, ok_4 = 1, r02;
 
@@ -1054,23 +1062,23 @@ struct mt_mat *mt_modes (struct mt_mat *m, struct mt_vector *v)
 	h1 = help->head;
 	r1 = (help->row); c = help->col; counter = m->row;
 	r01 = r2 = r1;
-	rev1 = (int*)calloc (v->row, sizeof(int));   //addressed (rev1, "rev1 not allocated (5.5)", v->row);
+	rev1 = (long*)calloc (v->row, sizeof(long));   //addressed (rev1, "rev1 not allocated (5.5)", v->row);
 	for (i = 0; i<v->row; i++) *(rev1 + i) = *(v->head + i);
 	printf ("first alloc %d\n", r1);
 	for (ii = 0; ii<counter; ii++)
 	{
 		//printf ("allocate ");
-		rev2 = (int*)calloc (1, sizeof(int));   //addressed (rev2, "rev2 not allocated (7)", 1);
-		h2 = (int**)calloc (1, sizeof(int*));   //addressed (h2, "h2 not allocated (6)", 1);
+		rev2 = (long*)calloc (1, sizeof(long));   //addressed (rev2, "rev2 not allocated (7)", 1);
+		h2 = (long**)calloc (1, sizeof(long*));   //addressed (h2, "h2 not allocated (6)", 1);
 		r2 = 0;
 		for (i = 0; i<r1; i++)
 		if (!(*(*(h1 + i) + ii))) /* taking zero rows to the nex tab */
 		{
-			{ h2 = (int**)realloc (h2, (r2 + 1)*sizeof(int*)); }   //addressed (h2, "h2 not allocated (8)", (r2 + 1)); }
+			{ h2 = (long**)realloc (h2, (r2 + 1)*sizeof(long*)); }   //addressed (h2, "h2 not allocated (8)", (r2 + 1)); }
 			{
-			*(h2 + r2) = (int*)calloc (c, sizeof(int));        //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
+			*(h2 + r2) = (long*)calloc (c, sizeof(long));        //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
 		}
-			rev2 = (int*)realloc (rev2, (r2 + 1)*sizeof(int));  //addressed (rev2, "rev2+r2 not allocated (7) in realloc", (r2 + 1));
+			rev2 = (long*)realloc (rev2, (r2 + 1)*sizeof(long));  //addressed (rev2, "rev2+r2 not allocated (7) in realloc", (r2 + 1));
 			*(rev2 + r2) = *(rev1 + i);
 			for (uu = 0; uu<c; uu++) *(*(h2 + r2) + uu) = *(*(h1 + i) + uu);
 			++r2;
@@ -1087,9 +1095,9 @@ struct mt_mat *mt_modes (struct mt_mat *m, struct mt_vector *v)
 			{
 				/* if(ok_4) */ while (r02 <= r2) /* 1 */
 				{
-					h2 = (int**)realloc (h2, (r2 + 1)*sizeof(int*)); //addressed (h2, "h2 not allocated (8)", (r2 + 1));
-					*(h2 + r2) = (int*)calloc (c, sizeof(int));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
-					rev2 = (int*)realloc (rev2, (r2 + 1)*sizeof(int));   //addressed (rev2, "rev2+r2 not allocated (7) in realloc", (r2 + 1));
+					h2 = (long**)realloc (h2, (r2 + 1)*sizeof(long*)); //addressed (h2, "h2 not allocated (8)", (r2 + 1));
+					*(h2 + r2) = (long*)calloc (c, sizeof(long));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
+					rev2 = (long*)realloc (rev2, (r2 + 1)*sizeof(long));   //addressed (rev2, "rev2+r2 not allocated (7) in realloc", (r2 + 1));
 					r02++;
 				}
 				*(rev2 + r2) = 0; k1 = *(*(h1 + i) + ii); k2 = *(*(h1 + u) + ii);
@@ -1131,9 +1139,9 @@ struct mt_mat *mt_modes (struct mt_mat *m, struct mt_vector *v)
 			{
 				/* if( ok_4 ) */ while (r02 <= r2) /* 22 */
 				{
-					h2 = (int**)realloc (h2, (r2 + 1)*sizeof(int*)); //addressed (h2, "h2 not allocated (8)", (r2 + 1));
-					*(h2 + r2) = (int*)calloc (c, sizeof(int));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
-					rev2 = (int*)realloc (rev2, (r2 + 1)*sizeof(int));   //addressed (rev2, "rev2+r2 not allocated (7) in realloc", (r2 + 1));
+					h2 = (long**)realloc (h2, (r2 + 1)*sizeof(long*)); //addressed (h2, "h2 not allocated (8)", (r2 + 1));
+					*(h2 + r2) = (long*)calloc (c, sizeof(long));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
+					rev2 = (long*)realloc (rev2, (r2 + 1)*sizeof(long));   //addressed (rev2, "rev2+r2 not allocated (7) in realloc", (r2 + 1));
 					r02++;
 				}
 				*(rev2 + r2) = 1; k1 = (*(*(h1 + i) + ii)); k2 = (*(*(h1 + u) + ii));
@@ -1180,9 +1188,9 @@ struct mt_mat *mt_modes (struct mt_mat *m, struct mt_vector *v)
 			{
 				/* if(ok_4) */ while (r02 <= r2) /* 333 */
 				{
-					h2 = (int**)realloc (h2, (r2 + 1)*sizeof(int*)); //addressed (h2, "h2 not allocated (8)", (r2 + 1));
-					*(h2 + r2) = (int*)calloc (c, sizeof(int));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
-					rev2 = (int*)realloc (rev2, (r2 + 1)*sizeof(int));   //addressed (rev2, "rev2+r2 not allocated (7) in realloc", (r2 + 1));
+					h2 = (long**)realloc (h2, (r2 + 1)*sizeof(long*)); //addressed (h2, "h2 not allocated (8)", (r2 + 1));
+					*(h2 + r2) = (long*)calloc (c, sizeof(long));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
+					rev2 = (long*)realloc (rev2, (r2 + 1)*sizeof(long));   //addressed (rev2, "rev2+r2 not allocated (7) in realloc", (r2 + 1));
 					r02++;
 				}
 				*(rev2 + r2) = 1; k1 = abs (*(*(h1 + i) + ii)); k2 = abs (*(*(h1 + u) + ii));
@@ -1251,7 +1259,7 @@ struct mt_mat *mt_modes (struct mt_mat *m, struct mt_vector *v)
 int mt_overallOutput (struct mt_mat *m, struct mt_encoding *list, FILE *savefile)
 {
 	int i, t, j, zero_count, zero_lines = 0;
-	int **mat;
+	long **mat;
 	struct mt_encoding *acel;
 
 	mat = m->head;
