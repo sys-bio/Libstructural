@@ -16,6 +16,7 @@
 #include "matrix.h"
 #include "util.h"
 #include "math.h"
+#include "libMetaTool4_3.h"
 
 #define SMALL_NUM           1.0E-9
 #define PRINT_PRECISION		10
@@ -2086,7 +2087,63 @@ double LibStructural::getNmatrixSparsity()
 
 // Returns a matrix of elementary modes
 DoubleMatrix* LibStructural::getElementaryModes () {
-	return NULL;
+	
+	struct mt_mat *stoichiometryMatrix;
+	struct mt_mat *elm;
+	struct mt_vector *reversibilityList;
+	DoubleMatrix *oResult;
+	int value;
+
+	if (_NumRows == 0)
+	{
+		_sResultStream << "Model has no floating species.";
+	}
+	else if (_NumCols == 0)
+	{
+		_sResultStream << "Model has no Reactions.";
+	}
+	else
+	{
+		reversibilityList = mt_createVector (numReactions);
+		for (int i = 0; i < numReactions; i++) {
+			const Reaction* reaction = _Model->getNthReaction (i);
+			if (reaction->getReversible ()) {
+				mt_setVectorItem (reversibilityList, i, mt_REVERSIBLE);
+			}
+			else {
+				mt_setVectorItem (reversibilityList, i, mt_IRREVERSIBLE);
+			}
+		}
+
+		stoichiometryMatrix = mt_createMatrix (numFloating, numReactions);
+		for (int i = 0; i < numFloating; i++) {
+			for (int j = 0; j < numReactions; j++) {
+				value = (*_Nmat_orig)(i, j);
+				mt_setMatrixItem (stoichiometryMatrix, i, j, value);
+			}
+		}
+	
+		// Initialize Metatool
+		mt_initialize (stoichiometryMatrix, reversibilityList);
+	    // Compute elementary mode
+		elm = mt_elementaryModes ();
+
+		// Destroy Metatool
+		mt_destroy ();
+		mt_freeMatrix (stoichiometryMatrix);
+		mt_freeVector (reversibilityList);
+	}
+
+	oResult = new DoubleMatrix (elm->row, elm->col);
+	for (int i = 0; i < elm->row; i++) {
+		for (int j = 0; j < elm->col; j++) {
+			mt_getMatrixItem (elm, i, j, &value);
+			(*oResult) (i, j) = value;
+		}
+	}
+	mt_freeMatrix (elm);
+
+	return oResult;
 }
 
 
@@ -2770,8 +2827,9 @@ LIB_EXTERN  double LibStructural_getNmatrixSparsity()
 LIB_EXTERN  int LibStructural_getElementaryModes (double** *outMatrix, int* outRows, int *outCols) {
 	try
 	{
-		//*outMessage = strdup (LibStructural::getInstance ()->getResultString ().c_str ());
-		//*nLength = strlen (*outMessage);
+		DoubleMatrix *oTemp = LibStructural::getInstance ()->getElementaryModes ();
+		Util::CopyMatrix (*oTemp, *outMatrix, *outRows, *outCols);
+		delete oTemp;
 		return 0;
 	}
 	catch (...)
