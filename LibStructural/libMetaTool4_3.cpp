@@ -34,20 +34,16 @@ mt_vector *lib_reversibilityInformation;
 
 struct mt_internal {
 	mt_mat *stoichiometryMatrix;
-	//struct mt_encoding *metlist;
-	//struct mt_encoding *enzlist;
-	mt_vector *rev;
+	mt_vector *reversiblilityList;
 };
 
 struct mt_internal *mt_internalDataStructure;
 
-void mt_initialize (mt_mat *stoichiometryMatrix,  mt_vector *rev) {
+void mt_initialize (mt_mat *stoichiometryMatrix,  mt_vector *reversiblilityList) {
 
 	mt_internalDataStructure = (struct mt_internal *) calloc (1, sizeof (struct mt_internal));
 	mt_internalDataStructure->stoichiometryMatrix = stoichiometryMatrix;
-	//mt_internalDataStructure->metlist = metlist;
-	//mt_internalDataStructure->enzlist = enzlist;
-	mt_internalDataStructure->rev = rev;
+	mt_internalDataStructure->reversiblilityList = reversiblilityList;
 }
 
 void mt_destroy () {
@@ -479,7 +475,7 @@ void mt_fout_branches (FILE *fout, struct mt_encoding *metlist)
 	for (i = 0; i<mt_branch->row; i++)
 	{
 		if (*(mt_branch->head + i))
-			fprintf (fout, "\n%-20s\t%d\t%d\t%d\t%s", help->txt, help->consumed, help->built, help->reactions);
+			fprintf (fout, "\n%-20s\t%d\t%d\t%d", help->txt, help->consumed, help->built, help->reactions);
 		help = help->next;
 	}
 	fprintf (fout, "\n");
@@ -489,7 +485,7 @@ void mt_fout_branches (FILE *fout, struct mt_encoding *metlist)
 	for (i = 0; i<mt_branch->row; i++)
 	{
 		if (!*(mt_branch->head + i))
-			fprintf (fout, "\n%-20s\t%d\t%d\t%d\t%s", help->txt, help->consumed, help->built, help->reactions);
+			fprintf (fout, "\n%-20s\t%d\t%d\t%d", help->txt, help->consumed, help->built, help->reactions);
 		help = help->next;
 	}
 	fprintf (fout, "\n");
@@ -1251,207 +1247,6 @@ struct mt_mat *mt_modes (struct mt_mat *m, struct mt_vector *v)
 } // modes
 
 
-///* modes */
-//struct mt_mat *mt_modes (struct mt_mat *m, struct mt_vector *v)
-//{
-//	struct mt_mat *help, *k;                       /* help matrices */
-//	int **h1, **h2, abs_hi, abs_hu, ggt_Erg;    /* pointer to current and nex tab */
-//	int *rev1, *rev2 = NULL;                           /* corresponding revesibilities */
-//	int i, u, ii, uu, tu;                           /* counter */
-//	int r1, r2, c, counter, k1, k2, test1, r01, ok_4 = 1, r02;
-//
-//	k = mt_transpose (m); help = mt_addi (k); mt_freeMatrix (k);
-//	h1 = help->head;
-//	r1 = (help->row); c = help->col; counter = m->row;
-//	r01 = r2 = r1;
-//	rev1 = (int*)calloc (v->row, sizeof(int));   //addressed (rev1, "rev1 not allocated (5.5)", v->row);
-//	for (i = 0; i<v->row; i++) *(rev1 + i) = *(v->head + i);
-//	//printf ("first alloc %d\n", r1);
-//	for (ii = 0; ii<counter; ii++)
-//	{
-//		rev2 = (int*)calloc (1, sizeof(int));   //addressed (rev2, "rev2 not allocated (7)", 1);
-//		h2 = (int**)calloc (1, sizeof(int*));   //addressed (h2, "h2 not allocated (6)", 1);
-//		r2 = 0;
-//		for (i = 0; i<r1; i++)
-//		if (!(*(*(h1 + i) + ii))) /* taking zero rows to the nex tab */
-//		{
-//			{ h2 = (int**)realloc (h2, (r2 + 1)*sizeof(int*));     //addressed (h2, "h2 not allocated (8)", (r2 + 1));
-//			}
-//			{
-//			*(h2 + r2) = (int*)calloc (c, sizeof(int));        //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
-//		}
-//			rev2 = (int*)realloc (rev2, (r2 + 1)*sizeof(int));  //addressed (rev2, "rev2+r2 not allocated (7) in realloc", (r2 + 1));
-//			*(rev2 + r2) = *(rev1 + i);
-//			for (uu = 0; uu<c; uu++) *(*(h2 + r2) + uu) = *(*(h1 + i) + uu);
-//			//printf ("%d ", ++r2);
-//		}
-//		else;
-//		r02 = r2;
-//		// ok_4=1;
-//		for (i = 0; i<r1; i++)
-//		if ((*(*(h1 + i) + ii)) && (!(*(rev1 + i)))) /* reversible combinations */
-//		{
-//			for (u = i + 1; u<r1; u++)
-//			if ((*(*(h1 + u) + ii)) && (!(*(rev1 + u))))
-//			{
-//				/* if(ok_4) */ while (r02 <= r2) /* 1 */
-//				{
-//					h2 = (int**)realloc (h2, (r2 + 1)*sizeof(int*)); //addressed (h2, "h2 not allocated (8)", (r2 + 1));
-//					*(h2 + r2) = (int*)calloc (c, sizeof(int));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
-//					rev2 = (int*)realloc (rev2, (r2 + 1)*sizeof(int));   //addressed (rev2, "rev2+r2 not allocated (7) in realloc", (r2 + 1));
-//					r02++;
-//				}
-//				*(rev2 + r2) = 0; k1 = *(*(h1 + i) + ii); k2 = *(*(h1 + u) + ii);
-//				abs_hi = (*(*(h1 + i) + ii) >= 0 ? *(*(h1 + i) + ii) : -*(*(h1 + i) + ii)); // FM
-//				abs_hu = (*(*(h1 + u) + ii) >= 0 ? *(*(h1 + u) + ii) : -*(*(h1 + u) + ii)); // FM
-//				ggt_Erg = mt_ggt (abs_hi, abs_hu);  // FM
-//				k1 /= ggt_Erg; k2 /= ggt_Erg;    // FM
-//				for (uu = 0; uu<c; uu++)
-//				{
-//					mt_numerical_array (k2, *(*(h1 + i) + uu), k1, *(*(h1 + u) + uu), 0, 1, -1, "loop 8");
-//					*(*(h2 + r2) + uu) = k2**(*(h1 + i) + uu) - k1**(*(h1 + u) + uu);
-//				}
-//
-//				test1 = 1;
-//				for (tu = 0; tu<r2; tu++)
-//				{
-//					test1 = 0;
-//					for (uu = counter; uu<c; uu++)
-//					{
-//						if ((*(*(h2 + r2) + uu) == 0) && (*(*(h2 + tu) + uu) != 0)) { test1 = 1; break; }
-//					}
-//					if (test1 == 0) break; 
-//				}
-//				if (test1 == 1){
-//					// control_condition007( h2, &r2, rev2, c );
-//					//printf ("%d ", ++r2); /* 1 */ 
-//					// ok_4=1;
-//				}
-//				else;//ok_4=0;
-//			} // for u
-//		}  // for i
-//
-//		for (i = 0; i<r1; i++)
-//		if ((*(*(h1 + i) + ii)) && (!*(rev1 + i))) /* rev-irrev combinations */
-//		{
-//			for (u = 0; u<r1; u++)
-//			if ((*(*(h1 + u) + ii)) && (*(rev1 + u)))
-//			{
-//				/* if( ok_4 ) */ while (r02 <= r2) /* 22 */
-//				{
-//					h2 = (int**)realloc (h2, (r2 + 1)*sizeof(int*)); //addressed (h2, "h2 not allocated (8)", (r2 + 1));
-//					*(h2 + r2) = (int*)calloc (c, sizeof(int));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
-//					rev2 = (int*)realloc (rev2, (r2 + 1)*sizeof(int));   //addressed (rev2, "rev2+r2 not allocated (7) in realloc", (r2 + 1));
-//					r02++;
-//				}
-//				*(rev2 + r2) = 1; k1 = (*(*(h1 + i) + ii)); k2 = (*(*(h1 + u) + ii));
-//				abs_hi = (*(*(h1 + i) + ii) >= 0 ? *(*(h1 + i) + ii) : -*(*(h1 + i) + ii)); // FM
-//				abs_hu = (*(*(h1 + u) + ii) >= 0 ? *(*(h1 + u) + ii) : -*(*(h1 + u) + ii)); // FM
-//				ggt_Erg = mt_ggt (abs_hi, abs_hu);  // FM
-//				k1 /= ggt_Erg; k2 /= ggt_Erg;    // FM
-//				if (k1*k2<0)
-//				for (uu = 0; uu<c; uu++)
-//				{
-//					mt_numerical_array (k2, *(*(h1 + i) + uu), k1, *(*(h1 + u) + uu), 1, 1, 1, "loop 5");
-//					*(*(h2 + r2) + uu) = abs (k2)**(*(h1 + i) + uu) + abs (k1)**(*(h1 + u) + uu);
-//				}
-//				if (k1*k2>0) // ooo
-//				for (uu = 0; uu<c; uu++)
-//				{
-//					mt_numerical_array (k2, *(*(h1 + i) + uu), k1, *(*(h1 + u) + uu), 1, -1, 1, "loop 6");
-//					*(*(h2 + r2) + uu) = -abs (k2)**(*(h1 + i) + uu) + abs (k1)**(*(h1 + u) + uu);
-//				}
-//				test1 = 1;
-//				for (tu = 0; tu<r2; tu++)
-//				{
-//					test1 = 0;
-//					for (uu = counter; uu<c; uu++)
-//					{
-//						if ((*(*(h2 + r2) + uu) == 0) && (*(*(h2 + tu) + uu) != 0)) { test1 = 1; break; }
-//					}
-//					if (test1 == 0) break;
-//				}
-//				if (test1 == 1){
-//					// control_condition007( h2, &r2, rev2, c );
-//					printf ("%d ", ++r2); /* 2 */
-//					// ok_4=1;
-//				}
-//				else; // ok_4=0;
-//			} // for u
-//		} // for i
-//		for (i = 0; i<r1; i++)
-//		if ((*(*(h1 + i) + ii)>0) && (*(rev1 + i))) /* irrev combinations */
-//		{
-//			for (u = 0; u<r1; u++)
-//			if ((*(*(h1 + u) + ii)<0) && (*(rev1 + u)))
-//			{
-//				/* if(ok_4) */ while (r02 <= r2) /* 333 */
-//				{
-//					h2 = (int**)realloc (h2, (r2 + 1)*sizeof(int*)); //addressed (h2, "h2 not allocated (8)", (r2 + 1));
-//					*(h2 + r2) = (int*)calloc (c, sizeof(int));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
-//					rev2 = (int*)realloc (rev2, (r2 + 1)*sizeof(int));   //addressed (rev2, "rev2+r2 not allocated (7) in realloc", (r2 + 1));
-//					r02++;
-//				}
-//				*(rev2 + r2) = 1; k1 = abs (*(*(h1 + i) + ii)); k2 = abs (*(*(h1 + u) + ii));
-//				abs_hi = (*(*(h1 + i) + ii) >= 0 ? *(*(h1 + i) + ii) : -*(*(h1 + i) + ii)); // FM
-//				abs_hu = (*(*(h1 + u) + ii) >= 0 ? *(*(h1 + u) + ii) : -*(*(h1 + u) + ii)); // FM
-//				ggt_Erg = mt_ggt (abs_hi, abs_hu);  // FM
-//				k1 /= ggt_Erg; k2 /= ggt_Erg;    // FM
-//				for (uu = 0; uu<c; uu++)
-//				{
-//					mt_numerical_array (k2, *(*(h1 + i) + uu), k1, *(*(h1 + u) + uu), 0, 1, 1, "loop 7");
-//					*(*(h2 + r2) + uu) = k2**(*(h1 + i) + uu) + k1**(*(h1 + u) + uu);
-//				}
-//				test1 = 1;
-//				for (tu = 0; tu<r2; tu++)
-//				{
-//					test1 = 0;
-//					for (uu = counter; uu<c; uu++)
-//					{
-//						if ((*(*(h2 + r2) + uu) == 0) && (*(*(h2 + tu) + uu) != 0)) { test1 = 1; break; }
-//					}
-//					if (test1 == 0) break;
-//				}
-//				if (test1 == 1){
-//					// control_condition007( h2, &r2, rev2, c );
-//					printf ("%d ", ++r2); /* 3 */
-//					// ok_4=1;
-//				}
-//				else; // ok_4=0;
-//			} // for u
-//		} // for i
-//		// printf("release %d\t", r01-1);
-//		for (i = 0; i<r01; i++) free (*(h1 + i)); free (h1); free (rev1);
-//		h1 = h2; rev1 = rev2; r1 =/*r2/ */(r2 <= r02 ? r2 : r02); r01 = r02; // r2; // r02
-//		printf ("\nresult modes tab %d row %d\n", ii, r1);
-//		help->head = h1;   help->row = r1; help->col = c;
-//		// control_condition04(help, ii); // for debugging
-//		// control_condition7( help, ii, rev1, &r1 ); // r1=help->row; /* FM 20.09.2000 condition (7) in www2.bioinf.mdc-berlin.de/metabolic/metatool/algorithm.pdf */
-//		r2 = r1;
-//		mt_ggt_matrix (help);
-//		// print_mat(help);
-//		if (!help->row) break;
-//	} // for ii
-//	mt_control_condition7 (help, 0, rev1, &r1); // function moved into this source code line on 01.10.2002
-//	free (rev2); // otherwise memory leak FM (detected using the unix software purify)
-//	while (r02>r1)
-//	{
-//		free (*(h1 + (r02 - 1))); r02--;
-//	}
-//	help->head = h1; help->row = r1; help->col = c;
-//	mt_ggt_matrix (help);
-//	if (help->row)
-//	{
-//		k = mt_cutcol (help, counter);
-//		mt_freeMatrix (help);
-//		help = mt_simplify (k);
-//		mt_freeMatrix (k);
-//		// print_mat(help);
-//	}
-//	mt_switch_if_all_rows_are_minus_into_plus (help);
-//	return help;
-//} // modes
-
 
 int mt_overallOutput (struct mt_mat *m, struct mt_encoding *list, FILE *savefile)
 {
@@ -1532,13 +1327,14 @@ struct mt_mat *mt_elementaryModes () {
 	struct mt_mat  *help;
 	int wrong_subset;
 
+	// This code is taken from the original metatool4_3 
 	vkernel = mt_kernel (mt_internalDataStructure->stoichiometryMatrix);
-	vsub = mt_subset (vkernel, mt_internalDataStructure->rev, &wrong_subset);
+	vsub = mt_subset (vkernel, mt_internalDataStructure->reversiblilityList, &wrong_subset);
 	nred = mt_transpose (vsub);
 	help = mt_mult (mt_internalDataStructure->stoichiometryMatrix, nred);
 	mt_freeMatrix (nred);
 	nred = mt_simplify (help);
-	redrev = mt_subrev (vsub, mt_internalDataStructure->rev);
+	redrev = mt_subrev (vsub, mt_internalDataStructure->reversiblilityList);
 
 	modes = mt_modes (nred, redrev);
 
