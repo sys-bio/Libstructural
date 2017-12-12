@@ -8,6 +8,7 @@
 #include "libstructural.h"
 #include "util.h"
 #include "libla.h"
+#include "libMetaTool4_3.h"
 %}
 
 %rename (_my_loadStoichiometryMatrix) loadStoichiometryMatrix;
@@ -647,6 +648,7 @@
 %ignore LIB_STRUCTURAL::LibStructural::getStoichiometryMatrixIds;
 %ignore LIB_STRUCTURAL::LibStructural::getFullyReorderedStoichiometryMatrixIds;
 %ignore LIB_STRUCTURAL::LibStructural::getReorderedStoichiometryMatrixIds;
+%ignore LIB_STRUCTURAL::_sResultStream;
 
 
 %include "../include/libstructural.h"

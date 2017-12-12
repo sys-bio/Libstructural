@@ -13,6 +13,7 @@
 	\author  Frank T. Bergmann (fbergman@u.washington.edu)
 	\author	 Herbert M. Sauro
 	\author	 Ravishankar Rao Vallabhajosyula (developed a previous version of the sructural analysis code)
+	\uathor  Current maintainers (2017): Yosef Badaso and Kiri Choi
 
 */
 
@@ -46,6 +47,8 @@
 #include <vector>
 #include <string>
 #include <map>
+#include <iostream>
+#include <sstream>
 
 #include "libla.h"
 #include "matrix.h"
@@ -141,6 +144,7 @@ namespace LIB_STRUCTURAL
 		int _SvdRankNmat;
 		int _QrRankNmat;
 
+		std::stringstream							_sResultStream;
 		std::string									_sModelName;
 
 		std::map<int, std::string>					_speciesIndexList;
@@ -209,7 +213,9 @@ namespace LIB_STRUCTURAL
 
 	public:
 
-		/*!	\example examples/cpp/loadstoichiometry.cpp
+		std::string getResultString ();
+
+     	/*!	\example examples/cpp/loadstoichiometry.cpp
 			This is an example of how to load a stoichiometry matrix and read test details.
 		*/
 		/*!	\example examples/cpp/loadsbmlfromfile.cpp
@@ -333,7 +339,7 @@ namespace LIB_STRUCTURAL
 
 			\return a result string with information about the analysis process
 		*/
-		LIB_EXTERN std::string analyzeWithQR();
+		LIB_EXTERN void analyzeWithQR();
 		/*! \brief Uses LU Decomposition for Conservation analysis
 
 			This method performs the actual analysis of the stoichiometry matrix (loaded either
@@ -347,9 +353,9 @@ namespace LIB_STRUCTURAL
 			\li LIB_STRUCTURAL::LibStructural::analyzeWithFullyPivotedLU or
 			\li LIB_STRUCTURAL::LibStructural::analyzeWithFullyPivotedLUwithTests
 
-			\return a result string with information about the analysis process
+			Call getSumamry() to get information about the analysis process
 		*/
-		LIB_EXTERN std::string analyzeWithLU();
+		LIB_EXTERN void analyzeWithLU();
 		/*! \brief Uses LU Decomposition for Conservation analysis
 
 			This method performs the actual analysis of the stoichiometry matrix (loaded either
@@ -365,10 +371,9 @@ namespace LIB_STRUCTURAL
 
 			This method additionally performs the integrated test suite and returns	those results.
 
-
-			\return a result string with information about the analysis process
+			Call getSumamry() to get information about the analysis process
 		*/
-		LIB_EXTERN std::string analyzeWithLUandRunTests();
+		LIB_EXTERN void analyzeWithLUandRunTests();
 		/*! \brief Uses fully pivoted LU Decomposition for Conservation analysis
 
 			This method performs the actual analysis of the stoichiometry matrix (loaded either
@@ -383,9 +388,10 @@ namespace LIB_STRUCTURAL
 			\li LIB_STRUCTURAL::LibStructural::analyzeWithFullyPivotedLUwithTests
 
 
-			\return a result string with information about the analysis process
+    		Call getSumamry() to get information about the analysis process
+
 		*/
-		/*LIB_EXTERN*/ std::string analyzeWithFullyPivotedLU();
+		/*LIB_EXTERN*/ void analyzeWithFullyPivotedLU();
 		/*! \brief Uses fully pivoted LU Decomposition for Conservation analysis
 
 			This method performs the actual analysis of the stoichiometry matrix (loaded either
@@ -401,14 +407,23 @@ namespace LIB_STRUCTURAL
 
 			This method additionally performs the integrated test suite and returns	those results.
 
-			\return a result string with information about the analysis process
-		*/
-		LIB_EXTERN std::string analyzeWithFullyPivotedLUwithTests();
+			Call getSumamry() to get information about the analysis process
+
+			*/
+		LIB_EXTERN void analyzeWithFullyPivotedLUwithTests();
+
+
+		/*! \brief Returns the summary string of the last analysis.
+
+	   */
+		LIB_EXTERN std::string LibStructural::getSummary ();
 
 		/*! \brief Returns the L0 Matrix.
 
 			L0 is defined such that  L0 Nr = N0. L0 forms part of the link matrix, L.  N0 is the set of
 			linear dependent rows from the lower portion of the reordered stoichiometry matrix.
+
+			Call getSumamry() to get information about the analysis process
 
 		*/
 		LIB_EXTERN DoubleMatrix* getL0Matrix();
@@ -700,6 +715,12 @@ namespace LIB_STRUCTURAL
 		LIB_EXTERN int getRank();
 		//! Returns the number of nonzero values in Stoichiometry matrix
 		LIB_EXTERN double getNmatrixSparsity();
+
+		/*! \brief Get elementary modes for a model
+
+		\result Returns in an array where each columns is an elementary mode
+		*/
+		LIB_EXTERN  DoubleMatrix* getElementaryModes ();
 
 		/*! \brief Get Eigenvalues for a matrix
 
@@ -1069,6 +1090,14 @@ no stoichiometry matrix was loaded beforehand see ::LibStructural_loadStoichiome
 or ::LibStructural_loadSBMLFromString or ::LibStructural_loadSBMLFromFile
 */
 LIB_EXTERN  int LibStructural_analyzeWithFullyPivotedLUwithTests(char* *outMessage, int *nLength);
+
+/*! \brief Returns the sumamry of the last analysis.
+
+\param outMessage a pointer to a string where status information of the analysis will be returned.
+\param nLength the length of the message.
+
+*/
+LIB_EXTERN  int LibStructural_getSumamry (char* *outMessage, int *nLength);
 
 /*! \brief Returns the L0 Matrix.
 
@@ -1760,6 +1789,14 @@ LIB_EXTERN  int LibStructural_getNumDepReactions();
 LIB_EXTERN  int LibStructural_getRank();
 //! Returns the percentage of nonzero values in the stoichiometry matrix
 LIB_EXTERN  double LibStructural_getNmatrixSparsity();
+
+#
+/*! \brief Get elementary modes for a model
+
+\result Returns 0 is ok, -1 if it failed.
+*/
+LIB_EXTERN  int LibStructural_getElementaryModes (double** *outMatrix, int* outRows, int *outCols);
+
 
 /*! \brief Set user specified tolerance
 
