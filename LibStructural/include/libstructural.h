@@ -416,7 +416,7 @@ namespace LIB_STRUCTURAL
 		/*! \brief Returns the summary string of the last analysis.
 
 	   */
-		LIB_EXTERN std::string LibStructural::getSummary ();
+		LIB_EXTERN std::string getSummary ();
 
 		/*! \brief Returns the L0 Matrix.
 
