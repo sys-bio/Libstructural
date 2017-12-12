@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/install_x64")
+  set(CMAKE_INSTALL_PREFIX "C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/INSTALL_x64")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -62,9 +62,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64/LibLA/cmake_install.cmake")
-  include("C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64/LibStructural/cmake_install.cmake")
-  include("C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64/SWIG/cmake_install.cmake")
+  include("C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/BUILD_x64/LibLA/cmake_install.cmake")
+  include("C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/BUILD_x64/LibStructural/cmake_install.cmake")
+  include("C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/BUILD_x64/SWIG/cmake_install.cmake")
 
 endif()
 
@@ -76,5 +76,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/BUILD_x64/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

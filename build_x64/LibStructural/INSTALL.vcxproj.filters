@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\build_x64\CMakeFiles\243119e28d3b1013e34a1a539ba3e619\INSTALL_force.rule">
+    <CustomBuild Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\BUILD_x64\CMakeFiles\c2e5ff58bd0fb6daab4a296aa7314436\INSTALL_force.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{76D8226E-91BD-3AA6-8A41-FAB1941460B0}</UniqueIdentifier>
+      <UniqueIdentifier>{0FED0131-E928-3628-A88F-2974CDCF8B6C}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

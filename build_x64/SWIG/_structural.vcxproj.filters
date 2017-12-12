@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx">
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\INSTALL_x64\wrapper\structural\libstructuralPYTHON_wrap.cxx">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -10,11 +10,11 @@
     <CustomBuild Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\SWIG\libstructural.i" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\install_x64\wrapper\structural\structural.py" />
+    <None Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\INSTALL_x64\wrapper\structural\structural.py" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{D536B673-52BB-3058-942E-57E17A068E37}</UniqueIdentifier>
+      <UniqueIdentifier>{1308BAD3-D6C4-3AC4-99C0-583BAC9213BF}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
