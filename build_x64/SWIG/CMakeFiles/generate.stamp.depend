@@ -1,0 +1,14 @@
+# CMake generation dependency list for this directory.
+C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/SWIG/CMakeLists.txt
+C:/Program Files/CMake/share/cmake-3.9/Modules/FindSWIG.cmake
+C:/Program Files/CMake/share/cmake-3.9/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.9/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.9/Modules/UseSWIG.cmake
+C:/Program Files/CMake/share/cmake-3.9/Modules/FindPythonInterp.cmake
+C:/Program Files/CMake/share/cmake-3.9/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.9/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.9/Modules/FindPythonLibs.cmake
+C:/Program Files/CMake/share/cmake-3.9/Modules/CMakeFindFrameworks.cmake
+C:/Program Files/CMake/share/cmake-3.9/Modules/SelectLibraryConfigurations.cmake
+C:/Program Files/CMake/share/cmake-3.9/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.9/Modules/FindPackageMessage.cmake

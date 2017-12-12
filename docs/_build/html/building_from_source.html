@@ -1,0 +1,271 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Building From Source &mdash; Libstructural 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Libstructural 1.0.0 documentation" href="index.html"/>
+        <link rel="next" title="Getting Started with LibStructural" href="libstruct_examples.html"/>
+        <link rel="prev" title="Installation" href="installation.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Libstructural
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Building From Source</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#windows">Windows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="libstruct_examples.html">Getting Started with LibStructural</a></li>
+<li class="toctree-l1"><a class="reference internal" href="API.html">API</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Libstructural</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Building From Source</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/building_from_source.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="building-from-source">
+<h1>Building From Source<a class="headerlink" href="#building-from-source" title="Permalink to this headline">¶</a></h1>
+<p>The LibStructural API library can be built on your machine from the source code found on <a class="reference external" href="https://github.com/yosefmaru/Libstructural">github</a>. To build libStructural, you will need:</p>
+<ul class="simple">
+<li>Source code and dependencies from github (you will need <a class="reference external" href="https://git-scm.com/">git</a> to clone/download the repo)</li>
+<li>libSBML dependency <a class="reference external" href="https://sourceforge.net/projects/sbml/files/libsbml/win-dependencies/">library</a>. Make sure to get the <a class="reference external" href="https://sourceforge.net/projects/sbml/files/libsbml/win-dependencies/libSBML_dependencies_vs15_release_x64.zip/download">vs15_release_x64 version</a>.</li>
+<li><a class="reference external" href="https://cmake.org/files/v3.9/">CMake version 3.9.3</a> for generating solution files.</li>
+<li>Visual Studio 2017 for Windows or Xcode for MacOS</li>
+<li><a class="reference external" href="http://www.swig.org/">SWIG</a> for generating python wrappers (optional).</li>
+</ul>
+<div class="section" id="windows">
+<h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Clone the source code from the <a class="reference external" href="https://github.com/yosefmaru/Libstructural">github repo</a> by running the following command from the command line or git software: <code class="docutils literal"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/yosefmaru/Libstructural</span></code></li>
+<li>Download libSBML dependency <a class="reference external" href="https://sourceforge.net/projects/sbml/files/libsbml/win-dependencies/">library</a>. Extract the folder in to LibStructural/dependencies folder and rename the folder to “libsbml-vs2017-release-64”. This step is very important since the CMakeLists file that is used to generate the solution object looks for libSBML libraries inside a folder named “libsbml-vs2017-release-64”</li>
+<li>Open CMake-gui. Copy or Browse to the directory where LibStructural is located at for the “Where is the source code” inquiry. For the “Where to build the binaries” inquiry, use the same directory, and add /build_x64.</li>
+<li>On the CMake-gui click on Configure. A prompt will ask you to create a “build_x64” folder inside LibStructural. Click on yes. Next, it will ask you to specify a generator for the project and a what compiler to use as shown below. For the generator, select “Visual Studio 15 2017 Win64”. Then, mark the “Use default native compilers” option and click on Finish.</li>
+</ol>
+<div class="align-center figure">
+<img alt="_images/cmake_2.jpg" src="_images/cmake_2.jpg" />
+</div>
+<ol class="arabic simple" start="5">
+<li>If you wish to generate a python wrapper, you will have to checkmark “ENABLE_PYTHON_WRAPPER” option. Click on Configure again and an error will appear in red on the top, asking for the location of a SWIG executable file. Click on the “SWIG_EXECUTABLE-NOTFOUND” and copy the swig.exe directory. The swig.exe is found in the <a class="reference external" href="http://www.swig.org/">SWIG</a> you downloaded. Click on Generate, and a LibStructural.sln file will be created in the build_x64 folder. NOTE: If you don’t want to generate a python wrapper, simply click configure and then generate after step 4.</li>
+</ol>
+<div class="align-center figure">
+<img alt="_images/cmake_SWIG_exe.JPG" src="_images/cmake_SWIG_exe.JPG" />
+</div>
+<ol class="arabic simple" start="6">
+<li>To build the libraries, open the solution file located in build_x64 using Visual Studio 2017. Right click on the INSTALL project and click on Build. The build out will be stored in build_x64/LibStructural/Release directory. Make sure your build target is set to “Release” instead of “Debug” with “x64” configuration.</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="libstruct_examples.html" class="btn btn-neutral float-right" title="Getting Started with LibStructural" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="installation.html" class="btn btn-neutral" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Herbert Sauro and Yosed Bedaso.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

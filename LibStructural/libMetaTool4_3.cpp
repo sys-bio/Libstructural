@@ -23,7 +23,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-
+#include <limits.h>
 
 #include "libMetaTool4_3.h"
 

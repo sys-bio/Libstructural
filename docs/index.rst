@@ -11,10 +11,9 @@ Welcome to Libstructural's documentation!
 
    introduction
    installation
+   building_from_source
    getting_started
-   repositories
    libstruct_examples
-   testing_instructions
    API
 
 

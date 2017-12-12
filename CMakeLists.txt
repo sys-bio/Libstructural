@@ -8,7 +8,7 @@ cmake_minimum_required(VERSION 2.8)
 project(LibStructural)
 
 if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
-  set (CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/install_x64" CACHE PATH "default install path" FORCE)
+  set (CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/INSTALL_x64" CACHE PATH "default install path" FORCE)
 endif()
 
 include (CMakeTestCCompiler)
@@ -66,7 +66,7 @@ set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Choose the type of build, options a
 # list of additional files to link against.
 #
 
-set(EXTRA_LIBS ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libbz2.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libxml2.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib/zdll.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib/libiconv.lib CACHE STRING "List of additional libraries to link against." )
+set(EXTRA_LIBS ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-64/lib/libbz2.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-64/lib/libxml2.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-64/lib/zdll.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-64/lib/libiconv.lib CACHE STRING "List of additional libraries to link against." )
 
 ####################################################################
 #
@@ -78,7 +78,7 @@ find_library(LIBSBML_LIBRARY
 		  ${SBML_DIR}/lib
 		  /usr/lib /usr/local/lib
 		  ${CMAKE_SOURCE_DIR}
-		  ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib
+		  ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-64/lib
     )
 
 find_path(LIBSBML_INCLUDE
@@ -86,7 +86,7 @@ find_path(LIBSBML_INCLUDE
 	PATHS ${DEPENDENCY_DIR}/include
 		  ${SBML_DIR}/include
 		  /usr/include /usr/local/include
-		  ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/include
+		  ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-64/include
 		  )
 
 set(STRUCTURAL_LIBS ${STRUCTURAL_LIBS} ${LIBSBML_LIBRARY})
@@ -130,7 +130,7 @@ find_library(LIBXML2_LIBRARY
 		  ${SBML_DIR}/lib
 		  /usr/lib /usr/local/lib
 		  ${CMAKE_SOURCE_DIR}
-      ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib
+      ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-64/lib
     )
 #
 # include_directories(${LIBXML2_INCLUDE})
@@ -141,7 +141,7 @@ find_library(LIBXML2_LIBRARY
 #     	${SBML_DIR}/lib
 #     	/usr/lib /usr/local/lib
 #     	${CMAKE_SOURCE_DIR}
-#       ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib
+#       ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-64/lib
 #     )
 #
 #
@@ -164,7 +164,7 @@ find_library(LIBXML2_LIBRARY
 #       ${SBML_DIR}/lib
 #       /usr/lib /usr/local/lib
 #       ${CMAKE_SOURCE_DIR}
-#       ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib
+#       ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-64/lib
 #     )
 #
 # include_directories(${LIBICONV_INCLUDE})
@@ -175,7 +175,7 @@ find_library(LIBXML2_LIBRARY
 #       ${SBML_DIR}/lib
 #       /usr/lib /usr/local/lib
 #       ${CMAKE_SOURCE_DIR}
-#       ${CMAKE_SOURCE_DIR}/dependencies/libsbml-5.15.0-vs2017-release-64/lib
+#       ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-64/lib
 #     )
 #
 # include_directories(${ZDLL_INCLUDE})

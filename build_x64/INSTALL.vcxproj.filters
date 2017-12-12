@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\build_x64\CMakeFiles\a5b97325796a4b17c16c3d5dab2ab4cf\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{76D8226E-91BD-3AA6-8A41-FAB1941460B0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
