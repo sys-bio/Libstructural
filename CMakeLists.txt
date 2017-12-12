@@ -8,7 +8,7 @@ cmake_minimum_required(VERSION 2.8)
 project(LibStructural)
 
 if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
-  set (CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/install_x64" CACHE PATH "default install path" FORCE)
+  set (CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/INSTALL_x64" CACHE PATH "default install path" FORCE)
 endif()
 
 include (CMakeTestCCompiler)
