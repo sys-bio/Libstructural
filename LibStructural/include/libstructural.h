@@ -716,6 +716,12 @@ namespace LIB_STRUCTURAL
 		//! Returns the number of nonzero values in Stoichiometry matrix
 		LIB_EXTERN double getNmatrixSparsity();
 
+		/*! \brief Get elementary modes for a model
+
+		\result Returns in an array where each columns is an elementary mode
+		*/
+		LIB_EXTERN  DoubleMatrix* getElementaryModes ();
+
 		/*! \brief Get Eigenvalues for a matrix
 
 		\param oMatrix Matrix to find the eigenvalues for
@@ -1783,6 +1789,14 @@ LIB_EXTERN  int LibStructural_getNumDepReactions();
 LIB_EXTERN  int LibStructural_getRank();
 //! Returns the percentage of nonzero values in the stoichiometry matrix
 LIB_EXTERN  double LibStructural_getNmatrixSparsity();
+
+#
+/*! \brief Get elementary modes for a model
+
+\result Returns 0 is ok, -1 if it failed.
+*/
+LIB_EXTERN  int LibStructural_getElementaryModes (double** *outMatrix, int* outRows, int *outCols);
+
 
 /*! \brief Set user specified tolerance
 

@@ -8,6 +8,7 @@
 #include "libstructural.h"
 #include "util.h"
 #include "libla.h"
+#include "libMetaTool4_3.h"
 %}
 
 %rename (_my_loadStoichiometryMatrix) loadStoichiometryMatrix;
