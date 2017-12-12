@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{17D97970-D8BB-32C7-8265-AE1B65D8912D}</ProjectGuid>
+    <ProjectGuid>{91B49BA2-501C-3C48-986C-09AD111D7AB0}</ProjectGuid>
     <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
     <Platform>x64</Platform>
@@ -56,19 +56,19 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\build_x64\LibLA\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\BUILD_x64\LibLA\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">LibLA-static.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">LibLA-static</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\build_x64\LibLA\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\BUILD_x64\LibLA\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">LibLA-static.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">LibLA-static</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\build_x64\LibLA\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\BUILD_x64\LibLA\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">LibLA-static.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">LibLA-static</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\build_x64\LibLA\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\BUILD_x64\LibLA\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">LibLA-static.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">LibLA-static</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
@@ -206,7 +206,7 @@
     <CustomBuild Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibLA\CMakeLists.txt">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/LibLA/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-HC:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural" "-BC:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64" --check-stamp-file "C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64/LibLA/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" "-HC:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural" "-BC:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/BUILD_x64" --check-stamp-file "C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/BUILD_x64/LibLA/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -215,11 +215,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/LibLA/CMakeLists.txt;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibLA\CMakeLists.txt;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibLA\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\build_x64\LibLA\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\BUILD_x64\LibLA\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/LibLA/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-HC:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural" "-BC:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64" --check-stamp-file "C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64/LibLA/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" "-HC:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural" "-BC:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/BUILD_x64" --check-stamp-file "C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/BUILD_x64/LibLA/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -228,11 +228,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/LibLA/CMakeLists.txt;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibLA\CMakeLists.txt;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibLA\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\build_x64\LibLA\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\BUILD_x64\LibLA\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/LibLA/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-HC:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural" "-BC:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64" --check-stamp-file "C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64/LibLA/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" "-HC:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural" "-BC:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/BUILD_x64" --check-stamp-file "C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/BUILD_x64/LibLA/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -241,11 +241,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/LibLA/CMakeLists.txt;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibLA\CMakeLists.txt;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibLA\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\build_x64\LibLA\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\BUILD_x64\LibLA\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/LibLA/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" "-HC:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural" "-BC:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64" --check-stamp-file "C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64/LibLA/CMakeFiles/generate.stamp"
+"C:\Program Files\CMake\bin\cmake.exe" "-HC:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural" "-BC:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/BUILD_x64" --check-stamp-file "C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/BUILD_x64/LibLA/CMakeFiles/generate.stamp"
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -254,7 +254,7 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/LibLA/CMakeLists.txt;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibLA\CMakeLists.txt;C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibLA\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\build_x64\LibLA\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\BUILD_x64\LibLA\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
@@ -265,8 +265,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibLA\util.cpp"  />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\build_x64\ZERO_CHECK.vcxproj">
-      <Project>{725BABB2-6562-3E15-9D98-CD5097AD5BAE}</Project>
+    <ProjectReference Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\BUILD_x64\ZERO_CHECK.vcxproj">
+      <Project>{81319980-AA4F-35EE-9621-2B8D2AEB50B3}</Project>
       <Name>ZERO_CHECK</Name>
     </ProjectReference>
   </ItemGroup>

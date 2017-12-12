@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{5A71E2B7-28C5-3357-9F45-F47820116E7B}</ProjectGuid>
+    <ProjectGuid>{760CA9F4-B611-3E24-854C-D8D522A31B12}</ProjectGuid>
     <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
     <Platform>x64</Platform>
@@ -150,7 +150,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\build_x64\CMakeFiles\e8e89f16b79dfab3d902c5c4c5a44d88\INSTALL_force.rule">
+    <CustomBuild Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\BUILD_x64\CMakeFiles\728634d969c795c381d823d0f2c05f8e\INSTALL_force.rule">
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'"> </Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
 cd .
@@ -161,8 +161,8 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64/CMakeFiles/e8e89f16b79dfab3d902c5c4c5a44d88/INSTALL_force.rule;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\build_x64\LibLA\CMakeFiles\INSTALL_force</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/BUILD_x64/CMakeFiles/728634d969c795c381d823d0f2c05f8e/INSTALL_force.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\BUILD_x64\LibLA\CMakeFiles\INSTALL_force</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'"> </Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
@@ -174,8 +174,8 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64/CMakeFiles/e8e89f16b79dfab3d902c5c4c5a44d88/INSTALL_force.rule;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\build_x64\LibLA\CMakeFiles\INSTALL_force</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/BUILD_x64/CMakeFiles/728634d969c795c381d823d0f2c05f8e/INSTALL_force.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\BUILD_x64\LibLA\CMakeFiles\INSTALL_force</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'"> </Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
@@ -187,8 +187,8 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64/CMakeFiles/e8e89f16b79dfab3d902c5c4c5a44d88/INSTALL_force.rule;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\build_x64\LibLA\CMakeFiles\INSTALL_force</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/BUILD_x64/CMakeFiles/728634d969c795c381d823d0f2c05f8e/INSTALL_force.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\BUILD_x64\LibLA\CMakeFiles\INSTALL_force</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
       <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'"> </Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
@@ -200,18 +200,18 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/build_x64/CMakeFiles/e8e89f16b79dfab3d902c5c4c5a44d88/INSTALL_force.rule;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\build_x64\LibLA\CMakeFiles\INSTALL_force</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/BUILD_x64/CMakeFiles/728634d969c795c381d823d0f2c05f8e/INSTALL_force.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\BUILD_x64\LibLA\CMakeFiles\INSTALL_force</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\build_x64\ZERO_CHECK.vcxproj">
-      <Project>{725BABB2-6562-3E15-9D98-CD5097AD5BAE}</Project>
+    <ProjectReference Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\BUILD_x64\ZERO_CHECK.vcxproj">
+      <Project>{81319980-AA4F-35EE-9621-2B8D2AEB50B3}</Project>
       <Name>ZERO_CHECK</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\build_x64\ALL_BUILD.vcxproj">
-      <Project>{43E8C31F-3D50-3B8F-B40D-9759B1614778}</Project>
+    <ProjectReference Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\BUILD_x64\ALL_BUILD.vcxproj">
+      <Project>{2EAE998F-2F38-30AD-8A0A-1A2B0B6E4A91}</Project>
       <Name>ALL_BUILD</Name>
     </ProjectReference>
   </ItemGroup>

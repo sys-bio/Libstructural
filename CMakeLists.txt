@@ -113,9 +113,9 @@ find_library(ZDLL_LIBRARY
     )
 
 include_directories(${ZDLL_INCLUDE})
-endif()
-set(EXTRA_LIBS ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-64/lib/libbz2.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-64/lib/libxml2.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-64/lib/zdll.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-64/lib/libiconv.lib CACHE STRING "List of additional libraries to link against." )
 else()
+set(EXTRA_LIBS ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-64/lib/libbz2.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-64/lib/libxml2.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-64/lib/zdll.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-64/lib/libiconv.lib CACHE STRING "List of additional libraries to link against." )
+endif()
 ####################################################################
 #
 # Locate Libxml2 if needed
