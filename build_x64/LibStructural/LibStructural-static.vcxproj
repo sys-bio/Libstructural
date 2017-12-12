@@ -264,6 +264,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibLA\matrix.cpp"  />
     <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibLA\util.cpp"  />
     <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\constraint.cpp"  />
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libMetaTool4_3.cpp"  />
     <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp"  />
     <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\objective.cpp"  />
     <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\sbmlmodel.cpp"  />

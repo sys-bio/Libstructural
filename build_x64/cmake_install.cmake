@@ -43,6 +43,7 @@ if("${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMP
     "C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/include/constraint.h"
     "C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/include/f2c.h"
     "C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/include/fluxbalance.h"
+    "C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/include/libMetaTool4_3.h"
     "C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/include/libla.h"
     "C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/include/libutil.h"
     "C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/include/lp_Hash.h"

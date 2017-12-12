@@ -16,6 +16,9 @@
     <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\constraint.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libMetaTool4_3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

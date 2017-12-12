@@ -8,6 +8,7 @@
   -- Up-to-date: C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/install_x64/include/constraint.h
   -- Up-to-date: C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/install_x64/include/f2c.h
   -- Up-to-date: C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/install_x64/include/fluxbalance.h
+  -- Up-to-date: C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/install_x64/include/libMetaTool4_3.h
   -- Up-to-date: C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/install_x64/include/libla.h
   -- Up-to-date: C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/install_x64/include/libutil.h
   -- Up-to-date: C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/install_x64/include/lp_Hash.h
@@ -27,3 +28,5 @@
   -- Installing: C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/install_x64/lib/LibStructural.lib
   -- Installing: C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/install_x64/bin/LibStructural.dll
   -- Installing: C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/install_x64/lib/LibStructural-static.lib
+  -- Installing: C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/install_x64/wrapper/structural/_structural.pyd
+  -- Up-to-date: C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/install_x64/wrapper/structural/__init__.py
