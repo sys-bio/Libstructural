@@ -2092,7 +2092,7 @@ DoubleMatrix* LibStructural::getElementaryModes () {
 	struct mt_mat *elm;
 	struct mt_vector *reversibilityList;
 	DoubleMatrix *oResult;
-	int value;
+	long value;
 
 	if (_NumRows == 0)
 	{
