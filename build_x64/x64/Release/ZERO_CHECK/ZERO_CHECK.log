@@ -1,1 +1,10 @@
-﻿
+﻿  Checking Build System
+  CMake is re-running because C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/BUILD_x64/CMakeFiles/generate.stamp is out-of-date.
+    the file 'C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/CMakeLists.txt'
+    is newer than 'C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/BUILD_x64/CMakeFiles/generate.stamp.depend'
+    result='-1'
+  -- Detecting C compile features
+  -- Detecting C compile features - done
+  -- Configuring done
+  -- Generating done
+  -- Build files have been written to: C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/BUILD_x64

@@ -1,26 +1,9 @@
-﻿  Building Custom Rule C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/LibStructural/CMakeLists.txt
-  CMake does not need to re-run because C:/Users/yosef/Documents/Visual Studio 2017/Projects/Libstructural/BUILD_x64/LibStructural/CMakeFiles/generate.stamp is up-to-date.
-  complex.cpp
-  libla.cpp
-  matrix.cpp
-  util.cpp
-C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibLA\util.cpp(704): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibLA\util.cpp(714): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibLA\util.cpp(727): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibLA\util.cpp(737): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-  constraint.cpp
-  libMetaTool4_3.cpp
-C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libMetaTool4_3.cpp(482): warning C4473: 'fprintf' : not enough arguments passed for format string
-  C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libMetaTool4_3.cpp(482): note: placeholders and their parameters expect 5 variadic arguments, but 4 were provided
-  C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libMetaTool4_3.cpp(482): note: the missing variadic argument 5 is required by format string '%s'
-C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libMetaTool4_3.cpp(492): warning C4473: 'fprintf' : not enough arguments passed for format string
-  C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libMetaTool4_3.cpp(492): note: placeholders and their parameters expect 5 variadic arguments, but 4 were provided
-  C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libMetaTool4_3.cpp(492): note: the missing variadic argument 5 is required by format string '%s'
+﻿  libMetaTool4_3.cpp
   libstructural.cpp
 C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(324): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(325): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(1059): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2121): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2121): warning C4244: '=': conversion from 'double' to 'long', possible loss of data
 C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2178): warning C4018: '<': signed/unsigned mismatch
 C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2184): warning C4018: '<': signed/unsigned mismatch
 C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2349): warning C4018: '<': signed/unsigned mismatch
@@ -37,7 +20,5 @@ C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural
 C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2763): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2772): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
 C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\LibStructural\libstructural.cpp(2934): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-  objective.cpp
-  sbmlmodel.cpp
   Generating Code...
   LibStructural-static.vcxproj -> C:\Users\yosef\Documents\Visual Studio 2017\Projects\Libstructural\BUILD_x64\LibStructural\Release\LibStructural-static.lib
