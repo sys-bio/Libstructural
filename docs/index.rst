@@ -16,7 +16,6 @@ Welcome to Libstructural's documentation!
    libstruct_examples
    API
 
-
 Indices and tables
 ==================
 
