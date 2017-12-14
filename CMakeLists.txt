@@ -67,6 +67,7 @@ set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Choose the type of build, options a
 #
 
 if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+
 include_directories(${LIBXML2_INCLUDE})
 
 find_library(BZ2_LIBRARY
