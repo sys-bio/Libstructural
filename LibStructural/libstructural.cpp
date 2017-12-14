@@ -45,20 +45,18 @@ char* getVersion () {
 // of the analysis are output as a string and are also accessible from other methods in
 // the API.
 // ----------------------------------------------------------------------------------------
-string LibStructural::loadSBMLFromString(string sSBML)
+void LibStructural::loadSBMLFromString(string sSBML)
 {
     DELETE_IF_NON_NULL(_Model);
     _Model = new SBMLmodel(sSBML);
     analyzeWithQR();
-	return _sResultStream.str();
 }
 
-string LibStructural::loadSBMLFromFile(string sFileName)
+void LibStructural::loadSBMLFromFile(string sFileName)
 {
 	DELETE_IF_NON_NULL(_Model);
 	_Model = SBMLmodel::FromFile(sFileName);
 	analyzeWithQR();
-	return _sResultStream.str();
 }
 
 // Initialization method, takes SBML as input
@@ -2467,12 +2465,11 @@ LIB_EXTERN  int LibStructural_loadReactionIds ( const char** reactionIds, const 
 #ifndef NO_SBML
 
 // Initialization method, takes SBML as input
-LIB_EXTERN  int LibStructural_loadSBMLFromString(const char* sSBML, char** oResult, int *nLength)
+LIB_EXTERN  int LibStructural_loadSBMLFromString(const char* sSBML)
 {
 	try
 	{
-		*oResult = strdup(LibStructural::getInstance()->loadSBMLFromString(string(sSBML)).c_str());
-		*nLength = strlen(*oResult);
+		LibStructural::getInstance()->loadSBMLFromString(string(sSBML));
 		return 0;
 	}
 	catch (...)
@@ -2481,12 +2478,11 @@ LIB_EXTERN  int LibStructural_loadSBMLFromString(const char* sSBML, char** oResu
 	}
 }
 
-LIB_EXTERN  int LibStructural_loadSBMLFromFile(const char* sFileName, char* *outMessage, int *nLength)
+LIB_EXTERN  int LibStructural_loadSBMLFromFile(const char* sFileName)
 {
 	try
 	{
-		*outMessage = strdup(LibStructural::getInstance()->loadSBMLFromFile(string(sFileName)).c_str());
-		*nLength = strlen(*outMessage);
+		LibStructural::getInstance()->loadSBMLFromFile(string(sFileName));
 		return 0;
 	}
 	catch (...)

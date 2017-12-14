@@ -307,13 +307,13 @@ namespace LIB_STRUCTURAL
 			\param sSBML the SBML string to load
 			\return information about the loaded model
 		*/
-		LIB_EXTERN std::string loadSBMLFromString(std::string sSBML);
+		LIB_EXTERN void loadSBMLFromString(std::string sSBML);
 
 		/*! \brief Load a SBML model from the specified file.
 			\param sFileName a file name to a SBML file to load
 			\return information about the loaded model
 		*/
-		LIB_EXTERN std::string loadSBMLFromFile(std::string sFileName);
+		LIB_EXTERN void loadSBMLFromFile(std::string sFileName);
 
 		/*! \brief Load an SBML model into the library and carry out tests using the internal test suite.
 			\param sSBML the SBML file to load
