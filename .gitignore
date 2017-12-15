@@ -29,3 +29,4 @@ INSTALL_x64/
 BUILD_x64/
 # OTHERS #
 *.bak
+*.db

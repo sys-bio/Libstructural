@@ -6,8 +6,7 @@
 * Purpose:  Refactored Metatool4_3 to behave as a resuable library             *
 *                                                                              *
 * Usage:                                                                       *
-*      See documentation for details of teh API.                               *
-*      Simple example provided below:                                          *
+*      See documentation for details of the API.                               *
 ********************************************************************************/
 
 /* Original header in Metatool4_3. Note that the compilatoion instuctions are no longer appicable  */
@@ -17,15 +16,39 @@
 /* COMPILE WITH GCC, Microsoft C 6.0 or Borland C 5.0 ********************************* */
 /* 5/2000 **************************************************************************** */
 
+/* The original code appears to be in the public domain. It was decided to keep the same
+access rights in this version. */
+
+/* We hereby state that this code is in the public domain 2017 */
+
+/* Modifications to the original Metatool4_3: */
+
+/* Date: December, 2017 */
 /* This version uses long integers for all computations. On a 64-bit machine this is 64 bits in size */
+/* calloc and realloc replaced with safe equivalents */
+/* All runtime errots are now handled via exceptions */
+/* Added allocation routines for vectors, matrices and string lists*/
+/* The code could do with some reformating but we'll keep as is for now */
+/* A lot of vector and matrix indexing is handled by explisit pointer arthmetic */
+/* It would probably be better is this were changed at some tim ein the future. */
+/* How to use: */
+/* 	mt_initialize (stoichiometryMatrix, reversibilityList);
+	// Compute elementary mode
+	elm = mt_elementaryModes ();
+*/
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
 #include <limits.h>
+#include <exception>
+#include <stdexcept>
+#include <sstream>
 
 #include "libMetaTool4_3.h"
+
+using namespace std;
 
 struct mt_vector *mt_branch = NULL;
 
@@ -48,6 +71,32 @@ void mt_initialize (mt_mat *stoichiometryMatrix,  mt_vector *reversiblilityList)
 
 void mt_destroy () {
 	free (mt_internalDataStructure);
+}
+
+
+
+// ---------------------------------------------------------------
+// Safe memory allocation routines
+
+void *safeCalloc (std::string msg, size_t numberOfElements, size_t elementSize) {
+
+	void *ret;
+
+	if ((ret = calloc (numberOfElements, elementSize)) == NULL)
+		throw std::runtime_error ("Memory Error, failed to allocate in: " + msg);
+
+	return ret;
+}
+
+
+void *safeRealloc (std::string msg, void *ptr, size_t newSize) {
+
+	void *ret;
+
+	if ((ret = realloc (ptr, newSize)) == NULL) {
+		throw std::runtime_error ("Memory Error, failed to realloc in: " + msg);
+	}
+	return ret;
 }
 
 // ---------------------------------------------------------------
@@ -120,7 +169,7 @@ struct mt_mat *mt_createMatrix (int r, int c) {
 	struct mt_mat *m = NULL;
 	int i;
 
-	m = (struct mt_mat*) calloc (1, sizeof(struct mt_mat));
+	m = (struct mt_mat*) safeCalloc ("mt_createMatrix", 1, sizeof(struct mt_mat));
 	m->row = r;
 	m->col = c;
 
@@ -190,40 +239,40 @@ struct mt_mat *mt_mult (struct mt_mat *m1, struct mt_mat *m2) {
 	int i, j, k; 
 	long sum;
 
-	if (m1->col != m2->row)
-		printf ("error in mult: mat dimensions are incompatible");
+	try {
+		if (m1->col != m2->row)
+			throw std::runtime_error ("error in mt_mult: mat dimensions are incompatible");
 
-	mm = (struct mt_mat*) calloc (1, sizeof(struct mt_mat));  //addressed (mm, "mm not allocated");
-	mm->row = m1->row; mm->col = m2->col;
-	mm->head = (long**)calloc (mm->row, sizeof(long*));  //addressed (mm->head, "mm->head not allocated");
-	for (i = 0; i < mm->row; i++)
-	{
-		mm->head[i] = (long*) calloc (mm->col, sizeof(long));  //addressed (*(mm->head + i), "*(mm->head+i) not allocated");
-		for (k = 0; k < mm->col; k++)
+		mm = mt_createMatrix (m1->row, m2->col);
+
+		for (i = 0; i < mm->row; i++)
 		{
-			sum = 0;
-			for (j = 0; j < m1->col; j++)
-				sum += m1->head[i][j] * m2->head[j][k];
-			mm->head[i][k] = sum;
+			for (k = 0; k < mm->col; k++)
+			{
+				sum = 0;
+				for (j = 0; j < m1->col; j++)
+					sum += m1->head[i][j] * m2->head[j][k];
+				mm->head[i][k] = sum;
+			}
 		}
+		return mm;
 	}
-	return mm;
+	catch (...)
+	{
+		throw std::runtime_error ("Unknown error in mt_mult");
+	}
 }
 
 
 struct mt_mat *mt_transpose (struct mt_mat *m)
 {
 	struct mt_mat *tm; 
-	int i, ii;
 
-	tm = (struct mt_mat*) calloc (1, sizeof(struct mt_mat));  //addressed (tm, "tm not allocated");
-	tm->row = m->col; tm->col = (m->row);
-	tm->head = (long**)calloc (tm->row, sizeof(long*)); //addressed (tm->head, "tm->head not allocated");
-	for (i = 0; i < m->col; i++)
+	tm = mt_createMatrix (m->col, m->row);
+	for (int i = 0; i < m->col; i++)
 	{
-		tm->head[i] = (long*) calloc (tm->col, sizeof(long)); //addressed (*(tm->head + i), "*(tm->head+i) not allocated");
-		for (ii = 0; ii < m->row; ii++)
-			tm->head[i][ii] = m->head[ii][i];
+		for (int j = 0; j < m->row; j++)
+			tm->head[i][j] = m->head[j][i];
 	}
 	return tm;
 }
@@ -231,22 +280,20 @@ struct mt_mat *mt_transpose (struct mt_mat *m)
 
 struct mt_mat *mt_addi (struct mt_mat *m)
 {
-	struct mt_mat *mi; int i, ii;
+	struct mt_mat *mi;
 
-	mi = (struct mt_mat*) calloc (1, sizeof(struct mt_mat)); //addressed (mi, "mi not allocated");
-	mi->row = m->row; mi->col = m->col + m->row;
-	mi->head = (long**) calloc (mi->row, sizeof(long*)); //addressed (mi->head, "mi->head not allocated");
-	for (i = 0; i < m->row; i++)
+	mi = mt_createMatrix (m->row, m->col + m->row);
+	
+	for (int i = 0; i < m->row; i++)
 	{
-		mi->head[i] = (long*) calloc (mi->col, sizeof(long)); //addressed (*(mi->head + i), "*(mi->head+i) not allocated");
-		for (ii = 0; ii < mi->col; ii++)
+		for (int j = 0; j < mi->col; j++)
 		{
-			if (ii < m->col)
-				mi->head[i][ii] = m->head[i][ii];
-			else if (ii == m->col + i)
-				mi->head[i][ii] = 1;
+			if (j < m->col)
+				mi->head[i][j] = m->head[i][j];
+			else if (j == m->col + i)
+				mi->head[i][j] = 1;
 			else
-				mi->head[i][ii] = 0;
+				mi->head[i][j] = 0;
 		}
 	}
 	return mi;
@@ -259,7 +306,7 @@ struct mt_encoding *mt_insert (struct mt_encoding *t1, int r, int k, char t[TXT]
 {
 	struct mt_encoding *x;
 	int i;
-	x = (struct mt_encoding*) calloc (1, sizeof (struct mt_encoding)); //addressed( x, "x not allocated");
+	x = (struct mt_encoding*) safeCalloc ("mt_insert", 1, sizeof (struct mt_encoding)); 
 	x->key = k; x->rev = r;
 	for (i = 0; i < TXT; i++) x->txt[i] = t[i];
 	x->next = t1->next;
@@ -278,8 +325,8 @@ struct mt_encoding *mt_addReactions (mt_stringArray *reversible, mt_stringArray 
 	nr = reversible->len;
 	ni = irreversible->len;
 
-	enzlist = (struct mt_encoding*) calloc (1, sizeof(struct mt_encoding)); //addressed (enzlist, "enzlist not allocated", 1);
-	enzlist->next = (struct mt_encoding*) calloc (1, sizeof(struct mt_encoding));       //addressed (enzlist->next, "ez not allocated", 1);
+	enzlist = (struct mt_encoding*) safeCalloc ("mt_addreactions", 1, sizeof(struct mt_encoding)); 
+	enzlist->next = (struct mt_encoding*) safeCalloc ("mt_addreactions", 1, sizeof(struct mt_encoding));      
 	enzlist->key = 0;
 	enzlist->next->next = enzlist->next; enzlist->next->key = 0;
 	eac = enzlist;
@@ -301,8 +348,8 @@ struct mt_encoding *mt_addMetabolitesInternal (mt_stringArray *floating, mt_stri
 	sf = floating->len;
 	bf = boundary->len;
 
-	metlist = (struct mt_encoding*) calloc (1, sizeof(struct mt_encoding)); //addressed (metlist, "metlist not allocated");
-	mz = (struct mt_encoding*) calloc (1, sizeof(struct mt_encoding)); //addressed (mz, "mz not allocated");
+	metlist = (struct mt_encoding*) safeCalloc ("mt_addMetaboloitesInternal", 1, sizeof(struct mt_encoding)); 
+	mz = (struct mt_encoding*) safeCalloc ("mt_addMetaboloitesInternal", 1, sizeof(struct mt_encoding));
 
 	metlist->next = mz; metlist->key = 0;
 	mz->next = mz; mz->key = 0; eac = metlist;
@@ -328,7 +375,7 @@ int mt_ggt (int u, int v)
 	if (u*v == 0) return (u + v);
 	while (u>0) { if (u<v) { t = u; u = v; v = t; }  u = u%v; }
 	return v;
-} //ggt
+} // ggt
 
 
 void mt_ggt_matrix (struct mt_mat *v)
@@ -374,13 +421,11 @@ int mt_numerical_array (double k2, double hi, double k1, double hu,
 	else
 		result = sign1*k2*hi + sign2*k1*hu;
 
-	if (result > INT_MAX || result < INT_MIN)
+	if (result > LONG_MAX || result < LONG_MIN)
 	{
-		printf ("\n\nerror: The intermediate result %g exceeds\nthe allowed integer range  (+- %d), %s\
-				              \nProgram prematurely finished.", result, INT_MAX, loop);
-		printf ("\nPlease use the double real number version meta_xx_double.exe at http://www.bioinf.mdc-berlin.de/projects/metabolic/metatool/.");
-		getchar (); 
-		exit (1);
+		ostringstream msg;
+		msg << "The intermediate result " << result << " exceeds the allowed integer range (+/- " << LONG_MAX << ")";
+		throw std::runtime_error (msg.str());
 	}
 	return 0;
 } // numerical_array
@@ -409,13 +454,23 @@ int mt_control_modi (struct mt_mat *m, FILE *savefile, struct mt_encoding *enzli
 			}
 			if ((same == not_zero_r1 || same == not_zero_r2) && same && not_zero_r1 && not_zero_r2)
 			{
-				if (not_zero_r2 > not_zero_r1)     printf ("\nElementary mode %d (%d) contains elementary mode %d (%d).", r2 + 1, not_zero_r2, r1 + 1, not_zero_r1);
-				else if (not_zero_r2 == not_zero_r1) printf ("\nElementary mode %d (%d) and %d (%d) are identical.", r2 + 1, not_zero_r2, r1 + 1, not_zero_r1);
-				else                              printf ("\nElementary mode %d (%d) contains elementary mode %d (%d).", r1 + 1, not_zero_r1, r2 + 1, not_zero_r2);
-
-				if (not_zero_r2 > not_zero_r1)     fprintf (savefile, "\nElementary mode %d (%d) contains elementary mode %d (%d).", r2 + 1, not_zero_r2, r1 + 1, not_zero_r1);
-				else if (not_zero_r2 == not_zero_r1) fprintf (savefile, "\nElementary mode %d (%d) and %d (%d) are identical.", r1 + 1, not_zero_r1, r2 + 1, not_zero_r2);
-				else                              fprintf (savefile, "\nElementary mode %d (%d) contains elementary mode %d (%d).", r1 + 1, not_zero_r1, r2 + 1, not_zero_r2);
+				ostringstream msg;
+				if (not_zero_r2 > not_zero_r1) {
+					msg << "\nElementary mode " << r2 + 1 << "(" << not_zero_r2 << ") contains elementary mode " << r1 + 1 << "(" << not_zero_r1 << ")";
+					throw std::runtime_error (msg.str ());
+				}
+				else if (not_zero_r2 == not_zero_r1) {
+					msg << "Elementary mode " << r2 + 1 << "(" << not_zero_r2 << ") and " << r1 + 1 << "(" << not_zero_r1 << ") are identical.";
+					throw std::runtime_error (msg.str ());
+				}
+				else {
+					msg << "Elementary mode " << r1 + 1 << "(" << not_zero_r1 << ") contains elementary mode " << r2 + 1 << "(" << not_zero_r2 << ").";
+					throw std::runtime_error (msg.str ());
+				}
+				// Commented out by HMS Dec 2017
+				//if (not_zero_r2 > not_zero_r1)     fprintf (savefile, "\nElementary mode %d (%d) contains elementary mode %d (%d).", r2 + 1, not_zero_r2, r1 + 1, not_zero_r1);
+				//else if (not_zero_r2 == not_zero_r1) fprintf (savefile, "\nElementary mode %d (%d) and %d (%d) are identical.", r1 + 1, not_zero_r1, r2 + 1, not_zero_r2);
+				//else                              fprintf (savefile, "\nElementary mode %d (%d) contains elementary mode %d (%d).", r1 + 1, not_zero_r1, r2 + 1, not_zero_r2);
 				n = 1;
 			}
 		}
@@ -452,18 +507,12 @@ struct mt_mat *mt_cutcol (struct mt_mat *m, int cc)
 	struct mt_mat *mc; 
 	int i, ii;
 
-	mc = (struct mt_mat*)calloc (1, sizeof(struct mt_mat)); //addressed (mc, "mc not allocated");
-	mc->row = m->row; mc->col = m->col - cc;
-	mc->head = (long **) calloc (mc->row, sizeof(long*)); //addressed (mc->head, "mc->head not allocated");
-	
+	mc = mt_createMatrix (m->row, m->col - cc);
 	if (cc > m->col) {
-		printf ("ERROR IN FUNCTION CUTCOL: CC>M->ROW!\n");
-		getchar ();
-		exit (1);
+		throw std::runtime_error ("ERROR IN FUNCTION CUTCOL: CC>M->ROW!\n");
 	}
 	for (i = 0; i < mc->row; i++)
 	{
-		mc->head[i] = (long *) calloc (mc->col, sizeof(long)); //addressed (*(mc->head + i), "*(mc->head+i) not allocated");
 		for (ii = 0; ii < mc->col; ii++)
 			mc->head[i][ii] = m->head[i][ii + cc];
 	}
@@ -637,17 +686,16 @@ int mt_control_condition7 (struct mt_mat *m, int ii, long *rev1, int *r01) // Ve
 			if (zero_r1 == same12)
 			{
 				//*->*/  printf("\nr1=%d\tr2=%d\tm->row=%d\t\trev1=%d\trev2=%d", r1, r2, m->row, *(rev1+r1), *(rev1+r2));
-				printf ("Delete line %d. (%d)\n", r1, ++z);
+				//HMS printf ("Delete line %d. (%d)\n", r1, ++z);
 				//*->*/  hv.head=*(m->head+r1); hv.row=m->col; vectoroutput(&hv); 
 				//*->*/  hv.head=*(m->head+r2); hv.row=m->col; vectoroutput(&hv); printf("\n"); getch();
 				stack_down (m, r1); // since row r2 contains more zeros than row r1, hence row r1 has to be deleted
 				stack_down_rev (rev1, r1, m->row + 1);
-				printf ("Condition 7: line %d deleted.\n", r1);
+				//HMS printf ("Condition 7: line %d deleted.\n", r1);
 				r1--; break;
 			}
 		}
 	}
-	// printf("Please press any key"); getch();
 	(*r01) = m->row;
 	return 0;
 } // control_condition7
@@ -658,12 +706,16 @@ struct mt_vector *mt_subrev (struct mt_mat *m, struct mt_vector *v)
 	int i, ii;
 	struct mt_vector *r;
 
-	r = (struct mt_vector*)calloc (1, sizeof(struct mt_vector));  //addressed (r, "r not allocated", 1);
-	r->row = m->row; r->head = (long*)calloc (r->row, sizeof(long));  //addressed (r->head, "r->head not allocated", r->row);
+	r = (struct mt_vector*) safeCalloc ("mt_subrev", 1, sizeof(struct mt_vector));  
+	r->row = m->row; r->head = (long*) safeCalloc ("mt_subrev", r->row, sizeof(long));  
 	for (i = 0; i<m->row; i++)
 	{
 		*(r->head + i) = 0;
-		for (ii = 0; ii<m->col; ii++) if ((*(*(m->head + i) + ii)) && (*(v->head + ii))) { *(r->head + i) = 1; break; }
+		for (ii = 0; ii<m->col; ii++) 
+			if ((*(*(m->head + i) + ii)) && (*(v->head + ii))) { 
+				*(r->head + i) = 1; 
+				break;
+			}
 	}
 	return r;
 }
@@ -676,7 +728,7 @@ struct mt_mat *getStoichiometryMatrix (struct mt_mat *nex, struct mt_vector *met
 	struct mt_mat *m;
 	int i, k = 0, j;
 
-	m = (struct mt_mat*) calloc (1, sizeof(struct mt_mat)); //addressed (m, "m not allocated");
+	m = (struct mt_mat*) safeCalloc ("getStoichiometryMatrix", 1, sizeof(struct mt_mat)); 
 	m->row = 0; m->col = nex->col;
 	for (i = 0; i < met->row; i++)
 	if (!*(met->head + i))
@@ -688,8 +740,7 @@ struct mt_mat *getStoichiometryMatrix (struct mt_mat *nex, struct mt_vector *met
 	}
 	else
 	{
-		printf ("\nThe system comprises only external metabolites.\n"); 
-		exit (1);
+		throw std::runtime_error ("The system comprises only external metabolites");
 	}
 
 	for (i = 0; i < met->row; i++)
@@ -697,7 +748,7 @@ struct mt_mat *getStoichiometryMatrix (struct mt_mat *nex, struct mt_vector *met
 	  {
 		/* allocated by FM */
 		//*(m->head + k) = (int*) calloc (m->col, sizeof(int));  //addressed (*(m->head + i), "*(m->head+i) not allocated");
-		  long *x = (long*) calloc (m->col, sizeof(long));
+		  long *x = (long*) safeCalloc ("getStoichiometryMatrix", m->col, sizeof(long));
 		  m->head[k] = x; //addressed (*(m->head + i), "*(m->head+i) not allocated");
 	      for (j = 0; j < m->col; j++)
 			*(*(m->head + k) + j) = *(*(nex->head + i) + j);
@@ -713,17 +764,17 @@ struct mt_mat *mt_simplify (struct mt_mat *m)
 	struct mt_vector *vf;
 	int i, ii, k;
 
-	vf = (struct mt_vector*)calloc (1, sizeof(struct mt_vector)); //addressed (vf, "vf not allocated", 1);
-	vf->row = m->row; vf->head = (long*)calloc (vf->row, sizeof(long)); //addressed (vf->head, "vf->head not allocated", vf->row);
+	vf = (struct mt_vector*) safeCalloc ("mt_simplify", 1, sizeof(struct mt_vector)); 
+	vf->row = m->row; vf->head = (long*) safeCalloc ("mt_simplify", vf->row, sizeof(long)); 
 
-	mc = (struct mt_mat*)calloc (1, sizeof(struct mt_mat)); //addressed (mc, "mc not allocated", 1);
+	mc = (struct mt_mat*) safeCalloc ("mt_simplify", 1, sizeof(struct mt_mat)); 
 	mc->row = m->row; mc->col = m->col;
 
 	{
 		if (mt_branch)
 		{
-			mt_branch = (struct mt_vector*)calloc (1, sizeof(struct mt_vector)); //addressed (branch, "branch not allocated", 1);
-			mt_branch->row = m->row; mt_branch->head = (long*)calloc (mt_branch->row, sizeof(long)); //addressed (branch->head, "branch->head not allocated", branch->row);
+			mt_branch = (struct mt_vector*) safeCalloc ("mt_simplify", 1, sizeof(struct mt_vector)); 
+			mt_branch->row = m->row; mt_branch->head = (long*) safeCalloc ("mt_simplify", mt_branch->row, sizeof(long)); 
 			for (i = 0; i<mt_branch->row; i++) *(mt_branch->head + i) = 1;
 		}
 	}
@@ -741,17 +792,17 @@ struct mt_mat *mt_simplify (struct mt_mat *m)
 	}
 	if (mt_branch)
 	{
-		printf ("\nBranches "); for (i = 0; i<mt_branch->row; i++) printf ("%d", *(mt_branch->head + i)); printf ("\n");
+		//HMS printf ("\nBranches "); 
+		//HMS for (i = 0; i<mt_branch->row; i++) printf ("%d", *(mt_branch->head + i)); printf ("\n");
 	}
 
 	if (!mc->row) // Microsoft C++ 6.0 allocates any pointer if(mc->row==0 but no correct one)
 	{
-		printf ("there is no simplification ...\n");
-		mc->head = (long**)calloc (m->row, sizeof(long*)); //addressed (mc->head, "mc->head not allocated (1)", m->row);
+		mc->head = (long**) safeCalloc ("mt_simplify", m->row, sizeof(long*)); 
 		// return a copy of *m
 		for (i = 0; i<m->row; i++)
 		{
-			*(mc->head + i) = (long*)calloc (m->col, sizeof(long)); //addressed (*(mc->head + i), "*(mc->head+i) not allocated", m->col);
+			*(mc->head + i) = (long*) safeCalloc ("mt_simplify", m->col, sizeof(long));
 			for (ii = 0; ii<m->col; ii++)
 				*(*(mc->head + i) + ii) = *(*(m->head + i) + ii);
 		}
@@ -759,11 +810,11 @@ struct mt_mat *mt_simplify (struct mt_mat *m)
 	}
 	else
 	{
-		mc->head = (long**)calloc (mc->row, sizeof(long*)); //addressed (mc->head, "mc->head not allocated (2)", mc->row); 
+		mc->head = (long**) safeCalloc ("mt_simplify", mc->row, sizeof(long*));
 		k = 0;
 		for (i = 0; i<vf->row; i++) if (*(vf->head + i) != 0)
 		{
-			*(mc->head + k) = (long*)calloc (mc->col, sizeof(long)); //addressed (*(mc->head + k), "*(mc->head+k) not allocated", mc->col);
+			*(mc->head + k) = (long*) safeCalloc ("mt_simplify", mc->col, sizeof(long)); 
 			for (ii = 0; ii<mc->col; ii++)
 				*(*(mc->head + k) + ii) = *(*(m->head + i) + ii) / (*(vf->head + i));
 			k++;
@@ -869,14 +920,14 @@ struct mt_mat *mt_basis (struct mt_mat *m, struct mt_vector *v)
 
 	k = mt_transpose (m); help = mt_addi (k); mt_freeMatrix (k);
 	r1 = (help->row); c = help->col; counter = m->row;
-	rev1 = (long*)calloc (v->row, sizeof(long));  //addressed (rev1, "rev1 not allocated", v->row);
+	rev1 = (long*) safeCalloc ("mt_basis", v->row, sizeof(long));  //addressed (rev1, "rev1 not allocated", v->row);
 	for (i = 0; i<v->row; i++) *(rev1 + i) = *(v->head + i);
 
 	h1 = help->head;
 	for (ii = 0; ii<counter; ii++)
 	{
-		h2 = (long**) calloc (1, sizeof(long*));  //addressed (h2, "h2 not allocated (01)", 1);
-		rev2 = (long*) calloc (1, sizeof(long));  //addressed (rev2, "rev2 not allocated (02)", 1);
+		h2 = (long**) safeCalloc ("mt_basis", 1, sizeof(long*));
+		rev2 = (long*) safeCalloc ("mt_basis", 1, sizeof(long));  
 		r2 = 0;
 		f1 = 0;
 		for (i = 0; i<r1; i++)
@@ -888,10 +939,10 @@ struct mt_mat *mt_basis (struct mt_mat *m, struct mt_vector *v)
 		if (f1) /* reversible row */
 		{
 			// r2=0;
-			h2 = (long**)realloc (h2, (r2 + 1)*sizeof(long*)); //addressed (h2, "h2 realloc (1)", r2 + 1);
-			{*(h2 + r2) = (long*)calloc (c, sizeof(long));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
+			h2 = (long**) safeRealloc ("mt_basis", h2, (r2 + 1)*sizeof(long*));
+			{*(h2 + r2) = (long*) safeCalloc ("mt_basis", c, sizeof(long));    
 			}
-			rev2 = (long*)realloc (rev2, (r2 + 1)*sizeof(long)); //addressed (rev2, "rev2 realloc (2)", (r2 + 1));
+			rev2 = (long*) safeRealloc ("mt_basis", rev2, (r2 + 1)*sizeof(long));
 			for (u = 0; u<r1; u++)
 			{
 				if (*(*(h1 + u) + ii) == 0)   // transfer "zero line"
@@ -899,10 +950,10 @@ struct mt_mat *mt_basis (struct mt_mat *m, struct mt_vector *v)
 					*(rev2 + r2) = *(rev1 + u);
 					for (uu = 0; uu<c; uu++) *(*(h2 + r2) + uu) = *(*(h1 + u) + uu);
 					r2++;
-					h2 = (long**) realloc (h2, (r2 + 1)*sizeof(long*)); //addressed (h2, "h2 realloc (1)", r2 + 1);
-					{*(h2 + r2) = (long*)calloc (c, sizeof(long));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
+					h2 = (long**) safeRealloc ("mt_basis", h2, (r2 + 1)*sizeof(long*)); 
+					{*(h2 + r2) = (long*) safeCalloc ("mt_basis", c, sizeof(long));    
 					}
-					rev2 = (long*)realloc (rev2, (r2 + 1)*sizeof(long)); //addressed (rev2, "rev2 realloc (2)", (r2 + 1));
+					rev2 = (long*) safeRealloc ("mt_basis", rev2, (r2 + 1)*sizeof(long)); 
 					// if(r2>r02) {printf("error1"); getch(); exit(1);} 
 				}
 			}
@@ -921,10 +972,10 @@ struct mt_mat *mt_basis (struct mt_mat *m, struct mt_vector *v)
 						*(*(h2 + r2) + uu) = k2**(*(h1 + i) + uu) - k1**(*(h1 + u) + uu);
 					}
 					r2++;
-					h2 = (long**)realloc (h2, (r2 + 1)*sizeof(long*)); //addressed (h2, "h2 realloc (1)", r2 + 1);
-					{*(h2 + r2) = (long*)calloc (c, sizeof(long));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
+					h2 = (long**) safeRealloc ("mt_basis", h2, (r2 + 1)*sizeof(long*)); 
+					{*(h2 + r2) = (long*) safeCalloc ("mt_basis", c, sizeof(long));    
 					}
-					rev2 = (long*)realloc (rev2, (r2 + 1)*sizeof(long)); //addressed (rev2, "rev2 realloc (2)", (r2 + 1));
+					rev2 = (long*) safeRealloc ("mt_basis", rev2, (r2 + 1)*sizeof(long)); 
 					// if(r2>r02) {printf("error2"); getch(); exit(1);} 
 				}
 			}
@@ -950,20 +1001,20 @@ struct mt_mat *mt_basis (struct mt_mat *m, struct mt_vector *v)
 						*(*(h2 + r2) + uu) = -abs (k2)**(*(h1 + i) + uu) + abs (k1)**(*(h1 + u) + uu);
 					}
 					r2++;
-					h2 = (long**)realloc (h2, (r2 + 1)*sizeof(long*)); //addressed (h2, "h2 realloc (1)", r2 + 1);
-					{*(h2 + r2) = (long*)calloc (c, sizeof(long));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
+					h2 = (long**) safeRealloc ("mt_basis", h2, (r2 + 1)*sizeof(long*)); 
+					{*(h2 + r2) = (long*) safeCalloc ("mt_basis", c, sizeof(long));    
 					}
-					rev2 = (long*)realloc (rev2, (r2 + 1)*sizeof(long)); //addressed (rev2, "rev2 realloc (2)", (r2 + 1));
+					rev2 = (long*) safeRealloc ("mt_basis", rev2, (r2 + 1)*sizeof(long));
 					// if(r2>r02) {printf("error3"); getch(); exit(1); } 
 				}
 			}
 		}
 		else /* no reversible row */
 		{
-			h2 = (long**)realloc (h2, (r2 + 1)*sizeof(long*)); //addressed (h2, "h2 realloc (1)", r2 + 1);
-			{*(h2 + r2) = (long*)calloc (c, sizeof(long));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
+			h2 = (long**) safeRealloc ("mt_basis", h2, (r2 + 1)*sizeof(long*)); 
+			{*(h2 + r2) = (long*) safeCalloc ("mt_basis", c, sizeof(long));
 			}
-			rev2 = (long*)realloc (rev2, (r2 + 1)*sizeof(long)); //addressed (rev2, "rev2 realloc (2)", (r2 + 1));
+			rev2 = (long*) safeRealloc ("mt_basis", rev2, (r2 + 1)*sizeof(long)); 
 
 			// r2=0;
 			for (u = 0; u<r1; u++)
@@ -973,10 +1024,10 @@ struct mt_mat *mt_basis (struct mt_mat *m, struct mt_vector *v)
 					*(rev2 + r2) = *(rev1 + u);
 					for (uu = 0; uu<c; uu++) *(*(h2 + r2) + uu) = *(*(h1 + u) + uu);
 					r2++;
-					h2 = (long**)realloc (h2, (r2 + 1)*sizeof(long*)); //addressed (h2, "h2 realloc (1)", r2 + 1);
-					{*(h2 + r2) = (long*)calloc (c, sizeof(long));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
+					h2 = (long**) safeRealloc ("mt_basis", h2, (r2 + 1)*sizeof(long*)); 
+					{*(h2 + r2) = (long*) safeCalloc ("mt_basis", c, sizeof(long));    
 					}
-					rev2 = (long*)realloc (rev2, (r2 + 1)*sizeof(long)); //addressed (rev2, "rev2 realloc (2)", (r2 + 1));
+					rev2 = (long*) safeRealloc ("mt_basis", rev2, (r2 + 1)*sizeof(long)); 
 					// if(r2>r02) {printf("error4"); getch(); exit(1); }
 				}
 			}
@@ -1011,10 +1062,10 @@ struct mt_mat *mt_basis (struct mt_mat *m, struct mt_vector *v)
 							if (test1 == 1)
 							{
 								r2++;
-								h2 = (long**)realloc (h2, (r2 + 1)*sizeof(long*)); //addressed (h2, "h2 realloc (1)", r2 + 1);
-								{*(h2 + r2) = (long*)calloc (c, sizeof(long));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c); 
+								h2 = (long**) safeRealloc ("mt_basis", h2, (r2 + 1)*sizeof(long*)); 
+								{*(h2 + r2) = (long*)calloc (c, sizeof(long));   
 								}
-								rev2 = (long*)realloc (rev2, (r2 + 1)*sizeof(long)); //addressed (rev2, "rev2 realloc (2)", (r2 + 1));
+								rev2 = (long*) safeRealloc ("mt_basis", rev2, (r2 + 1)*sizeof(long)); 
 								// if(r2>r02) {printf("error5"); getch(); exit(1);} 
 							}
 						} // for u
@@ -1030,7 +1081,11 @@ struct mt_mat *mt_basis (struct mt_mat *m, struct mt_vector *v)
 			free (*(help->head + i));
 		r2 = r1;
 		mt_ggt_matrix (help);
-		printf ("\nresult convex tab %d row %d ", ii, r1); // getch();
+
+		ostringstream msg;
+		msg << "result convex tab " << ii << " row " << r1;
+		throw std::runtime_error (msg.str());
+
 		// free( *(h2+r2));
 		if (!help->row) break;
 	}
@@ -1062,27 +1117,27 @@ struct mt_mat *mt_modes (struct mt_mat *m, struct mt_vector *v)
 	h1 = help->head;
 	r1 = (help->row); c = help->col; counter = m->row;
 	r01 = r2 = r1;
-	rev1 = (long*)calloc (v->row, sizeof(long));   //addressed (rev1, "rev1 not allocated (5.5)", v->row);
+	rev1 = (long*) safeCalloc ("1: mt_modes", v->row, sizeof(long));   
 	for (i = 0; i<v->row; i++) *(rev1 + i) = *(v->head + i);
-	printf ("first alloc %d\n", r1);
+	//HMS printf ("first alloc %d\n", r1);
 	for (ii = 0; ii<counter; ii++)
 	{
-		//printf ("allocate ");
-		rev2 = (long*)calloc (1, sizeof(long));   //addressed (rev2, "rev2 not allocated (7)", 1);
-		h2 = (long**)calloc (1, sizeof(long*));   //addressed (h2, "h2 not allocated (6)", 1);
+		//HMS printf ("allocate ");
+		rev2 = (long*) safeCalloc ("2: mt_modes", 1, sizeof(long));   
+		h2 = (long**) safeCalloc ("3: mt_modes", 1, sizeof(long*));   
 		r2 = 0;
 		for (i = 0; i<r1; i++)
 		if (!(*(*(h1 + i) + ii))) /* taking zero rows to the nex tab */
 		{
-			{ h2 = (long**)realloc (h2, (r2 + 1)*sizeof(long*)); }   //addressed (h2, "h2 not allocated (8)", (r2 + 1)); }
+			{ h2 = (long**) safeRealloc ("4: mt_modes", h2, (r2 + 1)*sizeof(long*)); }   
 			{
-			*(h2 + r2) = (long*)calloc (c, sizeof(long));        //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
+			*(h2 + r2) = (long*) safeCalloc ("5: mt_modes", c, sizeof(long));       
 		}
-			rev2 = (long*)realloc (rev2, (r2 + 1)*sizeof(long));  //addressed (rev2, "rev2+r2 not allocated (7) in realloc", (r2 + 1));
+			rev2 = (long*) safeRealloc ("6: mt_modes", rev2, (r2 + 1)*sizeof(long));  
 			*(rev2 + r2) = *(rev1 + i);
 			for (uu = 0; uu<c; uu++) *(*(h2 + r2) + uu) = *(*(h1 + i) + uu);
 			++r2;
-			//printf ("%d ", ++r2);
+			//HMS printf ("%d ", ++r2);
 		}
 		//else;
 		r02 = r2;
@@ -1095,9 +1150,9 @@ struct mt_mat *mt_modes (struct mt_mat *m, struct mt_vector *v)
 			{
 				/* if(ok_4) */ while (r02 <= r2) /* 1 */
 				{
-					h2 = (long**)realloc (h2, (r2 + 1)*sizeof(long*)); //addressed (h2, "h2 not allocated (8)", (r2 + 1));
-					*(h2 + r2) = (long*)calloc (c, sizeof(long));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
-					rev2 = (long*)realloc (rev2, (r2 + 1)*sizeof(long));   //addressed (rev2, "rev2+r2 not allocated (7) in realloc", (r2 + 1));
+					h2 = (long**) safeRealloc ("7: mt_modes", h2, (r2 + 1)*sizeof(long*)); 
+					*(h2 + r2) = (long*) safeCalloc ("8: mt_modes", c, sizeof(long));   
+					rev2 = (long*)safeRealloc ("9; mt_modes", rev2, (r2 + 1) * sizeof (long));
 					r02++;
 				}
 				*(rev2 + r2) = 0; k1 = *(*(h1 + i) + ii); k2 = *(*(h1 + u) + ii);
@@ -1139,9 +1194,9 @@ struct mt_mat *mt_modes (struct mt_mat *m, struct mt_vector *v)
 			{
 				/* if( ok_4 ) */ while (r02 <= r2) /* 22 */
 				{
-					h2 = (long**)realloc (h2, (r2 + 1)*sizeof(long*)); //addressed (h2, "h2 not allocated (8)", (r2 + 1));
-					*(h2 + r2) = (long*)calloc (c, sizeof(long));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
-					rev2 = (long*)realloc (rev2, (r2 + 1)*sizeof(long));   //addressed (rev2, "rev2+r2 not allocated (7) in realloc", (r2 + 1));
+					h2 = (long**) safeRealloc ("10: mt_modes", h2, (r2 + 1)*sizeof(long*)); 
+					*(h2 + r2) = (long*) safeCalloc ("11: mt_modes", c, sizeof(long));    
+					rev2 = (long*) safeRealloc ("12: mt_modes", rev2, (r2 + 1)*sizeof(long));   
 					r02++;
 				}
 				*(rev2 + r2) = 1; k1 = (*(*(h1 + i) + ii)); k2 = (*(*(h1 + u) + ii));
@@ -1174,7 +1229,7 @@ struct mt_mat *mt_modes (struct mt_mat *m, struct mt_vector *v)
 				if (test1 == 1){
 					// control_condition007( h2, &r2, rev2, c );
 					++r2;
-					//printf ("%d ", ++r2); /* 2 */
+					//HMS printf ("%d ", ++r2); /* 2 */
 					// ok_4=1;
 				}
 				//else; // ok_4=0;
@@ -1188,9 +1243,9 @@ struct mt_mat *mt_modes (struct mt_mat *m, struct mt_vector *v)
 			{
 				/* if(ok_4) */ while (r02 <= r2) /* 333 */
 				{
-					h2 = (long**)realloc (h2, (r2 + 1)*sizeof(long*)); //addressed (h2, "h2 not allocated (8)", (r2 + 1));
-					*(h2 + r2) = (long*)calloc (c, sizeof(long));    //addressed (*(h2 + r2), "*(h2+r2) not allocated (6)", c);
-					rev2 = (long*)realloc (rev2, (r2 + 1)*sizeof(long));   //addressed (rev2, "rev2+r2 not allocated (7) in realloc", (r2 + 1));
+					h2 = (long**) safeRealloc ("13: mt_modes", h2, (r2 + 1) * sizeof (long*));
+					*(h2 + r2) = (long*) safeCalloc ("14: mt_modes", c, sizeof (long));
+					rev2 = (long*) safeRealloc ("15: mt_modes", rev2, (r2 + 1) * sizeof (long));
 					r02++;
 				}
 				*(rev2 + r2) = 1; k1 = abs (*(*(h1 + i) + ii)); k2 = abs (*(*(h1 + u) + ii));
@@ -1216,16 +1271,16 @@ struct mt_mat *mt_modes (struct mt_mat *m, struct mt_vector *v)
 				if (test1 == 1){
 					// control_condition007( h2, &r2, rev2, c );
 					++r2;
-					//printf ("%d ", ++r2); /* 3 */
+					//HMS printf ("%d ", ++r2); /* 3 */
 					// ok_4=1;
 				}
 				//else; // ok_4=0;
 			} // for u
 		} // for i
-		// printf("release %d\t", r01-1);
+		//HMS printf("release %d\t", r01-1);
 		for (i = 0; i<r01; i++) free (*(h1 + i)); free (h1); free (rev1);
 		h1 = h2; rev1 = rev2; r1 =/*r2/ */(r2 <= r02 ? r2 : r02); r01 = r02; // r2; // r02
-		//printf ("\nresult modes tab %d row %d\n", ii, r1);
+		//HMS printf ("\nresult modes tab %d row %d\n", ii, r1);
 		help->head = h1;   help->row = r1; help->col = c;
 		// control_condition04(help, ii); // for debugging
 		// control_condition7( help, ii, rev1, &r1 ); // r1=help->row; /* FM 20.09.2000 condition (7) in www2.bioinf.mdc-berlin.de/metabolic/metatool/algorithm.pdf */
@@ -1331,6 +1386,7 @@ struct mt_mat *mt_elementaryModes () {
 	struct mt_mat  *vsub;	  /* subsets */
 	struct mt_mat  *vkernel;  /* subsets */
 	struct mt_vector  *redrev;
+	struct mt_mat   *reducedModes;
 	struct mt_mat   *modes;
 	struct mt_mat  *help;
 	int wrong_subset;
@@ -1344,7 +1400,8 @@ struct mt_mat *mt_elementaryModes () {
 	nred = mt_simplify (help);
 	redrev = mt_subrev (vsub, mt_internalDataStructure->reversiblilityList);
 
-	modes = mt_modes (nred, redrev);
+	reducedModes = mt_modes (nred, redrev);
+	modes = mt_mult (reducedModes, vsub);
 
 	mt_freeMatrix (vkernel);
 	mt_freeMatrix (vsub);
