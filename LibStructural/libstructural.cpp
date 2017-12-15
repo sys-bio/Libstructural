@@ -465,6 +465,10 @@ void  LibStructural::BuildStoichiometryMatrixFromModel(LIB_STRUCTURAL::SBMLmodel
 // Uses QR Decomposition for Conservation analysis
 void LibStructural::analyzeWithQR()
 {
+	if (numFloating == 0 || numReactions == 0) {
+		return;
+	}
+
 	Initialize();
 
 	if (_NumRows == 0)
@@ -776,6 +780,9 @@ void LibStructural::computeK0andKMatrices()
 //Uses LU Decomposition for Conservation analysis
 void LibStructural::analyzeWithLU()
 {
+	if (numFloating == 0 || numReactions == 0) {
+		return;
+	}
 
 	LU_Result * oLUResult = NULL;
 
@@ -895,6 +902,9 @@ void LibStructural::analyzeWithLU()
 // Uses LU Decomposition for Conservation analysis
 void LibStructural::analyzeWithLUandRunTests()
 {
+	if (numFloating == 0 || numReactions == 0) {
+		return;
+	}
 	analyzeWithLU();
 	_sResultStream << endl << endl;
 	_sResultStream << getTestDetails();
@@ -1092,6 +1102,10 @@ LibStructural::DoubleMatrix* LibStructural::getL0Matrix()
 
 void LibStructural::getL0MatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
+	if (numFloating == 0 || numReactions == 0) {
+		return;
+	}
+
 	oRows = getDependentSpeciesIds();
 	oCols = getIndependentSpeciesIds();
 }
@@ -1120,6 +1134,10 @@ LibStructural::DoubleMatrix* LibStructural::getFullyReorderedNrMatrix()
 
 LibStructural::DoubleMatrix* LibStructural::getFullyReorderedN0StoichiometryMatrix()
 {
+	if (numFloating == 0 || numReactions == 0) {
+		return new DoubleMatrix(0,0);
+	}
+
 	DoubleMatrix* NFullReordered = getFullyReorderedStoichiometryMatrix();
 
 	int N_rowLen = NFullReordered->numRows();
@@ -1145,6 +1163,10 @@ LibStructural::DoubleMatrix* LibStructural::getFullyReorderedN0StoichiometryMatr
 
 void LibStructural::getNrMatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
+	if (numFloating == 0 || numReactions == 0) {
+		return;
+	}
+	
 	oRows = getIndependentSpeciesIds();
 	oCols = getReactionsIds();
 }
@@ -1158,6 +1180,9 @@ LibStructural::DoubleMatrix* LibStructural::getN0Matrix()
 
 void LibStructural::getN0MatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
+	if (numFloating == 0 || numReactions == 0) {
+		return;
+	}
 	oRows = getDependentSpeciesIds();
 	oCols = getReactionsIds();
 }
@@ -1165,11 +1190,17 @@ void LibStructural::getN0MatrixIds(vector< string > &oRows, vector< string > &oC
 // Returns L, the Link Matrix
 LibStructural::DoubleMatrix* LibStructural::getLinkMatrix()
 {
+	if (numFloating == 0 || numReactions == 0) {
+		return new DoubleMatrix(0,0);
+	}
 	return _L;
 }
 
 void LibStructural::getLinkMatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
+	if (numFloating == 0 || numReactions == 0) {
+		return;
+	}
 	oRows = getReorderedSpeciesIds();
 	oCols = getIndependentSpeciesIds();
 }
@@ -1177,11 +1208,17 @@ void LibStructural::getLinkMatrixIds(vector< string > &oRows, vector< string > &
 // Returns K0
 LibStructural::DoubleMatrix* LibStructural::getK0Matrix()
 {
+	if (numFloating == 0 || numReactions == 0) {
+		return new DoubleMatrix(0,0);
+	}
 	return _K0;
 }
 
 void LibStructural::getK0MatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
+	if (numFloating == 0 || numReactions == 0) {
+		return;
+	}
 	vector<string> oReactionLables = getReorderedReactionsIds();
 	DoubleMatrix *k0 = getK0Matrix();
 
@@ -1210,6 +1247,9 @@ LibStructural::DoubleMatrix* LibStructural::getKMatrix()
 
 void LibStructural::getKMatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
+	if (numFloating == 0 || numReactions == 0) {
+		return;
+	}
 	vector<string> oReactionLables = getReorderedReactionsIds();
 	DoubleMatrix *k0 = getK0Matrix();
 
@@ -1280,6 +1320,7 @@ vector< string > LibStructural::getIndependentSpeciesIds()
 {
 	vector< string >	oResult;
 
+
 	if (numFloating == 0)
 		return oResult;
 	else if (numReactions == 0 || zero_nmat)
@@ -1302,6 +1343,10 @@ vector< string > LibStructural::getIndependentSpeciesIds()
 vector< string > LibStructural::getIndependentReactionIds()
 {
 	vector <string> result;
+	if (numFloating == 0 || numReactions == 0) {
+		return result;
+	}
+
 	int nDependent = _K0->numCols();
 	int nIndependent = _Nr->numCols() - nDependent;
 
@@ -1318,6 +1363,11 @@ vector< string > LibStructural::getIndependentReactionIds()
 vector< string > LibStructural::getDependentReactionIds()
 {
 	vector<string> result;
+
+	if (numFloating == 0 || numReactions == 0) {
+		return result;
+	}
+
 	int nDependent = _K0->numCols();
 	int nIndependent = _Nr->numCols() - nDependent;
 	for (int j = 0; j < nDependent; j++)
@@ -1443,6 +1493,9 @@ vector< string > LibStructural::getSpeciesIds()
 // Returns Gamma, the conservation law array
 LibStructural::DoubleMatrix* LibStructural::getGammaMatrix()
 {
+	if (numFloating == 0 || numReactions == 0) {
+		return new DoubleMatrix(0,0);
+	}
 	return _G;
 }
 
@@ -1788,6 +1841,9 @@ DoubleMatrix* LibStructural::getNICMatrix()
 
 void LibStructural::getNICMatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
+	if (numFloating == 0 || numReactions == 0) {
+		return;
+	}
 	oRows = getIndependentSpeciesIds(); //getReorderedSpeciesIds();
 	int nDependent = _K0->numCols();
 	int nIndependent = _Nr->numCols() - nDependent;
@@ -1822,6 +1878,9 @@ DoubleMatrix* LibStructural::getNDCMatrix()
 
 void LibStructural::getNDCMatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
+	if (numFloating == 0 || numReactions == 0) {
+		return;
+	}
 	oRows = getIndependentSpeciesIds(); //getReorderedSpeciesIds();
 	int nDependent = _K0->numCols();
 	int nIndependent = _Nr->numCols() - nDependent;
@@ -1835,7 +1894,12 @@ void LibStructural::getNDCMatrixIds(vector< string > &oRows, vector< string > &o
 
 void LibStructural::getColumnReorderedNrMatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
+	
+	if (numFloating == 0 || numReactions == 0) {
+		return;
+	}
 	oRows = getIndependentSpeciesIds();   //getReorderedSpeciesIds();
+
 	int nDependent = _K0->numCols();
 	int nIndependent = _Nr->numCols() - nDependent;
 
@@ -1878,6 +1942,10 @@ DoubleMatrix* LibStructural::getColumnReorderedNrMatrix()
 
 DoubleMatrix* LibStructural::getFullyReorderedStoichiometryMatrix()
 {
+	if (numFloating == 0 || numReactions == 0) {
+		return new DoubleMatrix(0, 0);
+	}
+
 	try
 	{
 		// get Column reordered Matrix
@@ -1925,6 +1993,9 @@ DoubleMatrix* LibStructural::getFullyReorderedStoichiometryMatrix()
 */
 void LibStructural::getFullyReorderedStoichiometryMatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
+	if (numFloating == 0 || numReactions == 0) {
+		return;
+	}
 	getColumnReorderedNrMatrixIds(oRows, oCols);
 	vector<string> dependent =  getDependentSpeciesIds();
 
@@ -2048,6 +2119,7 @@ int LibStructural::getNumIndSpecies()
 // Returns the number of dependent species
 int LibStructural::getNumDepSpecies()
 {
+	
 	return _NumDependent;
 }
 
@@ -2060,12 +2132,18 @@ int LibStructural::getNumReactions()
 // Returns the number of independent reactions
 int LibStructural::getNumIndReactions()
 {
+	if (numFloating == 0 || numReactions == 0) {
+		return 0;
+	}
 	return _Nr->numCols() - _K0->numCols();
 }
 
 // Returns the number of dependent reactions
 int LibStructural::getNumDepReactions()
 {
+	if (numFloating == 0 || numReactions == 0) {
+		return 0;
+	}
 	return _K0->numCols();
 }
 
@@ -3108,6 +3186,7 @@ LIB_EXTERN  int LibStructural_getKMatrixIds(char** *outRowLabels, int *outRowCou
 
 LIB_EXTERN  int LibStructural_getGammaMatrixIds(char** *outRowLabels, int *outRowCount, char** *outColLabels, int *outColCount)
 {
+	
 	LibStructural_getReorderedSpeciesIds(outColLabels, outColCount);
 	DoubleMatrix *G = LibStructural::getInstance()->getGammaMatrix();
 
