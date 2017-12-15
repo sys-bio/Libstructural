@@ -2095,10 +2095,12 @@ DoubleMatrix* LibStructural::getElementaryModes () {
 	if (_NumRows == 0)
 	{
 		_sResultStream << "Model has no floating species.";
+		throw  std::runtime_error ("Model has no floating species.");
 	}
 	else if (_NumCols == 0)
 	{
 		_sResultStream << "Model has no Reactions.";
+		throw  std::runtime_error ("Model has no reactions.");
 	}
 	else
 	{
