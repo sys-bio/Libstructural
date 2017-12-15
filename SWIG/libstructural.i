@@ -11,6 +11,7 @@
 #include "libMetaTool4_3.h"
 %}
 
+%rename (_my_getElementaryModes) getElementaryModes;
 %rename (_my_loadStoichiometryMatrix) loadStoichiometryMatrix;
 %rename (_my_rref) rref;
 %rename (_my_rref_FB) rref_FB;
@@ -391,6 +392,14 @@
 					raise ValueError("Expecting 2 dimensional list or numpy array")
 			else:
 				raise ValueError("Expecting list or numpy array")
+
+	def getElementaryModes (self):
+	    """
+	    Returns the list of elementary modes are rows in a matrix
+	    """
+	    import numpy as np
+		   
+	    return self._my_getElementaryModes().toNumpy()
 
 	def rref(self, data, tolerance=1e-6):
 			"""
