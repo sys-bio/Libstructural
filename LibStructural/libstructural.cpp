@@ -309,12 +309,10 @@ void LibStructural::Initialize()
 
 		DoubleMatrix oCopy(*_Nmat);
 
-		InitializeFromStoichiometryMatrix( oCopy	,
+		InitializeFromStoichiometryMatrix( oCopy,
 			_inputSpeciesIds, _inputReactionIds,
 			_inputValues);
 	}
-
-
 }
 
 void LibStructural::InitializeFromStoichiometryMatrix(DoubleMatrix& oMatrix,
@@ -426,8 +424,8 @@ void LibStructural::InitializeFromStoichiometryMatrix(DoubleMatrix& oMatrix)
 			(*_NullN) (i,i) =-1.0;
 		}
 	}
-
 }
+
 
 #ifndef NO_SBML
 
@@ -562,6 +560,7 @@ void LibStructural::reorderNmatrix()
 		}
 	}
 }
+
 void LibStructural::computeNrMatrix()
 {
 	DELETE_IF_NON_NULL(_Nr); _Nr = new DoubleMatrix(_NumIndependent, _NumCols);
@@ -574,6 +573,7 @@ void LibStructural::computeNrMatrix()
 		}
 	}
 }
+
 void LibStructural::computeN0Matrix()
 {
 	DELETE_IF_NON_NULL(_N0); _N0 = new DoubleMatrix(_NumDependent, _NumCols);
@@ -587,6 +587,7 @@ void LibStructural::computeN0Matrix()
 	}
 
 }
+
 void LibStructural::computeLinkMatrix()
 {
 	DELETE_IF_NON_NULL(_L);		_L = new DoubleMatrix(_NumRows, _NumIndependent);
@@ -606,6 +607,7 @@ void LibStructural::computeLinkMatrix()
 	}
 
 }
+
 void LibStructural::computeConservedSums()
 {
 	CREATE_ARRAY(_IC,double,numFloating);
@@ -647,6 +649,7 @@ void LibStructural::computeConservedSums()
 	}
 
 }
+
 void LibStructural::computeConservedEntities()
 {
 
@@ -695,6 +698,7 @@ void LibStructural::computeConservedEntities()
 	}
 
 }
+
 void LibStructural::computeK0andKMatrices()
 {
 	DoubleMatrix Nmat_h(_NumRows, _NumCols);
@@ -1382,7 +1386,6 @@ vector< string > LibStructural::getDependentReactionIds()
 		result.push_back(_reactionIndexList[colVec[j + nIndependent]]);
 	}
 	return result;
-
 }
 
 //Returns the actual names of the independent species
@@ -1794,13 +1797,14 @@ bool LibStructural::testConservationLaw_5()
 	}
 	else
 	{
-	try { Q11inv = LibLA::getInstance()->inverse(*Q11); } catch (...) {}
+		try { Q11inv = LibLA::getInstance ()->inverse (*Q11); }
+		catch (...) {}
 
-	if (Q11inv == NULL)
-	{
-		delete Q; delete R; delete P; delete Q11; delete Q21;
-		return false;
-	}
+		if (Q11inv == NULL)
+		{
+			delete Q; delete R; delete P; delete Q11; delete Q21;
+			return false;
+		}
 	}
 
 	DoubleMatrix* L0x = Util::matMult((Q->numRows() - _NumIndependent), _NumIndependent, *Q21, *Q11inv, Q11inv->numCols());
@@ -1840,7 +1844,6 @@ DoubleMatrix* LibStructural::getNICMatrix()
 	}
 
 	return oCopy;
-
 }
 
 void LibStructural::getNICMatrixIds(vector< string > &oRows, vector< string > &oCols )
@@ -1877,7 +1880,6 @@ DoubleMatrix* LibStructural::getNDCMatrix()
 	}
 
 	return oCopy;
-
 }
 
 void LibStructural::getNDCMatrixIds(vector< string > &oRows, vector< string > &oCols )
@@ -1914,8 +1916,6 @@ void LibStructural::getColumnReorderedNrMatrixIds(vector< string > &oRows, vecto
 	{
 		oCols.push_back(_reactionIndexList[colVec[j]]);
 	}
-
-
 }
 
 
@@ -1937,9 +1937,7 @@ DoubleMatrix* LibStructural::getColumnReorderedNrMatrix()
 			(*oCopy)(i,j + nDependent) = (*_Nr)(i, colVec[j]);
 		}
 	}
-
 	return oCopy;
-
 }
 
 
@@ -2005,7 +2003,6 @@ void LibStructural::getFullyReorderedStoichiometryMatrixIds(vector< string > &oR
 
 	for( it = dependent.begin(); it != dependent.end(); it++ )
 		oRows.push_back(*it);
-
 }
 
 
@@ -2056,7 +2053,6 @@ vector< string > LibStructural::validateStructuralMatrices()
 	else oResult.push_back("Fail");
 
 	return oResult;
-
 }
 
 // Return Details about conservation tests
