@@ -37,9 +37,9 @@ To load a model in to LibStructural, an instance variable must be created.
 
 .. end
 
-Loading a model from a string
+Loading a model from a file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-An SBML model can be loaded from an .xml file format.
+A model can be loaded from an SBML file with a .xml format.
 
 .. code:: python
 
@@ -50,7 +50,7 @@ An SBML model can be loaded from an .xml file format.
 Loading a model from a string
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-It's possible to load a model from an SBML string:
+It is also possible to load a model from an SBML string:
 
 .. code:: python
 
@@ -104,7 +104,7 @@ Loading a model using the antimony model description language
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-If you use `tellurium <http://tellurium.analogmachine.org/>`_ you can load a model by converting an antimony string to SBML string or by using the Stoichiometry matrix of the antimony model.
+If you use `tellurium <http://tellurium.analogmachine.org/>`_ you can load a model by converting an antimony string to SBML string.
 
 .. code:: python
 
@@ -143,7 +143,12 @@ If you use `tellurium <http://tellurium.analogmachine.org/>`_ you can load a mod
 Structural Analysis
 -------------------------
 
-The following snippets show some of LibStructural's methods on a model generated using antimony model description language.
+The following snippets show some of LibStructural's methods on a model generated using antimony model description language. Below is the network image:
+
+.. figure:: example_model_1.png
+    :align: center
+    :figclass: align-center
+    :scale: 25 %
 
 .. code:: python
 
@@ -157,7 +162,7 @@ The following snippets show some of LibStructural's methods on a model generated
       J2: S2 + E -> ES; v;
       J3: S1 -> S2; v;
 
-      // Species Intialiazation
+      // Species Initialization
       S1 = 10; S2 = 10; ES = 10; E = 10;
       v = 0;
 
@@ -172,12 +177,92 @@ The following snippets show some of LibStructural's methods on a model generated
 .. end
 
 
-Once our model is loaded we can run methods.
+Once the model is loaded we can run some methods.
 
 .. code:: python
-  print(ls.validateStructuralMatrices()) # Prints out if the model is passed some interna structural validation tests.
+  print(ls.validateStructuralMatrices()) # Prints out if the model is passed some internal structural validation tests.
 
-  # To see whats tests was performed call ls.test
+  # see what tests were run, call ls.getTestDetails()
   tests = ls.getTestDetails()
   print(tests)
+
+.. end
+
+To get the model's default stoichiometry matrix structures run:
+
+.. code:: python
+
+  # get the default, unaltered stoichiometric matrix
+  ls.getStoichiometryMatrix()
+
+.. end
+
+A stoichiometry matrix can be converted into a reordered matrix in which the rows are partitioned into N0 (linearly dependent rows) and Nr (linearly independent rows/reduced stoichiometry matrix). Dependent rows will be located on the top and independent rows will at the bottom.
+
+.. code:: python
+
+  # get a row reordered matrix (into dependent and independent rows)
+  ls.getReorderedStoichiometryMatrix()
+
+.. end
+
+A fully reordered stoichiometry matrix is a matrix where the Nr section of the reordered stoichiometry matrix partitioned in to NDC (linearly dependent columns) and NIC (linearly independent columns).
+
+.. code:: python
+
+  # get a column and row reordered stoichiometry matrix, run:
+  ls.getFullyReorderedStoichiometryMatrix()
+
+.. end
+
+.. figure:: FullReorderedMatrix.PNG
+    :align: center
+    :figclass: align-center
+    :scale: 50 %
+
+.. code:: python
+
+  # get the number NIC and NDC matrices
+  ls.getNDCMatrix()
+  ls.getNICMatrix() # NIC matrix is always a square matrix
+
+  # get N0 and Nr matrices
+  ls.getDependentReactionIds()
+
+  # identify independent reactions (run respective methods for species)
+  ls.getIndependentReactionIds()
+
+.. end
+
+We can also get species and reaction information from the model.
+
+.. code:: python
+
+  # get the number of dependent reactions (run respective methods for species)
+  ls.getNumDepReactions()
+  ls.getNumIndReactions()
+
+  # identify dependent reactions (run respective methods for species)
+  ls.getDependentReactionIds()
+
+  # identify independent reactions (run respective methods for species)
+  ls.getIndependentReactionIds()
+
+.. end
+
+There are a few methods that compute the conservational analysis of a model.
+
+.. code:: python
+
+  # get the conservational matrix
+  ls.getGammaMatrix()
+
+  # get which species are contained in each conserved matrix
+  ls.getGammaMatrixIds()
+
+  # get conserved laws and the conserved sums associated with them
+  ls.getConservedLaws()
+
+
+
 .. end

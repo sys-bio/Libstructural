@@ -175,6 +175,8 @@ namespace LIB_STRUCTURAL
 
 	private:
 
+		bool isModelLoaded ();
+
 		std::string GenerateResultString();
 
 		void Initialize();
@@ -800,12 +802,12 @@ namespace LIB_STRUCTURAL
 	public:
 		//! Constructor of a new instance of LibStructural
 #ifndef NO_SBML
-		LIB_EXTERN LibStructural() :   _NumRows(0), _NumCols(0),
+		LIB_EXTERN LibStructural() :   _NumRows(0), _NumCols(0), numReactions(0), numFloating(0), numBoundary(0),
 			_K0(NULL), _N0(NULL), _Nr(NULL), _L0(NULL), _L(NULL),_K(NULL),_NullN(NULL),_G(NULL),
 			_Nmat(NULL), _Nmat_orig(NULL), _NmatT(NULL), _NmatT_orig(NULL),
 			_T(NULL), _IC(NULL), _BC(NULL), spVec(NULL), colVec(NULL), _sModelName("untitled"),_Tolerance(1.0E-9),_Model(NULL)
 #else
-		LIB_EXTERN LibStructural() :   _NumRows(0), _NumCols(0),
+		LIB_EXTERN LibStructural() :   _NumRows(0), _NumCols(0), numReactions (0), numFloating (0), numBoundary (0),
 			_K0(NULL), _N0(NULL), _Nr(NULL), _L0(NULL), _L(NULL),_K(NULL),_NullN(NULL),_G(NULL),
 			_Nmat(NULL), _Nmat_orig(NULL), _NmatT(NULL), _NmatT_orig(NULL),
 			_T(NULL), _IC(NULL), _BC(NULL), spVec(NULL), colVec(NULL), _sModelName("untitled"),_Tolerance(1.0E-9)
