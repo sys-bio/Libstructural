@@ -98,6 +98,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#testing-libstructural">Testing LibStructural</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#loading-a-model">Loading a model</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#loading-a-model-from-a-string">Loading a model from a string</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Loading a model from a string</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#loading-a-model-from-a-stoichiometric-matrix">Loading a model from a stoichiometric matrix</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#assigning-reaction-and-species-ids">Assigning Reaction and Species Ids</a></li>
 </ul>
@@ -105,6 +106,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#loading-a-model-using-the-antimony-model-description-language">Loading a model using the antimony model description language</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#structural-analysis">Structural Analysis</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="API.html">API</a></li>
@@ -176,13 +178,13 @@
 <p>The following examples demonstrate how to load a biochemical reaction network in to LibStructural API for analyzing the stoichiometry matrix. A model should be available at least in one of the following formats: SBML model file (.xml format), a 2D array matrix or a string of SBML file.</p>
 <div class="section" id="testing-libstructural">
 <h2>Testing LibStructural<a class="headerlink" href="#testing-libstructural" title="Permalink to this headline">¶</a></h2>
-<p>To test the imported structural module, you can use the <strong>test()</strong> method. This will print out an analysis summary of a Glycolysis/Gluconeogenesis SBML model distributed with LibStructural.</p>
+<p>To test the imported structural module, you can use the <strong>test()</strong> method. This will print out an analysis summary of a Glycolysis/Gluconeogenesis SBML model (<a class="reference external" href="https://www.ebi.ac.uk/biomodels-main/BMID000000101155">BMID000000101155</a>) distributed with LibStructural.</p>
 <div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">structural</span>
 <span class="n">ls</span> <span class="o">=</span> <span class="n">structural</span><span class="o">.</span><span class="n">LibStructural</span><span class="p">()</span>
 <span class="n">ls</span><span class="o">.</span><span class="n">test</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>The following sections describe different ways of loading a model into Libstructural. Once a model is loaded it will automatically call <code class="docutils literal"><span class="pre">analyzeWithQR</span></code>. At this the summary of the analysis can be obtained by calling <strong>getSummary()</strong>:</p>
+<p>The following sections describe different ways of loading a model into Libstructural. Once a model is loaded it will automatically call <code class="docutils literal"><span class="pre">analyzeWithQR</span></code>. At this point a summary of the analysis can be obtained by calling <strong>getSummary()</strong>:</p>
 <div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">ls</span><span class="o">.</span><span class="n">getSummary</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -192,15 +194,19 @@
 <p>To load a model in to LibStructural, an instance variable must be created.</p>
 <div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">structural</span>
 <span class="n">ls</span> <span class="o">=</span> <span class="n">structural</span><span class="o">.</span><span class="n">LibStructural</span><span class="p">()</span>
-<span class="n">ls</span><span class="o">.</span><span class="n">loadSBMLFromFile</span><span class="p">(</span><span class="s2">&quot;C:\Users\yosef\Documents\SBML_models\iYO844.xml&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="section" id="loading-a-model-from-a-string">
 <h3>Loading a model from a string<a class="headerlink" href="#loading-a-model-from-a-string" title="Permalink to this headline">¶</a></h3>
-<p>It’s possible to load a model using a SBML string:</p>
-<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">structural</span>
-<span class="n">ls</span> <span class="o">=</span> <span class="n">structural</span><span class="o">.</span><span class="n">LibStructural</span><span class="p">()</span>
-<span class="n">ls</span><span class="o">.</span><span class="n">loadSBMLFromString</span><span class="p">(</span><span class="s2">&quot;example_SBMLstring&quot;</span><span class="p">)</span>
+<p>An SBML model can be loaded from an .xml file format.</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">ls</span><span class="o">.</span><span class="n">loadSBMLFromFile</span><span class="p">(</span><span class="s2">&quot;C:\Users\yosef\Documents\SBML_models\iYO844.xml&quot;</span><span class="p">)</span> <span class="c1"># This calls the analyzeWithQR implicitly.</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Loading a model from a string<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>It’s possible to load a model from an SBML string:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="n">ls</span><span class="o">.</span><span class="n">loadSBMLFromString</span><span class="p">(</span><span class="s2">&quot;example_SBMLstring&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -218,7 +224,6 @@
 <div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">structural</span>
 <span class="n">ls</span> <span class="o">=</span> <span class="n">structural</span><span class="o">.</span><span class="n">LibStructural</span><span class="p">()</span>
 <span class="n">matrix</span> <span class="o">=</span> <span class="p">[[</span>  <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span>  <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>  <span class="mi">1</span><span class="p">],</span> <span class="p">[</span>  <span class="mi">0</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]]</span> <span class="c1"># matrix can be a numpy 2d array</span>
-<span class="n">ls</span><span class="o">.</span><span class="n">loadStoichiometryMatrix</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
 
 <span class="nb">print</span> <span class="n">ls</span><span class="o">.</span><span class="n">getStoichiometryMatrix</span><span class="p">()</span>
 <span class="nb">print</span> <span class="n">ls</span><span class="o">.</span><span class="n">getSpeciesIds</span><span class="p">()</span>
@@ -232,16 +237,15 @@
 
 <span class="n">ls</span><span class="o">.</span><span class="n">analyzeWithQR</span><span class="p">()</span>
 
-<span class="nb">print</span> <span class="n">ls</span><span class="o">.</span><span class="n">getSpeciesIds</span><span class="p">(),</span> <span class="s2">&quot;Sp Ids&quot;</span>
-<span class="nb">print</span> <span class="n">ls</span><span class="o">.</span><span class="n">getReactionsIds</span><span class="p">(),</span> <span class="s2">&quot;Rxn Ids&quot;</span>
+<span class="nb">print</span> <span class="n">ls</span><span class="o">.</span><span class="n">getSpeciesIds</span><span class="p">()</span>
+<span class="nb">print</span> <span class="n">ls</span><span class="o">.</span><span class="n">getReactionsIds</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="loading-a-model-using-the-antimony-model-description-language">
 <h3>Loading a model using the antimony model description language<a class="headerlink" href="#loading-a-model-using-the-antimony-model-description-language" title="Permalink to this headline">¶</a></h3>
-<p>If you use <a class="reference external" href="http://tellurium.analogmachine.org/">tellurium</a> you can load a model by converting the antimony model to SBML string or by using the Stoichiometry matrix of the antimony model.
-Note: loading a stoichiometry matrix from antimony will result in losing some information such as, species and reaction ids.</p>
+<p>If you use <a class="reference external" href="http://tellurium.analogmachine.org/">tellurium</a> you can load a model by converting an antimony string to SBML string or by using the Stoichiometry matrix of the antimony model.</p>
 <div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">structural</span>
 <span class="kn">import</span> <span class="nn">tellurium</span> <span class="k">as</span> <span class="nn">te</span>
 
@@ -264,6 +268,7 @@ Note: loading a stoichiometry matrix from antimony will result in losing some in
 <span class="n">sbmlstr</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">getSBML</span><span class="p">()</span> <span class="c1"># this creates an SBML string from the antimony model, r.</span>
 <span class="n">ls</span> <span class="o">=</span> <span class="n">structural</span><span class="o">.</span><span class="n">LibStructural</span><span class="p">()</span>
 <span class="n">ls</span><span class="o">.</span><span class="n">loadSBMLFromString</span><span class="p">(</span><span class="n">sbmlstr</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ls</span><span class="o">.</span><span class="n">getSummary</span><span class="p">())</span>
 
 <span class="c1"># an antimony model can be converted in to SBML file as well</span>
 <span class="n">r</span><span class="o">.</span><span class="n">exportToSBML</span><span class="p">(</span><span class="s1">&#39;Test_model.xml&#39;</span><span class="p">)</span> <span class="c1"># creates an xml file in the current directory</span>
@@ -272,6 +277,89 @@ Note: loading a stoichiometry matrix from antimony will result in losing some in
 <span class="nb">print</span><span class="p">(</span><span class="n">ls</span><span class="o">.</span><span class="n">getSummary</span><span class="p">())</span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="section" id="structural-analysis">
+<h2>Structural Analysis<a class="headerlink" href="#structural-analysis" title="Permalink to this headline">¶</a></h2>
+<p>The following snippets show some of LibStructural’s methods on a model generated using antimony model description language. Below is the network image:</p>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/example_model_1.png"><img alt="_images/example_model_1.png" src="_images/example_model_1.png" style="width: 286.5px; height: 220.5px;" /></a>
+</div>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">structural</span>
+<span class="kn">import</span> <span class="nn">tellurium</span> <span class="k">as</span> <span class="nn">te</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">te</span><span class="o">.</span><span class="n">loada</span><span class="p">(</span><span class="s1">&#39;&#39;&#39;</span>
+
+<span class="s1">    // Reactions:</span>
+<span class="s1">    J1: ES -&gt; S1 + E; v;</span>
+<span class="s1">    J2: S2 + E -&gt; ES; v;</span>
+<span class="s1">    J3: S1 -&gt; S2; v;</span>
+
+<span class="s1">    // Species Initialization</span>
+<span class="s1">    S1 = 10; S2 = 10; ES = 10; E = 10;</span>
+<span class="s1">    v = 0;</span>
+
+<span class="s1">end</span>
+
+<span class="s1">&#39;&#39;&#39;</span><span class="p">)</span>
+
+<span class="n">sbmlstr</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">getSBML</span><span class="p">()</span> <span class="c1"># this creates an SBML string from the antimony model, r.</span>
+<span class="n">ls</span> <span class="o">=</span> <span class="n">structural</span><span class="o">.</span><span class="n">LibStructural</span><span class="p">()</span>
+<span class="n">ls</span><span class="o">.</span><span class="n">loadSBMLFromString</span><span class="p">(</span><span class="n">sbmlstr</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Once the model is loaded we can run some methods.</p>
+<p>To get the model’s default stoichiometry matrix structures run:</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="c1"># get the default, unaltered stoichiometric matrix</span>
+<span class="n">ls</span><span class="o">.</span><span class="n">getStoichiometryMatrix</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>A stoichiometry matrix can be converted into a reordered matrix in which the rows are partitioned into N0 (linearly dependent rows) and Nr (linearly independent rows/reduced stoichiometry matrix). Dependent rows will be located on the top and independent rows will at the bottom.</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="c1"># get a row reordered matrix (into dependent and independent rows)</span>
+<span class="n">ls</span><span class="o">.</span><span class="n">getReorderedStoichiometryMatrix</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>A fully reordered stoichiometry matrix is a matrix where the Nr section of the reordered stoichiometry matrix partitioned in to NDC (linearly dependent columns) and NIC (linearly independent columns).</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="c1"># get a column and row reordered stoichiometry matrix, run:</span>
+<span class="n">ls</span><span class="o">.</span><span class="n">getFullyReorderedStoichiometryMatrix</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="align-center figure">
+<a class="reference internal image-reference" href="_images/FullReorderedMatrix.PNG"><img alt="_images/FullReorderedMatrix.PNG" src="_images/FullReorderedMatrix.PNG" style="width: 440.5px; height: 308.0px;" /></a>
+</div>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="c1"># get the number NIC and NDC matrices</span>
+<span class="n">ls</span><span class="o">.</span><span class="n">getNDCMatrix</span><span class="p">()</span>
+<span class="n">ls</span><span class="o">.</span><span class="n">getNICMatrix</span><span class="p">()</span> <span class="c1"># NIC matrix is always a square matrix</span>
+
+<span class="c1"># get N0 and Nr matrices</span>
+<span class="n">ls</span><span class="o">.</span><span class="n">getDependentReactionIds</span><span class="p">()</span>
+
+<span class="c1"># identify independent reactions (run respective methods for species)</span>
+<span class="n">ls</span><span class="o">.</span><span class="n">getIndependentReactionIds</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>We can also get species and reaction information from the model.</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="c1"># get the number of dependent reactions (run respective methods for species)</span>
+<span class="n">ls</span><span class="o">.</span><span class="n">getNumDepReactions</span><span class="p">()</span>
+<span class="n">ls</span><span class="o">.</span><span class="n">getNumIndReactions</span><span class="p">()</span>
+
+<span class="c1"># identify dependent reactions (run respective methods for species)</span>
+<span class="n">ls</span><span class="o">.</span><span class="n">getDependentReactionIds</span><span class="p">()</span>
+
+<span class="c1"># identify independent reactions (run respective methods for species)</span>
+<span class="n">ls</span><span class="o">.</span><span class="n">getIndependentReactionIds</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>There are a few methods that compute the conservational analysis of a model.</p>
+<div class="code python highlight-default"><div class="highlight"><pre><span></span><span class="c1"># get the conservational matrix</span>
+<span class="n">ls</span><span class="o">.</span><span class="n">getGammaMatrix</span><span class="p">()</span>
+
+<span class="c1"># get which species are contained in each conserved matrix</span>
+<span class="n">ls</span><span class="o">.</span><span class="n">getGammaMatrixIds</span><span class="p">()</span>
+
+<span class="c1"># get conserved laws and the conserved sums associated with them</span>
+<span class="n">ls</span><span class="o">.</span><span class="n">getConservedLaws</span><span class="p">()</span>
+</pre></div>
 </div>
 </div>
 </div>
