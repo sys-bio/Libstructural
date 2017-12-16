@@ -1,0 +1,13 @@
+Name: libSBML
+Description: A library for reading/writing/manipulating SBML
+URL: http://sbml.org/Software/libSBML
+Version: 5.15.0
+
+prefix=/Users/yosefbedaso/Documents/libsbml-5.15.0/libsbml-vs2017-release-64
+libdir=/Users/yosefbedaso/Documents/libsbml-5.15.0/libsbml-vs2017-release-64/lib
+includedir=/Users/yosefbedaso/Documents/libsbml-5.15.0/libsbml-vs2017-release-64/include
+
+Libs: -L${libdir} -lsbml
+Libs.private:        /usr/lib/libxml2.dylib /usr/lib/libbz2.dylib /usr/lib/libz.dylib -lstdc++ -lm
+Cflags: -I${includedir}
+Requires.private: libxml-2.0 >= 2.6.22
