@@ -20,7 +20,7 @@
 
 #define SMALL_NUM           1.0E-9
 #define PRINT_PRECISION		10
-#define LINE			    "-----------------------------------------------------------------------------"
+#define LINE			    "--------------------------------------------------------------"
 
 #define LibStruct_VERSION "1.0.0"
 
@@ -161,8 +161,8 @@ string LibStructural::GenerateResultString()
 {
 	stringstream oBuffer;
 
-	oBuffer << LINE << endl << LINE << endl << "STRUCTURAL ANALYSIS MODULE : Results " << endl
-		<< LINE << endl << LINE << endl;
+	oBuffer << LINE << endl << "STRUCTURAL ANALYSIS MODULE : Results " << endl
+		<< LINE << endl;
 
 	oBuffer << "Size of Stochiometric Matrix: " << _NumRows << " x "  << _NumCols
 		<< " (Rank is  " << _NumIndependent << ")";
@@ -247,13 +247,13 @@ string LibStructural::GenerateResultString()
 		}
 	}
 
-	oBuffer << LINE << endl << LINE << endl
+	/*oBuffer << LINE << endl << LINE << endl
 		<< "Originally ddeveloped by the Computational Systems Biology Group at Keck Graduate Institute " << endl
 		<< "and the Saurolab at the Bioengineering Departmant at University of Washington." << endl
 		<< "Contact : Herbert M Sauro (hsauro@u.washington.edu).   " << endl << endl
 		<< "Current Authors: Yosef Bedaso and Kiri Choi" << endl << endl
 		<< "(previous authors) Ravishankar Rao Vallabhajosyula" << endl
-		<< LINE << endl << LINE << endl << endl;
+		<< LINE << endl << LINE << endl << endl;*/
 
 	return oBuffer.str();
 }
@@ -527,6 +527,8 @@ void LibStructural::analyzeWithQR()
 			for (int j = 0; j < _NumIndependent; j++)
 			{
 				(*_G)(i,j) = -(*_L0)(i,j);
+				if (fabs ((*_G)(i, j)) < SMALL_NUM)
+					(*_G)(i, j) = 0;
 			}
 			(*_G)(i,_NumIndependent+i) = 1.0;
 		}
@@ -542,9 +544,10 @@ void LibStructural::analyzeWithQR()
 
 		DELETE_IF_NON_NULL(Q); DELETE_IF_NON_NULL(R); DELETE_IF_NON_NULL(P);
 
+		_sResultStream.clear();
+		_sResultStream.str ("");
 		_sResultStream << GenerateResultString();
 	}
-
 }
 
 
@@ -783,7 +786,7 @@ void LibStructural::computeK0andKMatrices()
 void LibStructural::analyzeWithLU()
 {
 	if (!isModelLoaded ())
-		throw new ApplicationException ("", "There is no model to analyze");
+		throw new NoModelException ("There is no model to analyze");
 
 	LU_Result * oLUResult = NULL;
 
@@ -881,6 +884,8 @@ void LibStructural::analyzeWithLU()
 			for (int j = 0; j < _NumIndependent; j++)
 			{
 				(*_G)(i,j) = -(*_L0)(i,j);
+				if (fabs ((*_G)(i, j)) < SMALL_NUM)
+					(*_G)(i, j) = 0;
 			}
 			(*_G)(i,_NumIndependent+i) = 1.0;
 		}
@@ -904,7 +909,7 @@ void LibStructural::analyzeWithLU()
 void LibStructural::analyzeWithLUandRunTests()
 {
 	if (!isModelLoaded ())
-		throw new ApplicationException ("", "There is no model to analyze");
+		throw new NoModelException ("There is no model to analyze");
 
 	analyzeWithLU();
 	_sResultStream << endl << endl;
@@ -1029,6 +1034,8 @@ void LibStructural::analyzeWithFullyPivotedLU()
 				for (int j = 0; j < _NumIndependent; j++)
 				{
 					(*_G)(i,j) = -(*_L0)(i,j);
+					if (fabs ((*_G)(i, j)) < SMALL_NUM)
+						(*_G)(i, j) = 0;
 				}
 				(*_G)(i,_NumIndependent+i) = 1.0;
 			}
@@ -1078,11 +1085,10 @@ int LibStructural_getSummary (char* *outMessage, int *nLength)
 // Returns L0 Matrix
 LibStructural::DoubleMatrix* LibStructural::getL0Matrix()
 {
-	if ( (_NumRows == _NumIndependent) || (_NumRows == 0) || _L0 == NULL)
-	{
-		return new DoubleMatrix();
-	}
-	else if (_NumCols == 0 || zero_nmat)
+	if (!isModelLoaded ())
+		throw new NoModelException ("There is no model to analyze");
+
+	if (_NumCols == 0 || zero_nmat)
 	{
 		return new DoubleMatrix(*_L0);
 	}
@@ -1104,7 +1110,7 @@ LibStructural::DoubleMatrix* LibStructural::getL0Matrix()
 void LibStructural::getL0MatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
 	if (!isModelLoaded ())
-		throw new ApplicationException ("", "There is no model to analyze");
+		throw new NoModelException ("There is no model to analyze");
 
 	oRows = getDependentSpeciesIds();
 	oCols = getIndependentSpeciesIds();
@@ -1135,7 +1141,7 @@ LibStructural::DoubleMatrix* LibStructural::getFullyReorderedNrMatrix()
 LibStructural::DoubleMatrix* LibStructural::getFullyReorderedN0StoichiometryMatrix()
 {
 	if (!isModelLoaded ())
-		throw new ApplicationException ("", "There is no model to analyze");
+		throw new  NoModelException ("There is no model to analyze");
 
 	DoubleMatrix* NFullReordered = getFullyReorderedStoichiometryMatrix();
 
@@ -1163,7 +1169,7 @@ LibStructural::DoubleMatrix* LibStructural::getFullyReorderedN0StoichiometryMatr
 void LibStructural::getNrMatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
 	if (!isModelLoaded ())
-		throw new ApplicationException ("", "There is no model to analyze");
+		throw new NoModelException ("There is no model to analyze");
 	
 	oRows = getIndependentSpeciesIds();
 	oCols = getReactionsIds();
@@ -1179,7 +1185,7 @@ LibStructural::DoubleMatrix* LibStructural::getN0Matrix()
 void LibStructural::getN0MatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
 	if (!isModelLoaded ())
-		throw new ApplicationException ("", "There is no model to analyze");
+		throw new NoModelException ("There is no model to analyze");
 
 	oRows = getDependentSpeciesIds();
 	oCols = getReactionsIds();
@@ -1188,13 +1194,16 @@ void LibStructural::getN0MatrixIds(vector< string > &oRows, vector< string > &oC
 // Returns L, the Link Matrix
 LibStructural::DoubleMatrix* LibStructural::getLinkMatrix()
 {
+	if (!isModelLoaded ())
+		throw new NoModelException ("There is no model to analyze");
+
 	return _L;
 }
 
 void LibStructural::getLinkMatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
 	if (!isModelLoaded ())
-		throw new ApplicationException ("", "There is no model to analyze");
+		throw new NoModelException ("There is no model to analyze");
 
 	oRows = getReorderedSpeciesIds();
 	oCols = getIndependentSpeciesIds();
@@ -1203,13 +1212,16 @@ void LibStructural::getLinkMatrixIds(vector< string > &oRows, vector< string > &
 // Returns K0
 LibStructural::DoubleMatrix* LibStructural::getK0Matrix()
 {
+	if (!isModelLoaded ())
+		throw new NoModelException ("There is no model to analyze");
+
 	return _K0;
 }
 
 void LibStructural::getK0MatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
 	if (!isModelLoaded ())
-		throw new ApplicationException ("", "There is no model to analyze");
+		throw new NoModelException ("There is no model to analyze");
 
 	vector<string> oReactionLables = getReorderedReactionsIds();
 	DoubleMatrix *k0 = getK0Matrix();
@@ -1234,13 +1246,16 @@ void LibStructural::getK0MatrixIds(vector< string > &oRows, vector< string > &oC
 // Returns Nullspace of NK = 0
 LibStructural::DoubleMatrix* LibStructural::getKMatrix()
 {
+	if (!isModelLoaded ())
+		throw new NoModelException ("There is no model to analyze");
+
 	return _K;
 }
 
 void LibStructural::getKMatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
 	if (!isModelLoaded ())
-		throw new ApplicationException ("", "There is no model to analyze");
+		throw new NoModelException ("There is no model to analyze");
 
 	vector<string> oReactionLables = getReorderedReactionsIds();
 	DoubleMatrix *k0 = getK0Matrix();
@@ -1486,7 +1501,7 @@ vector< string > LibStructural::getSpeciesIds()
 LibStructural::DoubleMatrix* LibStructural::getGammaMatrix()
 {
 	if (!isModelLoaded ())
-		throw new ApplicationException ("", "There is no model to analyze");
+		throw new NoModelException ("There is no model to analyze");
 
 	return _G;
 }
@@ -1638,7 +1653,6 @@ vector< string > LibStructural::getConservedLaws()
 // Returns values for conserved cycles using Initial conditions
 vector< double > LibStructural::getConservedSums()
 {
-
 	vector< double > oResult;
 
 	if (_NumCols == 0 || zero_nmat)
@@ -1656,9 +1670,7 @@ vector< double > LibStructural::getConservedSums()
 			oResult.push_back( _T[i] );
 		}
 	}
-
 	return oResult;
-
 }
 
 
@@ -1834,7 +1846,7 @@ DoubleMatrix* LibStructural::getNICMatrix()
 void LibStructural::getNICMatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
 	if (!isModelLoaded ())
-		throw new ApplicationException ("", "There is no model to analyze");
+		throw new NoModelException ("There is no model to analyze");
 
 	oRows = getIndependentSpeciesIds(); //getReorderedSpeciesIds();
 	int nDependent = _K0->numCols();
@@ -1870,6 +1882,8 @@ DoubleMatrix* LibStructural::getNDCMatrix()
 
 void LibStructural::getNDCMatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
+	if (!isModelLoaded ())
+		throw new NoModelException ("There is no model to analyze");
 
 	oRows = getIndependentSpeciesIds(); //getReorderedSpeciesIds();
 	int nDependent = _K0->numCols();
@@ -1885,7 +1899,7 @@ void LibStructural::getNDCMatrixIds(vector< string > &oRows, vector< string > &o
 void LibStructural::getColumnReorderedNrMatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
 	if (!isModelLoaded ())
-		throw new ApplicationException ("", "There is no model to analyze");
+		throw new NoModelException ("There is no model to analyze");
 
 	oRows = getIndependentSpeciesIds();   //getReorderedSpeciesIds();
 
@@ -1932,7 +1946,7 @@ DoubleMatrix* LibStructural::getColumnReorderedNrMatrix()
 DoubleMatrix* LibStructural::getFullyReorderedStoichiometryMatrix()
 {
 	if (!isModelLoaded ())
-		throw new ApplicationException ("", "There is no model to analyze");
+		throw new NoModelException ("There is no model to analyze");
 
 	try
 	{
@@ -1982,7 +1996,7 @@ DoubleMatrix* LibStructural::getFullyReorderedStoichiometryMatrix()
 void LibStructural::getFullyReorderedStoichiometryMatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
 	if (!isModelLoaded ())
-		throw new ApplicationException ("", "There is no model to analyze");
+		throw new NoModelException ("There is no model to analyze");
 
 	getColumnReorderedNrMatrixIds(oRows, oCols);
 	vector<string> dependent =  getDependentSpeciesIds();
@@ -2050,6 +2064,9 @@ string LibStructural::getTestDetails()
 {
 	stringstream oBuffer;
 
+	if (!isModelLoaded ())
+		throw new NoModelException ("There is no model to analyze");
+
 	vector < string > testResults = validateStructuralMatrices();
 
 	oBuffer << "Testing Validity of Conservation Laws." << endl << endl;
@@ -2107,7 +2124,6 @@ int LibStructural::getNumIndSpecies()
 // Returns the number of dependent species
 int LibStructural::getNumDepSpecies()
 {
-	
 	return _NumDependent;
 }
 
