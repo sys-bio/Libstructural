@@ -163,6 +163,8 @@ except Exception as e:
 ls.test()
 
 # Test Conservation Analysis
+print
+print "Conservation analysis example:"
 r = te.loada('''
     
     // Reactions:
@@ -182,20 +184,14 @@ ls.loadSBMLFromString(sbmlstr)
 print(ls.getSummary())
 
 
-#
-#print ls.rref(ls.getNICMatrix())
-#print ls.rref_FB(ls.getNICMatrix()) # change to rrefReordered
-#print ls.setTolerance(1e-7)
-#print ls.validateStructuralMatrices()
-#
-
-
 print "Test Manual Loading of a Model:"
 matrix = [[  1, -1, -1], [  0, -1,  1], [  0,  1, -1]] # matrix can be a numpy 2d array
 ls.loadStoichiometryMatrix(matrix)
 print ls.getStoichiometryMatrix()
-print ls.getSpeciesIds(), "Sp Ids"
+print
+print "Species Ids: ", ls.getSpeciesIds()
 
-print ls.getReactionsIds(), "Rxn Ids"
+print "Reaction Ids: ", ls.getReactionsIds()
+print
 print(ls.getSummary())
 print(ls.validateStructuralMatrices()) # Prints out if the model is passed some interna structural validation tests.

@@ -9,6 +9,9 @@
 #include "util.h"
 #include "libla.h"
 #include "libMetaTool4_3.h"
+
+#define SWIG_FILE_WITH_INIT
+static PyObject* pNoModelException;  /* add this! */
 %}
 
 %rename (_my_getElementaryModes) getElementaryModes;
@@ -39,6 +42,16 @@
 %rename (_my_getLinkMatrix) getLinkMatrix;
 %rename (_my_getRCond) getRCond;
 
+%init %{
+    pNoModelException = PyErr_NewException ("_structural.NoModelException", NULL, NULL);
+    Py_INCREF (pNoModelException);
+    PyModule_AddObject (m, "NoModelException", pNoModelException);
+%}
+
+%pythoncode %{
+    NoModelException = _structural.NoModelException
+%}
+
 %exception {
 	 try {
      $action
@@ -47,7 +60,12 @@
    } catch (LIB_LA::ApplicationException* e) {
 		 std::string msg = e->getDetailedMessage();
 		 delete e;
-     SWIG_exception(SWIG_RuntimeError, msg.c_str());
+   } catch (LIB_LA::NoModelException* e) {
+		 std::string msg = e->getMessage();
+		 delete e;
+	 
+     PyErr_SetString (PyExc_Exception, msg.c_str());
+	 return NULL;
    } catch (const std::exception& e) {
      SWIG_exception(SWIG_RuntimeError, e.what());
    } catch (...) {
@@ -62,6 +80,7 @@
 %include "exception.i"
 %include "st_docstrings.i"
 %include "../include/matrix.h"
+
 
 %template(StringDouble) std::pair<std::string,double>;
 %template(StrDoubleVector) std::vector< std::pair<std::string,double> >;
@@ -629,16 +648,11 @@
 
 	def test (self):
 		import pkg_resources
-
-		print('****** Testing model 1... ******\n')
-
-		model_path = pkg_resources.resource_filename('structural','test_models/BMID000000101155.xml')
-
+		model_path = pkg_resources.resource_filename('structural','test/BMID000000101155.xml')
 		print(self.loadSBMLFromFile(model_path))
 		print('\nValidating structural matrices...\n')
 		print(self.getTestDetails())
 		print(self.validateStructuralMatrices())
-
 %}
 
 }
@@ -661,6 +675,7 @@
 
 
 %include "../include/libstructural.h"
+%include "../include/util.h"
 
 %rename(assign) operator=;
 %rename(add) operator+;

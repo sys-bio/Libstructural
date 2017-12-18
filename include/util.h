@@ -44,6 +44,17 @@
 namespace LIB_LA
 {
 
+	class NoModelException
+	{
+	private:
+		std::string _Message;
+
+	public:
+		LIB_EXTERN NoModelException (const std::string &message) : _Message (message) {}
+    	LIB_EXTERN std::string getMessage () { return _Message; }
+
+	};
+
 	class ApplicationException
 	{
 
