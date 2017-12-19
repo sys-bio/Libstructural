@@ -1,12 +1,12 @@
 Getting Started with LibStructural
 ==================================
 
-The following examples demonstrate how to load a biochemical reaction network in to LibStructural API for analyzing the stoichiometry matrix. A model should be available at least in one of the following formats: SBML model file (.xml format), a 2D array matrix or a string of SBML file.
+The following examples demonstrate how to load a biochemical reaction network into LibStructural API. A model should be available at least in one of the following formats: SBML model file (.xml format), or a 2D array matrix. SBML can either be loaded as a string or directly from a file. 
 
 ----------------------
 Testing LibStructural
 ----------------------
-To test the imported structural module, you can use the **test()** method. This will print out an analysis summary of a Glycolysis/Gluconeogenesis SBML model (`BMID000000101155 <https://www.ebi.ac.uk/biomodels-main/BMID000000101155>`_) distributed with LibStructural.
+To test the structural module, you can use the **test()** method. This will print out an analysis summary of a Glycolysis/Gluconeogenesis SBML model (`BMID000000101155 <https://www.ebi.ac.uk/biomodels-main/BMID000000101155>`_) distributed with LibStructural. For example:
 
 .. code:: python
 
@@ -28,7 +28,7 @@ The following sections describe different ways of loading a model into Libstruct
 Loading a model
 -------------------------
 
-To load a model in to LibStructural, an instance variable must be created.
+To load a model into LibStructural, an instance variable must be created.
 
 .. code:: python
 
@@ -39,18 +39,20 @@ To load a model in to LibStructural, an instance variable must be created.
 
 Loading a model from a file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-A model can be loaded from an SBML file with a .xml format.
+A model can be loaded from an SBML file, for example:
 
 .. code:: python
 
-    ls.loadSBMLFromFile("C:\Users\yosef\Documents\SBML_models\iYO844.xml") # This calls the analyzeWithQR implicitly.
+    ls.loadSBMLFromFile("iYO844.xml") 
 
 .. end
+
+This assumes that the file is in the current directory. If not use the fill path name to the file. 
 
 Loading a model from a string
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-It is also possible to load a model from an SBML string:
+If a model is available as a SBML string, us the following code:
 
 .. code:: python
 
@@ -58,9 +60,12 @@ It is also possible to load a model from an SBML string:
 
 .. end
 
+This might occur of a model is specified using the Antimony syntax or is created from libSBML. 
 
 Loading a model from a stoichiometric matrix
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Models can also be loaded by specifying the stoichiometry matrix directly"
 
 .. code:: python
 
@@ -70,29 +75,28 @@ Loading a model from a stoichiometric matrix
 
 .. end
 
-The load command will also by default add reaction ids of the form _Jx and species ids of the form Sx. To override these default names, see section below.
+The load command will also by default add reaction ids of the form '_Jx' and species ids of the form 'Sx'. To override these default names, see the section below.
 
 Assigning Reaction and Species Ids
 ----------------------------------
 
-When loading a model from a stoichiometry matrix, a label can be added to reactions and species.
+When loading a model from a stoichiometry matrix, reactions and species can be optionally labelled. 
 
 .. code:: python
 
   import structural
   ls = structural.LibStructural()
-  matrix = [[  1, -1, -1], [  0, -1,  1], [  0,  1, -1]] # matrix can be a numpy 2d array
+  matrix = [[  1, -1, -1], [  0, -1,  1], [  0,  1, -1]] # matrix can also be a numpy 2d array
 
   print ls.getStoichiometryMatrix()
   print ls.getSpeciesIds()
   print ls.getReactionsIds()
 
-  print('\n\n')
-
   # load Ids
   ls.loadSpeciesIdsWithValues (['a', 'b', 'c'], [0, 0, 0]) # The array length for both ids list and values list should be equal to the number of species
   ls.loadReactionIdsWithValues (['F1', 'F2', 'F3'],[0, 0, 0])
 
+  # Reanalyze with the new labels 
   ls.analyzeWithQR()
 
   print ls.getSpeciesIds()
@@ -104,7 +108,7 @@ Loading a model using the antimony model description language
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-If you use `tellurium <http://tellurium.analogmachine.org/>`_ you can load a model by converting an antimony string to SBML string.
+If you use `tellurium <http://tellurium.analogmachine.org/>`_ you can load a model by converting an antimony string into  a SBML string. For example:
 
 .. code:: python
 
@@ -112,19 +116,15 @@ If you use `tellurium <http://tellurium.analogmachine.org/>`_ you can load a mod
   import tellurium as te
 
   r = te.loada('''
-      model Test_Model ()
-      species S1, S2, S3;
-
-      // Reactions:
+      // Reactions. All reactions have the dummy rate law 'v'
+      // since we're not interested in dynamic simulation. 
       J1: S1 -> S2; v;
       J2: -> S3; v;
       J3: S3 -> S1; v;
 
+      # Initialize species
       S1 = 10; S2 = 10; S3 = 10;
-      v = 0;
-
-  end
-
+      v = 0; 
   ''')
 
   sbmlstr = r.getSBML() # this creates an SBML string from the antimony model, r.
@@ -132,7 +132,7 @@ If you use `tellurium <http://tellurium.analogmachine.org/>`_ you can load a mod
   ls.loadSBMLFromString(sbmlstr)
   print(ls.getSummary())
 
-  # an antimony model can be converted in to SBML file as well
+  # An antimony model can be converted into SBML file as well
   r.exportToSBML('Test_model.xml') # creates an xml file in the current directory
   ls = structural.LibStructural()
   ls.loadSBMLFromFile('Test_model.xml') # loads the xml file from the current directory
@@ -156,7 +156,6 @@ The following snippets show some of LibStructural's methods on a model generated
   import tellurium as te
 
   r = te.loada('''
-
       // Reactions:
       J1: ES -> S1 + E; v;
       J2: S2 + E -> ES; v;
@@ -165,9 +164,6 @@ The following snippets show some of LibStructural's methods on a model generated
       // Species Initialization
       S1 = 10; S2 = 10; ES = 10; E = 10;
       v = 0;
-
-  end
-
   ''')
 
   sbmlstr = r.getSBML() # this creates an SBML string from the antimony model, r.
@@ -188,12 +184,12 @@ Once the model is loaded we can run some methods.
 
 .. end
 
-To get the model's default stoichiometry matrix structures run:
+To get the model's stoichiometry matrix we can run the following code:
 
 .. code:: python
 
   # get the default, unaltered stoichiometric matrix
-  ls.getStoichiometryMatrix()
+  print ls.getStoichiometryMatrix()
 
 .. end
 
@@ -206,7 +202,7 @@ A stoichiometry matrix can be converted into a reordered matrix in which the row
 
 .. end
 
-A fully reordered stoichiometry matrix is a matrix where the Nr section of the reordered stoichiometry matrix partitioned in to NDC (linearly dependent columns) and NIC (linearly independent columns).
+A fully reordered stoichiometry matrix is a matrix where the Nr section of the reordered stoichiometry matrix partitioned into NDC (linearly dependent columns) and NIC (linearly independent columns).
 
 .. code:: python
 
@@ -222,7 +218,7 @@ A fully reordered stoichiometry matrix is a matrix where the Nr section of the r
 
 .. code:: python
 
-  # get the number NIC and NDC matrices
+  # get the NIC and NDC matrices
   ls.getNDCMatrix()
   ls.getNICMatrix() # NIC matrix is always a square matrix
 
@@ -250,19 +246,17 @@ We can also get species and reaction information from the model.
 
 .. end
 
-There are a few methods that compute the conservational analysis of a model.
+There are a few methods that compute any conserved moeties in the model:
 
 .. code:: python
 
-  # get the conservational matrix
+  # get the conserved matrix
   ls.getGammaMatrix()
 
-  # get which species are contained in each conserved matrix
+  # get which species are contained in each row of the conserved matrix
   ls.getGammaMatrixIds()
 
   # get conserved laws and the conserved sums associated with them
   ls.getConservedLaws()
-
-
 
 .. end
