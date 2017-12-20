@@ -146,9 +146,9 @@ Structural Analysis
 The following snippets show some of LibStructural's methods on a model generated using antimony model description language. 
 
 Conserved Moieties
-------------------
+~~~~~~~~~~~~~~~~~~
 
-Below is anetwork diagram that shows two interlinked conserved cycles, S1 + S2 + ES and ES + E:
+Below is a network diagram that shows two interlinked conserved cycles: S1 + S2 + ES and ES + E:
 
 .. figure:: example_model_1.png
     :align: center
@@ -267,6 +267,6 @@ There are a few methods that compute any conserved moeties in the model:
 .. end
 
 Branched System
----------------
+~~~~~~~~~~~~~~~
 
 The following example

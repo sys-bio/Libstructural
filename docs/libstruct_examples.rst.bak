@@ -268,3 +268,5 @@ There are a few methods that compute any conserved moeties in the model:
 
 Branched System
 ---------------
+
+The following example
