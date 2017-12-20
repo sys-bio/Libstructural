@@ -732,6 +732,13 @@ namespace LIB_STRUCTURAL
 		//! Returns the number of nonzero values in Stoichiometry matrix
 		LIB_EXTERN double getNmatrixSparsity();
 
+		
+		/*! \brief Checks whether a given reaction is reversible or not. 
+
+		\result Returns true if the reaction with given index is reversible.
+		*/
+		LIB_EXTERN bool isReactionReversible (int index);
+
 		/*! \brief Get elementary modes for a model
 
 		\result Returns in an array where each columns is an elementary mode
@@ -1808,7 +1815,12 @@ LIB_EXTERN  int LibStructural_getRank();
 //! Returns the percentage of nonzero values in the stoichiometry matrix
 LIB_EXTERN  double LibStructural_getNmatrixSparsity();
 
-#
+/*! \brief Checks whether a given reaction is reversible or not.
+
+\result Returns true if the reaction with given index is reversible.
+*/
+LIB_EXTERN int LibStructural_isReactionReversible (int index, bool *result);
+
 /*! \brief Get elementary modes for a model
 
 \result Returns 0 is ok, -1 if it failed.

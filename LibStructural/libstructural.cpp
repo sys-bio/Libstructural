@@ -2175,6 +2175,17 @@ double LibStructural::getNmatrixSparsity()
 }
 
 
+bool LibStructural::isReactionReversible (int index) {
+	if ((index < 0) || (index >= numReactions))
+		throw  std::runtime_error ("Illegal reaction index in isReactionReversible");
+
+	const Reaction* reaction = _Model->getNthReaction (index);
+	if (reaction->getReversible ())
+		return true;
+	else
+		return false;
+}
+
 // Returns a matrix of elementary modes
 DoubleMatrix* LibStructural::getElementaryModes () {
 	
@@ -2911,6 +2922,18 @@ LIB_EXTERN  int LibStructural_getRank()
 LIB_EXTERN  double LibStructural_getNmatrixSparsity()
 {
 	return LibStructural::getInstance()->getNmatrixSparsity();
+}
+
+LIB_EXTERN int LibStructural_isReactionReversible (int index, bool *result) {
+	try {
+
+		*result = LibStructural::getInstance ()->isReactionReversible (index);
+		return 0;
+	}
+	catch (...)
+	{
+		return -1;
+	}
 }
 
 
