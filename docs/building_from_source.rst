@@ -105,7 +105,7 @@ Building CLAPACK
 4. Click on **Configure**. CMake will ask for what generator and compiler to use.
 5. Find and select "Xcode" from the dropdown menu.
 6. Select "Specify native compilers" and click on **Continue**.
-7. On the next window, under C++ box, click on the three dots and navigate to your Xcode application. It should be inside the "Applications" folder by default. Click on **Done**.
+7. On the next window, under C++ box, click on the three dots and navigate to your Xcode application. It should be located inside the Applications folder. If not, you need to move it to the Application folder. Click on **Done**.
 8. Click on **Configure** and then **Generate.
 
 .. figure:: cmake_xcode_2.png
