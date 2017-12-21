@@ -63,7 +63,7 @@ static PyObject* pNoModelException;  /* add this! */
    } catch (LIB_LA::NoModelException* e) {
 		 std::string msg = e->getMessage();
 		 delete e;
-	 
+
      PyErr_SetString (PyExc_Exception, msg.c_str());
 	 return NULL;
    } catch (const std::exception& e) {
@@ -417,7 +417,7 @@ static PyObject* pNoModelException;  /* add this! */
 	    Returns the list of elementary modes are rows in a matrix
 	    """
 	    import numpy as np
-		   
+
 	    return self._my_getElementaryModes().toNumpy()
 
 	def rref(self, data, tolerance=1e-6):
