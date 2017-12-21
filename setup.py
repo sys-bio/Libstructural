@@ -59,7 +59,9 @@ if config[0] == 'Win':
 elif config[0] == 'Mac':
     chdir(path.join(here,package_dir))
     package_data={
-    'structural': ['_structural.so','structural.py', 'test_models/BMID000000101155.xml']
+    'structural': ['test/*'],
+    'structural.test': ['tests/*'],
+    'structural': ['_structural.so','structural.py', 'test/*']
     # 'test_models': ['BMID000000101155.xml']
     }
 else:
