@@ -87,7 +87,7 @@ setup(
     author_email='hsauro@uw.edu',
 
     # Choose your license
-    license='Apache-2',
+    license='DSW',
 
     # See https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
