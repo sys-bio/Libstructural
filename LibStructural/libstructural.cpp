@@ -36,7 +36,7 @@ limitations under the License.*/
 #define PRINT_PRECISION		10
 #define LINE			    "--------------------------------------------------------------"
 
-#define LibStruct_VERSION "1.0.0"
+#define LibStruct_VERSION "2.0.0"
 
 using namespace LIB_STRUCTURAL;
 using namespace LIB_LA;
