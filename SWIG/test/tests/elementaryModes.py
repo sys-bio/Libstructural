@@ -1,16 +1,68 @@
+
+# Test Script for checking elementary modes
+# Dec 2017
+
 import structural
 import tellurium as te
 import numpy as np
 
-def checkElm(id):
-   eml = ls.getElementaryModes()
-   #print eml
-   st = ls.getStoichiometryMatrix()
-   p = np.matmul (st, np.transpose(eml))
-   if not np.any (p):
-      print "(", id, ") ------PASS-----", "Number of modes = ", eml.shape[0]
+def checkThermodynamics (ls, elm):
+    # Assume we're ok initially, then try to disprove
+    result = True
+    nCols = np.size(elm,1)
+    nElms = elm.shape[0]
+
+    for k in range (nElms):
+        em = elm[k]
+
+        for i in range (nCols):
+            if (not ls.isReactionReversible(i)) and (em[i] < 0):
+                result = False;
+
+    return result
+
+               
+def checkElemenarity (ls, elm):
+   N = ls.getStoichiometryMatrix()
+   sum = 0
+   for j in range (elm.shape[0]):
+      em = elm[j]
+      indexList = []
+      nCols = np.size(em,0)
+      # Find the columns of the entries that are non-zero
+      for i in range (nCols):
+          if em[i] != 0:
+             indexList.append (i)
+
+      # Construct submatrix of stoichiometry matrix. The columns
+      # correspond to the indecies in the indexList
+      subN = np.empty([N.shape[0],0])
+      for i in indexList:
+           subN = np.column_stack ((subN, N[:,i]))
+      ns = te.nullspace (subN)
+      # If the null space has dim(1) then we pass this em
+      sum = sum + int (ns.shape[1])
+   # If all pass then the sum should equal the number of elm
+   if sum == elm.shape[0]:
+       return True
    else:
-      print id, " ------FAIL-----"
+       return False
+   
+    
+def checkElm(id):
+   elm = ls.getElementaryModes()
+   st = ls.getStoichiometryMatrix()
+   p = np.matmul (st, np.transpose(elm))
+   if not np.any (p):
+      if checkElemenarity (ls, elm):
+          if checkThermodynamics (ls, elm):
+             print "(", id, ") ------PASS-----", "Number of modes = ", elm.shape[0]
+          else:
+             print id, " ------FAIL Thermo -----"              
+      else:
+         print id, " ------FAIL Elementarity-----"
+   else:
+      print id, " ------FAIL N e = 0 -----"
    
 
 r = te.loada('''
@@ -269,3 +321,92 @@ r = te.loada('''
 r.exportToSBML('testModel19.xml') 
 ls.loadSBMLFromString(r.getSBML())
 checkElm(19)
+
+
+# 20
+r = te.loada('''
+    J1: $Xo => S1; v;
+    J2: S1 => $X2; v;
+    J3: S1 => S2; v;
+    J4: S2 => $X3; v;
+    J5: S2 => $X4; v;
+    J6: $X1 => S3; v;
+    J7: S3 => S2; v;
+    J8: S3 => $X5; v;
+    v = 0
+''')
+r.exportToSBML('testModel20.xml') 
+ls.loadSBMLFromString(r.getSBML())
+checkElm(20)
+eml1 = ls.getElementaryModes()
+
+
+# 21
+r = te.loada('''
+    J1: $Xo => S1; v;
+    J2: S1 => $X2; v;
+    J3: S1 -> S2; v;
+    J4: S2 => $X3; v;
+    J5: S2 => $X4; v;
+    J6: $X1 => S3; v;
+    J7: S3 => S2; v;
+    J8: S3 => $X5; v;
+    v = 0
+''')
+r.exportToSBML('testModel21.xml') 
+ls.loadSBMLFromString(r.getSBML())
+checkElm(21)
+eml2 = ls.getElementaryModes()
+
+
+# 22
+r = te.loada('''
+    J1: $Xo -> S1; v;
+    J2: S1 => $X2; v;
+    J3: S1 -> S2; v;
+    J4: S2 => $X3; v;
+    J5: S2 => $X4; v;
+    J6: $X1 => S3; v;
+    J7: S3 => S2; v;
+    J8: S3 => $X5; v;
+    v = 0
+''')
+r.exportToSBML('testModel22.xml') 
+ls.loadSBMLFromString(r.getSBML())
+checkElm(22)
+
+
+# 23
+r = te.loada('''
+    J1: $Xo -> S1; v;
+    J2: S1 => $X2; v;
+    J3: S1 -> S2; v;
+    J4: S2 => $X3; v;
+    J5: S2 => $X4; v;
+    J6: $X1 => S3; v;
+    J7: S3 -> S2; v;
+    J8: S3 => $X5; v;
+    v = 0
+''')
+r.exportToSBML('testModel23.xml') 
+ls.loadSBMLFromString(r.getSBML())
+checkElm(23)      
+
+
+# 24
+r = te.loada('''
+    J1: $Xo -> S1; v;
+    J2: S1 => $X2; v;
+    J3: S1 -> S2; v;
+    J4: S2 => $X3; v;
+    J5: S2 => $X4; v;
+    J6: $X1 -> S3; v;
+    J7: S3 -> S2; v;
+    J8: S3 => $X5; v;
+    v = 0
+''')
+r.exportToSBML('testModel24.xml') 
+ls.loadSBMLFromString(r.getSBML())
+checkElm(24) 
+        
+
