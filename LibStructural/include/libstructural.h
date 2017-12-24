@@ -68,8 +68,6 @@ limitations under the License.*/
 #include "matrix.h"
 #include "complex.h"
 
-LIB_EXTERN char* getVersion ();
-
 
 /*!	\namespace LIB_STRUCTURAL
 	\brief	   The LIB_STRUCTURAL namespace contains all functions and classes directly related to Structural Analysis.
@@ -853,6 +851,12 @@ namespace LIB_STRUCTURAL
 #ifndef SWIG
 
 BEGIN_C_DECLS;
+
+/*! \brief Returns the current version number
+
+*/
+LIB_EXTERN  char *LibStructural_getVersion ();
+
 
 /*! \brief Load a new stoichiometry matrix.
 

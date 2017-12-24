@@ -3,7 +3,7 @@
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
-
+getVers
     http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
@@ -41,10 +41,6 @@ limitations under the License.*/
 using namespace LIB_STRUCTURAL;
 using namespace LIB_LA;
 using namespace std;
-
-char* getVersion () {
-	return LibStruct_VERSION;
-}
 
 
 #ifndef NO_SBML
@@ -2517,8 +2513,14 @@ double LibStructural::getRCond(DoubleMatrix &oMatrix) {
 }
 
 
+// C API follows
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// load a new stoichiometry matrix and reset current loaded model
+LIB_EXTERN  char *LibStructural_getVersion ()
+{
+	return LibStruct_VERSION;
+}
 
 
 // load a new stoichiometry matrix and reset current loaded model
