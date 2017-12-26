@@ -2532,7 +2532,7 @@ LIB_EXTERN  int LibStructural_loadStoichiometryMatrix (double ** inMatrix, const
 }
 
 // load species names and initial values
-LIB_EXTERN  int LibStructural_loadSpeciesIdsWithValues ( const char** speciesIds, const double* speciesValues, const int nLength)
+LIB_EXTERN  int LibStructural_loadSpeciesIdsWithValues (const char** speciesIds, const double* speciesValues, const int nLength)
 {
 	vector< string > oNames; vector< double> oValues;
 	for (int i = 0; i < nLength; i++)
@@ -2545,7 +2545,7 @@ LIB_EXTERN  int LibStructural_loadSpeciesIdsWithValues ( const char** speciesIds
 }
 
 // Load reaction names
-LIB_EXTERN  int LibStructural_loadReactionIds ( const char** reactionIds, const int nLength)
+LIB_EXTERN  int LibStructural_loadReactionIds (const char** reactionIds, const int nLength)
 {
 	vector< string > oNames;
 	for (int i = 0; i < nLength; i++)

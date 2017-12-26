@@ -855,7 +855,7 @@ BEGIN_C_DECLS;
 /*! \brief Returns the current version number
 
 */
-LIB_EXTERN  char *LibStructural_getVersion ();
+LIB_EXTERN  char* LibStructural_getVersion ();
 
 
 /*! \brief Load a new stoichiometry matrix.
@@ -933,7 +933,7 @@ an error occurred
 */
 #ifndef NO_SBML
 
-LIB_EXTERN  int LibStructural_loadReactionNames ( const char** reactionNames, const int nLength);
+LIB_EXTERN  int LibStructural_loadReactionIds ( const char** reactionNames, const int nLength);
 
 /*! \brief Load species names.
 
