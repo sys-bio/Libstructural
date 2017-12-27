@@ -1,7 +1,7 @@
 Getting Started with LibStructural
 ==================================
 
-The following examples demonstrate how to load a biochemical reaction network into LibStructural API. A model should be available at least in one of the following formats: SBML model file (.xml format), or a 2D array matrix. SBML can either be loaded as a string or directly from a file. 
+The following examples demonstrate how to load a biochemical reaction network into LibStructural API. A model should be available at least in one of the following formats: SBML model file (.xml format), or a 2D array matrix. SBML can either be loaded as a string or directly from a file.
 
 ----------------------
 Testing LibStructural
@@ -43,11 +43,11 @@ A model can be loaded from an SBML file, for example:
 
 .. code:: python
 
-    ls.loadSBMLFromFile("iYO844.xml") 
+    ls.loadSBMLFromFile("iYO844.xml")
 
 .. end
 
-This assumes that the file is in the current directory. If not use the fill path name to the file. 
+This assumes that the file is in the current directory. If not use the fill path name to the file.
 
 Loading a model from a string
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -60,7 +60,7 @@ If a model is available as a SBML string, us the following code:
 
 .. end
 
-This might occur of a model is specified using the Antimony syntax or is created from libSBML. 
+This might occur of a model is specified using the Antimony syntax or is created from libSBML.
 
 Loading a model from a stoichiometric matrix
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -80,7 +80,7 @@ The load command will also by default add reaction ids of the form '_Jx' and spe
 Assigning Reaction and Species Ids
 ----------------------------------
 
-When loading a model from a stoichiometry matrix, reactions and species can be optionally labelled. 
+When loading a model from a stoichiometry matrix, reactions and species can be optionally labelled.
 
 .. code:: python
 
@@ -96,7 +96,7 @@ When loading a model from a stoichiometry matrix, reactions and species can be o
   ls.loadSpeciesIdsWithValues (['a', 'b', 'c'], [0, 0, 0]) # The array length for both ids list and values list should be equal to the number of species
   ls.loadReactionIdsWithValues (['F1', 'F2', 'F3'],[0, 0, 0])
 
-  # Reanalyze with the new labels 
+  # Reanalyze with the new labels
   ls.analyzeWithQR()
 
   print ls.getSpeciesIds()
@@ -117,14 +117,14 @@ If you use `tellurium <http://tellurium.analogmachine.org/>`_ you can load a mod
 
   r = te.loada('''
       // Reactions. All reactions have the dummy rate law 'v'
-      // since we're not interested in dynamic simulation. 
+      // since we're not interested in dynamic simulation.
       J1: S1 -> S2; v;
       J2: -> S3; v;
       J3: S3 -> S1; v;
 
       # Initialize species
       S1 = 10; S2 = 10; S3 = 10;
-      v = 0; 
+      v = 0;
   ''')
 
   sbmlstr = r.getSBML() # this creates an SBML string from the antimony model, r.
@@ -143,10 +143,10 @@ If you use `tellurium <http://tellurium.analogmachine.org/>`_ you can load a mod
 Structural Analysis
 -------------------------
 
-The following snippets show some of LibStructural's methods on a model generated using antimony model description language. 
+The following examples show some of LibStructural's methods on two different models. The models were generated using tellurium by converting antimony description language to an SBML string.
 
-Conserved Moieties
-~~~~~~~~~~~~~~~~~~
+Conserved Metabolic Network
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Below is a network diagram that shows two interlinked conserved cycles: S1 + S2 + ES and ES + E:
 
@@ -154,6 +154,8 @@ Below is a network diagram that shows two interlinked conserved cycles: S1 + S2 
     :align: center
     :figclass: align-center
     :scale: 25 %
+
+To generate an SBML string and load the model to LibStructural, run:
 
 .. code:: python
 
@@ -178,9 +180,17 @@ Below is a network diagram that shows two interlinked conserved cycles: S1 + S2 
 .. end
 
 
-Once the model is loaded we can run some methods.
+Once the model is loaded we can run the getSummary function to get the analysis result of the analyzeWithQR function. NOTE: when loading a model on LibStructural, the analyzeWithQR method is called implicitly.
 
 .. code:: python
+
+  print(ls.getSummary()) # Prints out if the model is passed some internal structural validation tests.
+
+.. end
+
+
+.. code:: python
+
   print(ls.validateStructuralMatrices()) # Prints out if the model is passed some internal structural validation tests.
 
   # see what tests were run, call ls.getTestDetails()
@@ -269,4 +279,4 @@ There are a few methods that compute any conserved moeties in the model:
 Branched System
 ~~~~~~~~~~~~~~~
 
-The following Some random text
+...
