@@ -800,7 +800,7 @@ void LibStructural::computeK0andKMatrices()
 void LibStructural::analyzeWithLU()
 {
 	if (!isModelLoaded ())
-		throw new NoModelException ("There is no model to analyze");
+		throw NoModelException ("There is no model to analyze");
 
 	LU_Result * oLUResult = NULL;
 
@@ -923,7 +923,7 @@ void LibStructural::analyzeWithLU()
 void LibStructural::analyzeWithLUandRunTests()
 {
 	if (!isModelLoaded ())
-		throw new NoModelException ("There is no model to analyze");
+		throw NoModelException ("There is no model to analyze");
 
 	analyzeWithLU();
 	_sResultStream << endl << endl;
@@ -1100,11 +1100,11 @@ int LibStructural_getSummary (char* *outMessage, int *nLength)
 LibStructural::DoubleMatrix* LibStructural::getL0Matrix()
 {
 	if (!isModelLoaded ())
-		throw new NoModelException ("There is no model to analyze");
+		throw NoModelException ("There is no model to analyze");
 
 	if (_NumCols == 0 || zero_nmat)
 	{
-		return new DoubleMatrix(*_L0);
+		return _L0;
 	}
 	else
 	{
@@ -1124,7 +1124,7 @@ LibStructural::DoubleMatrix* LibStructural::getL0Matrix()
 void LibStructural::getL0MatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
 	if (!isModelLoaded ())
-		throw new NoModelException ("There is no model to analyze");
+		throw NoModelException ("There is no model to analyze");
 
 	oRows = getDependentSpeciesIds();
 	oCols = getIndependentSpeciesIds();
@@ -1155,7 +1155,7 @@ LibStructural::DoubleMatrix* LibStructural::getFullyReorderedNrMatrix()
 LibStructural::DoubleMatrix* LibStructural::getFullyReorderedN0StoichiometryMatrix()
 {
 	if (!isModelLoaded ())
-		throw new  NoModelException ("There is no model to analyze");
+		throw NoModelException ("There is no model to analyze");
 
 	DoubleMatrix* NFullReordered = getFullyReorderedStoichiometryMatrix();
 
@@ -1183,7 +1183,7 @@ LibStructural::DoubleMatrix* LibStructural::getFullyReorderedN0StoichiometryMatr
 void LibStructural::getNrMatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
 	if (!isModelLoaded ())
-		throw new NoModelException ("There is no model to analyze");
+		throw NoModelException ("There is no model to analyze");
 	
 	oRows = getIndependentSpeciesIds();
 	oCols = getReactionsIds();
@@ -1199,7 +1199,7 @@ LibStructural::DoubleMatrix* LibStructural::getN0Matrix()
 void LibStructural::getN0MatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
 	if (!isModelLoaded ())
-		throw new NoModelException ("There is no model to analyze");
+		throw NoModelException ("There is no model to analyze");
 
 	oRows = getDependentSpeciesIds();
 	oCols = getReactionsIds();
@@ -1209,7 +1209,7 @@ void LibStructural::getN0MatrixIds(vector< string > &oRows, vector< string > &oC
 LibStructural::DoubleMatrix* LibStructural::getLinkMatrix()
 {
 	if (!isModelLoaded ())
-		throw new NoModelException ("There is no model to analyze");
+		throw NoModelException ("There is no model to analyze");
 
 	return _L;
 }
@@ -1217,7 +1217,7 @@ LibStructural::DoubleMatrix* LibStructural::getLinkMatrix()
 void LibStructural::getLinkMatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
 	if (!isModelLoaded ())
-		throw new NoModelException ("There is no model to analyze");
+		throw NoModelException ("There is no model to analyze");
 
 	oRows = getReorderedSpeciesIds();
 	oCols = getIndependentSpeciesIds();
@@ -1227,7 +1227,7 @@ void LibStructural::getLinkMatrixIds(vector< string > &oRows, vector< string > &
 LibStructural::DoubleMatrix* LibStructural::getK0Matrix()
 {
 	if (!isModelLoaded ())
-		throw new NoModelException ("There is no model to analyze");
+		throw NoModelException ("There is no model to analyze");
 
 	return _K0;
 }
@@ -1235,7 +1235,7 @@ LibStructural::DoubleMatrix* LibStructural::getK0Matrix()
 void LibStructural::getK0MatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
 	if (!isModelLoaded ())
-		throw new NoModelException ("There is no model to analyze");
+		throw NoModelException ("There is no model to analyze");
 
 	vector<string> oReactionLables = getReorderedReactionsIds();
 	DoubleMatrix *k0 = getK0Matrix();
@@ -1261,7 +1261,7 @@ void LibStructural::getK0MatrixIds(vector< string > &oRows, vector< string > &oC
 LibStructural::DoubleMatrix* LibStructural::getKMatrix()
 {
 	if (!isModelLoaded ())
-		throw new NoModelException ("There is no model to analyze");
+		throw NoModelException ("There is no model to analyze");
 
 	return _K;
 }
@@ -1269,7 +1269,7 @@ LibStructural::DoubleMatrix* LibStructural::getKMatrix()
 void LibStructural::getKMatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
 	if (!isModelLoaded ())
-		throw new NoModelException ("There is no model to analyze");
+		throw NoModelException ("There is no model to analyze");
 
 	vector<string> oReactionLables = getReorderedReactionsIds();
 	DoubleMatrix *k0 = getK0Matrix();
@@ -1513,8 +1513,9 @@ vector< string > LibStructural::getSpeciesIds()
 // Returns Gamma, the conservation law array
 LibStructural::DoubleMatrix* LibStructural::getGammaMatrix()
 {
-	if (!isModelLoaded ())
-		throw new NoModelException ("There is no model to analyze");
+	if (!isModelLoaded ()) {
+		throw NoModelException ("There is no model to analyze");
+	}
 
 	return _G;
 }
@@ -1859,7 +1860,7 @@ DoubleMatrix* LibStructural::getNICMatrix()
 void LibStructural::getNICMatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
 	if (!isModelLoaded ())
-		throw new NoModelException ("There is no model to analyze");
+		throw NoModelException ("There is no model to analyze");
 
 	oRows = getIndependentSpeciesIds(); //getReorderedSpeciesIds();
 	int nDependent = _K0->numCols();
@@ -1895,7 +1896,7 @@ DoubleMatrix* LibStructural::getNDCMatrix()
 void LibStructural::getNDCMatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
 	if (!isModelLoaded ())
-		throw new NoModelException ("There is no model to analyze");
+		throw NoModelException ("There is no model to analyze");
 
 	oRows = getIndependentSpeciesIds(); //getReorderedSpeciesIds();
 	int nDependent = _K0->numCols();
@@ -1911,7 +1912,7 @@ void LibStructural::getNDCMatrixIds(vector< string > &oRows, vector< string > &o
 void LibStructural::getColumnReorderedNrMatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
 	if (!isModelLoaded ())
-		throw new NoModelException ("There is no model to analyze");
+		throw NoModelException ("There is no model to analyze");
 
 	oRows = getIndependentSpeciesIds();   //getReorderedSpeciesIds();
 
@@ -1954,7 +1955,7 @@ DoubleMatrix* LibStructural::getColumnReorderedNrMatrix()
 DoubleMatrix* LibStructural::getFullyReorderedStoichiometryMatrix()
 {
 	if (!isModelLoaded ())
-		throw new NoModelException ("There is no model to analyze");
+		throw NoModelException ("There is no model to analyze");
 
 	try
 	{
@@ -2004,7 +2005,7 @@ DoubleMatrix* LibStructural::getFullyReorderedStoichiometryMatrix()
 void LibStructural::getFullyReorderedStoichiometryMatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
 	if (!isModelLoaded ())
-		throw new NoModelException ("There is no model to analyze");
+		throw NoModelException ("There is no model to analyze");
 
 	getColumnReorderedNrMatrixIds(oRows, oCols);
 	vector<string> dependent =  getDependentSpeciesIds();
@@ -2071,7 +2072,7 @@ string LibStructural::getTestDetails()
 	stringstream oBuffer;
 
 	if (!isModelLoaded ())
-		throw new NoModelException ("There is no model to analyze");
+		throw NoModelException ("There is no model to analyze");
 
 	vector < string > testResults = validateStructuralMatrices();
 
@@ -2194,12 +2195,12 @@ DoubleMatrix* LibStructural::getElementaryModes () {
 	if (_NumRows == 0)
 	{
 		_sResultStream << "Model has no floating species.";
-		throw  std::runtime_error ("Model has no floating species.");
+		throw NoModelException ("Model has no floating species.");
 	}
 	else if (_NumCols == 0)
 	{
 		_sResultStream << "Model has no Reactions.";
-		throw  std::runtime_error ("Model has no reactions.");
+		throw NoModelException ("Model has no reactions.");
 	}
 	else
 	{
@@ -2516,6 +2517,12 @@ double LibStructural::getRCond(DoubleMatrix &oMatrix) {
 // C API follows
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+LIB_EXTERN void* LibStructural_getInstance () {
+
+	return LibStructural::getInstance ();
+}
+
+
 // load a new stoichiometry matrix and reset current loaded model
 LIB_EXTERN  char *LibStructural_getVersion ()
 {
@@ -2524,15 +2531,16 @@ LIB_EXTERN  char *LibStructural_getVersion ()
 
 
 // load a new stoichiometry matrix and reset current loaded model
-LIB_EXTERN  int LibStructural_loadStoichiometryMatrix (double ** inMatrix, const int nRows, const int nCols)
+LIB_EXTERN  int LibStructural_loadStoichiometryMatrix (double** inMatrix, const int nRows, const int nCols)
 {
 	DoubleMatrix oMatrix(inMatrix, nRows, nCols);
 	LibStructural::getInstance()->loadStoichiometryMatrix( oMatrix );
 	return 0;
 }
 
+
 // load species names and initial values
-LIB_EXTERN  int LibStructural_loadSpeciesIdsWithValues (const char** speciesIds, const double* speciesValues, const int nLength)
+LIB_EXTERN  int LibStructural_loadSpeciesIdsWithValues ( const char** speciesIds, const double* speciesValues, const int nLength)
 {
 	vector< string > oNames; vector< double> oValues;
 	for (int i = 0; i < nLength; i++)
@@ -2568,39 +2576,55 @@ LIB_EXTERN  int LibStructural_loadReactionIds (const char** reactionIds, const i
 //	return 0;
 //}
 
-
 #ifndef NO_SBML
 
-// Initialization method, takes SBML as input
-LIB_EXTERN  int LibStructural_loadSBMLFromString(const char* sSBML)
+LIB_EXTERN  int LibStructural_loadSBMLFromString (const char* sSBML, char** outMessage, int *nLength)
 {
 	try
 	{
-		LibStructural::getInstance()->loadSBMLFromString(string(sSBML));
+		LibStructural::getInstance ()->loadSBMLFromString (string (sSBML));
+		*nLength = strlen (*outMessage);
 		return 0;
 	}
-	catch (...)
+	catch (LIB_LA::ApplicationException* ex)
 	{
+		*outMessage = strdup (ex->getMessage().c_str());
+		*nLength = strlen (*outMessage);
 		return -1;
 	}
-}
-
-LIB_EXTERN  int LibStructural_loadSBMLFromFile(const char* sFileName)
-{
-	try
-	{
-		LibStructural::getInstance()->loadSBMLFromFile(string(sFileName));
-		return 0;
-	}
 	catch (...)
 	{
+		*outMessage = strdup ("Unknown error in loadSBMLFromString");
+		*nLength = strlen (*outMessage);
 		return -1;
 	}
 }
 
 
+LIB_EXTERN  int LibStructural_loadSBMLFromFile (const char* sFileName, char* *outMessage, int *nLength)
+{
+	try
+	{
+		LibStructural::getInstance ()->loadSBMLFromFile (string (sFileName));
+		return 0;
+	}
+	catch (LIB_LA::ApplicationException& ex)
+	{
+		*outMessage = strdup (ex.getMessage().c_str());
+		*nLength = strlen (*outMessage);
+		return -1;
+	}
+	catch (...)
+	{
+		*outMessage = strdup ("Unknown error in loadSBMLFromFile");
+		*nLength = strlen (*outMessage);
+		return -1;
+	}
+}
+
+
 // Initialization method, takes SBML as input
-LIB_EXTERN  int LibStructural_loadSBMLwithTests(const char* sSBML, char* *oResult, int *nLength)
+LIB_EXTERN  int LibStructural_loadSBMLwithTests (const char* sSBML, char** oResult, int *nLength)
 {
 	try
 	{
@@ -2619,7 +2643,7 @@ LIB_EXTERN  int LibStructural_loadSBMLwithTests(const char* sSBML, char* *oResul
 #endif
 
 // Uses QR factorization for Conservation analysis
-LIB_EXTERN  int LibStructural_analyzeWithQR(char* *outMessage, int *nLength)
+LIB_EXTERN  int LibStructural_analyzeWithQR(char** outMessage, int *nLength)
 {
 	LibStructural::getInstance ()->analyzeWithQR ();
 	*outMessage = strdup (LibStructural::getInstance ()->getResultString().c_str ());
@@ -2759,11 +2783,26 @@ LIB_EXTERN  int LibStructural_getKMatrix(double** *outMatrix, int* outRows, int 
 // Returns Gamma, the conservation law array
 LIB_EXTERN  int LibStructural_getGammaMatrix(double** *outMatrix, int* outRows, int *outCols)
 {
-	DoubleMatrix* oMatrix = LibStructural::getInstance()->getGammaMatrix();
-	if (oMatrix == NULL)
-		return -1;
-	Util::CopyMatrix(*oMatrix, *outMatrix, *outRows, *outCols);
-	return 0;
+  try {
+	  DoubleMatrix* oMatrix = LibStructural::getInstance()->getGammaMatrix();
+	  if (oMatrix == NULL)
+	 	 return -4;
+
+	  Util::CopyMatrix(*oMatrix, *outMatrix, *outRows, *outCols);
+	  return 0;
+  }
+  catch (NoModelException& ex)
+  {
+	  return -2;
+  }
+  catch (LIB_LA::ApplicationException& ex)
+  {
+	  return -3;
+  }
+  catch (...)
+  {
+	  return -1;
+  }
 }
 
 LIB_EXTERN int LibStructural_getGammaMatrixGJ(double** inMatrix, int numRows, int numCols,
@@ -2878,7 +2917,7 @@ LIB_EXTERN  int LibStructural_getModelName(char* *outMessage, int *nLength)
 }
 
 // Returns the total number of species
-LIB_EXTERN  int LibStructural_getNumSpecies()
+LIB_EXTERN  int LibStructural_getNumFloatingSpecies()
 {
 	return LibStructural::getInstance()->getNumSpecies();
 }
@@ -2940,6 +2979,7 @@ LIB_EXTERN int LibStructural_isReactionReversible (int index, bool *result) {
 
 
 LIB_EXTERN  int LibStructural_getElementaryModes (double** *outMatrix, int* outRows, int *outCols) {
+
 	try
 	{
 		DoubleMatrix *oTemp = LibStructural::getInstance ()->getElementaryModes ();
@@ -2947,6 +2987,15 @@ LIB_EXTERN  int LibStructural_getElementaryModes (double** *outMatrix, int* outR
 		delete oTemp;
 		return 0;
 	}
+	catch (NoModelException& ex)
+	{
+		return -2;
+	}
+	catch (LIB_LA::ApplicationException& ex)
+	{
+    	return -3;
+	}
+
 	catch (...)
 	{
 		return -1;

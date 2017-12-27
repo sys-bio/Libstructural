@@ -317,6 +317,7 @@ namespace LIB_STRUCTURAL
 
 #ifndef NO_SBML
 
+
 		/*! \brief Load a SBML model.
 			\param sSBML the SBML string to load
 			\return information about the loaded model
@@ -852,6 +853,11 @@ namespace LIB_STRUCTURAL
 
 BEGIN_C_DECLS;
 
+/*! \brief Returns the handle to an instance of the library.
+
+*/
+LIB_EXTERN void* LibStructural_getInstance ();
+
 /*! \brief Returns the current version number
 
 */
@@ -951,7 +957,8 @@ an error occurred
 
 */
 
-LIB_EXTERN  int LibStructural_loadSpeciesIds(const char** speciesIds, const int nLength);
+LIB_EXTERN  int LibStructural_loadSpeciesIds (const char** speciesIds, const int nLength);
+
 
 /*! \brief Load a SBML model.
 \param sSBML the SBML string to load into the library
@@ -963,7 +970,7 @@ about the loaded SBML
 an error occurred (invalid SBML)
 
 */
-LIB_EXTERN  int LibStructural_loadSBMLFromString(const char* sSBML, char* *outMessage, int *nLength);
+LIB_EXTERN  int LibStructural_loadSBMLFromString (const char* sSBML, char** outMessage, int *nLength);
 
 /*! \brief Load a SBML model from the specified file.
 \param sFileName the full path to the SBML file to be loaded.
@@ -977,7 +984,7 @@ about the loaded SBML
 an error occurred (invalid SBML, file not readable ...).
 
 */
-LIB_EXTERN  int LibStructural_loadSBMLFromFile(const char* sFileName, char* *outMessage, int *nLength);
+LIB_EXTERN  int LibStructural_loadSBMLFromFile (const char* sFileName, char** outMessage, int *nLength);
 
 /*! \brief Load an SBML model into the library and carry out tests using the internal test suite.
 \param sSBML the SBML string to load into the library
@@ -989,7 +996,7 @@ model as well as the test results of the internal test suite.
 an error occurred (invalid SBML)
 
 */
-LIB_EXTERN  int LibStructural_loadSBMLwithTests(const char* sSBML, char* *outMessage, int *nLength);
+LIB_EXTERN  int LibStructural_loadSBMLwithTests (const char* sSBML, char* *outMessage, int *nLength);
 #endif
 /*! \brief Uses QR factorization for structural analysis
 
@@ -1801,7 +1808,7 @@ been called yet.
 LIB_EXTERN  int LibStructural_getModelName(char* *outMessage, int *nLength);
 
 //! Returns the total number of species.
-LIB_EXTERN  int LibStructural_getNumSpecies();
+LIB_EXTERN  int LibStructural_getNumFloatingSpecies ();
 
 //! Returns the number of independent species.
 LIB_EXTERN  int LibStructural_getNumIndSpecies();

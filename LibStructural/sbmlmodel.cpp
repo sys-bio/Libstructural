@@ -45,8 +45,11 @@ void SBMLmodel::InitializeFromSBML(std::string &sSBML)
 	_Document = oReader.readSBMLFromString(sSBML);
 	_Model = _Document->getModel();
 
-	if (_Model == NULL)
-		throw new ApplicationException("Invalid SBML Model", "The SBML model was invalid. Please validate it using a SBML validator such as: http://sys-bio.org/validate.");
+	if (_Model == NULL) {
+		ostringstream oss;
+		_Document->printErrors (oss);
+		throw new ApplicationException (oss.str (), "The SBML model was invalid. Please validate it using a SBML validator such as: http://sys-bio.org/validate.");
+	}
 
 }
 void SBMLmodel::InitializeFromFile(std::string &sFileName)

@@ -454,6 +454,7 @@ void Util::print(IntMatrix& A)
 	}
 	cout << "]" << endl << endl;
 }
+
 void Util::print(DoubleMatrix& A) 
 {
 	cout << "[";
@@ -468,6 +469,7 @@ void Util::print(DoubleMatrix& A)
 	}
 	cout << "]" << endl << endl;
 }
+
 void Util::print(ComplexMatrix& A) 
 {
 	cout << "[";
@@ -673,7 +675,6 @@ void Util::CopyMatrix(DoubleMatrix& oMatrix, double** &outMatrix, int &outNumRow
 
 	outNumRows = numRows;
 	outNumCols = numCols;
-
 }
 
 void Util::CopyMatrix(ComplexMatrix& oMatrix, double** &outMatrixReal,double** &outMatrixImag, int &outNumRows, int &outNumCols)
