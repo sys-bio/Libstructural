@@ -210,9 +210,6 @@ namespace LIB_STRUCTURAL
 		std::vector<double>		                    _inputValues;
 
 	private:
-
-		bool isModelLoaded ();
-
 		std::string GenerateResultString();
 
 		void Initialize();
@@ -250,6 +247,8 @@ namespace LIB_STRUCTURAL
 		bool testConservationLaw_6();
 
 	public:
+
+		bool isModelLoaded ();
 
 		std::string getResultString ();
 
