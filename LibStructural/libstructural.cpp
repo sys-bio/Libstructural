@@ -1,16 +1,28 @@
-/* Copyright 2017, Sauro H.M, Bergmann F, Bedaso Y, and Choi k
+/* Copyright (c) <2007-2017>, Sauro H.M, Bergmann F, Bedaso Y, and Choi k
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-getVers
-    http://www.apache.org/licenses/LICENSE-2.0
+All rights reserved.
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.*/
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+* Redistributions of source code must retain the above copyright
+notice, this list of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the above copyright
+notice, this list of conditions and the following disclaimer in the
+documentation and/or other materials provided with the distribution.
+* Neither the name of the <organization> nor the
+names of its contributors may be used to endorse or promote products
+derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL <COPYRIGHT HOLDER> BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 
 #ifdef WIN32
 #pragma warning(disable: 4996)
@@ -746,7 +758,6 @@ void LibStructural::computeK0andKMatrices()
 		Q = oResult[0]; R = oResult[1]; P = oResult[2];
 	}
 
-	//Util::gaussJordan(*R, _Tolerance);
 	Util::GaussJordan(*R, _Tolerance);
 
 	int nDependent = _NumCols-_NumIndependent;
@@ -831,7 +842,7 @@ void LibStructural::analyzeWithLU()
 
 		if (nInfo < 0 )
 		{
-			throw new ApplicationException("Exception in analyzeWithLU()", "Illegal Value encountered while performing LU Factorization");
+			throw new ApplicationException ("Exception in analyzeWithLU()", "Illegal Value encountered while performing LU Factorization");
 		}
 		else if (nInfo > 0)
 		{
@@ -2805,6 +2816,7 @@ LIB_EXTERN  int LibStructural_getGammaMatrix(double** *outMatrix, int* outRows, 
   }
 }
 
+
 LIB_EXTERN int LibStructural_getGammaMatrixGJ(double** inMatrix, int numRows, int numCols,
 										  double** *outMatrix, int *outRows, int *outCols)
 {
@@ -2815,6 +2827,7 @@ LIB_EXTERN int LibStructural_getGammaMatrixGJ(double** inMatrix, int numRows, in
 
 	return 0;
 }
+
 
 LIB_EXTERN int LibStructural_findPositiveGammaMatrix(double** inMatrix, int numRows, int numCols,
 													 const char** inRowLabels,
@@ -2873,6 +2886,7 @@ LIB_EXTERN  int LibStructural_getStoichiometryMatrix(double** *outMatrix, int* o
 	return 0;
 }
 
+
 // Returns reordered stoichiometry matrix
 LIB_EXTERN  int LibStructural_getReorderedStoichiometryMatrix(double** *outMatrix, int* outRows, int *outCols)
 {
@@ -2882,6 +2896,7 @@ LIB_EXTERN  int LibStructural_getReorderedStoichiometryMatrix(double** *outMatri
 	Util::CopyMatrix(*oMatrix, *outMatrix, *outRows, *outCols);
 	return 0;
 }
+
 
 // Tests if conservation laws are correct
 LIB_EXTERN  int  LibStructural_validateStructuralMatrices(int* *outResults, int* outLength)
@@ -2897,6 +2912,7 @@ LIB_EXTERN  int  LibStructural_validateStructuralMatrices(int* *outResults, int*
 	}
 	return 0;
 }
+
 
 // Return Details about conservation tests
 LIB_EXTERN  int LibStructural_getTestDetails(char* *outMessage, int *nLength)
