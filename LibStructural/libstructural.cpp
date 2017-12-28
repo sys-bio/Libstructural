@@ -2559,7 +2559,7 @@ LIB_EXTERN  char *LibStructural_getVersion ()
 int LibStructural_getSummary (char* *outMessage, int *nLength)
 {
 	if (!LibStructural::getInstance ()->isModelLoaded ())
-		throw NoModelException ("There is no model to analyze");
+		return NO_MODEL_LOADED;
 
 	try
 	{
@@ -2650,7 +2650,7 @@ LIB_EXTERN  int LibStructural_loadSBMLFromFile (const char* sFileName, char* *ou
 	try
 	{
 		LibStructural::getInstance ()->loadSBMLFromFile (string (sFileName));
-		return 0;
+		return SUCCESS;
 	}
 	catch (LIB_LA::ApplicationException& ex)
 	{
@@ -2791,6 +2791,8 @@ LIB_EXTERN  int LibStructural_getKMatrix(double** *outMatrix, int* outRows, int 
 	return SUCCESS;
 }
 
+// WHY ARE THESE COMMENTED OUT? HMS Dec 2017
+
 ////Returns the reordered list of species
 //LIB_EXTERN  int LibStructural_getNthReorderedSpeciesId(int n,char* *outMessage, int *nLength)
 //{
@@ -2841,7 +2843,7 @@ LIB_EXTERN  int LibStructural_getGammaMatrix(double** *outMatrix, int* outRows, 
   }
   catch (LIB_LA::ApplicationException& ex)
   {
-	  return APPLICATION_EXCPEPTION;
+	  return APPLICATION_EXCEPTION;
   }
   catch (...)
   {
@@ -2983,23 +2985,26 @@ LIB_EXTERN  int LibStructural_getNumDepSpecies()
 	return LibStructural::getInstance()->getNumDepSpecies();
 }
 
+
 // Returns the total number of reactions
 LIB_EXTERN  int LibStructural_getNumReactions()
 {
 	return LibStructural::getInstance()->getNumReactions();
 }
 
+
 // Returns the number of independent reactions
 LIB_EXTERN  int LibStructural_getNumIndReactions()
 {
 	return LibStructural::getInstance()->getNumIndReactions();
 }
+
+
 // Returns the number of dependent reactions
 LIB_EXTERN  int LibStructural_getNumDepReactions()
 {
 	return LibStructural::getInstance()->getNumDepReactions();
 }
-
 
 
 // Returns rank of stoichiometry matrix
@@ -3008,11 +3013,13 @@ LIB_EXTERN  int LibStructural_getRank()
 	return LibStructural::getInstance()->getRank();
 }
 
+
 // Returns the number of nonzero values in Stoichiometry matrix
 LIB_EXTERN  double LibStructural_getNmatrixSparsity()
 {
 	return LibStructural::getInstance()->getNmatrixSparsity();
 }
+
 
 LIB_EXTERN int LibStructural_isReactionReversible (int index, bool *result) {
 	try {
@@ -3042,7 +3049,7 @@ LIB_EXTERN  int LibStructural_getElementaryModes (double** *outMatrix, int* outR
 	}
 	catch (LIB_LA::ApplicationException& ex)
 	{
-    	return APPLICATION_EXCPEPTION;
+		return APPLICATION_EXCEPTION;
 	}
 
 	catch (...)
@@ -3050,6 +3057,7 @@ LIB_EXTERN  int LibStructural_getElementaryModes (double** *outMatrix, int* outR
 		return UNKNOWN_ERROR;
 	}
 }
+
 
 // Set user specified tolerance
 LIB_EXTERN  void LibStructural_setTolerance(double dTolerance)
@@ -3389,11 +3397,11 @@ LIB_EXTERN  int LibStructural_getFullyReorderedStoichiometryMatrix(double** *out
 {
 	try
 	{
-	DoubleMatrix* oMatrix = LibStructural::getInstance()->getFullyReorderedStoichiometryMatrix();
-	if (oMatrix == NULL)
-		return NO_MODEL_LOADED;
-	Util::CopyMatrix(*oMatrix, *outMatrix, *outRows, *outCols);
-	delete oMatrix;
+    	DoubleMatrix* oMatrix = LibStructural::getInstance()->getFullyReorderedStoichiometryMatrix();
+	    if (oMatrix == NULL)
+		    return NO_MODEL_LOADED;
+	    Util::CopyMatrix(*oMatrix, *outMatrix, *outRows, *outCols);
+	    delete oMatrix;
 	}
 	catch(...)
 	{

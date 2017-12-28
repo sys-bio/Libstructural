@@ -96,7 +96,7 @@ namespace LIB_STRUCTURAL
 #define SUCCESS 0
 #define UNKNOWN_ERROR -1
 #define NO_MODEL_LOADED -2
-#define APPLICATION_EXCPEPTION -3
+#define APPLICATION_EXCEPTION -3
 #define EMPTY_MATRIX -4
 
 
@@ -248,6 +248,7 @@ namespace LIB_STRUCTURAL
 
 	public:
 
+		// Made public so that C API can access it.
 		bool isModelLoaded ();
 
 		std::string getResultString ();
