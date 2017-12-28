@@ -90,6 +90,18 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 */
 namespace LIB_STRUCTURAL
 {
+
+// Error codes for values returned by the C API
+
+#define SUCCESS 0
+#define UNKNOWN_ERROR -1
+#define NO_MODEL_LOADED -2
+#define APPLICATION_EXCPEPTION -3
+#define EMPTY_MATRIX -4
+
+
+
+
 #ifndef NO_SBML
 	class SBMLmodel;
 #endif

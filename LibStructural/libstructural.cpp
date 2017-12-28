@@ -74,12 +74,14 @@ void LibStructural::loadSBMLFromString(string sSBML)
     analyzeWithQR();
 }
 
+
 void LibStructural::loadSBMLFromFile(string sFileName)
 {
 	DELETE_IF_NON_NULL(_Model);
 	_Model = SBMLmodel::FromFile(sFileName);
 	analyzeWithQR();
 }
+
 
 // Initialization method, takes SBML as input
 string LibStructural::loadSBMLwithTests(string sSBML)
@@ -169,15 +171,18 @@ void LibStructural::FreeMatrices()
 	DELETE_ARRAY_IF_NON_NULL(_BC);
 
 	DELETE_ARRAY_IF_NON_NULL(spVec);		DELETE_ARRAY_IF_NON_NULL(colVec);
-
 }
 
+
+// This is not quite right but will do for now, must be a better way.
+// Perhaps check whether _Model == NULL?
 bool LibStructural::isModelLoaded () {
 	if (numReactions == 0 || numFloating == 0)
 		return false;
 	else
 		return true;
 }
+
 
 string LibStructural::GenerateResultString()
 {
@@ -279,6 +284,7 @@ string LibStructural::GenerateResultString()
 
 	return oBuffer.str();
 }
+
 
 string LibStructural::getResultString () {
 	return _sResultStream.str ();
@@ -672,9 +678,9 @@ void LibStructural::computeConservedSums()
 
 }
 
+
 void LibStructural::computeConservedEntities()
 {
-
 	double gval; string spname;
 
 	_consv_list.clear();
@@ -720,6 +726,7 @@ void LibStructural::computeConservedEntities()
 	}
 
 }
+
 
 void LibStructural::computeK0andKMatrices()
 {
@@ -947,6 +954,9 @@ void LibStructural::analyzeWithFullyPivotedLU()
 {
 	LU_Result * oLUResult = NULL;
 
+	if (!isModelLoaded ())
+		throw NoModelException ("There is no model to analyze");
+
 	Initialize();
 
 	if (_NumRows == 0)
@@ -1088,22 +1098,6 @@ void LibStructural::analyzeWithFullyPivotedLUwithTests()
 {
 	_sResultStream << endl << endl;
 	_sResultStream << getTestDetails();
-
-}
-
-
-int LibStructural_getSummary (char* *outMessage, int *nLength)
-{
-	try
-	{
-		*outMessage = strdup (LibStructural::getInstance()->getResultString().c_str ());
-		*nLength = strlen (*outMessage);
-		return 0;
-	}
-	catch (...)
-	{
-		return -1;
-	}
 }
 
 
@@ -1141,11 +1135,13 @@ void LibStructural::getL0MatrixIds(vector< string > &oRows, vector< string > &oC
 	oCols = getIndependentSpeciesIds();
 }
 
+
 // Returns Nr Matrix
 LibStructural::DoubleMatrix* LibStructural::getNrMatrix()
 {
 	return _Nr;
 }
+
 
 LibStructural::DoubleMatrix* LibStructural::getFullyReorderedNrMatrix()
 {
@@ -1162,6 +1158,7 @@ LibStructural::DoubleMatrix* LibStructural::getFullyReorderedNrMatrix()
 	DELETE_IF_NON_NULL (NFullReordered);
 	return _NrNew;
 }
+
 
 LibStructural::DoubleMatrix* LibStructural::getFullyReorderedN0StoichiometryMatrix()
 {
@@ -1204,6 +1201,9 @@ void LibStructural::getNrMatrixIds(vector< string > &oRows, vector< string > &oC
 // Returns N0 Matrix
 LibStructural::DoubleMatrix* LibStructural::getN0Matrix()
 {
+	if (!isModelLoaded ())
+		throw NoModelException ("There is no model to analyze");
+
 	return _N0;
 }
 
@@ -1225,6 +1225,7 @@ LibStructural::DoubleMatrix* LibStructural::getLinkMatrix()
 	return _L;
 }
 
+
 void LibStructural::getLinkMatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
 	if (!isModelLoaded ())
@@ -1242,6 +1243,7 @@ LibStructural::DoubleMatrix* LibStructural::getK0Matrix()
 
 	return _K0;
 }
+
 
 void LibStructural::getK0MatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
@@ -1268,6 +1270,7 @@ void LibStructural::getK0MatrixIds(vector< string > &oRows, vector< string > &oC
 
 }
 
+
 // Returns Nullspace of NK = 0
 LibStructural::DoubleMatrix* LibStructural::getKMatrix()
 {
@@ -1276,6 +1279,7 @@ LibStructural::DoubleMatrix* LibStructural::getKMatrix()
 
 	return _K;
 }
+
 
 void LibStructural::getKMatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
@@ -1636,6 +1640,7 @@ LibStructural::DoubleMatrix* LibStructural::getGammaMatrixGJ(DoubleMatrix &stoic
 	return result;
 }
 
+
 void LibStructural::getGammaMatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
 	DoubleMatrix *G = getGammaMatrix();
@@ -1647,8 +1652,8 @@ void LibStructural::getGammaMatrixIds(vector< string > &oRows, vector< string > 
 	}
 
 	oCols = getReorderedSpeciesIds();
-
 }
+
 
 //  Returns algebraic expressions for conserved cycles
 vector< string > LibStructural::getConservedLaws()
@@ -1674,6 +1679,7 @@ vector< string > LibStructural::getConservedLaws()
 	}
 	return oResult;
 }
+
 
 // Returns values for conserved cycles using Initial conditions
 vector< double > LibStructural::getConservedSums()
@@ -1702,6 +1708,9 @@ vector< double > LibStructural::getConservedSums()
 // Returns the original stoichiometry matrix
 LibStructural::DoubleMatrix* LibStructural::getStoichiometryMatrix()
 {
+	if (!isModelLoaded ())
+		throw NoModelException ("There is no loaded model");
+
 	return _Nmat_orig;
 }
 
@@ -1715,6 +1724,9 @@ void LibStructural::getStoichiometryMatrixIds(vector< string > &oRows, vector< s
 // Returns reordered stoichiometry matrix
 LibStructural::DoubleMatrix* LibStructural::getReorderedStoichiometryMatrix()
 {
+	if (!isModelLoaded ())
+		throw NoModelException ("There is no loaded model ");
+
 	return _Nmat;
 }
 
@@ -2184,6 +2196,7 @@ double LibStructural::getNmatrixSparsity()
 
 
 bool LibStructural::isReactionReversible (int index) {
+
 	if ((index < 0) || (index >= numReactions))
 		throw  std::runtime_error ("Illegal reaction index in isReactionReversible");
 
@@ -2525,8 +2538,10 @@ double LibStructural::getRCond(DoubleMatrix &oMatrix) {
 }
 
 
+// -------------------------------------------------------------------------------------
 // C API follows
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// -------------------------------------------------------------------------------------
+
 
 LIB_EXTERN void* LibStructural_getInstance () {
 
@@ -2541,12 +2556,30 @@ LIB_EXTERN  char *LibStructural_getVersion ()
 }
 
 
+int LibStructural_getSummary (char* *outMessage, int *nLength)
+{
+	if (!LibStructural::getInstance ()->isModelLoaded ())
+		throw NoModelException ("There is no model to analyze");
+
+	try
+	{
+		*outMessage = strdup (LibStructural::getInstance ()->getResultString ().c_str ());
+		*nLength = strlen (*outMessage);
+		return SUCCESS;
+	}
+	catch (...)
+	{
+		return UNKNOWN_ERROR;
+	}
+}
+
+
 // load a new stoichiometry matrix and reset current loaded model
 LIB_EXTERN  int LibStructural_loadStoichiometryMatrix (double** inMatrix, const int nRows, const int nCols)
 {
 	DoubleMatrix oMatrix(inMatrix, nRows, nCols);
 	LibStructural::getInstance()->loadStoichiometryMatrix( oMatrix );
-	return 0;
+	return SUCCESS;
 }
 
 
@@ -2560,7 +2593,7 @@ LIB_EXTERN  int LibStructural_loadSpeciesIdsWithValues ( const char** speciesIds
 		oValues.push_back(speciesValues[i]);
 	}
 	LibStructural::getInstance()->loadSpeciesIdsWithValues(oNames, oValues);
-	return 0;
+	return SUCCESS;
 }
 
 // Load reaction names
@@ -2572,7 +2605,7 @@ LIB_EXTERN  int LibStructural_loadReactionIds (const char** reactionIds, const i
 		oNames.push_back(string(reactionIds[i]));
 	}
 	LibStructural::getInstance()->loadReactionIds(oNames);
-	return 0;
+	return SUCCESS;
 }
 
 // load species names
@@ -2595,19 +2628,19 @@ LIB_EXTERN  int LibStructural_loadSBMLFromString (const char* sSBML, char** outM
 	{
 		LibStructural::getInstance ()->loadSBMLFromString (string (sSBML));
 		*nLength = strlen (*outMessage);
-		return 0;
+		return SUCCESS;
 	}
-	catch (LIB_LA::ApplicationException* ex)
+	catch (LIB_LA::ApplicationException& ex)
 	{
-		*outMessage = strdup (ex->getMessage().c_str());
+		*outMessage = strdup (ex.getMessage().c_str());
 		*nLength = strlen (*outMessage);
-		return -1;
+		return UNKNOWN_ERROR;
 	}
 	catch (...)
 	{
 		*outMessage = strdup ("Unknown error in loadSBMLFromString");
 		*nLength = strlen (*outMessage);
-		return -1;
+		return UNKNOWN_ERROR;
 	}
 }
 
@@ -2623,13 +2656,13 @@ LIB_EXTERN  int LibStructural_loadSBMLFromFile (const char* sFileName, char* *ou
 	{
 		*outMessage = strdup (ex.getMessage().c_str());
 		*nLength = strlen (*outMessage);
-		return -1;
+		return UNKNOWN_ERROR;
 	}
 	catch (...)
 	{
 		*outMessage = strdup ("Unknown error in loadSBMLFromFile");
 		*nLength = strlen (*outMessage);
-		return -1;
+		return UNKNOWN_ERROR;
 	}
 }
 
@@ -2643,11 +2676,11 @@ LIB_EXTERN  int LibStructural_loadSBMLwithTests (const char* sSBML, char** oResu
 		string sResult = LibStructural::getInstance()->loadSBMLwithTests(sbmlString);
 		(*oResult) = strdup(sResult.c_str());
 		(*nLength) = strlen(*oResult);
-		return 0;
+		return SUCCESS;
 	}
 	catch(...)
 	{
-		return -1;
+		return UNKNOWN_ERROR;
 	}
 }
 
@@ -2659,7 +2692,7 @@ LIB_EXTERN  int LibStructural_analyzeWithQR(char** outMessage, int *nLength)
 	LibStructural::getInstance ()->analyzeWithQR ();
 	*outMessage = strdup (LibStructural::getInstance ()->getResultString().c_str ());
 	*nLength = strlen(*outMessage);
-	return 0;
+	return SUCCESS;
 }
 
 // Uses LU Decomposition for Conservation analysis
@@ -2668,7 +2701,7 @@ LIB_EXTERN  int LibStructural_analyzeWithLU(char* *outMessage, int *nLength)
 	LibStructural::getInstance ()->analyzeWithLU ();
 	*outMessage = strdup(LibStructural::getInstance ()->getResultString ().c_str ());
 	*nLength = strlen(*outMessage);
-	return 0;
+	return SUCCESS;
 }
 
 // Uses LU Decomposition for Conservation analysis
@@ -2677,7 +2710,7 @@ LIB_EXTERN  int LibStructural_analyzeWithLUandRunTests(char* *outMessage, int *n
 	LibStructural::getInstance ()->analyzeWithLUandRunTests ();
 	*outMessage = strdup(LibStructural::getInstance ()->getResultString ().c_str ());
 	*nLength = strlen(*outMessage);
-	return 0;
+	return SUCCESS;
 }
 
 // Uses fully pivoted LU Decomposition for Conservation analysis
@@ -2686,7 +2719,7 @@ LIB_EXTERN  int LibStructural_analyzeWithFullyPivotedLU(char* *outMessage, int *
 	LibStructural::getInstance ()->analyzeWithFullyPivotedLU ();
 	*outMessage = strdup(LibStructural::getInstance ()->getResultString ().c_str ());
 	*nLength = strlen(*outMessage);
-	return 0;
+	return SUCCESS;
 }
 
 // Uses fully pivoted LU Decomposition for Conservation analysis
@@ -2695,7 +2728,7 @@ LIB_EXTERN  int LibStructural_analyzeWithFullyPivotedLUwithTests(char* *outMessa
 	LibStructural::getInstance ()->analyzeWithFullyPivotedLUwithTests ();
 	*outMessage = strdup(LibStructural::getInstance ()->getResultString ().c_str ());
 	*nLength = strlen(*outMessage);
-	return 0;
+	return SUCCESS;
 }
 
 // Returns L0 Matrix
@@ -2704,7 +2737,7 @@ LIB_EXTERN  int LibStructural_getL0Matrix(double** *outMatrix, int* outRows, int
 	DoubleMatrix *oTemp = LibStructural::getInstance()->getL0Matrix();
 	Util::CopyMatrix(*oTemp, *outMatrix, *outRows, *outCols);
 	delete oTemp;
-	return 0;
+	return SUCCESS;
 }
 
 // Returns Nr Matrix
@@ -2712,9 +2745,9 @@ LIB_EXTERN  int LibStructural_getNrMatrix(double** *outMatrix, int* outRows, int
 {
 	DoubleMatrix* oMatrix = LibStructural::getInstance()->getNrMatrix();
 	if (oMatrix == NULL)
-		return -1;
+		return EMPTY_MATRIX;
 	Util::CopyMatrix(*oMatrix, *outMatrix, *outRows, *outCols);
-	return 0;
+	return SUCCESS;
 }
 
 
@@ -2723,9 +2756,9 @@ LIB_EXTERN  int LibStructural_getN0Matrix(double** *outMatrix, int* outRows, int
 {
 	DoubleMatrix* oMatrix = LibStructural::getInstance()->getN0Matrix();
 	if (oMatrix == NULL)
-		return -1;
+		return EMPTY_MATRIX;
 	Util::CopyMatrix(*oMatrix, *outMatrix, *outRows, *outCols);
-	return 0;
+	return SUCCESS;
 }
 
 // Returns L, the Link Matrix
@@ -2733,9 +2766,9 @@ LIB_EXTERN  int LibStructural_getLinkMatrix(double** *outMatrix, int* outRows, i
 {
 	DoubleMatrix* oMatrix = LibStructural::getInstance()->getLinkMatrix();
 	if (oMatrix == NULL)
-		return -1;
+		return EMPTY_MATRIX;
 	Util::CopyMatrix(*oMatrix, *outMatrix, *outRows, *outCols);
-	return 0;
+	return SUCCESS;
 }
 
 // Returns K0
@@ -2743,9 +2776,9 @@ LIB_EXTERN  int LibStructural_getK0Matrix(double** *outMatrix, int* outRows, int
 {
 	DoubleMatrix* oMatrix = LibStructural::getInstance()->getK0Matrix();
 	if (oMatrix == NULL)
-		return -1;
+		return EMPTY_MATRIX;
 	Util::CopyMatrix(*oMatrix, *outMatrix, *outRows, *outCols);
-	return 0;
+	return SUCCESS;
 }
 
 // Returns K Matrix
@@ -2753,9 +2786,9 @@ LIB_EXTERN  int LibStructural_getKMatrix(double** *outMatrix, int* outRows, int 
 {
 	DoubleMatrix* oMatrix = LibStructural::getInstance()->getKMatrix();
 	if (oMatrix == NULL)
-		return -1;
+		return EMPTY_MATRIX;
 	Util::CopyMatrix(*oMatrix, *outMatrix, *outRows, *outCols);
-	return 0;
+	return SUCCESS;
 }
 
 ////Returns the reordered list of species
@@ -2797,22 +2830,22 @@ LIB_EXTERN  int LibStructural_getGammaMatrix(double** *outMatrix, int* outRows, 
   try {
 	  DoubleMatrix* oMatrix = LibStructural::getInstance()->getGammaMatrix();
 	  if (oMatrix == NULL)
-	 	 return -4;
+	 	 return EMPTY_MATRIX;
 
 	  Util::CopyMatrix(*oMatrix, *outMatrix, *outRows, *outCols);
-	  return 0;
+	  return SUCCESS;
   }
   catch (NoModelException& ex)
   {
-	  return -2;
+	  return NO_MODEL_LOADED;
   }
   catch (LIB_LA::ApplicationException& ex)
   {
-	  return -3;
+	  return APPLICATION_EXCPEPTION;
   }
   catch (...)
   {
-	  return -1;
+	  return UNKNOWN_ERROR;
   }
 }
 
@@ -2825,7 +2858,7 @@ LIB_EXTERN int LibStructural_getGammaMatrixGJ(double** inMatrix, int numRows, in
 
 	Util::CopyMatrix(*oResult, *outMatrix, *outRows, *outCols); delete oResult;
 
-	return 0;
+	return SUCCESS;
 }
 
 
@@ -2845,11 +2878,11 @@ LIB_EXTERN int LibStructural_findPositiveGammaMatrix(double** inMatrix, int numR
 
 	DoubleMatrix *oResult = LibStructural::getInstance()->findPositiveGammaMatrix( oMatrix, rowNames );
 	if (oResult == NULL)
-		return -1;
+		return EMPTY_MATRIX;
 	Util::CopyMatrix(*oResult, *outMatrix, *outRows, *outCols); delete oResult;
 	Util::CopyStringVector(rowNames, *outRowLabels, *outRowCount);
 
-	return 0;
+	return SUCCESS;
 }
 
 
@@ -2881,9 +2914,9 @@ LIB_EXTERN  int LibStructural_getStoichiometryMatrix(double** *outMatrix, int* o
 {
 	DoubleMatrix* oMatrix = LibStructural::getInstance()->getStoichiometryMatrix();
 	if (oMatrix == NULL)
-		return -1;
+		return EMPTY_MATRIX;
 	Util::CopyMatrix(*oMatrix, *outMatrix, *outRows, *outCols);
-	return 0;
+	return SUCCESS;
 }
 
 
@@ -2892,9 +2925,9 @@ LIB_EXTERN  int LibStructural_getReorderedStoichiometryMatrix(double** *outMatri
 {
 	DoubleMatrix* oMatrix = LibStructural::getInstance()->getReorderedStoichiometryMatrix();
 	if (oMatrix == NULL)
-		return -1;
+		return EMPTY_MATRIX;
 	Util::CopyMatrix(*oMatrix, *outMatrix, *outRows, *outCols);
-	return 0;
+	return SUCCESS;
 }
 
 
@@ -2910,7 +2943,7 @@ LIB_EXTERN  int  LibStructural_validateStructuralMatrices(int* *outResults, int*
 	{
 		(*outResults)[i] = (int) (oResult[i]=="Pass");
 	}
-	return 0;
+	return SUCCESS;
 }
 
 
@@ -2919,7 +2952,7 @@ LIB_EXTERN  int LibStructural_getTestDetails(char* *outMessage, int *nLength)
 {
 	*outMessage = strdup(LibStructural::getInstance()->getTestDetails().c_str());
 	*nLength = strlen(*outMessage);
-	return 0;
+	return SUCCESS;
 
 }
 
@@ -2928,7 +2961,7 @@ LIB_EXTERN  int LibStructural_getModelName(char* *outMessage, int *nLength)
 {
 	*outMessage = strdup(LibStructural::getInstance()->getModelName().c_str());
 	*nLength = strlen(*outMessage);
-	return 0;
+	return SUCCESS;
 
 }
 
@@ -2985,11 +3018,11 @@ LIB_EXTERN int LibStructural_isReactionReversible (int index, bool *result) {
 	try {
 
 		*result = LibStructural::getInstance ()->isReactionReversible (index);
-		return 0;
+		return SUCCESS;
 	}
 	catch (...)
 	{
-		return -1;
+		return UNKNOWN_ERROR;
 	}
 }
 
@@ -3001,20 +3034,20 @@ LIB_EXTERN  int LibStructural_getElementaryModes (double** *outMatrix, int* outR
 		DoubleMatrix *oTemp = LibStructural::getInstance ()->getElementaryModes ();
 		Util::CopyMatrix (*oTemp, *outMatrix, *outRows, *outCols);
 		delete oTemp;
-		return 0;
+		return SUCCESS;
 	}
 	catch (NoModelException& ex)
 	{
-		return -2;
+		return NO_MODEL_LOADED;
 	}
 	catch (LIB_LA::ApplicationException& ex)
 	{
-    	return -3;
+    	return APPLICATION_EXCPEPTION;
 	}
 
 	catch (...)
 	{
-		return -1;
+		return UNKNOWN_ERROR;
 	}
 }
 
@@ -3024,10 +3057,12 @@ LIB_EXTERN  void LibStructural_setTolerance(double dTolerance)
 	LibStructural::getInstance()->setTolerance(dTolerance);
 }
 
+
 LIB_EXTERN void LibStructural_freeVector(void* vector)
 {
 	if (vector) free(vector);
 }
+
 
 LIB_EXTERN void LibStructural_freeMatrix(void** matrix, int numRows)
 {
@@ -3043,52 +3078,61 @@ LIB_EXTERN int LibStructural_getConservedSums(double* *outArray, int *outLength)
 {
 	vector<double> oSums = LibStructural::getInstance()->getConservedSums();
 	Util::CopyDoubleVector(oSums, *outArray, *outLength);
-	return 0;
+	return SUCCESS;
 
 }
+
+
 LIB_EXTERN  int LibStructural_getConservedLaws(char** *outArray, int *outLength)
 {
 	vector<string> oValues = LibStructural::getInstance()->getConservedLaws();
 	Util::CopyStringVector(oValues, *outArray, *outLength);
-	return 0;
+	return SUCCESS;
 }
+
+
 LIB_EXTERN  int LibStructural_getReactionsIds(char** *outArray, int *outLength)
 {
 	vector<string> oValues = LibStructural::getInstance()->getReactionsIds();
 	Util::CopyStringVector(oValues, *outArray, *outLength);
-	return 0;
+	return SUCCESS;
 }
+
+
 LIB_EXTERN  int LibStructural_getDependentSpeciesIds(char** *outArray, int *outLength)
 {
 	vector<string> oValues = LibStructural::getInstance()->getDependentSpeciesIds();
 	Util::CopyStringVector(oValues, *outArray, *outLength);
-	return 0;
+	return SUCCESS;
 }
+
 LIB_EXTERN  int LibStructural_getIndependentSpeciesIds(char** *outArray, int *outLength)
 {
 	vector<string> oValues = LibStructural::getInstance()->getIndependentSpeciesIds();
 	Util::CopyStringVector(oValues, *outArray, *outLength);
-	return 0;
+	return SUCCESS;
 }
+
 
 LIB_EXTERN  int LibStructural_getDependentReactionIds(char** *outArray, int *outLength)
 {
 	vector<string> oValues = LibStructural::getInstance()->getDependentReactionIds();
 	Util::CopyStringVector(oValues, *outArray, *outLength);
-	return 0;
+	return SUCCESS;
 }
+
 LIB_EXTERN  int LibStructural_getIndependentReactionIds(char** *outArray, int *outLength)
 {
 	vector<string> oValues = LibStructural::getInstance()->getIndependentReactionIds();
 	Util::CopyStringVector(oValues, *outArray, *outLength);
-	return 0;
+	return SUCCESS;
 }
 
 LIB_EXTERN  int LibStructural_getReorderedReactionIds(char** *outArray, int *outLength)
 {
 	vector<string> oValues = LibStructural::getInstance()->getReorderedReactionsIds();
 	Util::CopyStringVector(oValues, *outArray, *outLength);
-	return 0;
+	return SUCCESS;
 }
 
 
@@ -3096,7 +3140,7 @@ LIB_EXTERN  int LibStructural_getSpeciesIds(char** *outArray, int *outLength)
 {
 	vector<string> oValues = LibStructural::getInstance()->getSpeciesIds();
 	Util::CopyStringVector(oValues, *outArray, *outLength);
-	return 0;
+	return SUCCESS;
 }
 
 
@@ -3104,8 +3148,9 @@ LIB_EXTERN  int LibStructural_getReorderedSpeciesIds(char** *outArray, int *outL
 {
 	vector<string> oValues = LibStructural::getInstance()->getReorderedSpeciesIds();
 	Util::CopyStringVector(oValues, *outArray, *outLength);
-	return 0;
+	return SUCCESS;
 }
+
 
 LIB_EXTERN  int LibStructural_getInitialConditions(char** *outVariableNames, double* *outValues, int *outLength)
 {
@@ -3123,15 +3168,16 @@ LIB_EXTERN  int LibStructural_getInitialConditions(char** *outVariableNames, dou
 		(*outValues)[i] = oTemp.second;
 	}
 
-	return 0;
+	return SUCCESS;
 }
+
 
 LIB_EXTERN  int LibStructural_getL0MatrixIds(char** *outRowLabels, int *outRowCount, char** *outColLabels, int *outColCount)
 {
 	LibStructural_getDependentSpeciesIds(outRowLabels, outRowCount);
 	LibStructural_getIndependentSpeciesIds(outColLabels, outColCount);
 
-	return 0;
+	return SUCCESS;
 }
 
 LIB_EXTERN  int LibStructural_getNrMatrixIds(char** *outRowLabels, int *outRowCount, char** *outColLabels, int *outColCount)
@@ -3139,8 +3185,9 @@ LIB_EXTERN  int LibStructural_getNrMatrixIds(char** *outRowLabels, int *outRowCo
 	LibStructural_getIndependentSpeciesIds(outRowLabels, outRowCount);
 	LibStructural_getReactionsIds(outColLabels, outColCount);
 
-	return 0;
+	return SUCCESS;
 }
+
 
 LIB_EXTERN  int LibStructural_getColumnReorderedNrMatrixIds(char** *outRowLabels, int *outRowCount, char** *outColLabels, int *outColCount)
 {
@@ -3150,40 +3197,44 @@ LIB_EXTERN  int LibStructural_getColumnReorderedNrMatrixIds(char** *outRowLabels
 	Util::CopyStringVector(oRows, *outRowLabels, *outRowCount);
 	Util::CopyStringVector(oCols, *outColLabels, *outColCount);
 
-	return 0;
+	return SUCCESS;
 }
+
 
 LIB_EXTERN  int LibStructural_getColumnReorderedNrMatrix(double** *outMatrix, int* outRows, int *outCols)
 {
 	DoubleMatrix* oMatrix = LibStructural::getInstance()->getColumnReorderedNrMatrix();
 	if (oMatrix == NULL)
-		return -1;
+		return NO_MODEL_LOADED;
 	Util::CopyMatrix(*oMatrix, *outMatrix, *outRows, *outCols);
 	delete oMatrix;
-	return 0;
+	return SUCCESS;
 }
+
 
 // Returns the NIC Matrix (partition of linearly independent columns of Nr)
 LIB_EXTERN  int LibStructural_getNICMatrix(double** *outMatrix, int* outRows, int *outCols)
 {
 	DoubleMatrix* oMatrix = LibStructural::getInstance()->getNICMatrix();
 	if (oMatrix == NULL)
-		return -1;
+		return NO_MODEL_LOADED;
 	Util::CopyMatrix(*oMatrix, *outMatrix, *outRows, *outCols);
 	delete oMatrix;
-	return 0;
+	return SUCCESS;
 }
+
 
 // Returns the NDC Matrix (partition of linearly dependent columns of Nr)
 LIB_EXTERN  int LibStructural_getNDCMatrix(double** *outMatrix, int* outRows, int *outCols)
 {
 	DoubleMatrix* oMatrix = LibStructural::getInstance()->getNDCMatrix();
 	if (oMatrix == NULL)
-		return -1;
+		return NO_MODEL_LOADED;
 	Util::CopyMatrix(*oMatrix, *outMatrix, *outRows, *outCols);
 	delete oMatrix;
-	return 0;
+	return SUCCESS;
 }
+
 
 LIB_EXTERN  int LibStructural_getNICMatrixIds(char** *outRowLabels, int *outRowCount, char** *outColLabels, int *outColCount)
 {
@@ -3193,7 +3244,7 @@ LIB_EXTERN  int LibStructural_getNICMatrixIds(char** *outRowLabels, int *outRowC
 	Util::CopyStringVector(oRows, *outRowLabels, *outRowCount);
 	Util::CopyStringVector(oCols, *outColLabels, *outColCount);
 
-	return 0;
+	return SUCCESS;
 }
 
 
@@ -3205,8 +3256,9 @@ LIB_EXTERN  int LibStructural_getNDCMatrixIds(char** *outRowLabels, int *outRowC
 	Util::CopyStringVector(oRows, *outRowLabels, *outRowCount);
 	Util::CopyStringVector(oCols, *outColLabels, *outColCount);
 
-	return 0;
+	return SUCCESS;
 }
+
 
 LIB_EXTERN  int LibStructural_getN0MatrixIds(char** *outRowLabels, int *outRowCount, char** *outColLabels, int *outColCount)
 {
@@ -3215,13 +3267,15 @@ LIB_EXTERN  int LibStructural_getN0MatrixIds(char** *outRowLabels, int *outRowCo
 	return 0;
 }
 
+
 LIB_EXTERN  int LibStructural_getLinkMatrixIds(char** *outRowLabels, int *outRowCount, char** *outColLabels, int *outColCount)
 {
 	LibStructural_getReorderedSpeciesIds(outRowLabels, outRowCount);
 	LibStructural_getIndependentSpeciesIds(outColLabels, outColCount);
 
-	return 0;
+	return SUCCESS;
 }
+
 
 LIB_EXTERN  int LibStructural_getK0MatrixIds(char** *outRowLabels, int *outRowCount, char** *outColLabels, int *outColCount)
 {
@@ -3229,7 +3283,6 @@ LIB_EXTERN  int LibStructural_getK0MatrixIds(char** *outRowLabels, int *outRowCo
 
 	vector<string> oReactionLables = instance->getReorderedReactionsIds();
 	DoubleMatrix *k0 = instance->getK0Matrix();
-
 
 	int nDependent = k0->numCols();
 	int nIndependent = k0->numRows();
@@ -3239,8 +3292,6 @@ LIB_EXTERN  int LibStructural_getK0MatrixIds(char** *outRowLabels, int *outRowCo
 
 	*outRowLabels = (char**) malloc(sizeof(char*)**outRowCount); memset(*outRowLabels, 0, sizeof(char*)**outRowCount);
 	*outColLabels = (char**) malloc(sizeof(char*)**outColCount); memset(*outColLabels, 0, sizeof(char*)**outColCount);
-
-
 
 	for (int i = 0; i < nDependent; i++)
 	{
@@ -3253,8 +3304,9 @@ LIB_EXTERN  int LibStructural_getK0MatrixIds(char** *outRowLabels, int *outRowCo
 		(*outRowLabels)[i] = strdup(oReactionLables[i].c_str());
 	}
 
-	return 0;
+	return SUCCESS;
 }
+
 
 LIB_EXTERN  int LibStructural_getKMatrixIds(char** *outRowLabels, int *outRowCount, char** *outColLabels, int *outColCount)
 {
@@ -3273,22 +3325,20 @@ LIB_EXTERN  int LibStructural_getKMatrixIds(char** *outRowLabels, int *outRowCou
 	*outRowLabels = (char**) malloc(sizeof(char*)**outRowCount); memset(*outRowLabels, 0, sizeof(char*)**outRowCount);
 	*outColLabels = (char**) malloc(sizeof(char*)**outColCount); memset(*outColLabels, 0, sizeof(char*)**outColCount);
 
-
-
 	for (int i = 0; i < nDependent; i++)
 	{
 		(*outColLabels)[i] = strdup(oReactionLables[nIndependent + i].c_str());
 		(*outRowLabels)[i] = strdup(oReactionLables[nIndependent + i].c_str());
 	}
 
-
 	for (int i = 0; i < nIndependent; i++)
 	{
 		(*outRowLabels)[i+nDependent] = strdup(oReactionLables[i].c_str());
 	}
 
-	return 0;
+	return SUCCESS;
 }
+
 
 LIB_EXTERN  int LibStructural_getGammaMatrixIds(char** *outRowLabels, int *outRowCount, char** *outColLabels, int *outColCount)
 {
@@ -3303,15 +3353,17 @@ LIB_EXTERN  int LibStructural_getGammaMatrixIds(char** *outRowLabels, int *outRo
 		stringstream stream; stream << i;
 		(*outRowLabels)[i] = strdup(stream.str().c_str());
 	}
-	return 0;
+	return SUCCESS;
 }
+
 
 LIB_EXTERN  int LibStructural_getStoichiometryMatrixIds(char** *outRowLabels, int *outRowCount, char** *outColLabels, int *outColCount)
 {
 	LibStructural_getSpeciesIds(outRowLabels, outRowCount);
 	LibStructural_getReactionsIds(outColLabels, outColCount);
-	return 0;
+	return SUCCESS;
 }
+
 
 LIB_EXTERN  int LibStructural_getFullyReorderedStoichiometryMatrixIds(char** *outRowLabels, int *outRowCount, char** *outColLabels, int *outColCount)
 {
@@ -3321,14 +3373,17 @@ LIB_EXTERN  int LibStructural_getFullyReorderedStoichiometryMatrixIds(char** *ou
 	Util::CopyStringVector(oRows, *outRowLabels, *outRowCount);
 	Util::CopyStringVector(oCols, *outColLabels, *outColCount);
 
-	return 0;
+	return SUCCESS;
 }
+
+
 LIB_EXTERN  int LibStructural_getReorderedStoichiometryMatrixIds(char** *outRowLabels, int *outRowCount, char** *outColLabels, int *outColCount)
 {
 	LibStructural_getReorderedSpeciesIds(outRowLabels, outRowCount);
 	LibStructural_getReactionsIds(outColLabels, outColCount);
-	return 0;
+	return SUCCESS;
 }
+
 
 LIB_EXTERN  int LibStructural_getFullyReorderedStoichiometryMatrix(double** *outMatrix, int* outRows, int *outCols)
 {
@@ -3336,15 +3391,15 @@ LIB_EXTERN  int LibStructural_getFullyReorderedStoichiometryMatrix(double** *out
 	{
 	DoubleMatrix* oMatrix = LibStructural::getInstance()->getFullyReorderedStoichiometryMatrix();
 	if (oMatrix == NULL)
-		return -1;
+		return NO_MODEL_LOADED;
 	Util::CopyMatrix(*oMatrix, *outMatrix, *outRows, *outCols);
 	delete oMatrix;
 	}
 	catch(...)
 	{
-		return -1;
+		return UNKNOWN_ERROR;
 	}
-	return 0;
+	return SUCCESS;
 }
 
 
