@@ -55,6 +55,13 @@ using namespace LIB_LA;
 using namespace std;
 
 
+// load a new stoichiometry matrix and reset current loaded model
+char *getVersion ()
+{
+	return LibStruct_VERSION;
+}
+
+
 #ifndef NO_SBML
 // ----------------------------------------------------------------------------------------
 // string loadSBMLFromString(string)
@@ -94,7 +101,6 @@ string LibStructural::loadSBMLwithTests(string sSBML)
 
 	return _sResultStream.str();
 }
-
 
 
 void LibStructural::InitializeFromModel(LIB_STRUCTURAL::SBMLmodel& oModel)
@@ -342,6 +348,7 @@ void LibStructural::Initialize()
 			_inputValues);
 	}
 }
+
 
 void LibStructural::InitializeFromStoichiometryMatrix(DoubleMatrix& oMatrix,
 													  vector<string>& speciesNames,
@@ -849,7 +856,7 @@ void LibStructural::analyzeWithLU()
 
 		if (nInfo < 0 )
 		{
-			throw new ApplicationException ("Exception in analyzeWithLU()", "Illegal Value encountered while performing LU Factorization");
+			throw ApplicationException ("Exception in analyzeWithLU()", "Illegal Value encountered while performing LU Factorization");
 		}
 		else if (nInfo > 0)
 		{
@@ -891,7 +898,6 @@ void LibStructural::analyzeWithLU()
 
 		Util::gaussJordan(*U, _Tolerance);
 
-
 		// The rank is obtained by looking at the number of zero rows of R, which is
 		// a lower trapezoidal matrix.
 		_NumIndependent = Util::findRank(*U, _Tolerance);
@@ -922,7 +928,6 @@ void LibStructural::analyzeWithLU()
 			(*_G)(i,_NumIndependent+i) = 1.0;
 		}
 
-
 		reorderNmatrix();
 		computeNrMatrix();
 		computeN0Matrix();
@@ -936,6 +941,7 @@ void LibStructural::analyzeWithLU()
 
 	DELETE_IF_NON_NULL(oLUResult);
 }
+
 
 // Uses LU Decomposition for Conservation analysis
 void LibStructural::analyzeWithLUandRunTests()
@@ -991,7 +997,7 @@ void LibStructural::analyzeWithFullyPivotedLU()
 
 			if (nInfo < 0 )
 			{
-				throw new ApplicationException("Exception in analyzeWithLU()", "Illegal Value encountered while performing LU Factorization");
+				throw ApplicationException("Exception in analyzeWithLU()", "Illegal Value encountered while performing LU Factorization");
 			}
 			else if (nInfo > 0)
 			{

@@ -80,6 +80,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 #include "matrix.h"
 #include "complex.h"
 
+LIB_EXTERN char* getVersion ();
 
 /*!	\namespace LIB_STRUCTURAL
 	\brief	   The LIB_STRUCTURAL namespace contains all functions and classes directly related to Structural Analysis.
