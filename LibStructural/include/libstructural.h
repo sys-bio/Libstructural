@@ -666,7 +666,7 @@ namespace LIB_STRUCTURAL
 		LIB_EXTERN std::vector< std::string > getReorderedSpeciesIds();
 
 		//!  Returns the unordered list of species Ids
-		LIB_EXTERN std::vector< std::string > getSpeciesIds();
+		LIB_EXTERN std::vector< std::string > getFloatingSpeciesIds ();
 
 		//! Returns the reordered list of molecular species.  (choosing the SBML Name if possible )
 		// LIB_EXTERN std::vector< std::string > getReorderedSpeciesNamesList();
@@ -1664,7 +1664,7 @@ no stoichiometry matrix was loaded beforehand or none of the analysis methods ha
 been called yet.
 
 */
-LIB_EXTERN  int LibStructural_getSpeciesIds(char** *outArray, int *outLength);
+LIB_EXTERN  int LibStructural_getFloatingSpeciesIds(char** *outArray, int *outLength);
 
 /*! \brief Returns the reordered list of reactions Ids.
 \param outArray pointer to string array that will be allocated and filled with the reordered reaction Ids

@@ -1510,7 +1510,7 @@ vector< string > LibStructural::getReactionsIds()
 // }
 
 // Returns the list of Species
-vector< string > LibStructural::getSpeciesIds()
+vector< string > LibStructural::getFloatingSpeciesIds()
 {
 	vector< string > oResult;
 	for (int i = 0; i < numFloating; i++)
@@ -1722,7 +1722,7 @@ LibStructural::DoubleMatrix* LibStructural::getStoichiometryMatrix()
 
 void LibStructural::getStoichiometryMatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
-	oRows = getSpeciesIds();
+	oRows = getFloatingSpeciesIds();
 	oCols = getReactionsIds();
 }
 
@@ -3150,9 +3150,9 @@ LIB_EXTERN  int LibStructural_getReorderedReactionIds(char** *outArray, int *out
 }
 
 
-LIB_EXTERN  int LibStructural_getSpeciesIds(char** *outArray, int *outLength)
+LIB_EXTERN  int LibStructural_getFloatingSpeciesIds(char** *outArray, int *outLength)
 {
-	vector<string> oValues = LibStructural::getInstance()->getSpeciesIds();
+	vector<string> oValues = LibStructural::getInstance()->getFloatingSpeciesIds ();
 	Util::CopyStringVector(oValues, *outArray, *outLength);
 	return SUCCESS;
 }
@@ -3373,7 +3373,7 @@ LIB_EXTERN  int LibStructural_getGammaMatrixIds(char** *outRowLabels, int *outRo
 
 LIB_EXTERN  int LibStructural_getStoichiometryMatrixIds(char** *outRowLabels, int *outRowCount, char** *outColLabels, int *outColCount)
 {
-	LibStructural_getSpeciesIds(outRowLabels, outRowCount);
+	LibStructural_getFloatingSpeciesIds(outRowLabels, outRowCount);
 	LibStructural_getReactionsIds(outColLabels, outColCount);
 	return SUCCESS;
 }
