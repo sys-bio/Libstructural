@@ -7,7 +7,7 @@ ls = structural.LibStructural()
 
 try:
     print ls.getColumnReorderedNrMatrix()
-    
+
     print ls.getConditionNumber(ls.getStoichiometryMatrix())
     print ls.getEigenValues(ls.getNICMatrix()) # Requires square matrix
     print ls.getEigenVectors(ls.getNICMatrix()) # Requires square matrix
@@ -31,12 +31,12 @@ try:
 except Exception as e:
   print e
 
-  
+
 try:
   print ls.getColumnReorderedNrMatrixIds()
 except Exception as e:
   print e
-  
+
 print ls.getConservedLaws()
 
 print ls.getConservedSums()
@@ -47,27 +47,27 @@ try:
   print ls.getFullyReorderedN0StoichiometryMatrix()
 except Exception as e:
   print e
-  
+
 try:
   print ls.getFullyReorderedNrMatrix()
 except Exception as e:
   print e
-  
+
 try:
   print ls.getFullyReorderedStoichiometryMatrix()
 except Exception as e:
   print e
-  
-try: 
+
+try:
   print ls.getFullyReorderedStoichiometryMatrixIds()
 except Exception as e:
   print e
-  
+
 try:
   print ls.getGammaMatrix()
 except Exception as e:
   print e
-  
+
 try:
   print ls.getGammaMatrixIds()
 except Exception as e:
@@ -81,24 +81,24 @@ try:
   print ls.getK0Matrix()
 except Exception as e:
   print e
-  
+
 try:
   print ls.getK0MatrixIds()
 except Exception as e:
   print e
-  
+
 try:
   print ls.getKMatrixIds()
 except Exception as e:
   print e
-  
+
 try:
   print ls.getL0Matrix()
 except Exception as e:
   print e
 
 try:
-  print ls.getLinkMatrix() 
+  print ls.getLinkMatrix()
 except Exception as e:
   print e
 
@@ -106,33 +106,33 @@ try:
   print ls.getLinkMatrixIds()
 except Exception as e:
   print e
-  
-  
+
+
 print ls.getModelName()
 
 try:
   print ls.getN0MatrixIds()
 except Exception as e:
   print e
-  
-try:  
+
+try:
   print ls.getNDCMatrixIds()
 except Exception as e:
   print e
-  
 
-try:  
+
+try:
   print ls.getNICMatrixIds()
 except Exception as e:
   print e
-  
+
 print ls.getNmatrixSparsity()
 
 try:
   print ls.getNrMatrixIds()
 except Exception as e:
   print e
-  
+
 print ls.getNumDepReactions()
 print ls.getNumDepSpecies()
 print ls.getNumIndReactions()
@@ -143,14 +143,14 @@ print ls.getReactionsIds() # Rename to Ids
 print ls.getReorderedReactionsIds()
 print ls.getReorderedSpeciesIds()
 print ls.getReorderedStoichiometryMatrixIds()
-print ls.getSpeciesIds()
+print ls.getFloatingSpeciesIds()
 print ls.getStoichiometryMatrixIds()
 
 try:
   print ls.getTestDetails()
 except Exception as e:
   print e
-  
+
 print ls.getTolerance()
 
 try:
@@ -159,23 +159,23 @@ except Exception as e:
   print e
 
 # Builtin test
-  
+
 ls.test()
 
 # Test Conservation Analysis
 print
 print "Conservation analysis example:"
 r = te.loada('''
-    
+
     // Reactions:
     J1: ES -> E  + S1; v;
     J2: S1 -> S2 ; v;
-    J3: S2 + E -> ES; v; 
+    J3: S2 + E -> ES; v;
     v = 0;
-    
+
     // Species initializations:
     S1 = 100; E = 20;
-    
+
 ''')
 
 sbmlstr = r.getSBML()
@@ -189,7 +189,7 @@ matrix = [[  1, -1, -1], [  0, -1,  1], [  0,  1, -1]] # matrix can be a numpy 2
 ls.loadStoichiometryMatrix(matrix)
 print ls.getStoichiometryMatrix()
 print
-print "Species Ids: ", ls.getSpeciesIds()
+print "Species Ids: ", ls.getFloatingSpeciesIds()
 
 print "Reaction Ids: ", ls.getReactionsIds()
 print
