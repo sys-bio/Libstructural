@@ -16,6 +16,16 @@ To test the structural module, you can use the **test()** method. This will prin
 
 .. end
 
+In addition, a test script is distributed with LibStructural package that can be run to test the methods' integrity. The script checks that LibStructural methods don't crash when there is no model loaded. It also tests **loadStoichiometryMatrix** method. You can run the script as shown below:
+
+.. code:: python
+
+  import structural
+  execfile(structural.__path__[0] + '/test/tests/testLibStructural.py')
+
+.. end
+
+
 The following sections describe different ways of loading a model into Libstructural. Once a model is loaded it will automatically call ``analyzeWithQR``. At this point a summary of the analysis can be obtained by calling **getSummary()**:
 
 .. code:: python
@@ -89,7 +99,7 @@ When loading a model from a stoichiometry matrix, reactions and species can be o
   matrix = [[  1, -1, -1], [  0, -1,  1], [  0,  1, -1]] # matrix can also be a numpy 2d array
 
   print ls.getStoichiometryMatrix()
-  print ls.getSpeciesIds()
+  print ls.getFloatingSpeciesIds()
   print ls.getReactionsIds()
 
   # load Ids
@@ -99,7 +109,7 @@ When loading a model from a stoichiometry matrix, reactions and species can be o
   # Reanalyze with the new labels
   ls.analyzeWithQR()
 
-  print ls.getSpeciesIds()
+  print ls.getFloatingSpeciesIds()
   print ls.getReactionsIds()
 
 .. end
@@ -259,9 +269,12 @@ We can also get species and reaction information from the model.
   # identify independent reactions (run respective methods for species)
   ls.getIndependentReactionIds()
 
+  # check if a reaction is reversible or not by passing the reaction index.
+  ls.isReactionReversible(0)
+
 .. end
 
-There are a few methods that compute any conserved moeties in the model:
+There are few methods that compute conserved moeties in the model:
 
 .. code:: python
 
@@ -276,7 +289,21 @@ There are a few methods that compute any conserved moeties in the model:
 
 .. end
 
-Branched System
-~~~~~~~~~~~~~~~
 
-...
+To get the elementary modes the **getElementaryModes** method which returns an array where each columns is an elementary mode in the model. Elementary modes are the simplest pathways within a metabolic network that can sustain a steady state and at the same time are thermodynamically feasible
+
+.. code:: python
+
+  import structural
+  ls.getElementaryModes()
+
+.. end
+
+In addition, a test script for elementary modes is distributed with LibStructural package. The script contains 24 different test models and it calculates elementary modes in each model. You can run the script as shown below:
+
+.. code:: python
+
+  import structural
+  execfile(structural.__path__[0] + '/test/tests/elementaryModes.py')
+
+.. end

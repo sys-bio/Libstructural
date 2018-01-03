@@ -410,6 +410,7 @@ static PyObject* pNoModelException;  /* add this! */
 
 	def getElementaryModes (self):
 	    """
+      LibStructural.getElementaryModes(self)
 	    Returns the list of elementary modes are rows in a matrix
 	    """
 	    import numpy as np
@@ -643,6 +644,12 @@ static PyObject* pNoModelException;  /* add this! */
   		        raise ValueError("Expecting list or numpy array")
 
 	def test (self):
+    """
+    LibStructural.test(self)
+
+    :returns: An analysis summary for a test model.
+
+    """
 		import pkg_resources
 		model_path = pkg_resources.resource_filename('structural','test/BMID000000101155.xml')
 		print(self.loadSBMLFromFile(model_path))

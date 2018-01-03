@@ -256,6 +256,9 @@
         <span class="k">pass</span>
     <span class="n">_newclass</span> <span class="o">=</span> <span class="mi">0</span>
 
+
+<span class="n">NoModelException</span> <span class="o">=</span> <span class="n">_structural</span><span class="o">.</span><span class="n">NoModelException</span>
+
 <span class="k">class</span> <span class="nc">SwigPyIterator</span><span class="p">(</span><span class="n">_object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Proxy of C++ swig::SwigPyIterator class.&quot;&quot;&quot;</span>
 
@@ -362,6 +365,7 @@
         <span class="k">return</span> <span class="bp">self</span>
 <span class="n">SwigPyIterator_swigregister</span> <span class="o">=</span> <span class="n">_structural</span><span class="o">.</span><span class="n">SwigPyIterator_swigregister</span>
 <span class="n">SwigPyIterator_swigregister</span><span class="p">(</span><span class="n">SwigPyIterator</span><span class="p">)</span>
+<span class="n">cvar</span> <span class="o">=</span> <span class="n">_structural</span><span class="o">.</span><span class="n">cvar</span>
 
 <span class="k">class</span> <span class="nc">StringDouble</span><span class="p">(</span><span class="n">_object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Proxy of C++ std::pair&lt;(std::string,double)&gt; class.&quot;&quot;&quot;</span>
@@ -1675,6 +1679,11 @@
         <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">LibStructural_getNmatrixSparsity</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
 
 
+<div class="viewcode-block" id="LibStructural.isReactionReversible"><a class="viewcode-back" href="../../API.html#structural.LibStructural.isReactionReversible">[docs]</a>    <span class="k">def</span> <span class="nf">isReactionReversible</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;isReactionReversible(LibStructural self, int index) -&gt; bool&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">LibStructural_isReactionReversible</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">)</span></div>
+
+
     <span class="k">def</span> <span class="nf">_my_getElementaryModes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;_my_getElementaryModes(LibStructural self) -&gt; DoubleMatrix&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">LibStructural__my_getElementaryModes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
@@ -2462,16 +2471,11 @@
 
     <span class="k">def</span> <span class="nf">test</span> <span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     	<span class="kn">import</span> <span class="nn">pkg_resources</span>
-
-    	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;****** Testing model 1... ******</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-
-    	<span class="n">model_path</span> <span class="o">=</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">resource_filename</span><span class="p">(</span><span class="s1">&#39;structural&#39;</span><span class="p">,</span><span class="s1">&#39;test_models/BMID000000101155.xml&#39;</span><span class="p">)</span>
-
+    	<span class="n">model_path</span> <span class="o">=</span> <span class="n">pkg_resources</span><span class="o">.</span><span class="n">resource_filename</span><span class="p">(</span><span class="s1">&#39;structural&#39;</span><span class="p">,</span><span class="s1">&#39;test/BMID000000101155.xml&#39;</span><span class="p">)</span>
     	<span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">loadSBMLFromFile</span><span class="p">(</span><span class="n">model_path</span><span class="p">))</span>
     	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Validating structural matrices...</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
     	<span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">getTestDetails</span><span class="p">())</span>
     	<span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">validateStructuralMatrices</span><span class="p">())</span>
-
 
     <span class="n">__swig_destroy__</span> <span class="o">=</span> <span class="n">_structural</span><span class="o">.</span><span class="n">delete_LibStructural</span>
     <span class="fm">__del__</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">:</span> <span class="kc">None</span></div>
@@ -2492,6 +2496,302 @@
 
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">LibStructural_getInstance</span><span class="p">()</span>
+
+<span class="k">class</span> <span class="nc">NoModelException</span><span class="p">(</span><span class="n">_object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Proxy of C++ LIB_LA::NoModelException class.&quot;&quot;&quot;</span>
+
+    <span class="n">__swig_setmethods__</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="fm">__setattr__</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">_swig_setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">NoModelException</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+    <span class="n">__swig_getmethods__</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="fm">__getattr__</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">_swig_getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">NoModelException</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+    <span class="fm">__repr__</span> <span class="o">=</span> <span class="n">_swig_repr</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;__init__(LIB_LA::NoModelException self, std::string const &amp; message) -&gt; NoModelException&quot;&quot;&quot;</span>
+        <span class="n">this</span> <span class="o">=</span> <span class="n">_structural</span><span class="o">.</span><span class="n">new_NoModelException</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">this</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">this</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">__builtin__</span><span class="o">.</span><span class="n">Exception</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">this</span> <span class="o">=</span> <span class="n">this</span>
+
+    <span class="k">def</span> <span class="nf">getMessage</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;getMessage(NoModelException self) -&gt; std::string&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">NoModelException_getMessage</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="n">__swig_destroy__</span> <span class="o">=</span> <span class="n">_structural</span><span class="o">.</span><span class="n">delete_NoModelException</span>
+    <span class="fm">__del__</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">:</span> <span class="kc">None</span>
+<span class="n">NoModelException_swigregister</span> <span class="o">=</span> <span class="n">_structural</span><span class="o">.</span><span class="n">NoModelException_swigregister</span>
+<span class="n">NoModelException_swigregister</span><span class="p">(</span><span class="n">NoModelException</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">ApplicationException</span><span class="p">(</span><span class="n">_object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Proxy of C++ LIB_LA::ApplicationException class.&quot;&quot;&quot;</span>
+
+    <span class="n">__swig_setmethods__</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="fm">__setattr__</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">_swig_setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ApplicationException</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+    <span class="n">__swig_getmethods__</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="fm">__getattr__</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">_swig_getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ApplicationException</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+    <span class="fm">__repr__</span> <span class="o">=</span> <span class="n">_swig_repr</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        __init__(LIB_LA::ApplicationException self) -&gt; ApplicationException</span>
+<span class="sd">        __init__(LIB_LA::ApplicationException self, std::string const &amp; message) -&gt; ApplicationException</span>
+<span class="sd">        __init__(LIB_LA::ApplicationException self, std::string const &amp; message, std::string const &amp; detailedMessage) -&gt; ApplicationException</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">this</span> <span class="o">=</span> <span class="n">_structural</span><span class="o">.</span><span class="n">new_ApplicationException</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">this</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">this</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">__builtin__</span><span class="o">.</span><span class="n">Exception</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">this</span> <span class="o">=</span> <span class="n">this</span>
+
+    <span class="k">def</span> <span class="nf">getMessage</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;getMessage(ApplicationException self) -&gt; std::string&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">ApplicationException_getMessage</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="nf">getDetailedMessage</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;getDetailedMessage(ApplicationException self) -&gt; std::string&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">ApplicationException_getDetailedMessage</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+    <span class="n">__swig_destroy__</span> <span class="o">=</span> <span class="n">_structural</span><span class="o">.</span><span class="n">delete_ApplicationException</span>
+    <span class="fm">__del__</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">:</span> <span class="kc">None</span>
+<span class="n">ApplicationException_swigregister</span> <span class="o">=</span> <span class="n">_structural</span><span class="o">.</span><span class="n">ApplicationException_swigregister</span>
+<span class="n">ApplicationException_swigregister</span><span class="p">(</span><span class="n">ApplicationException</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Util</span><span class="p">(</span><span class="n">_object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Proxy of C++ LIB_LA::Util class.&quot;&quot;&quot;</span>
+
+    <span class="n">__swig_setmethods__</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="fm">__setattr__</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">_swig_setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Util</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+    <span class="n">__swig_getmethods__</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="fm">__getattr__</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="n">_swig_getattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">Util</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+    <span class="fm">__repr__</span> <span class="o">=</span> <span class="n">_swig_repr</span>
+
+    <span class="k">def</span> <span class="nf">checkTolerance</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        checkTolerance(int nrows, double * A, double dTolerance)</span>
+<span class="sd">        checkTolerance(int nrows, int ncols, double ** A, double dTolerance)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_checkTolerance</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="n">checkTolerance</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">checkTolerance</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">getSubMatrix</span><span class="p">(</span><span class="n">Mb</span><span class="p">,</span> <span class="n">Nb</span><span class="p">,</span> <span class="n">ms</span><span class="p">,</span> <span class="n">ns</span><span class="p">,</span> <span class="n">mi</span><span class="p">,</span> <span class="n">nj</span><span class="p">,</span> <span class="n">A</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;getSubMatrix(int Mb, int Nb, int ms, int ns, int mi, int nj, DoubleMatrix A) -&gt; DoubleMatrix&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_getSubMatrix</span><span class="p">(</span><span class="n">Mb</span><span class="p">,</span> <span class="n">Nb</span><span class="p">,</span> <span class="n">ms</span><span class="p">,</span> <span class="n">ns</span><span class="p">,</span> <span class="n">mi</span><span class="p">,</span> <span class="n">nj</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+
+    <span class="n">getSubMatrix</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">getSubMatrix</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">matMult</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        matMult(int mA, int nA, int ** A, int ** B, int nB) -&gt; int</span>
+<span class="sd">        matMult(int mA, int nA, double ** A, double ** B, int nB) -&gt; double</span>
+<span class="sd">        matMult(unsigned int mA, unsigned int nA, DoubleMatrix A, DoubleMatrix B, unsigned int nB) -&gt; DoubleMatrix</span>
+<span class="sd">        matMult(DoubleMatrix A, DoubleMatrix B) -&gt; DoubleMatrix</span>
+<span class="sd">        matMult(IntMatrix A, DoubleMatrix B) -&gt; DoubleMatrix</span>
+<span class="sd">        matMult(IntMatrix A, IntMatrix B) -&gt; IntMatrix</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_matMult</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="n">matMult</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">matMult</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">isPositive</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">dTolerance</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;isPositive(DoubleMatrix A, double dTolerance) -&gt; bool&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_isPositive</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">dTolerance</span><span class="p">)</span>
+
+    <span class="n">isPositive</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">isPositive</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">CopyMatrix</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        CopyMatrix(DoubleMatrix oMatrix, double **&amp; outMatrix, int &amp; numRows, int &amp; numCols)</span>
+<span class="sd">        CopyMatrix(IntMatrix oMatrix, int **&amp; outMatrix, int &amp; outNumRows, int &amp; outNumCols)</span>
+<span class="sd">        CopyMatrix(ComplexMatrix oMatrix, double **&amp; outMatrixReal, double **&amp; outMatrixImag, int &amp; outNumRows, int &amp; outNumCols)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_CopyMatrix</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="n">CopyMatrix</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">CopyMatrix</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">CopyStringVector</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">outVector</span><span class="p">,</span> <span class="n">outLength</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;CopyStringVector(StringVector vector, char **&amp; outVector, int &amp; outLength)&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_CopyStringVector</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">outVector</span><span class="p">,</span> <span class="n">outLength</span><span class="p">)</span>
+
+    <span class="n">CopyStringVector</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">CopyStringVector</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">CopyDoubleVector</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">outVector</span><span class="p">,</span> <span class="n">outLength</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;CopyDoubleVector(DoubleVector vector, double *&amp; outVector, int &amp; outLength)&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_CopyDoubleVector</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">outVector</span><span class="p">,</span> <span class="n">outLength</span><span class="p">)</span>
+
+    <span class="n">CopyDoubleVector</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">CopyDoubleVector</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">CopyIntVector</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">outVector</span><span class="p">,</span> <span class="n">outLength</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;CopyIntVector(std::vector&lt; int,std::allocator&lt; int &gt; &gt; const &amp; vector, int *&amp; outVector, int &amp; outLength)&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_CopyIntVector</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">outVector</span><span class="p">,</span> <span class="n">outLength</span><span class="p">)</span>
+
+    <span class="n">CopyIntVector</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">CopyIntVector</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">CopyComplexVector</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">outVectorReal</span><span class="p">,</span> <span class="n">outVectorImag</span><span class="p">,</span> <span class="n">outLength</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;CopyComplexVector(std::vector&lt; LIB_LA::Complex,std::allocator&lt; LIB_LA::Complex &gt; &gt; const &amp; vector, double *&amp; outVectorReal, double *&amp; outVectorImag, int &amp; outLength)&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_CopyComplexVector</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">outVectorReal</span><span class="p">,</span> <span class="n">outVectorImag</span><span class="p">,</span> <span class="n">outLength</span><span class="p">)</span>
+
+    <span class="n">CopyComplexVector</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">CopyComplexVector</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">RoundMatrixToTolerance</span><span class="p">(</span><span class="n">oMatrix</span><span class="p">,</span> <span class="n">dTolerance</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;RoundMatrixToTolerance(DoubleMatrix oMatrix, double dTolerance)&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_RoundMatrixToTolerance</span><span class="p">(</span><span class="n">oMatrix</span><span class="p">,</span> <span class="n">dTolerance</span><span class="p">)</span>
+
+    <span class="n">RoundMatrixToTolerance</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">RoundMatrixToTolerance</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">RoundToTolerance</span><span class="p">(</span><span class="n">dValue</span><span class="p">,</span> <span class="n">dTolerance</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;RoundToTolerance(double dValue, double dTolerance) -&gt; double&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_RoundToTolerance</span><span class="p">(</span><span class="n">dValue</span><span class="p">,</span> <span class="n">dTolerance</span><span class="p">)</span>
+
+    <span class="n">RoundToTolerance</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">RoundToTolerance</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">GaussJordan</span><span class="p">(</span><span class="n">oMatrix</span><span class="p">,</span> <span class="n">dTolerance</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;GaussJordan(DoubleMatrix oMatrix, double dTolerance) -&gt; std::vector&lt; int,std::allocator&lt; int &gt; &gt;&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_GaussJordan</span><span class="p">(</span><span class="n">oMatrix</span><span class="p">,</span> <span class="n">dTolerance</span><span class="p">)</span>
+
+    <span class="n">GaussJordan</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">GaussJordan</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">FullyPivotedGaussJordan</span><span class="p">(</span><span class="n">oMatrix</span><span class="p">,</span> <span class="n">dTolerance</span><span class="p">,</span> <span class="n">rowPivots</span><span class="p">,</span> <span class="n">colPivots</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;FullyPivotedGaussJordan(DoubleMatrix oMatrix, double dTolerance, std::vector&lt; int,std::allocator&lt; int &gt; &gt; &amp; rowPivots, std::vector&lt; int,std::allocator&lt; int &gt; &gt; &amp; colPivots)&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_FullyPivotedGaussJordan</span><span class="p">(</span><span class="n">oMatrix</span><span class="p">,</span> <span class="n">dTolerance</span><span class="p">,</span> <span class="n">rowPivots</span><span class="p">,</span> <span class="n">colPivots</span><span class="p">)</span>
+
+    <span class="n">FullyPivotedGaussJordan</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">FullyPivotedGaussJordan</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">gaussJordan</span><span class="p">(</span><span class="n">oMatrix</span><span class="p">,</span> <span class="n">dTolerance</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;gaussJordan(DoubleMatrix oMatrix, double dTolerance)&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_gaussJordan</span><span class="p">(</span><span class="n">oMatrix</span><span class="p">,</span> <span class="n">dTolerance</span><span class="p">)</span>
+
+    <span class="n">gaussJordan</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">gaussJordan</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">findRank</span><span class="p">(</span><span class="n">oMatrix</span><span class="p">,</span> <span class="n">dTolerance</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;findRank(DoubleMatrix oMatrix, double dTolerance) -&gt; int&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_findRank</span><span class="p">(</span><span class="n">oMatrix</span><span class="p">,</span> <span class="n">dTolerance</span><span class="p">)</span>
+
+    <span class="n">findRank</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">findRank</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_print</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        _print(int mr, int nc, int * A)</span>
+<span class="sd">        _print(int mr, int nc, int ** A)</span>
+<span class="sd">        _print(int mr, int nc, double * A)</span>
+<span class="sd">        _print(int mr, int nc, double ** A)</span>
+<span class="sd">        _print(IntMatrix A)</span>
+<span class="sd">        _print(DoubleMatrix A)</span>
+<span class="sd">        _print(ComplexMatrix A)</span>
+<span class="sd">        _print(int mr, int nc, LIB_LA::Complex * A)</span>
+<span class="sd">        _print(int mr, int nc, LIB_LA::Complex ** A)</span>
+<span class="sd">        _print(int mr, int nc, int * A, int * B)</span>
+<span class="sd">        _print(int mr, int nc, int ** A, int ** B)</span>
+<span class="sd">        _print(int mr, int nc, double ** A, double ** B)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util__print</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+    <span class="n">_print</span> <span class="o">=</span> <span class="nb">staticmethod</span><span class="p">(</span><span class="n">_print</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;__init__(LIB_LA::Util self) -&gt; Util&quot;&quot;&quot;</span>
+        <span class="n">this</span> <span class="o">=</span> <span class="n">_structural</span><span class="o">.</span><span class="n">new_Util</span><span class="p">()</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">this</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">this</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">__builtin__</span><span class="o">.</span><span class="n">Exception</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">this</span> <span class="o">=</span> <span class="n">this</span>
+    <span class="n">__swig_destroy__</span> <span class="o">=</span> <span class="n">_structural</span><span class="o">.</span><span class="n">delete_Util</span>
+    <span class="fm">__del__</span> <span class="o">=</span> <span class="k">lambda</span> <span class="bp">self</span><span class="p">:</span> <span class="kc">None</span>
+<span class="n">Util_swigregister</span> <span class="o">=</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_swigregister</span>
+<span class="n">Util_swigregister</span><span class="p">(</span><span class="n">Util</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Util_checkTolerance</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    checkTolerance(int nrows, double * A, double dTolerance)</span>
+<span class="sd">    Util_checkTolerance(int nrows, int ncols, double ** A, double dTolerance)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_checkTolerance</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Util_getSubMatrix</span><span class="p">(</span><span class="n">Mb</span><span class="p">,</span> <span class="n">Nb</span><span class="p">,</span> <span class="n">ms</span><span class="p">,</span> <span class="n">ns</span><span class="p">,</span> <span class="n">mi</span><span class="p">,</span> <span class="n">nj</span><span class="p">,</span> <span class="n">A</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Util_getSubMatrix(int Mb, int Nb, int ms, int ns, int mi, int nj, DoubleMatrix A) -&gt; DoubleMatrix&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_getSubMatrix</span><span class="p">(</span><span class="n">Mb</span><span class="p">,</span> <span class="n">Nb</span><span class="p">,</span> <span class="n">ms</span><span class="p">,</span> <span class="n">ns</span><span class="p">,</span> <span class="n">mi</span><span class="p">,</span> <span class="n">nj</span><span class="p">,</span> <span class="n">A</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Util_matMult</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    matMult(int mA, int nA, int ** A, int ** B, int nB) -&gt; int</span>
+<span class="sd">    matMult(int mA, int nA, double ** A, double ** B, int nB) -&gt; double</span>
+<span class="sd">    matMult(unsigned int mA, unsigned int nA, DoubleMatrix A, DoubleMatrix B, unsigned int nB) -&gt; DoubleMatrix</span>
+<span class="sd">    matMult(DoubleMatrix A, DoubleMatrix B) -&gt; DoubleMatrix</span>
+<span class="sd">    matMult(IntMatrix A, DoubleMatrix B) -&gt; DoubleMatrix</span>
+<span class="sd">    Util_matMult(IntMatrix A, IntMatrix B) -&gt; IntMatrix</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_matMult</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Util_isPositive</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">dTolerance</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Util_isPositive(DoubleMatrix A, double dTolerance) -&gt; bool&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_isPositive</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">dTolerance</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Util_CopyMatrix</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    CopyMatrix(DoubleMatrix oMatrix, double **&amp; outMatrix, int &amp; numRows, int &amp; numCols)</span>
+<span class="sd">    CopyMatrix(IntMatrix oMatrix, int **&amp; outMatrix, int &amp; outNumRows, int &amp; outNumCols)</span>
+<span class="sd">    Util_CopyMatrix(ComplexMatrix oMatrix, double **&amp; outMatrixReal, double **&amp; outMatrixImag, int &amp; outNumRows, int &amp; outNumCols)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_CopyMatrix</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Util_CopyStringVector</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">outVector</span><span class="p">,</span> <span class="n">outLength</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Util_CopyStringVector(StringVector vector, char **&amp; outVector, int &amp; outLength)&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_CopyStringVector</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">outVector</span><span class="p">,</span> <span class="n">outLength</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Util_CopyDoubleVector</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">outVector</span><span class="p">,</span> <span class="n">outLength</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Util_CopyDoubleVector(DoubleVector vector, double *&amp; outVector, int &amp; outLength)&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_CopyDoubleVector</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">outVector</span><span class="p">,</span> <span class="n">outLength</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Util_CopyIntVector</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">outVector</span><span class="p">,</span> <span class="n">outLength</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Util_CopyIntVector(std::vector&lt; int,std::allocator&lt; int &gt; &gt; const &amp; vector, int *&amp; outVector, int &amp; outLength)&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_CopyIntVector</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">outVector</span><span class="p">,</span> <span class="n">outLength</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Util_CopyComplexVector</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">outVectorReal</span><span class="p">,</span> <span class="n">outVectorImag</span><span class="p">,</span> <span class="n">outLength</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Util_CopyComplexVector(std::vector&lt; LIB_LA::Complex,std::allocator&lt; LIB_LA::Complex &gt; &gt; const &amp; vector, double *&amp; outVectorReal, double *&amp; outVectorImag, int &amp; outLength)&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_CopyComplexVector</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">outVectorReal</span><span class="p">,</span> <span class="n">outVectorImag</span><span class="p">,</span> <span class="n">outLength</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Util_RoundMatrixToTolerance</span><span class="p">(</span><span class="n">oMatrix</span><span class="p">,</span> <span class="n">dTolerance</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Util_RoundMatrixToTolerance(DoubleMatrix oMatrix, double dTolerance)&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_RoundMatrixToTolerance</span><span class="p">(</span><span class="n">oMatrix</span><span class="p">,</span> <span class="n">dTolerance</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Util_RoundToTolerance</span><span class="p">(</span><span class="n">dValue</span><span class="p">,</span> <span class="n">dTolerance</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Util_RoundToTolerance(double dValue, double dTolerance) -&gt; double&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_RoundToTolerance</span><span class="p">(</span><span class="n">dValue</span><span class="p">,</span> <span class="n">dTolerance</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Util_GaussJordan</span><span class="p">(</span><span class="n">oMatrix</span><span class="p">,</span> <span class="n">dTolerance</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Util_GaussJordan(DoubleMatrix oMatrix, double dTolerance) -&gt; std::vector&lt; int,std::allocator&lt; int &gt; &gt;&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_GaussJordan</span><span class="p">(</span><span class="n">oMatrix</span><span class="p">,</span> <span class="n">dTolerance</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Util_FullyPivotedGaussJordan</span><span class="p">(</span><span class="n">oMatrix</span><span class="p">,</span> <span class="n">dTolerance</span><span class="p">,</span> <span class="n">rowPivots</span><span class="p">,</span> <span class="n">colPivots</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Util_FullyPivotedGaussJordan(DoubleMatrix oMatrix, double dTolerance, std::vector&lt; int,std::allocator&lt; int &gt; &gt; &amp; rowPivots, std::vector&lt; int,std::allocator&lt; int &gt; &gt; &amp; colPivots)&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_FullyPivotedGaussJordan</span><span class="p">(</span><span class="n">oMatrix</span><span class="p">,</span> <span class="n">dTolerance</span><span class="p">,</span> <span class="n">rowPivots</span><span class="p">,</span> <span class="n">colPivots</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Util_gaussJordan</span><span class="p">(</span><span class="n">oMatrix</span><span class="p">,</span> <span class="n">dTolerance</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Util_gaussJordan(DoubleMatrix oMatrix, double dTolerance)&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_gaussJordan</span><span class="p">(</span><span class="n">oMatrix</span><span class="p">,</span> <span class="n">dTolerance</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Util_findRank</span><span class="p">(</span><span class="n">oMatrix</span><span class="p">,</span> <span class="n">dTolerance</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Util_findRank(DoubleMatrix oMatrix, double dTolerance) -&gt; int&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util_findRank</span><span class="p">(</span><span class="n">oMatrix</span><span class="p">,</span> <span class="n">dTolerance</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">Util__print</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    _print(int mr, int nc, int * A)</span>
+<span class="sd">    _print(int mr, int nc, int ** A)</span>
+<span class="sd">    _print(int mr, int nc, double * A)</span>
+<span class="sd">    _print(int mr, int nc, double ** A)</span>
+<span class="sd">    _print(IntMatrix A)</span>
+<span class="sd">    _print(DoubleMatrix A)</span>
+<span class="sd">    _print(ComplexMatrix A)</span>
+<span class="sd">    _print(int mr, int nc, LIB_LA::Complex * A)</span>
+<span class="sd">    _print(int mr, int nc, LIB_LA::Complex ** A)</span>
+<span class="sd">    _print(int mr, int nc, int * A, int * B)</span>
+<span class="sd">    _print(int mr, int nc, int ** A, int ** B)</span>
+<span class="sd">    Util__print(int mr, int nc, double ** A, double ** B)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">_structural</span><span class="o">.</span><span class="n">Util__print</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">)</span>
 
 <span class="k">class</span> <span class="nc">complexArray</span><span class="p">(</span><span class="n">_object</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Proxy of C++ complexArray class.&quot;&quot;&quot;</span>

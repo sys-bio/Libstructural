@@ -11,6 +11,7 @@ The LibStructural API library can be built on your machine from the source code 
 * Python 2.7 for generating a python wrapper (optional)
 * `SWIG <http://www.swig.org/>`_ for generating python wrappers in Windows (optional).
 
+NOTE: We provide libSBML and CLAPACK dependency libraries with our repo for both Mac and Windows. If you wish to build your own libSBML or CLAPACK dependency libraries follow the instructions on "Building libSBML" and "Building CLAPACK" sections.
 
 -------
 Windows
@@ -105,7 +106,7 @@ Building CLAPACK
 4. Click on **Configure**. CMake will ask for what generator and compiler to use.
 5. Find and select "Xcode" from the dropdown menu.
 6. Select "Specify native compilers" and click on **Continue**.
-7. On the next window, under C++ box, click on the three dots and navigate to your Xcode application. It should be inside the "Applications" folder by default. Click on **Done**.
+7. On the next window, under C++ box, click on the three dots and navigate to your Xcode application. It should be located inside the Applications folder. If not, you need to move it to the Application folder. Click on **Done**.
 8. Click on **Configure** and then **Generate.
 
 .. figure:: cmake_xcode_2.png
