@@ -55,14 +55,10 @@ static PyObject* pNoModelException;  /* add this! */
 %exception {
 	 try {
      $action
-   } catch (const LIB_LA::ApplicationException& e) {
-     SWIG_exception(SWIG_RuntimeError, "app error");
    } catch (LIB_LA::ApplicationException& e) {
-		 std::string msg = e->getDetailedMessage();
-		 delete e;
+		 std::string msg = e.getDetailedMessage();
    } catch (LIB_LA::NoModelException& e) {
-		 std::string msg = e->getMessage();
-		 delete e;
+		 std::string msg = e.getMessage();
 
      PyErr_SetString (PyExc_Exception, msg.c_str());
 	 return NULL;
