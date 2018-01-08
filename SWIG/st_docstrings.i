@@ -10,7 +10,7 @@ LibStructural.getSummary(self, *args)
 LibStructural.isReactionReversible(self, *args)
 
 :param: Reaction index
-:returns: "True" if the reaction with given index is reversible.
+:returns: True if the reaction with given index is reversible.
 
 Checks whether a given reaction is reversible or not.
 
