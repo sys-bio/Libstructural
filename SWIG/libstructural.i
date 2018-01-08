@@ -650,12 +650,12 @@ static PyObject* pNoModelException;  /* add this! */
     :returns: An analysis summary for a test model.
 
     """
-		import pkg_resources
-		model_path = pkg_resources.resource_filename('structural','test/BMID000000101155.xml')
-		print(self.loadSBMLFromFile(model_path))
-		print('\nValidating structural matrices...\n')
-		print(self.getTestDetails())
-		print(self.validateStructuralMatrices())
+    import pkg_resources
+    model_path = pkg_resources.resource_filename('structural','test/BMID000000101155.xml')
+    print(self.loadSBMLFromFile(model_path))
+    print('\nValidating structural matrices...\n')
+    print(self.getTestDetails())
+    print(self.validateStructuralMatrices())
 %}
 
 }
