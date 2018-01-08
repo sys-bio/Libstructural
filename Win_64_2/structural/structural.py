@@ -95,6 +95,9 @@ except __builtin__.Exception:
         pass
     _newclass = 0
 
+
+NoModelException = _structural.NoModelException
+
 class SwigPyIterator(_object):
     """Proxy of C++ swig::SwigPyIterator class."""
 
@@ -201,6 +204,7 @@ class SwigPyIterator(_object):
         return self
 SwigPyIterator_swigregister = _structural.SwigPyIterator_swigregister
 SwigPyIterator_swigregister(SwigPyIterator)
+cvar = _structural.cvar
 
 class StringDouble(_object):
     """Proxy of C++ std::pair<(std::string,double)> class."""
@@ -962,6 +966,11 @@ DoubleMatrixStringVector_swigregister(DoubleMatrixStringVector)
 def getVersion():
     """getVersion() -> char *"""
     return _structural.getVersion()
+SUCCESS = _structural.SUCCESS
+UNKNOWN_ERROR = _structural.UNKNOWN_ERROR
+NO_MODEL_LOADED = _structural.NO_MODEL_LOADED
+APPLICATION_EXCEPTION = _structural.APPLICATION_EXCEPTION
+EMPTY_MATRIX = _structural.EMPTY_MATRIX
 class LibStructural(_object):
     """Proxy of C++ LIB_STRUCTURAL::LibStructural class."""
 
@@ -970,6 +979,11 @@ class LibStructural(_object):
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, LibStructural, name)
     __repr__ = _swig_repr
+
+    def isModelLoaded(self):
+        """isModelLoaded(LibStructural self) -> bool"""
+        return _structural.LibStructural_isModelLoaded(self)
+
 
     def getResultString(self):
         """getResultString(LibStructural self) -> std::string"""
@@ -1182,7 +1196,16 @@ class LibStructural(_object):
 
 
     def getSummary(self):
-        """getSummary(LibStructural self) -> std::string"""
+        """
+        getSummary(LibStructural self) -> std::string
+
+
+        LibStructural.getSummary(self, *args)
+
+        :returns: Returns the summary string of the last analysis.
+
+
+        """
         return _structural.LibStructural_getSummary(self)
 
 
@@ -1267,27 +1290,72 @@ class LibStructural(_object):
 
 
     def getReorderedSpeciesIds(self):
-        """getReorderedSpeciesIds(LibStructural self) -> StringVector"""
+        """
+        getReorderedSpeciesIds(LibStructural self) -> StringVector
+
+
+        LibStructural.getReorderedSpeciesIds(self)
+
+        :returns: the reordered list of molecular species (choosing the SBML Id if possible).
+
+
+        """
         return _structural.LibStructural_getReorderedSpeciesIds(self)
 
 
-    def getSpeciesIds(self):
-        """getSpeciesIds(LibStructural self) -> StringVector"""
-        return _structural.LibStructural_getSpeciesIds(self)
+    def getFloatingSpeciesIds(self):
+        """
+        getFloatingSpeciesIds(LibStructural self) -> StringVector
+
+
+        LibStructural.getFloatingSpeciesIds(self)
+
+        :returns: the unordered list of species Ids.
+
+
+        """
+        return _structural.LibStructural_getFloatingSpeciesIds(self)
 
 
     def getIndependentSpeciesIds(self):
-        """getIndependentSpeciesIds(LibStructural self) -> StringVector"""
+        """
+        getIndependentSpeciesIds(LibStructural self) -> StringVector
+
+
+        LibStructural.getIndependentSpeciesIds(self)
+
+        :returns: the list of Ids for the independent species.
+
+
+        """
         return _structural.LibStructural_getIndependentSpeciesIds(self)
 
 
     def getDependentSpeciesIds(self):
-        """getDependentSpeciesIds(LibStructural self) -> StringVector"""
+        """
+        getDependentSpeciesIds(LibStructural self) -> StringVector
+
+
+        LibStructural.getDependentSpeciesIds(self)
+
+        :returns: the list of Ids for the dependent species.
+
+
+        """
         return _structural.LibStructural_getDependentSpeciesIds(self)
 
 
     def getReactionsIds(self):
-        """getReactionsIds(LibStructural self) -> StringVector"""
+        """
+        getReactionsIds(LibStructural self) -> StringVector
+
+
+        LibStructural.getReactionsIds(self)
+
+        :returns: the list of Reaction ids.
+
+
+        """
         return _structural.LibStructural_getReactionsIds(self)
 
 
@@ -1315,13 +1383,21 @@ class LibStructural(_object):
         :returns: the list of Ids for the dependent reactions.
 
 
-
         """
         return _structural.LibStructural_getDependentReactionIds(self)
 
 
     def getReorderedReactionsIds(self):
-        """getReorderedReactionsIds(LibStructural self) -> StringVector"""
+        """
+        getReorderedReactionsIds(LibStructural self) -> StringVector
+
+
+        LibStructural.getReorderedReactionsIds(self)
+
+        :returns: the reordered Id list of reactions.
+
+
+        """
         return _structural.LibStructural_getReorderedReactionsIds(self)
 
 
@@ -1514,9 +1590,26 @@ class LibStructural(_object):
         return _structural.LibStructural_getNmatrixSparsity(self)
 
 
-    def getElementaryModes(self):
-        """getElementaryModes(LibStructural self) -> DoubleMatrix"""
-        return _structural.LibStructural_getElementaryModes(self)
+    def isReactionReversible(self, index):
+        """
+        isReactionReversible(LibStructural self, int index) -> bool
+
+
+        LibStructural.isReactionReversible(self, *args)
+
+        :param: Reaction index
+        :returns: True if the reaction with given index is reversible.
+
+        Checks whether a given reaction is reversible or not.
+
+
+        """
+        return _structural.LibStructural_isReactionReversible(self, index)
+
+
+    def _my_getElementaryModes(self):
+        """_my_getElementaryModes(LibStructural self) -> DoubleMatrix"""
+        return _structural.LibStructural__my_getElementaryModes(self)
 
 
     def _my_getEigenValues(self, oMatrix):
@@ -2065,6 +2158,15 @@ class LibStructural(_object):
     		else:
     			raise ValueError("Expecting list or numpy array")
 
+    def getElementaryModes (self):
+        """
+         LibStructural.getElementaryModes(self)
+        Returns the list of elementary modes are rows in a matrix
+        """
+        import numpy as np
+
+        return self._my_getElementaryModes().toNumpy()
+
     def rref(self, data, tolerance=1e-6):
     		"""
     		LibStructural.rref(self, matrix, tol)
@@ -2292,17 +2394,18 @@ class LibStructural(_object):
      		        raise ValueError("Expecting list or numpy array")
 
     def test (self):
-    	import pkg_resources
+       """
+       LibStructural.test(self)
 
-    	print('****** Testing model 1... ******\n')
+       :returns: An analysis summary for a test model.
 
-    	model_path = pkg_resources.resource_filename('structural','test_models/BMID000000101155.xml')
-
-    	print(self.loadSBMLFromFile(model_path))
-    	print('\nValidating structural matrices...\n')
-    	print(self.getTestDetails())
-    	print(self.validateStructuralMatrices())
-
+       """
+       import pkg_resources
+       model_path = pkg_resources.resource_filename('structural','test/BMID000000101155.xml')
+       print(self.loadSBMLFromFile(model_path))
+       print('\nValidating structural matrices...\n')
+       print(self.getTestDetails())
+       print(self.validateStructuralMatrices())
 
     __swig_destroy__ = _structural.delete_LibStructural
     __del__ = lambda self: None
@@ -2323,6 +2426,302 @@ def LibStructural_getInstance():
 
     """
     return _structural.LibStructural_getInstance()
+
+class NoModelException(_object):
+    """Proxy of C++ LIB_LA::NoModelException class."""
+
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, NoModelException, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, NoModelException, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, message):
+        """__init__(LIB_LA::NoModelException self, std::string const & message) -> NoModelException"""
+        this = _structural.new_NoModelException(message)
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+
+    def getMessage(self):
+        """getMessage(NoModelException self) -> std::string"""
+        return _structural.NoModelException_getMessage(self)
+
+    __swig_destroy__ = _structural.delete_NoModelException
+    __del__ = lambda self: None
+NoModelException_swigregister = _structural.NoModelException_swigregister
+NoModelException_swigregister(NoModelException)
+
+class ApplicationException(_object):
+    """Proxy of C++ LIB_LA::ApplicationException class."""
+
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, ApplicationException, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, ApplicationException, name)
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        """
+        __init__(LIB_LA::ApplicationException self) -> ApplicationException
+        __init__(LIB_LA::ApplicationException self, std::string const & message) -> ApplicationException
+        __init__(LIB_LA::ApplicationException self, std::string const & message, std::string const & detailedMessage) -> ApplicationException
+        """
+        this = _structural.new_ApplicationException(*args)
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+
+    def getMessage(self):
+        """getMessage(ApplicationException self) -> std::string"""
+        return _structural.ApplicationException_getMessage(self)
+
+
+    def getDetailedMessage(self):
+        """getDetailedMessage(ApplicationException self) -> std::string"""
+        return _structural.ApplicationException_getDetailedMessage(self)
+
+    __swig_destroy__ = _structural.delete_ApplicationException
+    __del__ = lambda self: None
+ApplicationException_swigregister = _structural.ApplicationException_swigregister
+ApplicationException_swigregister(ApplicationException)
+
+class Util(_object):
+    """Proxy of C++ LIB_LA::Util class."""
+
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, Util, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, Util, name)
+    __repr__ = _swig_repr
+
+    def checkTolerance(*args):
+        """
+        checkTolerance(int nrows, double * A, double dTolerance)
+        checkTolerance(int nrows, int ncols, double ** A, double dTolerance)
+        """
+        return _structural.Util_checkTolerance(*args)
+
+    checkTolerance = staticmethod(checkTolerance)
+
+    def getSubMatrix(Mb, Nb, ms, ns, mi, nj, A):
+        """getSubMatrix(int Mb, int Nb, int ms, int ns, int mi, int nj, DoubleMatrix A) -> DoubleMatrix"""
+        return _structural.Util_getSubMatrix(Mb, Nb, ms, ns, mi, nj, A)
+
+    getSubMatrix = staticmethod(getSubMatrix)
+
+    def matMult(*args):
+        """
+        matMult(int mA, int nA, int ** A, int ** B, int nB) -> int
+        matMult(int mA, int nA, double ** A, double ** B, int nB) -> double
+        matMult(unsigned int mA, unsigned int nA, DoubleMatrix A, DoubleMatrix B, unsigned int nB) -> DoubleMatrix
+        matMult(DoubleMatrix A, DoubleMatrix B) -> DoubleMatrix
+        matMult(IntMatrix A, DoubleMatrix B) -> DoubleMatrix
+        matMult(IntMatrix A, IntMatrix B) -> IntMatrix
+        """
+        return _structural.Util_matMult(*args)
+
+    matMult = staticmethod(matMult)
+
+    def isPositive(A, dTolerance):
+        """isPositive(DoubleMatrix A, double dTolerance) -> bool"""
+        return _structural.Util_isPositive(A, dTolerance)
+
+    isPositive = staticmethod(isPositive)
+
+    def CopyMatrix(*args):
+        """
+        CopyMatrix(DoubleMatrix oMatrix, double **& outMatrix, int & numRows, int & numCols)
+        CopyMatrix(IntMatrix oMatrix, int **& outMatrix, int & outNumRows, int & outNumCols)
+        CopyMatrix(ComplexMatrix oMatrix, double **& outMatrixReal, double **& outMatrixImag, int & outNumRows, int & outNumCols)
+        """
+        return _structural.Util_CopyMatrix(*args)
+
+    CopyMatrix = staticmethod(CopyMatrix)
+
+    def CopyStringVector(vector, outVector, outLength):
+        """CopyStringVector(StringVector vector, char **& outVector, int & outLength)"""
+        return _structural.Util_CopyStringVector(vector, outVector, outLength)
+
+    CopyStringVector = staticmethod(CopyStringVector)
+
+    def CopyDoubleVector(vector, outVector, outLength):
+        """CopyDoubleVector(DoubleVector vector, double *& outVector, int & outLength)"""
+        return _structural.Util_CopyDoubleVector(vector, outVector, outLength)
+
+    CopyDoubleVector = staticmethod(CopyDoubleVector)
+
+    def CopyIntVector(vector, outVector, outLength):
+        """CopyIntVector(std::vector< int,std::allocator< int > > const & vector, int *& outVector, int & outLength)"""
+        return _structural.Util_CopyIntVector(vector, outVector, outLength)
+
+    CopyIntVector = staticmethod(CopyIntVector)
+
+    def CopyComplexVector(vector, outVectorReal, outVectorImag, outLength):
+        """CopyComplexVector(std::vector< LIB_LA::Complex,std::allocator< LIB_LA::Complex > > const & vector, double *& outVectorReal, double *& outVectorImag, int & outLength)"""
+        return _structural.Util_CopyComplexVector(vector, outVectorReal, outVectorImag, outLength)
+
+    CopyComplexVector = staticmethod(CopyComplexVector)
+
+    def RoundMatrixToTolerance(oMatrix, dTolerance):
+        """RoundMatrixToTolerance(DoubleMatrix oMatrix, double dTolerance)"""
+        return _structural.Util_RoundMatrixToTolerance(oMatrix, dTolerance)
+
+    RoundMatrixToTolerance = staticmethod(RoundMatrixToTolerance)
+
+    def RoundToTolerance(dValue, dTolerance):
+        """RoundToTolerance(double dValue, double dTolerance) -> double"""
+        return _structural.Util_RoundToTolerance(dValue, dTolerance)
+
+    RoundToTolerance = staticmethod(RoundToTolerance)
+
+    def GaussJordan(oMatrix, dTolerance):
+        """GaussJordan(DoubleMatrix oMatrix, double dTolerance) -> std::vector< int,std::allocator< int > >"""
+        return _structural.Util_GaussJordan(oMatrix, dTolerance)
+
+    GaussJordan = staticmethod(GaussJordan)
+
+    def FullyPivotedGaussJordan(oMatrix, dTolerance, rowPivots, colPivots):
+        """FullyPivotedGaussJordan(DoubleMatrix oMatrix, double dTolerance, std::vector< int,std::allocator< int > > & rowPivots, std::vector< int,std::allocator< int > > & colPivots)"""
+        return _structural.Util_FullyPivotedGaussJordan(oMatrix, dTolerance, rowPivots, colPivots)
+
+    FullyPivotedGaussJordan = staticmethod(FullyPivotedGaussJordan)
+
+    def gaussJordan(oMatrix, dTolerance):
+        """gaussJordan(DoubleMatrix oMatrix, double dTolerance)"""
+        return _structural.Util_gaussJordan(oMatrix, dTolerance)
+
+    gaussJordan = staticmethod(gaussJordan)
+
+    def findRank(oMatrix, dTolerance):
+        """findRank(DoubleMatrix oMatrix, double dTolerance) -> int"""
+        return _structural.Util_findRank(oMatrix, dTolerance)
+
+    findRank = staticmethod(findRank)
+
+    def _print(*args):
+        """
+        _print(int mr, int nc, int * A)
+        _print(int mr, int nc, int ** A)
+        _print(int mr, int nc, double * A)
+        _print(int mr, int nc, double ** A)
+        _print(IntMatrix A)
+        _print(DoubleMatrix A)
+        _print(ComplexMatrix A)
+        _print(int mr, int nc, LIB_LA::Complex * A)
+        _print(int mr, int nc, LIB_LA::Complex ** A)
+        _print(int mr, int nc, int * A, int * B)
+        _print(int mr, int nc, int ** A, int ** B)
+        _print(int mr, int nc, double ** A, double ** B)
+        """
+        return _structural.Util__print(*args)
+
+    _print = staticmethod(_print)
+
+    def __init__(self):
+        """__init__(LIB_LA::Util self) -> Util"""
+        this = _structural.new_Util()
+        try:
+            self.this.append(this)
+        except __builtin__.Exception:
+            self.this = this
+    __swig_destroy__ = _structural.delete_Util
+    __del__ = lambda self: None
+Util_swigregister = _structural.Util_swigregister
+Util_swigregister(Util)
+
+def Util_checkTolerance(*args):
+    """
+    checkTolerance(int nrows, double * A, double dTolerance)
+    Util_checkTolerance(int nrows, int ncols, double ** A, double dTolerance)
+    """
+    return _structural.Util_checkTolerance(*args)
+
+def Util_getSubMatrix(Mb, Nb, ms, ns, mi, nj, A):
+    """Util_getSubMatrix(int Mb, int Nb, int ms, int ns, int mi, int nj, DoubleMatrix A) -> DoubleMatrix"""
+    return _structural.Util_getSubMatrix(Mb, Nb, ms, ns, mi, nj, A)
+
+def Util_matMult(*args):
+    """
+    matMult(int mA, int nA, int ** A, int ** B, int nB) -> int
+    matMult(int mA, int nA, double ** A, double ** B, int nB) -> double
+    matMult(unsigned int mA, unsigned int nA, DoubleMatrix A, DoubleMatrix B, unsigned int nB) -> DoubleMatrix
+    matMult(DoubleMatrix A, DoubleMatrix B) -> DoubleMatrix
+    matMult(IntMatrix A, DoubleMatrix B) -> DoubleMatrix
+    Util_matMult(IntMatrix A, IntMatrix B) -> IntMatrix
+    """
+    return _structural.Util_matMult(*args)
+
+def Util_isPositive(A, dTolerance):
+    """Util_isPositive(DoubleMatrix A, double dTolerance) -> bool"""
+    return _structural.Util_isPositive(A, dTolerance)
+
+def Util_CopyMatrix(*args):
+    """
+    CopyMatrix(DoubleMatrix oMatrix, double **& outMatrix, int & numRows, int & numCols)
+    CopyMatrix(IntMatrix oMatrix, int **& outMatrix, int & outNumRows, int & outNumCols)
+    Util_CopyMatrix(ComplexMatrix oMatrix, double **& outMatrixReal, double **& outMatrixImag, int & outNumRows, int & outNumCols)
+    """
+    return _structural.Util_CopyMatrix(*args)
+
+def Util_CopyStringVector(vector, outVector, outLength):
+    """Util_CopyStringVector(StringVector vector, char **& outVector, int & outLength)"""
+    return _structural.Util_CopyStringVector(vector, outVector, outLength)
+
+def Util_CopyDoubleVector(vector, outVector, outLength):
+    """Util_CopyDoubleVector(DoubleVector vector, double *& outVector, int & outLength)"""
+    return _structural.Util_CopyDoubleVector(vector, outVector, outLength)
+
+def Util_CopyIntVector(vector, outVector, outLength):
+    """Util_CopyIntVector(std::vector< int,std::allocator< int > > const & vector, int *& outVector, int & outLength)"""
+    return _structural.Util_CopyIntVector(vector, outVector, outLength)
+
+def Util_CopyComplexVector(vector, outVectorReal, outVectorImag, outLength):
+    """Util_CopyComplexVector(std::vector< LIB_LA::Complex,std::allocator< LIB_LA::Complex > > const & vector, double *& outVectorReal, double *& outVectorImag, int & outLength)"""
+    return _structural.Util_CopyComplexVector(vector, outVectorReal, outVectorImag, outLength)
+
+def Util_RoundMatrixToTolerance(oMatrix, dTolerance):
+    """Util_RoundMatrixToTolerance(DoubleMatrix oMatrix, double dTolerance)"""
+    return _structural.Util_RoundMatrixToTolerance(oMatrix, dTolerance)
+
+def Util_RoundToTolerance(dValue, dTolerance):
+    """Util_RoundToTolerance(double dValue, double dTolerance) -> double"""
+    return _structural.Util_RoundToTolerance(dValue, dTolerance)
+
+def Util_GaussJordan(oMatrix, dTolerance):
+    """Util_GaussJordan(DoubleMatrix oMatrix, double dTolerance) -> std::vector< int,std::allocator< int > >"""
+    return _structural.Util_GaussJordan(oMatrix, dTolerance)
+
+def Util_FullyPivotedGaussJordan(oMatrix, dTolerance, rowPivots, colPivots):
+    """Util_FullyPivotedGaussJordan(DoubleMatrix oMatrix, double dTolerance, std::vector< int,std::allocator< int > > & rowPivots, std::vector< int,std::allocator< int > > & colPivots)"""
+    return _structural.Util_FullyPivotedGaussJordan(oMatrix, dTolerance, rowPivots, colPivots)
+
+def Util_gaussJordan(oMatrix, dTolerance):
+    """Util_gaussJordan(DoubleMatrix oMatrix, double dTolerance)"""
+    return _structural.Util_gaussJordan(oMatrix, dTolerance)
+
+def Util_findRank(oMatrix, dTolerance):
+    """Util_findRank(DoubleMatrix oMatrix, double dTolerance) -> int"""
+    return _structural.Util_findRank(oMatrix, dTolerance)
+
+def Util__print(*args):
+    """
+    _print(int mr, int nc, int * A)
+    _print(int mr, int nc, int ** A)
+    _print(int mr, int nc, double * A)
+    _print(int mr, int nc, double ** A)
+    _print(IntMatrix A)
+    _print(DoubleMatrix A)
+    _print(ComplexMatrix A)
+    _print(int mr, int nc, LIB_LA::Complex * A)
+    _print(int mr, int nc, LIB_LA::Complex ** A)
+    _print(int mr, int nc, int * A, int * B)
+    _print(int mr, int nc, int ** A, int ** B)
+    Util__print(int mr, int nc, double ** A, double ** B)
+    """
+    return _structural.Util__print(*args)
 
 class complexArray(_object):
     """Proxy of C++ complexArray class."""
