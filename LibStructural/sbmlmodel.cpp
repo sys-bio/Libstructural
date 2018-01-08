@@ -13,6 +13,7 @@ using namespace LIB_STRUCTURAL;
 using namespace LIB_LA;
 using namespace std;
 
+
 SBMLmodel* SBMLmodel::FromFile(string &sFileName)
 {
 	SBMLmodel *oResult = new SBMLmodel();
@@ -20,12 +21,14 @@ SBMLmodel* SBMLmodel::FromFile(string &sFileName)
 	return oResult;
 }
 
+
 SBMLmodel* SBMLmodel::FromSBML(string &sSBML)
 {
 	SBMLmodel *oResult = new SBMLmodel();
 	oResult->InitializeFromSBML(sSBML);
 	return oResult;
 }
+
 
 SBMLmodel::SBMLmodel() : _Document(NULL), _Model(NULL)
 {
@@ -48,7 +51,7 @@ void SBMLmodel::InitializeFromSBML(std::string &sSBML)
 	if (_Model == NULL) {
 		ostringstream oss;
 		_Document->printErrors (oss);
-		throw new ApplicationException (oss.str (), "The SBML model was invalid. Please validate it using a SBML validator such as: http://sys-bio.org/validate.");
+		throw ApplicationException (oss.str (), "The SBML model was invalid. Please validate it using a SBML validator such as: http://sys-bio.org/validate.");
 	}
 
 }
@@ -58,7 +61,7 @@ void SBMLmodel::InitializeFromFile(std::string &sFileName)
 	_Document = oReader.readSBML(sFileName);
 	_Model = _Document->getModel();
 	if (_Model == NULL)
-		throw new ApplicationException("Invalid SBML Model", "The SBML model was invalid. Please validate it using a SBML validator such as: http://sys-bio.org/validate.");
+		throw ApplicationException("Invalid SBML Model", "The SBML model was invalid. Please validate it using a SBML validator such as: http://sys-bio.org/validate.");
 }
 
 

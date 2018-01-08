@@ -38,7 +38,7 @@ vector< LIB_LA::Complex> LibLA::getEigenValues(DoubleMatrix &oMatrix)
 	integer lwork = 2*numRows; integer info;
 
 	if (numRows != numCols)
-		throw new ApplicationException ("Input Matrix must be square", "Expecting a Square Matrix");
+		throw ApplicationException ("Input Matrix must be square", "Expecting a Square Matrix");
 
 	if (numRows == 0) return oResult;
 
@@ -86,7 +86,7 @@ vector< LIB_LA::Complex > LibLA::ZgetEigenValues(ComplexMatrix &oMatrix)
 	integer lwork = 2*numRows; integer info;
 
 	if (numRows != numCols)
-		throw new ApplicationException ("Input Matrix must be square", "Expecting a Square Matrix");
+		throw ApplicationException ("Input Matrix must be square", "Expecting a Square Matrix");
 
 	doublecomplex* A = new doublecomplex[numRows*numRows]; memset(A, 0, sizeof(doublecomplex)*numRows*numRows);
 	doublecomplex* eigVals = new doublecomplex[numRows]; memset(eigVals, 0, sizeof(doublecomplex)*numRows);
@@ -532,7 +532,7 @@ ComplexMatrix *LibLA::getEigenVectors(DoubleMatrix &oMatrix)
 	integer lwork = 2*numRows; integer info;
 
 	if (numRows != numCols)
-		throw new ApplicationException ("Input Matrix must be square", "Expecting a Square Matrix");
+		throw ApplicationException ("Input Matrix must be square", "Expecting a Square Matrix");
 
 	if (numRows == 0) return new ComplexMatrix();
 
@@ -588,7 +588,7 @@ ComplexMatrix* LibLA::ZgetEigenVectors(ComplexMatrix &oMatrix)
 	integer lwork = 2*numRows; integer info;
 
 	if (numRows != numCols)
-		throw new ApplicationException ("Input Matrix must be square", "Expecting a Square Matrix");
+		throw ApplicationException ("Input Matrix must be square", "Expecting a Square Matrix");
 
 	if (numRows == 0) return new ComplexMatrix();
 
@@ -929,7 +929,7 @@ LU_Result* LibLA::getLUwithFullPivoting(DoubleMatrix &oMatrix)
 	integer numCols = oMatrix.numCols();
 
 	if (numRows != numCols)
-		throw new ApplicationException("Input Matrix must be square", "Expecting a Square Matrix");
+		throw ApplicationException("Input Matrix must be square", "Expecting a Square Matrix");
 
 
 	doublereal *A = (doublereal*)oMatrix.getCopy(true);
@@ -1023,7 +1023,7 @@ DoubleMatrix* LibLA::inverse(DoubleMatrix &oMatrix)
 
 
 	if (numRows != numCols)
-		throw new ApplicationException ("Input Matrix must be square", "Expecting a Square Matrix");	
+		throw ApplicationException ("Input Matrix must be square", "Expecting a Square Matrix");	
 
 
 	doublereal* A = oMatrix.getCopy(true);
@@ -1038,9 +1038,9 @@ DoubleMatrix* LibLA::inverse(DoubleMatrix &oMatrix)
 	// Carry out LU Factorization
 	integer info; dgetrf_ (&numRows, &numRows, A, &numRows, ipvt, &info);
 	if (info < 0) 
-		throw new ApplicationException("Error in dgetrf : LU Factorization", "Illegal Value");
+		throw ApplicationException("Error in dgetrf : LU Factorization", "Illegal Value");
 	if (info > 0) 
-		throw new ApplicationException("Exception in LIB_LA while computing Inverse", "Input Matrix is Singular.");
+		throw ApplicationException("Exception in LIB_LA while computing Inverse", "Input Matrix is Singular.");
 
 
 #ifdef ENABLE_DEBUG_OUTPUT
@@ -1074,7 +1074,7 @@ ComplexMatrix* LibLA::Zinverse (ComplexMatrix &oMatrix)
 	integer numCols = oMatrix.numCols();		
 
 	if (numRows != numCols)
-		throw new ApplicationException ("Input Matrix must be square", "Expecting a Square Matrix");
+		throw ApplicationException ("Input Matrix must be square", "Expecting a Square Matrix");
 
 
 	doublecomplex* A = new doublecomplex[numRows*numRows];
@@ -1099,10 +1099,10 @@ ComplexMatrix* LibLA::Zinverse (ComplexMatrix &oMatrix)
 	integer info; zgetrf_ (&numRows, &numRows, A, &numRows, ipvt, &info);
 
 	if (info < 0) 
-		throw new ApplicationException("Error in dgetrf : LU Factorization", "Illegal Value");
+		throw ApplicationException("Error in dgetrf : LU Factorization", "Illegal Value");
 
 	if (info > 0) 
-		throw new ApplicationException("Exception in LIB_LA while computing Inverse", "Input Matrix is Sinuglar.");
+		throw ApplicationException("Exception in LIB_LA while computing Inverse", "Input Matrix is Sinuglar.");
 
 #ifdef ENABLE_DEBUG_OUTPUT
 	//cout << "After dgetrf: \n";

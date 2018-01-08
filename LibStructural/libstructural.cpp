@@ -2920,11 +2920,25 @@ LIB_EXTERN  int LibStructural_getNumConservedSums()
 // Returns the original stoichiometry matrix
 LIB_EXTERN  int LibStructural_getStoichiometryMatrix(double** *outMatrix, int* outRows, int *outCols)
 {
-	DoubleMatrix* oMatrix = LibStructural::getInstance()->getStoichiometryMatrix();
-	if (oMatrix == NULL)
-		return EMPTY_MATRIX;
-	Util::CopyMatrix(*oMatrix, *outMatrix, *outRows, *outCols);
-	return SUCCESS;
+	try {
+		DoubleMatrix* oMatrix = LibStructural::getInstance ()->getStoichiometryMatrix ();
+		if (oMatrix == NULL)
+			return EMPTY_MATRIX;
+		Util::CopyMatrix (*oMatrix, *outMatrix, *outRows, *outCols);
+		return SUCCESS;
+	}
+	catch (NoModelException& ex)
+	{
+		return NO_MODEL_LOADED;
+	}
+	catch (LIB_LA::ApplicationException& ex)
+	{
+		return APPLICATION_EXCEPTION;
+	}
+	catch (...)
+	{
+		return UNKNOWN_ERROR;
+	}
 }
 
 
