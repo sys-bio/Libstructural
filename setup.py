@@ -76,7 +76,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='2.0.0.post1',
+    version='2.0.0.post2',
 
     description='A module for a wide variety of methods that permit access to the constraint information in the stoichiometry matrix.',
     long_description=long_description,
