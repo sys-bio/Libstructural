@@ -1,3 +1,21 @@
+%feature("docstring") LIB_STRUCTURAL::LibStructural::getSummary "
+LibStructural.getSummary(self, *args)
+
+:returns: Returns the summary string of the last analysis.
+
+";
+
+
+%feature("docstring") LIB_STRUCTURAL::LibStructural::isReactionReversible "
+LibStructural.isReactionReversible(self, *args)
+
+:param: Reaction index
+:returns: True if the reaction with given index is reversible.
+
+Checks whether a given reaction is reversible or not.
+
+";
+
 %feature("docstring") LIB_STRUCTURAL::LibStructural::loadSBMLFromString "
 LibStructural.loadSBMLFromString(self, *args)
 
@@ -132,59 +150,41 @@ This method additionally performs the integrated test suite and returns	those re
 
 ";
 
-%feature("docstring") LIB_STRUCTURAL::LibStructural::getReorderedSpecies "
-LibStructural.getReorderedSpecies(self)
+%feature("docstring") LIB_STRUCTURAL::LibStructural::getReorderedSpeciesIds "
+LibStructural.getReorderedSpeciesIds(self)
 
 :returns: the reordered list of molecular species (choosing the SBML Id if possible).
 
 ";
 
-%feature("docstring") LIB_STRUCTURAL::LibStructural::getSpecies "
-LibStructural.getSpecies(self)
+%feature("docstring") LIB_STRUCTURAL::LibStructural::getFloatingSpeciesIds "
+LibStructural.getFloatingSpeciesIds(self)
 
 :returns: the unordered list of species Ids.
 
 ";
 
-/*%feature("docstring") LIB_STRUCTURAL::LibStructural::getReorderedSpeciesNamesList "
-LibStructural.getReorderedSpeciesNamesList(self)
 
-:returns: the reordered list of molecular species (choosing the SBML Name if possible).
-
-";*/
-
-%feature("docstring") LIB_STRUCTURAL::LibStructural::getIndependentSpecies "
-LibStructural.getIndependentSpecies(self)
+%feature("docstring") LIB_STRUCTURAL::LibStructural::getIndependentSpeciesIds "
+LibStructural.getIndependentSpeciesIds(self)
 
 :returns: the list of Ids for the independent species.
 
 ";
 
-/*%feature("docstring") LIB_STRUCTURAL::LibStructural::getIndependentSpeciesNamesList "
-LibStructural.getIndependentSpeciesNamesList(self)
 
-:returns: the actual names of the independent species.
-
-";*/
-
-%feature("docstring") LIB_STRUCTURAL::LibStructural::getDependentSpecies "
-LibStructural.getDependentSpecies(self)
+%feature("docstring") LIB_STRUCTURAL::LibStructural::getDependentSpeciesIds "
+LibStructural.getDependentSpeciesIds(self)
 
 :returns: the list of Ids for the dependent species.
 
 ";
 
-/*%feature("docstring") LIB_STRUCTURAL::LibStructural::getDependentSpeciesNamesList "
-LibStructural.getDependentSpeciesNamesList(self)
 
-:returns: the display names of the dependent species.
+%feature("docstring") LIB_STRUCTURAL::LibStructural::getReactionsIds "
+LibStructural.getReactionsIds(self)
 
-";*/
-
-%feature("docstring") LIB_STRUCTURAL::LibStructural::getReactions "
-LibStructural.getReactions(self)
-
-:returns: the list of Reactions.
+:returns: the list of Reaction ids.
 
 ";
 
@@ -200,18 +200,10 @@ LibStructural.getDependentReactionIds(self)
 
 :returns: the list of Ids for the dependent reactions.
 
-
 ";
 
-/*%feature("docstring") LIB_STRUCTURAL::LibStructural::getReactionsNamesList "
-LibStructural.getReactionsNamesList(self)
-
-:returns: display names of the reactions.
-
-";*/
-
-%feature("docstring") LIB_STRUCTURAL::LibStructural::getReorderedReactions "
-LibStructural.getReorderedReactions(self)
+%feature("docstring") LIB_STRUCTURAL::LibStructural::getReorderedReactionsIds "
+LibStructural.getReorderedReactionsIds(self)
 
 :returns: the reordered Id list of reactions.
 

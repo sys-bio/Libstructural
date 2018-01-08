@@ -11,6 +11,7 @@ The LibStructural API library can be built on your machine from the source code 
 * Python 2.7 for generating a python wrapper (optional)
 * `SWIG <http://www.swig.org/>`_ for generating python wrappers in Windows (optional).
 
+NOTE: We provide libSBML and CLAPACK dependency libraries with our repo for both Mac and Windows. If you wish to build your own libSBML or CLAPACK dependency libraries follow the instructions on "Building libSBML" and "Building CLAPACK" sections.
 
 -------
 Windows
