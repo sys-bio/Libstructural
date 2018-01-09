@@ -304,7 +304,7 @@ static PyObject* pNoModelException;  /* add this! */
     def getKMatrix(self):
         """
         LibStructural.getKMatrix(self)
-        :returns: The K matrix (right nullspace of Nr)
+        :returns: Tshe K matrix (right nullspace of Nr)
         The K matrix has the structure, [I K0]'
         """
         return self._my_getKMatrix().toNumpy()
