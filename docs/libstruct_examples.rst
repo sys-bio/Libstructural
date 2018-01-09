@@ -289,8 +289,10 @@ There are few methods that compute conserved moeties in the model:
 
 .. end
 
+Branched Metabolic Network
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To get the elementary modes the **getElementaryModes** method which returns an array where each columns is an elementary mode in the model. Elementary modes are the simplest pathways within a metabolic network that can sustain a steady state and at the same time are thermodynamically feasible
+To compute the elementary modes the **getElementaryModes** method can be called. This returns an array where each row is an elementary mode in the model. Elementary modes are the simplest pathways within a metabolic network that can sustain a steady state and at the same time are thermodynamically feasible
 
 .. code:: python
 
