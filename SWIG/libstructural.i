@@ -2,7 +2,7 @@
 
 // #pragma SWIG nowarn=516
 
-%feature("autodoc", "1");
+//%feature("autodoc");
 %inline
 %{
 #include "libstructural.h"
@@ -53,20 +53,20 @@ static PyObject* pNoModelException;  /* add this! */
 %}
 
 %exception {
-	 try {
+     try {
      $action
    } catch (LIB_LA::ApplicationException& e) {
-		 std::string msg = e.getDetailedMessage();
+         std::string msg = e.getDetailedMessage();
    } catch (LIB_LA::NoModelException& e) {
-		 std::string msg = e.getMessage();
+         std::string msg = e.getMessage();
 
      PyErr_SetString (PyExc_Exception, msg.c_str());
-	 return NULL;
+     return NULL;
    } catch (const std::exception& e) {
      SWIG_exception(SWIG_RuntimeError, e.what());
    } catch (...) {
-		 SWIG_exception(SWIG_RuntimeError, "Unknown exception");
-	 }
+         SWIG_exception(SWIG_RuntimeError, "Unknown exception");
+     }
 }
 
 %include "carrays.i"
@@ -90,572 +90,567 @@ static PyObject* pNoModelException;  /* add this! */
 // http://swig.10945.n7.nabble.com/replacing-a-real-class-method-with-SWIG-version-td11418.html
 %extend LIB_STRUCTURAL::LibStructural {
 
-	std::pair< std::vector<std::string>, std::vector<std::string> > getColumnReorderedNrMatrixIds() {
-		std::vector<std::string> rows;
-		std::vector<std::string> cols;
-		self->getColumnReorderedNrMatrixIds(rows, cols);
-		return std::make_pair(rows, cols);
-	}
+    std::pair< std::vector<std::string>, std::vector<std::string> > getColumnReorderedNrMatrixIds() {
+        std::vector<std::string> rows;
+        std::vector<std::string> cols;
+        self->getColumnReorderedNrMatrixIds(rows, cols);
+        return std::make_pair(rows, cols);
+    }
 
-	void loadReactionIds (std::vector<std::string> reactionIds) {
-		self->loadReactionIds(reactionIds);
-	}
+    void loadReactionIds (std::vector<std::string> reactionIds) {
+        self->loadReactionIds(reactionIds);
+    }
 
-	void loadReactionIdsWithValues (std::vector<std::string> reactionIds, std::vector<double> reactionValues) {
-		self->loadReactionIdsWithValues(reactionIds, reactionValues);
-	}
+    void loadReactionIdsWithValues (std::vector<std::string> reactionIds, std::vector<double> reactionValues) {
+        self->loadReactionIdsWithValues(reactionIds, reactionValues);
+    }
 
-	void loadSpeciesIdsWithValues (std::vector<std::string> speciesIds, std::vector<double> speciesValues) {
-		self->loadSpeciesIdsWithValues(speciesIds, speciesValues);
-	}
+    void loadSpeciesIdsWithValues (std::vector<std::string> speciesIds, std::vector<double> speciesValues) {
+        self->loadSpeciesIdsWithValues(speciesIds, speciesValues);
+    }
 
-	/*void loadSpeciesIds (std::vector<std::string> speciesIds) {
-		self->loadSpeciesIds(speciesIds);
-	}*/
+    /*void loadSpeciesIds (std::vector<std::string> speciesIds) {
+        self->loadSpeciesIds(speciesIds);
+    }*/
 
-	std::pair< std::vector<std::string>, std::vector<std::string> > getGammaMatrixIds() {
-		std::vector<std::string> rows;
-		std::vector<std::string> cols;
-		self->getGammaMatrixIds(rows, cols);
-		return std::make_pair(rows, cols);
-	}
+    std::pair< std::vector<std::string>, std::vector<std::string> > getGammaMatrixIds() {
+        std::vector<std::string> rows;
+        std::vector<std::string> cols;
+        self->getGammaMatrixIds(rows, cols);
+        return std::make_pair(rows, cols);
+    }
 
-	std::pair< std::vector<std::string>, std::vector<std::string> > getK0MatrixIds() {
-		std::vector<std::string> rows;
-		std::vector<std::string> cols;
-		self->getK0MatrixIds(rows, cols);
-		return std::make_pair(rows, cols);
-	}
+    std::pair< std::vector<std::string>, std::vector<std::string> > getK0MatrixIds() {
+        std::vector<std::string> rows;
+        std::vector<std::string> cols;
+        self->getK0MatrixIds(rows, cols);
+        return std::make_pair(rows, cols);
+    }
 
-	std::pair< std::vector<std::string>, std::vector<std::string> > getKMatrixIds() {
-		std::vector<std::string> rows;
-		std::vector<std::string> cols;
-		self->getKMatrixIds(rows, cols);
-		return std::make_pair(rows, cols);
-	}
+    std::pair< std::vector<std::string>, std::vector<std::string> > getKMatrixIds() {
+        std::vector<std::string> rows;
+        std::vector<std::string> cols;
+        self->getKMatrixIds(rows, cols);
+        return std::make_pair(rows, cols);
+    }
 
-	std::pair< std::vector<std::string>, std::vector<std::string> > getL0MatrixIds() {
-		std::vector<std::string> rows;
-		std::vector<std::string> cols;
-		self->getL0MatrixIds(rows, cols);
-		return std::make_pair(rows, cols);
-	}
+    std::pair< std::vector<std::string>, std::vector<std::string> > getL0MatrixIds() {
+        std::vector<std::string> rows;
+        std::vector<std::string> cols;
+        self->getL0MatrixIds(rows, cols);
+        return std::make_pair(rows, cols);
+    }
 
-	std::pair< std::vector<std::string>, std::vector<std::string> > getLinkMatrixIds() {
-		std::vector<std::string> rows;
-		std::vector<std::string> cols;
-		self->getLinkMatrixIds(rows, cols);
-		return std::make_pair(rows, cols);
-	}
+    std::pair< std::vector<std::string>, std::vector<std::string> > getLinkMatrixIds() {
+        std::vector<std::string> rows;
+        std::vector<std::string> cols;
+        self->getLinkMatrixIds(rows, cols);
+        return std::make_pair(rows, cols);
+    }
 
-	std::pair< std::vector<std::string>, std::vector<std::string> > getLinkMatrixIds() {
-		std::vector<std::string> rows;
-		std::vector<std::string> cols;
-		self->getLinkMatrixIds(rows, cols);
-		return std::make_pair(rows, cols);
-	}
+    std::pair< std::vector<std::string>, std::vector<std::string> > getLinkMatrixIds() {
+        std::vector<std::string> rows;
+        std::vector<std::string> cols;
+        self->getLinkMatrixIds(rows, cols);
+        return std::make_pair(rows, cols);
+    }
 
-	std::pair< std::vector<std::string>, std::vector<std::string> > getN0MatrixIds() {
-		std::vector<std::string> rows;
-		std::vector<std::string> cols;
-		self->getN0MatrixIds(rows, cols);
-		return std::make_pair(rows, cols);
-	}
+    std::pair< std::vector<std::string>, std::vector<std::string> > getN0MatrixIds() {
+        std::vector<std::string> rows;
+        std::vector<std::string> cols;
+        self->getN0MatrixIds(rows, cols);
+        return std::make_pair(rows, cols);
+    }
 
-	std::pair< std::vector<std::string>, std::vector<std::string> > getNDCMatrixIds() {
-		std::vector<std::string> rows;
-		std::vector<std::string> cols;
-		self->getNDCMatrixIds(rows, cols);
-		return std::make_pair(rows, cols);
-	}
+    std::pair< std::vector<std::string>, std::vector<std::string> > getNDCMatrixIds() {
+        std::vector<std::string> rows;
+        std::vector<std::string> cols;
+        self->getNDCMatrixIds(rows, cols);
+        return std::make_pair(rows, cols);
+    }
 
-	std::pair< std::vector<std::string>, std::vector<std::string> > getNICMatrixIds() {
-		std::vector<std::string> rows;
-		std::vector<std::string> cols;
-		self->getNICMatrixIds(rows, cols);
-		return std::make_pair(rows, cols);
-	}
+    std::pair< std::vector<std::string>, std::vector<std::string> > getNICMatrixIds() {
+        std::vector<std::string> rows;
+        std::vector<std::string> cols;
+        self->getNICMatrixIds(rows, cols);
+        return std::make_pair(rows, cols);
+    }
 
-	std::pair< std::vector<std::string>, std::vector<std::string> > getNrMatrixIds() {
-		std::vector<std::string> rows;
-		std::vector<std::string> cols;
-		self->getNrMatrixIds(rows, cols);
-		return std::make_pair(rows, cols);
-	}
+    std::pair< std::vector<std::string>, std::vector<std::string> > getNrMatrixIds() {
+        std::vector<std::string> rows;
+        std::vector<std::string> cols;
+        self->getNrMatrixIds(rows, cols);
+        return std::make_pair(rows, cols);
+    }
 
-	std::pair< std::vector<std::string>, std::vector<std::string> > getStoichiometryMatrixIds() {
-		std::vector<std::string> rows;
-		std::vector<std::string> cols;
-		self->getStoichiometryMatrixIds(rows, cols);
-		return std::make_pair(rows, cols);
-	}
+    std::pair< std::vector<std::string>, std::vector<std::string> > getStoichiometryMatrixIds() {
+        std::vector<std::string> rows;
+        std::vector<std::string> cols;
+        self->getStoichiometryMatrixIds(rows, cols);
+        return std::make_pair(rows, cols);
+    }
 
-	std::pair< std::vector<std::string>, std::vector<std::string> > getFullyReorderedStoichiometryMatrixIds() {
-		std::vector<std::string> rows;
-		std::vector<std::string> cols;
-		self->getFullyReorderedStoichiometryMatrixIds(rows, cols);
-		return std::make_pair(rows, cols);
-	}
+    std::pair< std::vector<std::string>, std::vector<std::string> > getFullyReorderedStoichiometryMatrixIds() {
+        std::vector<std::string> rows;
+        std::vector<std::string> cols;
+        self->getFullyReorderedStoichiometryMatrixIds(rows, cols);
+        return std::make_pair(rows, cols);
+    }
 
-	std::pair< std::vector<std::string>, std::vector<std::string> > getReorderedStoichiometryMatrixIds() {
-		std::vector<std::string> rows;
-		std::vector<std::string> cols;
-		self->getReorderedStoichiometryMatrixIds(rows, cols);
-		return std::make_pair(rows, cols);
-	}
+    std::pair< std::vector<std::string>, std::vector<std::string> > getReorderedStoichiometryMatrixIds() {
+        std::vector<std::string> rows;
+        std::vector<std::string> cols;
+        self->getReorderedStoichiometryMatrixIds(rows, cols);
+        return std::make_pair(rows, cols);
+    }
 
 %pythoncode %{
-	def getStoichiometryMatrix(self):
-    """
-    LibStructural.getStoichiometryMatrix(self)
-    :returns: Unaltered stoichiometry matrix.
-    """
-    return self._my_getStoichiometryMatrix().toNumpy();
+    def getStoichiometryMatrix(self):
+      """
+      LibStructural.getStoichiometryMatrix(self)
+      :returns: Unaltered stoichiometry matrix.
+      """
+      return self._my_getStoichiometryMatrix().toNumpy();
+
+    def getColumnReorderedNrMatrix(self):
+        """
+        LibStructural.getColumnReorderedNrMatrix(self)
+        :returns: the Nr Matrix repartitioned into NIC (independent columns) and NDC (dependent columns). The Nr matrix contains the independent rows of the stoichiometry matrix
+        """
+        return self._my_getColumnReorderedNrMatrix().toNumpy()
+
+    def getFullyReorderedN0StoichiometryMatrix(self):
+        """
+        LibStructural.getFullyReorderedN0StoichiometryMatrix(self)
+
+        Computes the N0 matrix if possible. The N0 matrix will contain all the dependent rows of the stoichiometry matrix.
+
+        :returns: the N0 Matrix.
+
+        """
+        return self._my_getFullyReorderedN0StoichiometryMatrix().toNumpy()
+
+    def getFullyReorderedNrMatrix(self):
+        """
+        LibStructural.getFullyReorderedNrMatrix(self)
+
+        The Nr matrix contains all the linearly independent rows of the stoichiometry matrix.
+
+        :returns: the Nr Matrix.
+        """
+        return self._my_getFullyReorderedNrMatrix().toNumpy()
+
+    def getFullyReorderedStoichiometryMatrix(self):
+        """
+        LibStructural.getFullyReorderedStoichiometryMatrix(self)
+        :returns: the fully reordered stoichiometry matrix. Rows and columns are reordered so all indepedent rows
+        of the stoichiometry matrix are brought to the top and left side of the matrix.
+        """
+        return self._my_getFullyReorderedStoichiometryMatrix().toNumpy()
+
+    def getGammaMatrix(self):
+        """
+        LibStructural.getGammaMatrix(self)
+        :returns: Gamma, the conservation law array.
+        Each row represents a single conservation law where the column indicates the participating molecular species.
+        The number of rows is therefore equal to the number of conservation laws. Columns are ordered according to the
+        rows in the reordered stoichiometry matrix, see ``LibStructural.getReorderedSpeciesId`` and ``LibStructural.getReorderedStoichiometryMatrix``.
+
+        """
+        return self._my_getGammaMatrix().toNumpy()
+
+    def getGammaMatrixGJ(self, oMatrix):
+        """
+        LibStructural.getGammaMatrixGJ(self,matrix)
+
+        :param: the stoichiometry matrix that will be used to calculate gamma
+        :returns: Gamma, the conservation law array.
+
+        Each row represents a single conservation law where the column indicate the participating molecular species. The number of rows is therefore equal to the number of conservation laws.
+        In this case the Gamma Matrix is recalculated for the given stoichiometry matrix. amma is calculated based on R = GaussJordan ( [ stoichiometry  I ] ), where R has the form
+
+        R = [ R11 R12
+                0  GAMMA ]
+
+        The RowIds should be an increasing number, to enumerate the conservation law, the column label will be the same label as the stoichiometry matrix.
+        """
+        import numpy as np
+
+        if (type(oMatrix) is list or type(oMatrix) is np.ndarray):
+            oMatrix = np.array(oMatrix)
+            if oMatrix.ndim == 2:
+                rows = len(oMatrix)
+                cols = len(oMatrix[0])
+                m = DoubleMatrix(rows,cols)
+                for i in range(rows):
+                    for j in range (cols):
+                        m.set (i, j, oMatrix[i][j])
+                return self._my_getGammaMatrixGJ(m).toNumpy()
+            else:
+                raise ValueError("Expecting 2 dimensional list or numpy array")
+        else:
+            raise ValueError("Expecting list or numpy array")
 
 
-	def getColumnReorderedNrMatrix(self):
-		"""
-		LibStructural.getColumnReorderedNrMatrix(self)
-		:returns: the Nr Matrix repartitioned into NIC (independent columns) and NDC (dependent columns). The Nr matrix contains the independent rows of the stoichiometry matrix
-		"""
-		return self._my_getColumnReorderedNrMatrix().toNumpy()
+    def getK0Matrix(self):
+        """
+        LibStructural.getK0Matrix(self)
 
-	def getFullyReorderedN0StoichiometryMatrix(self):
-		"""
-		LibStructural.getFullyReorderedN0StoichiometryMatrix(self)
+        :returns: the K0 Matrix.
+        K0 is defined such that K0 = -(NIC)\ :sup:`-1`\ * NDC, or equivalently, [NDC NIC][I K0]' = 0 where [NDC NIC] = Nr
+        """
+        return self._my_getK0Matrix().toNumpy()
 
-		Computes the N0 matrix if possible. The N0 matrix will contain all the dependent rows of the stoichiometry matrix.
+    def getKMatrix(self):
+        """
+        LibStructural.getKMatrix(self)
+        :returns: The K matrix (right nullspace of Nr)
+        The K matrix has the structure, [I K0]'
+        """
+        return self._my_getKMatrix().toNumpy()
 
-		:returns: the N0 Matrix.
+    def getL0Matrix(self):
+        """
+        LibStructural.getL0Matrix(self)
 
-		"""
-		return self._my_getFullyReorderedN0StoichiometryMatrix().toNumpy()
+        :returns: The L0 Matrix.
 
-	def getFullyReorderedNrMatrix(self):
-		"""
-		LibStructural.getFullyReorderedNrMatrix(self)
+        L0 is defined such that  L0*Nr = N0. L0 forms part of the link matrix, L.  N0 is the set of linear dependent rows from the lower portion of the reordered stoichiometry matrix.
 
-		The Nr matrix contains all the linearly independent rows of the stoichiometry matrix.
+        """
+        return self._my_getL0Matrix().toNumpy()
 
-		:returns: the Nr Matrix.
-		"""
-		return self._my_getFullyReorderedNrMatrix().toNumpy()
+    def getLinkMatrix(self):
+        """
+        LibStructural.getLinkMatrix(self)
+        :returns: L, the Link Matrix, left nullspace (aka nullspace of the transpose Nr).
 
-	def getFullyReorderedStoichiometryMatrix(self):
-		"""
-		LibStructural.getFullyReorderedStoichiometryMatrix(self)
-		:returns: the fully reordered stoichiometry matrix. Rows and columns are reordered so all indepedent rows
-		of the stoichiometry matrix are brought to the top and left side of the matrix.
-		"""
-		return self._my_getFullyReorderedStoichiometryMatrix().toNumpy()
+        L will have the structure, [I L0]', such that L*Nr = N
+        """
+        return self._my_getLinkMatrix().toNumpy()
 
-	def getGammaMatrix(self):
-		"""
-		LibStructural.getGammaMatrix(self)
-		:returns: Gamma, the conservation law array.
-		Each row represents a single conservation law where the column indicates the participating molecular species.
-		The number of rows is therefore equal to the number of conservation laws. Columns are ordered according to the
-		rows in the reordered stoichiometry matrix, see ``LibStructural.getReorderedSpeciesId`` and ``LibStructural.getReorderedStoichiometryMatrix``.
+    def getN0Matrix(self):
+        """
+        LibStructural.getN0Matrix(self)
+        :returns: The N0 Matrix.
+        The N0 matrix is the set of linearly dependent rows of N where L0 Nr = N0.
+        """
+        return self._my_getN0Matrix().toNumpy()
 
-		"""
-		return self._my_getGammaMatrix().toNumpy()
+    def getNDCMatrix(self):
+        """
+        LibStructural.getNDCMatrix(self)
+        :returns: The NDC Matrix (the set of linearly dependent columns of Nr).
 
-	def getGammaMatrixGJ(self, oMatrix):
-		"""
-		LibStructural.getGammaMatrixGJ(self,matrix)
+        """
+        return self._my_getNDCMatrix().toNumpy()
 
-		:param: the stoichiometry matrix that will be used to calculate gamma
-		:returns: Gamma, the conservation law array.
+    def getNICMatrix(self):
+        """
+        LibStructural.getNICMatrix(self)
+        :returns: The NIC Matrix (the set of linearly independent columns of Nr)
+        """
+        return self._my_getNICMatrix().toNumpy()
 
-		Each row represents a single conservation law where the column indicate the participating molecular species. The number of rows is therefore equal to the number of conservation laws.
-		In this case the Gamma Matrix is recalculated for the given stoichiometry matrix. amma is calculated based on R = GaussJordan ( [ stoichiometry  I ] ), where R has the form
+    def getNrMatrix(self):
+        """
+        LibStructural.getNrMatrix(self)
 
-		R = [ R11 R12
-				0  GAMMA ]
+        :returns: The Nr Matrix.
 
-		The RowIds should be an increasing number, to enumerate the conservation law, the column label will be the same label as the stoichiometry matrix.
-		"""
-		import numpy as np
+        The rows of the Nr matrix will be linearly independent.
+        """
+        return self._my_getNrMatrix().toNumpy()
 
-		if (type(oMatrix) is list or type(oMatrix) is np.ndarray):
-			oMatrix = np.array(oMatrix)
-			if oMatrix.ndim == 2:
-				rows = len(oMatrix)
-				cols = len(oMatrix[0])
-				m = DoubleMatrix(rows,cols)
-				for i in range(rows):
-					for j in range (cols):
-						m.set (i, j, oMatrix[i][j])
-				return self._my_getGammaMatrixGJ(m).toNumpy()
-			else:
-				raise ValueError("Expecting 2 dimensional list or numpy array")
-		else:
-			raise ValueError("Expecting list or numpy array")
+    def getReorderedStoichiometryMatrix(self):
+        """
+        LibStructural.getReorderedStoichiometryMatrix(self)
 
+        :returns: The reordered stoichiometry matrix (row reordered stoichiometry matrix, columns are not reordered!)
 
-	def getK0Matrix(self):
-		"""
-		LibStructural.getK0Matrix(self)
+        """
+        return self._my_getReorderedStoichiometryMatrix().toNumpy()
 
-		:returns: the K0 Matrix.
-		K0 is defined such that K0 = -(NIC)\ :sup:`-1`\ * NDC, or equivalently, [NDC NIC][I K0]' = 0 where [NDC NIC] = Nr
-		"""
-		return self._my_getK0Matrix().toNumpy()
+    def loadStoichiometryMatrix(self, data):
+            """
+            LibStructural.loadStoichiometryMatrix(self, Matrix)
 
-	def getKMatrix(self):
-		"""
-		LibStructural.getKMatrix(self)
-		:returns: the K matrix (right nullspace of Nr)
-		The K matrix has the structure, [I K0]'
-		"""
-		return self._my_getKMatrix().toNumpy()
+            :param: 2D array stoichiometry matrix
 
-	def getL0Matrix(self):
-		"""
-		LibStructural.getL0Matrix(self)
+            Loads a stoichiometry matrix into the library.
+            To analyze the stoichiometry call one of the following:
 
-		:returns: the L0 Matrix.
+            | ``LibStructural.analyzeWithQR``,
+            | ``LibStructural.analyzeWithLU``,
+            | ``LibStructural.analyzeWithLUandRunTests``,
+            | ``LibStructural.analyzeWithFullyPivotedLU``,
+            | ``LibStructural.analyzeWithFullyPivotedLUwithTests``,
 
-		L0 is defined such that  L0*Nr = N0. L0 forms part of the link matrix, L.  N0 is the set of linear dependent rows from the lower portion of the reordered stoichiometry matrix.
+            """
+            import numpy as np
 
-		"""
-		return self._my_getL0Matrix().toNumpy()
+            if (type(data) is list or type(data) is np.ndarray):
+                data = np.array(data)
+                if data.ndim == 2:
+                    rows = len(data)
+                    cols = len(data[0])
+                    m = DoubleMatrix(rows,cols)
+                    for i in range(rows):
+                        for j in range (cols):
+                            m.set (i, j, data[i][j])
+                    return self._my_loadStoichiometryMatrix (m)
+                else:
+                    raise ValueError("Expecting 2 dimensional list or numpy array")
+            else:
+                raise ValueError("Expecting list or numpy array")
 
-	def getLinkMatrix(self):
-		"""
-		LibStructural.getLinkMatrix(self)
-		:returns: L, the Link Matrix, left nullspace (aka nullspace of the transpose Nr).
-
-		L will have the structure, [I L0]', such that L*Nr = N
-		"""
-		return self._my_getLinkMatrix().toNumpy()
-
-	def getN0Matrix(self):
-		"""
-		LibStructural.getN0Matrix(self)
-		:returns: the N0 Matrix.
-		The N0 matrix is the set of linearly dependent rows of N where L0 Nr = N0.
-		"""
-		return self._my_getN0Matrix().toNumpy()
-
-	def getNDCMatrix(self):
-		"""
-		LibStructural.getNDCMatrix(self)
-		:returns: the NDC Matrix (the set of linearly dependent columns of Nr).
-
-		"""
-		return self._my_getNDCMatrix().toNumpy()
-
-	def getNICMatrix(self):
-		"""
-		LibStructural.getNICMatrix(self)
-		:returns: the NIC Matrix (the set of linearly independent columns of Nr)
-		"""
-		return self._my_getNICMatrix().toNumpy()
-
-	def getNrMatrix(self):
-		"""
-		LibStructural.getNrMatrix(self)
-
-		:returns: the Nr Matrix.
-
-		The rows of the Nr matrix will be linearly independent.
-		"""
-		return self._my_getNrMatrix().toNumpy()
-
-	def getReorderedStoichiometryMatrix(self):
-		"""
-		LibStructural.getReorderedStoichiometryMatrix(self)
-
-		:returns: the reordered stoichiometry matrix (row reordered stoichiometry matrix, columns are not reordered!)
-
-		"""
-		return self._my_getReorderedStoichiometryMatrix().toNumpy()
-
-	def loadStoichiometryMatrix(self, data):
-			"""
-			LibStructural.loadStoichiometryMatrix(self, Matrix)
-
-			:param: 2D array stoichiometry matrix
-
-			Loads a stoichiometry matrix into the library.
-			To analyze the stoichiometry call one of the following:
-
-			| ``LibStructural.analyzeWithQR``,
-			| ``LibStructural.analyzeWithLU``,
-			| ``LibStructural.analyzeWithLUandRunTests``,
-			| ``LibStructural.analyzeWithFullyPivotedLU``,
-			| ``LibStructural.analyzeWithFullyPivotedLUwithTests``,
-
-			Remarks: if matrix ids are needed it is recommended to call LibStructural.loadSpeciesIds
-			and ``LibStructural.loadReactionIds``after a call to this method.
-
-			"""
-			import numpy as np
-
-			if (type(data) is list or type(data) is np.ndarray):
-				data = np.array(data)
-				if data.ndim == 2:
-					rows = len(data)
-					cols = len(data[0])
-					m = DoubleMatrix(rows,cols)
-					for i in range(rows):
-						for j in range (cols):
-							m.set (i, j, data[i][j])
-					return self._my_loadStoichiometryMatrix (m)
-				else:
-					raise ValueError("Expecting 2 dimensional list or numpy array")
-			else:
-				raise ValueError("Expecting list or numpy array")
-
-	def getElementaryModes (self):
-	    """
+    def getElementaryModes (self):
+      """
       LibStructural.getElementaryModes(self)
-	    Returns the list of elementary modes are rows in a matrix
-	    """
-	    import numpy as np
 
-	    return self._my_getElementaryModes().toNumpy()
+      :returns: An array where each column is an elementary mode
+      """
+      import numpy as np
+      return self._my_getElementaryModes().toNumpy()
 
-	def rref(self, data, tolerance=1e-6):
-			"""
-			LibStructural.rref(self, matrix, tol)
+    def rref(self, data, tolerance=1e-6):
+      """
+      LibStructural.rref(self, matrix)
 
       Computes the reduced row echelon of the given matrix. Tolerance is set to indicate the smallest number consider to be zero.
 
-			:param: a matrix (numpy)
-			:param: Optional: tolerance (double), default is 1E-6
-			:returns: reduced row echelon form of the matrix
-			"""
-			import numpy as np
+      :param: A matrix (numpy)
+      :param: Optional: tolerance (float), default is 1E-6
+      :returns: A reduced row echelon form of the matrix
+      """
+      import numpy as np
+      if (type(data) is list or type(data) is np.ndarray):
+            data = np.array(data)
+            if data.ndim == 2:
+                rows = len(data)
+                cols = len(data[0])
+                m = DoubleMatrix(rows,cols)
+                for i in range(rows):
+                    for j in range (cols):
+                        m.set (i, j, data[i][j])
+                return self._my_rref (m, tolerance).toNumpy()
+            else:
+                raise ValueError("Expecting 2 dimensional list or numpy array")
+      else:
+          raise ValueError("Expecting list or numpy array")
 
-			if (type(data) is list or type(data) is np.ndarray):
-				data = np.array(data)
-				if data.ndim == 2:
-					rows = len(data)
-					cols = len(data[0])
-					m = DoubleMatrix(rows,cols)
-					for i in range(rows):
-						for j in range (cols):
-							m.set (i, j, data[i][j])
-					return self._my_rref (m, tolerance).toNumpy()
-				else:
-					raise ValueError("Expecting 2 dimensional list or numpy array")
-			else:
-  		        raise ValueError("Expecting list or numpy array")
+    def rref_FB(self, data, tolerance=1e-6):
+          """
+          LibStructural.rref_FB(self, matrix)
 
-	def rref_FB(self, data, tolerance=1e-6):
-			"""
-			LibStructural.getEigenValues(self, matrix)
+          :param: A matrix
+          :returns: The reduced row echelon form of the matrix.
+          """
 
-			:param: Matrix to find the refuced row echelon for.
-			:returns: the reduce row echelon.
-			"""
+          import numpy as np
 
-			import numpy as np
+          if (type(data) is list or type(data) is np.ndarray):
+              data = np.array(data)
+              if data.ndim == 2:
+                  rows = len(data)
+                  cols = len(data[0])
+                  m = DoubleMatrix(rows,cols)
+                  for i in range(rows):
+                      for j in range (cols):
+                          m.set (i, j, data[i][j])
+                  return self._my_rref_FB (m, tolerance).toNumpy()
+              else:
+                  raise ValueError("Expecting 2 dimensional list or numpy array")
+          else:
+              raise ValueError("Expecting list or numpy array")
 
-			if (type(data) is list or type(data) is np.ndarray):
-				data = np.array(data)
-				if data.ndim == 2:
-					rows = len(data)
-					cols = len(data[0])
-					m = DoubleMatrix(rows,cols)
-					for i in range(rows):
-						for j in range (cols):
-							m.set (i, j, data[i][j])
-					return self._my_rref_FB (m, tolerance).toNumpy()
-				else:
-					raise ValueError("Expecting 2 dimensional list or numpy array")
-			else:
-  		        raise ValueError("Expecting list or numpy array")
+    def getEigenValues (self, oMatrix):
+            """
+            LibStructural.getEigenValues(self, matrix)
 
-	def getEigenValues (self, oMatrix):
-			"""
-			LibStructural.getEigenValues(self, matrix)
+            :param: Matrix to find the eigenvalues for.
+            :returns: An array, first column are the real values and second column are imaginary values
+            """
 
-			:param: Matrix to find the eigenvalues for.
-			:returns: an array, first column are the real values and second column are imaginary values
-			"""
+            import numpy as np
 
-			import numpy as np
+            if (type(oMatrix) is list or type(oMatrix) is np.ndarray):
+                oMatrix = np.array(oMatrix)
+                if oMatrix.ndim == 2:
+                    rows = len(oMatrix)
+                    cols = len(oMatrix[0])
+                    m = DoubleMatrix(rows,cols)
+                    for i in range(rows):
+                        for j in range (cols):
+                            m.set (i, j, oMatrix[i][j])
+                    return self._my_getEigenValues(m).toNumpy()
+                else:
+                    raise ValueError("Expecting 2 dimensional list or numpy array")
+            else:
+                raise ValueError("Expecting list or numpy array")
 
-			if (type(oMatrix) is list or type(oMatrix) is np.ndarray):
-				oMatrix = np.array(oMatrix)
-				if oMatrix.ndim == 2:
-					rows = len(oMatrix)
-					cols = len(oMatrix[0])
-					m = DoubleMatrix(rows,cols)
-					for i in range(rows):
-						for j in range (cols):
-							m.set (i, j, oMatrix[i][j])
-					return self._my_getEigenValues(m).toNumpy()
-				else:
-					raise ValueError("Expecting 2 dimensional list or numpy array")
-			else:
-  		        raise ValueError("Expecting list or numpy array")
+    def getEigenVectors (self, oMatrix):
+            """
+            LibStructural.getEigenVectors(self, matrix)
 
-	def getEigenVectors (self, oMatrix):
-			"""
-			LibStructural.getEigenVectors(self, matrix)
+            :param: Matrix to find the eigenvectors for
+            :returns: An array where each columns is an eigenvector
+            """
 
-			:param: Matrix to find the eigenvectors for
-			:returns: an array where each columns is an eigenvector
-			"""
+            import numpy as np
 
-			import numpy as np
+            if (type(oMatrix) is list or type(oMatrix) is np.ndarray):
+                oMatrix = np.array(oMatrix)
+                if oMatrix.ndim == 2:
+                    rows = len(oMatrix)
+                    cols = len(oMatrix[0])
+                    m = DoubleMatrix(rows,cols)
+                    for i in range(rows):
+                        for j in range (cols):
+                            m.set (i, j, oMatrix[i][j])
+                    return self._my_getEigenVectors(m).toNumpy()
+                else:
+                    raise ValueError("Expecting 2 dimensional list or numpy array")
+            else:
+                raise ValueError("Expecting list or numpy array")
 
-			if (type(oMatrix) is list or type(oMatrix) is np.ndarray):
-				oMatrix = np.array(oMatrix)
-				if oMatrix.ndim == 2:
-					rows = len(oMatrix)
-					cols = len(oMatrix[0])
-					m = DoubleMatrix(rows,cols)
-					for i in range(rows):
-						for j in range (cols):
-							m.set (i, j, oMatrix[i][j])
-					return self._my_getEigenVectors(m).toNumpy()
-				else:
-					raise ValueError("Expecting 2 dimensional list or numpy array")
-			else:
-  		        raise ValueError("Expecting list or numpy array")
+    def getConditionNumber (self, oMatrix):
+            '''
+            LibStructural.getConditionNumber(self, matrix)
 
-	def getConditionNumber (self, oMatrix):
-			'''
-			LibStructural.getConditionNumber(self, matrix)
+            :param: Takes a matrix (numpy) as an argument. Find the condition number of the matrix.
+            :returns: The condition number
+            '''
+            import numpy as np
 
-			:param: Takes a matrix (numpy) as an argument. Find the condition number of the matrix.
-			:returns: the condition number
-			'''
-			import numpy as np
+            if (type(oMatrix) is list or type(oMatrix) is np.ndarray):
+                oMatrix = np.array(oMatrix)
+                if oMatrix.ndim == 2:
+                    rows = len(oMatrix)
+                    cols = len(oMatrix[0])
+                    m = DoubleMatrix(rows,cols)
+                    for i in range(rows):
+                        for j in range (cols):
+                            m.set (i, j, oMatrix[i][j])
+                    return self._my_getConditionNumber(m)
+                else:
+                    raise ValueError("Expecting 2 dimensional list or numpy array")
+            else:
+                raise ValueError("Expecting list or numpy array")
 
-			if (type(oMatrix) is list or type(oMatrix) is np.ndarray):
-				oMatrix = np.array(oMatrix)
-				if oMatrix.ndim == 2:
-					rows = len(oMatrix)
-					cols = len(oMatrix[0])
-					m = DoubleMatrix(rows,cols)
-					for i in range(rows):
-						for j in range (cols):
-							m.set (i, j, oMatrix[i][j])
-					return self._my_getConditionNumber(m)
-				else:
-					raise ValueError("Expecting 2 dimensional list or numpy array")
-			else:
-  		        raise ValueError("Expecting list or numpy array")
+    def getRConditionNumber (self, oMatrix):
+            '''
+            LibStructural.getRConditionNumber(self, matrix)
 
-	def getRConditionNumber (self, oMatrix):
-			'''
-			LibStructural.getRConditionNumber(self, matrix)
+            :param: Takes a matrix (numpy) as an argument. Find the condition number of the matrix.
+            :returns: The condition number
+            '''
 
-			:param: Takes a matrix (numpy) as an argument. Find the condition number of the matrix.
-			:returns: the condition number
-			'''
+            import numpy as np
 
-			import numpy as np
+            if (type(oMatrix) is list or type(oMatrix) is np.ndarray):
+                oMatrix = np.array(oMatrix)
+                if oMatrix.ndim == 2:
+                    rows = len(oMatrix)
+                    cols = len(oMatrix[0])
+                    m = DoubleMatrix(rows,cols)
+                    for i in range(rows):
+                        for j in range (cols):
+                            m.set (i, j, oMatrix[i][j])
+                    return self._my_getRCond(m)
+                else:
+                    raise ValueError("Expecting 2 dimensional list or numpy array")
+            else:
+                raise ValueError("Expecting list or numpy array")
 
-			if (type(oMatrix) is list or type(oMatrix) is np.ndarray):
-				oMatrix = np.array(oMatrix)
-				if oMatrix.ndim == 2:
-					rows = len(oMatrix)
-					cols = len(oMatrix[0])
-					m = DoubleMatrix(rows,cols)
-					for i in range(rows):
-						for j in range (cols):
-							m.set (i, j, oMatrix[i][j])
-					return self._my_getRCond(m)
-				else:
-					raise ValueError("Expecting 2 dimensional list or numpy array")
-			else:
-  		        raise ValueError("Expecting list or numpy array")
+    def getLeftNullSpace (self, oMatrix):
+            """
+            LibStructural.getLeftNullSpace(self, matrix)
 
-	def getLeftNullSpace (self, oMatrix):
-			"""
-			LibStructural.getConditionNumber(self, matrix)
+            :param: Matrix to find the left nullspace of.
+            :returns: the Left Nullspace of the matrix argument.
 
-			:param: Matrix to find the left nullspace of.
-			:returns: the Left Nullspace of the matrix argument.
+            """
 
-			"""
+            import numpy as np
 
-			import numpy as np
+            if (type(oMatrix) is list or type(oMatrix) is np.ndarray):
+                oMatrix = np.array(oMatrix)
+                if oMatrix.ndim == 2:
+                    rows = len(oMatrix)
+                    cols = len(oMatrix[0])
+                    m = DoubleMatrix(rows,cols)
+                    for i in range(rows):
+                        for j in range (cols):
+                            m.set (i, j, oMatrix[i][j])
+                    return self._my_getLeftNullSpace(m).toNumpy()
+                else:
+                    raise ValueError("Expecting 2 dimensional list or numpy array")
+            else:
+                raise ValueError("Expecting list or numpy array")
 
-			if (type(oMatrix) is list or type(oMatrix) is np.ndarray):
-				oMatrix = np.array(oMatrix)
-				if oMatrix.ndim == 2:
-					rows = len(oMatrix)
-					cols = len(oMatrix[0])
-					m = DoubleMatrix(rows,cols)
-					for i in range(rows):
-						for j in range (cols):
-							m.set (i, j, oMatrix[i][j])
-					return self._my_getLeftNullSpace(m).toNumpy()
-				else:
-					raise ValueError("Expecting 2 dimensional list or numpy array")
-			else:
-  		        raise ValueError("Expecting list or numpy array")
+    def getRightNullSpace (self, oMatrix):
+            """
+            LibStructural.getRightNullSpace(self, matrix)
 
-	def getRightNullSpace (self, oMatrix):
-			"""
-			LibStructural.getRightNullSpace(self, matrix)
+            :param: Matrix to find the right nullspace of.
+            :returns: The Right Nullspace of the matric argument.
+            """
 
-			:param: Matrix to find the right nullspace of.
-			:returns: the Right Nullspace of the matric argument.
-			"""
+            import numpy as np
 
-			import numpy as np
+            if (type(oMatrix) is list or type(oMatrix) is np.ndarray):
+                oMatrix = np.array(oMatrix)
+                if oMatrix.ndim == 2:
+                    rows = len(oMatrix)
+                    cols = len(oMatrix[0])
+                    m = DoubleMatrix(rows,cols)
+                    for i in range(rows):
+                        for j in range (cols):
+                            m.set (i, j, oMatrix[i][j])
+                    return self._my_getRightNullSpace(m).toNumpy()
+                else:
+                    raise ValueError("Expecting 2 dimensional list or numpy array")
+            else:
+                raise ValueError("Expecting list or numpy array")
 
-			if (type(oMatrix) is list or type(oMatrix) is np.ndarray):
-				oMatrix = np.array(oMatrix)
-				if oMatrix.ndim == 2:
-					rows = len(oMatrix)
-					cols = len(oMatrix[0])
-					m = DoubleMatrix(rows,cols)
-					for i in range(rows):
-						for j in range (cols):
-							m.set (i, j, oMatrix[i][j])
-					return self._my_getRightNullSpace(m).toNumpy()
-				else:
-					raise ValueError("Expecting 2 dimensional list or numpy array")
-			else:
-  		        raise ValueError("Expecting list or numpy array")
+    def getRank (self, oMatrix):
+            """
+            LibStructural.getRank(self, matrix)
 
-	def getRank (self, oMatrix):
-			"""
-			LibStructural.getRank(self, matrix)
+            :param: Matrix to find the rank of.
+            :returns: the rank as an integer.
+            """
+            import numpy as np
 
-			:param: Matrix to find the rank of.
-			:returns: the rank as an integer.
-			"""
-			import numpy as np
+            if (type(oMatrix) is list or type(oMatrix) is np.ndarray):
+                oMatrix = np.array(oMatrix)
+                if oMatrix.ndim == 2:
+                    rows = len(oMatrix)
+                    cols = len(oMatrix[0])
+                    m = DoubleMatrix(rows,cols)
+                    for i in range(rows):
+                        for j in range (cols):
+                            m.set (i, j, oMatrix[i][j])
+                    return self._my_getRank(m)
+                else:
+                    raise ValueError("Expecting 2 dimensional list or numpy array")
+            else:
+                raise ValueError("Expecting list or numpy array")
 
-			if (type(oMatrix) is list or type(oMatrix) is np.ndarray):
-				oMatrix = np.array(oMatrix)
-				if oMatrix.ndim == 2:
-					rows = len(oMatrix)
-					cols = len(oMatrix[0])
-					m = DoubleMatrix(rows,cols)
-					for i in range(rows):
-						for j in range (cols):
-							m.set (i, j, oMatrix[i][j])
-					return self._my_getRank(m)
-				else:
-					raise ValueError("Expecting 2 dimensional list or numpy array")
-			else:
-  		        raise ValueError("Expecting list or numpy array")
+    def test (self):
+      """
+      LibStructural.test(self)
 
-	def test (self):
-    """
-    LibStructural.test(self)
+      :returns: An analysis summary for a test model.
 
-    :returns: An analysis summary for a test model.
-
-    """
-    import pkg_resources
-    model_path = pkg_resources.resource_filename('structural','test/BMID000000101155.xml')
-    print(self.loadSBMLFromFile(model_path))
-    print('\nValidating structural matrices...\n')
-    print(self.getTestDetails())
-    print(self.validateStructuralMatrices())
+      """
+      import pkg_resources
+      model_path = pkg_resources.resource_filename('structural','test/BMID000000101155.xml')
+      print(self.loadSBMLFromFile(model_path))
+      print('\nValidating structural matrices...\n')
+      print(self.getTestDetails())
+      print(self.validateStructuralMatrices())
 %}
 
 }
@@ -721,27 +716,27 @@ using LIB_LA::Matrix;
 
 %extend LIB_LA::Matrix<double>
 {
-	virtual double get(const unsigned int row, const unsigned int col)
+    virtual double get(const unsigned int row, const unsigned int col)
   {
-		return (*self)(row,col);
-		//return *(self->_Array + row * self->_Cols + col);
-	}
+        return (*self)(row,col);
+        //return *(self->_Array + row * self->_Cols + col);
+    }
 
-	virtual void set(const unsigned int row, const unsigned int col, double value)
+    virtual void set(const unsigned int row, const unsigned int col, double value)
   {
-		(*self)(row,col) = value;
-	}
+        (*self)(row,col) = value;
+    }
 
 %pythoncode %{
-		def toNumpy(self):
-				import numpy as np
-				result = np.zeros((self.numRows(), self.numCols()))
-				for i in range(self.numRows()):
-						for j in range(self.numCols()):
-								result[i,j] = self.get(i,j)
-				return result
-		def __repr__(self):
-				return self.toNumpy().__repr__()
+        def toNumpy(self):
+                import numpy as np
+                result = np.zeros((self.numRows(), self.numCols()))
+                for i in range(self.numRows()):
+                        for j in range(self.numCols()):
+                                result[i,j] = self.get(i,j)
+                return result
+        def __repr__(self):
+                return self.toNumpy().__repr__()
 %}
 
 }
@@ -749,69 +744,69 @@ using LIB_LA::Matrix;
 
 %extend LIB_LA::Matrix<int>
 {
-	virtual int get(const unsigned int row, const unsigned int col)
+    virtual int get(const unsigned int row, const unsigned int col)
     {
-		return (*self)(row,col);
-	}
+        return (*self)(row,col);
+    }
 
-	virtual void set(const unsigned int row, const unsigned int col, int value)
+    virtual void set(const unsigned int row, const unsigned int col, int value)
     {
-		(*self)(row,col) = value;
-	}
+        (*self)(row,col) = value;
+    }
 
 %pythoncode %{
-		def toNumpy(self):
-				import numpy as np
-				result = np.zeros((self.numRows(), self.numCols()), dtype=np.int)
-				for i in range(self.numRows()):
-						for j in range(self.numCols()):
-								result[i,j] = self.get(i,j)
-				return result
-		def __repr__(self):
-				return self.toNumpy().__repr__()
+        def toNumpy(self):
+                import numpy as np
+                result = np.zeros((self.numRows(), self.numCols()), dtype=np.int)
+                for i in range(self.numRows()):
+                        for j in range(self.numCols()):
+                                result[i,j] = self.get(i,j)
+                return result
+        def __repr__(self):
+                return self.toNumpy().__repr__()
 %}
 }
 
 %extend LIB_LA::Matrix<LIB_LA::Complex>
 {
-	virtual LIB_LA::Complex get(const unsigned int row, const unsigned int col)
+    virtual LIB_LA::Complex get(const unsigned int row, const unsigned int col)
     {
-		return (*self)(row,col);
-	}
+        return (*self)(row,col);
+    }
 
-	virtual double getReal(const unsigned int row, const unsigned int col)
+    virtual double getReal(const unsigned int row, const unsigned int col)
     {
-		return (*self)(row,col).Real;
-	}
-	virtual double getImag(const unsigned int row, const unsigned int col)
+        return (*self)(row,col).Real;
+    }
+    virtual double getImag(const unsigned int row, const unsigned int col)
     {
-		return (*self)(row,col).Imag;
-	}
+        return (*self)(row,col).Imag;
+    }
 
-	virtual void set(const unsigned int row, const unsigned int col, LIB_LA::Complex value)
+    virtual void set(const unsigned int row, const unsigned int col, LIB_LA::Complex value)
     {
-		(*self)(row,col) = value;
-	}
+        (*self)(row,col) = value;
+    }
 
-	virtual void setReal(const unsigned int row, const unsigned int col, double value)
+    virtual void setReal(const unsigned int row, const unsigned int col, double value)
     {
-		(*self)(row,col).Real = value;
-	}
-	virtual void setImag(const unsigned int row, const unsigned int col, double value)
+        (*self)(row,col).Real = value;
+    }
+    virtual void setImag(const unsigned int row, const unsigned int col, double value)
     {
-		(*self)(row,col).Imag = value;
-	}
+        (*self)(row,col).Imag = value;
+    }
 
 %pythoncode %{
-		def toNumpy(self):
-				import numpy as np
-				result = np.zeros((self.numRows(), self.numCols()), dtype=np.complex_)
-				for i in range(self.numRows()):
-						for j in range(self.numCols()):
-								result[i,j] = self.getReal(i,j) + self.getImag(i,j)*1j
-				return result
-		def __repr__(self):
-				return self.toNumpy().__repr__()
+        def toNumpy(self):
+                import numpy as np
+                result = np.zeros((self.numRows(), self.numCols()), dtype=np.complex_)
+                for i in range(self.numRows()):
+                        for j in range(self.numCols()):
+                                result[i,j] = self.getReal(i,j) + self.getImag(i,j)*1j
+                return result
+        def __repr__(self):
+                return self.toNumpy().__repr__()
 %}
 }
 
@@ -819,11 +814,11 @@ using LIB_LA::Matrix;
 // %rename (_getInitialConditions) LIB_STRUCTURAL::LibStructural::getInitialConditions;
 
 /*%extend LIB_STRUCTURAL::LibStructural {
-	std::vector< std::pair<std::string, double> > _getInitialConditions() {
-		return *self->getInitialConditions();
-	}
+    std::vector< std::pair<std::string, double> > _getInitialConditions() {
+        return *self->getInitialConditions();
+    }
 %pythoncode %{
-		def getInitialConditions(*args):
-				return _getInitialConditions(*args)
+        def getInitialConditions(*args):
+                return _getInitialConditions(*args)
 %}
 }*/
