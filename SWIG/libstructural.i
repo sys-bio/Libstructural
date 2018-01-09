@@ -215,7 +215,7 @@ static PyObject* pNoModelException;  /* add this! */
     def getColumnReorderedNrMatrix(self):
         """
         LibStructural.getColumnReorderedNrMatrix(self)
-        :returns: the Nr Matrix repartitioned into NIC (independent columns) and NDC (dependent columns). The Nr matrix contains the independent rows of the stoichiometry matrix
+        :returns: The Nr Matrix repartitioned into NIC (independent columns) and NDC (dependent columns). The Nr matrix contains the independent rows of the stoichiometry matrix
         """
         return self._my_getColumnReorderedNrMatrix().toNumpy()
 
@@ -225,7 +225,7 @@ static PyObject* pNoModelException;  /* add this! */
 
         Computes the N0 matrix if possible. The N0 matrix will contain all the dependent rows of the stoichiometry matrix.
 
-        :returns: the N0 Matrix.
+        :returns: The N0 Matrix.
 
         """
         return self._my_getFullyReorderedN0StoichiometryMatrix().toNumpy()
@@ -236,14 +236,14 @@ static PyObject* pNoModelException;  /* add this! */
 
         The Nr matrix contains all the linearly independent rows of the stoichiometry matrix.
 
-        :returns: the Nr Matrix.
+        :returns: The Nr Matrix.
         """
         return self._my_getFullyReorderedNrMatrix().toNumpy()
 
     def getFullyReorderedStoichiometryMatrix(self):
         """
         LibStructural.getFullyReorderedStoichiometryMatrix(self)
-        :returns: the fully reordered stoichiometry matrix. Rows and columns are reordered so all indepedent rows
+        :returns: The fully reordered stoichiometry matrix. Rows and columns are reordered so all indepedent rows
         of the stoichiometry matrix are brought to the top and left side of the matrix.
         """
         return self._my_getFullyReorderedStoichiometryMatrix().toNumpy()
@@ -263,14 +263,17 @@ static PyObject* pNoModelException;  /* add this! */
         """
         LibStructural.getGammaMatrixGJ(self,matrix)
 
-        :param: the stoichiometry matrix that will be used to calculate gamma
+        :param: The stoichiometry matrix that will be used to calculate gamma
         :returns: Gamma, the conservation law array.
 
         Each row represents a single conservation law where the column indicate the participating molecular species. The number of rows is therefore equal to the number of conservation laws.
         In this case the Gamma Matrix is recalculated for the given stoichiometry matrix. amma is calculated based on R = GaussJordan ( [ stoichiometry  I ] ), where R has the form
 
-        R = [ R11 R12
-                0  GAMMA ]
+        +-----+-----+
+        |R11  |R12  |
+        +-----+-----+
+        |0    |GAMMA|
+        +-----+-----+
 
         The RowIds should be an increasing number, to enumerate the conservation law, the column label will be the same label as the stoichiometry matrix.
         """
@@ -296,7 +299,7 @@ static PyObject* pNoModelException;  /* add this! */
         """
         LibStructural.getK0Matrix(self)
 
-        :returns: the K0 Matrix.
+        :returns: The K0 Matrix.
         K0 is defined such that K0 = -(NIC)\ :sup:`-1`\ * NDC, or equivalently, [NDC NIC][I K0]' = 0 where [NDC NIC] = Nr
         """
         return self._my_getK0Matrix().toNumpy()
@@ -304,7 +307,7 @@ static PyObject* pNoModelException;  /* add this! */
     def getKMatrix(self):
         """
         LibStructural.getKMatrix(self)
-        :returns: Tshe K matrix (right nullspace of Nr)
+        :returns: The K matrix (right nullspace of Nr)
         The K matrix has the structure, [I K0]'
         """
         return self._my_getKMatrix().toNumpy()
@@ -542,7 +545,9 @@ static PyObject* pNoModelException;  /* add this! */
             '''
             LibStructural.getRConditionNumber(self, matrix)
 
-            :param: Takes a matrix (numpy) as an argument. Find the condition number of the matrix.
+            Find the condition number of a matrix.
+
+            :param: A matrix as an argument.
             :returns: The condition number
             '''
 
@@ -568,7 +573,7 @@ static PyObject* pNoModelException;  /* add this! */
             LibStructural.getLeftNullSpace(self, matrix)
 
             :param: Matrix to find the left nullspace of.
-            :returns: the Left Nullspace of the matrix argument.
+            :returns: The Left Nullspace of the matrix argument.
 
             """
 
@@ -619,7 +624,7 @@ static PyObject* pNoModelException;  /* add this! */
             LibStructural.getRank(self, matrix)
 
             :param: Matrix to find the rank of.
-            :returns: the rank as an integer.
+            :returns: The rank as an integer.
             """
             import numpy as np
 

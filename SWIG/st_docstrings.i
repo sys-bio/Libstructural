@@ -345,14 +345,19 @@ LibStructural.getInstance(self)
 
 static method to get an instance of LibStructural (allows use as singleton)
 
- import structural
- ls = structural.LibStructural.getInstance()
+.. code:: python
+
+import structural
+ls = structural.LibStructural.getInstance()
+
+.. end
+
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getColumnReorderedNrMatrixIds "
 LibStructural.getColumnReorderedNrMatrixIds(self)
 
-:returns: the Nr Matrix row and column labels (repartitioned into NIC and NDC).
+:returns: The Nr Matrix row and column labels (repartitioned into NIC and NDC).
 
 ";
 
@@ -395,13 +400,13 @@ Remarks: This method should only be called after ``LibStructural.loadStoichiomet
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getGammaMatrixIds "
 LibStructural.getGammaMatrixIds(self)
 
-:returns: the row and column labels for Gamma, the conservation law array.
+:returns: The row and column labels for Gamma, the conservation law array.
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getK0MatrixIds "
 LibStructural.getK0MatrixIds(self)
 
-:returns: the K0 Matrix row and column labels.
+:returns: The K0 Matrix row and column labels.
 
 ";
 
@@ -415,42 +420,42 @@ LibStructural.getKMatrixIds(self)
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getL0MatrixIds "
 LibStructural.getL0MatrixIds(self)
 
-:returns: the L0 Matrix row and column labels.
+:returns: The L0 Matrix row and column labels.
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getLinkMatrixIds "
 LibStructural.getLinkMatrixIds(self)
 
-:returns: the row and column labels for the Link Matrix, L
+:returns: The row and column labels for the Link Matrix, L
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getN0MatrixIds "
 LibStructural.getN0MatrixIds(self)
 
-:returns: the N0 Matrix row and column labels.
+:returns: The N0 Matrix row and column labels.
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getNDCMatrixIds "
 LibStructural.getNDCMatrixIds(self)
 
-:returns: the NDC Matrix row and column labels.
+:returns: The NDC Matrix row and column labels.
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getNICMatrixIds "
 LibStructural.getNICMatrixIds(self)
 
-:returns: the NIC Matrix row and column labels.
+:returns: The NIC Matrix row and column labels.
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getNrMatrixIds "
 LibStructural.getNrMatrixIds(self)
 
-:returns: the Nr Matrix row and column labels.
+:returns: The Nr Matrix row and column labels.
 
 ";
 
@@ -464,7 +469,7 @@ LibStructural.getStoichiometryMatrixIds(self)
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getFullyReorderedStoichiometryMatrixIds "
 LibStructural.getFullyReorderedStoichiometryMatrixIds(self)
 
-:returns: the row and column labels for the reordered stoichiometry matrix (row reordered stoichiometry matrix)
+:returns: The row and column labels for the reordered stoichiometry matrix (row reordered stoichiometry matrix)
 
 ";
 
@@ -478,6 +483,6 @@ LibStructural.getReorderedStoichiometryMatrixIds(self)
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getConservedLaws "
 LibStructural.getConservedLaws(self)
 
-:returns: algebraic expressions for the conserved cycles. Returns empty if none.
+:returns: Algebraic expressions for the conserved cycles. Returns empty if none.
 
 ";
