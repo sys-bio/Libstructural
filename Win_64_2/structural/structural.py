@@ -988,7 +988,7 @@ class LibStructural(_object):
 
         LibStructural.getConservedLaws(self)
 
-        :returns: algebraic expressions for the conserved cycles. Returns empty if none.
+        :returns: Algebraic expressions for the conserved cycles. Returns empty if none.
 
 
         """
@@ -1248,8 +1248,13 @@ class LibStructural(_object):
 
         static method to get an instance of LibStructural (allows use as singleton)
 
-         import structural
-         ls = structural.LibStructural.getInstance()
+        .. code:: python
+
+        import structural
+        ls = structural.LibStructural.getInstance()
+
+        .. end
+
 
         """
         return _structural.LibStructural_getInstance()
@@ -1261,7 +1266,7 @@ class LibStructural(_object):
 
         LibStructural.getColumnReorderedNrMatrixIds(self)
 
-        :returns: the Nr Matrix row and column labels (repartitioned into NIC and NDC).
+        :returns: The Nr Matrix row and column labels (repartitioned into NIC and NDC).
 
 
         """
@@ -1311,7 +1316,7 @@ class LibStructural(_object):
 
         LibStructural.getGammaMatrixIds(self)
 
-        :returns: the row and column labels for Gamma, the conservation law array.
+        :returns: The row and column labels for Gamma, the conservation law array.
 
         """
         return _structural.LibStructural_getGammaMatrixIds(self)
@@ -1322,7 +1327,7 @@ class LibStructural(_object):
 
         LibStructural.getK0MatrixIds(self)
 
-        :returns: the K0 Matrix row and column labels.
+        :returns: The K0 Matrix row and column labels.
 
 
         """
@@ -1346,7 +1351,7 @@ class LibStructural(_object):
 
         LibStructural.getL0MatrixIds(self)
 
-        :returns: the L0 Matrix row and column labels.
+        :returns: The L0 Matrix row and column labels.
 
 
         """
@@ -1358,7 +1363,7 @@ class LibStructural(_object):
 
         LibStructural.getLinkMatrixIds(self)
 
-        :returns: the row and column labels for the Link Matrix, L
+        :returns: The row and column labels for the Link Matrix, L
 
 
         """
@@ -1370,7 +1375,7 @@ class LibStructural(_object):
 
         LibStructural.getN0MatrixIds(self)
 
-        :returns: the N0 Matrix row and column labels.
+        :returns: The N0 Matrix row and column labels.
 
 
         """
@@ -1382,7 +1387,7 @@ class LibStructural(_object):
 
         LibStructural.getNDCMatrixIds(self)
 
-        :returns: the NDC Matrix row and column labels.
+        :returns: The NDC Matrix row and column labels.
 
 
         """
@@ -1394,7 +1399,7 @@ class LibStructural(_object):
 
         LibStructural.getNICMatrixIds(self)
 
-        :returns: the NIC Matrix row and column labels.
+        :returns: The NIC Matrix row and column labels.
 
 
         """
@@ -1406,7 +1411,7 @@ class LibStructural(_object):
 
         LibStructural.getNrMatrixIds(self)
 
-        :returns: the Nr Matrix row and column labels.
+        :returns: The Nr Matrix row and column labels.
 
 
         """
@@ -1430,7 +1435,7 @@ class LibStructural(_object):
 
         LibStructural.getFullyReorderedStoichiometryMatrixIds(self)
 
-        :returns: the row and column labels for the reordered stoichiometry matrix (row reordered stoichiometry matrix)
+        :returns: The row and column labels for the reordered stoichiometry matrix (row reordered stoichiometry matrix)
 
 
         """
@@ -1459,7 +1464,7 @@ class LibStructural(_object):
     def getColumnReorderedNrMatrix(self):
         """
         LibStructural.getColumnReorderedNrMatrix(self)
-        :returns: the Nr Matrix repartitioned into NIC (independent columns) and NDC (dependent columns). The Nr matrix contains the independent rows of the stoichiometry matrix
+        :returns: The Nr Matrix repartitioned into NIC (independent columns) and NDC (dependent columns). The Nr matrix contains the independent rows of the stoichiometry matrix
         """
         return self._my_getColumnReorderedNrMatrix().toNumpy()
 
@@ -1469,7 +1474,7 @@ class LibStructural(_object):
 
         Computes the N0 matrix if possible. The N0 matrix will contain all the dependent rows of the stoichiometry matrix.
 
-        :returns: the N0 Matrix.
+        :returns: The N0 Matrix.
 
         """
         return self._my_getFullyReorderedN0StoichiometryMatrix().toNumpy()
@@ -1480,14 +1485,14 @@ class LibStructural(_object):
 
         The Nr matrix contains all the linearly independent rows of the stoichiometry matrix.
 
-        :returns: the Nr Matrix.
+        :returns: The Nr Matrix.
         """
         return self._my_getFullyReorderedNrMatrix().toNumpy()
 
     def getFullyReorderedStoichiometryMatrix(self):
         """
         LibStructural.getFullyReorderedStoichiometryMatrix(self)
-        :returns: the fully reordered stoichiometry matrix. Rows and columns are reordered so all indepedent rows
+        :returns: The fully reordered stoichiometry matrix. Rows and columns are reordered so all indepedent rows
         of the stoichiometry matrix are brought to the top and left side of the matrix.
         """
         return self._my_getFullyReorderedStoichiometryMatrix().toNumpy()
@@ -1507,16 +1512,10 @@ class LibStructural(_object):
         """
         LibStructural.getGammaMatrixGJ(self,matrix)
 
-        :param: the stoichiometry matrix that will be used to calculate gamma
+        :param: The stoichiometry matrix that will be used to calculate gamma matrix.
         :returns: Gamma, the conservation law array.
 
-        Each row represents a single conservation law where the column indicate the participating molecular species. The number of rows is therefore equal to the number of conservation laws.
-        In this case the Gamma Matrix is recalculated for the given stoichiometry matrix. amma is calculated based on R = GaussJordan ( [ stoichiometry  I ] ), where R has the form
-
-        R = [ R11 R12
-                0  GAMMA ]
-
-        The RowIds should be an increasing number, to enumerate the conservation law, the column label will be the same label as the stoichiometry matrix.
+        Each row represents a single conservation law where the column indicate the participating molecular species. The number of rows is therefore equal to the number of conservation laws. In this case the Gamma Matrix is recalculated for the given stoichiometry matrix. The column label will be the same label as the stoichiometry matrix.
         """
         import numpy as np
 
@@ -1540,7 +1539,7 @@ class LibStructural(_object):
         """
         LibStructural.getK0Matrix(self)
 
-        :returns: the K0 Matrix.
+        :returns: The K0 Matrix.
         K0 is defined such that K0 = -(NIC)\ :sup:`-1`\ * NDC, or equivalently, [NDC NIC][I K0]' = 0 where [NDC NIC] = Nr
         """
         return self._my_getK0Matrix().toNumpy()
@@ -1786,7 +1785,9 @@ class LibStructural(_object):
             '''
             LibStructural.getRConditionNumber(self, matrix)
 
-            :param: Takes a matrix (numpy) as an argument. Find the condition number of the matrix.
+            Find the condition number of a matrix.
+
+            :param: A matrix as an argument.
             :returns: The condition number
             '''
 
@@ -1812,7 +1813,7 @@ class LibStructural(_object):
             LibStructural.getLeftNullSpace(self, matrix)
 
             :param: Matrix to find the left nullspace of.
-            :returns: the Left Nullspace of the matrix argument.
+            :returns: The Left Nullspace of the matrix argument.
 
             """
 
@@ -1863,7 +1864,7 @@ class LibStructural(_object):
             LibStructural.getRank(self, matrix)
 
             :param: Matrix to find the rank of.
-            :returns: the rank as an integer.
+            :returns: The rank as an integer.
             """
             import numpy as np
 
@@ -1908,8 +1909,13 @@ def LibStructural_getInstance():
 
     static method to get an instance of LibStructural (allows use as singleton)
 
-     import structural
-     ls = structural.LibStructural.getInstance()
+    .. code:: python
+
+    import structural
+    ls = structural.LibStructural.getInstance()
+
+    .. end
+
 
     """
     return _structural.LibStructural_getInstance()
