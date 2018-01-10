@@ -16,6 +16,8 @@ By far the easiest way to get LibStructural working is to install Tellurium (tel
 
 This should work for Windows and Mas OSX.
 
+If you want to install LibStructural on the standard python distribution found at python.org then follow the instructions below:
+
 ------------
 Dependencies
 ------------
@@ -43,11 +45,22 @@ If you are using a 32-bit python download: numpy-1.14.0+mkl-cp37-cp37m-win32.whl
 
 If you are using a 64-bit python download: numpy-1.14.0+mkl-cp37-cp37m-win_amd64.whl
 
-Copy these files to python 
+Copy these files to c:\pythonXX\scripts where XX is your python version eg 27. 
+
+At the windows command line, cd to c:\pythonXX\scripts and type: pip install numpy-1.14..etc
+
+This should install numpy. 
+
+Max OSX
+-------
+
+For the mac installation pleae see: https://scipy.org/install.html
 
 -----------
 Using Pip
 -----------
+
+Once you have numpy installed you can use a standard pip installation to get libstructural. See below is you are using Tellurium.
 
 libStructural is available via PyPI, which is the simplest method to obtain libStructural.
 To install libStructural using pip, run following line on console or terminal:
