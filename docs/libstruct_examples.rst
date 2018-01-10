@@ -160,10 +160,10 @@ Conserved Metabolic Network
 
 Below is a network diagram that shows two interlinked conserved cycles: S1 + S2 + ES and ES + E:
 
-.. figure:: example_model_1.png
+.. figure:: ConservedTwoCyclesPlain.jpg
     :align: center
     :figclass: align-center
-    :scale: 25 %
+    :scale: 18 %
 
 To generate an SBML string and load the model to LibStructural, run:
 
@@ -190,7 +190,7 @@ To generate an SBML string and load the model to LibStructural, run:
 .. end
 
 
-Once the model is loaded we can run the getSummary function to get the analysis result of the analyzeWithQR function. NOTE: when loading a model on LibStructural, the analyzeWithQR method is called implicitly.
+Once the model is loaded we can run the getSummary function to get the analysis result of the analyzeWithQR function. NOTE: when loading a model on LibStructural, analyzeWithQR is called implicitly.
 
 .. code:: python
 
@@ -198,6 +198,29 @@ Once the model is loaded we can run the getSummary function to get the analysis 
 
 .. end
 
+Which returns:
+
+.. code-block:: none
+
+  --------------------------------------------------------------
+  STRUCTURAL ANALYSIS MODULE : Results
+  --------------------------------------------------------------
+  Size of Stochiometric Matrix: 4 x 3 (Rank is  2)
+  Nonzero entries in Stochiometric Matrix: 8  (66.6667% full)
+
+  Independent Species (2) :
+  ES, S1
+
+  Dependent Species (2) :
+  E, S2
+
+  L0 : There are 2 dependencies. L0 is a 2x2 matrix.
+
+  Conserved Entities
+  1:  + ES + E
+  2:  + ES + S1 + S2
+
+.. end
 
 .. code:: python
 
@@ -208,6 +231,19 @@ Once the model is loaded we can run the getSummary function to get the analysis 
   print(tests)
 
 .. end
+.. code-block:: none
+
+  ('Pass', 'Pass', 'Pass', 'Pass', 'Pass', 'Pass')
+  Testing Validity of Conservation Laws.
+
+  Passed Test 1 : Gamma*N = 0 (Zero matrix)
+  Passed Test 2 : Rank(N) using SVD (2) is same as m0 (2)
+  Passed Test 3 : Rank(NR) using SVD (2) is same as m0 (2)
+  Passed Test 4 : Rank(NR) using QR (2) is same as m0 (2)
+  Passed Test 5 : L0 obtained with QR matches Q21*inv(Q11)
+  Passed Test 6 : N*K = 0 (Zero matrix)
+
+.. end
 
 To get the model's stoichiometry matrix we can run the following code:
 
@@ -215,6 +251,15 @@ To get the model's stoichiometry matrix we can run the following code:
 
   # get the default, unaltered stoichiometric matrix
   print ls.getStoichiometryMatrix()
+
+.. end
+.. code-block:: none
+
+  Out[1]:
+  [[-1.  1.  0.]
+   [ 1.  0. -1.]
+   [ 1. -1.  0.]
+   [ 0. -1.  1.]]
 
 .. end
 
@@ -291,6 +336,72 @@ There are few methods that compute conserved moeties in the model:
 
 Branched Metabolic Network
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+A metabolic network with nine reactions and six floating species is shown below.
+
+.. figure:: complexBranchedNetwork.jpg
+    :align: center
+    :figclass: align-center
+    :scale: 18 %
+
+To generate an SBML string and load the model to LibStructural, run:
+
+.. code:: python
+
+  import structural
+  import tellurium as te
+
+  r = te.loada('''
+  // Reactions:
+  J1: $X0 -> A; v;
+  J2: A -> B ; v;
+  J3: A -> C; v;
+  J4: B + E -> 2D; v;
+  J5: $X1 -> E; v;
+  J6: B -> C + F; v;
+  J7: C -> D; v;
+  J8: D -> ; v;
+  J9: F -> ; v;
+
+  // Variable initializations:
+      v = 0;
+
+  // Species initializations:
+  A = 10; B = 10; C = 10;  D = 10; E = 10; F = 10;
+  X0 = 10; X1 = 10; X2 = 10; X3 = 10;
+  ''')
+
+  sbmlstr = r.getSBML() # this creates an SBML string from the antimony model, r.
+  ls = structural.LibStructural()
+  ls.loadSBMLFromString(sbmlstr)
+
+.. end
+
+To get the summary result of analyzeWithQR:
+
+.. code:: python
+
+  print(ls.getSummary()) # Prints out if the model is passed some internal structural validation tests.
+
+.. end
+
+.. code-block:: none
+
+  --------------------------------------------------------------
+  STRUCTURAL ANALYSIS MODULE : Results
+  --------------------------------------------------------------
+  Size of Stochiometric Matrix: 6 x 9 (Rank is  6)
+  Nonzero entries in Stochiometric Matrix: 16  (29.6296% full)
+
+  Independent Species (6) :
+  D, A, C, F, E, B
+
+  Dependent Species : NONE
+
+  L0 : There are no dependencies. L0 is an EMPTY matrix
+
+  Conserved Entities: NONE
+
+.. end
 
 To compute the elementary modes the **getElementaryModes** method can be called. This returns an array where each row is an elementary mode in the model. Elementary modes are the simplest pathways within a metabolic network that can sustain a steady state and at the same time are thermodynamically feasible
 
