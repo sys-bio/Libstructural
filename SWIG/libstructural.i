@@ -263,19 +263,10 @@ static PyObject* pNoModelException;  /* add this! */
         """
         LibStructural.getGammaMatrixGJ(self,matrix)
 
-        :param: The stoichiometry matrix that will be used to calculate gamma
+        :param: The stoichiometry matrix that will be used to calculate gamma matrix.
         :returns: Gamma, the conservation law array.
 
-        Each row represents a single conservation law where the column indicate the participating molecular species. The number of rows is therefore equal to the number of conservation laws.
-        In this case the Gamma Matrix is recalculated for the given stoichiometry matrix. amma is calculated based on R = GaussJordan ( [ stoichiometry  I ] ), where R has the form
-
-        +-----+-----+
-        |R11  |R12  |
-        +-----+-----+
-        |0    |GAMMA|
-        +-----+-----+
-
-        The RowIds should be an increasing number, to enumerate the conservation law, the column label will be the same label as the stoichiometry matrix.
+        Each row represents a single conservation law where the column indicate the participating molecular species. The number of rows is therefore equal to the number of conservation laws. In this case the Gamma Matrix is recalculated for the given stoichiometry matrix. The column label will be the same label as the stoichiometry matrix.
         """
         import numpy as np
 
