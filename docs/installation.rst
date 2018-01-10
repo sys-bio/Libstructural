@@ -1,8 +1,22 @@
-Installation
+Installation on Python
 ======================
 
-Currently, we support Python 2.7 for both Windows (64 bit) and MacOS.
+Currently, we support Python 2.7+ and 3.6+ for both Windows (64 bit and 32-bit) and MacOS.
 Follow the steps below to install libStructural.
+
+------------
+Dependencies
+------------
+
+LibStructural depends on numpy. If you don't have numpy installed you'll need to install it. To check if you have numpy installed
+type the following at the Python console:
+
+.. code:: python
+   import numpy
+.. end
+
+If there are no errors then you have numpy installed. If not follow the instructions below:
+
 
 -----------
 Using Pip
