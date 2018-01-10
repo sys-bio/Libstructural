@@ -1,8 +1,20 @@
 Installation on Python
 ======================
 
-Currently, we support Python 2.7+ and 3.6+ for both Windows (64 bit and 32-bit) and MacOS.
+Currently we support Python 2.7+ and 3.6+ for both Windows (64 bit and 32-bit) and MacOS.
 Follow the steps below to install libStructural.
+
+By far the easiest way to get LibStructural working is to install Tellurium (tellurium.analogmachine.org) and type at the Telluirum python console the instruation:
+
+
+.. code:: python
+
+   import tellurium as te
+   te.installPackage ('structural')
+   
+.. end
+
+This should work for Windows and Mas OSX.
 
 ------------
 Dependencies
@@ -12,11 +24,26 @@ LibStructural depends on numpy. If you don't have numpy installed you'll need to
 type the following at the Python console:
 
 .. code:: python
+
    import numpy
+   
 .. end
 
-If there are no errors then you have numpy installed. If not follow the instructions below:
+If there are no errors then you have numpy installed. If there are errors follow these instructions. 
 
+
+Windows 7/8/10
+--------------
+
+Download the numpy binaries from:
+
+https://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy
+
+If you are using a 32-bit python download: numpy-1.14.0+mkl-cp37-cp37m-win32.whl
+
+If you are using a 64-bit python download: numpy-1.14.0+mkl-cp37-cp37m-win_amd64.whl
+
+Copy these files to python 
 
 -----------
 Using Pip
