@@ -338,7 +338,7 @@ There are few methods that compute conserved moeties in the model:
 
 Branched Metabolic Network
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-A metabolic network with nine reactions and six floating species is shown below.
+A metabolic network with nine reactions and six floating species is shown below. This model was originally developed by Jeremy Zucker.
 
 .. figure:: complexBranchedNetwork.jpg
     :align: center
