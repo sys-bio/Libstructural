@@ -2,9 +2,9 @@ Installation on Python
 ======================
 
 Currently we support Python 2.7+ and 3.6+ for both Windows (64 bit and 32-bit) and MacOS.
-Follow the steps below to install libStructural.
+Follow the steps below to install LibStructural.
 
-By far the easiest way to get LibStructural working is to install Tellurium (tellurium.analogmachine.org) and type at the Telluirum python console the instruation:
+By far the easiest way to get LibStructural working is to install Tellurium (tellurium.analogmachine.org) and type at the Tellurium Python console the instruction:
 
 
 .. code:: python
@@ -14,13 +14,15 @@ By far the easiest way to get LibStructural working is to install Tellurium (tel
    
 .. end
 
-This should work for Windows and Mas OSX.
+This should work for Windows and Mas OSX version of Tellurium. That completes the installation.
 
 If you want to install LibStructural on the standard python distribution found at python.org then follow the instructions below:
 
 ------------
 Dependencies
 ------------
+
+For those who want to install LibStructural on other distributions including the standard distibution at python.org, you'll need the following instructions.
 
 LibStructural depends on numpy. If you don't have numpy installed you'll need to install it. To check if you have numpy installed
 type the following at the Python console:
@@ -31,11 +33,11 @@ type the following at the Python console:
    
 .. end
 
-If there are no errors then you have numpy installed. If there are errors follow these instructions. 
+If there are no errors then you have numpy installed. If there are errors follow the instructions below:
 
 
-Windows 7/8/10
---------------
+Numpy on Windows 7/8/10
+-----------------------
 
 Download the numpy binaries from:
 
@@ -45,14 +47,14 @@ If you are using a 32-bit python download: numpy-1.14.0+mkl-cp37-cp37m-win32.whl
 
 If you are using a 64-bit python download: numpy-1.14.0+mkl-cp37-cp37m-win_amd64.whl
 
-Copy these files to c:\pythonXX\scripts where XX is your python version eg 27. 
+Copy these files to c:\\pythonXX\\scripts where XX is your python version eg 27. 
 
 At the windows command line, cd to c:\pythonXX\scripts and type: pip install numpy-1.14..etc
 
 This should install numpy. 
 
-Max OSX
--------
+Numpy on Max OSX
+----------------
 
 For the mac installation pleae see: https://scipy.org/install.html
 
