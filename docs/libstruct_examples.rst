@@ -1,12 +1,13 @@
 Getting Started with LibStructural
 ==================================
 
-The following examples demonstrate how to load a biochemical reaction network into LibStructural API. A model should be available at least in one of the following formats: SBML model file (.xml format), or a 2D array matrix. SBML can either be loaded as a string or directly from a file.
+The following examples demonstrate how to load a biochemical reaction network using the LibStructural API. A model should 
+be available in at least one of the following formats: SBML model file (.xml format), or a 2D array. SBML can either be loaded as a string or directly from a file.
 
 ----------------------
 Testing LibStructural
 ----------------------
-To test the structural module, you can use the **test()** method. This will print out an analysis summary of a Glycolysis/Gluconeogenesis SBML model (`BMID000000101155 <https://www.ebi.ac.uk/biomodels-main/BMID000000101155>`_) distributed with LibStructural. For example:
+To test the LibStructural module, you can use the **test()** method. This will print out an analysis summary of a Glycolysis/Gluconeogenesis SBML model (`BMID000000101155 <https://www.ebi.ac.uk/biomodels-main/BMID000000101155>`_) distributed with LibStructural. For example:
 
 .. code:: python
 
@@ -16,7 +17,7 @@ To test the structural module, you can use the **test()** method. This will prin
 
 .. end
 
-In addition, a test script is distributed with LibStructural package that can be run to test the methods' integrity. The script checks that LibStructural methods don't crash when there is no model loaded. It also tests **loadStoichiometryMatrix** method. You can run the script as shown below:
+In addition, a test script is distributed with LibStructural package that can be run to test the methods' integrity. It also tests **loadStoichiometryMatrix** method. You can run the script as shown below:
 
 .. code:: python
 
@@ -26,7 +27,7 @@ In addition, a test script is distributed with LibStructural package that can be
 .. end
 
 
-The following sections describe different ways of loading a model into Libstructural. Once a model is loaded it will automatically call ``analyzeWithQR``. At this point a summary of the analysis can be obtained by calling **getSummary()**:
+The following sections describe different ways of loading a model into Libstructural. Once a model is loaded it will automatically call ``analyzeWithQR`` for analyse the stoichiometry matrix. At this point a summary of the analysis can be obtained by calling **getSummary()**:
 
 .. code:: python
 
@@ -35,10 +36,10 @@ The following sections describe different ways of loading a model into Libstruct
 .. end
 
 -------------------------
-Loading a model
+Loading a Model
 -------------------------
 
-To load a model into LibStructural, an instance variable must be created.
+To load a model into LibStructural, a LibStructural variable must first be created. All methods call are then routed via this variable.
 
 .. code:: python
 
@@ -47,9 +48,9 @@ To load a model into LibStructural, an instance variable must be created.
 
 .. end
 
-Loading a model from a file
+Loading a Model from a File
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-A model can be loaded from an SBML file, for example:
+A model can be loaded from an SBML file using the **loadSBMLFromFile()** method. For example:
 
 .. code:: python
 
@@ -66,16 +67,17 @@ If a model is available as a SBML string, us the following code:
 
 .. code:: python
 
-    ls.loadSBMLFromString("example_SBMLstring")
+    ls.loadSBMLFromString(sbmlString)
 
 .. end
 
-This might occur of a model is specified using the Antimony syntax or is created from libSBML.
+where **sbmlString** has been previously assigned an SBML string. SBML strings can be obtained either by loading the contents of a
+file than contains SBML, creating an SBML model via simpleSBML or libSBML, or more commonly by converting an Antimony description of a model into SBML. 
 
-Loading a model from a stoichiometric matrix
+Loading a Model from a Stoichiometric Matrix
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Models can also be loaded by specifying the stoichiometry matrix directly"
+Models can also be loaded by specifying the stoichiometry matrix directly as an array:
 
 .. code:: python
 
@@ -90,7 +92,7 @@ The load command will also by default add reaction ids of the form '_Jx' and spe
 Assigning Reaction and Species Ids
 ----------------------------------
 
-When loading a model from a stoichiometry matrix, reactions and species can be optionally labelled.
+When loading a model from a stoichiometry matrix, reactions and species Ids can be canged form their default values as follows.
 
 .. code:: python
 
@@ -102,7 +104,7 @@ When loading a model from a stoichiometry matrix, reactions and species can be o
   print ls.getFloatingSpeciesIds()
   print ls.getReactionsIds()
 
-  # load Ids
+  # load new Ids
   ls.loadSpeciesIdsWithValues (['a', 'b', 'c'], [0, 0, 0]) # The array length for both ids list and values list should be equal to the number of species
   ls.loadReactionIdsWithValues (['F1', 'F2', 'F3'],[0, 0, 0])
 
@@ -114,7 +116,7 @@ When loading a model from a stoichiometry matrix, reactions and species can be o
 
 .. end
 
-Loading a model using the antimony model description language
+Loading a model Using the Antimony Model Description Language
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -142,7 +144,7 @@ If you use `tellurium <http://tellurium.analogmachine.org/>`_ you can load a mod
   ls.loadSBMLFromString(sbmlstr)
   print(ls.getSummary())
 
-  # An antimony model can be converted into SBML file as well
+  # A libRoadRunner model can be converted into SBML file as well
   r.exportToSBML('Test_model.xml') # creates an xml file in the current directory
   ls = structural.LibStructural()
   ls.loadSBMLFromFile('Test_model.xml') # loads the xml file from the current directory
@@ -153,7 +155,7 @@ If you use `tellurium <http://tellurium.analogmachine.org/>`_ you can load a mod
 Structural Analysis
 -------------------------
 
-The following examples show some of LibStructural's methods on two different models. The models were generated using tellurium by converting antimony description language to an SBML string.
+The following examples show some of LibStructural's methods on two different models. The models were generated using Tellurium by converting the antimony description language into an SBML string.
 
 Conserved Metabolic Network
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -190,7 +192,7 @@ To generate an SBML string and load the model to LibStructural, run:
 .. end
 
 
-Once the model is loaded we can run the getSummary function to get the analysis result of the analyzeWithQR function. NOTE: when loading a model on LibStructural, analyzeWithQR is called implicitly.
+Once the model is loaded we can run the getSummary function to get the analysis result of the analyzeWithQR function. NOTE: when loading a model on LibStructural, analyzeWithQR is called automatically.
 
 .. code:: python
 
