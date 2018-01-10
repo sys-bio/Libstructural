@@ -43,36 +43,36 @@ Download the numpy binaries from:
 
 https://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy
 
-If you are using a 32-bit python download: numpy-1.14.0+mkl-cp37-cp37m-win32.whl
+If you are using a 32-bit Python download: numpy-1.14.0+mkl-cp37-cp37m-win32.whl
 
-If you are using a 64-bit python download: numpy-1.14.0+mkl-cp37-cp37m-win_amd64.whl
+If you are using a 64-bit Python download: numpy-1.14.0+mkl-cp37-cp37m-win_amd64.whl
 
-Copy these files to c:\\pythonXX\\scripts where XX is your python version eg 27. 
+Copy these files to c:\\PythonXX\\Scripts where XX is your python version eg 27. 
 
-At the windows command line, cd to c:\pythonXX\scripts and type: pip install numpy-1.14..etc
+At the windows command line, cd to c:\\PythonXX\\Scripts and type: pip install numpy-1.14..etc
 
-This should install numpy. 
+This should install numpy, if it doesn't find someone who can help you. 
 
 Numpy on Max OSX
 ----------------
 
-For the mac installation pleae see: https://scipy.org/install.html
+For the Mac installation pleae see: https://scipy.org/install.html
 
------------
-Using Pip
------------
+----------------------------------
+Using Pip to Install LibStructural
+----------------------------------
 
-Once you have numpy installed you can use a standard pip installation to get libstructural. See below is you are using Tellurium.
+Once you have numpy installed you can use a standard pip installation to install libstructural. See below if you are using Tellurium.
 
-libStructural is available via PyPI, which is the simplest method to obtain libStructural.
-To install libStructural using pip, run following line on console or terminal:
+LibStructural is available via PyPI. To install LibStructural using pip, run following line on at your terminal window. If you are doing this on Windows
+you will need to make sure you are in c:\\PythonXX\\Scripts, otherwise it is likely it won't find pip.
 
 ``pip install structural``
 
 
---------------------
-From Python Console
---------------------
+---------------------------------
+From Python the Tellurium Console
+---------------------------------
 
 If you are using Tellurium (`tellurium.analogmachine.org <http://tellurium.analogmachine.org/>`_) then you can install structural directly from the Python console:
 
