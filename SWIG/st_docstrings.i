@@ -10,27 +10,26 @@ LibStructural.getSummary(self, *args)
 LibStructural.isReactionReversible(self, *args)
 
 :param: Reaction index
-:returns: True if the reaction with given index is reversible.
-
+:returns: True if the reaction with given index is reversible
 Checks whether a given reaction is reversible or not.
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::loadSBMLFromString "
-LibStructural.loadSBMLFromString(self, *args)
+LibStructural.loadSBMLFromString(self, SBMLstring)
 
 :param: SBML string to load
-:returns: information about the loaded model
+:returns: Information about the loaded model
 
 Loads SBML model from a string variable.
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::loadSBMLFromFile "
-LibStructural.loadSBMLFromFile(self, *args)
+LibStructural.loadSBMLFromFile(self, SBMLfile)
 
-:param: sFileName a file name to a SBML file to load
-:returns: information about the loaded model
+:param: An SBML file name to load
+:returns: Information about the loaded model
 
 Loads SBML model from the specified file.
 
@@ -39,8 +38,8 @@ Loads SBML model from the specified file.
 %feature("docstring") LIB_STRUCTURAL::LibStructural::loadSBMLwithTests "
 LibStructural.loadSBMLwithTests(self, *args)
 
-:param: a file name to an SBML model to load.
-:returns: information about the loaded model and results of the internal test suite.
+:param: A file name to an SBML model to load
+:returns: Information about the loaded model and results of the internal test suite
 
 Loads an SBML model into the library and carries out tests using the internal test suite.
 
@@ -66,7 +65,7 @@ Only after one of the analysis methods below has been called are the structural 
 
 Remarks: This is the prefered method for structural analysis.
 
-:returns: a string with information about the analysis process
+:returns: A string with information about the analysis process
 
 ";
 
@@ -85,7 +84,7 @@ Only after one of the analysis methods below has been called are the structural 
 | ``LibStructural.analyzeWithFullyPivotedLU`` or
 | ``LibStructural.analyzeWithFullyPivotedLUwithTests``
 
-:returns: a string with information about the analysis process
+:returns: A string with information about the analysis process
 
 ";
 
@@ -106,7 +105,7 @@ Only after one of the analysis methods below has been called are the structural 
 
 This method additionally performs the integrated test suite and returns	those results.
 
-:returns: a string with information about the analysis process
+:returns: A string with information about the analysis process
 
 ";
 
@@ -125,7 +124,7 @@ Only after one of the analysis methods below has been called are the structural 
 | ``LibStructural.analyzeWithFullyPivotedLU`` or
 | ``LibStructural.analyzeWithFullyPivotedLUwithTests``
 
-:returns: a string with information about the analysis process
+:returns: A string with information about the analysis process
 
 ";
 
@@ -146,21 +145,21 @@ Only after one of the analysis methods below has been called are the structural 
 
 This method additionally performs the integrated test suite and returns	those results.
 
-:returns: a string with information about the analysis process
+:returns: A string with information about the analysis process
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getReorderedSpeciesIds "
 LibStructural.getReorderedSpeciesIds(self)
 
-:returns: the reordered list of molecular species (choosing the SBML Id if possible).
+:returns: The reordered list of molecular species (choosing the SBML Id if possible)
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getFloatingSpeciesIds "
 LibStructural.getFloatingSpeciesIds(self)
 
-:returns: the unordered list of species Ids.
+:returns: The unordered list of species Ids.
 
 ";
 
@@ -168,7 +167,7 @@ LibStructural.getFloatingSpeciesIds(self)
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getIndependentSpeciesIds "
 LibStructural.getIndependentSpeciesIds(self)
 
-:returns: the list of Ids for the independent species.
+:returns: The list of Ids for the independent species.
 
 ";
 
@@ -176,7 +175,7 @@ LibStructural.getIndependentSpeciesIds(self)
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getDependentSpeciesIds "
 LibStructural.getDependentSpeciesIds(self)
 
-:returns: the list of Ids for the dependent species.
+:returns: The list of Ids for the dependent species.
 
 ";
 
@@ -184,35 +183,33 @@ LibStructural.getDependentSpeciesIds(self)
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getReactionsIds "
 LibStructural.getReactionsIds(self)
 
-:returns: the list of Reaction ids.
+:returns: The list of reaction ids
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getIndependentReactionIds "
 LibStructural.getIndependentReactionIds(self)
 
-:returns: the list of Ids for the independent reactions.
+:returns: The list of Ids for the independent reactions.
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getDependentReactionIds "
 LibStructural.getDependentReactionIds(self)
 
-:returns: the list of Ids for the dependent reactions.
+:returns: The list of Ids for the dependent reactions.
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getReorderedReactionsIds "
 LibStructural.getReorderedReactionsIds(self)
 
-:returns: the reordered Id list of reactions.
+:returns: The reordered Id list of reactions.
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::ConservedLaws "
 LibStructural.ConservedLaws(self):
-
-
 
 ";
 
@@ -233,8 +230,7 @@ LibStructural.getInitialConditions(self)
 %feature("docstring") LIB_STRUCTURAL::LibStructural::validateStructuralMatrices "
 LibStructural.validateStructuralMatrices(self)
 
-Validates structural matrices. Calling this method will run the internal test suite against the structural
-matrices those tests include:
+Validates structural matrices. Calling this method will run the internal test suite against the structural matrices. Those tests include:
 
 | Test 1 : Gamma*N = 0 (Zero matrix)
 | Test 2 : Rank(N) using SVD (5) is same as m0 (5)
@@ -242,6 +238,8 @@ matrices those tests include:
 | Test 4 : Rank(NR) using QR (5) is same as m0 (5)
 | Test 5 : L0 obtained with QR matches Q21*inv(Q11)
 | Test 6 : N*K = 0 (Zero matrix)
+
+:returns: A tuple of strings indicating whether a particular test passed or failed.
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getTestDetails "
@@ -254,65 +252,65 @@ LibStructural.getTestDetails(self)
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getModelName "
 LibStructural.getModelName(self)
 
-:returns: the name of the model if SBML model has Name-tag, otherwise it returns the SBML id. If only a stoichiometry matrix was loaded 'untitled' will be returned.
+:returns: The name of the model if SBML model has Name-tag, otherwise it returns the SBML id. If only a stoichiometry matrix was loaded 'untitled' will be returned.
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getNumSpecies "
 LibStructural.getNumSpecies(self)
 
-:returns: the total number of species
+:returns: The total number of species
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getNumIndSpecies "
 LibStructural.getNumIndSpecies(self)
 
-:returns: the number of independent species.
+:returns: The number of independent species.
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getNumDepSpecies "
 LibStructural.getNumDepSpecies(self)
 
-:returns: the number of dependent species.
+:returns: The number of dependent species.
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getNumReactions "
 LibStructural.getNumReactions(self)
 
-:returns: the total number of reactions.
+:returns: The total number of reactions.
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getNumIndReactions "
 LibStructural.getNumIndReactions(self)
 
-:returns: the number of independent reactions
+:returns: The number of independent reactions
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getNumDepReactions "
 LibStructural.getNumDepReactions(self)
 
-:returns: the number of dependent reactions
+:returns: The number of dependent reactions
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getNmatrixSparsity "
 LibStructural.getNmatrixSparsity(self)
 
-:returns: the number of nonzero values in Stoichiometry matrix
+:returns: The number of nonzero values in Stoichiometry matrix
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getRank "
 LibStructural.getRank(self);
 
-:param: Matrix to find the rank of.
+:param: Matrix.
 
-:returns: the rank as an integer
+:returns: The rank of the matrix as an integer
 
 ";
 
@@ -325,7 +323,7 @@ LibStructural.getRCond(self, *args)
 %feature("docstring") LIB_STRUCTURAL::LibStructural::setTolerance "
 LibStructural.setTolerance(self, *args)
 
-:param:  an integer or float
+:param: An integer or a float
 
 Sets user specified tolerance. This function sets the tolerance used by the library to determine what value is considered as zero. Any value with absolute value smaller than this tolerance is considered as zero and will be neglected.
 
@@ -334,7 +332,7 @@ Sets user specified tolerance. This function sets the tolerance used by the libr
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getTolerance "
 LibStructural.getTolerance(self)
 
-:returns: the currently used tolerance for decided whether a small number is considered zero or not.
+:returns: The currently used tolerance for deciding whether a small number is considered zero or not.
 
 This function returns the tolerance currently used by the library to determine what value
 is considered as zero. Any value with absolute value smaller than this tolerance is considered zero
@@ -347,14 +345,19 @@ LibStructural.getInstance(self)
 
 static method to get an instance of LibStructural (allows use as singleton)
 
- import structural
- ls = structural.LibStructural.getInstance()
+.. code:: python
+
+import structural
+ls = structural.LibStructural.getInstance()
+
+.. end
+
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getColumnReorderedNrMatrixIds "
 LibStructural.getColumnReorderedNrMatrixIds(self)
 
-:returns: the Nr Matrix row and column labels (repartitioned into NIC and NDC).
+:returns: The Nr Matrix row and column labels (repartitioned into NIC and NDC).
 
 ";
 
@@ -370,10 +373,10 @@ Remarks: This method should only be called after ``LibStructural.loadStoichiomet
 ";*/
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::loadSpeciesIdsWithValues "
-LibStructural.loadSpeciesIdsWithValues(self, *args):
+LibStructural.loadSpeciesIdsWithValues(self, id_array, value_array)
 
-:param: speciesIds a vector of species ids to load
-:param: speciesValues a vector of initial concentrations
+:param: A vector of species ids to load
+:param: A vector of initial concentrations
 
 Loads species names and initial values. This function should be used whenever labeled matrices are important as these labels will be used in labeling the structural matrices. This function sets the species ids. It is also possible to provide an initial condition for each of the species. This will be used when calculating the conserved sums.
 
@@ -382,10 +385,11 @@ Remarks: This method should only be called after ``LibStructural.loadStoichiomet
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::loadReactionIdsWithValues "
-LibStructural.loadReactionIdsWithValues(self, *args):
 
-:param: reactionIds a vector of reaction ids to load
-:param: reactionValues a vector of reaction rates
+LibStructural.loadReactionIdsWithValues(self, id_array, value_array)
+
+:param: A vector  of reaction ids to load
+:param: A vector of reaction rates
 
 This function should be used whenever labeled matrices are important as these labels will be used in labeling the structural matrices. This function sets the reaction ids. It is also possible to provide reaction rate values. This will be used when calculating the conserved sums.
 
@@ -396,13 +400,13 @@ Remarks: This method should only be called after ``LibStructural.loadStoichiomet
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getGammaMatrixIds "
 LibStructural.getGammaMatrixIds(self)
 
-:returns: the row and column labels for Gamma, the conservation law array.
+:returns: The row and column labels for Gamma, the conservation law array.
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getK0MatrixIds "
 LibStructural.getK0MatrixIds(self)
 
-:returns: the K0 Matrix row and column labels.
+:returns: The K0 Matrix row and column labels.
 
 ";
 
@@ -416,69 +420,69 @@ LibStructural.getKMatrixIds(self)
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getL0MatrixIds "
 LibStructural.getL0MatrixIds(self)
 
-:returns: the L0 Matrix row and column labels.
+:returns: The L0 Matrix row and column labels.
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getLinkMatrixIds "
 LibStructural.getLinkMatrixIds(self)
 
-:returns: the row and column labels for the Link Matrix, L
+:returns: The row and column labels for the Link Matrix, L
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getN0MatrixIds "
 LibStructural.getN0MatrixIds(self)
 
-:returns: the N0 Matrix row and column labels.
+:returns: The N0 Matrix row and column labels.
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getNDCMatrixIds "
 LibStructural.getNDCMatrixIds(self)
 
-:returns: the NDC Matrix row and column labels.
+:returns: The NDC Matrix row and column labels.
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getNICMatrixIds "
 LibStructural.getNICMatrixIds(self)
 
-:returns: the NIC Matrix row and column labels.
+:returns: The NIC Matrix row and column labels.
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getNrMatrixIds "
 LibStructural.getNrMatrixIds(self)
 
-:returns: the Nr Matrix row and column labels.
+:returns: The Nr Matrix row and column labels.
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getStoichiometryMatrixIds "
 LibStructural.getStoichiometryMatrixIds(self)
 
-:returns: the row and column labels for the original and unaltered stoichiometry matrix.
+:returns: The row and column labels for the original and unaltered stoichiometry matrix.
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getFullyReorderedStoichiometryMatrixIds "
 LibStructural.getFullyReorderedStoichiometryMatrixIds(self)
 
-:returns: the row and column labels for the reordered stoichiometry matrix (row reordered stoichiometry matrix)
+:returns: The row and column labels for the reordered stoichiometry matrix (row reordered stoichiometry matrix)
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getReorderedStoichiometryMatrixIds "
 LibStructural.getReorderedStoichiometryMatrixIds(self)
 
-:returns: the row and column labels for the reordered stoichiometry matrix (row reordered stoichiometry matrix)
+:returns: The row and column labels for the reordered stoichiometry matrix (row reordered stoichiometry matrix)
 
 ";
 
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getConservedLaws "
 LibStructural.getConservedLaws(self)
 
-:returns: algebraic expressions for the conserved cycles. Returns empty if none.
+:returns: Algebraic expressions for the conserved cycles. Returns empty if none.
 
 ";

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\arithchk.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{AE941285-1407-31E3-8030-CCC17F7F50BD}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

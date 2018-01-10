@@ -1,0 +1,769 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{900747C2-00A1-3C13-93C2-01FDD495C8E1}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>f2c</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">f2c.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">libf2c</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">libf2c</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.lib</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">f2c.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">libf2c</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">libf2c</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.lib</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">f2c.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">libf2c</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">libf2c</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.lib</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">f2c.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">libf2c</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">libf2c</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.lib</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;_COMPLEX_DEFINED;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;_COMPLEX_DEFINED;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;_COMPLEX_DEFINED;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;_COMPLEX_DEFINED;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;_COMPLEX_DEFINED;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;_COMPLEX_DEFINED;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;_COMPLEX_DEFINED;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;_COMPLEX_DEFINED;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;_COMPLEX_DEFINED;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;_COMPLEX_DEFINED;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;_COMPLEX_DEFINED;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;_COMPLEX_DEFINED;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;_COMPLEX_DEFINED;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;_COMPLEX_DEFINED;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;_COMPLEX_DEFINED;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;_COMPLEX_DEFINED;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-HC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" "-BC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" --check-stamp-file "C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-HC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" "-BC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" --check-stamp-file "C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-HC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" "-BC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" --check-stamp-file "C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-HC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" "-BC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" --check-stamp-file "C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-HC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" "-BC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" --check-stamp-file "C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-HC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" "-BC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" --check-stamp-file "C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-HC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" "-BC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" --check-stamp-file "C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-HC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" "-BC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" --check-stamp-file "C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\CMakeFiles\03c56413f56e4fbc8a5b56309cd09aaa\arith.h.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating arith.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating arith.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+Debug\arithchk.exe &gt; "C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/arith.h"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+Debug\arithchk.exe &gt; "C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/arith.h"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/CMakeFiles/03c56413f56e4fbc8a5b56309cd09aaa/arith.h.rule;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\Debug\arithchk.exe;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/CMakeFiles/03c56413f56e4fbc8a5b56309cd09aaa/arith.h.rule;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\Debug\arithchk.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\arith.h</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\arith.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating arith.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating arith.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+Release\arithchk.exe &gt; "C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/arith.h"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+Release\arithchk.exe &gt; "C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/arith.h"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/CMakeFiles/03c56413f56e4fbc8a5b56309cd09aaa/arith.h.rule;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\Release\arithchk.exe;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/CMakeFiles/03c56413f56e4fbc8a5b56309cd09aaa/arith.h.rule;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\Release\arithchk.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\arith.h</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\arith.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Generating arith.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Generating arith.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+MinSizeRel\arithchk.exe &gt; "C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/arith.h"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+MinSizeRel\arithchk.exe &gt; "C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/arith.h"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/CMakeFiles/03c56413f56e4fbc8a5b56309cd09aaa/arith.h.rule;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\MinSizeRel\arithchk.exe;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/CMakeFiles/03c56413f56e4fbc8a5b56309cd09aaa/arith.h.rule;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\MinSizeRel\arithchk.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\arith.h</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\arith.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Generating arith.h</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Generating arith.h</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+RelWithDebInfo\arithchk.exe &gt; "C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/arith.h"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+RelWithDebInfo\arithchk.exe &gt; "C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/F2CLIBS/libf2c/arith.h"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/CMakeFiles/03c56413f56e4fbc8a5b56309cd09aaa/arith.h.rule;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\RelWithDebInfo\arithchk.exe;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/CMakeFiles/03c56413f56e4fbc8a5b56309cd09aaa/arith.h.rule;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\RelWithDebInfo\arithchk.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\arith.h</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\arith.h</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\f77vers.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\i77vers.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\main.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\s_rnge.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\abort_.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\exit_.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\getarg_.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\iargc_.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\getenv_.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\signal_.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\s_stop.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\s_paus.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\system_.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\cabs.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\ctype.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\derf_.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\derfc_.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\erf_.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\erfc_.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\sig_die.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\pow_ci.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\pow_dd.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\pow_di.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\pow_hh.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\pow_ii.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\pow_ri.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\pow_zi.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\pow_zz.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\c_abs.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\c_cos.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\c_div.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\c_exp.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\c_log.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\c_sin.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\c_sqrt.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\z_abs.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\z_cos.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\z_div.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\z_exp.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\z_log.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\z_sin.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\z_sqrt.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\r_abs.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\r_acos.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\r_asin.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\r_atan.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\r_atn2.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\r_cnjg.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\r_cos.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\r_cosh.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\r_dim.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\r_exp.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\r_imag.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\r_int.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\r_lg10.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\r_log.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\r_mod.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\r_nint.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\r_sign.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\r_sin.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\r_sinh.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\r_sqrt.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\r_tan.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\r_tanh.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\d_abs.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\d_acos.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\d_asin.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\d_atan.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\d_atn2.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\d_cnjg.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\d_cos.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\d_cosh.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\d_dim.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\d_exp.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\d_imag.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\d_int.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\d_lg10.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\d_log.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\d_mod.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\d_nint.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\d_prod.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\d_sign.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\d_sin.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\d_sinh.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\d_sqrt.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\d_tan.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\d_tanh.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\i_abs.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\i_dim.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\i_dnnt.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\i_indx.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\i_len.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\i_len_trim.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\i_mod.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\i_nint.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\i_sign.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\lbitbits.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\lbitshft.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\i_ceiling.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\h_abs.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\h_dim.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\h_dnnt.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\h_indx.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\h_len.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\h_mod.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\h_nint.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\h_sign.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\l_ge.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\l_gt.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\l_le.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\l_lt.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\hl_ge.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\hl_gt.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\hl_le.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\hl_lt.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\ef1asc_.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\ef1cmc_.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\f77_aloc.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\s_cat.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\s_cmp.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\s_copy.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\backspac.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\close.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\dfe.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\dolio.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\due.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\endfile.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\err.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\fmt.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\fmtlib.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\ftell_.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\iio.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\ilnw.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\inquire.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\lread.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\lwrite.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\open.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\rdfmt.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\rewind.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\rsfe.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\rsli.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\rsne.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\sfe.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\sue.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\typesize.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\uio.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\util.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\wref.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\wrtfmt.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\wsfe.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\wsle.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\wsne.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\xwsne.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\dtime_.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\etime_.c" />
+    <ClInclude Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\arith.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\ZERO_CHECK.vcxproj">
+      <Project>{3DD84DB7-E984-36EC-9C46-F492B2837376}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\arithchk.vcxproj">
+      <Project>{4C66A986-EF26-3650-BE17-F7192BD683A3}</Project>
+      <Name>arithchk</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -7,9 +7,30 @@
 cmake_minimum_required(VERSION 2.8)
 project(LibStructural)
 
-if(CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
-  set (CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/INSTALL_x64" CACHE PATH "default install path" FORCE)
+SET(32-BIT-BUILD False CACHE BOOL "Set 32/64 bit target, set unchecked for a 64-bit build")
+
+if (${32-BIT-BUILD})
+    message ("Building 32-bit Release")
+    SET(CBINARYTYPE "32")
+else()
+    message ("Building 64-bit Release")
+    SET(CBINARYTYPE "64")
 endif()
+    
+if (CBINARYTYPE STREQUAL "32")
+    message ("Building 32-bit Release AGAIN")
+endif()
+
+if (CBINARYTYPE STREQUAL "64")
+    message ("Building 64-bit Release AGAIN")
+endif()
+
+
+if (CBINARYTYPE STREQUAL "32")
+   set (CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/INSTALL_x32" CACHE PATH "default install path" FORCE)
+else()
+   set (CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/INSTALL_x64" CACHE PATH "default install path" FORCE)
+endif()  
 
 include (CMakeTestCCompiler)
 include (CheckCSourceCompiles)
@@ -21,7 +42,6 @@ include (CheckCCompilerFlag)
 include (CheckCSourceRuns)
 include (CheckSymbolExists)
 include (CheckTypeSize)
-
 
 ####################################################################
 
@@ -35,6 +55,7 @@ SET(STRUCTURAL_VERSION_RELEASE "-a1")
 
 SET(STRUCTURAL_VERSION_NUMERIC 50000)
 SET(PACKAGE_VERSION "${STRUCTURAL_VERSION_MAJOR}.${STRUCTURAL_VERSION_MINOR}.${STRUCTURAL_VERSION_PATCH}${STRUCTURAL_VERSION_RELEASE}")
+
 
 
 ####################################################################
@@ -61,6 +82,7 @@ set (ENABLE_PYTHON_WRAPPER FALSE CACHE BOOL "Enable Python bindings")
 # set build type default
 set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Choose the type of build, options are: None (CMAKE_CXX_FLAGS or CMAKE_C_FLAGS are used), Debug, Release, RelWithDebInfo, MinSizeRel" FORCE )
 
+    
 ###############################################################################
 #
 # list of additional files to link against.
@@ -76,7 +98,7 @@ find_library(BZ2_LIBRARY
     	${SBML_DIR}/lib
     	/usr/lib /usr/local/lib
     	${CMAKE_SOURCE_DIR}
-      ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-64/lib
+      ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-${CBINARYTYPE}/lib
     )
 
 
@@ -99,24 +121,25 @@ find_library(LIBICONV_LIBRARY
       ${SBML_DIR}/lib
       /usr/lib /usr/local/lib
       ${CMAKE_SOURCE_DIR}
-      ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-64/lib
+      ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-${CBINARYTYPE}/lib
     )
 
 include_directories(${LIBICONV_INCLUDE})
 
-find_library(ZDLL_LIBRARY
-  NAMES zdll.a zdll.so zdll.dylib zdll.lib
-  PATHS ${DEPENDENCY_DIR}/lib
-      ${SBML_DIR}/lib
-      /usr/lib /usr/local/lib
-      ${CMAKE_SOURCE_DIR}
-      ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-64/lib
-    )
+  find_library(ZDLL_LIBRARY
+    NAMES zdll.a zdll.so zdll.dylib zdll.lib
+    PATHS ${DEPENDENCY_DIR}/lib
+        ${SBML_DIR}/lib
+        /usr/lib /usr/local/lib
+        ${CMAKE_SOURCE_DIR}
+        ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-${CBINARYTYPE}/lib
+      )
 
-include_directories(${ZDLL_INCLUDE})
+  include_directories(${ZDLL_INCLUDE})
 else()
-set(EXTRA_LIBS ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-64/lib/libbz2.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-64/lib/libxml2.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-64/lib/zdll.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-64/lib/libiconv.lib CACHE STRING "List of additional libraries to link against." )
+  set(EXTRA_LIBS ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-${CBINARYTYPE}/lib/libbz2.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-${CBINARYTYPE}/lib/libxml2.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-${CBINARYTYPE}/lib/zdll.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-${CBINARYTYPE}/lib/libiconv.lib CACHE STRING "List of additional libraries to link against." )
 endif()
+
 ####################################################################
 #
 # Locate Libxml2 if needed
@@ -127,7 +150,7 @@ find_library(LIBSBML_LIBRARY
 		  ${SBML_DIR}/lib
 		  /usr/lib /usr/local/lib
 		  ${CMAKE_SOURCE_DIR}
-		  ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-64/lib
+		  ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-${CBINARYTYPE}/lib
     )
 
 find_path(LIBSBML_INCLUDE
@@ -135,7 +158,7 @@ find_path(LIBSBML_INCLUDE
 	PATHS ${DEPENDENCY_DIR}/include
 		  ${SBML_DIR}/include
 		  /usr/include /usr/local/include
-		  ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-64/include
+		  ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-${CBINARYTYPE}/include
 		  )
 
 set(STRUCTURAL_LIBS ${STRUCTURAL_LIBS} ${LIBSBML_LIBRARY})
@@ -147,7 +170,7 @@ find_library(CLAPACK_LIBRARY
 NAMES liblapack.a clapack.lib  clapack lapack
 PATHS /usr/lib /usr/local/lib
 	  ${CMAKE_SOURCE_DIR}
-	  ${CMAKE_SOURCE_DIR}/dependencies/third-party/clapack/3.2.1/LIB
+	  ${CMAKE_SOURCE_DIR}/dependencies/third-party/clapack-${CBINARYTYPE}/3.2.1/LIB
 	  ${CMAKE_SOURCE_DIR}/lib
   )
 
@@ -157,7 +180,7 @@ find_library(CLAPACK_BLAS_LIBRARY
 	NAMES libblas.a blas.lib blas
 	PATHS /usr/lib /usr/local/lib
 		${CMAKE_SOURCE_DIR}
-		${CMAKE_SOURCE_DIR}/dependencies/third-party/clapack/3.2.1/LIB
+		${CMAKE_SOURCE_DIR}/dependencies/third-party/clapack-${CBINARYTYPE}/3.2.1/LIB
 		${CMAKE_SOURCE_DIR}/lib
   )
 
@@ -167,7 +190,7 @@ find_library(CLAPACK_F2C_LIBRARY
 	NAMES libf2c.a libf2c.lib f2c
 	PATHS /usr/lib /usr/local/lib
 		${CMAKE_SOURCE_DIR}
-		${CMAKE_SOURCE_DIR}/dependencies/third-party/clapack/3.2.1/LIB
+		${CMAKE_SOURCE_DIR}/dependencies/third-party/clapack-${CBINARYTYPE}/3.2.1/LIB
 		${CMAKE_SOURCE_DIR}/lib
   )
 
@@ -179,9 +202,10 @@ find_library(LIBXML2_LIBRARY
 		  ${SBML_DIR}/lib
 		  /usr/lib /usr/local/lib
 		  ${CMAKE_SOURCE_DIR}
-      ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-64/lib
+      ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-${CBINARYTYPE}/lib
     )
-#
+
+
 ####################################################################
 #
 # Need some variables set up, such as the name for the libSBML

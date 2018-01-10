@@ -1,0 +1,6 @@
+C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/INSTALL/lib/libf2c.lib
+C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/INSTALL/lib/blas.lib
+C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/INSTALL/lib/lapack.lib
+C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/INSTALL/include/clapack/f2c.h
+C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/INSTALL/include/clapack/clapack.h
+C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/INSTALL/include/clapack/blaswrap.h

@@ -1,0 +1,656 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B8381558-6854-30B5-BFCF-07D13AF79A01}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>blas</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">blas.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">blas</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">blas</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.lib</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">blas.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">blas</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">blas</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.lib</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">blas.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">blas</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">blas</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.lib</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">blas.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">blas</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">blas</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.lib</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsC</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>
+      </ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;NO_ISATTY;MSDOS;USE_CLOCK;NO_BLAS_WRAP;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\INCLUDE;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/BLAS/SRC/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/BLAS/SRC/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-HC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" "-BC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" --check-stamp-file "C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/BLAS/SRC/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-HC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" "-BC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" --check-stamp-file "C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/BLAS/SRC/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/BLAS/SRC/CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/BLAS/SRC/CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/BLAS/SRC/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/BLAS/SRC/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-HC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" "-BC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" --check-stamp-file "C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/BLAS/SRC/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-HC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" "-BC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" --check-stamp-file "C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/BLAS/SRC/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/BLAS/SRC/CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/BLAS/SRC/CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/BLAS/SRC/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/BLAS/SRC/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-HC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" "-BC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" --check-stamp-file "C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/BLAS/SRC/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-HC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" "-BC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" --check-stamp-file "C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/BLAS/SRC/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/BLAS/SRC/CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/BLAS/SRC/CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/BLAS/SRC/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/BLAS/SRC/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-HC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" "-BC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" --check-stamp-file "C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/BLAS/SRC/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-HC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" "-BC:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1" --check-stamp-file "C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/BLAS/SRC/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/BLAS/SRC/CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/Users/hsauro/Documents/Visual Studio 2017/Projects/Libstructural/dependencies/third-party/clapack-64/3.2.1/BLAS/SRC/CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\CMakeLists.txt;C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\isamax.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\sasum.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\saxpy.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\scopy.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\sdot.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\snrm2.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\srot.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\srotg.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\sscal.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\sswap.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\sdsdot.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\srotmg.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\srotm.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\sgemv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\sgbmv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\ssymv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\ssbmv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\sspmv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\strmv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\stbmv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\stpmv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\strsv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\stbsv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\stpsv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\sger.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\ssyr.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\sspr.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\ssyr2.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\sspr2.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\sgemm.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\ssymm.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\ssyrk.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\ssyr2k.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\strmm.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\strsm.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\idamax.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dasum.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\daxpy.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dcopy.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\ddot.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dnrm2.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\drot.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\drotg.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dscal.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dsdot.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dswap.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\drotmg.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\drotm.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dgemv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dgbmv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dsymv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dsbmv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dspmv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dtrmv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dtbmv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dtpmv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dtrsv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dtbsv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dtpsv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dger.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dsyr.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dspr.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dsyr2.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dspr2.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dgemm.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dsymm.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dsyrk.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dsyr2k.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dtrmm.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dtrsm.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\scabs1.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\scasum.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\scnrm2.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\icamax.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\caxpy.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\ccopy.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\cdotc.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\cdotu.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\csscal.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\crotg.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\cscal.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\cswap.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\csrot.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\cgemv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\cgbmv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\chemv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\chbmv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\chpmv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\ctrmv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\ctbmv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\ctpmv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\ctrsv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\ctbsv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\ctpsv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\cgerc.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\cgeru.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\cher.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\chpr.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\cher2.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\chpr2.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\cgemm.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\csymm.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\csyrk.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\csyr2k.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\ctrmm.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\ctrsm.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\chemm.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\cherk.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\cher2k.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dcabs1.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dzasum.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\dznrm2.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\izamax.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\zaxpy.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\zcopy.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\zdotc.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\zdotu.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\zdscal.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\zrotg.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\zscal.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\zswap.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\zdrot.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\zgemv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\zgbmv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\zhemv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\zhbmv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\zhpmv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\ztrmv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\ztbmv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\ztpmv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\ztrsv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\ztbsv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\ztpsv.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\zgerc.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\zgeru.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\zher.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\zhpr.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\zher2.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\zhpr2.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\zgemm.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\zsymm.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\zsyrk.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\zsyr2k.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\ztrmm.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\ztrsm.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\zhemm.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\zherk.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\zher2k.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\lsame.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\xerbla.c" />
+    <ClCompile Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\BLAS\SRC\xerbla_array.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\ZERO_CHECK.vcxproj">
+      <Project>{3DD84DB7-E984-36EC-9C46-F492B2837376}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\hsauro\Documents\Visual Studio 2017\Projects\Libstructural\dependencies\third-party\clapack-64\3.2.1\F2CLIBS\libf2c\f2c.vcxproj">
+      <Project>{900747C2-00A1-3C13-93C2-01FDD495C8E1}</Project>
+      <Name>f2c</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
