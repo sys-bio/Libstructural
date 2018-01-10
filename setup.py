@@ -47,17 +47,17 @@ def get_config():
 config = get_config()
 print("Installing libStructural binaries for %s %d-bit %s" %(config[0], config[1], version))
 # Reconstruct path to binaries based on the system and Python interpreter architecture
-package_dir = "%s_%d_%d" %(config[0], config[1], config[2])
+package_dir = "%s_%d" %(config[0], config[1])
 print(package_dir)
 if config[0] == 'Win':
-    chdir(path.join(here,package_dir))
+    chdir(path.join(here,package_dir,str(config[2])))
     package_data={
     'structural': ['test/*'],
     'structural.test': ['tests/*'],
     'structural': ['_structural.pyd','structural.py', 'test/*']
     }
 elif config[0] == 'Mac':
-    chdir(path.join(here,package_dir))
+    chdir(path.join(here,package_dir,str(config[2])))
     package_data={
     'structural': ['test/*'],
     'structural.test': ['tests/*'],
