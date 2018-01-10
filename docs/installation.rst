@@ -83,9 +83,11 @@ If you are using Tellurium (`tellurium.analogmachine.org <http://tellurium.analo
 
 .. end
 
-----------------------
-From Python Terminal
-----------------------
+------------------------------
+From Python Terminal (Experts)
+------------------------------
+
+If you are familar with obtaining your code from the GitHub repo you can follow these instructions.
 
 1 - Use `git <https://git-scm.com/>`_ and type the following command in the console or terminal which will clone the source code under Libstructural folder.
 
