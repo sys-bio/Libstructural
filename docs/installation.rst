@@ -47,7 +47,7 @@ If you are using a 32-bit Python download: numpy-1.14.0+mkl-cp37-cp37m-win32.whl
 
 If you are using a 64-bit Python download: numpy-1.14.0+mkl-cp37-cp37m-win_amd64.whl
 
-Copy these files to c:\\PythonXX\\Scripts where XX is your python version eg 27. 
+Copy which ever file is appropriate to c:\\PythonXX\\Scripts where XX is your python version eg 27. 
 
 At the windows command line, cd to c:\\PythonXX\\Scripts and type: pip install numpy-1.14..etc
 
@@ -56,16 +56,16 @@ This should install numpy, if it doesn't find someone who can help you.
 Numpy on Max OSX
 ----------------
 
-For the Mac installation pleae see: https://scipy.org/install.html
+For the Mac installation please see: https://scipy.org/install.html
 
 ----------------------------------
 Using Pip to Install LibStructural
 ----------------------------------
 
-Once you have numpy installed you can use a standard pip installation to install libstructural. See below if you are using Tellurium.
+Once you have numpy installed you can use a standard pip installation to install Libstructural. See below if you are using Tellurium.
 
 LibStructural is available via PyPI. To install LibStructural using pip, run following line on at your terminal window. If you are doing this on Windows
-you will need to make sure you are in c:\\PythonXX\\Scripts, otherwise it is likely it won't find pip.
+you will need to make sure you are in c:\\PythonXX\\Scripts directory, otherwise it is likely it won't find pip.
 
 ``pip install structural``
 
