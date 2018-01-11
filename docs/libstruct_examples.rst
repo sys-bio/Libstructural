@@ -23,7 +23,7 @@ In addition, a test script is distributed with LibStructural package that can be
 
   import structural
   from sys import version_info
-  
+
   if version_info == 2:
     execfile(structural.__path__[0] + '/test/tests/testLibStructural.py')
   else:
@@ -428,7 +428,5 @@ In addition, a test script for elementary modes is distributed with LibStructura
     execfile(structural.__path__[0] + '/test/tests/elementaryModes.py')
   else:
     exec(open(structural.__path__[0] + '/test/tests/elementaryModes.py').read())
-
-  #For python 3 run
 
 .. end
