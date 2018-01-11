@@ -3,6 +3,7 @@
 # Dec 2017
 
 import structural
+import tellurium as te
 import numpy as np
 
 def checkThermodynamics (ls, elm):
@@ -20,7 +21,7 @@ def checkThermodynamics (ls, elm):
 
     return result
 
-
+               
 def checkElemenarity (ls, elm):
    N = ls.getStoichiometryMatrix()
    sum = 0
@@ -46,8 +47,8 @@ def checkElemenarity (ls, elm):
        return True
    else:
        return False
-
-
+   
+    
 def checkElm(id):
    elm = ls.getElementaryModes()
    st = ls.getStoichiometryMatrix()
@@ -57,12 +58,12 @@ def checkElm(id):
           if checkThermodynamics (ls, elm):
              print("(", id, ") ------PASS-----", "Number of modes = ", elm.shape[0])
           else:
-             print(id, " ------FAIL Thermo -----")
+             print(id, " ------FAIL Thermo -----")              
       else:
          print(id, " ------FAIL Elementarity-----")
    else:
       print(id, " ------FAIL N e = 0 -----")
-
+   
 
 r = te.loada('''
     J1: $Xo -> S1; v;
@@ -70,24 +71,24 @@ r = te.loada('''
     J3: S1 => $X2; v;
     v = 0
 ''')
-r.exportToSBML('testModel1.xml')
+r.exportToSBML('testModel1.xml') 
 ls = structural.LibStructural()
 ls.loadSBMLFromString(r.getSBML())
 checkElm(1)
-
+ 
 r = te.loada('''
     J1: $Xo -> S1; v;
     J2: S1 -> $X1; v;
     J3: S1 -> $X2; v;
     v = 0
 ''')
-r.exportToSBML('testModel2.xml')
+r.exportToSBML('testModel2.xml') 
 ls.loadSBMLFromString(r.getSBML())
 checkElm(2)
 
 
 r = te.loada('''
-
+    
     J1: $Xo -> S1; v;
     J2: S1 -> S2; v;
     J3: S2 => $X1; v;
@@ -95,7 +96,7 @@ r = te.loada('''
     J5: S1 => $X3; v;
     v = 0
 ''')
-r.exportToSBML('testModel3.xml')
+r.exportToSBML('testModel3.xml') 
 ls.loadSBMLFromString(r.getSBML())
 checkElm(3)
 
@@ -108,7 +109,7 @@ r = te.loada('''
     J5: S3 -> $X1; v;
     v = 0
 ''')
-r.exportToSBML('testModel4.xml')
+r.exportToSBML('testModel4.xml') 
 ls.loadSBMLFromString(r.getSBML())
 checkElm(4)
 
@@ -123,7 +124,7 @@ r = te.loada('''
     J7: S4 => $X1; v;
     v = 0
 ''')
-r.exportToSBML('testModel5.xml')
+r.exportToSBML('testModel5.xml') 
 ls.loadSBMLFromString(r.getSBML())
 checkElm(5)
 
@@ -141,7 +142,7 @@ r = te.loada('''
     J9: S5 ->; v;
     v = 0
 ''')
-r.exportToSBML('testModel6.xml')
+r.exportToSBML('testModel6.xml') 
 ls.loadSBMLFromString(r.getSBML())
 checkElm(6)
 
@@ -156,7 +157,7 @@ r = te.loada('''
     J6: S3 -> $X2; v;
     v = 0
 ''')
-r.exportToSBML('testModel7.xml')
+r.exportToSBML('testModel7.xml') 
 ls.loadSBMLFromString(r.getSBML())
 checkElm(7)
 
@@ -168,7 +169,7 @@ r = te.loada('''
     J4: S3 -> S2; v;
     v = 0
 ''')
-r.exportToSBML('testModel8.xml')
+r.exportToSBML('testModel8.xml') 
 ls.loadSBMLFromString(r.getSBML())
 checkElm(8)
 
@@ -184,7 +185,7 @@ r = te.loada('''
     J8: S3 -> $X5; v;
     v = 0
 ''')
-r.exportToSBML('testModel9.xml')
+r.exportToSBML('testModel9.xml') 
 ls.loadSBMLFromString(r.getSBML())
 checkElm(9)
 
@@ -201,7 +202,7 @@ r = te.loada('''
     J9: S6 -> S5; v;
     v = 0
 ''')
-r.exportToSBML('testModel10.xml')
+r.exportToSBML('testModel10.xml') 
 ls.loadSBMLFromString(r.getSBML())
 checkElm(10)
 
@@ -211,7 +212,7 @@ r = te.loada('''
     J3: S1 -> $X2; v;
     v = 0
 ''')
-r.exportToSBML('testModel11.xml')
+r.exportToSBML('testModel11.xml') 
 ls.loadSBMLFromString(r.getSBML())
 checkElm(11)
 
@@ -224,7 +225,7 @@ r = te.loada('''
     J5: S4 -> $X1; v;
     v = 0
 ''')
-r.exportToSBML('testModel12.xml')
+r.exportToSBML('testModel12.xml') 
 ls.loadSBMLFromString(r.getSBML())
 checkElm(12)
 
@@ -241,7 +242,7 @@ r = te.loada('''
     J8: S5 -> $X1; v;
     v = 0
 ''')
-r.exportToSBML('testModel13.xml')
+r.exportToSBML('testModel13.xml') 
 ls.loadSBMLFromString(r.getSBML())
 checkElm(13)
 
@@ -260,7 +261,7 @@ r = te.loada('''
     J11: S7 -> $X1; v;
     v = 0
 ''')
-r.exportToSBML('testModel14.xml')
+r.exportToSBML('testModel14.xml') 
 ls.loadSBMLFromString(r.getSBML())
 checkElm(14)
 
@@ -271,7 +272,7 @@ r = te.loada('''
     J3: S2 + S3 -> $X1; v;
     v = 0
 ''')
-r.exportToSBML('testModel15.xml')
+r.exportToSBML('testModel15.xml') 
 ls.loadSBMLFromString(r.getSBML())
 checkElm(15)
 
@@ -282,7 +283,7 @@ r = te.loada('''
     J3: S2 -> S1 + $X2; v;
     v = 0
 ''')
-r.exportToSBML('testModel16.xml')
+r.exportToSBML('testModel16.xml') 
 ls.loadSBMLFromString(r.getSBML())
 checkElm(16)
 
@@ -293,7 +294,7 @@ r = te.loada('''
     J3: S2 -> S1 + $X2; v;
     v = 0
 ''')
-r.exportToSBML('testModel17.xml')
+r.exportToSBML('testModel17.xml') 
 ls.loadSBMLFromString(r.getSBML())
 checkElm(17)
 
@@ -304,7 +305,7 @@ r = te.loada('''
     J3: S1 + S3 -> S2 + $X2; v;
     v = 0
 ''')
-r.exportToSBML('testModel18.xml')
+r.exportToSBML('testModel18.xml') 
 ls.loadSBMLFromString(r.getSBML())
 checkElm(18)
 
@@ -317,7 +318,7 @@ r = te.loada('''
     J4: S3 -> S4 + $X1; v;
     v = 0
 ''')
-r.exportToSBML('testModel19.xml')
+r.exportToSBML('testModel19.xml') 
 ls.loadSBMLFromString(r.getSBML())
 checkElm(19)
 
@@ -334,7 +335,7 @@ r = te.loada('''
     J8: S3 => $X5; v;
     v = 0
 ''')
-r.exportToSBML('testModel20.xml')
+r.exportToSBML('testModel20.xml') 
 ls.loadSBMLFromString(r.getSBML())
 checkElm(20)
 eml1 = ls.getElementaryModes()
@@ -352,7 +353,7 @@ r = te.loada('''
     J8: S3 => $X5; v;
     v = 0
 ''')
-r.exportToSBML('testModel21.xml')
+r.exportToSBML('testModel21.xml') 
 ls.loadSBMLFromString(r.getSBML())
 checkElm(21)
 eml2 = ls.getElementaryModes()
@@ -370,7 +371,7 @@ r = te.loada('''
     J8: S3 => $X5; v;
     v = 0
 ''')
-r.exportToSBML('testModel22.xml')
+r.exportToSBML('testModel22.xml') 
 ls.loadSBMLFromString(r.getSBML())
 checkElm(22)
 
@@ -387,9 +388,9 @@ r = te.loada('''
     J8: S3 => $X5; v;
     v = 0
 ''')
-r.exportToSBML('testModel23.xml')
+r.exportToSBML('testModel23.xml') 
 ls.loadSBMLFromString(r.getSBML())
-checkElm(23)
+checkElm(23)      
 
 
 # 24
@@ -404,6 +405,8 @@ r = te.loada('''
     J8: S3 => $X5; v;
     v = 0
 ''')
-r.exportToSBML('testModel24.xml')
+r.exportToSBML('testModel24.xml') 
 ls.loadSBMLFromString(r.getSBML())
-checkElm(24)
+checkElm(24) 
+        
+
