@@ -3,8 +3,16 @@
 # Dec 2017
 
 import structural
-import tellurium as te
 import numpy as np
+
+def nullspace(A, atol=1e-13, rtol=0):
+
+    A = np.atleast_2d(A)
+    u, s, vh = np.linalg.svd(A)
+    tol = max(atol, rtol * s[0])
+    nnz = (s >= tol).sum()
+    ns = vh[nnz:].conj().T
+    return ns
 
 def checkThermodynamics (ls, elm):
     # Assume we're ok initially, then try to disprove
@@ -21,7 +29,7 @@ def checkThermodynamics (ls, elm):
 
     return result
 
-               
+
 def checkElemenarity (ls, elm):
    N = ls.getStoichiometryMatrix()
    sum = 0
@@ -39,7 +47,7 @@ def checkElemenarity (ls, elm):
       subN = np.empty([N.shape[0],0])
       for i in indexList:
            subN = np.column_stack ((subN, N[:,i]))
-      ns = te.nullspace (subN)
+      ns = nullspace (subN)
       # If the null space has dim(1) then we pass this em
       sum = sum + int (ns.shape[1])
    # If all pass then the sum should equal the number of elm
@@ -47,8 +55,8 @@ def checkElemenarity (ls, elm):
        return True
    else:
        return False
-   
-    
+
+
 def checkElm(id):
    elm = ls.getElementaryModes()
    st = ls.getStoichiometryMatrix()
@@ -58,355 +66,178 @@ def checkElm(id):
           if checkThermodynamics (ls, elm):
              print("(", id, ") ------PASS-----", "Number of modes = ", elm.shape[0])
           else:
-             print(id, " ------FAIL Thermo -----")              
+             print(id, " ------FAIL Thermo -----")
       else:
          print(id, " ------FAIL Elementarity-----")
    else:
       print(id, " ------FAIL N e = 0 -----")
-   
 
-r = te.loada('''
-    J1: $Xo -> S1; v;
-    J2: S1 => $X1; v;
-    J3: S1 => $X2; v;
-    v = 0
-''')
-r.exportToSBML('testModel1.xml') 
+
+
+def checkStructure(ls):
+    if 'Fail' in ls.validateStructuralMatrices():
+        print("Structural Matrix Validation ----- FAIL-----")
+    else:
+        print("Structural Matrix Validation ----- PASS -----")
+        print('\n')
+
+
+
+# r = te.loada('''
+#     J1: $Xo -> S1; v;
+#     J2: S1 => $X1; v;
+#     J3: S1 => $X2; v;
+#     v = 0
+# ''')
+# r.exportToSBML('testModel1.xml')
+# ls = structural.LibStructural()
+# ls.loadSBMLFromString(r.getSBML())
+# checkElm(1)
+
 ls = structural.LibStructural()
-ls.loadSBMLFromString(r.getSBML())
+ls.loadSBMLFromFile('testModel1.xml')
 checkElm(1)
- 
-r = te.loada('''
-    J1: $Xo -> S1; v;
-    J2: S1 -> $X1; v;
-    J3: S1 -> $X2; v;
-    v = 0
-''')
-r.exportToSBML('testModel2.xml') 
-ls.loadSBMLFromString(r.getSBML())
+checkStructure(ls)
+
+ls = structural.LibStructural()
+ls.loadSBMLFromFile('testModel2.xml')
 checkElm(2)
+checkStructure(ls)
 
 
-r = te.loada('''
-    
-    J1: $Xo -> S1; v;
-    J2: S1 -> S2; v;
-    J3: S2 => $X1; v;
-    J4: S2 => $X2; v;
-    J5: S1 => $X3; v;
-    v = 0
-''')
-r.exportToSBML('testModel3.xml') 
-ls.loadSBMLFromString(r.getSBML())
+ls = structural.LibStructural()
+ls.loadSBMLFromFile('testModel3.xml')
 checkElm(3)
+checkStructure(ls)
 
 
-r = te.loada('''
-    J1: $Xo -> S1; v;
-    J2: S1 -> S2; v;
-    J3: S2 -> S3; v;
-    J4: S1 -> S3; v;
-    J5: S3 -> $X1; v;
-    v = 0
-''')
-r.exportToSBML('testModel4.xml') 
-ls.loadSBMLFromString(r.getSBML())
+ls = structural.LibStructural()
+ls.loadSBMLFromFile('testModel4.xml')
 checkElm(4)
+checkStructure(ls)
 
 
-r = te.loada('''
-    J1: $Xo => S1; v;
-    J2: S1 => S2; v;
-    J3: S2 => S3; v;
-    J4: S1 => S3; v;
-    J5: S2 => S4; v;
-    J6: S3 => S4; v;
-    J7: S4 => $X1; v;
-    v = 0
-''')
-r.exportToSBML('testModel5.xml') 
-ls.loadSBMLFromString(r.getSBML())
+ls = structural.LibStructural()
+ls.loadSBMLFromFile('testModel5.xml')
 checkElm(5)
+checkStructure(ls)
 
 
-
-r = te.loada('''
-    J1: $Xo -> S1; v;
-    J2: S1 -> S2; v;
-    J3: S2 -> S3; v;
-    J4: S1 -> S3; v;
-    J5: S3 -> $X1; v;
-    J6: S2 -> S4; v;
-    J7: S2 -> S5; v;
-    J8: S4 -> S5; v;
-    J9: S5 ->; v;
-    v = 0
-''')
-r.exportToSBML('testModel6.xml') 
-ls.loadSBMLFromString(r.getSBML())
+ls = structural.LibStructural()
+ls.loadSBMLFromFile('testModel6.xml')
 checkElm(6)
+checkStructure(ls)
 
 
-
-r = te.loada('''
-    J1: $Xo -> S1; v;
-    J2: S1 -> S2; v;
-    J3: S2 -> S3; v;
-    J4: S1 -> S3; v;
-    J5: S3 -> $X1; v;
-    J6: S3 -> $X2; v;
-    v = 0
-''')
-r.exportToSBML('testModel7.xml') 
-ls.loadSBMLFromString(r.getSBML())
+ls = structural.LibStructural()
+ls.loadSBMLFromFile('testModel7.xml')
 checkElm(7)
+checkStructure(ls)
 
 
-r = te.loada('''
-    J1: S1 -> S2; v;
-    J2: S2 -> S1; v;
-    J3: S2 -> S3; v;
-    J4: S3 -> S2; v;
-    v = 0
-''')
-r.exportToSBML('testModel8.xml') 
-ls.loadSBMLFromString(r.getSBML())
+ls = structural.LibStructural()
+ls.loadSBMLFromFile('testModel8.xml')
 checkElm(8)
+checkStructure(ls)
 
 
-r = te.loada('''
-    J1: $Xo -> S1; v;
-    J2: S1 -> $X2; v;
-    J3: S1 -> S2; v;
-    J4: S2 -> $X3; v;
-    J5: S2 -> $X4; v;
-    J6: $X1 -> S3; v;
-    J7: S3 -> S2; v;
-    J8: S3 -> $X5; v;
-    v = 0
-''')
-r.exportToSBML('testModel9.xml') 
-ls.loadSBMLFromString(r.getSBML())
+ls = structural.LibStructural()
+ls.loadSBMLFromFile('testModel9.xml')
 checkElm(9)
+checkStructure(ls)
 
 
-r = te.loada('''
-    J1: $Xo -> S1; v;
-    J2: S1 -> S3; v;
-    J3: S1 -> S2; v;
-    J4: S2 -> S4; v;
-    J5: S4 -> S3; v;
-    J6: S3 -> S5; v;
-    J7: S4 -> S6; v;
-    J8: S6 -> $X1; v;
-    J9: S6 -> S5; v;
-    v = 0
-''')
-r.exportToSBML('testModel10.xml') 
-ls.loadSBMLFromString(r.getSBML())
+ls = structural.LibStructural()
+ls.loadSBMLFromFile('testModel10.xml')
 checkElm(10)
+checkStructure(ls)
 
-r = te.loada('''
-    J1: $Xo -> S1; v;
-    J2: $X1 -> S1; v;
-    J3: S1 -> $X2; v;
-    v = 0
-''')
-r.exportToSBML('testModel11.xml') 
-ls.loadSBMLFromString(r.getSBML())
+
+ls = structural.LibStructural()
+ls.loadSBMLFromFile('testModel11.xml')
 checkElm(11)
+checkStructure(ls)
 
 
-r = te.loada('''
-    J1: $Xo -> S1; v;
-    J2: S1 -> S2 + S4; v;
-    J3: S2 -> S3 + S4 ; v;
-    J4: S3 -> S4; v;
-    J5: S4 -> $X1; v;
-    v = 0
-''')
-r.exportToSBML('testModel12.xml') 
-ls.loadSBMLFromString(r.getSBML())
+ls = structural.LibStructural()
+ls.loadSBMLFromFile('testModel12.xml')
 checkElm(12)
+checkStructure(ls)
 
 
-
-r = te.loada('''
-    J1: $Xo -> S1; v;
-    J2: S1 -> S2; v;
-    J3: S2 -> S3; v;
-    J4: S1 -> S3; v;
-    J5: S3 -> S4; v;
-    J6: S3 -> S5; v;
-    J7: S4 -> S5; v;
-    J8: S5 -> $X1; v;
-    v = 0
-''')
-r.exportToSBML('testModel13.xml') 
-ls.loadSBMLFromString(r.getSBML())
+ls = structural.LibStructural()
+ls.loadSBMLFromFile('testModel13.xml')
 checkElm(13)
+checkStructure(ls)
 
 
-r = te.loada('''
-    J1: $Xo -> S1; v;
-    J2: S1 -> S2; v;
-    J3: S2 -> S3; v;
-    J4: S1 -> S3; v;
-    J5: S3 -> S4; v;
-    J6: S3 -> S5; v;
-    J7: S4 -> S5; v;
-    J8: S5 -> S6; v;
-    J9: S5 -> S7; v;
-    J10: S6 -> S7; v;
-    J11: S7 -> $X1; v;
-    v = 0
-''')
-r.exportToSBML('testModel14.xml') 
-ls.loadSBMLFromString(r.getSBML())
+ls = structural.LibStructural()
+ls.loadSBMLFromFile('testModel14.xml')
 checkElm(14)
+checkStructure(ls)
 
 
-r = te.loada('''
-    J1: $Xo -> S1 + S2; v;
-    J2: S1 -> S3; v;
-    J3: S2 + S3 -> $X1; v;
-    v = 0
-''')
-r.exportToSBML('testModel15.xml') 
-ls.loadSBMLFromString(r.getSBML())
+ls = structural.LibStructural()
+ls.loadSBMLFromFile('testModel15.xml')
 checkElm(15)
+checkStructure(ls)
 
 
-r = te.loada('''
-    J1: $Xo -> S1; v;
-    J2: S1 + $X1 -> S2; v;
-    J3: S2 -> S1 + $X2; v;
-    v = 0
-''')
-r.exportToSBML('testModel16.xml') 
-ls.loadSBMLFromString(r.getSBML())
+ls = structural.LibStructural()
+ls.loadSBMLFromFile('testModel16.xml')
 checkElm(16)
+checkStructure(ls)
 
 
-r = te.loada('''
-    J1: $Xo -> S1; v;
-    J2: S1 + $X1 -> S2; v;
-    J3: S2 -> S1 + $X2; v;
-    v = 0
-''')
-r.exportToSBML('testModel17.xml') 
-ls.loadSBMLFromString(r.getSBML())
+ls = structural.LibStructural()
+ls.loadSBMLFromFile('testModel17.xml')
 checkElm(17)
+checkStructure(ls)
 
 
-r = te.loada('''
-    J1: $Xo -> S1; v;
-    J2: S1 + S2 -> S3 + $X1; v;
-    J3: S1 + S3 -> S2 + $X2; v;
-    v = 0
-''')
-r.exportToSBML('testModel18.xml') 
-ls.loadSBMLFromString(r.getSBML())
+ls = structural.LibStructural()
+ls.loadSBMLFromFile('testModel18.xml')
 checkElm(18)
+checkStructure(ls)
 
 
-
-r = te.loada('''
-    J1: $Xo + S2 -> S1; v;
-    J2: S1 -> S2 + S5; v;
-    J3: S5 + S4 -> S3; v;
-    J4: S3 -> S4 + $X1; v;
-    v = 0
-''')
-r.exportToSBML('testModel19.xml') 
-ls.loadSBMLFromString(r.getSBML())
+ls = structural.LibStructural()
+ls.loadSBMLFromFile('testModel19.xml')
 checkElm(19)
+checkStructure(ls)
 
-
-# 20
-r = te.loada('''
-    J1: $Xo => S1; v;
-    J2: S1 => $X2; v;
-    J3: S1 => S2; v;
-    J4: S2 => $X3; v;
-    J5: S2 => $X4; v;
-    J6: $X1 => S3; v;
-    J7: S3 => S2; v;
-    J8: S3 => $X5; v;
-    v = 0
-''')
-r.exportToSBML('testModel20.xml') 
-ls.loadSBMLFromString(r.getSBML())
+# 22
+ls = structural.LibStructural()
+ls.loadSBMLFromFile('testModel20.xml')
 checkElm(20)
+checkStructure(ls)
 eml1 = ls.getElementaryModes()
 
 
 # 21
-r = te.loada('''
-    J1: $Xo => S1; v;
-    J2: S1 => $X2; v;
-    J3: S1 -> S2; v;
-    J4: S2 => $X3; v;
-    J5: S2 => $X4; v;
-    J6: $X1 => S3; v;
-    J7: S3 => S2; v;
-    J8: S3 => $X5; v;
-    v = 0
-''')
-r.exportToSBML('testModel21.xml') 
-ls.loadSBMLFromString(r.getSBML())
+ls = structural.LibStructural()
+ls.loadSBMLFromFile('testModel21.xml')
 checkElm(21)
+checkStructure(ls)
 eml2 = ls.getElementaryModes()
 
 
 # 22
-r = te.loada('''
-    J1: $Xo -> S1; v;
-    J2: S1 => $X2; v;
-    J3: S1 -> S2; v;
-    J4: S2 => $X3; v;
-    J5: S2 => $X4; v;
-    J6: $X1 => S3; v;
-    J7: S3 => S2; v;
-    J8: S3 => $X5; v;
-    v = 0
-''')
-r.exportToSBML('testModel22.xml') 
-ls.loadSBMLFromString(r.getSBML())
+ls = structural.LibStructural()
+ls.loadSBMLFromFile('testModel22.xml')
 checkElm(22)
+checkStructure(ls)
 
 
 # 23
-r = te.loada('''
-    J1: $Xo -> S1; v;
-    J2: S1 => $X2; v;
-    J3: S1 -> S2; v;
-    J4: S2 => $X3; v;
-    J5: S2 => $X4; v;
-    J6: $X1 => S3; v;
-    J7: S3 -> S2; v;
-    J8: S3 => $X5; v;
-    v = 0
-''')
-r.exportToSBML('testModel23.xml') 
-ls.loadSBMLFromString(r.getSBML())
-checkElm(23)      
+ls = structural.LibStructural()
+ls.loadSBMLFromFile('testModel23.xml')
+checkElm(23)
+checkStructure(ls)
 
 
 # 24
-r = te.loada('''
-    J1: $Xo -> S1; v;
-    J2: S1 => $X2; v;
-    J3: S1 -> S2; v;
-    J4: S2 => $X3; v;
-    J5: S2 => $X4; v;
-    J6: $X1 -> S3; v;
-    J7: S3 -> S2; v;
-    J8: S3 => $X5; v;
-    v = 0
-''')
-r.exportToSBML('testModel24.xml') 
-ls.loadSBMLFromString(r.getSBML())
-checkElm(24) 
-        
-
+ls = structural.LibStructural()
+ls.loadSBMLFromFile('testModel24.xml')
+checkElm(24)
+checkStructure(ls)

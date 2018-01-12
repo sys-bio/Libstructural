@@ -1,5 +1,4 @@
 import structural
-import tellurium as te
 import pkg_resources
 ls = structural.LibStructural()
 
@@ -182,4 +181,3 @@ print("Reaction Ids: ", ls.getReactionsIds())
 print()
 print((ls.getSummary()))
 print((ls.validateStructuralMatrices())) # Prints out if the model is passed some interna structural validation tests.
-

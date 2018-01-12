@@ -1,4 +1,5 @@
 import structural
+import tellurium as te
 import pkg_resources
 ls = structural.LibStructural()
 
@@ -164,9 +165,22 @@ ls.test()
 # Test Conservation Analysis
 print()
 print("Conservation analysis example:")
+r = te.loada('''
 
+    // Reactions:
+    J1: ES -> E  + S1; v;
+    J2: S1 -> S2 ; v;
+    J3: S2 + E -> ES; v;
+    v = 0;
+
+    // Species initializations:
+    S1 = 100; E = 20;
+
+''')
+
+sbmlstr = r.getSBML()
 ls = structural.LibStructural()
-ls.loadSBMLFromFile('Conservation_analysis_example.xml')
+ls.loadSBMLFromString(sbmlstr)
 print((ls.getSummary()))
 
 
