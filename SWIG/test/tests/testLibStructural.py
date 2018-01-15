@@ -138,7 +138,7 @@ print(ls.getNumIndReactions())
 print(ls.getNumIndSpecies())
 print(ls.getNumReactions())
 print(ls.getNumSpecies())
-print(ls.getReactionsIds()) # Rename to Ids
+print(ls.getReactionIds()) # Rename to Ids
 print(ls.getReorderedReactionsIds())
 print(ls.getReorderedSpeciesIds())
 print(ls.getReorderedStoichiometryMatrixIds())
@@ -177,7 +177,7 @@ print(ls.getStoichiometryMatrix())
 print()
 print("Species Ids: ", ls.getFloatingSpeciesIds())
 
-print("Reaction Ids: ", ls.getReactionsIds())
+print("Reaction Ids: ", ls.getReactionIds())
 print()
 print((ls.getSummary()))
 print((ls.validateStructuralMatrices())) # Prints out if the model is passed some interna structural validation tests.
