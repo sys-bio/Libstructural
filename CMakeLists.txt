@@ -7,7 +7,7 @@
 cmake_minimum_required(VERSION 2.8)
 project(LibStructural)
 
-SET(32-BIT-BUILD False CACHE BOOL "Set 32/64 bit target, set unchecked for a 64-bit build")
+SET(32-BIT-BUILD FALSE CACHE BOOL "Set 32/64 bit target, set unchecked for a 64-bit build")
 
 if (${32-BIT-BUILD})
     message ("Building 32-bit Release")
@@ -16,21 +16,13 @@ else()
     message ("Building 64-bit Release")
     SET(CBINARYTYPE "64")
 endif()
-    
-if (CBINARYTYPE STREQUAL "32")
-    message ("Building 32-bit Release AGAIN")
-endif()
-
-if (CBINARYTYPE STREQUAL "64")
-    message ("Building 64-bit Release AGAIN")
-endif()
 
 
 if (CBINARYTYPE STREQUAL "32")
    set (CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/INSTALL_x32" CACHE PATH "default install path" FORCE)
 else()
    set (CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/INSTALL_x64" CACHE PATH "default install path" FORCE)
-endif()  
+endif()
 
 include (CMakeTestCCompiler)
 include (CheckCSourceCompiles)
@@ -82,7 +74,7 @@ set (ENABLE_PYTHON_WRAPPER FALSE CACHE BOOL "Enable Python bindings")
 # set build type default
 set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Choose the type of build, options are: None (CMAKE_CXX_FLAGS or CMAKE_C_FLAGS are used), Debug, Release, RelWithDebInfo, MinSizeRel" FORCE )
 
-    
+
 ###############################################################################
 #
 # list of additional files to link against.
@@ -93,7 +85,7 @@ if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 include_directories(${LIBXML2_INCLUDE})
 
 find_library(BZ2_LIBRARY
-  NAMES libbz2.a libbz2.so libbz2.dylib libbz2.lib
+  NAMES libbz2.a libbz2.so libbz2.dylib
   PATHS ${DEPENDENCY_DIR}/lib
     	${SBML_DIR}/lib
     	/usr/lib /usr/local/lib
@@ -104,7 +96,6 @@ find_library(BZ2_LIBRARY
 
 include_directories(${BZ2_INCLUDE})
 
-if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 find_library(LIBZ_LIBRARY
   NAMES libz.a libz.so libz.dylib
   PATHS ${DEPENDENCY_DIR}/lib
@@ -113,10 +104,10 @@ find_library(LIBZ_LIBRARY
       ${CMAKE_SOURCE_DIR}
     )
 include_directories(${LIBZ_INCLUDE})
-endif()
+
 
 find_library(LIBICONV_LIBRARY
-  NAMES libiconv.a libiconv.so libiconv.dylib libiconv.lib
+  NAMES libiconv.a libiconv.so libiconv.dylib
   PATHS ${DEPENDENCY_DIR}/lib
       ${SBML_DIR}/lib
       /usr/lib /usr/local/lib
@@ -124,10 +115,12 @@ find_library(LIBICONV_LIBRARY
       ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-${CBINARYTYPE}/lib
     )
 
+
+
 include_directories(${LIBICONV_INCLUDE})
 
   find_library(ZDLL_LIBRARY
-    NAMES zdll.a zdll.so zdll.dylib zdll.lib
+    NAMES zdll.a zdll.so zdll.dylib
     PATHS ${DEPENDENCY_DIR}/lib
         ${SBML_DIR}/lib
         /usr/lib /usr/local/lib
@@ -136,20 +129,40 @@ include_directories(${LIBICONV_INCLUDE})
       )
 
   include_directories(${ZDLL_INCLUDE})
+
 else()
-  set(EXTRA_LIBS ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-${CBINARYTYPE}/lib/libbz2.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-${CBINARYTYPE}/lib/libxml2.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-${CBINARYTYPE}/lib/zdll.lib; ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-${CBINARYTYPE}/lib/libiconv.lib CACHE STRING "List of additional libraries to link against." )
+
+SET(EXTRA_LIBS_PATH ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-${CBINARYTYPE}/lib)
+set(EXTRA_LIBS
+${EXTRA_LIBS_PATH}/libbz2.lib;
+${EXTRA_LIBS_PATH}/libxml2.lib;
+${EXTRA_LIBS_PATH}/zdll.lib;
+${EXTRA_LIBS_PATH}/libiconv.lib
+CACHE STRING "List of additional libraries to link against." FORCE)
+
 endif()
+
 
 ####################################################################
 #
 # Locate Libxml2 if needed
 #
+
+# This will force CMAKE to reload library paths after selecting 32-BIT-BUILD option
+unset(LIBSBML_LIBRARY CACHE)
+unset(LIBSBML_INCLUDE CACHE)
+unset(CLAPACK_LIBRARY CACHE)
+unset(CLAPACK_BLAS_LIBRARY CACHE)
+unset(CLAPACK_F2C_LIBRARY CACHE)
+unset(LIBXML2_LIBRARY CACHE)
+
+
 find_library(LIBSBML_LIBRARY
 	NAMES libsbml-static.a libsbml-static.lib libsbml.lib sbml
-	PATHS ${DEPENDENCY_DIR}/lib
-		  ${SBML_DIR}/lib
+	PATHS #${DEPENDENCY_DIR}/lib
+		  # ${SBML_DIR}/lib
 		  /usr/lib /usr/local/lib
-		  ${CMAKE_SOURCE_DIR}
+		  # ${CMAKE_SOURCE_DIR}
 		  ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-${CBINARYTYPE}/lib
     )
 
@@ -163,8 +176,6 @@ find_path(LIBSBML_INCLUDE
 
 set(STRUCTURAL_LIBS ${STRUCTURAL_LIBS} ${LIBSBML_LIBRARY})
 include_directories(${LIBSBML_INCLUDE})
-
-set(STRUCTURAL_LIBS ${STRUCTURAL_LIBS} ${LIBSBML_LIBRARY})
 
 find_library(CLAPACK_LIBRARY
 NAMES liblapack.a clapack.lib  clapack lapack

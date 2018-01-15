@@ -1,7 +1,7 @@
 Getting Started with LibStructural
 ==================================
 
-The following examples demonstrate how to load a biochemical reaction network using the LibStructural API. A model should 
+The following examples demonstrate how to load a biochemical reaction network using the LibStructural API. A model should
 be available in at least one of the following formats: SBML model file (.xml format), or a 2D array. SBML can either be loaded as a string or directly from a file.
 
 ----------------------
@@ -22,8 +22,12 @@ In addition, a test script is distributed with LibStructural package that can be
 .. code:: python
 
   import structural
-  execfile(structural.__path__[0] + '/test/tests/testLibStructural.py')
+  from sys import version_info
 
+  if version_info == 2:
+    execfile(structural.__path__[0] + '/test/tests/testLibStructural.py')
+  else:
+    exec(open(structural.__path__[0] + '/test/tests/testLibStructural.py').read())
 .. end
 
 
@@ -72,7 +76,7 @@ If a model is available as a SBML string, us the following code:
 .. end
 
 where **sbmlString** has been previously assigned an SBML string. SBML strings can be obtained either by loading the contents of a
-file than contains SBML, creating an SBML model via simpleSBML or libSBML, or more commonly by converting an Antimony description of a model into SBML. 
+file than contains SBML, creating an SBML model via simpleSBML or libSBML, or more commonly by converting an Antimony description of a model into SBML.
 
 Loading a Model from a Stoichiometric Matrix
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -419,6 +423,10 @@ In addition, a test script for elementary modes is distributed with LibStructura
 .. code:: python
 
   import structural
-  execfile(structural.__path__[0] + '/test/tests/elementaryModes.py')
+  from sys import version_info
+  if version_info == 2:
+    execfile(structural.__path__[0] + '/test/tests/elementaryModes.py')
+  else:
+    exec(open(structural.__path__[0] + '/test/tests/elementaryModes.py').read())
 
 .. end
