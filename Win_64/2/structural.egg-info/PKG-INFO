@@ -1,12 +1,11 @@
 Metadata-Version: 1.1
 Name: structural
-Version: 2.0.0.post2
+Version: 2.0.0.post3
 Summary: A module for a wide variety of methods that permit access to the constraint information in the stoichiometry matrix.
 Home-page: https://github.com/sys-bio/Libstructural
 Author: Herbert M. Sauro and Frank T. Bergmann 
 Author-email: hsauro@uw.edu
 License: BSD
-Description-Content-Type: UNKNOWN
 Description: libStructural
         =======================
         
@@ -20,3 +19,5 @@ Classifier: License :: OSI Approved :: BSD License
 Classifier: Programming Language :: Python :: 2
 Classifier: Programming Language :: Python :: 2.6
 Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6

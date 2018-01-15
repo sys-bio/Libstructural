@@ -95,120 +95,120 @@ def checkStructure(ls):
 # checkElm(1)
 
 ls = structural.LibStructural()
-ls.loadSBMLFromFile('testModel1.xml')
+ls.loadSBMLFromFile(structural.__path__[0] + '/test/tests/testModel1.xml')
 checkElm(1)
 checkStructure(ls)
 
 ls = structural.LibStructural()
-ls.loadSBMLFromFile('testModel2.xml')
+ls.loadSBMLFromFile(structural.__path__[0] + '/test/tests/testModel2.xml')
 checkElm(2)
 checkStructure(ls)
 
 
 ls = structural.LibStructural()
-ls.loadSBMLFromFile('testModel3.xml')
+ls.loadSBMLFromFile(structural.__path__[0] + '/test/tests/testModel3.xml')
 checkElm(3)
 checkStructure(ls)
 
 
 ls = structural.LibStructural()
-ls.loadSBMLFromFile('testModel4.xml')
+ls.loadSBMLFromFile(structural.__path__[0] + '/test/tests/testModel4.xml')
 checkElm(4)
 checkStructure(ls)
 
 
 ls = structural.LibStructural()
-ls.loadSBMLFromFile('testModel5.xml')
+ls.loadSBMLFromFile(structural.__path__[0] + '/test/tests/testModel5.xml')
 checkElm(5)
 checkStructure(ls)
 
 
 ls = structural.LibStructural()
-ls.loadSBMLFromFile('testModel6.xml')
+ls.loadSBMLFromFile(structural.__path__[0] + '/test/tests/testModel6.xml')
 checkElm(6)
 checkStructure(ls)
 
 
 ls = structural.LibStructural()
-ls.loadSBMLFromFile('testModel7.xml')
+ls.loadSBMLFromFile(structural.__path__[0] + '/test/tests/testModel7.xml')
 checkElm(7)
 checkStructure(ls)
 
 
 ls = structural.LibStructural()
-ls.loadSBMLFromFile('testModel8.xml')
+ls.loadSBMLFromFile(structural.__path__[0] + '/test/tests/testModel8.xml')
 checkElm(8)
 checkStructure(ls)
 
 
 ls = structural.LibStructural()
-ls.loadSBMLFromFile('testModel9.xml')
+ls.loadSBMLFromFile(structural.__path__[0] + '/test/tests/testModel9.xml')
 checkElm(9)
 checkStructure(ls)
 
 
 ls = structural.LibStructural()
-ls.loadSBMLFromFile('testModel10.xml')
+ls.loadSBMLFromFile(structural.__path__[0] + '/test/tests/testModel10.xml')
 checkElm(10)
 checkStructure(ls)
 
 
 ls = structural.LibStructural()
-ls.loadSBMLFromFile('testModel11.xml')
+ls.loadSBMLFromFile(structural.__path__[0] + '/test/tests/testModel11.xml')
 checkElm(11)
 checkStructure(ls)
 
 
 ls = structural.LibStructural()
-ls.loadSBMLFromFile('testModel12.xml')
+ls.loadSBMLFromFile(structural.__path__[0] + '/test/tests/testModel12.xml')
 checkElm(12)
 checkStructure(ls)
 
 
 ls = structural.LibStructural()
-ls.loadSBMLFromFile('testModel13.xml')
+ls.loadSBMLFromFile(structural.__path__[0] + '/test/tests/testModel13.xml')
 checkElm(13)
 checkStructure(ls)
 
 
 ls = structural.LibStructural()
-ls.loadSBMLFromFile('testModel14.xml')
+ls.loadSBMLFromFile(structural.__path__[0] + '/test/tests/testModel14.xml')
 checkElm(14)
 checkStructure(ls)
 
 
 ls = structural.LibStructural()
-ls.loadSBMLFromFile('testModel15.xml')
+ls.loadSBMLFromFile(structural.__path__[0] + '/test/tests/testModel15.xml')
 checkElm(15)
 checkStructure(ls)
 
 
 ls = structural.LibStructural()
-ls.loadSBMLFromFile('testModel16.xml')
+ls.loadSBMLFromFile(structural.__path__[0] + '/test/tests/testModel16.xml')
 checkElm(16)
 checkStructure(ls)
 
 
 ls = structural.LibStructural()
-ls.loadSBMLFromFile('testModel17.xml')
+ls.loadSBMLFromFile(structural.__path__[0] + '/test/tests/testModel17.xml')
 checkElm(17)
 checkStructure(ls)
 
 
 ls = structural.LibStructural()
-ls.loadSBMLFromFile('testModel18.xml')
+ls.loadSBMLFromFile(structural.__path__[0] + '/test/tests/testModel18.xml')
 checkElm(18)
 checkStructure(ls)
 
 
 ls = structural.LibStructural()
-ls.loadSBMLFromFile('testModel19.xml')
+ls.loadSBMLFromFile(structural.__path__[0] + '/test/tests/testModel19.xml')
 checkElm(19)
 checkStructure(ls)
 
 # 22
 ls = structural.LibStructural()
-ls.loadSBMLFromFile('testModel20.xml')
+ls.loadSBMLFromFile(structural.__path__[0] + '/test/tests/testModel20.xml')
 checkElm(20)
 checkStructure(ls)
 eml1 = ls.getElementaryModes()
@@ -216,7 +216,7 @@ eml1 = ls.getElementaryModes()
 
 # 21
 ls = structural.LibStructural()
-ls.loadSBMLFromFile('testModel21.xml')
+ls.loadSBMLFromFile(structural.__path__[0] + '/test/tests/testModel21.xml')
 checkElm(21)
 checkStructure(ls)
 eml2 = ls.getElementaryModes()
@@ -224,20 +224,20 @@ eml2 = ls.getElementaryModes()
 
 # 22
 ls = structural.LibStructural()
-ls.loadSBMLFromFile('testModel22.xml')
+ls.loadSBMLFromFile(structural.__path__[0] + '/test/tests/testModel22.xml')
 checkElm(22)
 checkStructure(ls)
 
 
 # 23
 ls = structural.LibStructural()
-ls.loadSBMLFromFile('testModel23.xml')
+ls.loadSBMLFromFile(structural.__path__[0] + '/test/tests/testModel23.xml')
 checkElm(23)
 checkStructure(ls)
 
 
 # 24
 ls = structural.LibStructural()
-ls.loadSBMLFromFile('testModel24.xml')
+ls.loadSBMLFromFile(structural.__path__[0] + '/test/tests/testModel24.xml')
 checkElm(24)
 checkStructure(ls)

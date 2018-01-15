@@ -106,7 +106,7 @@ When loading a model from a stoichiometry matrix, reactions and species Ids can 
 
   print ls.getStoichiometryMatrix()
   print ls.getFloatingSpeciesIds()
-  print ls.getReactionsIds()
+  print ls.getReactionIds()
 
   # load new Ids
   ls.loadSpeciesIdsWithValues (['a', 'b', 'c'], [0, 0, 0]) # The array length for both ids list and values list should be equal to the number of species
@@ -116,7 +116,7 @@ When loading a model from a stoichiometry matrix, reactions and species Ids can 
   ls.analyzeWithQR()
 
   print ls.getFloatingSpeciesIds()
-  print ls.getReactionsIds()
+  print ls.getReactionIds()
 
 .. end
 

@@ -180,8 +180,8 @@ LibStructural.getDependentSpeciesIds(self)
 ";
 
 
-%feature("docstring") LIB_STRUCTURAL::LibStructural::getReactionsIds "
-LibStructural.getReactionsIds(self)
+%feature("docstring") LIB_STRUCTURAL::LibStructural::getReactionIds "
+LibStructural.getReactionIds(self)
 
 :returns: The list of reaction ids
 
