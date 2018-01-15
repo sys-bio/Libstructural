@@ -1200,7 +1200,7 @@ void LibStructural::getNrMatrixIds(vector< string > &oRows, vector< string > &oC
 		throw NoModelException ("There is no model to analyze");
 	
 	oRows = getIndependentSpeciesIds();
-	oCols = getReactionsIds();
+	oCols = getReactionIds();
 }
 
 
@@ -1219,7 +1219,7 @@ void LibStructural::getN0MatrixIds(vector< string > &oRows, vector< string > &oC
 		throw NoModelException ("There is no model to analyze");
 
 	oRows = getDependentSpeciesIds();
-	oCols = getReactionsIds();
+	oCols = getReactionIds();
 }
 
 // Returns L, the Link Matrix
@@ -1488,7 +1488,7 @@ vector< pair <string, double> > LibStructural::getInitialConditions()
 }
 
 // Returns the list of Reactions
-vector< string > LibStructural::getReactionsIds()
+vector< string > LibStructural::getReactionIds()
 {
 	vector< string > oResult;
 	for (int i = 0; i < numReactions; i++)
@@ -1723,7 +1723,7 @@ LibStructural::DoubleMatrix* LibStructural::getStoichiometryMatrix()
 void LibStructural::getStoichiometryMatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
 	oRows = getFloatingSpeciesIds();
-	oCols = getReactionsIds();
+	oCols = getReactionIds();
 }
 
 
@@ -1739,7 +1739,7 @@ LibStructural::DoubleMatrix* LibStructural::getReorderedStoichiometryMatrix()
 void LibStructural::getReorderedStoichiometryMatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
 	oRows = getReorderedSpeciesIds();
-	oCols = getReactionsIds();
+	oCols = getReactionIds();
 }
 
 
@@ -2826,7 +2826,7 @@ LIB_EXTERN  int LibStructural_getKMatrix(double** *outMatrix, int* outRows, int 
 ////Returns the list of Reactions
 //LIB_EXTERN  int LibStructural_getNthReactionId(int n,char* *outMessage, int *nLength)
 //{
-//	outMessage = strdup(LibStructural::getInstance()->getReactionsIds()[n].c_str());
+//	outMessage = strdup(LibStructural::getInstance()->getReactionIds()[n].c_str());
 //	nLength = strlen(outMessage);
 //	return nLength;
 //}
@@ -3121,7 +3121,7 @@ LIB_EXTERN  int LibStructural_getConservedLaws(char** *outArray, int *outLength)
 
 LIB_EXTERN  int LibStructural_getReactionsIds(char** *outArray, int *outLength)
 {
-	vector<string> oValues = LibStructural::getInstance()->getReactionsIds();
+	vector<string> oValues = LibStructural::getInstance()->getReactionIds();
 	Util::CopyStringVector(oValues, *outArray, *outLength);
 	return SUCCESS;
 }
