@@ -166,7 +166,7 @@ print()
 print("Conservation analysis example:")
 
 ls = structural.LibStructural()
-ls.loadSBMLFromFile('Conservation_analysis_example.xml')
+ls.loadSBMLFromFile(structural.__path__[0] + '/test/tests/Conservation_analysis_example.xml')
 print((ls.getSummary()))
 
 
