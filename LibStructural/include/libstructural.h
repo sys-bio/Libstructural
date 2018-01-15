@@ -684,7 +684,7 @@ namespace LIB_STRUCTURAL
 		// LIB_EXTERN std::vector< std::string > getDependentSpeciesNamesList();
 
 		//! Returns the list of Reactions
-		LIB_EXTERN std::vector< std::string > getReactionsIds();
+		LIB_EXTERN std::vector< std::string > getReactionIds();
 
 		//! Returns the list of independent reactions
 		LIB_EXTERN std::vector< std::string > getIndependentReactionIds();
@@ -1736,7 +1736,7 @@ no stoichiometry matrix was loaded beforehand or none of the analysis methods ha
 been called yet.
 
 */
-LIB_EXTERN  int LibStructural_getReactionsIds(char** *outArray, int *outLength);
+LIB_EXTERN  int LibStructural_getReactionIds(char** *outArray, int *outLength);
 
 /*! \brief Returns algebraic expressions for the conservation laws.
 \param outArray pointer to string array that will be allocated and filled
