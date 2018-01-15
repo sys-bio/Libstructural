@@ -57,13 +57,14 @@ static PyObject* pNoModelException;  /* add this! */
      $action
    } catch (LIB_LA::ApplicationException& e) {
          std::string msg = e.getDetailedMessage();
+         PyErr_SetString (PyExc_Exception, msg.c_str());
+		 return NULL;
    } catch (LIB_LA::NoModelException& e) {
          std::string msg = e.getMessage();
-
-     PyErr_SetString (PyExc_Exception, msg.c_str());
-     return NULL;
+         PyErr_SetString (PyExc_Exception, msg.c_str());
+         return NULL;
    } catch (const std::exception& e) {
-     SWIG_exception(SWIG_RuntimeError, e.what());
+         SWIG_exception(SWIG_RuntimeError, e.what());
    } catch (...) {
          SWIG_exception(SWIG_RuntimeError, "Unknown exception");
      }
