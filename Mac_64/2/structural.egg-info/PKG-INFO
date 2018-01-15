@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: structural
-Version: 2.0.0.post2
+Version: 2.0.0.post3
 Summary: A module for a wide variety of methods that permit access to the constraint information in the stoichiometry matrix.
 Home-page: https://github.com/sys-bio/Libstructural
 Author: Herbert M. Sauro and Frank T. Bergmann 
