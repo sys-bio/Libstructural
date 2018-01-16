@@ -58,16 +58,14 @@ A model can be loaded from an SBML file using the **loadSBMLFromFile()** method.
 
 .. code:: python
 
-    ls.loadSBMLFromFile("iYO844.xml")
+    ls.loadSBMLFromFile("iYO844.xml") # Pass file path if file is in different directory
 
 .. end
-
-This assumes that the file is in the current directory. If not use the fill path name to the file.
 
 Loading a model from a string
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If a model is available as a SBML string, us the following code:
+If a model is available as an SBML string, use the following code:
 
 .. code:: python
 
@@ -96,7 +94,7 @@ The load command will also by default add reaction ids of the form '_Jx' and spe
 Assigning Reaction and Species Ids
 ----------------------------------
 
-When loading a model from a stoichiometry matrix, reactions and species Ids can be canged form their default values as follows.
+When loading a model from a stoichiometry matrix, reactions and species Ids can be changed form their default values as follows.
 
 .. code:: python
 
@@ -208,6 +206,7 @@ Which returns:
 
 .. code-block:: none
 
+  Out[1]:
   --------------------------------------------------------------
   STRUCTURAL ANALYSIS MODULE : Results
   --------------------------------------------------------------
@@ -228,17 +227,21 @@ Which returns:
 
 .. end
 
+To see the internal test suites results and the types of the tests, run:
+
 .. code:: python
 
-  print(ls.validateStructuralMatrices()) # Prints out if the model is passed some internal structural validation tests.
+  print(ls.validateStructuralMatrices()) # Prints out if the model passed some internal structural validation tests.
 
   # see what tests were run, call ls.getTestDetails()
   tests = ls.getTestDetails()
   print(tests)
 
 .. end
+
 .. code-block:: none
 
+  Out[1]:
   ('Pass', 'Pass', 'Pass', 'Pass', 'Pass', 'Pass')
   Testing Validity of Conservation Laws.
 
@@ -278,31 +281,15 @@ A stoichiometry matrix can be converted into a reordered matrix in which the row
 
 .. end
 
-A fully reordered stoichiometry matrix is a matrix where the Nr section of the reordered stoichiometry matrix partitioned into NDC (linearly dependent columns) and NIC (linearly independent columns).
+The reordered stoichiometry matrix will be the same as the stoichiometry matrix since there are no dependent species (rows) as we can see below.
 
-.. code:: python
+.. code-block:: none
 
-  # get a column and row reordered stoichiometry matrix, run:
-  ls.getFullyReorderedStoichiometryMatrix()
-
-.. end
-
-.. figure:: FullReorderedMatrix.PNG
-    :align: center
-    :figclass: align-center
-    :scale: 50 %
-
-.. code:: python
-
-  # get the NIC and NDC matrices
-  ls.getNDCMatrix()
-  ls.getNICMatrix() # NIC matrix is always a square matrix
-
-  # get N0 and Nr matrices
-  ls.getDependentReactionIds()
-
-  # identify independent reactions (run respective methods for species)
-  ls.getIndependentReactionIds()
+  Out[1]:
+  [[-1.,  1.,  0.],
+   [ 1.,  0., -1.],
+   [ 1., -1.,  0.],
+   [ 0., -1.,  1.]]
 
 .. end
 
@@ -325,20 +312,39 @@ We can also get species and reaction information from the model.
 
 .. end
 
-There are few methods that compute conserved moeties in the model:
+There are few methods that compute conserved moeties in a model. We mentioned that there are two interlinked conserved cycles: S1 + S2 + ES and ES + E in the model we generated above.
 
 .. code:: python
 
-  # get the conserved matrix
-  ls.getGammaMatrix()
+  # get the conserved matrix (species in columns, and conserved laws in rows)
+  print(ls.getGammaMatrix())
 
   # get which species are contained in each row of the conserved matrix
-  ls.getGammaMatrixIds()
+  print(ls.getGammaMatrixIds())
 
-  # get conserved laws and the conserved sums associated with them
-  ls.getConservedLaws()
+  # get conserved laws associated with them
+  print(ls.getConservedLaws())
+
+  # Get the sums of concentrations as given by the conserved Laws
+  print(ls.getConservedSums())
 
 .. end
+
+.. code-block:: none
+
+  Out[1]:
+  [[1. 0. 1. 0.]
+   [1. 1. 0. 1.]]
+
+  (('0', '1'), ('ES', 'S1', 'E', 'S2'))
+
+  (' + ES + E', ' + ES + S1 + S2')
+
+  (20.0, 30.0)
+
+.. end
+
+As we can see from the output, there are two conserved laws, ES + E and ES + S1 + S2. As the a model gets very complex, this methods are very useful to analyse conservation laws.
 
 Branched Metabolic Network
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -409,12 +415,53 @@ To get the summary result of analyzeWithQR:
 
 .. end
 
+A fully reordered stoichiometry matrix is a matrix where the Nr section of the reordered stoichiometry matrix partitioned into NDC (linearly dependent columns) and NIC (linearly independent columns).
+
+.. figure:: FullReorderedMatrix.PNG
+    :align: center
+    :figclass: align-center
+    :scale: 50 %
+
+.. code:: python
+
+  # get a column and row reordered stoichiometry matrix, run:
+  print(ls.getFullyReorderedStoichiometryMatrix())
+  # get the NIC and NDC matrices
+  print(ls.getNDCMatrix())
+  print(ls.getNICMatrix()) # NIC matrix is always a square matrix
+
+.. end
+
+Returns:
+
+.. code-block:: none
+
+  Out[1]:
+  [[ 1. -1.  0.]
+   [ 0.  1. -1.]
+   [-1.  1.  0.]
+   [-1.  0.  1.]]
+
+  [[1.]
+   [0.]]
+
+  [[-1.  0.]
+   [ 1. -1.]]
+
+.. end
+
 To compute the elementary modes the **getElementaryModes** method can be called. This returns an array where each row is an elementary mode in the model. Elementary modes are the simplest pathways within a metabolic network that can sustain a steady state and at the same time are thermodynamically feasible
 
 .. code:: python
 
-  import structural
   ls.getElementaryModes()
+
+.. end
+
+.. code-block:: none
+
+  Out[1]:
+  [[1. 1. 1.]]
 
 .. end
 
