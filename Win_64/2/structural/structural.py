@@ -641,9 +641,6 @@ class LibStructural(_object):
     def isModelLoaded(self):
         return _structural.LibStructural_isModelLoaded(self)
 
-    def getResultString(self):
-        return _structural.LibStructural_getResultString(self)
-
     def _my_loadStoichiometryMatrix(self, oMatrix):
         return _structural.LibStructural__my_loadStoichiometryMatrix(self, oMatrix)
 
