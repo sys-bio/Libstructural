@@ -8,10 +8,12 @@
 *.dll
 *.exe
 *.o
+*.obj
 *.so
 # Logs and databases #
 ######################
 *.log
+*.tlog
 *.sql
 *.sqlite
 # OS generated files #
