@@ -971,16 +971,16 @@ class LibStructural(_object):
         return _structural.LibStructural_getDependentReactionIds(self)
 
 
-    def getReorderedReactionsIds(self):
+    def getReorderedReactionIds(self):
         """
 
-        LibStructural.getReorderedReactionsIds(self)
+        LibStructural.getReorderedReactionIds(self)
 
         :returns: The reordered Id list of reactions.
 
 
         """
-        return _structural.LibStructural_getReorderedReactionsIds(self)
+        return _structural.LibStructural_getReorderedReactionIds(self)
 
 
     def getConservedLaws(self):
