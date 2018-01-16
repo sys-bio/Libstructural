@@ -667,7 +667,7 @@ static PyObject* pNoModelException;  /* add this! */
 %ignore LIB_STRUCTURAL::LibStructural::getFullyReorderedStoichiometryMatrixIds;
 %ignore LIB_STRUCTURAL::LibStructural::getReorderedStoichiometryMatrixIds;
 %ignore LIB_STRUCTURAL::_sResultStream;
-
+%ignore LIB_STRUCTURAL::LibStructural::getResultString;
 
 %include "../include/libstructural.h"
 %include "../include/util.h"
