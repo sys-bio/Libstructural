@@ -699,7 +699,7 @@ namespace LIB_STRUCTURAL
 		// LIB_EXTERN std::vector< std::string > getSpeciesNamesList();
 
 		//! Returns the reordered list of reactions
-		LIB_EXTERN std::vector< std::string > getReorderedReactionsIds();
+		LIB_EXTERN std::vector< std::string > getReorderedReactionIds();
 
 		//! Returns algebraic expressions for conserved cycles
 		LIB_EXTERN std::vector< std::string > getConservedLaws();
@@ -752,8 +752,8 @@ namespace LIB_STRUCTURAL
 		//! Returns the number of nonzero values in Stoichiometry matrix
 		LIB_EXTERN double getNmatrixSparsity();
 
-		
-		/*! \brief Checks whether a given reaction is reversible or not. 
+
+		/*! \brief Checks whether a given reaction is reversible or not.
 
 		\result Returns true if the reaction with given index is reversible.
 		*/
