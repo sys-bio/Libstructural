@@ -1499,7 +1499,7 @@ vector< string > LibStructural::getReactionIds()
 }
 
 // //Returns actual names of the Reactions
-// vector< string > LibStructural::getReactionsNamesList()
+// vector< string > LibStructural::getReactionNamesList()
 // {
 // 	vector< string > oResult;
 // 	for (int i = 0; i < numReactions; i++)
