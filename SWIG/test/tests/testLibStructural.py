@@ -139,7 +139,7 @@ print(ls.getNumIndSpecies())
 print(ls.getNumReactions())
 print(ls.getNumSpecies())
 print(ls.getReactionIds()) # Rename to Ids
-print(ls.getReorderedReactionsIds())
+print(ls.getReorderedReactionIds())
 print(ls.getReorderedSpeciesIds())
 print(ls.getReorderedStoichiometryMatrixIds())
 print(ls.getFloatingSpeciesIds())

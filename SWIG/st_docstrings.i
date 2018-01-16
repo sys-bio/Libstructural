@@ -201,8 +201,8 @@ LibStructural.getDependentReactionIds(self)
 
 ";
 
-%feature("docstring") LIB_STRUCTURAL::LibStructural::getReorderedReactionsIds "
-LibStructural.getReorderedReactionsIds(self)
+%feature("docstring") LIB_STRUCTURAL::LibStructural::getReorderedReactionIds "
+LibStructural.getReorderedReactionIds(self)
 
 :returns: The reordered Id list of reactions.
 
