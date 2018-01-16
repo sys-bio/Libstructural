@@ -699,7 +699,7 @@ namespace LIB_STRUCTURAL
 		// LIB_EXTERN std::vector< std::string > getSpeciesNamesList();
 
 		//! Returns the reordered list of reactions
-		LIB_EXTERN std::vector< std::string > getReorderedReactionsIds();
+		LIB_EXTERN std::vector< std::string > getReorderedReactionIds();
 
 		//! Returns algebraic expressions for conserved cycles
 		LIB_EXTERN std::vector< std::string > getConservedLaws();

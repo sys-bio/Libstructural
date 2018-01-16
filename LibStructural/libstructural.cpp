@@ -1256,7 +1256,7 @@ void LibStructural::getK0MatrixIds(vector< string > &oRows, vector< string > &oC
 	if (!isModelLoaded ())
 		throw NoModelException ("There is no model to analyze");
 
-	vector<string> oReactionLables = getReorderedReactionsIds();
+	vector<string> oReactionLables = getReorderedReactionIds();
 	DoubleMatrix *k0 = getK0Matrix();
 
 
@@ -1292,7 +1292,7 @@ void LibStructural::getKMatrixIds(vector< string > &oRows, vector< string > &oCo
 	if (!isModelLoaded ())
 		throw NoModelException ("There is no model to analyze");
 
-	vector<string> oReactionLables = getReorderedReactionsIds();
+	vector<string> oReactionLables = getReorderedReactionIds();
 	DoubleMatrix *k0 = getK0Matrix();
 
 
@@ -1313,7 +1313,7 @@ void LibStructural::getKMatrixIds(vector< string > &oRows, vector< string > &oCo
 
 }
 
-vector< string > LibStructural::getReorderedReactionsIds()
+vector< string > LibStructural::getReorderedReactionIds()
 {
 	vector< string >	oResult;
 	for (int i = 0; i < numReactions; i++)
@@ -1499,7 +1499,7 @@ vector< string > LibStructural::getReactionIds()
 }
 
 // //Returns actual names of the Reactions
-// vector< string > LibStructural::getReactionsNamesList()
+// vector< string > LibStructural::getReactionNamesList()
 // {
 // 	vector< string > oResult;
 // 	for (int i = 0; i < numReactions; i++)
@@ -3119,7 +3119,7 @@ LIB_EXTERN  int LibStructural_getConservedLaws(char** *outArray, int *outLength)
 }
 
 
-LIB_EXTERN  int LibStructural_getReactionsIds(char** *outArray, int *outLength)
+LIB_EXTERN  int LibStructural_getReactionIds(char** *outArray, int *outLength)
 {
 	vector<string> oValues = LibStructural::getInstance()->getReactionIds();
 	Util::CopyStringVector(oValues, *outArray, *outLength);
@@ -3158,7 +3158,7 @@ LIB_EXTERN  int LibStructural_getIndependentReactionIds(char** *outArray, int *o
 
 LIB_EXTERN  int LibStructural_getReorderedReactionIds(char** *outArray, int *outLength)
 {
-	vector<string> oValues = LibStructural::getInstance()->getReorderedReactionsIds();
+	vector<string> oValues = LibStructural::getInstance()->getReorderedReactionIds();
 	Util::CopyStringVector(oValues, *outArray, *outLength);
 	return SUCCESS;
 }
@@ -3211,7 +3211,7 @@ LIB_EXTERN  int LibStructural_getL0MatrixIds(char** *outRowLabels, int *outRowCo
 LIB_EXTERN  int LibStructural_getNrMatrixIds(char** *outRowLabels, int *outRowCount, char** *outColLabels, int *outColCount)
 {
 	LibStructural_getIndependentSpeciesIds(outRowLabels, outRowCount);
-	LibStructural_getReactionsIds(outColLabels, outColCount);
+	LibStructural_getReactionIds(outColLabels, outColCount);
 
 	return SUCCESS;
 }
@@ -3291,7 +3291,7 @@ LIB_EXTERN  int LibStructural_getNDCMatrixIds(char** *outRowLabels, int *outRowC
 LIB_EXTERN  int LibStructural_getN0MatrixIds(char** *outRowLabels, int *outRowCount, char** *outColLabels, int *outColCount)
 {
 	LibStructural_getDependentSpeciesIds(outRowLabels, outRowCount);
-	LibStructural_getReactionsIds(outColLabels, outColCount);
+	LibStructural_getReactionIds(outColLabels, outColCount);
 	return 0;
 }
 
@@ -3309,7 +3309,7 @@ LIB_EXTERN  int LibStructural_getK0MatrixIds(char** *outRowLabels, int *outRowCo
 {
 	LibStructural* instance = LibStructural::getInstance();
 
-	vector<string> oReactionLables = instance->getReorderedReactionsIds();
+	vector<string> oReactionLables = instance->getReorderedReactionIds();
 	DoubleMatrix *k0 = instance->getK0Matrix();
 
 	int nDependent = k0->numCols();
@@ -3340,7 +3340,7 @@ LIB_EXTERN  int LibStructural_getKMatrixIds(char** *outRowLabels, int *outRowCou
 {
 	LibStructural* instance = LibStructural::getInstance();
 
-	vector<string> oReactionLables = instance->getReorderedReactionsIds();
+	vector<string> oReactionLables = instance->getReorderedReactionIds();
 	DoubleMatrix *k = instance->getKMatrix();
 
 
@@ -3388,7 +3388,7 @@ LIB_EXTERN  int LibStructural_getGammaMatrixIds(char** *outRowLabels, int *outRo
 LIB_EXTERN  int LibStructural_getStoichiometryMatrixIds(char** *outRowLabels, int *outRowCount, char** *outColLabels, int *outColCount)
 {
 	LibStructural_getFloatingSpeciesIds(outRowLabels, outRowCount);
-	LibStructural_getReactionsIds(outColLabels, outColCount);
+	LibStructural_getReactionIds(outColLabels, outColCount);
 	return SUCCESS;
 }
 
@@ -3408,7 +3408,7 @@ LIB_EXTERN  int LibStructural_getFullyReorderedStoichiometryMatrixIds(char** *ou
 LIB_EXTERN  int LibStructural_getReorderedStoichiometryMatrixIds(char** *outRowLabels, int *outRowCount, char** *outColLabels, int *outColCount)
 {
 	LibStructural_getReorderedSpeciesIds(outRowLabels, outRowCount);
-	LibStructural_getReactionsIds(outColLabels, outColCount);
+	LibStructural_getReactionIds(outColLabels, outColCount);
 	return SUCCESS;
 }
 

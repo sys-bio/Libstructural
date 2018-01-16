@@ -935,16 +935,16 @@ class LibStructural(_object):
         return _structural.LibStructural_getDependentSpeciesIds(self)
 
 
-    def getReactionsIds(self):
+    def getReactionIds(self):
         """
 
-        LibStructural.getReactionsIds(self)
+        LibStructural.getReactionIds(self)
 
         :returns: The list of reaction ids
 
 
         """
-        return _structural.LibStructural_getReactionsIds(self)
+        return _structural.LibStructural_getReactionIds(self)
 
 
     def getIndependentReactionIds(self):
@@ -1527,7 +1527,7 @@ class LibStructural(_object):
                 m = DoubleMatrix(rows,cols)
                 for i in range(rows):
                     for j in range (cols):
-                        m.set (i, j, oMatrix[i][j])
+                        m.set (i, j, float(oMatrix[i][j]))
                 return self._my_getGammaMatrixGJ(m).toNumpy()
             else:
                 raise ValueError("Expecting 2 dimensional list or numpy array")
@@ -1640,7 +1640,7 @@ class LibStructural(_object):
                     m = DoubleMatrix(rows,cols)
                     for i in range(rows):
                         for j in range (cols):
-                            m.set (i, j, data[i][j])
+                            m.set (i, j, float(data[i][j]))
                     return self._my_loadStoichiometryMatrix (m)
                 else:
                     raise ValueError("Expecting 2 dimensional list or numpy array")
@@ -1675,7 +1675,7 @@ class LibStructural(_object):
                 m = DoubleMatrix(rows,cols)
                 for i in range(rows):
                     for j in range (cols):
-                        m.set (i, j, data[i][j])
+                        m.set (i, j, float(data[i][j]))
                 return self._my_rref (m, tolerance).toNumpy()
             else:
                 raise ValueError("Expecting 2 dimensional list or numpy array")
@@ -1700,7 +1700,7 @@ class LibStructural(_object):
                   m = DoubleMatrix(rows,cols)
                   for i in range(rows):
                       for j in range (cols):
-                          m.set (i, j, data[i][j])
+                          m.set (i, j, float(data[i][j]))
                   return self._my_rref_FB (m, tolerance).toNumpy()
               else:
                   raise ValueError("Expecting 2 dimensional list or numpy array")
@@ -1725,7 +1725,7 @@ class LibStructural(_object):
                     m = DoubleMatrix(rows,cols)
                     for i in range(rows):
                         for j in range (cols):
-                            m.set (i, j, oMatrix[i][j])
+                            m.set (i, j, float(oMatrix[i][j]))
                     return self._my_getEigenValues(m).toNumpy()
                 else:
                     raise ValueError("Expecting 2 dimensional list or numpy array")
@@ -1750,7 +1750,7 @@ class LibStructural(_object):
                     m = DoubleMatrix(rows,cols)
                     for i in range(rows):
                         for j in range (cols):
-                            m.set (i, j, oMatrix[i][j])
+                            m.set (i, j, float(oMatrix[i][j]))
                     return self._my_getEigenVectors(m).toNumpy()
                 else:
                     raise ValueError("Expecting 2 dimensional list or numpy array")
@@ -1774,7 +1774,7 @@ class LibStructural(_object):
                     m = DoubleMatrix(rows,cols)
                     for i in range(rows):
                         for j in range (cols):
-                            m.set (i, j, oMatrix[i][j])
+                            m.set (i, j, float(oMatrix[i][j]))
                     return self._my_getConditionNumber(m)
                 else:
                     raise ValueError("Expecting 2 dimensional list or numpy array")
@@ -1801,7 +1801,7 @@ class LibStructural(_object):
                     m = DoubleMatrix(rows,cols)
                     for i in range(rows):
                         for j in range (cols):
-                            m.set (i, j, oMatrix[i][j])
+                            m.set (i, j, float(oMatrix[i][j]))
                     return self._my_getRCond(m)
                 else:
                     raise ValueError("Expecting 2 dimensional list or numpy array")
@@ -1827,7 +1827,7 @@ class LibStructural(_object):
                     m = DoubleMatrix(rows,cols)
                     for i in range(rows):
                         for j in range (cols):
-                            m.set (i, j, oMatrix[i][j])
+                            m.set (i, j, float(oMatrix[i][j]))
                     return self._my_getLeftNullSpace(m).toNumpy()
                 else:
                     raise ValueError("Expecting 2 dimensional list or numpy array")
@@ -1852,7 +1852,7 @@ class LibStructural(_object):
                     m = DoubleMatrix(rows,cols)
                     for i in range(rows):
                         for j in range (cols):
-                            m.set (i, j, oMatrix[i][j])
+                            m.set (i, j, float(oMatrix[i][j]))
                     return self._my_getRightNullSpace(m).toNumpy()
                 else:
                     raise ValueError("Expecting 2 dimensional list or numpy array")
@@ -1876,7 +1876,7 @@ class LibStructural(_object):
                     m = DoubleMatrix(rows,cols)
                     for i in range(rows):
                         for j in range (cols):
-                            m.set (i, j, oMatrix[i][j])
+                            m.set (i, j, float(oMatrix[i][j]))
                     return self._my_getRank(m)
                 else:
                     raise ValueError("Expecting 2 dimensional list or numpy array")
