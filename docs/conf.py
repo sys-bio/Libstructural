@@ -32,7 +32,7 @@ sys.modules.update((mod_name, Mock()) for mod_name in MOCK_MODULES)
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #sys.path.insert(0, os.path.abspath('.'))
 # Set Win 64bit Python 2 file as the default source.
-sys.path.append(os.path.join(os.path.dirname(__name__), '../Win_64/2/structural'))
+sys.path.append(os.path.join(os.path.dirname(__name__), '../docs'))
 
 # -- General configuration ------------------------------------------------
 

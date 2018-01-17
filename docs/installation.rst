@@ -40,7 +40,7 @@ If there are no errors then you have numpy and scipy installed. If there are err
 https://pip.pypa.io/en/stable/installing/
 
 Numpy and scipy on Windows 7/8/10
------------------------
+---------------------------------
 
 **Option 1:** You can simply run **pip install numpy** from your command line (make sure to cd to your python directory).
 
