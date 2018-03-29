@@ -7,6 +7,7 @@
 cmake_minimum_required(VERSION 2.8)
 project(LibStructural)
 
+
 SET(32-BIT-BUILD FALSE CACHE BOOL "Set 32/64 bit target, set unchecked for a 64-bit build")
 
 if (${32-BIT-BUILD})
@@ -23,6 +24,8 @@ if (CBINARYTYPE STREQUAL "32")
 else()
    set (CMAKE_INSTALL_PREFIX "${CMAKE_SOURCE_DIR}/INSTALL_x64" CACHE PATH "default install path" FORCE)
 endif()
+
+
 
 include (CMakeTestCCompiler)
 include (CheckCSourceCompiles)
@@ -79,6 +82,7 @@ set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Choose the type of build, options a
 #
 # list of additional files to link against.
 #
+
 
 if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
 
@@ -157,6 +161,7 @@ unset(CLAPACK_F2C_LIBRARY CACHE)
 unset(LIBXML2_LIBRARY CACHE)
 
 
+
 find_library(LIBSBML_LIBRARY
 	NAMES libsbml-static.a libsbml-static.lib libsbml.lib sbml
 	PATHS #${DEPENDENCY_DIR}/lib
@@ -216,7 +221,6 @@ find_library(LIBXML2_LIBRARY
       ${CMAKE_SOURCE_DIR}/dependencies/libsbml-vs2017-release-${CBINARYTYPE}/lib
     )
 
-
 ####################################################################
 #
 # Need some variables set up, such as the name for the libSBML
@@ -230,6 +234,7 @@ else()
 	set(PATH_SEP "\\")
 	set(FILE_SEP ";")
 endif()
+
 
 ####################################################################
 #
@@ -329,12 +334,15 @@ endif(UNIX)
 # Build the actual libraries
 #
 
+
 add_subdirectory(LibLA)
 add_subdirectory(LibStructural)
 
 if(ENABLE_PYTHON_WRAPPER)
 	add_subdirectory(SWIG)
 endif()
+
+SET(CMAKE_VS_INCLUDE_INSTALL_TO_DEFAULT_BUILD ALL)
 
 file(GLOB HEADER_FILES ${CMAKE_CURRENT_SOURCE_DIR}/include/*.h )
 install(FILES ${HEADER_FILES} DESTINATION include)
