@@ -31,6 +31,7 @@ set(CMAKE_SWIG_FLAGS, -python)
 set(CMAKE_SWIG_FLAGS "-c++" )
 set(CMAKE_SWIG_FLAGS -DLIB_EXTERN)
 set(CMAKE_SWIG_OUTDIR ${CMAKE_INSTALL_PREFIX}/wrapper/structural)
+set(SWIG_OUTFILE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../SWIG)
 
 set_source_files_properties(libStructural.i PROPERTIES CPLUSPLUS on)
 
