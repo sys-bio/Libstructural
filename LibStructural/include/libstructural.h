@@ -665,8 +665,11 @@ namespace LIB_STRUCTURAL
 		//! Returns the reordered list of molecular species. (choosing the SBML Id if possible )
 		LIB_EXTERN std::vector< std::string > getReorderedSpeciesIds();
 
-		//!  Returns the unordered list of species Ids
+		//!  Returns the unordered list of floating species Ids
 		LIB_EXTERN std::vector< std::string > getFloatingSpeciesIds ();
+
+		//!  Returns the unordered list of boundary species Ids
+		LIB_EXTERN std::vector< std::string > getBoundarySpeciesIds();
 
 		//! Returns the reordered list of molecular species.  (choosing the SBML Name if possible )
 		// LIB_EXTERN std::vector< std::string > getReorderedSpeciesNamesList();
@@ -734,8 +737,10 @@ namespace LIB_STRUCTURAL
 		*/
 		LIB_EXTERN std::string getModelName();
 
-		//! Returns the total number of species
-		LIB_EXTERN int getNumSpecies();
+		//! Returns the total number of floating species
+		LIB_EXTERN int getNumFloatingSpecies();
+		//! Returns the total number of boundary species
+		LIB_EXTERN int getNumBoundarySpecies();
 		//! Returns the number of independent species
 		LIB_EXTERN int getNumIndSpecies();
 		//! Returns the number of dependent species
@@ -763,7 +768,7 @@ namespace LIB_STRUCTURAL
 
 		\result Returns in an array where each columns is an elementary mode
 		*/
-		LIB_EXTERN  DoubleMatrix* getElementaryModes ();
+		LIB_EXTERN  DoubleMatrix* getElementaryModesInteger ();
 
 		/*! \brief Get Eigenvalues for a matrix
 
@@ -1666,6 +1671,18 @@ been called yet.
 */
 LIB_EXTERN  int LibStructural_getFloatingSpeciesIds(char** *outArray, int *outLength);
 
+/*! \brief Returns the unordered list of boundary species Ids
+\param outArray pointer to string array that will be allocated and filled with the species Ids
+\param outLength the number of species
+\remarks free outArray using ::LibStructural_freeMatrix with the outLength parameter
+
+\return The return value will be zero (0) when successful, and negative (-1) in case
+no stoichiometry matrix was loaded beforehand or none of the analysis methods has
+been called yet.
+
+*/
+LIB_EXTERN  int LibStructural_getBoundarySpeciesIds(char** *outArray, int *outLength);
+
 /*! \brief Returns the reordered list of reactions Ids.
 \param outArray pointer to string array that will be allocated and filled with the reordered reaction Ids
 \param outLength the number of species
@@ -1828,8 +1845,11 @@ been called yet.
 */
 LIB_EXTERN  int LibStructural_getModelName(char* *outMessage, int *nLength);
 
-//! Returns the total number of species.
+//! Returns the total number of floating species.
 LIB_EXTERN  int LibStructural_getNumFloatingSpecies ();
+
+//! Returns the total number of boundary species.
+LIB_EXTERN  int LibStructural_getNumBoundarySpecies();
 
 //! Returns the number of independent species.
 LIB_EXTERN  int LibStructural_getNumIndSpecies();
@@ -1857,7 +1877,7 @@ LIB_EXTERN int LibStructural_isReactionReversible (int index, bool *result);
 
 \result Returns 0 is ok, -1 if it failed.
 */
-LIB_EXTERN  int LibStructural_getElementaryModes (double** *outMatrix, int* outRows, int *outCols);
+LIB_EXTERN  int LibStructural_getElementaryModesInteger (double** *outMatrix, int* outRows, int *outCols);
 
 
 /*! \brief Set user specified tolerance

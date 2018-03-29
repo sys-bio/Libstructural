@@ -1509,7 +1509,7 @@ vector< string > LibStructural::getReactionIds()
 // 	return oResult;
 // }
 
-// Returns the list of Species
+// Returns the list of floating Species
 vector< string > LibStructural::getFloatingSpeciesIds()
 {
 	vector< string > oResult;
@@ -1519,6 +1519,19 @@ vector< string > LibStructural::getFloatingSpeciesIds()
 	}
 	return oResult;
 }
+
+// Returns the list of boundary Species
+vector< string > LibStructural::getBoundarySpeciesIds()
+{
+	vector< string > oResult;
+	for (int i = 0; i < numBoundary; i++)
+	{
+		oResult.push_back(_bSpeciesIndexList[i]);
+	}
+	return oResult;
+}
+
+
 
 //Returns actual names of the Species
 // vector< string > LibStructural::getSpeciesNamesList()
@@ -2145,10 +2158,16 @@ string LibStructural::getModelName()
 	return _sModelName;
 }
 
-// Returns the total number of species
-int LibStructural::getNumSpecies()
+// Returns the total number of floating species
+int LibStructural::getNumFloatingSpecies()
 {
 	return numFloating;
+}
+
+// Returns the total number of boundary species
+int LibStructural::getNumBoundarySpecies()
+{
+	return numBoundary;
 }
 
 // Returns the number of independent species
@@ -2214,7 +2233,7 @@ bool LibStructural::isReactionReversible (int index) {
 }
 
 // Returns a matrix of elementary modes
-DoubleMatrix* LibStructural::getElementaryModes () {
+DoubleMatrix* LibStructural::getElementaryModesInteger () {
 
 	struct mt_mat *stoichiometryMatrix;
 	struct mt_mat *elm;
@@ -2987,10 +3006,16 @@ LIB_EXTERN  int LibStructural_getModelName(char* *outMessage, int *nLength)
 
 }
 
-// Returns the total number of species
+// Returns the total number of floating species
 LIB_EXTERN  int LibStructural_getNumFloatingSpecies()
 {
-	return LibStructural::getInstance()->getNumSpecies();
+	return LibStructural::getInstance()->getNumFloatingSpecies();
+}
+
+// Returns the total number of boundary species
+LIB_EXTERN  int LibStructural_getNumBoundarySpecies()
+{
+	return LibStructural::getInstance()->getNumBoundarySpecies();
 }
 
 // Returns the number of independent species
@@ -3054,11 +3079,11 @@ LIB_EXTERN int LibStructural_isReactionReversible (int index, bool *result) {
 }
 
 
-LIB_EXTERN  int LibStructural_getElementaryModes (double** *outMatrix, int* outRows, int *outCols) {
+LIB_EXTERN  int LibStructural_getElementaryModesInteger (double** *outMatrix, int* outRows, int *outCols) {
 
 	try
 	{
-		DoubleMatrix *oTemp = LibStructural::getInstance ()->getElementaryModes ();
+		DoubleMatrix *oTemp = LibStructural::getInstance ()->getElementaryModesInteger ();
 		Util::CopyMatrix (*oTemp, *outMatrix, *outRows, *outCols);
 		delete oTemp;
 		return SUCCESS;
@@ -3167,6 +3192,13 @@ LIB_EXTERN  int LibStructural_getReorderedReactionIds(char** *outArray, int *out
 LIB_EXTERN  int LibStructural_getFloatingSpeciesIds(char** *outArray, int *outLength)
 {
 	vector<string> oValues = LibStructural::getInstance()->getFloatingSpeciesIds ();
+	Util::CopyStringVector(oValues, *outArray, *outLength);
+	return SUCCESS;
+}
+
+LIB_EXTERN  int LibStructural_getBoundarySpeciesIds(char** *outArray, int *outLength)
+{
+	vector<string> oValues = LibStructural::getInstance()->getBoundarySpeciesIds();
 	Util::CopyStringVector(oValues, *outArray, *outLength);
 	return SUCCESS;
 }
