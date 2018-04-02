@@ -32,7 +32,11 @@
 #include <limits.h>
 #include <float.h>
 #include <time.h>
+#include <unistd.h>
+
+#ifdef _WIN32
 #include <direct.h>
+#endif
 
 #ifdef sun
  #include <floatingpoint.h>
@@ -271,7 +275,8 @@ int formatting( char *format, long_double **ptab, int rn, int cn )
     fconvert(num, 0, &dec, &sign, ns ); // &ns[0] );
     // printf("\nrn%d cn%d num=%lf ns = %s dec = %d sign=%d", rn, cn, num, ns, dec, sign); _getch();
 #else
-     number_string = _fcvt((double/*FM 18.09.2000*/)num, ndig, &dec, &sign);
+    
+     number_string = fcvt((double/*FM 18.09.2000*/)num, ndig, &dec, &sign);
 #endif
      max = ( ((dec+sign) > max) ? (dec+sign) : max );
     }
@@ -283,7 +288,11 @@ int formatting( char *format, long_double **ptab, int rn, int cn )
   pchar = gconvert(hd, 24, 1, string );
   strcpy( string, pchar );
 #else
+   #ifdef _WIN32
   _gcvt(max, 24, string);
+   #else
+  gcvt(max, 24, string);
+   #endif
 #endif
 
   strcat( format, string );
@@ -920,7 +929,7 @@ int save_frequency_of_edges_and_nodes(FILE *fout, int *edges_nodes, int edges )
 } // save_frequency_of_edges_and_nodes
 
 
-int fvectoroutput (struct vector *v, FILE *savefile)
+int fvectoroutput (struct ::vector *v, FILE *savefile)
 {
  int i;
  for (i=0; i<(v->row); i++)
@@ -1152,13 +1161,13 @@ int foveralloutput (struct mat *m, struct enc *list, FILE *savefile)
  return 0;
 } // foveralloutput 
 
-struct vector *getrev (struct enc *list)
+struct ::vector *getrev (struct enc *list)
 {
  int i=0;
- struct enc *acel; struct vector *v;
+    struct enc *acel; struct ::vector *v;
  acel=list->next;
  while (acel!=acel->next) {acel=acel->next;i++;}
- v=(struct vector*)calloc(1, sizeof(struct vector)); v->row=i;   addressed( v, "v not allocated", 1);
+    v=(struct ::vector*)calloc(1, sizeof(struct ::vector)); v->row=i;   addressed( v, "v not allocated", 1);
  v->head=(long_double*)calloc(v->row, sizeof(long_double));      addressed( v->head, "v->head not allocated", v->row);
  acel=list->next; i=0;
  while (acel!=acel->next) {*(v->head+(i++))=acel->rev; acel=acel->next;} 
@@ -1230,9 +1239,17 @@ int read_unit(FILE *fp_in, char *tx) // read syntactical units of the stoichiome
    }while(1);
    
    len=strlen(tx); 
-   tx=_strrev(tx);
+#ifdef _WIN32
+     tx=_strrev(tx);
+#else
+     tx=strrev(tx);
+#endif
    while(isspace(tx[len-1]))tx[--len]='\x0';
-   tx=_strrev(tx);
+#ifdef _WIN32
+     tx=_strrev(tx);
+#else
+     tx=strrev(tx);
+#endif
    if(isspace(tx[0])) tx[0]=' ';
    if(i==2)
     {
@@ -1427,7 +1444,7 @@ int get_metabolites_from_equations (FILE *s)
  return 0;
 } //get_metabolites_from_equations
 
-struct mat *cutnex (struct mat *nex, struct vector *met )
+struct mat *cutnex (struct mat *nex, struct ::vector *met )
                              // *mex, struct vector *ex)
 {
  struct mat *m;
@@ -1450,7 +1467,7 @@ struct mat *cutnex (struct mat *nex, struct vector *met )
 }
 
 /* free ************************************** */
-int freevector (struct vector *v)
+int freevector (struct ::vector *v)
 {free (v->head); free (v); return 0;}
 int freemat (struct mat *m)
 {
@@ -1582,7 +1599,11 @@ FILE* filter_comment(FILE *fp_in, char **tmp_file_name)
    char string[100];
 
    read_comment(fp_in);
+#ifdef _WIN32
    unique_name = _mktemp(fname);
+#else
+   unique_name = mktemp(fname);
+#endif
    tmp_fp_out = fopen(unique_name, "w+");
                 addressed(tmp_fp_out,"temporary file not opened", 1);
 
@@ -1696,10 +1717,10 @@ struct mat *cutcol (struct mat *m, int cc)
 struct mat *simplify (struct mat *m)
 {
  struct mat *mc;
- struct vector *vf;
+    struct ::vector *vf;
  int i,ii,k;
 
- vf=(struct vector*)calloc(1, sizeof(struct vector)); addressed( vf, "vf not allocated", 1);
+    vf=(struct ::vector*)calloc(1, sizeof(struct ::vector)); addressed( vf, "vf not allocated", 1);
  vf->row=m->row; vf->head=(long_double*)calloc(vf->row, sizeof(long_double)); addressed( vf->head, "vf->head not allocated", vf->row);
  
  mc=(struct mat*)calloc(1, sizeof(struct mat)); addressed( mc, "mc not allocated", 1);
@@ -1708,7 +1729,7 @@ struct mat *simplify (struct mat *m)
  {
   if( branch )
   {  
-    branch=(struct vector*)calloc(1, sizeof(struct vector)); addressed( branch, "branch not allocated", 1);
+      branch=(struct ::vector*)calloc(1, sizeof(struct ::vector)); addressed( branch, "branch not allocated", 1);
     branch->row=m->row; branch->head=(long_double*)calloc(branch->row, sizeof(long_double)); addressed( branch->head, "branch->head not allocated", branch->row);
     for(i=0; i<branch->row; i++) *(branch->head+i)=1;
   }
@@ -1837,7 +1858,7 @@ struct mat *kernel (struct mat *m)
  return help;
 } // Kernel
 
-int delete_corresponding_row_in_rev(struct vector *a, int wrong_subset)
+int delete_corresponding_row_in_rev(struct ::vector *a, int wrong_subset)
 {
  int j;
  
@@ -1849,7 +1870,7 @@ int delete_corresponding_row_in_rev(struct vector *a, int wrong_subset)
 } //delete_corresponding_row_in_rev
       
 /* Subsets */
-struct mat *subset (struct mat *m, struct vector *v, int **wrong_subset)
+struct mat *subset (struct mat *m, struct ::vector *v, int **wrong_subset)
 {
  struct mat *help, *k; int i,ii,u; 
  long_double f1,sign1;
@@ -1915,11 +1936,11 @@ struct mat *subset (struct mat *m, struct vector *v, int **wrong_subset)
  return (help);
 } // subset
 
-struct vector *subrev (struct mat *m, struct vector *v)
+struct ::vector *subrev (struct mat *m, struct ::vector *v)
 {
  int i,ii;
- struct vector *r;
- r=(struct vector*)calloc(1, sizeof(struct vector));  addressed( r, "r not allocated", 1);
+    struct ::vector *r;
+    r=(struct ::vector*)calloc(1, sizeof(struct ::vector));  addressed( r, "r not allocated", 1);
  // stutz
  r->row=m->row; r->head=(long_double*)calloc(r->row, sizeof(long_double));  addressed( r->head, "r->head not allocated", r->row);
  for (i=0;i<m->row;i++) 
@@ -1949,7 +1970,7 @@ inline int numerical_array( long_double k2, long_double hi, long_double k1, long
 } // numerical_array
       
 /* basis */
-struct mat *basis (struct mat *m, struct vector *v)
+struct mat *basis (struct mat *m, struct ::vector *v)
 {
   struct mat *help, *k; 
   long_double **h1, **h2=NULL, abs_hi, abs_hu, ggt_Erg;
@@ -2135,7 +2156,7 @@ struct mat *basis (struct mat *m, struct vector *v)
 } // basis
 
 /* modes */
-struct mat *modes (struct mat *m, struct vector *v)
+struct mat *modes (struct mat *m, struct ::vector *v)
 {
  struct mat *help, *k;                       /* help matrices */
  long_double **h1, **h2, abs_hi, abs_hu, ggt_Erg;  /* pointer to current and nex tab */
@@ -2809,7 +2830,7 @@ int main(int argn, char *files_in_out[])
     struct mat    *crel;			       /* conservation relations */
     struct mat    *vbasis, *vmode;		   /* basis, modes */
     struct mat    *unreduced, *unreduced1, *overall, *overall1;  // unreduced1 for comparing vbasis and elementary modes
-    struct vector *rev, *redrev, *met;
+    struct ::vector *rev, *redrev, *met;
     int i, ii, vb=1, **wrong_subset;
     char f[3][_MAX_PATH]; 
     time_t start, finish;
@@ -2819,14 +2840,26 @@ int main(int argn, char *files_in_out[])
 
 	char* buffer;
 
-	// Get the current working directory:   
-	if ((buffer = _getcwd(NULL, 0)) == NULL)
-		perror("_getcwd error");
-	else
-	{
-		printf("%s \nLength: %d\n", buffer, strlen(buffer));
-		free(buffer);
-	}
+	// Get the current working directory:
+#ifdef _WIN32
+    if ((buffer = _getcwd(NULL, 0)) == NULL)
+        perror("_getcwd error");
+    else
+    {
+        printf("%s \nLength: %d\n", buffer, strlen(buffer));
+        free(buffer);
+    }
+#else
+    if ((buffer = getcwd(NULL, 0)) == NULL)
+        perror("_getcwd error");
+    else
+    {
+        printf("%s \nLength: %d\n", buffer, strlen(buffer));
+        free(buffer);
+    }
+#endif
+    
+
 #if (defined DOS || defined _DOS || defined WIN32 || defined _WIN32)
     char t1[128], t2[128];
     struct _timeb tstruct1, tstruct2;    
@@ -2834,7 +2867,7 @@ int main(int argn, char *files_in_out[])
     // printf( "Starting time:\t\t\t\t%s : %u\n", t1, tstruct1.millitm );
 #endif
     
-    branch=(struct vector*)0;
+    branch=(struct ::vector*)0;
 
 /* genreate file names for input and output files ****************** */
     get_filein_fileout(argn, files_in_out, f );
@@ -2929,7 +2962,7 @@ int main(int argn, char *files_in_out[])
 
 /* REDUCTION OF THE SYSTEM ******************** */
     nred=transp(vsub); 
-    help=mult(n,nred); freemat (nred); branch=(struct vector*)1; 
+    help=mult(n,nred); freemat (nred); branch=(struct ::vector*)1;
     nred=simplify(help); freemat (help);
     //*->*/    printf("nred: r%d x c%d",   nred->row, nred->col);    print_mat(nred  );
     if (nred->row==0) {/*printf ("System reduced to zero (simple system)\nEach subset forms an elementary mode\n");fprintf (fout, "System reduced to zero (simple system)\nEach subset forms an elementary mode\n");_getch();*/return 0;}
@@ -2938,7 +2971,7 @@ int main(int argn, char *files_in_out[])
     fprintf(fout, "The following line indicates reversible (0) and irreversible reactions (1)\n" );
     fvectoroutput (redrev,fout);        fflush(fout);
     fout_branches (fout, metlist);
-    freevector    (branch ); branch=(struct vector*)NULL; fflush(fout);
+    freevector    (branch ); branch=(struct ::vector*)NULL; fflush(fout);
 
 /* CONVEX BASIS ******************************* */
     vbasis=basis(nred,redrev);
