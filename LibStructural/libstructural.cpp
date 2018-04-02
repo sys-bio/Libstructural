@@ -170,6 +170,7 @@ void LibStructural::FreeMatrices()
 	DELETE_IF_NON_NULL(_L);					DELETE_IF_NON_NULL(_K);
 	DELETE_IF_NON_NULL(_NullN);				DELETE_IF_NON_NULL(_G);
 	DELETE_IF_NON_NULL(_Nmat);				DELETE_IF_NON_NULL(_NmatT);
+	DELETE_IF_NON_NULL(_bNmat);
 	DELETE_IF_NON_NULL(_Nmat_orig);			DELETE_IF_NON_NULL(_NmatT_orig);
 
 	// delete allocated arrays
@@ -469,7 +470,12 @@ void  LibStructural::BuildStoichiometryMatrixFromModel(LIB_STRUCTURAL::SBMLmodel
 	_NumRows = numFloating;
 	_NumCols = numReactions;
 	DELETE_IF_NON_NULL(_Nmat); _Nmat = new DoubleMatrix(numFloating, numReactions);
-
+	DELETE_IF_NON_NULL(_bNmat); _bNmat = new DoubleMatrix(numFloating + numBoundary, numReactions);
+	FILE * f;
+	f = fopen("C:\\tmp\\log.txt", "w");
+	//fprintf(f, "Message: \n");
+	//fprintf(f, "NumFloating = %d\n", numFloating);
+	fclose(f);
 	for (int i = 0; i < numReactions; i++)
 	{
 		const Reaction* reaction = oModel.getNthReaction(i);
@@ -482,6 +488,12 @@ void  LibStructural::BuildStoichiometryMatrixFromModel(LIB_STRUCTURAL::SBMLmodel
 			{
 				int row_id = _speciesIndexList2[reference->getSpecies()];
 				(*_Nmat)(row_id,i) = (*_Nmat)(row_id,i) - (reference->getStoichiometry());
+				(*_bNmat)(row_id, i) = (*_bNmat)(row_id, i) - (reference->getStoichiometry());
+			}
+			else
+			{
+				int row_id = _bSpeciesIndexList2[reference->getSpecies()] + numFloating;
+				(*_bNmat)(row_id, i) = (*_bNmat)(row_id, i) - (reference->getStoichiometry());
 			}
 		}
 
@@ -493,9 +505,17 @@ void  LibStructural::BuildStoichiometryMatrixFromModel(LIB_STRUCTURAL::SBMLmodel
 				int row_id = _speciesIndexList2[reference->getSpecies()];
 
 				(*_Nmat)(row_id,i) = (*_Nmat)(row_id,i) + (reference->getStoichiometry());
+				(*_bNmat)(row_id, i) = (*_bNmat)(row_id, i) + (reference->getStoichiometry());
+			}
+			else
+			{
+				int row_id = _bSpeciesIndexList2[reference->getSpecies()] + numFloating;
+
+				(*_bNmat)(row_id, i) = (*_bNmat)(row_id, i) + (reference->getStoichiometry());
 			}
 		}
 	}
+	
 }
 
 #endif
@@ -1733,6 +1753,14 @@ LibStructural::DoubleMatrix* LibStructural::getStoichiometryMatrix()
 	return _Nmat_orig;
 }
 
+LibStructural::DoubleMatrix* LibStructural::getStoichiometryMatrixBoundary()
+{
+	if (!isModelLoaded())
+		throw NoModelException("There is no loaded model");
+
+	return _bNmat;
+}
+
 void LibStructural::getStoichiometryMatrixIds(vector< string > &oRows, vector< string > &oCols )
 {
 	oRows = getFloatingSpeciesIds();
@@ -2960,6 +2988,29 @@ LIB_EXTERN  int LibStructural_getStoichiometryMatrix(double** *outMatrix, int* o
 	}
 }
 
+// Returns the original stoichiometry matrix
+LIB_EXTERN  int LibStructural_getStoichiometryMatrixBoundary(double** *outMatrix, int* outRows, int *outCols)
+{
+	try {
+		DoubleMatrix* oMatrix = LibStructural::getInstance()->getStoichiometryMatrixBoundary();
+		if (oMatrix == NULL)
+			return EMPTY_MATRIX;
+		Util::CopyMatrix(*oMatrix, *outMatrix, *outRows, *outCols);
+		return SUCCESS;
+	}
+	catch (NoModelException& ex)
+	{
+		return NO_MODEL_LOADED;
+	}
+	catch (LIB_LA::ApplicationException& ex)
+	{
+		return APPLICATION_EXCEPTION;
+	}
+	catch (...)
+	{
+		return UNKNOWN_ERROR;
+	}
+}
 
 // Returns reordered stoichiometry matrix
 LIB_EXTERN  int LibStructural_getReorderedStoichiometryMatrix(double** *outMatrix, int* outRows, int *outCols)
