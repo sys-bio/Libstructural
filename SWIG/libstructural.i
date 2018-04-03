@@ -805,7 +805,7 @@ static PyObject* pNoModelException;  /* add this! */
             start_pt = line_array.index("ELEMENTARY MODES\n")
 
             if line_array[start_pt+1] == ' \n':
-                row_num = int(list(line_array[start_pt+2].split()[2])[1])
+                row_num = int(line_array[start_pt+2].split()[2].replace("r", ""))
 
                 elementaryModeMatrix = []
                 for i in range(row_num):

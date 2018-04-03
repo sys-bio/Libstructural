@@ -278,8 +278,13 @@ int formatting( char *format, long_double **ptab, int rn, int cn )
     fconvert(num, 0, &dec, &sign, ns ); // &ns[0] );
     // printf("\nrn%d cn%d num=%lf ns = %s dec = %d sign=%d", rn, cn, num, ns, dec, sign); _getch();
 #else
-    
-     number_string = fcvt((double/*FM 18.09.2000*/)num, ndig, &dec, &sign);
+
+#ifdef _WIN32
+     number_string = _fcvt((double/*FM 18.09.2000*/)num, ndig, &dec, &sign);
+#else
+	 number_string = fcvt((double/*FM 18.09.2000*/)num, ndig, &dec, &sign);
+#endif
+
 #endif
      max = ( ((dec+sign) > max) ? (dec+sign) : max );
     }
