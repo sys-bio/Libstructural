@@ -152,6 +152,8 @@ namespace LIB_STRUCTURAL
 		DoubleMatrix* _Nmat_orig;
 		DoubleMatrix* _NmatT;
 		DoubleMatrix* _NmatT_orig;
+		DoubleMatrix* _bNmat;
+		DoubleMatrix* _bNmatT;
 
 
 		double*								_T; // conserved totals
@@ -636,6 +638,9 @@ namespace LIB_STRUCTURAL
 		//! Returns the original, unaltered stoichiometry matrix.
 		LIB_EXTERN DoubleMatrix* getStoichiometryMatrix();
 
+		//! Returns the original, unaltered stoichiometry matrix with boundary species rows.
+		LIB_EXTERN DoubleMatrix* getStoichiometryMatrixBoundary();
+
 		/*! \brief Returns the row and column labels for the original and unaltered stoichiometry matrix.
 			\param oRows a string vector that will be overwritten to hold the row labels
 			\param oCols a string vector that will be overwritten to hold the column labels.
@@ -851,7 +856,7 @@ namespace LIB_STRUCTURAL
 		LIB_EXTERN LibStructural() :   _NumRows(0), _NumCols(0), numReactions(0), numFloating(0), numBoundary(0),
 			_NumDependent(0), _NumIndependent(0),
 			_K0(NULL), _N0(NULL), _Nr(NULL), _L0(NULL), _L(NULL),_K(NULL),_NullN(NULL),_G(NULL),
-			_Nmat(NULL), _Nmat_orig(NULL), _NmatT(NULL), _NmatT_orig(NULL),
+			_Nmat(NULL), _bNmat(NULL), _Nmat_orig(NULL), _NmatT(NULL), _NmatT_orig(NULL),
 			_T(NULL), _IC(NULL), _BC(NULL), spVec(NULL), colVec(NULL), _sModelName("untitled"),_Tolerance(1.0E-9),_Model(NULL)
 #else
 		LIB_EXTERN LibStructural() :   _NumRows(0), _NumCols(0), numReactions (0), numFloating (0), numBoundary (0),
@@ -1556,6 +1561,19 @@ been called yet.
 and outRows as parameter.
 */
 LIB_EXTERN  int LibStructural_getStoichiometryMatrix(double** *outMatrix, int* outRows, int *outCols);
+/*! \brief Returns the original, unaltered stoichiometry matrix with boundary species rows.
+\param outMatrix a pointer to a double array that holds the output
+\param outRows will be overwritten with the number of rows
+\param outCols will be overwritten with the number of columns.
+
+\return The return value will be zero (0) when successful, and negative (-1) in case
+no stoichiometry matrix was loaded beforehand or none of the analysis methods has
+been called yet.
+
+\remarks To free the returned matrix call ::LibStructural_freeMatrix with the outMatrix
+and outRows as parameter.
+*/
+LIB_EXTERN  int LibStructural_getStoichiometryMatrixBoundary(double** *outMatrix, int* outRows, int *outCols);
 /*! \brief Returns the row and column labels for the original and unaltered stoichiometry matrix.
 
 \param outRowLabels a pointer to a string array where the row labels will be allocated

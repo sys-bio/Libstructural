@@ -25,6 +25,7 @@ static PyObject* pNoModelException;  /* add this! */
 %rename (_my_getRightNullSpace) getRightNullSpace;
 %rename (_my_getRank) getRank;
 %rename (_my_getStoichiometryMatrix) getStoichiometryMatrix;
+%rename (_my_getStoichiometryMatrixBoundary) getStoichiometryMatrixBoundary;
 %rename (_my_getColumnReorderedNrMatrix) getColumnReorderedNrMatrix;
 %rename (_my_getFullyReorderedN0StoichiometryMatrix) getFullyReorderedN0StoichiometryMatrix;
 %rename (_my_getFullyReorderedNrMatrix) getFullyReorderedNrMatrix;
@@ -41,6 +42,8 @@ static PyObject* pNoModelException;  /* add this! */
 %rename (_my_getReorderedStoichiometryMatrix) getReorderedStoichiometryMatrix;
 %rename (_my_getLinkMatrix) getLinkMatrix;
 %rename (_my_getRCond) getRCond;
+
+
 
 %init %{
     pNoModelException = PyErr_NewException ("_structural.NoModelException", NULL, NULL);
@@ -206,12 +209,39 @@ static PyObject* pNoModelException;  /* add this! */
     }
 
 %pythoncode %{
+    global exitCodeDict
+    exitCodeDict = {
+      -1 : "MetaTool Error: Not enough memory: Programm prematurely finished",
+    -2 : "MetaTool Error: amount for allocation is zero : Programm prematurely finished",
+    -3 : "MetaTool Error: A metabolite could not be found in the stoichiometric equations! Program prematurely terminated",
+    -4 : "MetaTool Error: Enzyme name could not be found in the stoichiometric equations! Program prematurely finished",
+    -5 : "MetaTool Error: File error",
+    -6 : "MetaTool Error: Enlarge the array size of the struct enc ri.Program prematurely finished",
+    -7 : "MetaTool Error: An enzyme reaction is defined more than once. Please delete the extra defined reaction in the input file. Program prematurly finished.",
+    -8 : "MetaTool Error: The system comprises only external metabolites.",
+    -9 : "MetaTool Error: File error",
+    -10 : "MetaTool Error: The input file contains interlocking commentaries. (To many closing marks)",
+    -11 : "MetaTool Error: The input file contains interlocking commentaries.",
+    -12 : "MetaTool Error: ERROR IN FUNCTION CUTCOL",
+    -13 : "MetaTool Error: An intermediate result exceeds the allowed integer range: Program prematurely finished.",
+    -14 : "MetaTool Error: The name of input file is the same as the name of the output file: Program prematurely finished.",
+    -15 : "MetaTool Error: An enzyme is delared twice: Program prematurely finished.",
+    -16 : "MetaTool Error: There are metabolites in the stoichiometric equations and are declared as -METINT or -METEXT: Program prematurely terminated.",
+    -17 : "MetaTool Error: File error",
+    }
     def getStoichiometryMatrix(self):
       """
       LibStructural.getStoichiometryMatrix(self)
       :returns: Unaltered stoichiometry matrix.
       """
       return self._my_getStoichiometryMatrix().toNumpy();
+
+    def getStoichiometryMatrixBoundary(self):
+      """
+      LibStructural.getStoichiometryMatrixBoundary(self)
+      :returns: Unaltered stoichiometry matrix.
+      """
+      return self._my_getStoichiometryMatrixBoundary().toNumpy();
 
     def getColumnReorderedNrMatrix(self):
         """
@@ -406,7 +436,11 @@ static PyObject* pNoModelException;  /* add this! */
       :returns: An array where each column is an elementary mode
       """
       import numpy as np
-      return self._my_getElementaryModesInteger().toNumpy()
+      elementaryModes =  self._my_getElementaryModesInteger().toNumpy()
+      if np.any(elementaryModes):
+        return elementaryModes
+      else:
+        return np.empty(0)
 
 
     def rref(self, data, tolerance=1e-6):
@@ -655,6 +689,7 @@ static PyObject* pNoModelException;  /* add this! */
       import tempfile
       import subprocess
       import site
+      import os
 
       def isAllPositive(v):
           AllPositive = True
@@ -678,9 +713,17 @@ static PyObject* pNoModelException;  /* add this! */
       rxn_ids = self.getReactionIds()
       flt_ids = self.getFloatingSpeciesIds()
       bnd_ids = self.getBoundarySpeciesIds()
-      if bnd_ids == ():
-          return "There are no Elementary Modes"
-      matx = self.getStoichiometryMatrix()
+      matx_bnd = self.getStoichiometryMatrixBoundary()
+      matx_flt = self.getStoichiometryMatrix()
+
+      if len(bnd_ids) == 0:
+        matx = matx_flt
+        spec_ids = list(flt_ids)
+      else:
+        matx = matx_bnd
+        spec_ids = list(flt_ids) + list(bnd_ids)
+
+
 
       mStr += "-ENZREV" + "\n"
 
@@ -701,7 +744,9 @@ static PyObject* pNoModelException;  /* add this! */
 
       mStr += "\n\n"+"-METEXT"+"\n"
 
-      mStr += bnd_ids[0] + " "
+      if len(bnd_ids) != 0:
+        for i in bnd_ids:
+          mStr += i + " "
 
       mStr += "\n\n"+"-CAT"+"\n"
 
@@ -709,30 +754,31 @@ static PyObject* pNoModelException;  /* add this! */
           react_list = []
           col = matx[:,i]
           mStr += rxn_ids[i] + " : "
-          if isAllPositive(col):
-              mStr += bnd_ids[0]
-          else:
-              for j in range(len(flt_ids)):
-                  if matx[j,i] < 0:
-                      stStr = ''
-                      if abs(matx[j,i]) > 1:
-                          stStr = str(abs(matx[j,i])) + ' '
-                      react_list.append(stStr + flt_ids[j])
-              mStr += react_list[0]
-              for k in range(1,len(react_list)):
-                  mStr += " + " + react_list[k]
+
+          for j in range(len(matx)):
+              if matx[j,i] < 0:
+                  stStr = ''
+                  if abs(matx[j,i]) > 1:
+                      stStr = str(abs(matx[j,i])) + ' '
+                  react_list.append(stStr + spec_ids[j])
+          mStr += react_list[0]
+          for k in range(1,len(react_list)):
+              mStr += " + " + react_list[k]
           mStr += " = "
 
-          react_list = []
-          if isAllNegative(col):
-              mStr += bnd_ids[0]
-          else:
-              for j in range(len(flt_ids)):
-                  if matx[j,i] > 0:
-                      react_list.append(flt_ids[j])
-              mStr += react_list[0]
-              for k in range(1,len(react_list)):
-                  mStr += " + " + react_list[k]
+          prod_list = []
+          for j in range(len(matx)):
+              if matx[j,i] > 0:
+                  stStr = ''
+                  if matx[j,i] > 1:
+                      stStr = str(matx[j,i]) + ' '
+                  prod_list.append(stStr + spec_ids[j])
+
+          if len(prod_list) != 0:
+            mStr += prod_list[0]
+            for k in range(1,len(prod_list)):
+              mStr += " + " + prod_list[k]
+
           mStr += " .\n"
 
 
@@ -748,27 +794,31 @@ static PyObject* pNoModelException;  /* add this! */
 
       exit_code = subprocess.call ([pathToMetatool, metatoolFile, resultFile])
 
-      if exit_code == 0:
-          line_array = []
-          with open(resultFile) as f:
-              for lines in f:
-                  line_array.append(lines)
 
-          start_pt = line_array.index("ELEMENTARY MODES\n")
+      if os.path.isfile(resultFile):
+        if exit_code == 0:
+            line_array = []
+            with open(resultFile) as f:
+                for lines in f:
+                    line_array.append(lines)
 
-          if line_array[start_pt+1] == ' \n':
-              row_num = int(list(line_array[start_pt+2].split()[2])[1])
+            start_pt = line_array.index("ELEMENTARY MODES\n")
 
-              elementaryModeMatrix = []
-              for i in range(row_num):
-                  elementaryModeMatrix.append(line_array[start_pt+3+i].split())
-              elementaryModeMatrix = np.array(elementaryModeMatrix, dtype=float)
-              f.close()
-              return elementaryModeMatrix
-          else:
-              return "There are no Elementary Modes"
+            if line_array[start_pt+1] == ' \n':
+                row_num = int(list(line_array[start_pt+2].split()[2])[1])
+
+                elementaryModeMatrix = []
+                for i in range(row_num):
+                    elementaryModeMatrix.append(line_array[start_pt+3+i].split())
+                elementaryModeMatrix = np.array(elementaryModeMatrix, dtype=float)
+                f.close()
+                return elementaryModeMatrix
+            else:
+                return np.empty([0,0])
+        else:
+            raise RuntimeError(exitCodeDict[exit_code])
       else:
-          return exit_code
+         raise RuntimeError ("Internal Error: Result file from MetaTool not found")
 
 %}
 
