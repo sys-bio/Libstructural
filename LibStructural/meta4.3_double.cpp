@@ -32,7 +32,10 @@
 #include <limits.h>
 #include <float.h>
 #include <time.h>
+
+#ifdef __APPLE__
 #include <unistd.h>
+#endif
 
 #ifdef _WIN32
 #include <direct.h>
