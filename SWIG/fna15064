@@ -1,0 +1,17 @@
+-ENZREV
+J1 J2 J3 J4 
+
+-ENZIRREV
+
+
+-METINT
+S2 S1 S5 S4 S3 
+
+-METEXT
+Xo 
+
+-CAT
+J1 : S2 = S1 .
+J2 : S1 = S2 + S5 .
+J3 : S5 + S4 = S3 .
+J4 : S3 = S4 .

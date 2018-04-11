@@ -8,7 +8,7 @@
 #include "libstructural.h"
 #include "util.h"
 #include "libla.h"
-#include "libMetaTool4_3.h"
+#include "libMetaToolInt4_3.h"
 
 #define SWIG_FILE_WITH_INIT
 static PyObject* pNoModelException;  /* add this! */
@@ -670,43 +670,53 @@ static PyObject* pNoModelException;  /* add this! */
             else:
                 raise ValueError("Expecting list or numpy array")
 
-    def test (self):
-      """
-      LibStructural.test(self)
 
-      :returns: An analysis summary for a test model.
+    def runLibstructTests(self):
+      """
+      LibStructural.runLibstructTests(self)
+
+      :returns: A summary of various a tests.
 
       """
-      import pkg_resources
-      model_path = pkg_resources.resource_filename('structural','test/BMID000000101155.xml')
-      print(self.loadSBMLFromFile(model_path))
-      print('\nValidating structural matrices...\n')
-      print(self.getTestDetails())
-      print(self.validateStructuralMatrices())
+      import sys
+      if sys.version_info[0] < 3:
+          import test.testLibStructuralSBML
+          test.testLibStructuralSBML.run()
+      else:
+          from structural.test import testLibStructuralSBML
+          testLibStructuralSBML.run()
+
+
+    def runElementaryModeTests(self):
+      """
+      LibStructural.runElementaryModeTests(self)
+
+      :returns: An elementary modes tests for 25 models.
+
+      """
+      import sys
+      if sys.version_info[0] < 3:
+          import test.testElementaryModesUsingSBML
+          test.testElementaryModesUsingSBML.run()
+      else:
+          from structural.test import testElementaryModesUsingSBML
+          testElementaryModesUsingSBML.run()
+
 
     def getElementaryModesDouble(self):
+      """
+      LibStructural.getElementaryModesDouble(self)
+
+      :returns: Returns in an array where each column is an elementary mode (Generated from MetaTool)
+
+      """
       import numpy as np
       import tempfile
       import subprocess
       import site
       import os
+      import pkg_resources
 
-      def isAllPositive(v):
-          AllPositive = True
-
-          for i in v:
-              if i < 0:
-                  AllPositive = False
-                  break
-          return AllPositive
-
-      def isAllNegative(v):
-          AllNegative = True
-          for i in v:
-              if i > 0:
-                  AllNegative = False
-                  break
-          return AllNegative
 
       mStr = ''
 
@@ -722,7 +732,6 @@ static PyObject* pNoModelException;  /* add this! */
       else:
         matx = matx_bnd
         spec_ids = list(flt_ids) + list(bnd_ids)
-
 
 
       mStr += "-ENZREV" + "\n"
@@ -787,12 +796,14 @@ static PyObject* pNoModelException;  /* add this! */
 
       resultFile = d+"\\MetaToolResult.txt"
       metatoolFile = f.name
-      f.write (mStr)
+      with open(metatoolFile, "w") as f:
+        f.write (mStr)
       f.close()
 
-      pathToMetatool = site.getsitepackages()[1] + '\\structural\\' + 'metaToolDouble.exe'
+      pathToMetatool = pkg_resources.resource_filename('structural', 'metaToolDouble.exe')
 
-      exit_code = subprocess.call ([pathToMetatool, metatoolFile, resultFile])
+      with open(os.devnull, "w") as f:
+          exit_code = subprocess.call ([pathToMetatool, metatoolFile, resultFile], stdout=f)
 
 
       if os.path.isfile(resultFile):
@@ -820,6 +831,69 @@ static PyObject* pNoModelException;  /* add this! */
       else:
          raise RuntimeError ("Internal Error: Result file from MetaTool not found")
 
+
+    def getElementaryModesIntegerRxnIds(self):
+      """
+      LibStructural.getElementaryModesIntegerRxnIds(self)
+
+      :returns: An array of reaction Ids corresponding with the columns of getElementaryModesInteger() matrix.
+
+      """
+      return list(self.getReactionIds())
+
+
+    def getElementaryModesDoubleRxnIds(self):
+      """
+      LibStructural.getElementaryModesIntegerRxnIds(self)
+
+      :returns: An array of reaction Ids corresponding with the columns of getElementaryModesDouble() matrix.
+
+      """
+
+      import os
+      import tempfile
+
+      rxn_ids = self.getReactionIds()
+      rxnId_lst = []
+
+      for i in range(len(rxn_ids)):
+          if self.isReactionReversible(i):
+              rxnId_lst.append(rxn_ids[i])
+
+      for i in range(len(rxn_ids)):
+          if not self.isReactionReversible(i):
+              rxnId_lst.append(rxn_ids[i])
+
+      return rxnId_lst
+
+      d = tempfile.gettempdir()
+      resultFile = d+"\\MetaToolResult.txt"
+      if os.path.isfile(resultFile):
+          line_array = []
+          with open(resultFile) as f:
+              for lines in f:
+                  line_array.append(lines)
+      f.close()
+
+      line_dict = {}
+      for i in range(len(line_array)):
+          line_dict[i+1] = line_array[i]
+
+      index_list = [k for k,v in line_dict.items() if v == ' enzymes\n']
+      start_pt = index_list[1]-1
+      col_num = int(line_array[6].split()[1])
+
+      if line_array[start_pt+1] == ' - not found -\n':
+          return []
+
+      if col_num > 0:
+          rxnId_lst = []
+          for i in range(col_num):
+              rxnId = (line_array[start_pt+2+i].split())[1]
+              rxnId_lst.append(rxnId)
+          return rxnId_lst
+      else:
+          return []
 %}
 
 }

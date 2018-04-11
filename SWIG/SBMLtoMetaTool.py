@@ -3,27 +3,42 @@ import structural
 import numpy as np
 import pkg_resources
 
-r =te.loada("""
-   $A -> B; v;
-   B -> $C; v;
-   B -> $D; v;
-   
-    v = 0       
-"""
-)
-
-
+#r =te.loada("""
+#   $X -> S1; v;   
+#    v = 0       
+#"""
+#)
+#%%
+model_path = pkg_resources.resource_filename('structural','test')
+##
+model_path = model_path + '\\testModel'+ "28.xml"
 ls = structural.LibStructural()
-ls.loadSBMLFromString(r.getSBML())
+ls.loadSBMLFromFile(model_path)
+ls.getElementaryModesDouble()
+
+def test(ls):
+    from structural.test import testLibStructuralSBML
+    testLibStructuralSBML.run()
+test(ls)
+
+#%%
+
+##ls.loadSBMLFromString(r.getSBML())
+#
+#
 #print ls.getElementaryModesDouble()
+#print ('\n')
+#print ls.getElementaryModesInteger()
 
 for i in range(1,25):
-    model_path = pkg_resources.resource_filename('structural','test/tests/testModel'+str(i)+".xml")
+    
+    model_path = pkg_resources.resource_filename('structural','test/testModel'+str(i)+".xml")
     ls = structural.LibStructural()
     ls.loadSBMLFromFile(model_path)
     print ("Test model #" + str(i)+'\n')
-    print ls.getElementaryModesDouble()
-    print ('\n')
+#    print (ls.getElementaryModesDouble())
+    if type(ls.getElementaryModesDouble()) == np.ndarray:       
+        print np.sum(ls.getElementaryModesDouble(), axis=1) == np.sum(ls.getElementaryModesInteger(),axis=1) 
 
 #%%
 
