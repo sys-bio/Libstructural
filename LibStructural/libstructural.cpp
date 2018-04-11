@@ -42,7 +42,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 #include "matrix.h"
 #include "util.h"
 #include "math.h"
-#include "libMetaTool4_3.h"
+#include "libMetaToolInt4_3.h"
 
 #define SMALL_NUM           1.0E-9
 #define PRINT_PRECISION		10

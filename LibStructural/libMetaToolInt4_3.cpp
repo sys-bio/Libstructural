@@ -46,7 +46,7 @@ access rights in this version. */
 #include <stdexcept>
 #include <sstream>
 
-#include "libMetaTool4_3.h"
+#include "libMetaToolInt4_3.h"
 
 using namespace std;
 
