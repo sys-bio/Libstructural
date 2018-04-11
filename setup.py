@@ -53,15 +53,15 @@ if config[0] == 'Win':
     chdir(path.join(here,package_dir,str(config[2])))
     package_data={
     'structural': ['test/*'],
-    'structural.test': ['tests/*'],
-    'structural': ['_structural.pyd','structural.py', 'test/*']
+#    'structural.test': ['tests/*'],
+    'structural': ['metaToolDouble.exe','_structural.pyd','structural.py', 'test/*']
     }
 elif config[0] == 'Mac':
     chdir(path.join(here,package_dir,str(config[2])))
     package_data={
     'structural': ['test/*'],
-    'structural.test': ['tests/*'],
-    'structural': ['_structural.so','structural.py', 'test/*']
+#    'structural.test': ['tests/*'],
+    'structural': ['metaToolDouble.exe','_structural.so','structural.py', 'test/*']
     # 'test_models': ['BMID000000101155.xml']
     }
 else:
@@ -76,7 +76,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='2.0.0.post4',
+    version='3.0.0',
 
     description='A module for a wide variety of methods that permit access to the constraint information in the stoichiometry matrix.',
     long_description=long_description,
