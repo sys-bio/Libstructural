@@ -7,27 +7,24 @@ be available in at least one of the following formats: SBML model file (.xml for
 ----------------------
 Testing LibStructural
 ----------------------
-To test the LibStructural module, you can use the **test()** method. This will print out an analysis summary of a Glycolysis/Gluconeogenesis SBML model (`BMID000000101155 <https://www.ebi.ac.uk/biomodels-main/BMID000000101155>`_) distributed with LibStructural. For example:
+To test the LibStructural module, you can use the **runLibstructTests()** method. This will print out a summary of various tests. These include: testing the integrity of the model loading methods, testing for error messages and conservation analysis methods. Thirty one toy models and a Glycolysis/Gluconeogenesis SBML model (`BMID000000101155 <https://www.ebi.ac.uk/biomodels-main/BMID000000101155>`_) are used for testing. For example:
 
 .. code:: python
 
   import structural
   ls = structural.LibStructural()
-  ls.test()
+  ls.runLibstructTests()
 
 .. end
 
-In addition, a test script is distributed with LibStructural package that can be run to test the methods' integrity. It also tests **loadStoichiometryMatrix** method. You can run the script as shown below:
+In addition, the test method **runElementaryModeTests()** runs an internal test suite on 31 toy models anyalysing the integrity of the elementary modes returned by **getElementaryModesInteger()** and **getElementaryModesDouble()**.
 
 .. code:: python
 
   import structural
-  from sys import version_info
+  ls = structural.LibStructural()
+  ls.runElementaryModeTests()
 
-  if version_info == 2:
-    execfile(structural.__path__[0] + '/test/tests/testLibStructural.py')
-  else:
-    exec(open(structural.__path__[0] + '/test/tests/testLibStructural.py').read())
 .. end
 
 
@@ -101,7 +98,7 @@ When loading a model from a stoichiometry matrix, reactions and species Ids can 
   import structural
   ls = structural.LibStructural()
   matrix = [[  1, -1, -1], [  0, -1,  1], [  0,  1, -1]] # matrix can also be a numpy 2d array
-
+  ls.loadStoichiometryMatrix(matrix)
   print ls.getStoichiometryMatrix()
   print ls.getFloatingSpeciesIds()
   print ls.getReactionIds()
@@ -450,11 +447,12 @@ Returns:
 
 .. end
 
-To compute the elementary modes the **getElementaryModes** method can be called. This returns an array where each row is an elementary mode in the model. Elementary modes are the simplest pathways within a metabolic network that can sustain a steady state and at the same time are thermodynamically feasible
+To compute the elementary modes, either **getElementaryModesInteger** or **getElementaryModesDouble** methods can be called. Elementary modes are the simplest pathways within a metabolic network that can sustain a steady state and at the same time are thermodynamically feasible. The double version of the elementry mode method is useful when working with reaction networks containing species with floating (fraction) coeeficients. These methods return an array where each row is an elementary mode in the model.
 
 .. code:: python
 
-  ls.getElementaryModes()
+  ls.getElementaryModesInteger()
+  ls.getElementaryModesDouble()
 
 .. end
 
@@ -462,18 +460,16 @@ To compute the elementary modes the **getElementaryModes** method can be called.
 
   Out[1]:
   [[1. 1. 1.]]
+  [[1. 1. 1.]]
 
 .. end
 
-In addition, a test script for elementary modes is distributed with LibStructural package. The script contains 24 different test models and it calculates elementary modes in each model. You can run the script as shown below:
+In addition, a test script for elementary modes is distributed with LibStructural package that contains 31 different test models. It calculates elementary modes (for bothe integer and double versions) in each model and test the validity of the elementary modes returned. You can run the script as shown below:
 
 .. code:: python
 
   import structural
-  from sys import version_info
-  if version_info == 2:
-    execfile(structural.__path__[0] + '/test/tests/elementaryModes.py')
-  else:
-    exec(open(structural.__path__[0] + '/test/tests/elementaryModes.py').read())
+  ls = structural.LibStructural()
+  ls.runElementaryModeTests()
 
 .. end
