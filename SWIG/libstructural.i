@@ -239,7 +239,7 @@ static PyObject* pNoModelException;  /* add this! */
     def getStoichiometryMatrixBoundary(self):
       """
       LibStructural.getStoichiometryMatrixBoundary(self)
-      :returns: Unaltered stoichiometry matrix.
+      :returns: Unaltered stoichiometry matrix with boundary species included at the end.
       """
       return self._my_getStoichiometryMatrixBoundary().toNumpy();
 
@@ -675,7 +675,7 @@ static PyObject* pNoModelException;  /* add this! */
       """
       LibStructural.runLibstructTests(self)
 
-      :returns: A summary of various a tests.
+      :returns: A summary of test results on the integrity of structural methods.
 
       """
       import sys
@@ -691,7 +691,7 @@ static PyObject* pNoModelException;  /* add this! */
       """
       LibStructural.runElementaryModeTests(self)
 
-      :returns: An elementary modes tests for 25 models.
+      :returns: A valididty test result of elementary modes generated from 31 models.
 
       """
       import sys
@@ -707,7 +707,7 @@ static PyObject* pNoModelException;  /* add this! */
       """
       LibStructural.getElementaryModesDouble(self)
 
-      :returns: Returns in an array where each column is an elementary mode (Generated from MetaTool)
+      :returns: An array where each column is an elementary mode (Generated from MetaTool)
 
       """
       import numpy as np
@@ -794,7 +794,7 @@ static PyObject* pNoModelException;  /* add this! */
       f = tempfile.NamedTemporaryFile(delete=False)
       d = tempfile.gettempdir()
 
-      resultFile = d+"\\MetaToolResult.txt"
+      resultFile = os.path.join(d,"MetaToolResult.txt")
       metatoolFile = f.name
       with open(metatoolFile, "w") as f:
         f.write (mStr)
@@ -847,7 +847,7 @@ static PyObject* pNoModelException;  /* add this! */
 
     def getElementaryModesDoubleRxnIds(self):
       """
-      LibStructural.getElementaryModesIntegerRxnIds(self)
+      LibStructural.getElementaryModesDoubleRxnIds(self)
 
       :returns: An array of reaction Ids corresponding with the columns of getElementaryModesDouble() matrix.
 

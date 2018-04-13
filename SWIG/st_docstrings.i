@@ -159,7 +159,7 @@ LibStructural.getReorderedSpeciesIds(self)
 %feature("docstring") LIB_STRUCTURAL::LibStructural::getFloatingSpeciesIds "
 LibStructural.getFloatingSpeciesIds(self)
 
-:returns: The unordered list of species Ids.
+:returns: The unordered list of floating species Ids.
 
 ";
 
