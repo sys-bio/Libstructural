@@ -878,6 +878,9 @@ class LibStructural(_object):
     def _my_getStoichiometryMatrix(self):
         return _structural.LibStructural__my_getStoichiometryMatrix(self)
 
+    def _my_getStoichiometryMatrixBoundary(self):
+        return _structural.LibStructural__my_getStoichiometryMatrixBoundary(self)
+
     def _my_getReorderedStoichiometryMatrix(self):
         return _structural.LibStructural__my_getReorderedStoichiometryMatrix(self)
 
@@ -907,6 +910,9 @@ class LibStructural(_object):
         """
         return _structural.LibStructural_getFloatingSpeciesIds(self)
 
+
+    def getBoundarySpeciesIds(self):
+        return _structural.LibStructural_getBoundarySpeciesIds(self)
 
     def getIndependentSpeciesIds(self):
         """
@@ -1060,17 +1066,11 @@ class LibStructural(_object):
         return _structural.LibStructural_getModelName(self)
 
 
-    def getNumSpecies(self):
-        """
+    def getNumFloatingSpecies(self):
+        return _structural.LibStructural_getNumFloatingSpecies(self)
 
-        LibStructural.getNumSpecies(self)
-
-        :returns: The total number of species
-
-
-        """
-        return _structural.LibStructural_getNumSpecies(self)
-
+    def getNumBoundarySpecies(self):
+        return _structural.LibStructural_getNumBoundarySpecies(self)
 
     def getNumIndSpecies(self):
         """
@@ -1158,8 +1158,8 @@ class LibStructural(_object):
         return _structural.LibStructural_isReactionReversible(self, index)
 
 
-    def _my_getElementaryModes(self):
-        return _structural.LibStructural__my_getElementaryModes(self)
+    def _my_getElementaryModesInteger(self):
+        return _structural.LibStructural__my_getElementaryModesInteger(self)
 
     def _my_getEigenValues(self, oMatrix):
         return _structural.LibStructural__my_getEigenValues(self, oMatrix)
@@ -1451,12 +1451,39 @@ class LibStructural(_object):
         return _structural.LibStructural_getReorderedStoichiometryMatrixIds(self)
 
 
+    global exitCodeDict
+    exitCodeDict = {
+      -1 : "MetaTool Error: Not enough memory: Programm prematurely finished",
+    -2 : "MetaTool Error: amount for allocation is zero : Programm prematurely finished",
+    -3 : "MetaTool Error: A metabolite could not be found in the stoichiometric equations! Program prematurely terminated",
+    -4 : "MetaTool Error: Enzyme name could not be found in the stoichiometric equations! Program prematurely finished",
+    -5 : "MetaTool Error: File error",
+    -6 : "MetaTool Error: Enlarge the array size of the struct enc ri.Program prematurely finished",
+    -7 : "MetaTool Error: An enzyme reaction is defined more than once. Please delete the extra defined reaction in the input file. Program prematurly finished.",
+    -8 : "MetaTool Error: The system comprises only external metabolites.",
+    -9 : "MetaTool Error: File error",
+    -10 : "MetaTool Error: The input file contains interlocking commentaries. (To many closing marks)",
+    -11 : "MetaTool Error: The input file contains interlocking commentaries.",
+    -12 : "MetaTool Error: ERROR IN FUNCTION CUTCOL",
+    -13 : "MetaTool Error: An intermediate result exceeds the allowed integer range: Program prematurely finished.",
+    -14 : "MetaTool Error: The name of input file is the same as the name of the output file: Program prematurely finished.",
+    -15 : "MetaTool Error: An enzyme is delared twice: Program prematurely finished.",
+    -16 : "MetaTool Error: There are metabolites in the stoichiometric equations and are declared as -METINT or -METEXT: Program prematurely terminated.",
+    -17 : "MetaTool Error: File error",
+    }
     def getStoichiometryMatrix(self):
       """
       LibStructural.getStoichiometryMatrix(self)
       :returns: Unaltered stoichiometry matrix.
       """
       return self._my_getStoichiometryMatrix().toNumpy();
+
+    def getStoichiometryMatrixBoundary(self):
+      """
+      LibStructural.getStoichiometryMatrixBoundary(self)
+      :returns: Unaltered stoichiometry matrix.
+      """
+      return self._my_getStoichiometryMatrixBoundary().toNumpy();
 
     def getColumnReorderedNrMatrix(self):
         """
@@ -1644,14 +1671,19 @@ class LibStructural(_object):
             else:
                 raise ValueError("Expecting list or numpy array")
 
-    def getElementaryModes (self):
+    def getElementaryModesInteger (self):
       """
-      LibStructural.getElementaryModes(self)
+      LibStructural.getElementaryModesInteger(self)
 
       :returns: An array where each column is an elementary mode
       """
       import numpy as np
-      return self._my_getElementaryModes().toNumpy()
+      elementaryModes =  self._my_getElementaryModesInteger().toNumpy()
+      if np.any(elementaryModes):
+        return elementaryModes
+      else:
+        return np.empty(0)
+
 
     def rref(self, data, tolerance=1e-6):
       """
@@ -1880,19 +1912,230 @@ class LibStructural(_object):
             else:
                 raise ValueError("Expecting list or numpy array")
 
-    def test (self):
-      """
-      LibStructural.test(self)
 
-      :returns: An analysis summary for a test model.
+    def runLibstructTests(self):
+      """
+      LibStructural.runLibstructTests(self)
+
+      :returns: A summary of various a tests.
 
       """
+      import sys
+      if sys.version_info[0] < 3:
+          import test.testLibStructuralSBML
+          test.testLibStructuralSBML.run()
+      else:
+          from structural.test import testLibStructuralSBML
+          testLibStructuralSBML.run()
+
+
+    def runElementaryModeTests(self):
+      """
+      LibStructural.runElementaryModeTests(self)
+
+      :returns: An elementary modes tests for 25 models.
+
+      """
+      import sys
+      if sys.version_info[0] < 3:
+          import test.testElementaryModesUsingSBML
+          test.testElementaryModesUsingSBML.run()
+      else:
+          from structural.test import testElementaryModesUsingSBML
+          testElementaryModesUsingSBML.run()
+
+
+    def getElementaryModesDouble(self):
+      """
+      LibStructural.getElementaryModesDouble(self)
+
+      :returns: Returns in an array where each column is an elementary mode (Generated from MetaTool)
+
+      """
+      import numpy as np
+      import tempfile
+      import subprocess
+      import site
+      import os
       import pkg_resources
-      model_path = pkg_resources.resource_filename('structural','test/BMID000000101155.xml')
-      print(self.loadSBMLFromFile(model_path))
-      print('\nValidating structural matrices...\n')
-      print(self.getTestDetails())
-      print(self.validateStructuralMatrices())
+
+
+      mStr = ''
+
+      rxn_ids = self.getReactionIds()
+      flt_ids = self.getFloatingSpeciesIds()
+      bnd_ids = self.getBoundarySpeciesIds()
+      matx_bnd = self.getStoichiometryMatrixBoundary()
+      matx_flt = self.getStoichiometryMatrix()
+
+      if len(bnd_ids) == 0:
+        matx = matx_flt
+        spec_ids = list(flt_ids)
+      else:
+        matx = matx_bnd
+        spec_ids = list(flt_ids) + list(bnd_ids)
+
+
+      mStr += "-ENZREV" + "\n"
+
+      for i in range(len(rxn_ids)):
+          if self.isReactionReversible(i):
+              mStr += rxn_ids[i] + " "
+
+      mStr += "\n\n"+"-ENZIRREV" + "\n"
+
+      for i in range(len(rxn_ids)):
+          if not self.isReactionReversible(i):
+              mStr += rxn_ids[i] + " "
+
+      mStr += "\n\n"+"-METINT"+"\n"
+
+      for  i in flt_ids:
+          mStr += str (i) + " "
+
+      mStr += "\n\n"+"-METEXT"+"\n"
+
+      if len(bnd_ids) != 0:
+        for i in bnd_ids:
+          mStr += i + " "
+
+      mStr += "\n\n"+"-CAT"+"\n"
+
+      for i in range(len(rxn_ids)):
+          react_list = []
+          col = matx[:,i]
+          mStr += rxn_ids[i] + " : "
+
+          for j in range(len(matx)):
+              if matx[j,i] < 0:
+                  stStr = ''
+                  if abs(matx[j,i]) > 1:
+                      stStr = str(abs(matx[j,i])) + ' '
+                  react_list.append(stStr + spec_ids[j])
+          mStr += react_list[0]
+          for k in range(1,len(react_list)):
+              mStr += " + " + react_list[k]
+          mStr += " = "
+
+          prod_list = []
+          for j in range(len(matx)):
+              if matx[j,i] > 0:
+                  stStr = ''
+                  if matx[j,i] > 1:
+                      stStr = str(matx[j,i]) + ' '
+                  prod_list.append(stStr + spec_ids[j])
+
+          if len(prod_list) != 0:
+            mStr += prod_list[0]
+            for k in range(1,len(prod_list)):
+              mStr += " + " + prod_list[k]
+
+          mStr += " .\n"
+
+
+      f = tempfile.TemporaryFile (delete=False)
+      d = tempfile.gettempdir()
+
+      resultFile = d+"\\MetaToolResult.txt"
+      metatoolFile = f.name
+      with open(metatoolFile, "w") as f:
+        f.write (mStr)
+      f.close()
+
+      pathToMetatool = pkg_resources.resource_filename('structural', 'metaToolDouble.exe')
+
+      with open(os.devnull, "w") as f:
+          exit_code = subprocess.call ([pathToMetatool, metatoolFile, resultFile], stdout=f)
+
+
+      if os.path.isfile(resultFile):
+        if exit_code == 0:
+            line_array = []
+            with open(resultFile) as f:
+                for lines in f:
+                    line_array.append(lines)
+
+            start_pt = line_array.index("ELEMENTARY MODES\n")
+
+            if line_array[start_pt+1] == ' \n':
+                row_num = int(line_array[start_pt+2].split()[2].replace("r", ""))
+
+                elementaryModeMatrix = []
+                for i in range(row_num):
+                    elementaryModeMatrix.append(line_array[start_pt+3+i].split())
+                elementaryModeMatrix = np.array(elementaryModeMatrix, dtype=float)
+                f.close()
+                return elementaryModeMatrix
+            else:
+                return np.empty([0,0])
+        else:
+            raise RuntimeError(exitCodeDict[exit_code])
+      else:
+         raise RuntimeError ("Internal Error: Result file from MetaTool not found")
+
+
+    def getElementaryModesIntegerRxnIds(self):
+      """
+      LibStructural.getElementaryModesIntegerRxnIds(self)
+
+      :returns: An array of reaction Ids corresponding with the columns of getElementaryModesInteger() matrix.
+
+      """
+      return list(self.getReactionIds())
+
+
+    def getElementaryModesDoubleRxnIds(self):
+      """
+      LibStructural.getElementaryModesIntegerRxnIds(self)
+
+      :returns: An array of reaction Ids corresponding with the columns of getElementaryModesDouble() matrix.
+
+      """
+
+      import os
+      import tempfile
+
+      rxn_ids = self.getReactionIds()
+      rxnId_lst = []
+
+      for i in range(len(rxn_ids)):
+          if self.isReactionReversible(i):
+              rxnId_lst.append(rxn_ids[i])
+
+      for i in range(len(rxn_ids)):
+          if not self.isReactionReversible(i):
+              rxnId_lst.append(rxn_ids[i])
+
+      return rxnId_lst
+
+      d = tempfile.gettempdir()
+      resultFile = d+"\\MetaToolResult.txt"
+      if os.path.isfile(resultFile):
+          line_array = []
+          with open(resultFile) as f:
+              for lines in f:
+                  line_array.append(lines)
+      f.close()
+
+      line_dict = {}
+      for i in range(len(line_array)):
+          line_dict[i+1] = line_array[i]
+
+      index_list = [k for k,v in line_dict.items() if v == ' enzymes\n']
+      start_pt = index_list[1]-1
+      col_num = int(line_array[6].split()[1])
+
+      if line_array[start_pt+1] == ' - not found -\n':
+          return []
+
+      if col_num > 0:
+          rxnId_lst = []
+          for i in range(col_num):
+              rxnId = (line_array[start_pt+2+i].split())[1]
+              rxnId_lst.append(rxnId)
+          return rxnId_lst
+      else:
+          return []
 
     __swig_destroy__ = _structural.delete_LibStructural
     __del__ = lambda self: None
