@@ -716,7 +716,7 @@ static PyObject* pNoModelException;  /* add this! */
       import site
       import os
       import pkg_resources
-
+      import platform
 
       mStr = ''
 
@@ -791,7 +791,7 @@ static PyObject* pNoModelException;  /* add this! */
           mStr += " .\n"
 
 
-      f = tempfile.TemporaryFile (delete=False)
+      f = tempfile.NamedTemporaryFile(delete=False)
       d = tempfile.gettempdir()
 
       resultFile = d+"\\MetaToolResult.txt"
@@ -800,7 +800,10 @@ static PyObject* pNoModelException;  /* add this! */
         f.write (mStr)
       f.close()
 
-      pathToMetatool = pkg_resources.resource_filename('structural', 'metaToolDouble.exe')
+      if platform.system == 'Windows':
+          pathToMetatool = pkg_resources.resource_filename('structural', 'metaToolDouble.exe')
+      else:
+          pathToMetatool = pkg_resources.resource_filename('structural', 'metaToolDouble')
 
       with open(os.devnull, "w") as f:
           exit_code = subprocess.call ([pathToMetatool, metatoolFile, resultFile], stdout=f)
