@@ -54,14 +54,14 @@ if config[0] == 'Win':
     package_data={
     'structural': ['test/*'],
 #    'structural.test': ['tests/*'],
-    'structural': ['metaToolDouble.exe', 'metaToolDouble','_structural.pyd','structural.py', 'test/*']
+    'structural': ['metaToolDouble.exe','_structural.pyd','structural.py', 'test/*']
     }
 elif config[0] == 'Mac':
     chdir(path.join(here,package_dir,str(config[2])))
     package_data={
     'structural': ['test/*'],
 #    'structural.test': ['tests/*'],
-    'structural': ['metaToolDouble.exe','_structural.so','structural.py', 'test/*']
+    'structural': ['metaToolDouble','_structural.so','structural.py', 'test/*']
     # 'test_models': ['BMID000000101155.xml']
     }
 else:
