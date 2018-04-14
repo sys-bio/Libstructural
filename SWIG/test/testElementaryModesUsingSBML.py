@@ -37,7 +37,7 @@ def checkElementarity(ls, elm, emType):
         N = ls.getStoichiometryMatrix()
     else:
         d = tempfile.gettempdir()
-        resultFile = d + "\\MetaToolResult.txt"
+        resultFile = os.path.join(d,"MetaToolResult.txt")
 
         if os.path.isfile(resultFile):
             line_array = []
@@ -119,7 +119,7 @@ def checkElmDouble(id, ls):
         rxnIdIndex.append(rxnIds.index(i))
 
     d = tempfile.gettempdir()
-    resultFile = d + "\\MetaToolResult.txt"
+    resultFile = os.path.join(d,"MetaToolResult.txt")
 
     if os.path.isfile(resultFile):
         line_array = []
@@ -166,7 +166,7 @@ def run():
     print("\n\n============================================")
     print("Running Integer Elementary mode tests...")
     print("============================================\n")
-    
+
     for i in range(31):
         ls = structural.LibStructural()
         model_path = pkg_resources.resource_filename('structural', '/test/testModel' + str(i + 1) + '.xml')

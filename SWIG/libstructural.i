@@ -869,34 +869,6 @@ static PyObject* pNoModelException;  /* add this! */
 
       return rxnId_lst
 
-      d = tempfile.gettempdir()
-      resultFile = d+"\\MetaToolResult.txt"
-      if os.path.isfile(resultFile):
-          line_array = []
-          with open(resultFile) as f:
-              for lines in f:
-                  line_array.append(lines)
-      f.close()
-
-      line_dict = {}
-      for i in range(len(line_array)):
-          line_dict[i+1] = line_array[i]
-
-      index_list = [k for k,v in line_dict.items() if v == ' enzymes\n']
-      start_pt = index_list[1]-1
-      col_num = int(line_array[6].split()[1])
-
-      if line_array[start_pt+1] == ' - not found -\n':
-          return []
-
-      if col_num > 0:
-          rxnId_lst = []
-          for i in range(col_num):
-              rxnId = (line_array[start_pt+2+i].split())[1]
-              rxnId_lst.append(rxnId)
-          return rxnId_lst
-      else:
-          return []
 %}
 
 }
