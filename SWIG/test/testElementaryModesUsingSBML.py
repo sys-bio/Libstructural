@@ -108,6 +108,27 @@ def checkElmInteger(id, ls):
         print_stmnt = "(" + str(id) + ") ------FAIL N e = 0-----"
         print(print_stmnt)
 
+def checkgEFM(id, ls):
+    elm = ls.getgElementaryModes()
+    elm = np.around(elm, decimals=2)
+    st = ls.getStoichiometryMatrix()
+    p = np.matmul(st, np.transpose(elm))
+    rxnIdIndex = range(len(ls.getReactionIds()))
+
+    if not np.any(p):
+        if checkElementarity(ls, elm, 'Integer'):
+            if checkThermodynamics(ls, elm, rxnIdIndex):
+                print_stmnt = "(" + str(id) + ") ------PASS----- Number of modes = " + str(elm.shape[0])
+                print(print_stmnt)
+            else:
+                print_stmnt = "(" + str(id) + ") ------FAIL Thermo-----"
+                print(print_stmnt)
+        else:
+            print_stmnt = "(" + str(id) + ") ------FAIL Elementarity-----"
+            print(print_stmnt)
+    else:
+        print_stmnt = "(" + str(id) + ") ------FAIL N e = 0-----"
+        print(print_stmnt)
 
 def checkElmDouble(id, ls):
     elm = ls.getElementaryModesDouble()
@@ -182,6 +203,26 @@ def run():
                 print(print_stmnt)
         else:
             checkElmInteger(i + 1, ls)
+            
+    print("\n\n============================================")
+    print("Running gEFM tests...")
+    print("============================================\n")
+
+    for i in range(31):
+        ls = structural.LibStructural()
+        model_path = pkg_resources.resource_filename('structural', '/test/testModel' + str(i + 1) + '.xml')
+        ls.loadSBMLFromFile(model_path)
+
+        if i + 1 in [25,28,29]:
+            el = ls.getgElementaryModes()
+            if len(el) == 0:
+                print_stmnt = "(" + str(i + 1) + ") ------PASS----- Number of modes = 0"
+                print(print_stmnt)
+            else:
+                print_stmnt = "(" + str(i + 1) + ") ------FAIL-----"
+                print(print_stmnt)
+        else:
+            checkgEFM(i + 1, ls)
 
     print("\n\n============================================")
     print("Running Double Elementary mode tests...")

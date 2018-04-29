@@ -43,6 +43,11 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 #include "util.h"
 #include "math.h"
 #include "libMetaToolInt4_3.h"
+#include "gEFMUtils.h"
+#include "gEFM_API.h"
+#include "Network.h"
+#include "GlobalData.h"
+#include "Pathway.h"
 
 #define SMALL_NUM           1.0E-9
 #define PRINT_PRECISION		10
@@ -54,6 +59,7 @@ using namespace LIB_STRUCTURAL;
 using namespace LIB_LA;
 using namespace std;
 
+extern int globalErrorCode;
 
 // load a new stoichiometry matrix and reset current loaded model
 char *getVersion ()
@@ -2323,6 +2329,203 @@ DoubleMatrix* LibStructural::getElementaryModesInteger () {
 	return oResult;
 }
 
+// Returns error message from gEFM tools
+char* LibStructural::gefm_getErrorString() {
+
+	return errorCodeStrings[-globalErrorCode];
+
+}
+
+
+// Writes Elementary Modes to a File
+char* LibStructural::saveElementaryModes(int *errorCode, bool csv_format) {
+
+	double **efmArray;
+	int numberOfModes;
+	int numberOfReactions;
+	bool reversibility;
+	FILE* f;
+	int numReactions;
+	char *outputPath;
+	vector< string > reactionIdVector;
+	vector< string > oFloat;
+	vector< string > oBoundary;
+	DoubleMatrix* oResult;
+	DoubleMatrix* stoichMtx;
+
+	*errorCode = 0;
+
+	try {
+		
+		oFloat = getFloatingSpeciesIds();
+		oBoundary = getBoundarySpeciesIds();
+
+		if (oFloat.size() + oBoundary.size() >= MAX_METABOLITES) {
+			globalErrorCode = -6;
+			*errorCode = globalErrorCode;
+			return NULL;
+		}
+
+
+		Network *network = gefm_createNetwork();
+		reactionIdVector = getReactionIds();
+		numReactions = getReactionIds().size();
+
+		for (int i = 0; i < numReactions; i++) {
+			reversibility = isReactionReversible(i);
+			gefm_addReactionName(network, reactionIdVector[i].c_str(), reversibility);  // Network, reaction name, isReversible
+		}
+
+
+
+		for (int i = 0; i < oFloat.size(); i++)
+			gefm_addSpecies(network, oFloat[i].c_str(), false); // Network, species name, isBoundary
+
+		for (int i = 0; i < oBoundary.size(); i++)
+			gefm_addSpecies(network, oBoundary[i].c_str(), true); // Network, species name, isBoundary
+
+		gefm_createStoichiometryMatrix(network);
+
+		stoichMtx = getStoichiometryMatrixBoundary();
+
+		for (int i = 0; i < oFloat.size() + oBoundary.size(); i++)
+			for (int j = 0; j < numReactions; j++)
+				gefm_setStoichiometry(network, i, j, (*stoichMtx)(i, j));
+
+		gefm_splitReversibleReactions(network);
+
+		
+		outputPath = tmpnam(NULL);
+		if (csv_format==true)
+			outputPath = strcat(outputPath, ".csv");
+
+		f = fopen(outputPath, "w");
+
+		efmArray = gefm_getElementaryModes(network, &numberOfModes, &numberOfReactions);
+		if (efmArray == NULL) {
+			*errorCode = globalErrorCode;
+			fprintf(f, "No Elementary Modes Found\n");
+			fclose(f);
+			gefm_deleteNetwork(network);
+			free(efmArray);
+			return NULL;
+		}
+
+		oResult = new DoubleMatrix(numberOfModes, numberOfReactions);
+
+		for (int i = 0; i < numberOfModes; i++) {
+			for (int j = 0; j < numberOfReactions; j++)
+				(*oResult)(i, j) = efmArray[i][j];
+		}
+
+
+		fprintf(f,"Number of Elementary Modes:\n%d\n", numberOfModes);
+
+		if (csv_format==true) {
+			for (int i = 0; i < numberOfModes; i++) {
+				for (int j = 0; j < numberOfReactions; j++)
+					fprintf(f, "%f%s", (*oResult)(i, j), (j<numberOfReactions - 1 ? "," : ""));
+				fprintf(f, "\n");
+			}
+		}
+		else {
+			for (int i = 0; i < numberOfModes; i++) {
+				for (int j = 0; j < numberOfReactions; j++)
+					fprintf(f, "%f", (*oResult)(i, j));
+				fprintf(f, "\n");
+			}
+		}
+
+		fclose(f);
+		gefm_deleteNetwork(network);
+		free(efmArray);
+		return outputPath;
+	}
+	catch (...)
+	{
+		return NULL;
+	}
+}
+
+
+// Returns a matrix of elementary modes
+DoubleMatrix* LibStructural::getgElementaryModes(int *errorCode) {
+
+	double **efmArray;
+	int numberOfModes;
+	int numberOfReactions;
+	bool reversibility;
+	int numReactions;
+	vector< string > reactionIdVector;
+	vector< string > oFloat;
+	vector< string > oBoundary;
+	DoubleMatrix* oResult;
+	DoubleMatrix* stoichMtx;
+	
+	*errorCode = 0;
+
+	try {
+
+		Network *network = gefm_createNetwork();
+		reactionIdVector = getReactionIds();
+		numReactions = getReactionIds().size();
+
+		for (int i = 0; i < numReactions; i++) {
+			reversibility = isReactionReversible(i);
+			gefm_addReactionName(network, reactionIdVector[i].c_str(), reversibility);  // Network, reaction name, isReversible
+		}
+
+		oFloat = getFloatingSpeciesIds();
+		oBoundary = getBoundarySpeciesIds();
+
+		for (int i = 0; i < oFloat.size(); i++)
+			gefm_addSpecies(network, oFloat[i].c_str(), false); // Network, species name, isBoundary
+
+		for (int i = 0; i < oBoundary.size(); i++)
+			gefm_addSpecies(network, oBoundary[i].c_str(), true); // Network, species name, isBoundary
+
+		gefm_createStoichiometryMatrix(network);
+
+		//f = fopen("C:\\tmp\\log.txt", "w");
+
+		//fprintf(f, "Number of species = %d \n", LibStructural::getInstance()->numFloating + LibStructural::getInstance()->numBoundary);
+		//fprintf(f, "Number of reactions = %d \n", LibStructural::getInstance()->numReactions);
+		//fclose(f);
+
+		stoichMtx = getStoichiometryMatrixBoundary();
+
+		for (int i = 0; i < oFloat.size() + oBoundary.size(); i++)
+			for (int j = 0; j < numReactions; j++)
+				gefm_setStoichiometry(network, i, j, (*stoichMtx)(i, j));
+
+		gefm_splitReversibleReactions(network);
+
+		efmArray = gefm_getElementaryModes(network, &numberOfModes, &numberOfReactions);
+		if (efmArray == NULL) {
+			oResult = new DoubleMatrix(0,0);
+			*errorCode = globalErrorCode;
+			return oResult;
+		}
+		oResult = new DoubleMatrix(numberOfModes, numberOfReactions);
+
+		for (int i = 0; i < numberOfModes; i++) {
+			for (int j = 0; j < numberOfReactions; j++)
+				(*oResult)(i, j) = efmArray[i][j];
+		}
+
+		gefm_deleteNetwork(network);
+
+		free(efmArray);
+		//freeResources();
+		return oResult;
+
+	}
+	catch (...)
+	{
+		return NULL;
+	}
+}
+
 
 //Set user specified tolerance
 void LibStructural::setTolerance(double dTolerance)
@@ -3153,6 +3356,32 @@ LIB_EXTERN  int LibStructural_getElementaryModesInteger (double** *outMatrix, in
 		return UNKNOWN_ERROR;
 	}
 }
+
+
+LIB_EXTERN  int LibStructural_getgElementaryModes(double** *outMatrix, int* outRows, int *outCols) {
+	int errorCode;
+	try
+	{
+		DoubleMatrix *oTemp = LibStructural::getInstance()->getgElementaryModes(&errorCode);
+		Util::CopyMatrix(*oTemp, *outMatrix, *outRows, *outCols);
+		delete oTemp;
+		return SUCCESS;
+	}
+	catch (NoModelException& ex)
+	{
+		return NO_MODEL_LOADED;
+	}
+	catch (LIB_LA::ApplicationException& ex)
+	{
+		return APPLICATION_EXCEPTION;
+	}
+
+	catch (...)
+	{
+		return UNKNOWN_ERROR;
+	}
+}
+
 
 
 // Set user specified tolerance

@@ -6,26 +6,20 @@
     </listOfCompartments>
     <listOfSpecies>
       <species id="Xo" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
-      <species id="A" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
-      <species id="B" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
-      <species id="C" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
-      <species id="E" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
-      <species id="D" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="S1" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
       <species id="X1" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
-      <species id="F" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
       <species id="X2" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
-      <species id="X3" compartment="default_compartment" initialConcentration="0" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
     </listOfSpecies>
     <listOfParameters>
       <parameter id="v" value="0" constant="true"/>
     </listOfParameters>
     <listOfReactions>
-      <reaction id="J1" reversible="false" fast="false">
+      <reaction id="J1" reversible="true" fast="false">
         <listOfReactants>
           <speciesReference species="Xo" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="A" stoichiometry="1" constant="true"/>
+          <speciesReference species="S1" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -35,10 +29,10 @@
       </reaction>
       <reaction id="J2" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="A" stoichiometry="1" constant="true"/>
+          <speciesReference species="S1" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
-          <speciesReference species="B" stoichiometry="1" constant="true"/>
+          <speciesReference species="X1" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">
@@ -48,90 +42,10 @@
       </reaction>
       <reaction id="J3" reversible="false" fast="false">
         <listOfReactants>
-          <speciesReference species="A" stoichiometry="1" constant="true"/>
-        </listOfReactants>
-        <listOfProducts>
-          <speciesReference species="C" stoichiometry="1" constant="true"/>
-        </listOfProducts>
-        <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <ci> v </ci>
-          </math>
-        </kineticLaw>
-      </reaction>
-      <reaction id="J4" reversible="false" fast="false">
-        <listOfReactants>
-          <speciesReference species="B" stoichiometry="1" constant="true"/>
-          <speciesReference species="E" stoichiometry="1" constant="true"/>
-        </listOfReactants>
-        <listOfProducts>
-          <speciesReference species="D" stoichiometry="2" constant="true"/>
-        </listOfProducts>
-        <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <ci> v </ci>
-          </math>
-        </kineticLaw>
-      </reaction>
-      <reaction id="J5" reversible="false" fast="false">
-        <listOfReactants>
-          <speciesReference species="X1" stoichiometry="1" constant="true"/>
-        </listOfReactants>
-        <listOfProducts>
-          <speciesReference species="E" stoichiometry="1" constant="true"/>
-        </listOfProducts>
-        <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <ci> v </ci>
-          </math>
-        </kineticLaw>
-      </reaction>
-      <reaction id="J6" reversible="false" fast="false">
-        <listOfReactants>
-          <speciesReference species="B" stoichiometry="1" constant="true"/>
-        </listOfReactants>
-        <listOfProducts>
-          <speciesReference species="C" stoichiometry="1" constant="true"/>
-          <speciesReference species="F" stoichiometry="1" constant="true"/>
-        </listOfProducts>
-        <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <ci> v </ci>
-          </math>
-        </kineticLaw>
-      </reaction>
-      <reaction id="J7" reversible="false" fast="false">
-        <listOfReactants>
-          <speciesReference species="C" stoichiometry="1" constant="true"/>
-        </listOfReactants>
-        <listOfProducts>
-          <speciesReference species="D" stoichiometry="1" constant="true"/>
-        </listOfProducts>
-        <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <ci> v </ci>
-          </math>
-        </kineticLaw>
-      </reaction>
-      <reaction id="J8" reversible="false" fast="false">
-        <listOfReactants>
-          <speciesReference species="D" stoichiometry="1" constant="true"/>
+          <speciesReference species="S1" stoichiometry="1" constant="true"/>
         </listOfReactants>
         <listOfProducts>
           <speciesReference species="X2" stoichiometry="1" constant="true"/>
-        </listOfProducts>
-        <kineticLaw>
-          <math xmlns="http://www.w3.org/1998/Math/MathML">
-            <ci> v </ci>
-          </math>
-        </kineticLaw>
-      </reaction>
-      <reaction id="J9" reversible="false" fast="false">
-        <listOfReactants>
-          <speciesReference species="F" stoichiometry="1" constant="true"/>
-        </listOfReactants>
-        <listOfProducts>
-          <speciesReference species="X3" stoichiometry="1" constant="true"/>
         </listOfProducts>
         <kineticLaw>
           <math xmlns="http://www.w3.org/1998/Math/MathML">

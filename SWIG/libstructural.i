@@ -15,6 +15,8 @@ static PyObject* pNoModelException;  /* add this! */
 %}
 
 %rename (_my_getElementaryModesInteger) getElementaryModesInteger;
+%rename (_my_getgElementaryModes) getgElementaryModes;
+%rename (_my_saveElementaryModes) saveElementaryModes;
 %rename (_my_loadStoichiometryMatrix) loadStoichiometryMatrix;
 %rename (_my_rref) rref;
 %rename (_my_rref_FB) rref_FB;
@@ -73,6 +75,7 @@ static PyObject* pNoModelException;  /* add this! */
      }
 }
 
+%include "cpointer.i"
 %include "carrays.i"
 %include "typemaps.i"
 %include "stl.i"
@@ -81,6 +84,12 @@ static PyObject* pNoModelException;  /* add this! */
 %include "st_docstrings.i"
 %include "../include/matrix.h"
 
+//%include <stdint.i>
+//%include "../LibStructural/include/libstructural.h"
+//%apply int *INPUT {int *errorCode}
+//%apply int *OUTPUT { int *errorCode};
+
+%pointer_functions(int, intp);
 
 %template(StringDouble) std::pair<std::string,double>;
 %template(StrDoubleVector) std::vector< std::pair<std::string,double> >;
@@ -209,8 +218,9 @@ static PyObject* pNoModelException;  /* add this! */
     }
 
 %pythoncode %{
-    global exitCodeDict
-    exitCodeDict = {
+    global MetaToolexitCodeDict
+    global gEFMexitCodeDict
+    MetaToolexitCodeDict = {
       -1 : "MetaTool Error: Not enough memory: Programm prematurely finished",
     -2 : "MetaTool Error: amount for allocation is zero : Programm prematurely finished",
     -3 : "MetaTool Error: A metabolite could not be found in the stoichiometric equations! Program prematurely terminated",
@@ -229,6 +239,13 @@ static PyObject* pNoModelException;  /* add this! */
     -16 : "MetaTool Error: There are metabolites in the stoichiometric equations and are declared as -METINT or -METEXT: Program prematurely terminated.",
     -17 : "MetaTool Error: File error",
     }
+
+    gEFMexitCodeDict = {
+    -2 : "gEFM Error: Error allocating memory for reversible tree indices",
+    -3 : "gEFM Error: Error loading network file",
+    -4 : "gEFM Error: Maximum number of reactions supported is 448",
+    }
+
     def getStoichiometryMatrix(self):
       """
       LibStructural.getStoichiometryMatrix(self)
@@ -442,6 +459,37 @@ static PyObject* pNoModelException;  /* add this! */
       else:
         return np.empty(0)
 
+    def getgElementaryModes (self):
+      """
+      LibStructural.getgElementaryModes(self)
+
+      :returns: An array where each column is an elementary mode
+      """
+      import numpy as np
+      errorCode = new_intp()
+      elementaryModes =  self._my_getgElementaryModes(errorCode).toNumpy()
+      if intp_value(errorCode) < 0:
+        raise RuntimeError(self.gefm_getErrorString())
+
+      if np.any(elementaryModes):
+        return elementaryModes
+      else:
+        return np.empty(0)
+
+    def saveElementaryModes (self, csv_format=True):
+      """
+      LibStructural.saveElementaryModes(self)
+
+      :returns: A directory path for the file generated
+      """
+      import numpy as np
+      errorCode = new_intp()
+      outputPath = self._my_saveElementaryModes(errorCode, csv_format)
+      if intp_value(errorCode) < 0:
+        raise RuntimeError(self.gefm_getErrorString())
+      else:
+        #print (outputPath)
+        return outputPath
 
     def rref(self, data, tolerance=1e-6):
       """
@@ -830,7 +878,7 @@ static PyObject* pNoModelException;  /* add this! */
             else:
                 return np.empty([0,0])
         else:
-            raise RuntimeError(exitCodeDict[exit_code])
+            raise RuntimeError(MetaToolexitCodeDict[-exit_code])
       else:
          raise RuntimeError ("Internal Error: Result file from MetaTool not found")
 
@@ -927,6 +975,7 @@ using LIB_LA::Matrix;
 %template(IntMatrix) LIB_LA::Matrix<int>;
 %template(ComplexMatrix) LIB_LA::Matrix<LIB_LA::Complex>;
 
+
 // #ifdef SWIGCSHARP
 // %template(StringDouble) std::pair< std::string, double >;
 // %template(StringDoubleVector) std::vector< std::pair< std::string, double > >;
@@ -975,6 +1024,8 @@ using LIB_LA::Matrix;
 %pythoncode %{
         def toNumpy(self):
                 import numpy as np
+                print ("Num Rows", self.numRows())
+                print ("Num Cols", self.numCols())
                 result = np.zeros((self.numRows(), self.numCols()), dtype=np.int)
                 for i in range(self.numRows()):
                         for j in range(self.numCols()):

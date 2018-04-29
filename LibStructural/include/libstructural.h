@@ -775,6 +775,23 @@ namespace LIB_STRUCTURAL
 		*/
 		LIB_EXTERN  DoubleMatrix* getElementaryModesInteger ();
 
+		LIB_EXTERN char *gefm_getErrorString();
+		
+		/*! \brief Get elementary modes for a model
+
+		\result Returns in an array where each columns is an elementary mode
+		*/
+		LIB_EXTERN  DoubleMatrix* getgElementaryModes(int *errorCode);
+
+		/*! \brief Get elementary modes for a model
+
+		\result Writes array to a temp file where each columns is an elementary mode
+		*/
+		LIB_EXTERN char* saveElementaryModes(int *errorCode, bool csv_format);
+
+		//LIB_EXTERN void setgEFMMaxMetabolites(int _gefm_Max_Metabolites);
+
+
 		/*! \brief Get Eigenvalues for a matrix
 
 		\param oMatrix Matrix to find the eigenvalues for
@@ -1896,6 +1913,11 @@ LIB_EXTERN int LibStructural_isReactionReversible (int index, bool *result);
 \result Returns 0 is ok, -1 if it failed.
 */
 LIB_EXTERN  int LibStructural_getElementaryModesInteger (double** *outMatrix, int* outRows, int *outCols);
+/*! \brief Get elementary modes for a model
+
+\result Returns 0 is ok, -1 if it failed.
+*/
+LIB_EXTERN  int LibStructural_getgElementaryModes(double** *outMatrix, int* outRows, int *outCols);
 
 
 /*! \brief Set user specified tolerance

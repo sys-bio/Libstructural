@@ -28,7 +28,7 @@ In addition, the test method **runElementaryModeTests()** runs an internal test 
 .. end
 
 
-The following sections describe different ways of loading a model into Libstructural. Once a model is loaded it will automatically call ``analyzeWithQR`` for analyse the stoichiometry matrix. At this point a summary of the analysis can be obtained by calling **getSummary()**:
+The following sections describe different ways of loading a model into Libstructural. Once a model is loaded it will automatically call ``analyzeWithQR`` for analysing the stoichiometry matrix. At this point a summary of the analysis can be obtained by calling **getSummary()**:
 
 .. code:: python
 
