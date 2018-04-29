@@ -765,6 +765,7 @@ static PyObject* pNoModelException;  /* add this! */
       import os
       import pkg_resources
       import platform
+      import stat
 
       mStr = ''
 
@@ -852,6 +853,9 @@ static PyObject* pNoModelException;  /* add this! */
           pathToMetatool = pkg_resources.resource_filename('structural', 'metaToolDouble.exe')
       else:
           pathToMetatool = pkg_resources.resource_filename('structural', 'metaToolDouble')
+
+      st = os.stat(pathToMetatool)
+      os.chmod(pathToMetatool, st.st_mode | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
 
       with open(os.devnull, "w") as f:
           exit_code = subprocess.call ([pathToMetatool, metatoolFile, resultFile], stdout=f)
