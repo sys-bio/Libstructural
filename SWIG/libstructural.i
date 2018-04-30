@@ -476,7 +476,7 @@ static PyObject* pNoModelException;  /* add this! */
       else:
         return np.empty(0)
 
-    def saveElementaryModes (self, csv_format=True):
+    def saveElementaryModes (self, csv_format=False):
       """
       LibStructural.saveElementaryModes(self)
 
