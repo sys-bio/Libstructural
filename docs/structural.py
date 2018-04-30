@@ -163,6 +163,26 @@ SwigPyIterator_swigregister = _structural.SwigPyIterator_swigregister
 SwigPyIterator_swigregister(SwigPyIterator)
 cvar = _structural.cvar
 
+
+def new_intp():
+    return _structural.new_intp()
+new_intp = _structural.new_intp
+
+def copy_intp(value):
+    return _structural.copy_intp(value)
+copy_intp = _structural.copy_intp
+
+def delete_intp(obj):
+    return _structural.delete_intp(obj)
+delete_intp = _structural.delete_intp
+
+def intp_assign(obj, value):
+    return _structural.intp_assign(obj, value)
+intp_assign = _structural.intp_assign
+
+def intp_value(obj):
+    return _structural.intp_value(obj)
+intp_value = _structural.intp_value
 class StringDouble(_object):
     __swig_setmethods__ = {}
     __setattr__ = lambda self, name, value: _swig_setattr(self, StringDouble, name, value)
@@ -904,7 +924,7 @@ class LibStructural(_object):
 
         LibStructural.getFloatingSpeciesIds(self)
 
-        :returns: The unordered list of species Ids.
+        :returns: The unordered list of floating species Ids.
 
 
         """
@@ -1160,6 +1180,15 @@ class LibStructural(_object):
 
     def _my_getElementaryModesInteger(self):
         return _structural.LibStructural__my_getElementaryModesInteger(self)
+
+    def gefm_getErrorString(self):
+        return _structural.LibStructural_gefm_getErrorString(self)
+
+    def _my_getgElementaryModes(self, errorCode):
+        return _structural.LibStructural__my_getgElementaryModes(self, errorCode)
+
+    def _my_saveElementaryModes(self, errorCode, csv_format):
+        return _structural.LibStructural__my_saveElementaryModes(self, errorCode, csv_format)
 
     def _my_getEigenValues(self, oMatrix):
         return _structural.LibStructural__my_getEigenValues(self, oMatrix)
@@ -1451,8 +1480,9 @@ class LibStructural(_object):
         return _structural.LibStructural_getReorderedStoichiometryMatrixIds(self)
 
 
-    global exitCodeDict
-    exitCodeDict = {
+    global MetaToolexitCodeDict
+    global gEFMexitCodeDict
+    MetaToolexitCodeDict = {
       -1 : "MetaTool Error: Not enough memory: Programm prematurely finished",
     -2 : "MetaTool Error: amount for allocation is zero : Programm prematurely finished",
     -3 : "MetaTool Error: A metabolite could not be found in the stoichiometric equations! Program prematurely terminated",
@@ -1471,6 +1501,13 @@ class LibStructural(_object):
     -16 : "MetaTool Error: There are metabolites in the stoichiometric equations and are declared as -METINT or -METEXT: Program prematurely terminated.",
     -17 : "MetaTool Error: File error",
     }
+
+    gEFMexitCodeDict = {
+    -2 : "gEFM Error: Error allocating memory for reversible tree indices",
+    -3 : "gEFM Error: Error loading network file",
+    -4 : "gEFM Error: Maximum number of reactions supported is 448",
+    }
+
     def getStoichiometryMatrix(self):
       """
       LibStructural.getStoichiometryMatrix(self)
@@ -1481,7 +1518,7 @@ class LibStructural(_object):
     def getStoichiometryMatrixBoundary(self):
       """
       LibStructural.getStoichiometryMatrixBoundary(self)
-      :returns: Unaltered stoichiometry matrix.
+      :returns: Unaltered stoichiometry matrix with boundary species included at the end.
       """
       return self._my_getStoichiometryMatrixBoundary().toNumpy();
 
@@ -1684,6 +1721,37 @@ class LibStructural(_object):
       else:
         return np.empty(0)
 
+    def getgElementaryModes (self):
+      """
+      LibStructural.getgElementaryModes(self)
+
+      :returns: An array where each column is an elementary mode
+      """
+      import numpy as np
+      errorCode = new_intp()
+      elementaryModes =  self._my_getgElementaryModes(errorCode).toNumpy()
+      if intp_value(errorCode) < 0:
+        raise RuntimeError(self.gefm_getErrorString())
+
+      if np.any(elementaryModes):
+        return elementaryModes
+      else:
+        return np.empty(0)
+
+    def saveElementaryModes (self, csv_format=False):
+      """
+      LibStructural.saveElementaryModes(self, csv_format=False)
+
+      :returns: A directory path for the file generated
+      """
+      import numpy as np
+      errorCode = new_intp()
+      outputPath = self._my_saveElementaryModes(errorCode, csv_format)
+      if intp_value(errorCode) < 0:
+        raise RuntimeError(self.gefm_getErrorString())
+      else:
+    #print (outputPath)
+        return outputPath
 
     def rref(self, data, tolerance=1e-6):
       """
@@ -1917,7 +1985,7 @@ class LibStructural(_object):
       """
       LibStructural.runLibstructTests(self)
 
-      :returns: A summary of various a tests.
+      :returns: A summary of test results on the integrity of structural methods.
 
       """
       import sys
@@ -1933,7 +2001,7 @@ class LibStructural(_object):
       """
       LibStructural.runElementaryModeTests(self)
 
-      :returns: An elementary modes tests for 25 models.
+      :returns: A valididty test result of elementary modes generated from 31 models.
 
       """
       import sys
@@ -1949,7 +2017,7 @@ class LibStructural(_object):
       """
       LibStructural.getElementaryModesDouble(self)
 
-      :returns: Returns in an array where each column is an elementary mode (Generated from MetaTool)
+      :returns: An array where each column is an elementary mode (Generated from MetaTool)
 
       """
       import numpy as np
@@ -1958,7 +2026,8 @@ class LibStructural(_object):
       import site
       import os
       import pkg_resources
-
+      import platform
+      import stat
 
       mStr = ''
 
@@ -2033,16 +2102,22 @@ class LibStructural(_object):
           mStr += " .\n"
 
 
-      f = tempfile.TemporaryFile (delete=False)
+      f = tempfile.NamedTemporaryFile(delete=False)
       d = tempfile.gettempdir()
 
-      resultFile = d+"\\MetaToolResult.txt"
+      resultFile = os.path.join(d,"MetaToolResult.txt")
       metatoolFile = f.name
       with open(metatoolFile, "w") as f:
         f.write (mStr)
       f.close()
 
-      pathToMetatool = pkg_resources.resource_filename('structural', 'metaToolDouble.exe')
+      if platform.system() == 'Windows':
+          pathToMetatool = pkg_resources.resource_filename('structural', 'metaToolDouble.exe')
+      else:
+          pathToMetatool = pkg_resources.resource_filename('structural', 'metaToolDouble')
+
+      st = os.stat(pathToMetatool)
+      os.chmod(pathToMetatool, st.st_mode | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
 
       with open(os.devnull, "w") as f:
           exit_code = subprocess.call ([pathToMetatool, metatoolFile, resultFile], stdout=f)
@@ -2069,7 +2144,7 @@ class LibStructural(_object):
             else:
                 return np.empty([0,0])
         else:
-            raise RuntimeError(exitCodeDict[exit_code])
+            raise RuntimeError(MetaToolexitCodeDict[-exit_code])
       else:
          raise RuntimeError ("Internal Error: Result file from MetaTool not found")
 
@@ -2086,7 +2161,7 @@ class LibStructural(_object):
 
     def getElementaryModesDoubleRxnIds(self):
       """
-      LibStructural.getElementaryModesIntegerRxnIds(self)
+      LibStructural.getElementaryModesDoubleRxnIds(self)
 
       :returns: An array of reaction Ids corresponding with the columns of getElementaryModesDouble() matrix.
 
@@ -2108,34 +2183,6 @@ class LibStructural(_object):
 
       return rxnId_lst
 
-      d = tempfile.gettempdir()
-      resultFile = d+"\\MetaToolResult.txt"
-      if os.path.isfile(resultFile):
-          line_array = []
-          with open(resultFile) as f:
-              for lines in f:
-                  line_array.append(lines)
-      f.close()
-
-      line_dict = {}
-      for i in range(len(line_array)):
-          line_dict[i+1] = line_array[i]
-
-      index_list = [k for k,v in line_dict.items() if v == ' enzymes\n']
-      start_pt = index_list[1]-1
-      col_num = int(line_array[6].split()[1])
-
-      if line_array[start_pt+1] == ' - not found -\n':
-          return []
-
-      if col_num > 0:
-          rxnId_lst = []
-          for i in range(col_num):
-              rxnId = (line_array[start_pt+2+i].split())[1]
-              rxnId_lst.append(rxnId)
-          return rxnId_lst
-      else:
-          return []
 
     __swig_destroy__ = _structural.delete_LibStructural
     __del__ = lambda self: None
@@ -2593,6 +2640,8 @@ class IntMatrix(_object):
 
     def toNumpy(self):
             import numpy as np
+            print ("Num Rows", self.numRows())
+            print ("Num Cols", self.numCols())
             result = np.zeros((self.numRows(), self.numCols()), dtype=np.int)
             for i in range(self.numRows()):
                     for j in range(self.numCols()):
