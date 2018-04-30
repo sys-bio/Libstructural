@@ -478,7 +478,7 @@ static PyObject* pNoModelException;  /* add this! */
 
     def saveElementaryModes (self, csv_format=False):
       """
-      LibStructural.saveElementaryModes(self)
+      LibStructural.saveElementaryModes(self, csv_format=False)
 
       :returns: A directory path for the file generated
       """
