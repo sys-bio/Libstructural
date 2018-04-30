@@ -133,7 +133,7 @@ def checkgEFM(id, ls):
 def checkElmDouble(id, ls):
     elm = ls.getElementaryModesDouble()
     rxnIds = ls.getReactionIds()
-    emRxnID = ls.getElementaryModesDoubleRxnIds()
+    emRxnID = ls.getElementaryModesMetaToolRxnIds()
 
     rxnIdIndex = []
     for i in emRxnID:
