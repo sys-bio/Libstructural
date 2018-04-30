@@ -478,10 +478,7 @@ void  LibStructural::BuildStoichiometryMatrixFromModel(LIB_STRUCTURAL::SBMLmodel
 	DELETE_IF_NON_NULL(_Nmat); _Nmat = new DoubleMatrix(numFloating, numReactions);
 	DELETE_IF_NON_NULL(_bNmat); _bNmat = new DoubleMatrix(numFloating + numBoundary, numReactions);
 	FILE * f;
-	f = fopen("C:\\tmp\\log.txt", "w");
-	//fprintf(f, "Message: \n");
-	//fprintf(f, "NumFloating = %d\n", numFloating);
-	fclose(f);
+
 	for (int i = 0; i < numReactions; i++)
 	{
 		const Reaction* reaction = oModel.getNthReaction(i);
@@ -2485,12 +2482,6 @@ DoubleMatrix* LibStructural::getgElementaryModes(int *errorCode) {
 			gefm_addSpecies(network, oBoundary[i].c_str(), true); // Network, species name, isBoundary
 
 		gefm_createStoichiometryMatrix(network);
-
-		//f = fopen("C:\\tmp\\log.txt", "w");
-
-		//fprintf(f, "Number of species = %d \n", LibStructural::getInstance()->numFloating + LibStructural::getInstance()->numBoundary);
-		//fprintf(f, "Number of reactions = %d \n", LibStructural::getInstance()->numReactions);
-		//fclose(f);
 
 		stoichMtx = getStoichiometryMatrixBoundary();
 
