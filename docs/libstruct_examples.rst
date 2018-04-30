@@ -447,12 +447,17 @@ Returns:
 
 .. end
 
-To compute the elementary modes, either **getElementaryModesInteger** or **getElementaryModesDouble** methods can be called. Elementary modes are the simplest pathways within a metabolic network that can sustain a steady state and at the same time are thermodynamically feasible. The double version of the elementry mode method is useful when working with reaction networks containing species with floating (fraction) coeeficients. These methods return an array where each row is an elementary mode in the model.
+To compute elementary modes, structural offers three methods; **getElementaryModesInteger**, **getElementaryModesDouble** and **getgElementaryModes**. Elementary modes are the simplest pathways within a metabolic network that can sustain a steady state and at the same time are thermodynamically feasible. **getElementaryModesDouble** and **getgElementaryModes** methods are useful when working with reaction networks containing species with floating (fraction) coefficients, i.e. biomass reactions. These methods return an array where each row is an elementary mode in the model. For bigger models, the **saveElementaryModes** method computes and writes elementary modes to a file and returns the file path. Note: **getgElementaryModes** and **saveElementaryModes** will only work for models that have less than 448 reactions.
 
 .. code:: python
 
-  ls.getElementaryModesInteger()
-  ls.getElementaryModesDouble()
+  print (ls.getElementaryModesInteger())
+  print (ls.getElementaryModesDouble())
+  print (ls.getgElementaryModes())
+
+  # Compute and write elementary modes to a file:
+  outPutPath = ls.saveElementaryModes() #File will have a default format.
+  outPutPath_csv = ls.saveElementaryModes(csv_format=True) #File will have a csv format
 
 .. end
 
@@ -462,9 +467,15 @@ To compute the elementary modes, either **getElementaryModesInteger** or **getEl
   [[1. 1. 1.]]
   [[1. 1. 1.]]
 
+  [[1. 1. 1.]]
+  [[1. 1. 1.]]
+
+  [[1. 1. 1.]]
+  [[1. 1. 1.]]
+
 .. end
 
-In addition, a test script for elementary modes is distributed with LibStructural package that contains 31 different test models. It calculates elementary modes (for bothe integer and double versions) in each model and test the validity of the elementary modes returned. You can run the script as shown below:
+In addition, a test script for elementary modes is distributed with LibStructural package that contains 31 different test models. It calculates elementary modes (for both integer and double versions) in each model and test the validity of the elementary modes returned. You can run the script as shown below:
 
 .. code:: python
 
