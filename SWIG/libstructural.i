@@ -849,7 +849,7 @@ static PyObject* pNoModelException;  /* add this! */
         f.write (mStr)
       f.close()
 
-      if platform.system == 'Windows':
+      if platform.system() == 'Windows':
           pathToMetatool = pkg_resources.resource_filename('structural', 'metaToolDouble.exe')
       else:
           pathToMetatool = pkg_resources.resource_filename('structural', 'metaToolDouble')
