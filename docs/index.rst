@@ -13,6 +13,7 @@ Welcome to Libstructural's documentation!
    installation
    building_from_source
    libstruct_examples
+   example_models
    API
 
 Indices and tables
