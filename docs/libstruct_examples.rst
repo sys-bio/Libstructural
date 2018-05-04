@@ -447,7 +447,7 @@ Returns:
 
 .. end
 
-To compute elementary modes, structural offers three methods; **getElementaryModesInteger**, **getElementaryModesDouble** and **getgElementaryModes**. Elementary modes are the simplest pathways within a metabolic network that can sustain a steady state and at the same time are thermodynamically feasible. **getElementaryModesDouble** and **getgElementaryModes** methods are useful when working with reaction networks containing species with floating (fraction) coefficients, i.e. biomass reactions. These methods return an array where each row is an elementary mode in the model. For bigger models, the **saveElementaryModes** method computes and writes elementary modes to a file and returns the file path. Note: **getgElementaryModes** and **saveElementaryModes** will only work for models that have less than 448 reactions.
+To compute elementary modes, LibStructural offers three methods; **getElementaryModesInteger**, **getElementaryModesDouble** and **getgElementaryModes**. Elementary modes are the simplest pathways within a metabolic network that can sustain a steady state and at the same time are thermodynamically feasible. **getElementaryModesDouble** and **getgElementaryModes** methods are useful when working with reaction networks containing species with floating (fraction) coefficients, i.e. biomass reactions. Whereas, **getElementaryModesInteger** deals with iteger coefficients only. These methods return an array where each row is an elementary mode in the model. For bigger models, the **saveElementaryModes** method computes and writes elementary modes to a file and returns the file path. Note: **getgElementaryModes** and **saveElementaryModes** will only work for models that have less than 448 reactions.
 
 .. code:: python
 
@@ -475,6 +475,59 @@ To compute elementary modes, structural offers three methods; **getElementaryMod
 
 .. end
 
+
+Row numbers indicate the number of elemnetary modes available and the columns correspond with the reaction number. The order of the reaction index is similar to **getreactionIds** order, except for **getElementaryModesDouble** which sometimes has it's own reaction index order. As such, LibStructural provides **getElementaryModesMetaToolRxnIds** method to obtain the reaction order found in the elementary modes found from **getElementaryModesDouble**.
+
+.. code:: python
+
+  import structural
+  import pkg_resources
+
+  ls = structural.LibStructural()
+  modelPath = pkg_resources.resource_filename('structural','test/testModel1.xml')
+
+  ls.loadSBMLFromFile(modelPath)
+
+  # Using Integer version
+  print (ls.getElementaryModesInteger())
+  print (ls.getReactionIds())
+
+  # Using Doubel Version
+  print('\n')
+  print (ls.getElementaryModesDouble())
+  print (ls.getElementaryModesMetaToolRxnIds())
+
+.. end
+
+
+.. code-block:: none
+
+  Out[1]:
+  [[ 1.  1.  0.  0.  0.  0.  0.  0.]
+   [ 1.  0.  1.  1.  0.  0.  0.  0.]
+   [ 1.  0.  1.  0.  1.  0.  0.  0.]
+   [-1.  0. -1.  0.  0.  1.  1.  0.]
+   [ 0.  0.  0.  0.  0.  1.  0.  1.]
+   [ 0.  0.  0.  1.  0.  1.  1.  0.]
+   [ 0.  0.  0.  0.  1.  1.  1.  0.]
+   [ 0.  1. -1.  0.  0.  1.  1.  0.]
+   [ 1.  0.  1.  0.  0.  0. -1.  1.]]
+  ('J1', 'J2', 'J3', 'J4', 'J5', 'J6', 'J7', 'J8')
+
+  [[ 1.  0.  0.  0.  1.  0.  0.  0.]
+   [ 1.  1.  0.  0.  0.  1.  0.  0.]
+   [ 1.  1.  0.  0.  0.  0.  1.  0.]
+   [-1. -1.  1.  1.  0.  0.  0.  0.]
+   [ 0.  0.  1.  0.  0.  0.  0.  1.]
+   [ 0.  0.  1.  1.  0.  1.  0.  0.]
+   [ 0.  0.  1.  1.  0.  0.  1.  0.]
+   [ 0. -1.  1.  1.  1.  0.  0.  0.]
+   [ 1.  1.  0. -1.  0.  0.  0.  1.]]
+  ['J1', 'J3', 'J6', 'J7', 'J2', 'J4', 'J5', 'J8']
+
+.. end
+
+
 In addition, a test script for elementary modes is distributed with LibStructural package that contains 31 different test models. It calculates elementary modes (for both integer and double versions) in each model and test the validity of the elementary modes returned. You can run the script as shown below:
 
 .. code:: python
@@ -484,3 +537,14 @@ In addition, a test script for elementary modes is distributed with LibStructura
   ls.runElementaryModeTests()
 
 .. end
+
+References for Elementary Modes Software Tools
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Ullah, Ehsan, et al. “GEFM: An Algorithm for Computing Elementary Flux Modes Using Graph Traversal.”
+IEEE/ACM Transactions on Computational Biology and Bioinformatics, vol. 13, no. 1, 6 May 2015,
+pp. 122–134., doi:10.1109/tcbb.2015.2430344.
+
+T Pfeiffer, I S√°nchez-Valdenebro, J C Nu√±o, F Montero, S Schuster; METATOOL: for studying metabolic networks.,
+Bioinformatics, Volume 15, Issue 3, 1 March 1999,
+Pages 251–257, https://doi.org/10.1093/bioinformatics/15.3.251
