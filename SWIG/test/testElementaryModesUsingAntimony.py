@@ -449,11 +449,11 @@ checkElm(27)
 
 
 r = te.loada('''
-  J0: $Xo + S1 => S2; v;
-  J1: S2 => S3 + S4; v;
-  J2: S1 => S5 + S3; v;
-  J3: S4 + S5 => S6; v;
-  J4: S6 => $X1; v;
+  J1: $Xo + S1 => S2; v;
+  J2: S2 => S3 + S4; v;
+  J3: S1 => S5 + S3; v;
+  J4: S4 + S5 => S6; v;
+  J5: S6 => $X1; v;
    v = 0
 ''')
 r.exportToSBML('testModel28.xml')
@@ -464,7 +464,7 @@ checkElm(28)
 
 r = te.loada('''
    J1: $Xo -> S1; v
-   J2: S2 -> $X1; v;
+   J2: S1 -> $X1; v;
    v = 0
 ''')
 r.exportToSBML('testModel29.xml')
