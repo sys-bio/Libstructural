@@ -1,7 +1,7 @@
 Example Models
 ===============
 
-The models contained in the package directory, **.../test/** , are shown below with their respective Antimony string representation. The J's indicate reaction id and species with "$" sign in front of them represent boundary species which are not shown in the figures. The "v" represents reaction rate.
+The models found in the package directory, **.../test/** , are shown below with their respective Antimony string representation. The J's indicate reaction id and species with "$" sign in front represent boundary species which are not shown in the figures. The "v" represents reaction rate.
 
 
 | **Test Model 1:**
@@ -12,7 +12,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 
 .. figure:: testModels/testModel1.png
    :figclass: align-center
-   :scale: 18 %
+   :scale: 22 %
 
 | **Test Model 2:**
 | J1: $Xo -> S1; v;
@@ -22,7 +22,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 
 .. figure:: testModels/testModel2.png
    :figclass: align-center
-   :scale: 18 %
+   :scale: 22 %
 
 | **Test Model 3:**
 | J1: $Xo -> S1; v;
@@ -78,7 +78,7 @@ The models contained in the package directory, **.../test/** , are shown below w
    :figclass: align-center
    :scale: 18 %
 
-| **Test Model 7**
+| **Test Model 7:**
 | J1: $Xo -> S1; v;
 | J2: S1 -> S2; v;
 | J3: S2 -> S3; v;
@@ -92,7 +92,7 @@ The models contained in the package directory, **.../test/** , are shown below w
    :figclass: align-center
    :scale: 18 %
 
-| **Test Model 8**
+| **Test Model 8:**
 | J1: S1 -> S2; v;
 | J2: S2 -> S1; v;
 | J3: S2 -> S3; v;
@@ -103,7 +103,7 @@ The models contained in the package directory, **.../test/** , are shown below w
    :figclass: align-center
    :scale: 18 %
 
-| **Test Model 9**
+| **Test Model 9:**
 | J1: $Xo -> S1; v;
 | J2: S1 -> $X2; v;
 | J3: S1 -> S2; v;
@@ -142,7 +142,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 
 .. figure:: testModels/testModel11.png
    :figclass: align-center
-   :scale: 18 %
+   :scale: 22 %
 
 | **Test Model 12:**
 | J1: $Xo -> S1; v;
@@ -219,7 +219,7 @@ The models contained in the package directory, **.../test/** , are shown below w
    :figclass: align-center
    :scale: 18 %
 
-| **Test Model 18**
+| **Test Model 18:**
 | J1: $Xo -> S1; v;
 | J2: S1 + S2 -> S3 + $X1; v;
 | J3: S1 + S3 -> S2 + $X2; v;
@@ -255,7 +255,7 @@ The models contained in the package directory, **.../test/** , are shown below w
    :figclass: align-center
    :scale: 18 %
 
-| **Test Model 21**
+| **Test Model 21:**
 | J1: $Xo => S1; v;
 | J2: S1 => $X2; v;
 | J3: S1 -> S2; v;
@@ -321,7 +321,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 
 .. figure:: testModels/testModel25.png
    :figclass: align-center
-   :scale: 18 %
+   :scale: 22 %
 
 | **Test Model 26:**
 | J1: $Xo -> S1; v;
@@ -365,7 +365,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 
 .. figure:: testModels/testModel29.png
    :figclass: align-center
-   :scale: 18 %
+   :scale: 22 %
 
 | **Test Model 30:**
 | J1: $Xo => S1; v
