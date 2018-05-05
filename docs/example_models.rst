@@ -10,7 +10,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J3: S1 => $X2; v;
 | v = 0
 
-.. figure:: /testmodels/testModel1.png
+.. figure:: ./testmodels/testModel1.png
    :figclass: align-center
    :scale: 18 %
 
