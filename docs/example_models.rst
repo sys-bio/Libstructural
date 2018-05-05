@@ -20,7 +20,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J3: S1 -> $X2; v;
 | v = 0
 
-.. figure:: /testmodels/testModel2.png
+.. figure:: testModels/testModel2.png
    :figclass: align-center
    :scale: 18 %
 
@@ -32,7 +32,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J5: S1 => $X3; v;
 | v = 0
 
-.. figure:: /testmodels/testModel3.png
+.. figure:: testModels/testModel3.png
    :figclass: align-center
    :scale: 18 %
 
@@ -44,7 +44,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J5: S3 -> $X1; v;
 | v = 0
 
-.. figure:: /testmodels/testModel4.png
+.. figure:: testModels/testModel4.png
    :figclass: align-center
    :scale: 18 %
 
@@ -58,7 +58,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J7: S4 => $X1; v;
 | v = 0
 
-.. figure:: /testmodels/testModel5.png
+.. figure:: testModels/testModel5.png
    :figclass: align-center
    :scale: 18 %
 
@@ -74,7 +74,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J9: S5 ->; v;
 | v = 0
 
-.. figure:: /testmodels/testModel6.png
+.. figure:: testModels/testModel6.png
    :figclass: align-center
    :scale: 18 %
 
@@ -88,7 +88,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | v = 0
 
 
-.. figure:: /testmodels/testModel7.png
+.. figure:: testModels/testModel7.png
    :figclass: align-center
    :scale: 18 %
 
@@ -99,7 +99,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J4: S3 -> S2; v;
 | v = 0
 
-.. figure:: /testmodels/testModel8.png
+.. figure:: testModels/testModel8.png
    :figclass: align-center
    :scale: 18 %
 
@@ -114,7 +114,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J8: S3 -> $X5; v;
 | v = 0
 
-.. figure:: /testmodels/testModel9.png
+.. figure:: testModels/testModel9.png
    :figclass: align-center
    :scale: 18 %
 
@@ -130,7 +130,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J9: S6 -> S5; v;
 | v = 0
 
-.. figure:: /testmodels/testModel10.png
+.. figure:: testModels/testModel10.png
    :figclass: align-center
    :scale: 18 %
 
@@ -140,7 +140,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J3: S1 -> $X2; v;
 | v = 0
 
-.. figure:: /testmodels/testModel11.png
+.. figure:: testModels/testModel11.png
    :figclass: align-center
    :scale: 18 %
 
@@ -152,7 +152,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J5: S4 -> $X1; v;
 | v = 0
 
-.. figure:: /testmodels/testModel12.png
+.. figure:: testModels/testModel12.png
    :figclass: align-center
    :scale: 18 %
 
@@ -167,7 +167,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J8: S5 -> $X1; v;
 | v = 0
 
-.. figure:: /testmodels/testModel13.png
+.. figure:: testModels/testModel13.png
    :figclass: align-center
    :scale: 18 %
 
@@ -185,7 +185,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J11: S7 -> $X1; v;
 | v = 0
 
-.. figure:: /testmodels/testModel14.png
+.. figure:: testModels/testModel14.png
    :figclass: align-center
    :scale: 18 %
 
@@ -195,7 +195,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J3: S2 + S3 -> $X1; v;
 | v = 0
 
-.. figure:: /testmodels/testModel15.png
+.. figure:: testModels/testModel15.png
    :figclass: align-center
    :scale: 18 %
 
@@ -205,7 +205,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J3: S2 -> S1 + $X2; v;
 | v = 0
 
-.. figure:: /testmodels/testModel16.png
+.. figure:: testModels/testModel16.png
    :figclass: align-center
    :scale: 18 %
 
@@ -215,7 +215,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J3: S2 => S1 + $X2; v;
 | v = 0
 
-.. figure:: /testmodels/testModel17.png
+.. figure:: testModels/testModel17.png
    :figclass: align-center
    :scale: 18 %
 
@@ -225,7 +225,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J3: S1 + S3 -> S2 + $X2; v;
 | v = 0
 
-.. figure:: /testmodels/testModel18.png
+.. figure:: testModels/testModel18.png
    :figclass: align-center
    :scale: 18 %
 
@@ -236,7 +236,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J4: S3 -> S4 + $X1; v;
 | v = 0
 
-.. figure:: /testmodels/testModel19.png
+.. figure:: testModels/testModel19.png
    :figclass: align-center
    :scale: 18 %
 
@@ -251,7 +251,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J8: S3 => $X5; v;
 | v = 0
 
-.. figure:: /testmodels/testModel20.png
+.. figure:: testModels/testModel20.png
    :figclass: align-center
    :scale: 18 %
 
@@ -266,7 +266,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J8: S3 => $X5; v;
 | v = 0
 
-.. figure:: /testmodels/testModel21.png
+.. figure:: testModels/testModel21.png
    :figclass: align-center
    :scale: 18 %
 
@@ -281,7 +281,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J8: S3 => $X5; v;
 | v = 0
 
-.. figure:: /testmodels/testModel22.png
+.. figure:: testModels/testModel22.png
    :figclass: align-center
    :scale: 18 %
 
@@ -296,7 +296,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J8: S3 => $X5; v;
 | v = 0
 
-.. figure:: /testmodels/testModel23.png
+.. figure:: testModels/testModel23.png
    :figclass: align-center
    :scale: 18 %
 
@@ -311,7 +311,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J8: S3 => $X5; v;
 | v = 0
 
-.. figure:: /testmodels/testModel24.png
+.. figure:: testModels/testModel24.png
    :figclass: align-center
    :scale: 18 %
 
@@ -319,7 +319,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | $X -> S1; v;
 | v = 0
 
-.. figure:: /testmodels/testModel25.png
+.. figure:: testModels/testModel25.png
    :figclass: align-center
    :scale: 18 %
 
@@ -332,7 +332,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J6: S5 -> $X2; v;
 | v = 0
 
-.. figure:: /testmodels/testModel26.png
+.. figure:: testModels/testModel26.png
    :figclass: align-center
    :scale: 18 %
 
@@ -342,7 +342,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J3: S2 -> $X1; v;
 | v = 0
 
-.. figure:: /testmodels/testModel27.png
+.. figure:: testModels/testModel27.png
    :figclass: align-center
    :scale: 18 %
 
@@ -354,7 +354,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J5: S6 => $X1; v;
 | v = 0
 
-.. figure:: /testmodels/testModel28.png
+.. figure:: testModels/testModel28.png
    :figclass: align-center
    :scale: 18 %
 
@@ -363,7 +363,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J2: S1 -> $X1; v;
 | v = 0
 
-.. figure:: /testmodels/testModel29.png
+.. figure:: testModels/testModel29.png
    :figclass: align-center
    :scale: 18 %
 
@@ -382,7 +382,7 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J12: S5 => $X2; v;
 | v = 0
 
-.. figure:: /testmodels/testModel30.png
+.. figure:: testModels/testModel30.png
    :figclass: align-center
    :scale: 18 %
 
@@ -395,6 +395,6 @@ The models contained in the package directory, **.../test/** , are shown below w
 | J6: S5 => S1; v;
 | v = 0
 
-.. figure:: /testmodels/testModel31.png
+.. figure:: testModels/testModel31.png
    :figclass: align-center
    :scale: 18 %
