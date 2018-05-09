@@ -53,7 +53,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 #define PRINT_PRECISION		10
 #define LINE			    "--------------------------------------------------------------"
 
-#define LibStruct_VERSION "3.0.0"
+#define LibStruct_VERSION "3.1.0"
 
 using namespace LIB_STRUCTURAL;
 using namespace LIB_LA;

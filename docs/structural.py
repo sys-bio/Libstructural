@@ -2149,21 +2149,11 @@ class LibStructural(_object):
          raise RuntimeError ("Internal Error: Result file from MetaTool not found")
 
 
-    def getElementaryModesIntegerRxnIds(self):
+    def getElementaryModesMetaToolRxnIds(self):
       """
-      LibStructural.getElementaryModesIntegerRxnIds(self)
+      LibStructural.getElementaryModesMetaToolRxnIds(self)
 
-      :returns: An array of reaction Ids corresponding with the columns of getElementaryModesInteger() matrix.
-
-      """
-      return list(self.getReactionIds())
-
-
-    def getElementaryModesDoubleRxnIds(self):
-      """
-      LibStructural.getElementaryModesDoubleRxnIds(self)
-
-      :returns: An array of reaction Ids corresponding with the columns of getElementaryModesDouble() matrix.
+      :returns: An array of reaction Ids corresponding with the columns of getElementaryModesMetaToolRxnIds() matrix.
 
       """
 
