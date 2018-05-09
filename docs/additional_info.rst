@@ -1,9 +1,10 @@
 Uploading Wheels (pip)
 ======================
-| **Before generating and uploading wheels, read this information carefully:**
-| **Versioning in PyPI is very strict. You need to follow a `specific guideline <https://www.python.org/dev/peps/pep-0440/>`_ when bumping the version number.**
+**Before generating and uploading wheels, read this information carefully:**
 
-**There is absolutely NO do-overs. Once you upload a version, that namespace is occupied forever. Therefore, we will follow post-release version scheme for minor bug fixes. When you wish to upload a new version without changes in version number, add .post<post-release-version-number> at the end. It is not at all unusual to upload several posts for a given release in this manner. Just increment the post number in the setup.py script.**
+Versioning in PyPI is very strict. You need to follow a `specific guideline <https://www.python.org/dev/peps/pep-0440/>`_ when bumping the version number.
+
+There is absolutely NO do-overs. Once you upload a version, that namespace is occupied forever. Therefore, we will follow post-release version scheme for minor bug fixes. When you wish to upload a new version without changes in version number, add .post<post-release-version-number> at the end. It is not at all unusual to upload several posts for a given release in this manner. Just increment the post number in the setup.py script.
 
 LibStructural supports Microsoft Windows and Apple Mac OS X. Check each section for detailed instructions.
 
@@ -37,9 +38,12 @@ Mac OS X
 
 The process for building PyPI distributions on Mac parallels the process for Windows. The following command lines are useful:
 
-python setup.py bdist_wheel --python-tag=cp27 --plat-name=macosx_10_11_x86_64
-python3 setup.py bdist_wheel --python-tag=cp36 --plat-name=macosx_10_11_x86_64
+``python setup.py bdist_wheel --python-tag=cp27 --plat-name=macosx_10_11_x86_64``
 
-Again, make sure you are in the correct python vers The wheel will be put in the dist directory. If one of the fields in the wheel directory is "none", change to cp27m (replace 27 with whatever Python version you used).
+``python3 setup.py bdist_wheel --python-tag=cp36 --plat-name=macosx_10_11_x86_64``
 
-To upload the package, use twine : twine upload structural-2.1.0-cp27-cp27m-macosx_10_11_x86_64.whl
+The wheel will be put in the dist directory. If one of the fields in the wheel directory is "none", change to cp27m (replace 27 with whatever Python version you used).
+
+To upload the package, use twine :
+
+``twine upload structural-2.1.0-cp27-cp27m-macosx_10_11_x86_64.whl``
