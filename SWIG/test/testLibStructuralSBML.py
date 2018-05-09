@@ -152,7 +152,9 @@ def run():
     print(ls.getFloatingSpeciesIds())
     print(ls.getBoundarySpeciesIds())
     print(ls.getStoichiometryMatrixIds())
-    
+    print(ls.getStoichiometryMatrixIds())
+    print(ls.getElementaryModesMetaToolRxnIds())
+    print(ls.saveElementaryModes())
     try:
       print(ls.getTestDetails())
     except Exception as e:
@@ -169,6 +171,12 @@ def run():
       print(ls.getElementaryModesDouble())
     except Exception as e:
       print(e)
+
+    try:
+      print(ls.getgElementaryModes())
+    except Exception as e:
+      print(e)
+      
     
     
     # Test Conservation Analysis

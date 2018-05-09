@@ -193,7 +193,7 @@ def run():
         model_path = pkg_resources.resource_filename('structural', '/test/testModel' + str(i + 1) + '.xml')
         ls.loadSBMLFromFile(model_path)
 
-        if i + 1 in [25,28,29]:
+        if i + 1 in [25,28]:
             el = ls.getElementaryModesInteger()
             if len(el) == 0:
                 print_stmnt = "(" + str(i + 1) + ") ------PASS----- Number of modes = 0"
@@ -213,7 +213,7 @@ def run():
         model_path = pkg_resources.resource_filename('structural', '/test/testModel' + str(i + 1) + '.xml')
         ls.loadSBMLFromFile(model_path)
 
-        if i + 1 in [25,28,29]:
+        if i + 1 in [25,28]:
             el = ls.getgElementaryModes()
             if len(el) == 0:
                 print_stmnt = "(" + str(i + 1) + ") ------PASS----- Number of modes = 0"
@@ -233,7 +233,7 @@ def run():
         model_path = pkg_resources.resource_filename('structural', '/test/testModel' + str(i + 1) + '.xml')
         ls.loadSBMLFromFile(model_path)
 
-        if i + 1 in [25,28,29]:
+        if i + 1 in [25,28]:
             el = ls.getElementaryModesDouble()
             if len(el) == 0:
                 print_stmnt = "(" + str(i + 1) + ") ------PASS----- Number of modes = 0"
