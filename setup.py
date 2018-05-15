@@ -41,7 +41,9 @@ def get_config():
     elif platform.system() == 'Windows':
         platform_system = 'Win'
     else:
-	    platform_system = 'Linux'
+	    #platform_system = 'Linux'
+        print('Platform not supported')
+        return None
     return (platform_system, python_interpreter_architecture, python_version)
 
 config = get_config()
