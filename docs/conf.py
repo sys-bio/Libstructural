@@ -64,7 +64,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Libstructural'
-copyright = u'2017, Herbert Sauro and Yosef Bedaso'
+copyright = u'2018, Herbert Sauro and Yosef Bedaso'
 author = u'Herbert Sauro and Yosef Bedaso'
 
 # The version info for the project you're documenting, acts as replacement for
