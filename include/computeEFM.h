@@ -1,9 +1,9 @@
 
 
 
-vector<vector<double> > execute (Network *network);
-vector<vector<double> > execute (const char* file, Network *network);
-vector<vector<double> > computeElementaryModes (Network *network);
+vector<vector<double> > execute (Network *network, bool noRevDup);
+vector<vector<double> > execute (const char* file, Network *network, bool noRevDup);
+vector<vector<double> > computeElementaryModes (Network *network, bool noRevDup);
 
 double **convertEFMVectorsToArray (vector<vector<double> > efm);
 

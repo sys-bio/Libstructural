@@ -12,9 +12,10 @@
 */
 template<class BitVector>
 
-vector<vector<double> > execute (Network *network) {
+vector<vector<double> > execute (Network *network, bool noRevDup) {
 
 	vector<vector<double> > efmErr;
+	vector<vector<double> > efm;
 
 	gefm_reversibleTreeIndices = NULL;
 
@@ -46,7 +47,13 @@ vector<vector<double> > execute (Network *network) {
 
 	EFMGenerator<BitVector> efmgenerator (pathways);
 	efmgenerator.genenrateEFMs ();
-	vector<vector<double> > efm = efmgenerator.printEFMs (network);
+
+	if (noRevDup) {
+		efm = efmgenerator.printEFMsNoRevDup(network);
+	}
+	else {
+		efm = efmgenerator.printEFMs(network);
+	}
 	free (pathways);
 	return efm;
 }
@@ -86,7 +93,7 @@ void computeMaxCardinality (Network *network) {
 * Computes elementary flux modes for the given network.
 * @param file Network file.
 */
-vector<vector<double> > execute (const char* file, Network *network) {
+vector<vector<double> > execute (const char* file, Network *network, bool noRevDup) {
 	vector<vector<double> > efmErr;
 
 	if (!network->readNetworkFile (file)) {
@@ -102,25 +109,25 @@ vector<vector<double> > execute (const char* file, Network *network) {
 	gefm_reversiblePairCount = network->reversiblePairs.size ();
 	computeMaxCardinality (network);
 	if (gefm_numReactions <= 32) {
-		return execute<BitVector32> (network);
+		return execute<BitVector32> (network, noRevDup);
 	}
 	else if (gefm_numReactions <= 64) {
-		return execute<BitVector64> (network);
+		return execute<BitVector64> (network, noRevDup);
 	}
 	else if (gefm_numReactions <= 96) {
-		return execute<BitVector96> (network);
+		return execute<BitVector96> (network, noRevDup);
 	}
 	else if (gefm_numReactions <= 128) {
-		return execute<BitVector128> (network);
+		return execute<BitVector128> (network, noRevDup);
 	}
 	else if (gefm_numReactions <= 160) {
-		return execute<BitVector160> (network);
+		return execute<BitVector160> (network, noRevDup);
 	}
 	else if (gefm_numReactions <= 192) {
-		return execute<BitVector192> (network);
+		return execute<BitVector192> (network, noRevDup);
 	}
 	else if (gefm_numReactions <= 448) {
-		return execute<BitVector448> (network);
+		return execute<BitVector448> (network, noRevDup);
 	}
 	else {
 			globalErrorCode = -4;
@@ -128,7 +135,7 @@ vector<vector<double> > execute (const char* file, Network *network) {
 	}
 }
 
-vector<vector<double> > computeElementaryModes (Network *network) {
+vector<vector<double> > computeElementaryModes (Network *network, bool noRevDup) {
 	vector<vector<double> > efmErr;
 
 	gefm_metabolites.clear();
@@ -145,25 +152,25 @@ vector<vector<double> > computeElementaryModes (Network *network) {
 	gefm_reversiblePairCount = network->reversiblePairs.size ();
 	computeMaxCardinality (network);
 	if (gefm_numReactions <= 32) {
-		return execute<BitVector32> (network);
+		return execute<BitVector32> (network, noRevDup);
 	}
 	else if (gefm_numReactions <= 64) {
-		return execute<BitVector64> (network);
+		return execute<BitVector64> (network, noRevDup);
 	}
 	else if (gefm_numReactions <= 96) {
-		return execute<BitVector96> (network);
+		return execute<BitVector96> (network, noRevDup);
 	}
 	else if (gefm_numReactions <= 128) {
-		return execute<BitVector128> (network);
+		return execute<BitVector128> (network, noRevDup);
 	}
 	else if (gefm_numReactions <= 160) {
-		return execute<BitVector160> (network);
+		return execute<BitVector160> (network, noRevDup);
 	}
 	else if (gefm_numReactions <= 192) {
-		return execute<BitVector192> (network);
+		return execute<BitVector192> (network, noRevDup);
 	}
 	else if (gefm_numReactions <= 448) {
-		return execute<BitVector448> (network);
+		return execute<BitVector448> (network, noRevDup);
 	}
 	else {
 		globalErrorCode = -4;

@@ -105,12 +105,13 @@ int gefm_splitReversibleReactions (Network *network) {
 }
 
 
-double **gefm_getElementaryModes (Network *network, int *numberOfModes, int *numberOfReactions) {
+double **gefm_getElementaryModes (Network *network, int *numberOfModes, int *numberOfReactions, bool noRevDup) {
 
 	*numberOfModes = 0;
 	*numberOfReactions = 0;
+
 	try {
-		vector<vector<double> > efm = computeElementaryModes (network);
+		vector<vector<double> > efm = computeElementaryModes (network, noRevDup);
 		double ** efmArray = convertEFMVectorsToArray (efm);
 		if (efmArray != NULL) {
 			*numberOfModes = efm.size ();

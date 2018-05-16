@@ -32,4 +32,4 @@ int gefm_splitReversibleReactions (Network *network);
 
 // Get the elementary modes. numberOfModes (rows) and numberOfReactions (columns) are the dimensions 
 // of the array. You must use numberOfReactions as the number of columns
-double **gefm_getElementaryModes (Network *network, int *numberOfModes, int *numberOfReactions);
+double **gefm_getElementaryModes (Network *network, int *numberOfModes, int *numberOfReactions, bool noRevDup);

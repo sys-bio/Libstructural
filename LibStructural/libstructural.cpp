@@ -1,4 +1,4 @@
-/* Copyright (c) <2007-2017>, Sauro H.M, Bergmann F, Bedaso Y, and Choi k
+/* Copyright (c) <2007-2018>, Sauro H.M, Bergmann F, Bedaso Y, and Choi k
 
 All rights reserved.
 
@@ -53,7 +53,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 #define PRINT_PRECISION		10
 #define LINE			    "--------------------------------------------------------------"
 
-#define LibStruct_VERSION "3.1.0"
+#define LibStruct_VERSION "3.1.1"
 
 using namespace LIB_STRUCTURAL;
 using namespace LIB_LA;
@@ -2398,7 +2398,8 @@ char* LibStructural::saveElementaryModes(int *errorCode, bool csv_format) {
 
 		f = fopen(outputPath, "w");
 
-		efmArray = gefm_getElementaryModes(network, &numberOfModes, &numberOfReactions);
+		bool noRevDup = true;
+		efmArray = gefm_getElementaryModes(network, &numberOfModes, &numberOfReactions, noRevDup);
 		if (efmArray == NULL) {
 			*errorCode = globalErrorCode;
 			fprintf(f, "No Elementary Modes Found\n");
@@ -2491,7 +2492,8 @@ DoubleMatrix* LibStructural::getgElementaryModes(int *errorCode) {
 
 		gefm_splitReversibleReactions(network);
 
-		efmArray = gefm_getElementaryModes(network, &numberOfModes, &numberOfReactions);
+		bool noRevDup = true;
+		efmArray = gefm_getElementaryModes(network, &numberOfModes, &numberOfReactions, noRevDup);
 		if (efmArray == NULL) {
 			oResult = new DoubleMatrix(0,0);
 			*errorCode = globalErrorCode;
